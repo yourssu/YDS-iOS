@@ -46,18 +46,10 @@
 		DD151FAC2641820200795D7C /* YDS-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				DD151FB62641821B00795D7C /* Atom */,
 				DD151FAD2641820200795D7C /* YDS_iOS.h */,
 				DD151FAE2641820200795D7C /* Info.plist */,
 			);
 			path = "YDS-iOS";
-			sourceTree = "<group>";
-		};
-		DD151FB62641821B00795D7C /* Atom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Atom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
