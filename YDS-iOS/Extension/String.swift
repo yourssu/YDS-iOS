@@ -1,5 +1,5 @@
 //
-//  YDSText.swift
+//  String.swift
 //  YDS-iOS
 //
 //  Created by 김윤서 on 2021/05/05.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class YDSText{
+extension String{
     public enum YDSTextStyle{
         case title1
         case title2
@@ -24,7 +24,7 @@ public class YDSText{
         case caption2
     }
     
-    private func attributedString(text: String, font: UIFont, color: UIColor, customLineHeight: CGFloat) -> NSAttributedString {
+    private func attributedString(font: UIFont, color: UIColor, customLineHeight: CGFloat) -> NSAttributedString {
 
         let finalLineHeight: CGFloat = customLineHeight
         let finalColor: UIColor = color
@@ -39,59 +39,58 @@ public class YDSText{
           .paragraphStyle: paragraphStyle
         ]
         
-        return NSAttributedString.init(string: text, attributes: attributes)
+        return NSAttributedString.init(string : self, attributes: attributes)
       }
     
-    public func attributedString(text: String, byPreset preset: YDSTextStyle, color: UIColor? = nil) -> NSAttributedString {
+    public func attributedString(byPreset preset: YDSTextStyle, color: UIColor? = nil) -> NSAttributedString {
         
         let finalFont: UIFont
         let finalLineHeight: CGFloat
         
         switch preset {
         case .title1:
-            finalFont = .systemFont(ofSize: 28, weight: .bold)
+            finalFont = .font28bold
             finalLineHeight = finalFont.pointSize * 1.3
         case .title2:
-            finalFont = .systemFont(ofSize: 24, weight: .semibold)
+            finalFont = .font24semibold
             finalLineHeight = finalFont.pointSize * 1.3
         case .subtitle1:
-            finalFont = .systemFont(ofSize: 20, weight: .semibold)
+            finalFont = .font20semibold
             finalLineHeight = finalFont.pointSize * 1.3
         case .subtitle2:
-            finalFont = .systemFont(ofSize: 16, weight: .semibold)
+            finalFont = .font16semibold
             finalLineHeight = finalFont.pointSize * 1.3
         case .subtitle3:
-            finalFont = .systemFont(ofSize: 14, weight: .semibold)
+            finalFont = .font14semibold
             finalLineHeight = finalFont.pointSize * 1.3
         case .body1:
-            finalFont = .systemFont(ofSize: 15, weight: .regular)
+            finalFont = .font15
             finalLineHeight = finalFont.pointSize * 1.75
         case .body2:
-            finalFont = .systemFont(ofSize: 14, weight: .regular)
+            finalFont = .font14
             finalLineHeight = finalFont.pointSize * 1.6
         case .button1:
-            finalFont = .systemFont(ofSize: 16, weight: .medium)
+            finalFont = .font16medium
             finalLineHeight = finalFont.pointSize * 1.3
         case .button2:
-            finalFont = .systemFont(ofSize: 14, weight: .regular)
+            finalFont = .font14
             finalLineHeight = finalFont.pointSize * 1.3
         case .rectButton1:
-            finalFont = .systemFont(ofSize: 16, weight: .semibold)
+            finalFont = .font16semibold
             finalLineHeight = finalFont.pointSize * 1.3
         case .rectButton2:
-            finalFont = .systemFont(ofSize: 14, weight: .semibold)
+            finalFont = .font14semibold
             finalLineHeight = finalFont.pointSize * 1.3
         case .caption1:
-            finalFont = .systemFont(ofSize: 12, weight: .regular)
+            finalFont = .font12
             finalLineHeight = finalFont.pointSize * 1.3
         case .caption2:
-            finalFont = .systemFont(ofSize: 11, weight: .regular)
+            finalFont = .font11
             finalLineHeight = finalFont.pointSize * 1.3
         }
         
         let finalColor: UIColor = color ?? UIColor.black
         
-        return self.attributedString(text: text, font: finalFont, color: finalColor, customLineHeight: finalLineHeight)
+        return self.attributedString(font: finalFont, color: finalColor, customLineHeight: finalLineHeight)
       }
-    
 }
