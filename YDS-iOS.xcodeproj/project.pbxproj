@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD6C6384264286FB004CFF46 /* YDSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* YDSText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD151FAA2641820200795D7C /* YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_iOS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD6C6383264286FB004CFF46 /* YDSText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +48,19 @@
 		DD151FAC2641820200795D7C /* YDS-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				DD6C6382264286E4004CFF46 /* Foundation */,
 				DD151FAD2641820200795D7C /* YDS_iOS.h */,
 				DD151FAE2641820200795D7C /* Info.plist */,
 			);
 			path = "YDS-iOS";
+			sourceTree = "<group>";
+		};
+		DD6C6382264286E4004CFF46 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				DD6C6383264286FB004CFF46 /* YDSText.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +105,7 @@
 				TargetAttributes = {
 					DD151FA92641820200795D7C = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -130,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6C6384264286FB004CFF46 /* YDSText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +274,7 @@
 		DD151FB32641820200795D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
@@ -277,6 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +300,7 @@
 		DD151FB42641820200795D7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
