@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD6C6384264286FB004CFF46 /* YDSText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* YDSText.swift */; };
+		DD3077922642B9AB006C761E /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3077912642B9AB006C761E /* YDSFont.swift */; };
+		DD6C6384264286FB004CFF46 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* String.swift */; };
+		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD151FAA2641820200795D7C /* YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_iOS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD6C6383264286FB004CFF46 /* YDSText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSText.swift; sourceTree = "<group>"; };
+		DD3077912642B9AB006C761E /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
+		DD6C6383264286FB004CFF46 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		DD6C63D526429C6C004CFF46 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,19 +52,29 @@
 		DD151FAC2641820200795D7C /* YDS-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				DD6C6382264286E4004CFF46 /* Foundation */,
+				DD6C63E32642A602004CFF46 /* Extension */,
+				DD6C63D426429C5B004CFF46 /* Atom */,
 				DD151FAD2641820200795D7C /* YDS_iOS.h */,
 				DD151FAE2641820200795D7C /* Info.plist */,
 			);
 			path = "YDS-iOS";
 			sourceTree = "<group>";
 		};
-		DD6C6382264286E4004CFF46 /* Foundation */ = {
+		DD6C63D426429C5B004CFF46 /* Atom */ = {
 			isa = PBXGroup;
 			children = (
-				DD6C6383264286FB004CFF46 /* YDSText.swift */,
+				DD6C63D526429C6C004CFF46 /* YDSLabel.swift */,
 			);
-			path = Foundation;
+			path = Atom;
+			sourceTree = "<group>";
+		};
+		DD6C63E32642A602004CFF46 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD6C6383264286FB004CFF46 /* String.swift */,
+				DD3077912642B9AB006C761E /* YDSFont.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD6C6384264286FB004CFF46 /* YDSText.swift in Sources */,
+				DD6C6384264286FB004CFF46 /* String.swift in Sources */,
+				DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */,
+				DD3077922642B9AB006C761E /* YDSFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
