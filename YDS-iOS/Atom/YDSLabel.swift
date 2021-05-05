@@ -10,7 +10,7 @@ import UIKit
 public class YDSLabel: UILabel{
     private var style : String.YDSTextStyle
     
-    public init(style:  String.YDSTextStyle) {
+    public init(style: String.YDSTextStyle) {
         self.style = style
         super.init(frame: CGRect.zero)
     }
