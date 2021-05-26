@@ -18,6 +18,7 @@ internal extension UIFont{
     class var font20semibold : UIFont { UIFont.systemFont(ofSize: 20, weight: .semibold) }
     class var font24semibold : UIFont { UIFont.systemFont(ofSize: 24, weight: .semibold) }
     
+    class var font12medium : UIFont { UIFont.systemFont(ofSize: 12, weight: .medium) }
     class var font16medium : UIFont { UIFont.systemFont(ofSize: 16, weight: .medium) }
     
     class var font28bold: UIFont { UIFont.systemFont(ofSize: 28, weight: .bold) }

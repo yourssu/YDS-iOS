@@ -16,10 +16,11 @@ extension String{
         case subtitle3
         case body1
         case body2
+        case button0
         case button1
         case button2
-        case rectButton1
-        case rectButton2
+        case button3
+        case button4
         case caption1
         case caption2
     }
@@ -65,22 +66,25 @@ extension String{
             finalLineHeight = finalFont.pointSize * 1.3
         case .body1:
             finalFont = .font15
-            finalLineHeight = finalFont.pointSize * 1.75
+            finalLineHeight = finalFont.pointSize * 1.6
         case .body2:
             finalFont = .font14
             finalLineHeight = finalFont.pointSize * 1.6
-        case .button1:
+        case .button0:
             finalFont = .font16medium
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .button2:
-            finalFont = .font14
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .rectButton1:
+            finalLineHeight = finalFont.pointSize * 1.0
+        case .button1:
             finalFont = .font16semibold
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .rectButton2:
+            finalLineHeight = finalFont.pointSize * 1.0
+        case .button2:
             finalFont = .font14semibold
-            finalLineHeight = finalFont.pointSize * 1.3
+            finalLineHeight = finalFont.pointSize * 1.0
+        case .button3:
+            finalFont = .font14
+            finalLineHeight = finalFont.pointSize * 1.0
+        case .button4:
+            finalFont = .font12medium
+            finalLineHeight = finalFont.pointSize * 1.0
         case .caption1:
             finalFont = .font12
             finalLineHeight = finalFont.pointSize * 1.3
