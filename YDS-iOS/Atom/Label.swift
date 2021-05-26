@@ -7,8 +7,14 @@
 
 import UIKit
 
-public class YDSLabel: UILabel{
-    private var style : String.YDSTextStyle
+public class Label: UILabel{
+    public var style : String.YDSTextStyle{
+        didSet{
+            if let text = self.text {
+                self.attributedText = text.attributedString(byPreset: style)
+            }
+        }
+    }
     
     public init(style: String.YDSTextStyle) {
         self.style = style
