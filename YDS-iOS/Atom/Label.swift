@@ -8,7 +8,7 @@
 import UIKit
 
 public class Label: UILabel{
-    public var style : String.YDSTextStyle{
+    public var style : String.TypoStyle{
         didSet{
             if let text = self.text {
                 self.attributedText = text.attributedString(byPreset: style)
@@ -16,7 +16,7 @@ public class Label: UILabel{
         }
     }
     
-    public init(style: String.YDSTextStyle) {
+    public init(style: String.TypoStyle) {
         self.style = style
         super.init(frame: CGRect.zero)
     }

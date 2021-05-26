@@ -1,5 +1,5 @@
 //
-//  String.swift
+//  Typo.swift
 //  YDS-iOS
 //
 //  Created by 김윤서 on 2021/05/05.
@@ -7,8 +7,26 @@
 
 import UIKit
 
+fileprivate extension UIFont{
+    class var font11 : UIFont { UIFont.systemFont(ofSize: 11, weight: .regular) }
+    class var font12 : UIFont { UIFont.systemFont(ofSize: 12, weight: .regular) }
+    class var font14 : UIFont { UIFont.systemFont(ofSize: 14, weight: .regular) }
+    class var font15 : UIFont { UIFont.systemFont(ofSize: 15, weight: .regular) }
+    
+    class var font14semibold : UIFont { UIFont.systemFont(ofSize: 14, weight: .semibold) }
+    class var font16semibold : UIFont { UIFont.systemFont(ofSize: 16, weight: .semibold) }
+    class var font20semibold : UIFont { UIFont.systemFont(ofSize: 20, weight: .semibold) }
+    class var font24semibold : UIFont { UIFont.systemFont(ofSize: 24, weight: .semibold) }
+    
+    class var font12medium : UIFont { UIFont.systemFont(ofSize: 12, weight: .medium) }
+    class var font16medium : UIFont { UIFont.systemFont(ofSize: 16, weight: .medium) }
+    
+    class var font28bold: UIFont { UIFont.systemFont(ofSize: 28, weight: .bold) }
+}
+
+
 extension String{
-    public enum YDSTextStyle{
+    public enum TypoStyle{
         case title1
         case title2
         case subtitle1
@@ -43,7 +61,7 @@ extension String{
         return NSAttributedString.init(string : self, attributes: attributes)
       }
     
-    public func attributedString(byPreset preset: YDSTextStyle, color: UIColor? = nil) -> NSAttributedString {
+    public func attributedString(byPreset preset: TypoStyle, color: UIColor? = nil) -> NSAttributedString {
         
         let finalFont: UIFont
         let finalLineHeight: CGFloat
