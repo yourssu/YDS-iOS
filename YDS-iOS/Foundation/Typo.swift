@@ -41,78 +41,74 @@ extension String{
         case button4
         case caption1
         case caption2
-    }
+        
+        public func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
+            let finalFont: UIFont
+            let finalLineHeight: CGFloat
+            let paragraphStyle = NSMutableParagraphStyle()
+            
+            let lineHeight100: CGFloat = 1.0
+            let lineHeight130: CGFloat = 1.3
+            let lineHeight160: CGFloat = 1.6
     
-    private func attributedString(font: UIFont, color: UIColor, customLineHeight: CGFloat) -> NSAttributedString {
-
-        let finalLineHeight: CGFloat = customLineHeight
-        let finalColor: UIColor = color
+            switch self {
+            case .title1:
+                finalFont = .font28bold
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            case .title2:
+                finalFont = .font24semibold
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            case .subtitle1:
+                finalFont = .font20semibold
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            case .subtitle2:
+                finalFont = .font16semibold
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            case .subtitle3:
+                finalFont = .font14semibold
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            case .body1:
+                finalFont = .font15
+                finalLineHeight = finalFont.pointSize * lineHeight160
+            case .body2:
+                finalFont = .font14
+                finalLineHeight = finalFont.pointSize * lineHeight160
+            case .button0:
+                finalFont = .font16medium
+                finalLineHeight = finalFont.pointSize * lineHeight100
+            case .button1:
+                finalFont = .font16semibold
+                finalLineHeight = finalFont.pointSize * lineHeight100
+            case .button2:
+                finalFont = .font14semibold
+                finalLineHeight = finalFont.pointSize * lineHeight100
+            case .button3:
+                finalFont = .font14
+                finalLineHeight = finalFont.pointSize * lineHeight100
+            case .button4:
+                finalFont = .font12medium
+                finalLineHeight = finalFont.pointSize * lineHeight100
+            case .caption1:
+                finalFont = .font12
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            case .caption2:
+                finalFont = .font11
+                finalLineHeight = finalFont.pointSize * lineHeight130
+            }
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = finalLineHeight - font.lineHeight
-
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-          .foregroundColor: finalColor,
-          .font: font,
-          .paragraphStyle: paragraphStyle
-        ]
-        
-        return NSAttributedString.init(string : self, attributes: attributes)
-      }
-    
-    public func attributedString(byPreset preset: TypoStyle, color: UIColor? = nil) -> NSAttributedString {
-        
-        let finalFont: UIFont
-        let finalLineHeight: CGFloat
-        
-        switch preset {
-        case .title1:
-            finalFont = .font28bold
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .title2:
-            finalFont = .font24semibold
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .subtitle1:
-            finalFont = .font20semibold
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .subtitle2:
-            finalFont = .font16semibold
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .subtitle3:
-            finalFont = .font14semibold
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .body1:
-            finalFont = .font15
-            finalLineHeight = finalFont.pointSize * 1.6
-        case .body2:
-            finalFont = .font14
-            finalLineHeight = finalFont.pointSize * 1.6
-        case .button0:
-            finalFont = .font16medium
-            finalLineHeight = finalFont.pointSize * 1.0
-        case .button1:
-            finalFont = .font16semibold
-            finalLineHeight = finalFont.pointSize * 1.0
-        case .button2:
-            finalFont = .font14semibold
-            finalLineHeight = finalFont.pointSize * 1.0
-        case .button3:
-            finalFont = .font14
-            finalLineHeight = finalFont.pointSize * 1.0
-        case .button4:
-            finalFont = .font12medium
-            finalLineHeight = finalFont.pointSize * 1.0
-        case .caption1:
-            finalFont = .font12
-            finalLineHeight = finalFont.pointSize * 1.3
-        case .caption2:
-            finalFont = .font11
-            finalLineHeight = finalFont.pointSize * 1.3
+            paragraphStyle.lineSpacing = finalLineHeight - finalFont.lineHeight
+            let attributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: color ?? UIColor.black,
+                .font: finalFont,
+                .paragraphStyle: paragraphStyle
+            ]
+            return attributes
         }
         
-        let finalColor: UIColor = color ?? UIColor.black
-        
-        return self.attributedString(font: finalFont, color: finalColor, customLineHeight: finalLineHeight)
-      }
+    }
+    
+    public func attributedString(byPreset preset: TypoStyle, color: UIColor? = nil) -> NSAttributedString {
+        return NSAttributedString.init(string : self, attributes: preset.style(color: color))
+    }
+
 }
