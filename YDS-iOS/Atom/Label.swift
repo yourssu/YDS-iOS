@@ -10,9 +10,7 @@ import UIKit
 public class Label: UILabel{
     public var style : String.TypoStyle{
         didSet{
-            if let text = self.text {
-                self.attributedText = text.attributedString(byPreset: style)
-            }
+            setAttributedText()
         }
     }
     
@@ -35,9 +33,13 @@ public class Label: UILabel{
 
     public override var textColor: UIColor!{
         didSet{
-            if let text = self.text {
-                self.attributedText = text.attributedString(byPreset: style, color: textColor)
-            }
+            setAttributedText()
+        }
+    }
+    
+    private func setAttributedText(){
+        if let text = self.text {
+            self.attributedText = text.attributedString(byPreset: style, color: textColor)
         }
     }
 }
