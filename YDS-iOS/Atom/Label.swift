@@ -25,9 +25,7 @@ public class Label: UILabel{
     
     public override var text: String? {
         didSet {
-            if let text = self.text {
-                self.attributedText = text.attributedString(byPreset: style)
-            }
+            setAttributedText()
         }
     }
 
@@ -39,7 +37,11 @@ public class Label: UILabel{
     
     private func setAttributedText(){
         if let text = self.text {
-            self.attributedText = text.attributedString(byPreset: style, color: textColor)
+            if let color = textColor {
+                self.attributedText = text.attributedString(byPreset: style, color: color)
+            } else {
+                self.attributedText = text.attributedString(byPreset: style)
+            }
         }
     }
 }
