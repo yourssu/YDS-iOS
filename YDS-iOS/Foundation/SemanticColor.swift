@@ -19,138 +19,139 @@ public extension UIColor {
     }
 
     //MARK:- Background
-    @nonobjc class var bg: UIColor {
+    class var bg: UIColor {
         return color(light: .white000)
     }
     
-    @nonobjc class var bgNormal: UIColor {
+    class var bgNormal: UIColor {
         return color(light: .white000)
     }
     
-    @nonobjc class var bgSelected: UIColor {
+    class var bgSelected: UIColor {
         return color(light: .gray100)
     }
     
-    @nonobjc class var bgPressed: UIColor {
+    class var bgPressed: UIColor {
         return color(light: .gray100)
     }
     
     //MARK:- Text
-    @nonobjc class var textPrimary: UIColor {
+    class var textPrimary: UIColor {
         return color(light: .gray900)
     }
     
-    @nonobjc class var textSecondary: UIColor {
+    class var textSecondary: UIColor {
         return color(light: .gray800)
     }
     
-    @nonobjc class var textTertiary: UIColor {
+    class var textTertiary: UIColor {
         return color(light: .gray600)
     }
     
-    @nonobjc class var textDisabled: UIColor {
+    class var textDisabled: UIColor {
         return color(light: .gray500)
     }
     
-    @nonobjc class var textReversed: UIColor {
+    class var textReversed: UIColor {
         return color(light: .white000)
     }
     
-    @nonobjc class var textPointed: UIColor {
+    class var textPointed: UIColor {
         return color(light: .pointBlue400)
     }
     
-    @nonobjc class var textWarned: UIColor {
+    class var textWarned: UIColor {
         return color(light: .warningRed400)
     }
     
     //MARK:- Dim
-    @nonobjc class var dimNormal: UIColor {
+    class var dimNormal: UIColor {
         return color(light: .gray900A30)
     }
     
-    @nonobjc class var dimThick: UIColor {
+    class var dimThick: UIColor {
         return color(light: .gray900A70)
     }
     
     
     //MARK:- Border
-    @nonobjc class var borderThin: UIColor {
+    class var borderThin: UIColor {
         return color(light: .gray050)
     }
     
-    @nonobjc class var borderNormal: UIColor {
+    class var borderNormal: UIColor {
         return color(light: .gray300)
     }
     
-    @nonobjc class var borderThick: UIColor {
+    class var borderThick: UIColor {
         return color(light: .gray500)
     }
     
     //MARK:- Button
-    @nonobjc class var buttonNoraml: UIColor {
+    class var buttonNoraml: UIColor {
         return color(light: .gray700)
     }
     
-    @nonobjc class var buttonReversed: UIColor {
+    class var buttonReversed: UIColor {
         return color(light: .white000)
     }
     
-    @nonobjc class var buttonDisabled: UIColor {
+    class var buttonDisabled: UIColor {
         return color(light: .gray500)
     }
     
-    @nonobjc class var buttonDisabledBG: UIColor {
+    class var buttonDisabledBG: UIColor {
         return color(light: .gray200)
     }
     
-    @nonobjc class var buttonPoint: UIColor {
+    class var buttonPoint: UIColor {
         return color(light: .pointBlue400)
     }
     
-    @nonobjc class var buttonPointBG: UIColor {
+    class var buttonPointBG: UIColor {
         return color(light: .pointBlue050)
     }
     
-    @nonobjc class var buttonWarned: UIColor {
+    class var buttonWarned: UIColor {
         return color(light: .warningRed400)
     }
     
-    @nonobjc class var buttonWarnedBG: UIColor {
+    class var buttonWarnedBG: UIColor {
         return color(light: .warningRed050)
     }
     
     //MARK:- Tabbar
-    @nonobjc class var tabBarNormal: UIColor {
+    class var tabBarNormal: UIColor {
         return color(light: .gray600)
     }
     
-    @nonobjc class var tabBarSelected: UIColor {
+    class var tabBarSelected: UIColor {
         return color(light: .pointBlue400)
     }
     
     //MARK:- InputField
-    @nonobjc class var inputFieldNormal: UIColor {
+    class var inputFieldNormal: UIColor {
         return color(light: .white000)
     }
     
-    @nonobjc class var inputFieldElevated: UIColor {
+    class var inputFieldElevated: UIColor {
         return color(light: .gray100)
     }
     
     //MARK:- Pressed
-    @nonobjc class var pressed: UIColor {
+    class var pressed: UIColor {
         return color(light: .gray900A10)
     }
     
     //MARK:- Shadow
-    @nonobjc class var shadowThin: UIColor {
+    class var shadowThin: UIColor {
         return color(light: .gray400)
     }
     
-    @nonobjc class var shadowNormal: UIColor {
+    class var shadowNormal: UIColor {
         return color(light: .gray500)
     }
+    
 }
 
 
