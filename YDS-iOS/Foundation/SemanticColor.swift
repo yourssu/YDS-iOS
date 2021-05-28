@@ -18,6 +18,7 @@ public extension UIColor {
        }
     }
 
+    //MARK:- Background
     @nonobjc class var bg: UIColor {
         return color(light: .white000)
     }
@@ -34,8 +35,7 @@ public extension UIColor {
         return color(light: .gray100)
     }
     
-    
-    
+    //MARK:- Text
     @nonobjc class var textPrimary: UIColor {
         return color(light: .gray900)
     }
@@ -64,8 +64,7 @@ public extension UIColor {
         return color(light: .warningRed400)
     }
     
-    
-    
+    //MARK:- Dim
     @nonobjc class var dimNormal: UIColor {
         return color(light: .gray900A30)
     }
@@ -75,7 +74,7 @@ public extension UIColor {
     }
     
     
-    
+    //MARK:- Border
     @nonobjc class var borderThin: UIColor {
         return color(light: .gray050)
     }
@@ -88,8 +87,7 @@ public extension UIColor {
         return color(light: .gray500)
     }
     
-    
-    
+    //MARK:- Button
     @nonobjc class var buttonNoraml: UIColor {
         return color(light: .gray700)
     }
@@ -122,8 +120,7 @@ public extension UIColor {
         return color(light: .warningRed050)
     }
     
-    
-    
+    //MARK:- Tabbar
     @nonobjc class var tabBarNormal: UIColor {
         return color(light: .gray600)
     }
@@ -132,8 +129,7 @@ public extension UIColor {
         return color(light: .pointBlue400)
     }
     
-    
-    
+    //MARK:- InputField
     @nonobjc class var inputFieldNormal: UIColor {
         return color(light: .white000)
     }
@@ -142,12 +138,12 @@ public extension UIColor {
         return color(light: .gray100)
     }
     
-    
-    
+    //MARK:- Pressed
     @nonobjc class var pressed: UIColor {
         return color(light: .gray900A10)
     }
     
+    //MARK:- Shadow
     @nonobjc class var shadowThin: UIColor {
         return color(light: .gray400)
     }
