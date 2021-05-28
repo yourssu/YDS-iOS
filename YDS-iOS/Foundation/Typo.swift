@@ -42,7 +42,7 @@ extension String{
         case caption1
         case caption2
         
-        public func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
+        fileprivate func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
             let finalFont: UIFont
             let finalLineHeight: CGFloat
             let paragraphStyle = NSMutableParagraphStyle()
@@ -107,7 +107,7 @@ extension String{
         
     }
     
-    public func attributedString(byPreset preset: TypoStyle, color: UIColor? = nil) -> NSAttributedString {
+    internal func attributedString(byPreset preset: TypoStyle, color: UIColor? = nil) -> NSAttributedString {
         return NSAttributedString.init(string : self, attributes: preset.style(color: color))
     }
 
