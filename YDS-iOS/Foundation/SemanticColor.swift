@@ -76,11 +76,11 @@ public extension UIColor {
     
     //MARK:- Border
     class var borderThin: UIColor {
-        return color(light: .gray050)
+        return color(light: .gray100)
     }
     
     class var borderNormal: UIColor {
-        return color(light: .gray300)
+        return color(light: .gray400)
     }
     
     class var borderThick: UIColor {
