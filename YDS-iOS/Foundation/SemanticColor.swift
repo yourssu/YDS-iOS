@@ -19,11 +19,11 @@ public extension UIColor {
     }
 
     //MARK:- Background
-    class var bg: UIColor {
+    class var bgNormal: UIColor {
         return color(light: .white000)
     }
     
-    class var bgNormal: UIColor {
+    class var  bgElevated: UIColor {
         return color(light: .white000)
     }
     
