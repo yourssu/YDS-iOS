@@ -152,6 +152,115 @@ public extension UIColor {
         return color(light: .gray500)
     }
     
+    //MARK:- Tag
+    class var monoTagPrimary: UIColor {
+       return color(light: .gray300)
+    }
+
+    class var monoTagBG: UIColor {
+       return color(light: .gray100)
+    }
+
+    class var monoTagText: UIColor {
+       return color(light: .gray900)
+    }
+
+    class var greenTagPrimary: UIColor {
+       return color(light: .green300)
+    }
+
+    class var greenTagBG: UIColor {
+       return color(light: .green050)
+    }
+
+    class var greenTagText: UIColor {
+       return color(light: .green800)
+    }
+
+    class var emeraldTagPrimary: UIColor {
+       return color(light: .emerald300)
+    }
+
+    class var emeraldTagBG: UIColor {
+       return color(light: .emerald050)
+    }
+
+    class var emeraldTagText: UIColor {
+       return color(light: .emerald800)
+    }
+
+    class var aquaTagPrimary: UIColor {
+       return color(light: .aqua300)
+    }
+
+    class var aquaTagBG: UIColor {
+       return color(light: .aqua050)
+    }
+
+    class var aquaTagText: UIColor {
+       return color(light: .aqua800)
+    }
+
+    class var blueTagPrimary: UIColor {
+       return color(light: .blue300)
+    }
+
+    class var blueTagBG: UIColor {
+       return color(light: .blue050)
+    }
+
+    class var blueTagText: UIColor {
+       return color(light: .blue800)
+    }
+
+    class var indigoTagPrimary: UIColor {
+       return color(light: .indigo300)
+    }
+
+    class var indigoTagBG: UIColor {
+       return color(light: .indigo050)
+    }
+
+    class var indigoTagText: UIColor {
+       return color(light: .indigo500)
+    }
+
+    class var violetTagPrimary: UIColor {
+       return color(light: .violet300)
+    }
+
+    class var violetTagBG: UIColor {
+       return color(light: .violet050)
+    }
+
+    class var violetTagText: UIColor {
+       return color(light: .violet500)
+    }
+
+    class var purpleTagPrimary: UIColor {
+       return color(light: .purple300)
+    }
+
+    class var purpleTagBG: UIColor {
+       return color(light: .purple050)
+    }
+
+    class var purpleTagText: UIColor {
+       return color(light: .purple500)
+    }
+
+    class var pinkTagPrimary: UIColor {
+       return color(light: .pink300)
+    }
+
+    class var pinkTagBG: UIColor {
+       return color(light: .pink050)
+    }
+
+    class var pinkTagText: UIColor {
+       return color(light: .pink800)
+    }
+       
 }
 
 
