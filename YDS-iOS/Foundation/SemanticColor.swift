@@ -18,7 +18,6 @@ public extension UIColor {
        }
     }
 
-
     @nonobjc class var bg: UIColor {
         return color(light: .white000)
     }
@@ -76,6 +75,7 @@ public extension UIColor {
     }
     
     
+    
     @nonobjc class var borderThin: UIColor {
         return color(light: .gray050)
     }
@@ -116,6 +116,10 @@ public extension UIColor {
     
     @nonobjc class var buttonWarned: UIColor {
         return color(light: .warningRed400)
+    }
+    
+    @nonobjc class var buttonWarnedBG: UIColor {
+        return color(light: .warningRed050)
     }
     
     
