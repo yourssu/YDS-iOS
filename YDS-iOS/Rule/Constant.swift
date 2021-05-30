@@ -9,13 +9,13 @@ import UIKit
 
 public enum Constant {
     public enum Border {
-        static let thin: CGFloat = 1/UIScreen.main.scale
-        static let thick: CGFloat = 8
+        public static let thin: CGFloat = 1/UIScreen.main.scale
+        public static let thick: CGFloat = 8
     }
     
     public enum Rounding {
-        static let r2: CGFloat = 2
-        static let r4: CGFloat = 4
-        static let r8: CGFloat = 8
+        public static let r2: CGFloat = 2
+        public static let r4: CGFloat = 4
+        public static let r8: CGFloat = 8
     }
 }
