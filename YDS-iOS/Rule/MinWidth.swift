@@ -7,4 +7,4 @@
 
 import UIKit
 
-internal let minWidth = 1/UIScreen.main.scale
+internal let minWidth: CGFloat = 1/UIScreen.main.scale
