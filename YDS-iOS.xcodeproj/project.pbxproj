@@ -11,6 +11,7 @@
 		DD6C6384264286FB004CFF46 /* Typo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* Typo.swift */; };
 		DD6C63D626429C6C004CFF46 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* Label.swift */; };
 		DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* BasicColor.swift */; };
+		DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* SemanticColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		DD6C6383264286FB004CFF46 /* Typo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typo.swift; sourceTree = "<group>"; };
 		DD6C63D526429C6C004CFF46 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DDDC3C79265E7072007ED3FE /* BasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicColor.swift; sourceTree = "<group>"; };
+		DDDC3C81265E8276007ED3FE /* SemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				DD6C6383264286FB004CFF46 /* Typo.swift */,
 				DDDC3C79265E7072007ED3FE /* BasicColor.swift */,
+				DDDC3C81265E8276007ED3FE /* SemanticColor.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */,
+				DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* Typo.swift in Sources */,
 				DD6C63D626429C6C004CFF46 /* Label.swift in Sources */,
 			);
