@@ -6,7 +6,10 @@
 //
 import UIKit
 
-public enum YDSColor {
+public class YDSColor {
+    
+    private init(){}
+    
     private static func color(light: UIColor, dark: UIColor? = nil) -> UIColor {
        if let dark = dark  {
            if #available(iOS 13.0, *) {

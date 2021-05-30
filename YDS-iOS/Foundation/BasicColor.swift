@@ -25,7 +25,8 @@ fileprivate extension UIColor{
     }
 }
 
-internal enum BasicColor {
+internal class BasicColor {
+    
     static var logoBlue: UIColor {
         return UIColor(hex: "#1653DB")
     }
