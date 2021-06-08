@@ -37,6 +37,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4999C890266CC38800CD5248 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5394692C2663D6C7003D7A44 /* Rule */,
+				DD6C63E32642A602004CFF46 /* Foundation */,
+				DD6C63D426429C5B004CFF46 /* Atom */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		5394692C2663D6C7003D7A44 /* Rule */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +74,7 @@
 		DD151FAC2641820200795D7C /* YDS-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5394692C2663D6C7003D7A44 /* Rule */,
-				DD6C63E32642A602004CFF46 /* Foundation */,
-				DD6C63D426429C5B004CFF46 /* Atom */,
+				4999C890266CC38800CD5248 /* Source */,
 				DD151FAD2641820200795D7C /* YDS_iOS.h */,
 				DD151FAE2641820200795D7C /* Info.plist */,
 			);
