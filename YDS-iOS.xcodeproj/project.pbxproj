@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
+		53A31B5E266F500300461C29 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD6C6384264286FB004CFF46 /* Typo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* Typo.swift */; };
 		DD6C63D626429C6C004CFF46 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* Label.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		DD151FAA2641820200795D7C /* YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_iOS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DD6C63D526429C6C004CFF46 /* Label.swift */,
+				53A31B5D266F500300461C29 /* Toggle.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */,
 				DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */,
 				5394692E2663D6DB003D7A44 /* Constant.swift in Sources */,
+				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* Typo.swift in Sources */,
 				DD6C63D626429C6C004CFF46 /* Label.swift in Sources */,
 			);
