@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
 		53A31B5E266F500300461C29 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
+		C99181F9B6B9B9544A121235 /* Pods_YDS_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */; };
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD6C6384264286FB004CFF46 /* Typo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* Typo.swift */; };
 		DD6C63D626429C6C004CFF46 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* Label.swift */; };
@@ -17,8 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
+		83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS/Pods-YDS-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		CAB6ABABCFBED4568643704E /* Pods-YDS-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS/Pods-YDS-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DD151FAA2641820200795D7C /* YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_iOS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,12 +37,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99181F9B6B9B9544A121235 /* Pods_YDS_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		253AF81C549745374AD2F563 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4999C890266CC38800CD5248 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +75,8 @@
 			children = (
 				DD151FAC2641820200795D7C /* YDS-iOS */,
 				DD151FAB2641820200795D7C /* Products */,
+				FEB9DE8A5EAC7F1FB86CBD59 /* Pods */,
+				253AF81C549745374AD2F563 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +117,16 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		FEB9DE8A5EAC7F1FB86CBD59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAB6ABABCFBED4568643704E /* Pods-YDS-iOS.debug.xcconfig */,
+				83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -120,6 +145,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD151FB22641820200795D7C /* Build configuration list for PBXNativeTarget "YDS-iOS" */;
 			buildPhases = (
+				D5D809E58A4A66857060D2CC /* [CP] Check Pods Manifest.lock */,
 				DD151FA52641820200795D7C /* Headers */,
 				DD151FA62641820200795D7C /* Sources */,
 				DD151FA72641820200795D7C /* Frameworks */,
@@ -175,6 +201,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D5D809E58A4A66857060D2CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YDS-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD151FA62641820200795D7C /* Sources */ = {
@@ -317,6 +368,7 @@
 		};
 		DD151FB32641820200795D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB6ABABCFBED4568643704E /* Pods-YDS-iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -343,6 +395,7 @@
 		};
 		DD151FB42641820200795D7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
