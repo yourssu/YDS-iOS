@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Toggle: UISwitch {
+public class Toggle: UISwitch {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
