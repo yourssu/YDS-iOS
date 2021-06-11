@@ -88,3 +88,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
