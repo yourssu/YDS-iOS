@@ -1,0 +1,102 @@
+//
+//  ViewController.swift
+//  YDS-Sample
+//
+//  Created by 김윤서 on 2021/06/11.
+//
+
+import UIKit
+import YDS_iOS
+import SnapKit
+
+class ViewController: UIViewController {
+    private let button : UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .blue
+        return btn
+    }()
+    
+    let label : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    let label2 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    let label3 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    let label4 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    let label5 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    let label6 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    
+    let label7 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    
+    let label8 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        label.font = .systemFont(ofSize: 100)
+        return label
+    }()
+    
+    let label9 : UILabel = {
+        let label = UILabel()
+        label.text = "안녕"
+        return label
+    }()
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUI()
+    }
+
+    @objc
+    private func onModalBtnClicked(_ sender: UIButton) {
+        print("ViewController - onModalBtnClicked()")
+        print("테이블 모달버튼이 선택되었다")
+        let vc = BottomSheet()
+        vc.addView(items: [label,label2,label3,label4,label5,label6,label7,label8,label9])
+        presentPanModal(vc)
+    }
+
+    private func setUI(){
+        view.addSubview(button)
+        
+        button.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.height.width.equalTo(50)
+        }
+        
+        button.addTarget(self, action: #selector(onModalBtnClicked(_:)), for: .touchUpInside)
+    }
+}
+

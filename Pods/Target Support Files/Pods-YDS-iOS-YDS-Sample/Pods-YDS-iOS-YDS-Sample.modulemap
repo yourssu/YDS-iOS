@@ -1,0 +1,6 @@
+framework module Pods_YDS_iOS_YDS_Sample {
+  umbrella header "Pods-YDS-iOS-YDS-Sample-umbrella.h"
+
+  export *
+  module * { export * }
+}

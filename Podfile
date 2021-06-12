@@ -10,4 +10,13 @@ target 'YDS-iOS' do
 
   # Pods for YDS-iOS
 
+target 'YDS-Sample' do
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'PanModal', '~> 1.2.7'
+
+  # Pods for YDS-Sample
+
 end
+
+end
+	

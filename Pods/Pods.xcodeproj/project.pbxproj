@@ -35,8 +35,10 @@
 		77C9889055A3B32EA13A9616824DB0ED /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AE457684C9022180EF973FB99CD66 /* ConstraintLayoutGuideDSL.swift */; };
 		7813A09B8F9242BBF63900D45EF15054 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		7C1702076F3A31D8D2D45A4A9F09B266 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE579D103BDB5E5B75ED94CD32997015 /* ConstraintMakerEditable.swift */; };
+		7FB0023201D23277EC80550D782BEAA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		80212493C474B326F66876261FA57C65 /* UIViewController+PanModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9DADD485C456B8E1585F08A8AEDE5 /* UIViewController+PanModalPresenter.swift */; };
 		8098DAF576BD71BF8514ECF921F96AA3 /* PanModalPresentable+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC952F6DA177F6369680F4AEAB099DA /* PanModalPresentable+UIViewController.swift */; };
+		80A8BE20606D3E7DBE02CF3038777430 /* Pods-YDS-iOS-YDS-Sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C23EF913E49A2D24193E69B90AFE898D /* Pods-YDS-iOS-YDS-Sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8277256ADEC3C4DCF79957D1CA681A9A /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABBEBC40AD38B70724F5EEE36AEA25 /* ConstraintDSL.swift */; };
 		83444168FD31011F7217EFA2684AE936 /* PanModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640001A5537E00CC3E6ACFBDDF0AE333 /* PanModalAnimator.swift */; };
 		8705BBF0D428BF0AE1B554A377ECC540 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA190B810CB82FD7BD63DB3E51671C2 /* ConstraintOffsetTarget.swift */; };
@@ -46,13 +48,14 @@
 		A270CD9EC3C541FE86E65AEDCEF500CF /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336FEF0821B89E44275B5A41122DA58C /* ConstraintLayoutGuide.swift */; };
 		A66ED57B365A35434C5BAF4B990819B7 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D09C387C1E78ACDE16C082D6D4883AB8 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC35C9341C4BB156BB26FDD237EE3721 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A95B732FFF9B3A4022A6758538461 /* ConstraintDirectionalInsets.swift */; };
-		B0CE820DB9F17BFD5081A6D843C84B6A /* Pods-YDS-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0825A74A6C58E1E40594FC690D29491 /* Pods-YDS-iOS-dummy.m */; };
+		B0CE820DB9F17BFD5081A6D843C84B6A /* Pods-YDS-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E263A36A6F628A7308B762F65189416B /* Pods-YDS-iOS-dummy.m */; };
 		B46152373E6CBC6791AAE85205C33F98 /* PanModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728036630806C8BD3B4D9444C0409AA /* PanModalPresentable.swift */; };
 		B599696DFEF6B2A5ECF528F4E5BB1846 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AD1B7E4284A4D6B14B186E2FD5161A /* ConstraintDescription.swift */; };
 		B780B272106411CBE258BB60FFC45410 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1CB6E6FC887B80CB6CF97C587F3102 /* Debugging.swift */; };
 		BD030684DB491453C175AA7F99C5DE13 /* PanModal.h in Headers */ = {isa = PBXBuildFile; fileRef = F90E0EDF00D574351276948B1136F8C9 /* PanModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BECA67DFB5E0984DFAEFCB775C31972E /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459BFCF71ECFAA7B728DD803BD28D077 /* ConstraintView.swift */; };
-		BFF74ABA4CA0FE3E95089F61D21A362E /* Pods-YDS-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 458D2472262604B08632DB38065E5561 /* Pods-YDS-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFF74ABA4CA0FE3E95089F61D21A362E /* Pods-YDS-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F21A8A5C5B747B026066CEC508130F8C /* Pods-YDS-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFFC5017BD87FA5C7EF6B8E0CBD0C688 /* Pods-YDS-iOS-YDS-Sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E227C2AEDD0A24E921898F5FBFF15C7F /* Pods-YDS-iOS-YDS-Sample-dummy.m */; };
 		C412F27D75AFC0DF0F0289DBB270931C /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB231298FF75CCC2FBD9716505C162 /* ConstraintMakerFinalizable.swift */; };
 		CC1243B8BA242EFCCB5DF3F7993F0C27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		CD7DC4E3DF9AD9EF9FD9E1C0C67C386B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -83,9 +86,24 @@
 			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
 			remoteInfo = SnapKit;
 		};
+		D92B21F156BD5E0E677C5961CDA3FA4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD16B149CC82594F15860A512FDBB6B9;
+			remoteInfo = PanModal;
+		};
+		FBE79DFC8464244D90434E14D35F83E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06349CF7316E36D8AE5F50BD2F489513 /* Pods-YDS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YDS-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		07022B14BDDB5FD68DE47A13AAB85120 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		07E3535113FBEE6316D4F88E765601E8 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		090603811B90A7CC5D0D06365E13D548 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
@@ -97,7 +115,9 @@
 		193822638861D1995920552FBB00FC94 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		1A94D11B78D16B2EB0B2BBD483518007 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		1CC952F6DA177F6369680F4AEAB099DA /* PanModalPresentable+UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PanModalPresentable+UIViewController.swift"; path = "PanModal/Presentable/PanModalPresentable+UIViewController.swift"; sourceTree = "<group>"; };
+		1EF14EBF1B25A7D26656A6763AFD1D73 /* Pods-YDS-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YDS-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1F377CBD0CC88F5338D9C6D5EC60687F /* PanContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanContainerView.swift; path = PanModal/View/PanContainerView.swift; sourceTree = "<group>"; };
+		20367615E41BC6E97916AD0DBA79E1E1 /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		25F0239D7151BD8B2E03A435287C46EC /* DimmedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DimmedView.swift; path = PanModal/View/DimmedView.swift; sourceTree = "<group>"; };
 		27C6E38A179B2F8A62E916149D52FE99 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		2B1CB6E6FC887B80CB6CF97C587F3102 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
@@ -105,11 +125,12 @@
 		31F7D60B4FF97337BBF4E91398DABBD7 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		3234BD89CE96ED009A312CA22F0CB72A /* PanModalPresentationAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresentationAnimator.swift; path = PanModal/Animator/PanModalPresentationAnimator.swift; sourceTree = "<group>"; };
 		336FEF0821B89E44275B5A41122DA58C /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		3909028AC846D1C21FA0709AA1319C4E /* Pods-YDS-iOS-YDS-Sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YDS-iOS-YDS-Sample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		395F465FB59A9BD08AF0A0E1D59A3A71 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
+		3AAFC3A62E5F1DE98C70188D0DE4A6C0 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		3BE1766E59DC26E179E84EF142BCF433 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YDS_iOS.framework; path = "Pods-YDS-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E790EDE459C2077CE0FDE7321AD43B0 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		410DA69D5353D9432DFECF9B098B3360 /* PanModalPresentable+LayoutHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PanModalPresentable+LayoutHelpers.swift"; path = "PanModal/Presentable/PanModalPresentable+LayoutHelpers.swift"; sourceTree = "<group>"; };
-		458D2472262604B08632DB38065E5561 /* Pods-YDS-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YDS-iOS-umbrella.h"; sourceTree = "<group>"; };
 		459BFCF71ECFAA7B728DD803BD28D077 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		4DCB231298FF75CCC2FBD9716505C162 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		50DA4AE5BEC31A71C0F958C535AE9101 /* PanModalHeight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalHeight.swift; path = PanModal/Presentable/PanModalHeight.swift; sourceTree = "<group>"; };
@@ -121,51 +142,65 @@
 		63AD1B7E4284A4D6B14B186E2FD5161A /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		640001A5537E00CC3E6ACFBDDF0AE333 /* PanModalAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalAnimator.swift; path = PanModal/Animator/PanModalAnimator.swift; sourceTree = "<group>"; };
 		6990E81F427F132614F4E38B72F71558 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		6AEA2E37AF58D8E159852C7AA6154B67 /* Pods_YDS_iOS_YDS_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YDS_iOS_YDS_Sample.framework; path = "Pods-YDS-iOS-YDS-Sample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAFB58C2B8BD15A95C1B47B1574D8B8 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		6E05977C6AA51DE581039DFAA4CD5CA7 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		6E9AFC5B18158CA11B41D0A69C862D6D /* Pods-YDS-iOS-YDS-Sample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YDS-iOS-YDS-Sample-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		75CED043BC54A57771D0BE4CCBE24000 /* PanModal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PanModal-umbrella.h"; sourceTree = "<group>"; };
-		784C8399C19FF2DAED37B4B302EF118D /* Pods-YDS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YDS-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		792FC363DB8C66108053607FECBFB085 /* Pods-YDS-iOS-YDS-Sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YDS-iOS-YDS-Sample-frameworks.sh"; sourceTree = "<group>"; };
 		798F66A25B41E7453288A2AE86113B32 /* PanModal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PanModal-Info.plist"; sourceTree = "<group>"; };
-		7EEC6B81EE4B84126D6B33244389710C /* Pods-YDS-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YDS-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		862A95B732FFF9B3A4022A6758538461 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		901D4A0D5C45B026B95DD0D48E519A12 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		9610600D0804610EB5411D4A34363F6A /* Pods-YDS-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YDS-iOS.modulemap"; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9843073B0F0E092FB9E2DB765F462E15 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		99DA6C1F70444C508817C617F7F1CEC3 /* PanModal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PanModal-dummy.m"; sourceTree = "<group>"; };
 		9A073C233FBAAAF647CDCBA5E46DE2A2 /* PanModalPresentationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresentationDelegate.swift; path = PanModal/Delegate/PanModalPresentationDelegate.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DD45149A0A6CF2CB7AA0787C2EEC62F /* Pods-YDS-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YDS-iOS-Info.plist"; sourceTree = "<group>"; };
+		9EBC3E2FA635EA18581BF9AB701E9548 /* Pods-YDS-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YDS-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		A03932FC8C2AE5FCF978219F368A3802 /* PanModalPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanModalPresenter.swift; path = PanModal/Presenter/PanModalPresenter.swift; sourceTree = "<group>"; };
 		A6C2EFC3293667C9C740D0EF99A6BC3E /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
 		A7DF59E15E83134DE60E2A570A2094BB /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		AC09EA8E5D23E81FFA20564FD1BCD7D1 /* PanModal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PanModal.release.xcconfig; sourceTree = "<group>"; };
-		B0825A74A6C58E1E40594FC690D29491 /* Pods-YDS-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YDS-iOS-dummy.m"; sourceTree = "<group>"; };
 		B0E5D6258FF6BF45574067D437C7EB94 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		B2ABBEBC40AD38B70724F5EEE36AEA25 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
-		B50E84231CD003DE68360464179497C0 /* Pods-YDS-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YDS-iOS-Info.plist"; sourceTree = "<group>"; };
+		BA86C851FAD9E687B5DD9AFAF8461215 /* Pods-YDS-iOS-YDS-Sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YDS-iOS-YDS-Sample-acknowledgements.plist"; sourceTree = "<group>"; };
 		BDAC3533204C860A49F1F30FB712CA95 /* PanModalPresentable+Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PanModalPresentable+Defaults.swift"; path = "PanModal/Presentable/PanModalPresentable+Defaults.swift"; sourceTree = "<group>"; };
 		C144EC4668B34DCBD1302D8684C798B9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		C23EF913E49A2D24193E69B90AFE898D /* Pods-YDS-iOS-YDS-Sample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YDS-iOS-YDS-Sample-umbrella.h"; sourceTree = "<group>"; };
 		C3F361820CE67F739497F4C2712D78F8 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		CB9B6C5DEF7C59A78CBE42E7FDC27D5A /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		D09C387C1E78ACDE16C082D6D4883AB8 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		D1CCF2424D09DC5446103353049A64BD /* Pods-YDS-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YDS-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D4120AA78104A16BE827C3488A21833C /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		D67F0339EF0A634FC07417A7E78CD305 /* PanModal-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PanModal-prefix.pch"; sourceTree = "<group>"; };
 		D6C9DADD485C456B8E1585F08A8AEDE5 /* UIViewController+PanModalPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+PanModalPresenter.swift"; path = "PanModal/Presenter/UIViewController+PanModalPresenter.swift"; sourceTree = "<group>"; };
 		DA7F03961B409EEEEA48DA972CACC78B /* PanModal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PanModal.debug.xcconfig; sourceTree = "<group>"; };
+		DD0C3A3FFACED1B39BE4769C22DFC896 /* Pods-YDS-iOS-YDS-Sample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YDS-iOS-YDS-Sample.modulemap"; sourceTree = "<group>"; };
 		DD2A73971D9FF28FA1919E28A229D811 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
+		E227C2AEDD0A24E921898F5FBFF15C7F /* Pods-YDS-iOS-YDS-Sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YDS-iOS-YDS-Sample-dummy.m"; sourceTree = "<group>"; };
+		E263A36A6F628A7308B762F65189416B /* Pods-YDS-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YDS-iOS-dummy.m"; sourceTree = "<group>"; };
 		E2D508666D0AB22311FFC5A7D6563A67 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		E3B119E8C9A04B298359875B1873E720 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		E508550C7C670F4A8ADC5184F82B11FA /* Pods-YDS-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YDS-iOS.modulemap"; sourceTree = "<group>"; };
 		EA0D645C0C833A004B83671D20020F9A /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		ED7A2B5081D5D3268AEB2291F42ECF7E /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		EE579D103BDB5E5B75ED94CD32997015 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		EF54EEF9B38A5976C5D36103B2F45D55 /* PanModal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PanModal.modulemap; sourceTree = "<group>"; };
-		F09A197BE4B65E3F1FC8E7E49E15EB3A /* Pods-YDS-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YDS-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		F21A8A5C5B747B026066CEC508130F8C /* Pods-YDS-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YDS-iOS-umbrella.h"; sourceTree = "<group>"; };
 		F90E0EDF00D574351276948B1136F8C9 /* PanModal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PanModal.h; path = PanModal/PanModal.h; sourceTree = "<group>"; };
-		FAA31D37D0CAACC632132CB3A1824F5B /* Pods-YDS-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YDS-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28F009838C87C0FB7A0676952DD2F50A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FB0023201D23277EC80550D782BEAA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C8B1704CC97EF12D3409771318C6433 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +228,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CEC3B140D588CFCE1EA890AE85CEC37 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6072B4F8674A64EF0865937E46821DFE /* Pods-YDS-iOS */,
+				A2C1AF6A1370BBD22A550470BD203F50 /* Pods-YDS-iOS-YDS-Sample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		552E6C557D196D67A05A635E96AD8706 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +252,22 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		6072B4F8674A64EF0865937E46821DFE /* Pods-YDS-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E508550C7C670F4A8ADC5184F82B11FA /* Pods-YDS-iOS.modulemap */,
+				D1CCF2424D09DC5446103353049A64BD /* Pods-YDS-iOS-acknowledgements.markdown */,
+				9EBC3E2FA635EA18581BF9AB701E9548 /* Pods-YDS-iOS-acknowledgements.plist */,
+				E263A36A6F628A7308B762F65189416B /* Pods-YDS-iOS-dummy.m */,
+				9DD45149A0A6CF2CB7AA0787C2EEC62F /* Pods-YDS-iOS-Info.plist */,
+				F21A8A5C5B747B026066CEC508130F8C /* Pods-YDS-iOS-umbrella.h */,
+				1EF14EBF1B25A7D26656A6763AFD1D73 /* Pods-YDS-iOS.debug.xcconfig */,
+				06349CF7316E36D8AE5F50BD2F489513 /* Pods-YDS-iOS.release.xcconfig */,
+			);
+			name = "Pods-YDS-iOS";
+			path = "Target Support Files/Pods-YDS-iOS";
 			sourceTree = "<group>";
 		};
 		65164E1FDB4BB3DA6E33470A4FB822C3 /* SnapKit */ = {
@@ -255,19 +315,12 @@
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		831A4B67041CBBCB7BA6501A5FDADFD2 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F64BDB9E37872877DC2376BD26EAA39D /* Pods-YDS-iOS */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		9AF8DDDED9C215E1845DC77A46AF7201 /* Products */ = {
+		874674F3543A9812EF16CC42B5E1E4F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				161277983660BBB6908A635083708CFB /* PanModal.framework */,
 				3BE1766E59DC26E179E84EF142BCF433 /* Pods_YDS_iOS.framework */,
+				6AEA2E37AF58D8E159852C7AA6154B67 /* Pods_YDS_iOS_YDS_Sample.framework */,
 				979486118B3E90C08386079D57962701 /* SnapKit.framework */,
 			);
 			name = Products;
@@ -286,6 +339,23 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SnapKit";
+			sourceTree = "<group>";
+		};
+		A2C1AF6A1370BBD22A550470BD203F50 /* Pods-YDS-iOS-YDS-Sample */ = {
+			isa = PBXGroup;
+			children = (
+				DD0C3A3FFACED1B39BE4769C22DFC896 /* Pods-YDS-iOS-YDS-Sample.modulemap */,
+				3909028AC846D1C21FA0709AA1319C4E /* Pods-YDS-iOS-YDS-Sample-acknowledgements.markdown */,
+				BA86C851FAD9E687B5DD9AFAF8461215 /* Pods-YDS-iOS-YDS-Sample-acknowledgements.plist */,
+				E227C2AEDD0A24E921898F5FBFF15C7F /* Pods-YDS-iOS-YDS-Sample-dummy.m */,
+				792FC363DB8C66108053607FECBFB085 /* Pods-YDS-iOS-YDS-Sample-frameworks.sh */,
+				6E9AFC5B18158CA11B41D0A69C862D6D /* Pods-YDS-iOS-YDS-Sample-Info.plist */,
+				C23EF913E49A2D24193E69B90AFE898D /* Pods-YDS-iOS-YDS-Sample-umbrella.h */,
+				3AAFC3A62E5F1DE98C70188D0DE4A6C0 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */,
+				20367615E41BC6E97916AD0DBA79E1E1 /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */,
+			);
+			name = "Pods-YDS-iOS-YDS-Sample";
+			path = "Target Support Files/Pods-YDS-iOS-YDS-Sample";
 			sourceTree = "<group>";
 		};
 		A9453B41D1CEEE6955D4FAD7B0C75FCE /* PanModal */ = {
@@ -317,8 +387,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				552E6C557D196D67A05A635E96AD8706 /* Pods */,
-				9AF8DDDED9C215E1845DC77A46AF7201 /* Products */,
-				831A4B67041CBBCB7BA6501A5FDADFD2 /* Targets Support Files */,
+				874674F3543A9812EF16CC42B5E1E4F7 /* Products */,
+				0CEC3B140D588CFCE1EA890AE85CEC37 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,22 +398,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F64BDB9E37872877DC2376BD26EAA39D /* Pods-YDS-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9610600D0804610EB5411D4A34363F6A /* Pods-YDS-iOS.modulemap */,
-				FAA31D37D0CAACC632132CB3A1824F5B /* Pods-YDS-iOS-acknowledgements.markdown */,
-				F09A197BE4B65E3F1FC8E7E49E15EB3A /* Pods-YDS-iOS-acknowledgements.plist */,
-				B0825A74A6C58E1E40594FC690D29491 /* Pods-YDS-iOS-dummy.m */,
-				B50E84231CD003DE68360464179497C0 /* Pods-YDS-iOS-Info.plist */,
-				458D2472262604B08632DB38065E5561 /* Pods-YDS-iOS-umbrella.h */,
-				7EEC6B81EE4B84126D6B33244389710C /* Pods-YDS-iOS.debug.xcconfig */,
-				784C8399C19FF2DAED37B4B302EF118D /* Pods-YDS-iOS.release.xcconfig */,
-			);
-			name = "Pods-YDS-iOS";
-			path = "Target Support Files/Pods-YDS-iOS";
 			sourceTree = "<group>";
 		};
 		FEF573F23E8C87AF5FE45B6E82EB97FC /* Support Files */ = {
@@ -389,6 +443,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FEBF8745023A74ED1B98F1BB35F7D1B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80A8BE20606D3E7DBE02CF3038777430 /* Pods-YDS-iOS-YDS-Sample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +470,26 @@
 			name = SnapKit;
 			productName = SnapKit;
 			productReference = 979486118B3E90C08386079D57962701 /* SnapKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		21D93C5D7F70D60DFB193A13C119A630 /* Pods-YDS-iOS-YDS-Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBC71D4FF5320C84104A64B1045FFB6E /* Build configuration list for PBXNativeTarget "Pods-YDS-iOS-YDS-Sample" */;
+			buildPhases = (
+				9FEBF8745023A74ED1B98F1BB35F7D1B /* Headers */,
+				267617A2A7CCCC69551A2F80D65D3A9E /* Sources */,
+				28F009838C87C0FB7A0676952DD2F50A /* Frameworks */,
+				F6F7E3803EB812C92A7FF133C9A909F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA5F42BD69A1788DE4BA403D930DF35C /* PBXTargetDependency */,
+				94A56A2C53450E3D0086172CAA58A1C4 /* PBXTargetDependency */,
+			);
+			name = "Pods-YDS-iOS-YDS-Sample";
+			productName = "Pods-YDS-iOS-YDS-Sample";
+			productReference = 6AEA2E37AF58D8E159852C7AA6154B67 /* Pods_YDS_iOS_YDS_Sample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		838299093649825A9AAFBA60F43E0C47 /* Pods-YDS-iOS */ = {
@@ -466,12 +548,13 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 9AF8DDDED9C215E1845DC77A46AF7201 /* Products */;
+			productRefGroup = 874674F3543A9812EF16CC42B5E1E4F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AD16B149CC82594F15860A512FDBB6B9 /* PanModal */,
 				838299093649825A9AAFBA60F43E0C47 /* Pods-YDS-iOS */,
+				21D93C5D7F70D60DFB193A13C119A630 /* Pods-YDS-iOS-YDS-Sample */,
 				19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */,
 			);
 		};
@@ -499,6 +582,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6F7E3803EB812C92A7FF133C9A909F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,6 +597,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CE820DB9F17BFD5081A6D843C84B6A /* Pods-YDS-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		267617A2A7CCCC69551A2F80D65D3A9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFFC5017BD87FA5C7EF6B8E0CBD0C688 /* Pods-YDS-iOS-YDS-Sample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,11 +676,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		94A56A2C53450E3D0086172CAA58A1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
+			targetProxy = FBE79DFC8464244D90434E14D35F83E8 /* PBXContainerItemProxy */;
+		};
 		A99217A40578BBD130A0B3567E80AEDE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
 			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
 			targetProxy = 7279EA1AB6A2F81CD654D9B6543EF004 /* PBXContainerItemProxy */;
+		};
+		CA5F42BD69A1788DE4BA403D930DF35C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PanModal;
+			target = AD16B149CC82594F15860A512FDBB6B9 /* PanModal */;
+			targetProxy = D92B21F156BD5E0E677C5961CDA3FA4B /* PBXContainerItemProxy */;
 		};
 		ED99E8C87E58AFB62A499513DFA18DD5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -756,6 +866,43 @@
 			};
 			name = Debug;
 		};
+		7779E5C90BC7044C28B6297264D3E8C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AAFC3A62E5F1DE98C70188D0DE4A6C0 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		77B25FC9CEE66CA6521DBC2E6517BD97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E790EDE459C2077CE0FDE7321AD43B0 /* SnapKit.debug.xcconfig */;
@@ -829,7 +976,7 @@
 		};
 		A714DAA6730A86AC900E47BB7F41CFA0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 784C8399C19FF2DAED37B4B302EF118D /* Pods-YDS-iOS.release.xcconfig */;
+			baseConfigurationReference = 06349CF7316E36D8AE5F50BD2F489513 /* Pods-YDS-iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -851,6 +998,44 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-YDS-iOS/Pods-YDS-iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B972B460D4B1A4181EA73FFD4158D885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20367615E41BC6E97916AD0DBA79E1E1 /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -903,7 +1088,7 @@
 		};
 		F9B4CA590BCDDC894C08EAEF11FFB07C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EEC6B81EE4B84126D6B33244389710C /* Pods-YDS-iOS.debug.xcconfig */;
+			baseConfigurationReference = 1EF14EBF1B25A7D26656A6763AFD1D73 /* Pods-YDS-iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -973,6 +1158,15 @@
 			buildConfigurations = (
 				75130F8485AD2141BF95E2A3652EC5AD /* Debug */,
 				E3EFEB79558584C2D71F97C035C74761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBC71D4FF5320C84104A64B1045FFB6E /* Build configuration list for PBXNativeTarget "Pods-YDS-iOS-YDS-Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7779E5C90BC7044C28B6297264D3E8C7 /* Debug */,
+				B972B460D4B1A4181EA73FFD4158D885 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
