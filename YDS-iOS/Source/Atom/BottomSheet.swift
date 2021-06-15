@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 public class BottomSheet: UIViewController{
-    let vStack: UIStackView = {
+    private let vStack: UIStackView = {
         let vStack = UIStackView()
         vStack.axis = .vertical
         vStack.spacing = 0
@@ -99,10 +99,12 @@ extension BottomSheet : PanModalPresentable{
         
         if stackHeight + 40 < minHeight{
             contentHeight = minHeight
-        }else if stackHeight > UIScreen.main.bounds.height - 88{
+        }
+        else if stackHeight > UIScreen.main.bounds.height - 88{
             contentHeight =  UIScreen.main.bounds.height - 88
             panScrollable?.isScrollEnabled = true
-        }else{
+        }
+        else{
             contentHeight = stackHeight+40
         }
         
