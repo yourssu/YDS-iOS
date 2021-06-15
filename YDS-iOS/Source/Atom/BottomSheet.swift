@@ -36,16 +36,16 @@ public class BottomSheet: UIViewController{
         if let scrollView = panScrollable{
             view.addSubview(scrollView)
 
-            scrollView.snp.makeConstraints { (make) in
-                make.edges.equalToSuperview()
+            scrollView.snp.makeConstraints {
+                $0.edges.equalToSuperview()
             }
             
             scrollView.addSubview(contentView)
             
-            contentView.snp.makeConstraints { (make) in
-                make.edges.equalTo(0)
-                make.width.equalTo(UIScreen.main.bounds.width)
-                make.height.equalTo(UIScreen.main.bounds.height)
+            contentView.snp.makeConstraints {
+                $0.edges.equalTo(0)
+                $0.width.equalTo(UIScreen.main.bounds.width)
+                $0.height.equalTo(UIScreen.main.bounds.height)
             }
                     
             contentView.addSubview(vStack)
