@@ -67,7 +67,7 @@ extension BottomSheet : PanModalPresentable{
     }
     
     public var transitionDuration: Double{
-        return Animation.Duration.m
+        return Animation.Duration.medium
     }
     
     public var transitionAnimationOptions: UIView.AnimationOptions{
