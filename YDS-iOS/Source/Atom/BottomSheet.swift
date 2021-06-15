@@ -94,20 +94,25 @@ extension BottomSheet : PanModalPresentable{
         let stackHeight = vStack.frame.height
         vStack.layoutIfNeeded()
         
-        let minHeight : CGFloat = 88.0
         var contentHeight : CGFloat = 0.0
+        let padding : CGFloat = 40.0
         
-        if stackHeight + 40 < minHeight{
-            contentHeight = minHeight
+        if stackHeight + padding < BottomSheetHeight.min{
+            contentHeight = BottomSheetHeight.min
         }
-        else if stackHeight > Screen.height - 88{
-            contentHeight =   Screen.height - 88
+        else if stackHeight > BottomSheetHeight.max{
+            contentHeight = BottomSheetHeight.max
             panScrollable?.isScrollEnabled = true
         }
         else{
-            contentHeight = stackHeight+40
+            contentHeight = stackHeight + padding
         }
         
         return .contentHeight(contentHeight)
     }
+}
+
+fileprivate enum BottomSheetHeight{
+    static let min : CGFloat = 88.0
+    static let max : CGFloat = Screen.height - 88.0
 }
