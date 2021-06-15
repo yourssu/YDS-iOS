@@ -44,8 +44,8 @@ public class BottomSheet: UIViewController{
             
             contentView.snp.makeConstraints {
                 $0.edges.equalTo(0)
-                $0.width.equalTo(UIScreen.main.bounds.width)
-                $0.height.equalTo(UIScreen.main.bounds.height)
+                $0.width.equalTo(Screen.width)
+                $0.height.equalTo(Screen.height)
             }
                     
             contentView.addSubview(vStack)
@@ -67,11 +67,11 @@ extension BottomSheet : PanModalPresentable{
     }
     
     public var transitionDuration: Double{
-        return 0.25
+        return Animation.Duration.medium
     }
     
     public var transitionAnimationOptions: UIView.AnimationOptions{
-        return .curveEaseInOut
+        return Animation.Options.curveEaseInOut
     }
     
     public var allowsDragToDismiss: Bool{
@@ -100,8 +100,8 @@ extension BottomSheet : PanModalPresentable{
         if stackHeight + 40 < minHeight{
             contentHeight = minHeight
         }
-        else if stackHeight > UIScreen.main.bounds.height - 88{
-            contentHeight =  UIScreen.main.bounds.height - 88
+        else if stackHeight > Screen.height - 88{
+            contentHeight =   Screen.height - 88
             panScrollable?.isScrollEnabled = true
         }
         else{
