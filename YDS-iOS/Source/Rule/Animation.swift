@@ -9,7 +9,7 @@ import UIKit
 
 internal enum Animation{
     internal enum Duration{
-        internal static let s = 0.1
+        internal static let s = 0.01
         internal static let m = 0.25
     }
     
