@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     let label : UILabel = {
         let label = UILabel()
         label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
+        label.font = .systemFont(ofSize: 10)
         return label
     }()
     let label2 : UILabel = {
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         print("ViewController - onModalBtnClicked()")
         print("테이블 모달버튼이 선택되었다")
         let vc = BottomSheet()
-        vc.addView(items: [label,label2,label3,label4,label5,label6,label7,label8,label9])
+        vc.addViews(views: [label,label2,label3,label4,label5,label6,label7])
         presentPanModal(vc)
     }
 

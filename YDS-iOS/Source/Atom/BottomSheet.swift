@@ -20,29 +20,58 @@ public class BottomSheet: UIViewController{
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(vStack)
-
-        vStack.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(20)
-            $0.centerX.equalToSuperview()
+        setScrollView()
+    }
+    
+    public func addViews(views : [UIView]){
+        views.forEach {
+            vStack.addArrangedSubview($0)
         }
     }
     
-    public func addView(items : [UIView]){
-        items.forEach {
-            vStack.addArrangedSubview($0)
+    private func setScrollView(){
+        
+        let contentView = UIView()
+        
+        if let scrollView = panScrollable{
+            view.addSubview(scrollView)
+
+            scrollView.snp.makeConstraints { (make) in
+                make.edges.equalToSuperview()
+            }
+            
+            scrollView.addSubview(contentView)
+            
+            contentView.snp.makeConstraints { (make) in
+                make.edges.equalTo(0)
+                make.width.equalTo(UIScreen.main.bounds.width)
+                make.height.equalTo(UIScreen.main.bounds.height)
+            }
+                    
+            contentView.addSubview(vStack)
+            
+            vStack.snp.makeConstraints {
+                $0.top.equalTo(contentView.snp.top).offset(20)
+                $0.centerX.equalTo(contentView)
+            }
         }
     }
 }
 
 extension BottomSheet : PanModalPresentable{
-    
     public var panScrollable: UIScrollView? {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+300)
-        scrollView.isScrollEnabled = true
+        scrollView.backgroundColor = YDSColor.bgNormal
+        scrollView.isScrollEnabled = false
         return scrollView
+    }
+    
+    public var transitionDuration: Double{
+        return 0.25
+    }
+    
+    public var transitionAnimationOptions: UIView.AnimationOptions{
+        return .curveEaseInOut
     }
     
     public var allowsDragToDismiss: Bool{
@@ -54,27 +83,29 @@ extension BottomSheet : PanModalPresentable{
     }
     
     public var cornerRadius: CGFloat{
-        return 8
+        return Constant.Rounding.r8
     }
     
-    public var shortFormHeight: PanModalHeight {
-        return .contentHeight(300)
+    public var panModalBackgroundColor: UIColor{
+        return YDSColor.dimNormal
     }
 
     public var longFormHeight: PanModalHeight {
         let stackHeight = vStack.frame.height
         vStack.layoutIfNeeded()
-        print(stackHeight)
-        return .contentHeight(stackHeight+40)
+        
+        let minHeight : CGFloat = 88.0
+        var contentHeight : CGFloat = 0.0
+        
+        if stackHeight + 40 < minHeight{
+            contentHeight = minHeight
+        }else if stackHeight > UIScreen.main.bounds.height - 88{
+            contentHeight =  UIScreen.main.bounds.height - 88
+            panScrollable?.isScrollEnabled = true
+        }else{
+            contentHeight = stackHeight+40
+        }
+        
+        return .contentHeight(contentHeight)
     }
-    
-//    public var anchorModalToLongForm: Bool {
-//        return false
-//    }
-    
-    public var allowsExtendedPanScrolling: Bool{
-        return false
-    }
-
 }
-
