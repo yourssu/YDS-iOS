@@ -81,8 +81,6 @@ class ViewController: UIViewController {
 
     @objc
     private func onModalBtnClicked(_ sender: UIButton) {
-        print("ViewController - onModalBtnClicked()")
-        print("테이블 모달버튼이 선택되었다")
         let vc = BottomSheet()
         vc.addViews(views: [label,label2,label3,label4,label5,label6,label7])
         presentPanModal(vc)
