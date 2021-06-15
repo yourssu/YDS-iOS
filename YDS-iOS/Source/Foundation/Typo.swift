@@ -16,11 +16,11 @@ fileprivate extension UIFont{
     class var font14semibold : UIFont { UIFont.systemFont(ofSize: 14, weight: .semibold) }
     class var font16semibold : UIFont { UIFont.systemFont(ofSize: 16, weight: .semibold) }
     class var font20semibold : UIFont { UIFont.systemFont(ofSize: 20, weight: .semibold) }
-    class var font24semibold : UIFont { UIFont.systemFont(ofSize: 24, weight: .semibold) }
     
     class var font12medium : UIFont { UIFont.systemFont(ofSize: 12, weight: .medium) }
     class var font16medium : UIFont { UIFont.systemFont(ofSize: 16, weight: .medium) }
     
+    class var font24bold: UIFont { UIFont.systemFont(ofSize: 24, weight: .bold) }
     class var font28bold: UIFont { UIFont.systemFont(ofSize: 28, weight: .bold) }
 }
 
@@ -56,7 +56,7 @@ extension String{
                 finalFont = .font28bold
                 finalLineHeight = finalFont.pointSize * lineHeight130
             case .title2:
-                finalFont = .font24semibold
+                finalFont = .font24bold
                 finalLineHeight = finalFont.pointSize * lineHeight130
             case .subtitle1:
                 finalFont = .font20semibold
