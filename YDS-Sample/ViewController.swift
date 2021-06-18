@@ -72,6 +72,20 @@ class ViewController: UIViewController {
         label.text = "안녕"
         return label
     }()
+    
+    let icon: Icon = {
+        let icon = Icon(image: ic.ground.line)
+        icon.tintColor = YDSColor.textPointed
+        icon.size = .medium
+        return icon
+    }()
+    
+    let icon2: Icon = {
+        let icon = Icon(image: ic2.icGroundLine)
+        icon.tintColor = YDSColor.textPointed
+        icon.size = .medium
+        return icon
+    }()
 
 
     override func viewDidLoad() {
@@ -87,14 +101,19 @@ class ViewController: UIViewController {
     }
 
     private func setUI(){
-        view.addSubview(button)
+        view.addSubview(icon)
+        view.addSubview(icon2)
         
-        button.snp.makeConstraints {
+        icon.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
             $0.height.width.equalTo(50)
         }
         
-        button.addTarget(self, action: #selector(onModalBtnClicked(_:)), for: .touchUpInside)
-    }
+        icon2.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(icon.snp.bottom).offset(50)
+            $0.height.width.equalTo(50)
+        }
+     }
 }
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		536FCA50267CD25300158DFD /* Iconography.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* Iconography.xcassets */; };
+		536FCA53267CD27000158DFD /* Iconography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536FCA52267CD27000158DFD /* Iconography.swift */; };
+		536FCA57267CD34600158DFD /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536FCA56267CD34600158DFD /* Icon.swift */; };
+		536FCA5B267CE0C300158DFD /* Iconography2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536FCA5A267CE0C300158DFD /* Iconography2.swift */; };
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
 		53A31B5E266F500300461C29 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
@@ -56,6 +60,10 @@
 /* Begin PBXFileReference section */
 		3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		536FCA4F267CD25300158DFD /* Iconography.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Iconography.xcassets; sourceTree = "<group>"; };
+		536FCA52267CD27000158DFD /* Iconography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iconography.swift; sourceTree = "<group>"; };
+		536FCA56267CD34600158DFD /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		536FCA5A267CE0C300158DFD /* Iconography2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iconography2.swift; sourceTree = "<group>"; };
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +180,7 @@
 				DD6C63D526429C6C004CFF46 /* Label.swift */,
 				53A31B5D266F500300461C29 /* Toggle.swift */,
 				DD48C1EB26735052004B288E /* BottomSheet.swift */,
+				536FCA56267CD34600158DFD /* Icon.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -182,6 +191,9 @@
 				DD6C6383264286FB004CFF46 /* Typo.swift */,
 				DDDC3C79265E7072007ED3FE /* BasicColor.swift */,
 				DDDC3C81265E8276007ED3FE /* SemanticColor.swift */,
+				536FCA52267CD27000158DFD /* Iconography.swift */,
+				536FCA5A267CE0C300158DFD /* Iconography2.swift */,
+				536FCA4F267CD25300158DFD /* Iconography.xcassets */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -307,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536FCA50267CD25300158DFD /* Iconography.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,14 +405,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */,
+				536FCA53267CD27000158DFD /* Iconography.swift in Sources */,
 				DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */,
 				DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */,
 				5394692E2663D6DB003D7A44 /* Constant.swift in Sources */,
 				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
+				536FCA5B267CE0C300158DFD /* Iconography2.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* Typo.swift in Sources */,
 				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
 				DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */,
 				DD6C63D626429C6C004CFF46 /* Label.swift in Sources */,
+				536FCA57267CD34600158DFD /* Icon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
