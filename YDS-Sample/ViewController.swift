@@ -74,19 +74,11 @@ class ViewController: UIViewController {
     }()
     
     let icon: Icon = {
-        let icon = Icon(image: ic.ground.line)
-        icon.tintColor = YDSColor.textPointed
-        icon.size = .medium
-        return icon
-    }()
-    
-    let icon2: Icon = {
-        let icon = Icon(image: ic2.icGroundLine)
-        icon.tintColor = YDSColor.textPointed
-        icon.size = .medium
-        return icon
-    }()
-
+            let icon = Icon(image: ic.ground.line)
+            icon.tintColor = YDSColor.textPointed
+            icon.size = .medium
+            return icon
+        }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,18 +93,10 @@ class ViewController: UIViewController {
     }
 
     private func setUI(){
-        view.addSubview(icon)
-        view.addSubview(icon2)
-        
-        icon.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.height.width.equalTo(50)
-        }
-        
-        icon2.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(icon.snp.bottom).offset(50)
-            $0.height.width.equalTo(50)
+        self.view.addSubview(icon)
+        icon.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalToSuperview()
+            make.width.height.equalTo(200)
         }
      }
 }
