@@ -72,6 +72,13 @@ class ViewController: UIViewController {
         label.text = "안녕"
         return label
     }()
+    
+    let divider: YDSDivider = {
+        let divider = YDSDivider()
+        divider.thickness = .thin
+        divider.axis = .vertical
+        return divider
+    }()
 
 
     override func viewDidLoad() {
@@ -88,6 +95,12 @@ class ViewController: UIViewController {
 
     private func setUI(){
         view.addSubview(button)
+        view.addSubview(divider)
+        
+        divider.snp.makeConstraints {
+            $0.height.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
+        }
         
         button.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
