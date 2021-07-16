@@ -1,5 +1,5 @@
 //
-//  Typo.swift
+//  YDSLabel.swift
 //  YDS-iOS
 //
 //  Created by 김윤서 on 2021/05/05.
@@ -7,38 +7,64 @@
 
 import UIKit
 
-fileprivate extension UIFont{
-    class var font11 : UIFont { UIFont.systemFont(ofSize: 11, weight: .regular) }
-    class var font12 : UIFont { UIFont.systemFont(ofSize: 12, weight: .regular) }
-    class var font14 : UIFont { UIFont.systemFont(ofSize: 14, weight: .regular) }
-    class var font15 : UIFont { UIFont.systemFont(ofSize: 15, weight: .regular) }
+public class YDSLabel: UILabel {
+    public var style : String.TypoStyle {
+        didSet {
+            setAttributedText()
+        }
+    }
     
-    class var font14semibold : UIFont { UIFont.systemFont(ofSize: 14, weight: .semibold) }
-    class var font16semibold : UIFont { UIFont.systemFont(ofSize: 16, weight: .semibold) }
-    class var font20semibold : UIFont { UIFont.systemFont(ofSize: 20, weight: .semibold) }
+    public init(style: String.TypoStyle) {
+        self.style = style
+        super.init(frame: CGRect.zero)
+    }
     
-    class var font12medium : UIFont { UIFont.systemFont(ofSize: 12, weight: .medium) }
-    class var font16medium : UIFont { UIFont.systemFont(ofSize: 16, weight: .medium) }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    class var font24bold: UIFont { UIFont.systemFont(ofSize: 24, weight: .bold) }
-    class var font28bold: UIFont { UIFont.systemFont(ofSize: 28, weight: .bold) }
-}
+    public override var text: String? {
+        didSet {
+            setAttributedText()
+        }
+    }
 
+    public override var textColor: UIColor! {
+        didSet {
+            setAttributedText()
+        }
+    }
+    
+    private func setAttributedText() {
+        if let text = self.text {
+            if let color = textColor {
+                self.attributedText = text.attributedString(byPreset: style, color: color)
+            } else {
+                self.attributedText = text.attributedString(byPreset: style)
+            }
+        }
+    }
+}
 
 extension String{
     public enum TypoStyle{
         case title1
         case title2
+        case title3
+        
         case subtitle1
         case subtitle2
         case subtitle3
+        
         case body1
         case body2
+        
         case button0
         case button1
         case button2
         case button3
         case button4
+        
         case caption1
         case caption2
         
@@ -53,46 +79,53 @@ extension String{
     
             switch self {
             case .title1:
-                finalFont = .font28bold
+                finalFont = YDSFont.title1
                 finalLineHeight = finalFont.pointSize * lineHeight130
             case .title2:
-                finalFont = .font24bold
+                finalFont = YDSFont.title2
                 finalLineHeight = finalFont.pointSize * lineHeight130
+            case .title3:
+                finalFont = YDSFont.title3
+                finalLineHeight = finalFont.pointSize * lineHeight130
+                
             case .subtitle1:
-                finalFont = .font20semibold
+                finalFont = YDSFont.subtitle1
                 finalLineHeight = finalFont.pointSize * lineHeight130
             case .subtitle2:
-                finalFont = .font16semibold
+                finalFont = YDSFont.subtitle2
                 finalLineHeight = finalFont.pointSize * lineHeight130
             case .subtitle3:
-                finalFont = .font14semibold
+                finalFont = YDSFont.subtitle3
                 finalLineHeight = finalFont.pointSize * lineHeight130
+                
             case .body1:
-                finalFont = .font15
+                finalFont = YDSFont.body1
                 finalLineHeight = finalFont.pointSize * lineHeight160
             case .body2:
-                finalFont = .font14
+                finalFont = YDSFont.body2
                 finalLineHeight = finalFont.pointSize * lineHeight160
+                
             case .button0:
-                finalFont = .font16medium
+                finalFont = YDSFont.button0
                 finalLineHeight = finalFont.pointSize * lineHeight100
             case .button1:
-                finalFont = .font16semibold
+                finalFont = YDSFont.button1
                 finalLineHeight = finalFont.pointSize * lineHeight100
             case .button2:
-                finalFont = .font14semibold
+                finalFont = YDSFont.button2
                 finalLineHeight = finalFont.pointSize * lineHeight100
             case .button3:
-                finalFont = .font14
+                finalFont = YDSFont.button3
                 finalLineHeight = finalFont.pointSize * lineHeight100
             case .button4:
-                finalFont = .font12medium
+                finalFont = YDSFont.button4
                 finalLineHeight = finalFont.pointSize * lineHeight100
+                
             case .caption1:
-                finalFont = .font12
+                finalFont = YDSFont.caption1
                 finalLineHeight = finalFont.pointSize * lineHeight130
             case .caption2:
-                finalFont = .font11
+                finalFont = YDSFont.caption2
                 finalLineHeight = finalFont.pointSize * lineHeight130
             }
         

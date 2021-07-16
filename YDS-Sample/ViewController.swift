@@ -16,63 +16,95 @@ class ViewController: UIViewController {
         return btn
     }()
     
-    let label : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 10)
-        return label
-    }()
-    let label2 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
-        return label
-    }()
-    let label3 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
-        return label
-    }()
-    let label4 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
-        return label
-    }()
-    let label5 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
-        return label
-    }()
-    let label6 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
+    let title1Label: YDSLabel = {
+        let label = YDSLabel(style: .title1)
+        label.text = "title1 타이틀1"
         return label
     }()
     
-    let label7 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
+    let title2Label: YDSLabel = {
+        let label = YDSLabel(style: .title2)
+        label.text = "title2 타이틀2"
         return label
     }()
     
-    let label8 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
-        label.font = .systemFont(ofSize: 100)
+    let title3Label: YDSLabel = {
+        let label = YDSLabel(style: .title3)
+        label.text = "title3 타이틀3"
         return label
     }()
     
-    let label9 : UILabel = {
-        let label = UILabel()
-        label.text = "안녕"
+    let subtitle1Label: YDSLabel = {
+        let label = YDSLabel(style: .subtitle1)
+        label.text = "subtitle1 서브타이틀1"
         return label
     }()
-
+    
+    let subtitle2Label: YDSLabel = {
+        let label = YDSLabel(style: .subtitle2)
+        label.text = "subtitle2 서브타이틀2"
+        return label
+    }()
+    
+    let subtitle3Label: YDSLabel = {
+        let label = YDSLabel(style: .subtitle3)
+        label.text = "subtitle3 서브타이틀3"
+        return label
+    }()
+    
+    let body1Label: YDSLabel = {
+        let label = YDSLabel(style: .body1)
+        label.text = "body1 바디1"
+        return label
+    }()
+    
+    let body2Label: YDSLabel = {
+        let label = YDSLabel(style: .body2)
+        label.text = "body2 바디2"
+        return label
+    }()
+    
+    let button0Label: YDSLabel = {
+        let label = YDSLabel(style: .button0)
+        label.text = "button0 버튼0"
+        return label
+    }()
+    
+    let button1Label: YDSLabel = {
+        let label = YDSLabel(style: .button1)
+        label.text = "button1 버튼1"
+        return label
+    }()
+    
+    let button2Label: YDSLabel = {
+        let label = YDSLabel(style: .button2)
+        label.text = "button2 버튼2"
+        return label
+    }()
+    
+    let button3Label: YDSLabel = {
+        let label = YDSLabel(style: .button3)
+        label.text = "button3 버튼3"
+        return label
+    }()
+    
+    let button4Label: YDSLabel = {
+        let label = YDSLabel(style: .button4)
+        label.text = "button4 버튼4"
+        return label
+    }()
+    
+    let caption1Label: YDSLabel = {
+        let label = YDSLabel(style: .caption1)
+        label.text = "caption1 캡션1"
+        return label
+    }()
+    
+    let caption2Label: YDSLabel = {
+        let label = YDSLabel(style: .caption2)
+        label.text = "caption2 캡션2"
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +114,27 @@ class ViewController: UIViewController {
     @objc
     private func onModalBtnClicked(_ sender: UIButton) {
         let vc = BottomSheet()
-        vc.addViews(views: [label,label2,label3,label4,label5,label6,label7])
+        vc.addViews(views: [
+                        title1Label,
+                        title2Label,
+                        title3Label,
+            
+                        subtitle1Label,
+                        subtitle2Label,
+                        subtitle3Label,
+            
+                        body1Label,
+                        body2Label,
+            
+                        button0Label,
+                        button1Label,
+                        button2Label,
+                        button3Label,
+                        button4Label,
+            
+                        caption1Label,
+                        caption2Label
+        ])
         presentPanModal(vc)
     }
 
