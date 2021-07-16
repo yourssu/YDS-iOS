@@ -1,5 +1,5 @@
 //
-//  YDSIconImage.swift
+//  YDSIconView.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/07/13.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class YDSIconImage: UIImageView {
+public class YDSIconView: UIImageView {
     
     public enum IconSize: Int {
         case extraSmall = 16
