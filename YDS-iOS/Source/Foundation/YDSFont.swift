@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class YDSFont: UIFont {
+public enum YDSFont {
     public static var title1: UIFont { UIFont.systemFont(ofSize: 28, weight: .bold) }
     public static var title2: UIFont { UIFont.systemFont(ofSize: 24, weight: .bold) }
     public static var title3: UIFont { UIFont.systemFont(ofSize: 20, weight: .bold) }
