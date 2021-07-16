@@ -21,9 +21,8 @@ public class YDSIconImage: UIImageView {
         didSet { setIconSize() }
     }
         
-    public init(icon: UIImage?) {
+    public init() {
         super.init(frame: CGRect.zero)
-        self.image = icon
         setIconSize()
     }
     
@@ -36,5 +35,6 @@ public class YDSIconImage: UIImageView {
             $0.height.width.equalTo(size.rawValue)
         }
     }
+    
 }
 

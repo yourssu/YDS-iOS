@@ -11,7 +11,8 @@ import SnapKit
 
 class ViewController: UIViewController {
     let icon: YDSIconImage = {
-        let icon = YDSIconImage(icon: YDSIcon.adbadgeLine)
+        let icon = YDSIconImage()
+        icon.image = YDSIcon.adbadgeFilled
         icon.tintColor = YDSColor.textPointed
         icon.size = .medium
         return icon
