@@ -20,11 +20,11 @@ public class YDSDivider: UIView {
     }
     
     public var thickness: DividerThickness = .thin {
-        didSet { setupView() }
+        didSet { setThickness() }
     }
     
     public var axis: DividerAxis = .horizontal {
-        didSet { setupView() }
+        didSet { setAxis() }
     }
     
     private var thicknessRawValue: CGFloat = Constant.Border.thick
@@ -39,6 +39,11 @@ public class YDSDivider: UIView {
     }
     
     private func setupView() {
+        setThickness()
+        setAxis()
+    }
+    
+    private func setThickness() {
         switch thickness {
         case .thin:
             self.thicknessRawValue = Constant.Border.thin
@@ -47,7 +52,9 @@ public class YDSDivider: UIView {
             self.thicknessRawValue = Constant.Border.thick
             self.backgroundColor = YDSColor.borderThin
         }
-        
+    }
+    
+    private func setAxis() {
         switch axis {
         case .horizontal:
             self.snp.removeConstraints()
