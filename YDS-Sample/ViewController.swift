@@ -75,8 +75,8 @@ class ViewController: UIViewController {
     
     let divider: YDSDivider = {
         let divider = YDSDivider()
+        divider.direction = .horizontal
         divider.thickness = .thin
-        divider.axis = .vertical
         return divider
     }()
 
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
         view.addSubview(divider)
         
         divider.snp.makeConstraints {
-            $0.height.equalToSuperview()
+            $0.width.equalToSuperview()
             $0.centerX.centerY.equalToSuperview()
         }
         
