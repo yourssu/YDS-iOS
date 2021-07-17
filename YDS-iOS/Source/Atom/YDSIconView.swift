@@ -20,7 +20,7 @@ public class YDSIconView: UIImageView {
     public var size: IconSize = .medium {
         didSet { setIconSize() }
     }
-        
+    
     public init() {
         super.init(frame: CGRect.zero)
         setIconSize()
@@ -31,7 +31,7 @@ public class YDSIconView: UIImageView {
     }
     
     private func setIconSize() {
-        self.snp.makeConstraints {
+        self.snp.updateConstraints {
             $0.height.width.equalTo(size.rawValue)
         }
     }

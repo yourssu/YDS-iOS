@@ -10,11 +10,11 @@ import YDS_iOS
 import SnapKit
 
 class ViewController: UIViewController {
-    let icon: YDSIconImage = {
-        let icon = YDSIconImage()
+    let icon: YDSIconView = {
+        let icon = YDSIconView()
         icon.image = YDSIcon.adbadgeFilled
         icon.tintColor = YDSColor.textPointed
-        icon.size = .medium
+        icon.size = .extraSmall
         return icon
     }()
     
