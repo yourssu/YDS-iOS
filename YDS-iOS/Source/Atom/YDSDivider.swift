@@ -57,13 +57,11 @@ public class YDSDivider: UIView {
     private func setDirection() {
         switch direction {
         case .horizontal:
-            self.snp.removeConstraints()
-            self.snp.makeConstraints {
+            self.snp.updateConstraints {
                 $0.height.equalTo(thicknessRawValue)
             }
         case .vertical:
-            self.snp.removeConstraints()
-            self.snp.makeConstraints {
+            self.snp.updateConstraints {
                 $0.width.equalTo(thicknessRawValue)
             }
         }
