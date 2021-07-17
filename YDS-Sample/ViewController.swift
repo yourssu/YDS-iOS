@@ -96,7 +96,7 @@ class ViewController: UIViewController {
     private func setUI(){
         view.addSubview(button)
         view.addSubview(divider)
-        
+
         divider.snp.makeConstraints {
             $0.width.equalToSuperview()
             $0.centerX.centerY.equalToSuperview()
