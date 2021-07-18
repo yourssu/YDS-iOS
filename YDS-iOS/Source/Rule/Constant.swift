@@ -10,6 +10,7 @@ import UIKit
 public enum Constant {
     public enum Border {
         public static let thin: CGFloat = 1/UIScreen.main.scale
+        public static let normal: CGFloat = 1
         public static let thick: CGFloat = 8
     }
     
