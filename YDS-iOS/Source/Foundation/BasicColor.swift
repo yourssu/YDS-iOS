@@ -37,6 +37,18 @@ internal enum BasicColor {
     static var white000: UIColor {
         return UIColor(hex: "#FFFFFF")
     }
+    
+    static var white000A10: UIColor {
+        return UIColor(hex: "#FFFFFF", alpha: 0.1)
+    }
+    
+    static var white000A30: UIColor {
+        return UIColor(hex: "#FFFFFF", alpha: 0.3)
+    }
+    
+    static var white000A70: UIColor {
+        return UIColor(hex: "#FFFFFF", alpha: 0.7)
+    }
 
     static var black000: UIColor {
         return UIColor(hex: "#111111")
@@ -498,7 +510,7 @@ internal enum BasicColor {
         return UIColor(hex: "#3661A5")
     }
 
-    @nonobjc static var indigo050: UIColor {
+    static var indigo050: UIColor {
         return UIColor(hex: "#E8EAF6")
     }
 

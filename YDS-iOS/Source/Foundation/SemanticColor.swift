@@ -73,6 +73,9 @@ public enum YDSColor {
         return color(light: BasicColor.gray900A70)
     }
     
+    public static var dimThickReversed: UIColor {
+        return color(light: BasicColor.white000A70)
+    }
     
     //MARK:- Border
     public static var borderThin: UIColor {
@@ -88,8 +91,16 @@ public enum YDSColor {
     }
     
     //MARK:- Button
-    public static var buttonNoraml: UIColor {
+    public static var buttonNormal: UIColor {
         return color(light: BasicColor.gray700)
+    }
+    
+    public static var buttonNormalPressed: UIColor {
+        return color(light: BasicColor.gray600)
+    }
+    
+    public static var buttonBG: UIColor {
+        return color(light: BasicColor.gray200)
     }
     
     public static var buttonReversed: UIColor {
@@ -108,6 +119,10 @@ public enum YDSColor {
         return color(light: BasicColor.pointBlue400)
     }
     
+    public static var buttonPointPressed: UIColor {
+        return color(light: BasicColor.pointBlue300)
+    }
+    
     public static var buttonPointBG: UIColor {
         return color(light: BasicColor.pointBlue050)
     }
@@ -116,17 +131,21 @@ public enum YDSColor {
         return color(light: BasicColor.warningRed400)
     }
     
+    public static var buttonWarnedPressed: UIColor {
+        return color(light: BasicColor.warningRed300)
+    }
+    
     public static var buttonWarnedBG: UIColor {
         return color(light: BasicColor.warningRed050)
     }
     
-    //MARK:- Tabbar
-    public static var tabBarNormal: UIColor {
+    //MARK:- BottomBar
+    public static var bottomBarNormal: UIColor {
         return color(light: BasicColor.gray600)
     }
     
-    public static var tabBarSelected: UIColor {
-        return color(light: BasicColor.pointBlue400)
+    public static var bottomBarSelected: UIColor {
+        return color(light: BasicColor.gray800)
     }
     
     //MARK:- InputField
@@ -152,113 +171,113 @@ public enum YDSColor {
         return color(light: BasicColor.gray500)
     }
     
-    //MARK:- Tag
-    public static var monoTagPrimary: UIColor {
-       return color(light: BasicColor.gray300)
+    //MARK:- Item
+    public static var monoItemPrimary: UIColor {
+       return color(light: BasicColor.gray700)
     }
 
-    public static var monoTagBG: UIColor {
+    public static var monoItemBG: UIColor {
        return color(light: BasicColor.gray100)
     }
 
-    public static var monoTagText: UIColor {
-       return color(light: BasicColor.gray900)
+    public static var monoItemText: UIColor {
+       return color(light: BasicColor.gray800)
     }
 
-    public static var greenTagPrimary: UIColor {
+    public static var greenItemPrimary: UIColor {
        return color(light: BasicColor.green300)
     }
 
-    public static var greenTagBG: UIColor {
+    public static var greenItemBG: UIColor {
        return color(light: BasicColor.green050)
     }
 
-    public static var greenTagText: UIColor {
+    public static var greenItemText: UIColor {
        return color(light: BasicColor.green800)
     }
 
-    public static var emeraldTagPrimary: UIColor {
+    public static var emeraldItemPrimary: UIColor {
        return color(light: BasicColor.emerald300)
     }
 
-    public static var emeraldTagBG: UIColor {
+    public static var emeraldItemBG: UIColor {
        return color(light: BasicColor.emerald050)
     }
 
-    public static var emeraldTagText: UIColor {
+    public static var emeraldItemText: UIColor {
        return color(light: BasicColor.emerald800)
     }
 
-    public static var aquaTagPrimary: UIColor {
+    public static var aquaItemPrimary: UIColor {
        return color(light: BasicColor.aqua300)
     }
 
-    public static var aquaTagBG: UIColor {
+    public static var aquaItemBG: UIColor {
        return color(light: BasicColor.aqua050)
     }
 
-    public static var aquaTagText: UIColor {
-       return color(light: BasicColor.aqua800)
+    public static var aquaItemText: UIColor {
+       return color(light: BasicColor.aqua700)
     }
 
-    public static var blueTagPrimary: UIColor {
+    public static var blueItemPrimary: UIColor {
        return color(light: BasicColor.blue300)
     }
 
-    public static var blueTagBG: UIColor {
+    public static var blueItemBG: UIColor {
        return color(light: BasicColor.blue050)
     }
 
-    public static var blueTagText: UIColor {
-       return color(light: BasicColor.blue800)
+    public static var blueItemText: UIColor {
+       return color(light: BasicColor.blue700)
     }
 
-    public static var indigoTagPrimary: UIColor {
+    public static var indigoItemPrimary: UIColor {
        return color(light: BasicColor.indigo300)
     }
 
-    public static var indigoTagBG: UIColor {
+    public static var indigoItemBG: UIColor {
        return color(light: BasicColor.indigo050)
     }
 
-    public static var indigoTagText: UIColor {
-       return color(light: BasicColor.indigo500)
+    public static var indigoItemText: UIColor {
+       return color(light: BasicColor.indigo400)
     }
 
-    public static var violetTagPrimary: UIColor {
+    public static var violetItemPrimary: UIColor {
        return color(light: BasicColor.violet300)
     }
 
-    public static var violetTagBG: UIColor {
+    public static var violetItemBG: UIColor {
        return color(light: BasicColor.violet050)
     }
 
-    public static var violetTagText: UIColor {
-       return color(light: BasicColor.violet500)
+    public static var violetItemText: UIColor {
+       return color(light: BasicColor.violet400)
     }
 
-    public static var purpleTagPrimary: UIColor {
+    public static var purpleItemPrimary: UIColor {
        return color(light: BasicColor.purple300)
     }
 
-    public static var purpleTagBG: UIColor {
+    public static var purpleItemBG: UIColor {
        return color(light: BasicColor.purple050)
     }
 
-    public static var purpleTagText: UIColor {
-       return color(light: BasicColor.purple500)
+    public static var purpleItemText: UIColor {
+       return color(light: BasicColor.purple400)
     }
 
-    public static var pinkTagPrimary: UIColor {
+    public static var pinkItemPrimary: UIColor {
        return color(light: BasicColor.pink300)
     }
 
-    public static var pinkTagBG: UIColor {
+    public static var pinkItemBG: UIColor {
        return color(light: BasicColor.pink050)
     }
 
-    public static var pinkTagText: UIColor {
-       return color(light: BasicColor.pink800)
+    public static var pinkItemText: UIColor {
+       return color(light: BasicColor.pink600)
     }
        
 }
