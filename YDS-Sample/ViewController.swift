@@ -10,15 +10,17 @@ import YDS_iOS
 import SnapKit
 
 class ViewController: UIViewController {
-    let icon: YDSIconView = {
-        let icon = YDSIconView()
-        icon.image = YDSIcon.adbadgeFilled
-        icon.tintColor = YDSColor.textPointed
-        icon.size = .extraSmall
-        return icon
+    let textField: YDSSimpleTextField = {
+        let textField = YDSSimpleTextField()
+        textField.placeHolderText = "플레이스홀더"
+        textField.fieldLabelText = "필드라벨"
+        textField.helperLabelText = "헬퍼라벨"
+        textField.isDisabled = false
+        textField.isNegative = false
+        textField.isPositive = false
+        return textField
     }()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -27,5 +29,14 @@ class ViewController: UIViewController {
 
     private func setUI(){
         
+        self.view.addSubview(textField)
+        textField.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(24)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+        }
+        
+        textField.becomeFirstResponder()
     }
 }
