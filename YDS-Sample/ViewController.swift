@@ -26,7 +26,6 @@ class ViewController: UIViewController {
 
 
     private func setUI(){
-
-        }
-     }
+        
+    }
 }
