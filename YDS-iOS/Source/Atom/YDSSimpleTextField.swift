@@ -13,8 +13,8 @@ public class YDSSimpleTextField: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 8
+        stackView.alignment = .center
+        stackView.spacing = YDSSimpleTextField.subviewSpacing
         return stackView
     }()
     
@@ -28,6 +28,15 @@ public class YDSSimpleTextField: UIView {
         let textField = YDSBaseTextField()
         return textField
     }()
+    
+    private let helperLabel: YDSLabel = {
+        let label = YDSLabel(style: .caption1)
+        label.textColor = YDSColor.textTertiary
+        return label
+    }()
+    
+    private static let subviewSpacing: CGFloat = 8
+    private static let helperLabelHorizontalMargin: CGFloat = 8
     
     public var delegate: UITextFieldDelegate? {
         get {
@@ -78,12 +87,6 @@ public class YDSSimpleTextField: UIView {
             textField.textDropDelegate = inputValue
         }
     }
-    
-    private let helperLabel: YDSLabel = {
-        let label = YDSLabel(style: .caption1)
-        label.textColor = YDSColor.textTertiary
-        return label
-    }()
     
     public var isDisabled: Bool {
         get {
@@ -202,6 +205,16 @@ public class YDSSimpleTextField: UIView {
         stackView.addArrangedSubview(fieldLabel)
         stackView.addArrangedSubview(textField)
         stackView.addArrangedSubview(helperLabel)
+        
+        fieldLabel.snp.makeConstraints {
+            $0.width.equalToSuperview()
+        }
+        textField.snp.makeConstraints {
+            $0.width.equalToSuperview()
+        }
+        helperLabel.snp.makeConstraints {
+            $0.width.equalToSuperview().offset(-YDSSimpleTextField.helperLabelHorizontalMargin*2)
+        }
     }
     
     private func setState() {
