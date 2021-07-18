@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         setUI()
     }
 
+
     private func setUI(){
         self.view.addSubview(icon)
         icon.snp.makeConstraints { (make) in
