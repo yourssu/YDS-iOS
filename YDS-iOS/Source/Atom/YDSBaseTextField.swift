@@ -28,6 +28,17 @@ internal class YDSBaseTextField: UITextField {
         didSet { setState() }
     }
     
+    private static let leftMargin: CGFloat = 16
+    private static let rightMargin: CGFloat = 16
+    private static let textFieldHeight: CGFloat = 48
+    private static let subviewSpacing: CGFloat = 4
+    private static let clearButtonDefaultRightMargin: CGFloat = 6
+    private var clearButtonWidth: CGFloat {
+        get {
+            return clearButtonRect(forBounds: bounds).width
+        }
+    }
+    
     internal init() {
         super.init(frame: .zero)
         setupView()
@@ -38,15 +49,15 @@ internal class YDSBaseTextField: UITextField {
     }
     
     private func setupView() {
-        self.font = .systemFont(ofSize: 15, weight: .regular)
+        self.font = YDSFont.body1
         self.textColor = YDSColor.textSecondary
         self.tintColor = YDSColor.textPointed
         self.clearButtonMode = .whileEditing
         
-        self.layer.cornerRadius = 8
+        self.layer.cornerRadius = Constant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
-            $0.height.equalTo(48)
+            $0.height.equalTo(YDSBaseTextField.textFieldHeight)
         }
         
         setState()
@@ -63,13 +74,13 @@ internal class YDSBaseTextField: UITextField {
         self.isEnabled = true
 
         if isNegative {
-            self.layer.borderWidth = 1
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
             return
         }
         
         if isPositive {
-            self.layer.borderWidth = 1
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
             return
         }
@@ -78,20 +89,31 @@ internal class YDSBaseTextField: UITextField {
         self.layer.borderColor = nil
     }
     
-    // clearbutton position
-    public override func clearButtonRect(forBounds bounds: CGRect) -> CGRect{
+    // clearButton position
+    public override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.clearButtonRect(forBounds: bounds)
-        return rect.offsetBy(dx: -10, dy: 0)
+        return rect.offsetBy(dx: -(YDSBaseTextField.rightMargin - YDSBaseTextField.clearButtonDefaultRightMargin),
+                             dy: 0
+        )
     }
     
     // placeholder position
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16+16+4))
+        
+        return bounds.inset(by: UIEdgeInsets(top: 0,
+                                             left: YDSBaseTextField.leftMargin,
+                                             bottom: 0,
+                                             right: YDSBaseTextField.rightMargin + self.clearButtonWidth + YDSBaseTextField.subviewSpacing
+        ))
     }
 
     // text position
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16+16+4))
+        return bounds.inset(by: UIEdgeInsets(top: 0,
+                                             left: YDSBaseTextField.leftMargin,
+                                             bottom: 0,
+                                             right: YDSBaseTextField.rightMargin + self.clearButtonWidth + YDSBaseTextField.subviewSpacing
+        ))
     }
     
 }

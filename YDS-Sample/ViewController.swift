@@ -9,7 +9,7 @@ import UIKit
 import YDS_iOS
 import SnapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     let textField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
         textField.placeHolderText = "플레이스홀더"
@@ -38,5 +38,10 @@ class ViewController: UIViewController {
         }
         
         textField.becomeFirstResponder()
+        textField.delegate = self
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            textField.endEditing(true)
+        }
 }
