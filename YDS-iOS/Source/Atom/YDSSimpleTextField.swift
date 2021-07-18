@@ -24,7 +24,7 @@ public class YDSSimpleTextField: UIView {
         return label
     }()
     
-    private let textField: YDSBaseTextField = {
+    public let inputArea: YDSBaseTextField = {
         let textField = YDSBaseTextField()
         return textField
     }()
@@ -40,114 +40,102 @@ public class YDSSimpleTextField: UIView {
     
     public var delegate: UITextFieldDelegate? {
         get {
-            return textField.delegate
+            return inputArea.delegate
         }
         
         set(inputValue) {
-            textField.delegate = inputValue
+            inputArea.delegate = inputValue
         }
     }
     
     public var inputDelegate: UITextInputDelegate? {
         get {
-            return textField.inputDelegate
+            return inputArea.inputDelegate
         }
         
         set(inputValue) {
-            textField.inputDelegate = inputValue
+            inputArea.inputDelegate = inputValue
         }
     }
     
     public var pasteDelegate: UITextPasteDelegate? {
         get {
-            return textField.pasteDelegate
+            return inputArea.pasteDelegate
         }
         
         set(inputValue) {
-            textField.pasteDelegate = inputValue
+            inputArea.pasteDelegate = inputValue
         }
     }
     
     public var textDragDelegate: UITextDragDelegate? {
         get {
-            return textField.textDragDelegate
+            return inputArea.textDragDelegate
         }
         
         set(inputValue) {
-            textField.textDragDelegate = inputValue
+            inputArea.textDragDelegate = inputValue
         }
     }
     
     public var textDropDelegate: UITextDropDelegate? {
         get {
-            return textField.textDropDelegate
+            return inputArea.textDropDelegate
         }
         
         set(inputValue) {
-            textField.textDropDelegate = inputValue
+            inputArea.textDropDelegate = inputValue
+        }
+    }
+     
+    public var isDisabled: Bool = false {
+        didSet {
+            setState()
+            inputArea.isDisabled = self.isDisabled
         }
     }
     
-    public var isDisabled: Bool {
-        get {
-            return textField.isDisabled
-        }
-        
-        set(inputValue) {
+    public var isNegative: Bool = false {
+        didSet {
             setState()
-            textField.isDisabled = inputValue
+            inputArea.isNegative = self.isNegative
         }
     }
-    
-    public var isNegative: Bool {
-        get {
-            return textField.isNegative
-        }
-        
-        set(inputValue) {
+
+    public var isPositive: Bool = false {
+        didSet {
             setState()
-            textField.isNegative = inputValue
-        }
-    }
-    
-    public var isPositive: Bool {
-        get {
-            return textField.isPositive
-        }
-        
-        set(inputValue) {
-            setState()
-            textField.isPositive = inputValue
+            inputArea.isPositive = self.isPositive
         }
     }
     
     public var clearButtonMode: UITextField.ViewMode {
         get {
-            return textField.clearButtonMode
+            return inputArea.clearButtonMode
         }
         
         set(inputValue) {
-            textField.clearButtonMode = inputValue
+            inputArea.clearButtonMode = inputValue
         }
     }
     
     public override func becomeFirstResponder() -> Bool {
-        textField.becomeFirstResponder()
+        inputArea.becomeFirstResponder()
     }
     
     public var text: String? {
         get {
-            return textField.text
+            return inputArea.text
         }
         
         set(inputValue) {
-            textField.text = inputValue
+            inputArea.text = inputValue
         }
     }
     
     public var placeHolderText: String? {
         get {
-            return textField.placeholder
+            return inputArea.placeholder
         }
         
         set(inputValue) {
@@ -203,13 +191,13 @@ public class YDSSimpleTextField: UIView {
     
     private func setStackView() {
         stackView.addArrangedSubview(fieldLabel)
-        stackView.addArrangedSubview(textField)
+        stackView.addArrangedSubview(inputArea)
         stackView.addArrangedSubview(helperLabel)
         
         fieldLabel.snp.makeConstraints {
             $0.width.equalToSuperview()
         }
-        textField.snp.makeConstraints {
+        inputArea.snp.makeConstraints {
             $0.width.equalToSuperview()
         }
         helperLabel.snp.makeConstraints {
@@ -225,19 +213,22 @@ public class YDSSimpleTextField: UIView {
             return
         }
         
-        fieldLabel.textColor = YDSColor.textSecondary
-        setPlaceHolder(text: self.placeHolderText)
-        
         if self.isNegative {
+            fieldLabel.textColor = YDSColor.textSecondary
+            setPlaceHolder(text: self.placeHolderText)
             helperLabel.textColor = YDSColor.textWarned
             return
         }
         
         if self.isPositive {
+            fieldLabel.textColor = YDSColor.textSecondary
+            setPlaceHolder(text: self.placeHolderText)
             helperLabel.textColor = YDSColor.textTertiary
             return
         }
         
+        fieldLabel.textColor = YDSColor.textSecondary
+        setPlaceHolder(text: self.placeHolderText)
         helperLabel.textColor = YDSColor.textTertiary
     }
     
@@ -251,7 +242,7 @@ public class YDSSimpleTextField: UIView {
         }
         
         if let text = text {
-            textField.attributedPlaceholder = NSAttributedString(
+            inputArea.attributedPlaceholder = NSAttributedString(
                 string: text,
                 attributes: [NSAttributedString.Key.foregroundColor : placeHolderTextColor]
             )

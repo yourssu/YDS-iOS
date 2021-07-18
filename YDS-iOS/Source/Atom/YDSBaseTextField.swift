@@ -14,7 +14,7 @@
 
 import UIKit
 
-internal class YDSBaseTextField: UITextField {
+public class YDSBaseTextField: UITextField {
     
     internal var isDisabled: Bool = false {
         didSet { setState() }
@@ -66,25 +66,30 @@ internal class YDSBaseTextField: UITextField {
     private func setState() {
         if isDisabled {
             self.isEnabled = false
+            self.textColor = YDSColor.textDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
             return
         }
-        
-        self.isEnabled = true
 
         if isNegative {
+            self.isEnabled = true
+            self.textColor = YDSColor.textSecondary
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
             return
         }
         
         if isPositive {
+            self.isEnabled = true
+            self.textColor = YDSColor.textSecondary
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
             return
         }
         
+        self.isEnabled = true
+        self.textColor = YDSColor.textSecondary
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
     }

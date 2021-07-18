@@ -10,7 +10,7 @@ import YDS_iOS
 import SnapKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    let textField: YDSSimpleTextField = {
+    let sampleTextField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
         textField.placeHolderText = "플레이스홀더"
         textField.fieldLabelText = "필드라벨"
@@ -28,20 +28,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 
     private func setUI(){
-        
-        self.view.addSubview(textField)
-        textField.snp.makeConstraints { (make) in
+        self.view.addSubview(sampleTextField)
+        sampleTextField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(24)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         }
         
-        textField.becomeFirstResponder()
-        textField.delegate = self
+        _ = sampleTextField.becomeFirstResponder()
+        sampleTextField.delegate = self
+        sampleTextField.inputArea.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            textField.endEditing(true)
+        sampleTextField.endEditing(true)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        print(textField.text as Any)
+        switch(textField.text) {
+        case "Disabled":
+            self.sampleTextField.isDisabled = !self.sampleTextField.isDisabled
+        case "Negative":
+            self.sampleTextField.isNegative = !self.sampleTextField.isNegative
+        case "Positive":
+            self.sampleTextField.isPositive = !self.sampleTextField.isPositive
+        case .none:
+            break
+        case .some(_):
+            break
         }
+    }
 }
