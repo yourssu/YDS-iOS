@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         return icon
     }()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -25,9 +26,6 @@ class ViewController: UIViewController {
 
 
     private func setUI(){
-        self.view.addSubview(icon)
-        icon.snp.makeConstraints { (make) in
-            make.centerX.centerY.equalToSuperview()
-        }
-     }
+        
+    }
 }
