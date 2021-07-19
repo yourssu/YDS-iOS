@@ -29,19 +29,20 @@ class PageListViewController: UIViewController {
     
     //  여기 아래에 각 단계에 맞는 Page를 추가해주세요.
     let rulePages: [Page] = [
-        Page(title: "Sample", vc: UIViewController.self)
+        Page(title: "Sample", vc: UIViewController.self),
     ]
     
     let foundationPages: [Page] = [
-        Page(title: "Sample", vc: UIViewController.self)
+        Page(title: "Sample", vc: UIViewController.self),
     ]
     
     let atomPages: [Page] = [
-        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleVC.self)
+        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleVC.self),
+        Page(title: "SuffixTextField", vc: SuffixTextFieldSampleVC.self),
     ]
     
     let componentPages: [Page] = [
-        Page(title: "Sample", vc: UIViewController.self)
+        Page(title: "Sample", vc: UIViewController.self),
     ]
 
     
@@ -56,6 +57,7 @@ class PageListViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = YDSColor.bgNormal
         self.title = "YDS Sample"
+        self.navigationController?.navigationBar.tintColor = YDSColor.textPointed
         
         pageListTableView.dataSource = self
         pageListTableView.delegate = self
@@ -67,6 +69,7 @@ class PageListViewController: UIViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+ 
     }
 
 }

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: PageListViewController())
+        // window?.rootViewController = SuffixTextFieldSampleVC()
         window?.makeKeyAndVisible()
         
         return true

@@ -1,5 +1,5 @@
 //
-//  YDSSimpleTextField.swift
+//  YDSSuffixTextField.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/07/19.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-public class YDSSimpleTextField: UIView {
+public class YDSSuffixTextField: UIView {
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .center
-        stackView.spacing = YDSSimpleTextField.subviewSpacing
+        stackView.spacing = YDSSuffixTextField.subviewSpacing
         return stackView
     }()
     
@@ -24,8 +24,8 @@ public class YDSSimpleTextField: UIView {
         return label
     }()
     
-    public let base: YDSSimpleTextFieldBase = {
-        let textField = YDSSimpleTextFieldBase()
+    public let base: YDSSuffixTextFieldBase = {
+        let textField = YDSSuffixTextFieldBase()
         return textField
     }()
     
@@ -121,6 +121,16 @@ public class YDSSimpleTextField: UIView {
         }
     }
     
+    public var suffixLabelText: String? {
+        get {
+            return base.suffixLabelText
+        }
+        
+        set(inputValue) {
+            base.suffixLabelText = inputValue
+        }
+    }
+    
     public init() {
         super.init(frame: CGRect.zero)
         self.addSubview(stackView)
@@ -147,7 +157,7 @@ public class YDSSimpleTextField: UIView {
             $0.width.equalToSuperview()
         }
         helperLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().offset(-YDSSimpleTextField.helperLabelHorizontalMargin*2)
+            $0.width.equalToSuperview().offset(-YDSSuffixTextField.helperLabelHorizontalMargin*2)
         }
     }
     

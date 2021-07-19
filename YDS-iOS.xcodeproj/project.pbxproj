@@ -14,6 +14,9 @@
 		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
+		5370918226A5463C007CD775 /* YDSSuffixTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */; };
+		5370918426A5467D007CD775 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918326A5467D007CD775 /* YDSSuffixTextField.swift */; };
+		5370918626A546DF007CD775 /* SuffixTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */; };
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
 		53A31B5E266F500300461C29 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
 		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
@@ -72,6 +75,9 @@
 		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
+		5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldBase.swift; sourceTree = "<group>"; };
+		5370918326A5467D007CD775 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
+		5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixTextFieldSampleVC.swift; sourceTree = "<group>"; };
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		53ADEA2226A1794800153636 /* YDSBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBundle.swift; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
 				533A279F26A48691009FD90A /* YDSSimpleTextField.swift */,
 				533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */,
+				5370918326A5467D007CD775 /* YDSSuffixTextField.swift */,
+				5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
 				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleVC.swift */,
+				5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */,
 			);
 			path = "YDS-Sample";
 			sourceTree = "<group>";
@@ -427,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5370918226A5463C007CD775 /* YDSSuffixTextFieldBase.swift in Sources */,
 				DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */,
 				DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */,
 				DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */,
@@ -435,6 +445,7 @@
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextField.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
+				5370918426A5467D007CD775 /* YDSSuffixTextField.swift in Sources */,
 				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextFieldBase.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* YDSFont.swift in Sources */,
@@ -450,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5370918626A546DF007CD775 /* SuffixTextFieldSampleVC.swift in Sources */,
 				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleVC.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
