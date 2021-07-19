@@ -1,12 +1,12 @@
 //
-//  YDSBaseTextField.swift
+//  YDSSimpleTextFieldBase.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/07/19.
 //
 
 //
-//  모든 TextField의 기본이 되는 BaseTextField 입니다.
+//  SimpleTextField의 기본이 되는 BaseTextField 입니다.
 //  BaseTextField는 다른 TextField에서 사용될 수 있지만
 //
 //  BaseTextField 그 자체로 사용될 수 없습니다.
@@ -14,7 +14,7 @@
 
 import UIKit
 
-public class YDSBaseTextField: UITextField {
+public class YDSSimpleTextFieldBase: UITextField {
     
     internal var isDisabled: Bool = false {
         didSet { setState() }
@@ -57,7 +57,7 @@ public class YDSBaseTextField: UITextField {
         self.layer.cornerRadius = Constant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
-            $0.height.equalTo(YDSBaseTextField.textFieldHeight)
+            $0.height.equalTo(YDSSimpleTextFieldBase.textFieldHeight)
         }
         
         setState()
@@ -97,7 +97,7 @@ public class YDSBaseTextField: UITextField {
     // clearButton position
     public override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.clearButtonRect(forBounds: bounds)
-        return rect.offsetBy(dx: -(YDSBaseTextField.rightMargin - YDSBaseTextField.clearButtonDefaultRightMargin),
+        return rect.offsetBy(dx: -(YDSSimpleTextFieldBase.rightMargin - YDSSimpleTextFieldBase.clearButtonDefaultRightMargin),
                              dy: 0
         )
     }
@@ -106,18 +106,18 @@ public class YDSBaseTextField: UITextField {
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
         
         return bounds.inset(by: UIEdgeInsets(top: 0,
-                                             left: YDSBaseTextField.leftMargin,
+                                             left: YDSSimpleTextFieldBase.leftMargin,
                                              bottom: 0,
-                                             right: YDSBaseTextField.rightMargin + self.clearButtonWidth + YDSBaseTextField.subviewSpacing
+                                             right: YDSSimpleTextFieldBase.rightMargin + self.clearButtonWidth + YDSSimpleTextFieldBase.subviewSpacing
         ))
     }
 
     // text position
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets(top: 0,
-                                             left: YDSBaseTextField.leftMargin,
+                                             left: YDSSimpleTextFieldBase.leftMargin,
                                              bottom: 0,
-                                             right: YDSBaseTextField.rightMargin + self.clearButtonWidth + YDSBaseTextField.subviewSpacing
+                                             right: YDSSimpleTextFieldBase.rightMargin + self.clearButtonWidth + YDSSimpleTextFieldBase.subviewSpacing
         ))
     }
     

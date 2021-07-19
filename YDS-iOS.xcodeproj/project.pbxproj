@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A278926A42E72009FD90A /* YDSTypoStyle.swift */; };
-		533A279D26A48683009FD90A /* YDSBaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSBaseTextField.swift */; };
+		533A279D26A48683009FD90A /* YDSSimpleTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */; };
 		533A27A026A48691009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextField.swift */; };
 		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
 		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
@@ -66,7 +66,7 @@
 		3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		533A278926A42E72009FD90A /* YDSTypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
-		533A279C26A48683009FD90A /* YDSBaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBaseTextField.swift; sourceTree = "<group>"; };
+		533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldBase.swift; sourceTree = "<group>"; };
 		533A279F26A48691009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
 		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 				DD48C1EB26735052004B288E /* BottomSheet.swift */,
 				53EB943826A1E33A00208496 /* YDSDivider.swift */,
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
-				533A279C26A48683009FD90A /* YDSBaseTextField.swift */,
 				533A279F26A48691009FD90A /* YDSSimpleTextField.swift */,
+				533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 				533A27A026A48691009FD90A /* YDSSimpleTextField.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
 				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
-				533A279D26A48683009FD90A /* YDSBaseTextField.swift in Sources */,
+				533A279D26A48683009FD90A /* YDSSimpleTextFieldBase.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* YDSFont.swift in Sources */,
 				533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */,
 				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,

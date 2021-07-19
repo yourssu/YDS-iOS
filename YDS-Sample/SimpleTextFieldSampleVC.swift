@@ -37,13 +37,14 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
             make.right.equalToSuperview().offset(-20)
         }
         
-        _ = sampleTextField.becomeFirstResponder()
-        sampleTextField.delegate = self
-        sampleTextField.inputArea.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        _ = sampleTextField.base.becomeFirstResponder()
+        sampleTextField.base.delegate = self
+        sampleTextField.base.returnKeyType = .done
+        sampleTextField.base.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        sampleTextField.endEditing(true)
+        sampleTextField.base.endEditing(true)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

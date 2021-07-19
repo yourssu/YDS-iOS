@@ -24,8 +24,8 @@ public class YDSSimpleTextField: UIView {
         return label
     }()
     
-    public let inputArea: YDSBaseTextField = {
-        let textField = YDSBaseTextField()
+    public let base: YDSSimpleTextFieldBase = {
+        let textField = YDSSimpleTextFieldBase()
         return textField
     }()
     
@@ -37,105 +37,105 @@ public class YDSSimpleTextField: UIView {
     
     private static let subviewSpacing: CGFloat = 8
     private static let helperLabelHorizontalMargin: CGFloat = 8
-    
+    /*
     public var delegate: UITextFieldDelegate? {
         get {
-            return inputArea.delegate
+            return base.delegate
         }
         
         set(inputValue) {
-            inputArea.delegate = inputValue
+            base.delegate = inputValue
         }
     }
     
     public var inputDelegate: UITextInputDelegate? {
         get {
-            return inputArea.inputDelegate
+            return base.inputDelegate
         }
         
         set(inputValue) {
-            inputArea.inputDelegate = inputValue
+            base.inputDelegate = inputValue
         }
     }
     
     public var pasteDelegate: UITextPasteDelegate? {
         get {
-            return inputArea.pasteDelegate
+            return base.pasteDelegate
         }
         
         set(inputValue) {
-            inputArea.pasteDelegate = inputValue
+            base.pasteDelegate = inputValue
         }
     }
     
     public var textDragDelegate: UITextDragDelegate? {
         get {
-            return inputArea.textDragDelegate
+            return base.textDragDelegate
         }
         
         set(inputValue) {
-            inputArea.textDragDelegate = inputValue
+            base.textDragDelegate = inputValue
         }
     }
     
     public var textDropDelegate: UITextDropDelegate? {
         get {
-            return inputArea.textDropDelegate
+            return base.textDropDelegate
         }
         
         set(inputValue) {
-            inputArea.textDropDelegate = inputValue
+            base.textDropDelegate = inputValue
         }
     }
-     
+     */
     public var isDisabled: Bool = false {
         didSet {
             setState()
-            inputArea.isDisabled = self.isDisabled
+            base.isDisabled = self.isDisabled
         }
     }
     
     public var isNegative: Bool = false {
         didSet {
             setState()
-            inputArea.isNegative = self.isNegative
+            base.isNegative = self.isNegative
         }
     }
 
     public var isPositive: Bool = false {
         didSet {
             setState()
-            inputArea.isPositive = self.isPositive
+            base.isPositive = self.isPositive
         }
     }
     
     public var clearButtonMode: UITextField.ViewMode {
         get {
-            return inputArea.clearButtonMode
+            return base.clearButtonMode
         }
         
         set(inputValue) {
-            inputArea.clearButtonMode = inputValue
+            base.clearButtonMode = inputValue
         }
     }
-    
+    /*
     public override func becomeFirstResponder() -> Bool {
-        inputArea.becomeFirstResponder()
+        base.becomeFirstResponder()
     }
-    
+    */
     public var text: String? {
         get {
-            return inputArea.text
+            return base.text
         }
         
         set(inputValue) {
-            inputArea.text = inputValue
+            base.text = inputValue
         }
     }
     
     public var placeHolderText: String? {
         get {
-            return inputArea.placeholder
+            return base.placeholder
         }
         
         set(inputValue) {
@@ -191,13 +191,13 @@ public class YDSSimpleTextField: UIView {
     
     private func setStackView() {
         stackView.addArrangedSubview(fieldLabel)
-        stackView.addArrangedSubview(inputArea)
+        stackView.addArrangedSubview(base)
         stackView.addArrangedSubview(helperLabel)
         
         fieldLabel.snp.makeConstraints {
             $0.width.equalToSuperview()
         }
-        inputArea.snp.makeConstraints {
+        base.snp.makeConstraints {
             $0.width.equalToSuperview()
         }
         helperLabel.snp.makeConstraints {
@@ -242,7 +242,7 @@ public class YDSSimpleTextField: UIView {
         }
         
         if let text = text {
-            inputArea.attributedPlaceholder = NSAttributedString(
+            base.attributedPlaceholder = NSAttributedString(
                 string: text,
                 attributes: [NSAttributedString.Key.foregroundColor : placeHolderTextColor]
             )
