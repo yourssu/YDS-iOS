@@ -9,7 +9,8 @@ import UIKit
 import YDS_iOS
 import SnapKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
+    
     let sampleTextField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
         textField.placeHolderText = "플레이스홀더"
@@ -26,8 +27,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setUI()
     }
 
-
     private func setUI(){
+        self.view.backgroundColor = YDSColor.bgNormal
         self.view.addSubview(sampleTextField)
         sampleTextField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
