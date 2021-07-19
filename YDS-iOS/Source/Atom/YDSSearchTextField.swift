@@ -18,7 +18,7 @@ public class YDSSearchTextField: UITextField {
     }
     
     public override var placeholder: String? {
-        didSet { setPlaceHolder() }
+        didSet { setPlaceholderTextColor() }
     }
     
     
@@ -120,15 +120,38 @@ public class YDSSearchTextField: UITextField {
         if isDisabled {
             self.isEnabled = false
             self.textColor = YDSColor.textDisabled
+            self.searchIcon.tintColor = YDSColor.textDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
+            setPlaceholderTextColor()
             return
         }
         
         self.isEnabled = true
         self.textColor = YDSColor.textSecondary
+        self.searchIcon.tintColor = YDSColor.textSecondary
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
+        setPlaceholderTextColor()
+    }
+    
+    //  setPlaceHolder()
+    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
+    private func setPlaceholderTextColor() {
+        let placeholderTextColor: UIColor
+        
+        if self.isDisabled {
+            placeholderTextColor = YDSColor.textDisabled
+        } else {
+            placeholderTextColor = YDSColor.textTertiary
+        }
+        
+        if let text = placeholder {
+            attributedPlaceholder = NSAttributedString(
+                string: text,
+                attributes: [NSAttributedString.Key.foregroundColor : placeholderTextColor]
+            )
+        }
     }
     
 
@@ -163,25 +186,6 @@ public class YDSSearchTextField: UITextField {
                                              bottom: 0,
                                              right: YDSSearchTextField.rightMargin + self.clearButtonWidth + YDSSearchTextField.subviewSpacing
         ))
-    }
-    
-    //  setPlaceHolder()
-    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
-    private func setPlaceHolder() {
-        let placeHolderTextColor: UIColor
-        
-        if self.isDisabled {
-            placeHolderTextColor = YDSColor.textDisabled
-        } else {
-            placeHolderTextColor = YDSColor.textTertiary
-        }
-        
-        if let text = placeholder {
-            attributedPlaceholder = NSAttributedString(
-                string: text,
-                attributes: [NSAttributedString.Key.foregroundColor : placeHolderTextColor]
-            )
-        }
     }
 
 }

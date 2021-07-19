@@ -54,15 +54,15 @@ public class YDSSimpleTextField: UIView {
         }
     }
     
-    //  placeHolderText: String?
+    //  placeholder: String?
     //  필드에 나타나는 placeholder의 텍스트입니다.
-    public var placeHolderText: String? {
+    public var placeholder: String? {
         get {
             return base.placeholder
         }
         
         set(inputValue) {
-            setPlaceHolder(text: inputValue)
+            setPlaceholder(text: inputValue)
         }
     }
     
@@ -196,47 +196,47 @@ public class YDSSimpleTextField: UIView {
     private func setState() {
         if self.isDisabled {
             fieldLabel.textColor = YDSColor.textDisabled
-            setPlaceHolder(text: self.placeHolderText)
+            setPlaceholder(text: self.placeholder)
             helperLabel.textColor = YDSColor.textDisabled
             return
         }
         
         if self.isNegative {
             fieldLabel.textColor = YDSColor.textSecondary
-            setPlaceHolder(text: self.placeHolderText)
+            setPlaceholder(text: self.placeholder)
             helperLabel.textColor = YDSColor.textWarned
             return
         }
         
         if self.isPositive {
             fieldLabel.textColor = YDSColor.textSecondary
-            setPlaceHolder(text: self.placeHolderText)
+            setPlaceholder(text: self.placeholder)
             helperLabel.textColor = YDSColor.textTertiary
             return
         }
         
         fieldLabel.textColor = YDSColor.textSecondary
-        setPlaceHolder(text: self.placeHolderText)
+        setPlaceholder(text: self.placeholder)
         helperLabel.textColor = YDSColor.textTertiary
     }
     
     
-    //  setPlaceHolder(text: String?)
+    //  setPlaceholder(text: String?)
     //  매개변수로 받은 text를 placeholder에 입력합니다.
     //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
-    private func setPlaceHolder(text: String?) {
-        let placeHolderTextColor: UIColor
+    private func setPlaceholder(text: String?) {
+        let placeholderTextColor: UIColor
         
         if self.isDisabled {
-            placeHolderTextColor = YDSColor.textDisabled
+            placeholderTextColor = YDSColor.textDisabled
         } else {
-            placeHolderTextColor = YDSColor.textTertiary
+            placeholderTextColor = YDSColor.textTertiary
         }
         
         if let text = text {
             base.attributedPlaceholder = NSAttributedString(
                 string: text,
-                attributes: [NSAttributedString.Key.foregroundColor : placeHolderTextColor]
+                attributes: [NSAttributedString.Key.foregroundColor : placeholderTextColor]
             )
         }
     }

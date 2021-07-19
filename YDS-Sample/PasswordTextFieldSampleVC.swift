@@ -14,7 +14,7 @@ class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     let sampleTextField: YDSPasswordTextField = {
         let textField = YDSPasswordTextField()
         textField.fieldLabelText = "비밀번호"
-        textField.placeHolderText = "password1234!"
+        textField.placeholder = "password1234!"
         textField.helperLabelText = "알파벳과 숫자를 포함해서 8자 이상으로 입력해 주세요."
         textField.isMasked = true
         textField.isDisabled = false

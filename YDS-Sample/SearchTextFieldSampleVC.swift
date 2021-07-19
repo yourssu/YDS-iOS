@@ -44,8 +44,11 @@ class SearchTextFieldSampleVC: UIViewController, UITextFieldDelegate, UISearchBa
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
-
         print(text)
+        
+        if text == "Disabled" {
+            sampleTextField.isDisabled = true
+        }
     }
 
 }

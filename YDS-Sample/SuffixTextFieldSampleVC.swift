@@ -14,7 +14,7 @@ class SuffixTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     let sampleTextField: YDSSuffixTextField = {
         let textField = YDSSuffixTextField()
         textField.fieldLabelText = "이메일"
-        textField.placeHolderText = "dinohan"
+        textField.placeholder = "dinohan"
         textField.helperLabelText = "이메일은 4글자 이상 8글자 이하여야 합니다."
         textField.suffixLabelText = "@soongsil.ac.kr"
         textField.isDisabled = false

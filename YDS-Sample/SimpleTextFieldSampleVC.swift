@@ -14,7 +14,7 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     let sampleTextField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
         textField.fieldLabelText = "비밀번호"
-        textField.placeHolderText = "1q2w3e4r!@"
+        textField.placeholder = "1q2w3e4r!@"
         textField.helperLabelText = "숫자와 영문자 조합으로 8자 이상 입력해주세요."
         textField.isDisabled = false
         textField.isNegative = false
