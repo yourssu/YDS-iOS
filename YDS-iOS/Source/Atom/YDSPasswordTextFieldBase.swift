@@ -69,11 +69,21 @@ public class YDSPasswordTextFieldBase: UITextField {
         }
     }
     
+    //  maskingOnIcon: YDSIcon (UIImage)
+    //  masking 상태가 on임을 나타내는 아이콘입니다.
+    private let maskingOnIcon = YDSIcon.starFilled.withRenderingMode(.alwaysTemplate)
+    
+    //  maskingOffIcon: YDSIcon (UIImage)
+    //  masking 상태가 off임을 나타내는 아이콘입니다.
+    private let maskingOffIcon = YDSIcon.starLine.withRenderingMode(.alwaysTemplate)
+    
     
     //  MARK: - 뷰
     
     private let maskingButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        button.tintColor = YDSColor.buttonNormal
+        button.adjustsImageWhenHighlighted = false
         return button
     }()
     
@@ -152,9 +162,9 @@ public class YDSPasswordTextFieldBase: UITextField {
         self.isSecureTextEntry = isMasked
         
         if isMasked {
-            maskingButton.setImage(YDSIcon.starFilled, for: .normal)
+            maskingButton.setImage(maskingOnIcon, for: .normal)
         } else {
-            maskingButton.setImage(YDSIcon.starLine, for: .normal)
+            maskingButton.setImage(maskingOffIcon, for: .normal)
         }
     }
     
