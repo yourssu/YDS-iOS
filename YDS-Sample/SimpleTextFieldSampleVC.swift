@@ -50,12 +50,10 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
-        
-        var isFulfilled: Bool
-        let passwordRegex: String = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        
-        isFulfilled = text.range(of: passwordRegex, options: .regularExpression, range: nil, locale: nil) != nil
-        
+
+        let passwordRegex: String = #"^(?=.*[A-Za-z])(?=.*\d)[!-~₩]{8,100}$"#
+        let isFulfilled = NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
+
         if text == "Disabled" {
             self.sampleTextField.isDisabled = true
         } else {
