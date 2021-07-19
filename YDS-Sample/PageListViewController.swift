@@ -24,25 +24,25 @@ class PageListViewController: UIViewController {
     //  vc는 cell을 터치했을 때 나타날 ViewController입니다.
     struct Page {
         let title: String
-        let vc: UIViewController
+        let vc: UIViewController.Type
     }
     
     
     //  여기 아래에 각 단계에 맞는 Page를 추가해주세요.
     let rulePages: [Page] = [
-        Page(title: "Sample", vc: UIViewController())
+        Page(title: "Sample", vc: UIViewController.self)
     ]
     
     let foundationPages: [Page] = [
-        Page(title: "Sample", vc: UIViewController())
+        Page(title: "Sample", vc: UIViewController.self)
     ]
     
     let atomPages: [Page] = [
-        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleVC())
+        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleVC.self)
     ]
     
     let componentPages: [Page] = [
-        Page(title: "Sample", vc: UIViewController())
+        Page(title: "Sample", vc: UIViewController.self)
     ]
 
     
@@ -110,7 +110,7 @@ extension PageListViewController: UITableViewDataSource {
         case 3:
             page = componentPages[indexPath.row]
         default:
-            page = Page(title: "error", vc: UIViewController())
+            page = Page(title: "error", vc: UIViewController.self)
         }
         
         let cell: PageListTableViewCell = pageListTableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! PageListTableViewCell

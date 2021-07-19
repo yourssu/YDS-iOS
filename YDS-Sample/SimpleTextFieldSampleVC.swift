@@ -13,9 +13,9 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     
     let sampleTextField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
-        textField.placeHolderText = "플레이스홀더"
-        textField.fieldLabelText = "필드라벨"
-        textField.helperLabelText = "헬퍼라벨"
+        textField.fieldLabelText = "닉네임"
+        textField.placeHolderText = "Dino Han"
+        textField.helperLabelText = "닉네임은 4글자 이상 20글자 이하여야 합니다."
         textField.isDisabled = false
         textField.isNegative = false
         textField.isPositive = false

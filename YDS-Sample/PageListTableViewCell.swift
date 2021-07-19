@@ -9,7 +9,7 @@ import UIKit
 
 class PageListTableViewCell: UITableViewCell {
     
-    var vc: UIViewController?
+    var vc: AnyObject.Type?
     var parent: UIViewController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -22,8 +22,10 @@ class PageListTableViewCell: UITableViewCell {
     }
     
     @objc func pushView(sender: UITapGestureRecognizer) {
-        if let vc = vc, let parent = parent {
-            parent.navigationController?.pushViewController(vc, animated: true)
+        if let vc = vc as? UIViewController.Type, let parent = parent {
+            do {
+                parent.navigationController?.pushViewController(vc.init(), animated: true)
+            }
         }
     }
     
