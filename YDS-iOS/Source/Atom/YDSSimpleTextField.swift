@@ -123,10 +123,7 @@ public class YDSSimpleTextField: UIView {
     
     public init() {
         super.init(frame: CGRect.zero)
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints {
-            $0.top.bottom.left.right.equalToSuperview()
-        }
+        
         setStackView()
         setState()
     }
@@ -136,6 +133,11 @@ public class YDSSimpleTextField: UIView {
     }
     
     private func setStackView() {
+        self.addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.top.bottom.left.right.equalToSuperview()
+        }
+        
         stackView.addArrangedSubview(fieldLabel)
         stackView.addArrangedSubview(base)
         stackView.addArrangedSubview(helperLabel)

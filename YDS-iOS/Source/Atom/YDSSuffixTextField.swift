@@ -133,10 +133,7 @@ public class YDSSuffixTextField: UIView {
     
     public init() {
         super.init(frame: CGRect.zero)
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints {
-            $0.top.bottom.left.right.equalToSuperview()
-        }
+        
         setStackView()
         setState()
     }
@@ -146,6 +143,11 @@ public class YDSSuffixTextField: UIView {
     }
     
     private func setStackView() {
+        self.addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.top.bottom.left.right.equalToSuperview()
+        }
+        
         stackView.addArrangedSubview(fieldLabel)
         stackView.addArrangedSubview(base)
         stackView.addArrangedSubview(helperLabel)

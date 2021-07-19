@@ -49,8 +49,6 @@ class SuffixTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print(textField.text as Any)
-        
         guard let text = textField.text else { return }
         
         if text == "Disabled" {
