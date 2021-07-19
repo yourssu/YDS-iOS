@@ -207,7 +207,8 @@ public class YDSPasswordTextFieldBase: UITextField {
     }
     
     //  isSecureTextEntry
-    //  이 값이 바뀔 때마다 becomeFirstResponder()를 실행시키도록 합니다.
+    //  이 값이 바뀔 때마다 isFirstResponder를 체크한 후
+    //  becomeFirstResponder()를 실행시키도록 합니다.
     public override var isSecureTextEntry: Bool {
         didSet {
             if isFirstResponder {
