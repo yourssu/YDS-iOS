@@ -13,9 +13,9 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     
     let sampleTextField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
-        textField.fieldLabelText = "닉네임"
-        textField.placeHolderText = "Dino Han"
-        textField.helperLabelText = "닉네임은 4글자 이상 8글자 이하여야 합니다."
+        textField.fieldLabelText = "비밀번호"
+        textField.placeHolderText = "1q2w3e4r!@"
+        textField.helperLabelText = "숫자와 영문자 조합으로 8자 이상 입력해주세요."
         textField.isDisabled = false
         textField.isNegative = false
         textField.isPositive = false
@@ -39,6 +39,7 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         
         _ = sampleTextField.base.becomeFirstResponder()
         sampleTextField.base.delegate = self
+        sampleTextField.base.keyboardType = .alphabet
         sampleTextField.base.returnKeyType = .done
         sampleTextField.base.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
@@ -48,9 +49,12 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print(textField.text as Any)
-        
         guard let text = textField.text else { return }
+        
+        var isFulfilled: Bool
+        let passwordRegex: String = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+        
+        isFulfilled = text.range(of: passwordRegex, options: .regularExpression, range: nil, locale: nil) != nil
         
         if text == "Disabled" {
             self.sampleTextField.isDisabled = true
@@ -58,16 +62,13 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
             self.sampleTextField.isDisabled = false
         }
         
-        if text.count > 8 {
-            self.sampleTextField.isNegative = true
-        } else {
+        if text.count < 8 {
             self.sampleTextField.isNegative = false
+            self.sampleTextField.isPositive = false
+            return
         }
         
-        if text.count >= 4 {
-            self.sampleTextField.isPositive = true
-        } else {
-            self.sampleTextField.isPositive = false
-        }
+        self.sampleTextField.isPositive = isFulfilled
+        self.sampleTextField.isNegative = !isFulfilled
     }
 }
