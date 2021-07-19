@@ -5,39 +5,18 @@
 //  Created by Gyuni on 2021/07/19.
 //
 
+//
+//  입력 필드에 suffix가 붙은 TextField입니다.
+//
+
 import UIKit
 
 public class YDSSuffixTextField: UIView {
     
-    private let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        stackView.spacing = YDSSuffixTextField.subviewSpacing
-        return stackView
-    }()
+    //  MARK: - 외부에서 지정할 수 있는 속성
     
-    private let fieldLabel: YDSLabel = {
-        let label = YDSLabel(style: .subtitle3)
-        label.textColor = YDSColor.textPrimary
-        return label
-    }()
-    
-    public let base: YDSSuffixTextFieldBase = {
-        let textField = YDSSuffixTextFieldBase()
-        return textField
-    }()
-    
-    private let helperLabel: YDSLabel = {
-        let label = YDSLabel(style: .caption1)
-        label.textColor = YDSColor.textTertiary
-        return label
-    }()
-    
-    private static let subviewSpacing: CGFloat = 8
-    private static let helperLabelHorizontalMargin: CGFloat = 8
-    
+    //  isDisabled: Bool
+    //  필드를 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
         didSet {
             setState()
@@ -45,6 +24,8 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  isNegative: Bool
+    //  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
     public var isNegative: Bool = false {
         didSet {
             setState()
@@ -52,6 +33,8 @@ public class YDSSuffixTextField: UIView {
         }
     }
 
+    //  isPositive: Bool
+    //  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
     public var isPositive: Bool = false {
         didSet {
             setState()
@@ -59,6 +42,8 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  text: String?
+    //  필드에 입력된 텍스트입니다.
     public var text: String? {
         get {
             return base.text
@@ -69,6 +54,8 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  placeHolderText: String?
+    //  필드에 나타나는 placeholder의 텍스트입니다.
     public var placeHolderText: String? {
         get {
             return base.placeholder
@@ -79,6 +66,9 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  fieldLabelText: String?
+    //  필드 위쪽에 나타나는 fieldLabel의 텍스트입니다.
+    //  nil이 들어오면 fieldLabel이 사라집니다.
     public var fieldLabelText: String? {
         get {
             return fieldLabel.text
@@ -95,6 +85,9 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  helperLabelText: String?
+    //  필드 아래쪽에 나타나는 helperLabel의 텍스트입니다.
+    //  nil이 들어오면 helperLabel이 사라집니다.
     public var helperLabelText: String? {
         get {
             return helperLabel.text
@@ -111,6 +104,8 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  suffixLabelText: String?
+    //  필드 우측에 나타나는 suffixLabel의 텍스트입니다.
     public var suffixLabelText: String? {
         get {
             return base.suffixLabelText
@@ -120,6 +115,58 @@ public class YDSSuffixTextField: UIView {
             base.suffixLabelText = inputValue
         }
     }
+    
+    //  MARK: - 내부에서 사용되는 상수
+    
+    //  subviewSpacing: CGFloat
+    //  fieldLabel, baseTextField, helperLabel 사이 간격입니다.
+    private static let subviewSpacing: CGFloat = 8
+    
+    //  helperLabelHorizontalMargin: CGFloat
+    //  helperLabel의 좌우 마진값입니다.
+    private static let helperLabelHorizontalMargin: CGFloat = 8
+    
+    
+    //  MARK: - 뷰
+    
+    //  stackView: UIStackView
+    //  fieldLabel, baseTextField, helperLabel을 담는 stackView입니다.
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        stackView.spacing = YDSSuffixTextField.subviewSpacing
+        return stackView
+    }()
+    
+    //  fieldLabel: YDSLabel (UILabel)
+    //  필드 위쪽에 나타나는 fieldlabel입니다.
+    private let fieldLabel: YDSLabel = {
+        let label = YDSLabel(style: .subtitle3)
+        label.textColor = YDSColor.textPrimary
+        return label
+    }()
+    
+    //  base: YDSSuffixTextFieldBase (UITextField)
+    //  필드 중앙의 실제 입력 필드입니다.
+    //  public으로 열려있으니 delegate를 등록하거나 addTarget, endEditing 등의 메소드를 호출할 때
+    //  suffixTextField.delegate 대신 simpleTextField.base.delegate 로 접근해주세요.
+    public let base: YDSSuffixTextFieldBase = {
+        let textField = YDSSuffixTextFieldBase()
+        return textField
+    }()
+    
+    //  helperLabel: YDSLabel (UILabel)
+    //  필드 아래쪽에 나타나는 helperLabel입니다.
+    private let helperLabel: YDSLabel = {
+        let label = YDSLabel(style: .caption1)
+        label.textColor = YDSColor.textTertiary
+        return label
+    }()
+    
+    
+    // MARK: - 메소드
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -132,6 +179,9 @@ public class YDSSuffixTextField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    //  setStackView()
+    //  stackView 내부를 세팅합니다.
     private func setStackView() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints {
@@ -153,6 +203,9 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
+    //  setState()
+    //  필드의 상태를 세팅합니다.
+    //  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setState() {
         if self.isDisabled {
             fieldLabel.textColor = YDSColor.textDisabled
@@ -180,6 +233,9 @@ public class YDSSuffixTextField: UIView {
         helperLabel.textColor = YDSColor.textTertiary
     }
     
+    //  setPlaceHolder(text: String?)
+    //  매개변수로 받은 text를 placeholder에 입력합니다.
+    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
     private func setPlaceHolder(text: String?) {
         let placeHolderTextColor: UIColor
         

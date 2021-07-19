@@ -129,7 +129,7 @@ public class YDSSimpleTextField: UIView {
     }()
     
     //  fieldLabel: YDSLabel (UILabel)
-    //  필드 위쪽에 나타나는 fieldlabel입니다.
+    //  필드 위쪽에 나타나는 fieldLabel입니다.
     private let fieldLabel: YDSLabel = {
         let label = YDSLabel(style: .subtitle3)
         label.textColor = YDSColor.textPrimary
