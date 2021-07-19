@@ -7,8 +7,8 @@
 
 //
 //  SimpleTextField의 기본이 되는 BaseTextField 입니다.
-//  BaseTextField는 다른 TextField에서 사용될 수 있지만
 //
+//  BaseTextField는 다른 TextField에서 사용될 수 있지만
 //  BaseTextField 그 자체로 사용될 수 없습니다.
 //
 

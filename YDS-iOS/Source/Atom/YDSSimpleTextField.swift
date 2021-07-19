@@ -5,6 +5,10 @@
 //  Created by Gyuni on 2021/07/19.
 //
 
+//
+//  가장 기본적인 TextField입니다.
+//
+
 import UIKit
 
 public class YDSSimpleTextField: UIView {
