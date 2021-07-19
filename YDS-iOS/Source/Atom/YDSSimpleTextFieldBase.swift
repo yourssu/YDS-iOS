@@ -16,29 +16,59 @@ import UIKit
 
 public class YDSSimpleTextFieldBase: UITextField {
     
+    //  MARK: - 외부에서 지정할 수 있는 속성
+    
+    //  isDisabled: Bool
+    //  필드를 비활성화 시킬 때 사용합니다.
     internal var isDisabled: Bool = false {
         didSet { setState() }
     }
     
+    //  isNegative: Bool
+    //  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
     internal var isNegative: Bool = false {
         didSet { setState() }
     }
     
+    //  isPositive: Bool
+    //  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
     internal var isPositive: Bool = false {
         didSet { setState() }
     }
     
+    
+    //  MARK: - 내부에서 사용되는 상수
+    
+    //  leftMargin: CGFloat
+    //  필드 좌측 마진값입니다.
     private static let leftMargin: CGFloat = 16
+    
+    //  rightMargin: CGFloat
+    //  필드 우측 마진값입니다.
     private static let rightMargin: CGFloat = 16
+    
+    //  textFieldHeight: CGFloat
+    //  필드 높이입니다.
     private static let textFieldHeight: CGFloat = 48
+    
+    //  subviewSpacing: CGFloat
+    //  필드 내 요소 사이 간격입니다. text label과 cleaButton 사이 거리로 사용됩니다.
     private static let subviewSpacing: CGFloat = 4
+    
+    //  clearButtonDefaultRightMargin: CGFloat
+    //  아무 설정을 하지 않았을 때 기본으로 주어지는 clearButton의 우측 마진 값입니다.
     private static let clearButtonDefaultRightMargin: CGFloat = 6
+    
+    //  clearButtonWidth: CGFloat
+    //  clearButton의 너비입니다.
     private var clearButtonWidth: CGFloat {
         get {
             return clearButtonRect(forBounds: bounds).width
         }
     }
     
+    
+    //  MARK: - 메소드
     internal init() {
         super.init(frame: .zero)
         setupView()
@@ -48,6 +78,8 @@ public class YDSSimpleTextFieldBase: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //  setupView()
+    //  view를 세팅합니다.
     private func setupView() {
         self.font = YDSFont.body1
         self.textColor = YDSColor.textSecondary
@@ -63,6 +95,9 @@ public class YDSSimpleTextFieldBase: UITextField {
         setState()
     }
     
+    //  setState()
+    //  필드의 상태를 세팅합니다.
+    //  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setState() {
         if isDisabled {
             self.isEnabled = false
@@ -94,7 +129,9 @@ public class YDSSimpleTextFieldBase: UITextField {
         self.layer.borderColor = nil
     }
     
-    // clearButton position
+    //  clearButtonRect()
+    //  clearButton의 Bound에 관한 함수입니다.
+    //  clearButton 우측 마진을 주기 위해 사용합니다.
     public override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.clearButtonRect(forBounds: bounds)
         return rect.offsetBy(dx: -(YDSSimpleTextFieldBase.rightMargin - YDSSimpleTextFieldBase.clearButtonDefaultRightMargin),
@@ -102,7 +139,9 @@ public class YDSSimpleTextFieldBase: UITextField {
         )
     }
     
-    // placeholder position
+    //  textRect()
+    //  textRect의 Bound에 관한 함수입니다.
+    //  placeholder label의 너비를 설정하기 위해 사용합니다.
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
         
         return bounds.inset(by: UIEdgeInsets(top: 0,
@@ -112,7 +151,9 @@ public class YDSSimpleTextFieldBase: UITextField {
         ))
     }
 
-    // text position
+    //  editingRect()
+    //  editingRect의 Bound에 관한 함수입니다.
+    //  text label의 너비를 설정하기 위해 사용합니다.
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets(top: 0,
                                              left: YDSSimpleTextFieldBase.leftMargin,

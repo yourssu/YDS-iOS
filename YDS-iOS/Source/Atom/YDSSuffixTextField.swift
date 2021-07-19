@@ -59,16 +59,6 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
-    public var clearButtonMode: UITextField.ViewMode {
-        get {
-            return base.clearButtonMode
-        }
-        
-        set(inputValue) {
-            base.clearButtonMode = inputValue
-        }
-    }
-    
     public var text: String? {
         get {
             return base.text
