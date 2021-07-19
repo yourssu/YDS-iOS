@@ -12,6 +12,9 @@
 		533A27A026A48691009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextField.swift */; };
 		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
 		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
+		53443D8A26A5A4770037B02E /* YDSPasswordTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */; };
+		53443D8C26A5A4850037B02E /* YDSPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */; };
+		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */; };
@@ -73,6 +76,9 @@
 		533A279F26A48691009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
 		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
+		53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextFieldBase.swift; sourceTree = "<group>"; };
+		53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextField.swift; sourceTree = "<group>"; };
+		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleVC.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldBase.swift; sourceTree = "<group>"; };
@@ -212,6 +218,8 @@
 				533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */,
 				5370918326A5467D007CD775 /* YDSSuffixTextField.swift */,
 				5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */,
+				53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */,
+				53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
 				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleVC.swift */,
 				5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */,
+				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */,
 			);
 			path = "YDS-Sample";
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */,
 				DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */,
 				5394692E2663D6DB003D7A44 /* Constant.swift in Sources */,
+				53443D8A26A5A4770037B02E /* YDSPasswordTextFieldBase.swift in Sources */,
 				53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */,
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextField.swift in Sources */,
@@ -452,6 +462,7 @@
 				533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */,
 				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,
 				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
+				53443D8C26A5A4850037B02E /* YDSPasswordTextField.swift in Sources */,
 				DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */,
 				DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */,
 			);
@@ -466,6 +477,7 @@
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
+				53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

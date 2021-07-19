@@ -1,18 +1,19 @@
 //
-//  YDSSuffixTextField.swift
+//  YDSPasswordTextField.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/07/19.
 //
 
 //
-//  입력 필드에 suffix가 붙은 TextField입니다.
+//  비밀번호 입력을 위해 masking을 지원하고
+//  입력 필드에 maskingButton이 붙은 TextField입니다.
 //
 
 import UIKit
 
-public class YDSSuffixTextField: UIView {
-    
+public class YDSPasswordTextField: UIView {
+
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     //  isDisabled: Bool
@@ -39,6 +40,15 @@ public class YDSSuffixTextField: UIView {
         didSet {
             setState()
             base.isPositive = self.isPositive
+        }
+    }
+    
+    //  isMasked: Bool
+    //  필드에 들어온 입력이 마스킹 되어있는지 여부를 나타낼 때 사용합니다.
+    public var isMasked: Bool = false {
+        didSet {
+            setState()
+            base.isMasked = self.isMasked
         }
     }
     
@@ -104,18 +114,6 @@ public class YDSSuffixTextField: UIView {
         }
     }
     
-    //  suffixLabelText: String?
-    //  필드 우측에 나타나는 suffixLabel의 텍스트입니다.
-    public var suffixLabelText: String? {
-        get {
-            return base.suffixLabelText
-        }
-        
-        set(inputValue) {
-            base.suffixLabelText = inputValue
-        }
-    }
-    
     
     //  MARK: - 내부에서 사용되는 상수
     
@@ -137,7 +135,7 @@ public class YDSSuffixTextField: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .center
-        stackView.spacing = YDSSuffixTextField.subviewSpacing
+        stackView.spacing = YDSPasswordTextField.subviewSpacing
         return stackView
     }()
     
@@ -149,12 +147,12 @@ public class YDSSuffixTextField: UIView {
         return label
     }()
     
-    //  base: YDSSuffixTextFieldBase (UITextField)
+    //  base: YDSPasswordTextFieldBase (UITextField)
     //  필드 중앙의 실제 입력 필드입니다.
     //  public으로 열려있으니 delegate를 등록하거나 addTarget, endEditing 등의 메소드를 호출할 때
-    //  suffixTextField.delegate 대신 suffixTextField.base.delegate 로 접근해주세요.
-    public let base: YDSSuffixTextFieldBase = {
-        let textField = YDSSuffixTextFieldBase()
+    //  passwordTextField.delegate 대신 passwordTextField.base.delegate 로 접근해주세요.
+    public let base: YDSPasswordTextFieldBase = {
+        let textField = YDSPasswordTextFieldBase()
         return textField
     }()
     
@@ -200,7 +198,7 @@ public class YDSSuffixTextField: UIView {
             $0.width.equalToSuperview()
         }
         helperLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().offset(-YDSSuffixTextField.helperLabelHorizontalMargin*2)
+            $0.width.equalToSuperview().offset(-YDSPasswordTextField.helperLabelHorizontalMargin*2)
         }
     }
     
@@ -254,4 +252,3 @@ public class YDSSuffixTextField: UIView {
         }
     }
 }
-
