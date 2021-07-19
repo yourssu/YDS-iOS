@@ -81,6 +81,7 @@ public class YDSPasswordTextFieldBase: UITextField {
     //  MARK: - 뷰
     
     private let maskingButton: UIButton = {
+        // 이 부분은 향후 YDSPlainButton으로 교체 예정
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         button.tintColor = YDSColor.buttonNormal
         button.adjustsImageWhenHighlighted = false

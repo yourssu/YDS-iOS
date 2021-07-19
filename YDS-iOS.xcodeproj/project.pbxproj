@@ -15,6 +15,9 @@
 		53443D8A26A5A4770037B02E /* YDSPasswordTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */; };
 		53443D8C26A5A4850037B02E /* YDSPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */; };
 		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */; };
+		53443D9026A5CC7E0037B02E /* SearchTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */; };
+		53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */; };
+		53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */; };
@@ -79,6 +82,9 @@
 		53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextFieldBase.swift; sourceTree = "<group>"; };
 		53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextField.swift; sourceTree = "<group>"; };
 		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleVC.swift; sourceTree = "<group>"; };
+		53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldSampleVC.swift; sourceTree = "<group>"; };
+		53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchTextField.swift; sourceTree = "<group>"; };
+		53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchBar.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldBase.swift; sourceTree = "<group>"; };
@@ -220,6 +226,8 @@
 				5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */,
 				53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */,
 				53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */,
+				53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */,
+				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleVC.swift */,
 				5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */,
 				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */,
+				53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */,
 			);
 			path = "YDS-Sample";
 			sourceTree = "<group>";
@@ -459,7 +468,9 @@
 				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextFieldBase.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* YDSFont.swift in Sources */,
+				53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */,
 				533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */,
+				53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */,
 				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,
 				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
 				53443D8C26A5A4850037B02E /* YDSPasswordTextField.swift in Sources */,
@@ -476,6 +487,7 @@
 				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleVC.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
+				53443D9026A5CC7E0037B02E /* SearchTextFieldSampleVC.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift in Sources */,
 			);

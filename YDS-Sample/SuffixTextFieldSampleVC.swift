@@ -34,8 +34,8 @@ class SuffixTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         sampleTextField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(24)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         
         _ = sampleTextField.base.becomeFirstResponder()

@@ -40,6 +40,7 @@ class PageListViewController: UIViewController {
         Page(title: "SimpleTextField", vc: SimpleTextFieldSampleVC.self),
         Page(title: "SuffixTextField", vc: SuffixTextFieldSampleVC.self),
         Page(title: "PasswordTextField", vc: PasswordTextFieldSampleVC.self),
+        Page(title: "SearchTextField", vc: SearchTextFieldSampleVC.self),
     ]
     
     let componentPages: [Page] = [
