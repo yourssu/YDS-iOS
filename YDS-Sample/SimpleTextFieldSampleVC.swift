@@ -15,7 +15,7 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         let textField = YDSSimpleTextField()
         textField.fieldLabelText = "닉네임"
         textField.placeHolderText = "Dino Han"
-        textField.helperLabelText = "닉네임은 4글자 이상 20글자 이하여야 합니다."
+        textField.helperLabelText = "닉네임은 4글자 이상 8글자 이하여야 합니다."
         textField.isDisabled = false
         textField.isNegative = false
         textField.isPositive = false
@@ -48,17 +48,25 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         print(textField.text as Any)
-        switch(textField.text) {
-        case "Disabled":
-            self.sampleTextField.isDisabled = !self.sampleTextField.isDisabled
-        case "Negative":
-            self.sampleTextField.isNegative = !self.sampleTextField.isNegative
-        case "Positive":
-            self.sampleTextField.isPositive = !self.sampleTextField.isPositive
-        case .none:
-            break
-        case .some(_):
-            break
+        
+        guard let text = textField.text else { return }
+        
+        if text == "Disabled" {
+            self.sampleTextField.isDisabled = true
+        } else {
+            self.sampleTextField.isDisabled = false
+        }
+        
+        if text.count > 8 {
+            self.sampleTextField.isNegative = true
+        } else {
+            self.sampleTextField.isNegative = false
+        }
+        
+        if text.count >= 4 {
+            self.sampleTextField.isPositive = true
+        } else {
+            self.sampleTextField.isPositive = false
         }
     }
 }

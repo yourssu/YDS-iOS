@@ -15,7 +15,6 @@ class PageListViewController: UIViewController {
     
     //  MARK: - tableView에 들어갈 섹션과 셀에 대한 코드입니다.
     
-    
     //  각 섹션의 타이틀로 사용될 문자열입니다.
     let sections: [String] = ["0. Rule", "1. Foundation", "2. Atom", "3. Component"]
     
@@ -47,6 +46,7 @@ class PageListViewController: UIViewController {
 
     
     //  MARK: - PageListViewController Setting
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
