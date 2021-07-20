@@ -83,7 +83,6 @@ public class YDSPasswordTextFieldBase: UITextField {
     private let maskingButton: UIButton = {
         // 이 부분은 향후 YDSPlainButton으로 교체 예정
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        button.tintColor = YDSColor.buttonNormal
         button.adjustsImageWhenHighlighted = false
         return button
     }()
@@ -104,7 +103,6 @@ public class YDSPasswordTextFieldBase: UITextField {
     //  view를 세팅합니다.
     private func setupView() {
         self.font = YDSFont.body1
-        self.textColor = YDSColor.textSecondary
         self.tintColor = YDSColor.textPointed
         self.rightView = maskingButton
         self.rightViewMode = .always
@@ -130,6 +128,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         if isDisabled {
             self.isEnabled = false
             self.textColor = YDSColor.textDisabled
+            maskingButton.tintColor = YDSColor.buttonDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
             return
@@ -138,6 +137,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
+            maskingButton.tintColor = YDSColor.buttonNormal
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
             return
@@ -146,6 +146,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         if isPositive {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
+            maskingButton.tintColor = YDSColor.buttonNormal
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
             return
@@ -153,6 +154,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         
         self.isEnabled = true
         self.textColor = YDSColor.textSecondary
+        maskingButton.tintColor = YDSColor.buttonNormal
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
     }
@@ -233,5 +235,15 @@ public class YDSPasswordTextFieldBase: UITextField {
         }
         return success
     }
+    
+    //  canPerformAction()
+    //  붙여넣기를 차단합니다.
+    //  action이 paste(붙여넣기)이면 하지 못하도록 막습니다.
+    public override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(UIResponderStandardEditActions.paste(_:)) {
+            return false
+        }
+        return super.canPerformAction(action, withSender: sender)
+   }
 }
 

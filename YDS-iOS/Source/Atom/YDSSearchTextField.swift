@@ -17,6 +17,9 @@ public class YDSSearchTextField: UITextField {
         didSet { setState() }
     }
     
+    //  placeholder: String?
+    //  새 값이 들어오면 setPlaceholderTextColor를 이용해
+    //  적절한 값을 가진 attributedPlaceholder로 변환합니다.
     public override var placeholder: String? {
         didSet { setPlaceholderTextColor() }
     }
@@ -39,10 +42,7 @@ public class YDSSearchTextField: UITextField {
     //  subviewSpacing: CGFloat
     //  필드 내 요소 사이 간격입니다. searchIcon과 textLabel과 cleaButton 사이 거리로 사용됩니다.
     private static let subviewSpacing: CGFloat = 4
-    
-    //  searchIconDefaultLeftMargin: CGFloat
-    //  아무 설정을 하지 않았을 때 기본으로 주어지는 searchIcon의 우측 마진 값입니다.
-    private static let searchIconDefaultLeftMargin: CGFloat = 6
+
     
     //  clearButtonDefaultRightMargin: CGFloat
     //  아무 설정을 하지 않았을 때 기본으로 주어지는 clearButton의 우측 마진 값입니다.
@@ -93,7 +93,6 @@ public class YDSSearchTextField: UITextField {
     //  view를 세팅합니다.
     private func setupView() {
         self.font = YDSFont.body2
-        self.textColor = YDSColor.textSecondary
         self.tintColor = YDSColor.textPointed
         self.clearButtonMode = .whileEditing
         

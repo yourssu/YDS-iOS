@@ -86,11 +86,7 @@ public class YDSSuffixTextFieldBase: UITextField {
     
     //  suffixLabel: YDSLabel (UILabel)
     //  필드 오른쪽 나타나는 suffixLabel입니다.
-    private let suffixLabel: YDSLabel = {
-        let label = YDSLabel(style: .body1)
-        label.textColor = YDSColor.textTertiary
-        return label
-    }()
+    private let suffixLabel = YDSLabel(style: .body1)
     
     
     // MARK: - 메소드
@@ -108,7 +104,6 @@ public class YDSSuffixTextFieldBase: UITextField {
     //  view를 세팅합니다.
     private func setupView() {
         self.font = YDSFont.body1
-        self.textColor = YDSColor.textSecondary
         self.tintColor = YDSColor.textPointed
         self.rightView = suffixLabel
         self.rightViewMode = .always

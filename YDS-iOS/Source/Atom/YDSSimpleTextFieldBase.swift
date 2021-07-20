@@ -82,7 +82,6 @@ public class YDSSimpleTextFieldBase: UITextField {
     //  view를 세팅합니다.
     private func setupView() {
         self.font = YDSFont.body1
-        self.textColor = YDSColor.textSecondary
         self.tintColor = YDSColor.textPointed
         self.clearButtonMode = .whileEditing
         

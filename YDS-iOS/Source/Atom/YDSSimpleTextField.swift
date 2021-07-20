@@ -130,11 +130,7 @@ public class YDSSimpleTextField: UIView {
     
     //  fieldLabel: YDSLabel (UILabel)
     //  필드 위쪽에 나타나는 fieldLabel입니다.
-    private let fieldLabel: YDSLabel = {
-        let label = YDSLabel(style: .subtitle3)
-        label.textColor = YDSColor.textPrimary
-        return label
-    }()
+    private let fieldLabel = YDSLabel(style: .subtitle3)
     
     //  base: YDSSimpleTextFieldBase (UITextField)
     //  필드 중앙의 실제 입력 필드입니다.
@@ -147,11 +143,7 @@ public class YDSSimpleTextField: UIView {
     
     //  helperLabel: YDSLabel (UILabel)
     //  필드 아래쪽에 나타나는 helperLabel입니다.
-    private let helperLabel: YDSLabel = {
-        let label = YDSLabel(style: .caption1)
-        label.textColor = YDSColor.textTertiary
-        return label
-    }()
+    private let helperLabel = YDSLabel(style: .caption1)
     
     
     // MARK: - 메소드

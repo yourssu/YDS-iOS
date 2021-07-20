@@ -55,6 +55,12 @@ class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         let passwordRegex: String = #"^(?=.*[A-Za-z])(?=.*\d)[!-~₩]{8,100}$"#
         let isFulfilled = NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
         
+        if text == "Disabled" {
+            self.sampleTextField.isDisabled = true
+        } else {
+            self.sampleTextField.isDisabled = false
+        }
+        
         if text.count < 8 {
             self.sampleTextField.isNegative = false
             self.sampleTextField.isPositive = false
