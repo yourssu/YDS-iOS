@@ -5,6 +5,10 @@
 //  Created by Gyuni on 2021/07/20.
 //
 
+//
+//  검색을 위한 TextField를 포함하고 있는 SearchBar입니다.
+//
+
 import UIKit
 
 public class YDSSearchBar: UISearchBar {

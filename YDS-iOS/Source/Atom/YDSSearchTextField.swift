@@ -5,6 +5,10 @@
 //  Created by Gyuni on 2021/07/20.
 //
 
+//
+//  돋보기가 붙은 TextField입니다.
+//
+
 import UIKit
 
 public class YDSSearchTextField: UITextField {
