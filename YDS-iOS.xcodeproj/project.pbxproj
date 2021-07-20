@@ -18,6 +18,7 @@
 		53443D9026A5CC7E0037B02E /* SearchTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */; };
 		53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */; };
 		53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */; };
+		53443D9726A7000D0037B02E /* SearchBarSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9626A7000D0037B02E /* SearchBarSampleVC.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */; };
@@ -85,6 +86,7 @@
 		53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldSampleVC.swift; sourceTree = "<group>"; };
 		53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchTextField.swift; sourceTree = "<group>"; };
 		53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchBar.swift; sourceTree = "<group>"; };
+		53443D9626A7000D0037B02E /* SearchBarSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSampleVC.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldBase.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */,
 				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */,
 				53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */,
+				53443D9626A7000D0037B02E /* SearchBarSampleVC.swift */,
 			);
 			path = "YDS-Sample";
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53443D9726A7000D0037B02E /* SearchBarSampleVC.swift in Sources */,
 				5370918626A546DF007CD775 /* SuffixTextFieldSampleVC.swift in Sources */,
 				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleVC.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,

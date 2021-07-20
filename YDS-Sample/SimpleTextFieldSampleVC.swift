@@ -13,9 +13,9 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     
     let sampleTextField: YDSSimpleTextField = {
         let textField = YDSSimpleTextField()
-        textField.fieldLabelText = "비밀번호"
-        textField.placeholder = "1q2w3e4r!@"
-        textField.helperLabelText = "숫자와 영문자 조합으로 8자 이상 입력해주세요."
+        textField.fieldLabelText = "닉네임"
+        textField.placeholder = "John Doe"
+        textField.helperLabelText = "이상한거 쓰지 마세요."
         textField.isDisabled = false
         textField.isNegative = false
         textField.isPositive = false
@@ -39,7 +39,6 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         
         _ = sampleTextField.base.becomeFirstResponder()
         sampleTextField.base.delegate = self
-        sampleTextField.base.keyboardType = .alphabet
         sampleTextField.base.returnKeyType = .done
         sampleTextField.base.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
@@ -51,16 +50,19 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
 
-        let passwordRegex: String = #"^(?=.*[A-Za-z])(?=.*\d)[!-~₩]{8,100}$"#
-        let isFulfilled = NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
-        
-        if text.count < 8 {
-            self.sampleTextField.isNegative = false
-            self.sampleTextField.isPositive = false
+        if text == "Disabled" {
+            sampleTextField.isDisabled = !sampleTextField.isDisabled
             return
         }
         
-        self.sampleTextField.isPositive = isFulfilled
-        self.sampleTextField.isNegative = !isFulfilled
+        if text == "Negative" {
+            sampleTextField.isNegative = !sampleTextField.isNegative
+            return
+        }
+        
+        if text == "Positive" {
+            sampleTextField.isPositive = !sampleTextField.isPositive
+            return
+        }
     }
 }

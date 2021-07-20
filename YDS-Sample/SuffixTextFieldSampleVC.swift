@@ -15,7 +15,7 @@ class SuffixTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         let textField = YDSSuffixTextField()
         textField.fieldLabelText = "이메일"
         textField.placeholder = "dinohan"
-        textField.helperLabelText = "이메일은 4글자 이상 8글자 이하여야 합니다."
+        textField.helperLabelText = "이메일은 40글자 이상 80글자 이하여야 합니다."
         textField.suffixLabelText = "@soongsil.ac.kr"
         textField.isDisabled = false
         textField.isNegative = false
@@ -52,21 +52,18 @@ class SuffixTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         guard let text = textField.text else { return }
         
         if text == "Disabled" {
-            self.sampleTextField.isDisabled = true
-        } else {
-            self.sampleTextField.isDisabled = false
+            sampleTextField.isDisabled = !sampleTextField.isDisabled
+            return
         }
         
-        if text.count > 8 {
-            self.sampleTextField.isNegative = true
-        } else {
-            self.sampleTextField.isNegative = false
+        if text == "Negative" {
+            sampleTextField.isNegative = !sampleTextField.isNegative
+            return
         }
         
-        if text.count >= 4 {
-            self.sampleTextField.isPositive = true
-        } else {
-            self.sampleTextField.isPositive = false
+        if text == "Positive" {
+            sampleTextField.isPositive = !sampleTextField.isPositive
+            return
         }
     }
 }

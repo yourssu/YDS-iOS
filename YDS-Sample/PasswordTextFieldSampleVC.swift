@@ -57,6 +57,7 @@ class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         
         if text == "Disabled" {
             self.sampleTextField.isDisabled = true
+            return
         } else {
             self.sampleTextField.isDisabled = false
         }

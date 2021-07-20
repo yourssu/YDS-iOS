@@ -81,10 +81,6 @@ public class YDSSearchBar: UISearchBar {
         )
         
         self.tintColor = YDSColor.textPointed
-        self.setImage(YDSIcon.searchLine, for: .search, state: .normal)
-        searchTextField.leftView?.snp.makeConstraints {
-            $0.width.height.equalTo(YDSSearchBar.searchIconSize)
-        }
         
         searchTextField.tintColor = YDSColor.textPointed
         searchTextField.font = YDSFont.body2
