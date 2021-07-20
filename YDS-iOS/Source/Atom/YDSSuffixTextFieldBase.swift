@@ -36,6 +36,13 @@ public class YDSSuffixTextFieldBase: UITextField {
         didSet { setState() }
     }
     
+    //  placeholder: String?
+    //  새 값이 들어오면 setPlaceholderTextColor를 이용해
+    //  적절한 값을 가진 attributedPlaceholder로 변환합니다.
+    public override var placeholder: String? {
+        didSet { setPlaceholderTextColor() }
+    }
+    
     //  suffixLabelText: String?
     //  필드 우측에 나타나는 suffixLabel의 텍스트입니다.
     internal var suffixLabelText: String? {
@@ -124,6 +131,7 @@ public class YDSSuffixTextFieldBase: UITextField {
         if isDisabled {
             self.isEnabled = false
             self.textColor = YDSColor.textDisabled
+            setPlaceholderTextColor()
             self.suffixLabel.textColor = YDSColor.textDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
@@ -133,6 +141,7 @@ public class YDSSuffixTextFieldBase: UITextField {
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
+            setPlaceholderTextColor()
             self.suffixLabel.textColor = YDSColor.textTertiary
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
@@ -142,6 +151,7 @@ public class YDSSuffixTextFieldBase: UITextField {
         if isPositive {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
+            setPlaceholderTextColor()
             self.suffixLabel.textColor = YDSColor.textTertiary
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
@@ -150,9 +160,29 @@ public class YDSSuffixTextFieldBase: UITextField {
         
         self.isEnabled = true
         self.textColor = YDSColor.textSecondary
+        setPlaceholderTextColor()
         self.suffixLabel.textColor = YDSColor.textTertiary
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
+    }
+    
+    //  setPlaceholderTextColor()
+    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
+    private func setPlaceholderTextColor() {
+        let placeholderTextColor: UIColor
+        
+        if self.isDisabled {
+            placeholderTextColor = YDSColor.textDisabled
+        } else {
+            placeholderTextColor = YDSColor.textTertiary
+        }
+        
+        if let text = placeholder {
+            attributedPlaceholder = NSAttributedString(
+                string: text,
+                attributes: [NSAttributedString.Key.foregroundColor : placeholderTextColor]
+            )
+        }
     }
     
     //  rightViewRect()

@@ -42,6 +42,13 @@ public class YDSPasswordTextFieldBase: UITextField {
         didSet { setMaskingState() }
     }
     
+    //  placeholder: String?
+    //  새 값이 들어오면 setPlaceholderTextColor를 이용해
+    //  적절한 값을 가진 attributedPlaceholder로 변환합니다.
+    public override var placeholder: String? {
+        didSet { setPlaceholderTextColor() }
+    }
+    
     
     //  MARK: - 내부에서 사용되는 상수
     
@@ -128,6 +135,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         if isDisabled {
             self.isEnabled = false
             self.textColor = YDSColor.textDisabled
+            setPlaceholderTextColor()
             maskingButton.tintColor = YDSColor.buttonDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
@@ -137,6 +145,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
+            setPlaceholderTextColor()
             maskingButton.tintColor = YDSColor.buttonNormal
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
@@ -146,6 +155,7 @@ public class YDSPasswordTextFieldBase: UITextField {
         if isPositive {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
+            setPlaceholderTextColor()
             maskingButton.tintColor = YDSColor.buttonNormal
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
@@ -154,12 +164,13 @@ public class YDSPasswordTextFieldBase: UITextField {
         
         self.isEnabled = true
         self.textColor = YDSColor.textSecondary
+        setPlaceholderTextColor()
         maskingButton.tintColor = YDSColor.buttonNormal
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
     }
     
-    //  setState()
+    //  setMaskingState()
     //  필드의 마스킹 상태를 세팅합니다.
     private func setMaskingState() {
         self.isSecureTextEntry = isMasked
@@ -176,6 +187,25 @@ public class YDSPasswordTextFieldBase: UITextField {
     @objc
     private func changeIsMaskedValue() {
         self.isMasked = !self.isMasked
+    }
+    
+    //  setPlaceholderTextColor()
+    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
+    private func setPlaceholderTextColor() {
+        let placeholderTextColor: UIColor
+        
+        if self.isDisabled {
+            placeholderTextColor = YDSColor.textDisabled
+        } else {
+            placeholderTextColor = YDSColor.textTertiary
+        }
+        
+        if let text = placeholder {
+            attributedPlaceholder = NSAttributedString(
+                string: text,
+                attributes: [NSAttributedString.Key.foregroundColor : placeholderTextColor]
+            )
+        }
     }
     
     //  rightViewRect()

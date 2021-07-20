@@ -14,6 +14,7 @@ class SearchBarSampleVC: UIViewController, UISearchBarDelegate {
     let sampleSearchBar: YDSSearchBar = {
         let searchBar = YDSSearchBar()
         searchBar.placeholder = "검색어를 입력해주세요."
+        searchBar.isDisabled = false
         return searchBar
     }()
     

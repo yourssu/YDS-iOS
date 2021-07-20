@@ -72,7 +72,7 @@ public class YDSPasswordTextField: UIView {
         }
         
         set(inputValue) {
-            setPlaceholder(text: inputValue)
+            base.placeholder = inputValue
         }
     }
     
@@ -200,47 +200,24 @@ public class YDSPasswordTextField: UIView {
     private func setState() {
         if self.isDisabled {
             fieldLabel.textColor = YDSColor.textDisabled
-            setPlaceholder(text: self.placeholder)
             helperLabel.textColor = YDSColor.textDisabled
             return
         }
         
         if self.isNegative {
             fieldLabel.textColor = YDSColor.textSecondary
-            setPlaceholder(text: self.placeholder)
             helperLabel.textColor = YDSColor.textWarned
             return
         }
         
         if self.isPositive {
             fieldLabel.textColor = YDSColor.textSecondary
-            setPlaceholder(text: self.placeholder)
             helperLabel.textColor = YDSColor.textTertiary
             return
         }
         
         fieldLabel.textColor = YDSColor.textSecondary
-        setPlaceholder(text: self.placeholder)
         helperLabel.textColor = YDSColor.textTertiary
     }
     
-    //  setPlaceholder(text: String?)
-    //  매개변수로 받은 text를 placeholder에 입력합니다.
-    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
-    private func setPlaceholder(text: String?) {
-        let placeholderTextColor: UIColor
-        
-        if self.isDisabled {
-            placeholderTextColor = YDSColor.textDisabled
-        } else {
-            placeholderTextColor = YDSColor.textTertiary
-        }
-        
-        if let text = text {
-            base.attributedPlaceholder = NSAttributedString(
-                string: text,
-                attributes: [NSAttributedString.Key.foregroundColor : placeholderTextColor]
-            )
-        }
-    }
 }

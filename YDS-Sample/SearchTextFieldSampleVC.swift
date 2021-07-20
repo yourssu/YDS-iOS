@@ -14,6 +14,7 @@ class SearchTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     let sampleTextField: YDSSearchTextField = {
         let sampleTextField = YDSSearchTextField()
         sampleTextField.placeholder = "검색어를 입력해주세요."
+        sampleTextField.isDisabled = false
         return sampleTextField
     }()
     

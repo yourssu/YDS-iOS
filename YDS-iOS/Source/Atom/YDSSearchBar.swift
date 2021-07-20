@@ -120,7 +120,7 @@ public class YDSSearchBar: UISearchBar {
         setPlaceholderTextColor()
     }
 
-    //  setPlaceHolder()
+    //  setPlaceholderTextColor()
     //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
     private func setPlaceholderTextColor() {
         let placeholderTextColor: UIColor
