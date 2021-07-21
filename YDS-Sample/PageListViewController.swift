@@ -37,11 +37,11 @@ class PageListViewController: UIViewController {
     ]
     
     let atomPages: [Page] = [
-        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleVC.self),
-        Page(title: "SuffixTextField", vc: SuffixTextFieldSampleVC.self),
-        Page(title: "PasswordTextField", vc: PasswordTextFieldSampleVC.self),
-        Page(title: "SearchTextField", vc: SearchTextFieldSampleVC.self),
-        Page(title: "SearchBar", vc: SearchBarSampleVC.self),
+        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleViewController.self),
+        Page(title: "SuffixTextField", vc: SuffixTextFieldSampleViewController.self),
+        Page(title: "PasswordTextField", vc: PasswordTextFieldSampleViewController.self),
+        Page(title: "SearchTextField", vc: SearchTextFieldSampleViewController.self),
+        Page(title: "SearchBar", vc: SearchBarSampleViewController.self),
     ]
     
     let componentPages: [Page] = [

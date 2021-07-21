@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import YDS_iOS
 
-class SearchTextFieldSampleVC: UIViewController, UITextFieldDelegate {
+class SearchTextFieldSampleViewController: UIViewController, UITextFieldDelegate {
     
     let sampleTextField: YDSSearchTextField = {
         let sampleTextField = YDSSearchTextField()

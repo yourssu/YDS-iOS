@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import YDS_iOS
 
-class SearchBarSampleVC: UIViewController, UISearchBarDelegate {
+class SearchBarSampleViewController: UIViewController, UISearchBarDelegate {
 
     let sampleSearchBar: YDSSearchBar = {
         let searchBar = YDSSearchBar()

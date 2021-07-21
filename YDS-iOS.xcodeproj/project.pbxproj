@@ -14,16 +14,16 @@
 		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
 		53443D8A26A5A4770037B02E /* YDSPasswordTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */; };
 		53443D8C26A5A4850037B02E /* YDSPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */; };
-		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */; };
-		53443D9026A5CC7E0037B02E /* SearchTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */; };
+		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */; };
+		53443D9026A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */; };
 		53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */; };
 		53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */; };
-		53443D9726A7000D0037B02E /* SearchBarSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9626A7000D0037B02E /* SearchBarSampleVC.swift */; };
+		53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextFieldBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */; };
 		5370918426A5467D007CD775 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918326A5467D007CD775 /* YDSSuffixTextField.swift */; };
-		5370918626A546DF007CD775 /* SuffixTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */; };
+		5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */; };
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
 		53A31B5E266F500300461C29 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
 		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
@@ -40,7 +40,7 @@
 		DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* BasicColor.swift */; };
 		DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* SemanticColor.swift */; };
 		DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */; };
-		DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleVC.swift */; };
+		DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */; };
 		DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00426739A6900C5F409 /* Main.storyboard */; };
 		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
 		DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */; };
@@ -82,16 +82,16 @@
 		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
 		53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextFieldBase.swift; sourceTree = "<group>"; };
 		53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextField.swift; sourceTree = "<group>"; };
-		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleVC.swift; sourceTree = "<group>"; };
-		53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldSampleVC.swift; sourceTree = "<group>"; };
+		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleViewController.swift; sourceTree = "<group>"; };
+		53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldSampleViewController.swift; sourceTree = "<group>"; };
 		53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchTextField.swift; sourceTree = "<group>"; };
 		53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchBar.swift; sourceTree = "<group>"; };
-		53443D9626A7000D0037B02E /* SearchBarSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSampleVC.swift; sourceTree = "<group>"; };
+		53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSampleViewController.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldBase.swift; sourceTree = "<group>"; };
 		5370918326A5467D007CD775 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
-		5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixTextFieldSampleVC.swift; sourceTree = "<group>"; };
+		5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixTextFieldSampleViewController.swift; sourceTree = "<group>"; };
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		53ADEA2226A1794800153636 /* YDSBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBundle.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		DDDC3C81265E8276007ED3FE /* SemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColor.swift; sourceTree = "<group>"; };
 		DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldSampleVC.swift; sourceTree = "<group>"; };
+		DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldSampleViewController.swift; sourceTree = "<group>"; };
 		DDFBD00526739A6900C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDFBD00A26739A6B00C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -174,6 +174,56 @@
 			path = storyboard;
 			sourceTree = "<group>";
 		};
+		53443D9826A7D3050037B02E /* YDSSimpleTextField */ = {
+			isa = PBXGroup;
+			children = (
+				533A279F26A48691009FD90A /* YDSSimpleTextField.swift */,
+				533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */,
+			);
+			path = YDSSimpleTextField;
+			sourceTree = "<group>";
+		};
+		53443D9926A7D3130037B02E /* YDSSuffixTextField */ = {
+			isa = PBXGroup;
+			children = (
+				5370918326A5467D007CD775 /* YDSSuffixTextField.swift */,
+				5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */,
+			);
+			path = YDSSuffixTextField;
+			sourceTree = "<group>";
+		};
+		53443D9A26A7D31D0037B02E /* YDSPasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */,
+				53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */,
+			);
+			path = YDSPasswordTextField;
+			sourceTree = "<group>";
+		};
+		53443D9B26A7D32B0037B02E /* YDSTextField */ = {
+			isa = PBXGroup;
+			children = (
+				53443D9826A7D3050037B02E /* YDSSimpleTextField */,
+				53443D9926A7D3130037B02E /* YDSSuffixTextField */,
+				53443D9A26A7D31D0037B02E /* YDSPasswordTextField */,
+				53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */,
+			);
+			path = YDSTextField;
+			sourceTree = "<group>";
+		};
+		53443D9C26A7D3CC0037B02E /* AtomSampleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */,
+				5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */,
+				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */,
+				53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */,
+				53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */,
+			);
+			path = AtomSampleViewController;
+			sourceTree = "<group>";
+		};
 		5394692C2663D6C7003D7A44 /* Rule */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,13 +272,7 @@
 				DD48C1EB26735052004B288E /* BottomSheet.swift */,
 				53EB943826A1E33A00208496 /* YDSDivider.swift */,
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
-				533A279F26A48691009FD90A /* YDSSimpleTextField.swift */,
-				533A279C26A48683009FD90A /* YDSSimpleTextFieldBase.swift */,
-				5370918326A5467D007CD775 /* YDSSuffixTextField.swift */,
-				5370918126A5463C007CD775 /* YDSSuffixTextFieldBase.swift */,
-				53443D8B26A5A4850037B02E /* YDSPasswordTextField.swift */,
-				53443D8926A5A4770037B02E /* YDSPasswordTextFieldBase.swift */,
-				53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */,
+				53443D9B26A7D32B0037B02E /* YDSTextField */,
 				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
 			);
 			path = Atom;
@@ -256,11 +300,7 @@
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
-				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleVC.swift */,
-				5370918526A546DF007CD775 /* SuffixTextFieldSampleVC.swift */,
-				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift */,
-				53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleVC.swift */,
-				53443D9626A7000D0037B02E /* SearchBarSampleVC.swift */,
+				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
 			);
 			path = "YDS-Sample";
 			sourceTree = "<group>";
@@ -486,14 +526,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53443D9726A7000D0037B02E /* SearchBarSampleVC.swift in Sources */,
-				5370918626A546DF007CD775 /* SuffixTextFieldSampleVC.swift in Sources */,
-				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleVC.swift in Sources */,
+				53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */,
+				5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */,
+				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
-				53443D9026A5CC7E0037B02E /* SearchTextFieldSampleVC.swift in Sources */,
+				53443D9026A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
-				53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleVC.swift in Sources */,
+				53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,21 +1,22 @@
 //
-//  ViewController.swift
+//  SuffixTextFieldSampleVC.swift
 //  YDS-Sample
 //
-//  Created by 김윤서 on 2021/06/11.
+//  Created by Gyuni on 2021/07/19.
 //
 
 import UIKit
 import YDS_iOS
 import SnapKit
 
-class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
+class SuffixTextFieldSampleViewController: UIViewController, UITextFieldDelegate {
     
-    let sampleTextField: YDSSimpleTextField = {
-        let textField = YDSSimpleTextField()
-        textField.fieldLabelText = "닉네임"
-        textField.placeholder = "John Doe"
-        textField.helperLabelText = "이상한거 쓰지 마세요."
+    let sampleTextField: YDSSuffixTextField = {
+        let textField = YDSSuffixTextField()
+        textField.fieldLabelText = "이메일"
+        textField.placeholder = "dinohan"
+        textField.helperLabelText = "이메일은 40글자 이상 80글자 이하여야 합니다."
+        textField.suffixLabelText = "@soongsil.ac.kr"
         textField.isDisabled = false
         textField.isNegative = false
         textField.isPositive = false
@@ -49,7 +50,7 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
-
+        
         if text == "Disabled" {
             sampleTextField.isDisabled = !sampleTextField.isDisabled
             return
@@ -66,3 +67,4 @@ class SimpleTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         }
     }
 }
+

@@ -1,22 +1,21 @@
 //
-//  PasswordTextFieldSampleVC.swift
+//  ViewController.swift
 //  YDS-Sample
 //
-//  Created by Gyuni on 2021/07/19.
+//  Created by 김윤서 on 2021/06/11.
 //
 
 import UIKit
 import YDS_iOS
 import SnapKit
 
-class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
-
-    let sampleTextField: YDSPasswordTextField = {
-        let textField = YDSPasswordTextField()
-        textField.fieldLabelText = "비밀번호"
-        textField.placeholder = "password1234!"
-        textField.helperLabelText = "알파벳과 숫자를 포함해서 8자 이상으로 입력해 주세요."
-        textField.isMasked = true
+class SimpleTextFieldSampleViewController: UIViewController, UITextFieldDelegate {
+    
+    let sampleTextField: YDSSimpleTextField = {
+        let textField = YDSSimpleTextField()
+        textField.fieldLabelText = "닉네임"
+        textField.placeholder = "John Doe"
+        textField.helperLabelText = "이상한거 쓰지 마세요."
         textField.isDisabled = false
         textField.isNegative = false
         textField.isPositive = false
@@ -27,7 +26,7 @@ class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setUI()
     }
-    
+
     private func setUI(){
         self.view.backgroundColor = YDSColor.bgNormal
         self.view.addSubview(sampleTextField)
@@ -40,7 +39,6 @@ class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
         
         _ = sampleTextField.base.becomeFirstResponder()
         sampleTextField.base.delegate = self
-        sampleTextField.base.keyboardType = .alphabet
         sampleTextField.base.returnKeyType = .done
         sampleTextField.base.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
@@ -52,24 +50,19 @@ class PasswordTextFieldSampleVC: UIViewController, UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         guard let text = textField.text else { return }
 
-        let passwordRegex: String = #"^(?=.*[A-Za-z])(?=.*\d)[!-~₩]{8,100}$"#
-        let isFulfilled = NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: text)
-        
         if text == "Disabled" {
-            self.sampleTextField.isDisabled = true
-            return
-        } else {
-            self.sampleTextField.isDisabled = false
-        }
-        
-        if text.count < 8 {
-            self.sampleTextField.isNegative = false
-            self.sampleTextField.isPositive = false
+            sampleTextField.isDisabled = !sampleTextField.isDisabled
             return
         }
         
-        self.sampleTextField.isPositive = isFulfilled
-        self.sampleTextField.isNegative = !isFulfilled
+        if text == "Negative" {
+            sampleTextField.isNegative = !sampleTextField.isNegative
+            return
+        }
+        
+        if text == "Positive" {
+            sampleTextField.isPositive = !sampleTextField.isPositive
+            return
+        }
     }
-    
 }
