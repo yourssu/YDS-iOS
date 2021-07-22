@@ -20,7 +20,10 @@ public class YDSPasswordTextField: UITextField {
     //  isDisabled: Bool
     //  필드를 비활성화 시킬 때 사용합니다.
     internal var isDisabled: Bool = false {
-        didSet { setState() }
+        didSet {
+            setState()
+            setPlaceholderTextColor()
+        }
     }
     
     //  isNegative: Bool
@@ -135,7 +138,6 @@ public class YDSPasswordTextField: UITextField {
         if isDisabled {
             self.isEnabled = false
             self.textColor = YDSColor.textDisabled
-            setPlaceholderTextColor()
             maskingButton.tintColor = YDSColor.buttonDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
@@ -145,7 +147,6 @@ public class YDSPasswordTextField: UITextField {
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
-            setPlaceholderTextColor()
             maskingButton.tintColor = YDSColor.buttonNormal
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
@@ -155,7 +156,6 @@ public class YDSPasswordTextField: UITextField {
         if isPositive {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
-            setPlaceholderTextColor()
             maskingButton.tintColor = YDSColor.buttonNormal
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
@@ -164,7 +164,6 @@ public class YDSPasswordTextField: UITextField {
         
         self.isEnabled = true
         self.textColor = YDSColor.textSecondary
-        setPlaceholderTextColor()
         maskingButton.tintColor = YDSColor.buttonNormal
         self.layer.borderWidth = 0
         self.layer.borderColor = nil

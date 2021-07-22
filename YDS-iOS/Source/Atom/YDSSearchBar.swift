@@ -18,7 +18,10 @@ public class YDSSearchBar: UISearchBar {
     //  isDisabled: Bool
     //  필드를 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
-        didSet { setState() }
+        didSet {
+            setState()
+            setPlaceholderTextColor()
+        }
     }
     
     //  placeholder: String?
@@ -110,14 +113,12 @@ public class YDSSearchBar: UISearchBar {
             searchTextField.isEnabled = false
             searchTextField.textColor = YDSColor.textDisabled
             searchTextField.leftView?.tintColor = YDSColor.textDisabled
-            setPlaceholderTextColor()
             return
         }
         
         searchTextField.isEnabled = true
         searchTextField.textColor = YDSColor.textSecondary
         searchTextField.leftView?.tintColor = YDSColor.textSecondary
-        setPlaceholderTextColor()
     }
 
     //  setPlaceholderTextColor()

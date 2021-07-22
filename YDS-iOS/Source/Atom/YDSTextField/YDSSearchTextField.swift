@@ -18,7 +18,10 @@ public class YDSSearchTextField: UITextField {
     //  isDisabled: Bool
     //  필드를 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
-        didSet { setState() }
+        didSet {
+            setState()
+            setPlaceholderTextColor()
+        }
     }
     
     //  placeholder: String?
@@ -126,7 +129,6 @@ public class YDSSearchTextField: UITextField {
             self.searchIcon.tintColor = YDSColor.textDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
-            setPlaceholderTextColor()
             return
         }
         
@@ -135,7 +137,6 @@ public class YDSSearchTextField: UITextField {
         self.searchIcon.tintColor = YDSColor.textSecondary
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
-        setPlaceholderTextColor()
     }
     
     //  setPlaceholderTextColor()

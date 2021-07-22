@@ -20,7 +20,10 @@ public class YDSSuffixTextField: UITextField {
     //  isDisabled: Bool
     //  필드를 비활성화 시킬 때 사용합니다.
     internal var isDisabled: Bool = false {
-        didSet { setState() }
+        didSet {
+            setState()
+            setPlaceholderTextColor()
+        }
     }
     
     //  isNegative: Bool
@@ -130,7 +133,6 @@ public class YDSSuffixTextField: UITextField {
         if isDisabled {
             self.isEnabled = false
             self.textColor = YDSColor.textDisabled
-            setPlaceholderTextColor()
             self.suffixLabel.textColor = YDSColor.textDisabled
             self.layer.borderWidth = 0
             self.layer.borderColor = nil
@@ -140,7 +142,6 @@ public class YDSSuffixTextField: UITextField {
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
-            setPlaceholderTextColor()
             self.suffixLabel.textColor = YDSColor.textTertiary
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
@@ -150,7 +151,6 @@ public class YDSSuffixTextField: UITextField {
         if isPositive {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
-            setPlaceholderTextColor()
             self.suffixLabel.textColor = YDSColor.textTertiary
             self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
@@ -159,7 +159,6 @@ public class YDSSuffixTextField: UITextField {
         
         self.isEnabled = true
         self.textColor = YDSColor.textSecondary
-        setPlaceholderTextColor()
         self.suffixLabel.textColor = YDSColor.textTertiary
         self.layer.borderWidth = 0
         self.layer.borderColor = nil
