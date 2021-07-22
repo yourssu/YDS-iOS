@@ -16,10 +16,6 @@ public class YDSBoxButton: UIButton {
             }
         }
     }
-    
-    public override var isSelected: Bool {
-        didSet { setBoxButtonColor() }
-    }
 
     public enum BoxButtonType {
         case filled
@@ -91,16 +87,6 @@ public class YDSBoxButton: UIButton {
         case r4 = 4
     }
     
-    public var type: BoxButtonType = .filled {
-        didSet { setBoxButtonColor() }
-    }
-    public var size: BoxButtonSize = .large {
-        didSet { setBoxButtonSize() }
-    }
-    public var rounding: BoxButtonRounding = .r4 {
-        didSet { setBoxButtonRounding() }
-    }
-    
     public var isDisabled: Bool = false {
         didSet { setBoxButtonColor() }
     }
@@ -109,13 +95,36 @@ public class YDSBoxButton: UIButton {
         didSet { setBoxButtonColor() }
     }
     
+    public var type: BoxButtonType = .filled {
+        didSet { setBoxButtonColor() }
+    }
+    
+    public var size: BoxButtonSize = .large {
+        didSet { setBoxButtonSize() }
+    }
+    
+    public var rounding: BoxButtonRounding = .r4 {
+        didSet { setBoxButtonRounding() }
+    }
+    
+    public var text: String? = nil {
+        didSet { setTitle(text, for: .normal) }
+    }
+    
+    public var leftIcon: UIImage? = nil {
+        didSet { setIcon() }
+    }
+    
+    public var rightIcon: UIImage? = nil {
+        didSet { setIcon() }
+    }
+    
+    private static let subviewSpacing: CGFloat = 4
+
     public init() {
         super.init(frame: .zero)
         
         setupView()
-        setBoxButtonSize()
-        setBoxButtonColor()
-        setBoxButtonRounding()
     }
     
     required init?(coder: NSCoder) {
@@ -126,11 +135,13 @@ public class YDSBoxButton: UIButton {
         self.clipsToBounds = true
         self.adjustsImageWhenHighlighted = false
         self.adjustsImageWhenDisabled = false
+        
+        setBoxButtonSize()
+        setBoxButtonColor()
+        setBoxButtonRounding()
     }
     
     private func setBoxButtonColor() {
-        let startTime = CFAbsoluteTimeGetCurrent()
-
         
         self.isEnabled = !isDisabled
         
@@ -232,15 +243,12 @@ public class YDSBoxButton: UIButton {
                 ? foregroundColor
                 : foregroundPressedColor
             
-            self.layer.borderWidth = 1
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = !isHighlighted
                 ? foregroundColor.cgColor
                 : foregroundPressedColor.cgColor
         }
-        
-        let processTime = CFAbsoluteTimeGetCurrent() - startTime
-        print("수행 시간 = \(processTime)")
-        
+
     }
     
     private func setBoxButtonSize() {
@@ -249,17 +257,56 @@ public class YDSBoxButton: UIButton {
         }
  
         self.titleLabel?.font = size.getFontStyle()
-        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: size.getPadding()+2, bottom: 0, right: size.getPadding()+2)
+        self.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                              left: size.getPadding()+YDSBoxButton.subviewSpacing/2,
+                                              bottom: 0,
+                                              right: size.getPadding()+YDSBoxButton.subviewSpacing/2)
         
-        let icon = self.image(for: .normal)?.resize(to: size.getIconSize())
-        self.setImage(icon, for: .normal)
-        
-        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -2, bottom: 0, right: 2)
-        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: -2)
+        setIcon()
     }
     
     private func setBoxButtonRounding() {
         self.layer.cornerRadius = CGFloat(rounding.rawValue)
+    }
+    
+    private func setIcon() {
+        if leftIcon != nil {
+            self.setImage(self.leftIcon?
+                            .resize(to: size.getIconSize())
+                            .withRenderingMode(.alwaysTemplate),
+                          for: .normal)
+            
+            self.semanticContentAttribute = .forceLeftToRight
+            self.imageEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: -YDSBoxButton.subviewSpacing/2,
+                                                bottom: 0,
+                                                right: YDSBoxButton.subviewSpacing/2)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: YDSBoxButton.subviewSpacing/2,
+                                                bottom: 0,
+                                                right: -YDSBoxButton.subviewSpacing/2)
+            
+            return
+        }
+        
+        if rightIcon != nil {
+            self.setImage(self.rightIcon?
+                            .resize(to: size.getIconSize())
+                            .withRenderingMode(.alwaysTemplate),
+                          for: .normal)
+            
+            self.semanticContentAttribute = .forceRightToLeft
+            self.imageEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: YDSBoxButton.subviewSpacing/2,
+                                                bottom: 0,
+                                                right: -YDSBoxButton.subviewSpacing/2)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: -YDSBoxButton.subviewSpacing/2,
+                                                bottom: 0,
+                                                right: YDSBoxButton.subviewSpacing/2)
+            
+            return
+        }
     }
 
 }
