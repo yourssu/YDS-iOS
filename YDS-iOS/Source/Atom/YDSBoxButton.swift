@@ -29,7 +29,20 @@ public class YDSBoxButton: UIButton {
         case medium
         case small
         
-        fileprivate func getHeight() -> CGFloat {
+        fileprivate var padding: CGFloat {
+            switch self {
+            case .extraLarge:
+                return 16
+            case .large:
+                return 16
+            case .medium:
+                return 12
+            case .small:
+                return 12
+            }
+        }
+        
+        fileprivate var height: CGFloat {
             switch self {
             case .extraLarge:
                 return 56
@@ -42,20 +55,7 @@ public class YDSBoxButton: UIButton {
             }
         }
         
-        fileprivate func getPadding() -> CGFloat {
-            switch self {
-            case .extraLarge:
-                return 16
-            case .large:
-                return 16
-            case .medium:
-                return 12
-            case .small:
-                return 12
-            }
-        }
-        
-        fileprivate func getFontStyle() -> UIFont {
+        fileprivate var font: UIFont {
             switch self {
             case .extraLarge:
                 return YDSFont.button1
@@ -68,7 +68,7 @@ public class YDSBoxButton: UIButton {
             }
         }
         
-        fileprivate func getIconSize() -> CGFloat {
+        fileprivate var iconSize: CGFloat {
             switch self {
             case .extraLarge:
                 return 24
@@ -253,15 +253,10 @@ public class YDSBoxButton: UIButton {
     
     private func setBoxButtonSize() {
         self.snp.updateConstraints {
-            $0.height.equalTo(size.getHeight())
+            $0.height.equalTo(size.height)
         }
  
-        self.titleLabel?.font = size.getFontStyle()
-        self.contentEdgeInsets = UIEdgeInsets(top: 0,
-                                              left: size.getPadding()+YDSBoxButton.subviewSpacing/2,
-                                              bottom: 0,
-                                              right: size.getPadding()+YDSBoxButton.subviewSpacing/2)
-        
+        self.titleLabel?.font = size.font
         setIcon()
     }
     
@@ -272,7 +267,7 @@ public class YDSBoxButton: UIButton {
     private func setIcon() {
         if leftIcon != nil {
             self.setImage(self.leftIcon?
-                            .resize(to: size.getIconSize())
+                            .resize(to: size.iconSize)
                             .withRenderingMode(.alwaysTemplate),
                           for: .normal)
             
@@ -285,13 +280,16 @@ public class YDSBoxButton: UIButton {
                                                 left: YDSBoxButton.subviewSpacing/2,
                                                 bottom: 0,
                                                 right: -YDSBoxButton.subviewSpacing/2)
-            
+            self.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                                  left: size.padding+YDSBoxButton.subviewSpacing/2,
+                                                  bottom: 0,
+                                                  right: size.padding+YDSBoxButton.subviewSpacing/2)
             return
         }
         
         if rightIcon != nil {
             self.setImage(self.rightIcon?
-                            .resize(to: size.getIconSize())
+                            .resize(to: size.iconSize)
                             .withRenderingMode(.alwaysTemplate),
                           for: .normal)
             
@@ -304,9 +302,18 @@ public class YDSBoxButton: UIButton {
                                                 left: -YDSBoxButton.subviewSpacing/2,
                                                 bottom: 0,
                                                 right: YDSBoxButton.subviewSpacing/2)
-            
+            self.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                                  left: size.padding+YDSBoxButton.subviewSpacing/2,
+                                                  bottom: 0,
+                                                  right: size.padding+YDSBoxButton.subviewSpacing/2)
             return
         }
+        
+        self.setImage(nil, for: .normal)
+        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: size.padding, bottom: 0, right: size.padding)
+        return
     }
 
 }
