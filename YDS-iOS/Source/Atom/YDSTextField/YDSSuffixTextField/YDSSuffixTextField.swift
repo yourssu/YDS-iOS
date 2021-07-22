@@ -6,166 +6,99 @@
 //
 
 //
-//  입력 필드에 suffix가 붙은 TextField입니다.
+//  YDSSuffixTextFieldView의 기본이 되는 textField 입니다.
+//
+//  YDSSuffixTextField는 그 자체로 사용될 수 없습니다.
 //
 
 import UIKit
 
-public class YDSSuffixTextField: UIView {
+public class YDSSuffixTextField: UITextField {
     
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     //  isDisabled: Bool
     //  필드를 비활성화 시킬 때 사용합니다.
-    public var isDisabled: Bool = false {
-        didSet {
-            setState()
-            base.isDisabled = self.isDisabled
-        }
+    internal var isDisabled: Bool = false {
+        didSet { setState() }
     }
     
     //  isNegative: Bool
     //  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
-    public var isNegative: Bool = false {
-        didSet {
-            setState()
-            base.isNegative = self.isNegative
-        }
-    }
-
-    //  isPositive: Bool
-    //  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
-    public var isPositive: Bool = false {
-        didSet {
-            setState()
-            base.isPositive = self.isPositive
-        }
+    internal var isNegative: Bool = false {
+        didSet { setState() }
     }
     
-    //  text: String?
-    //  필드에 입력된 텍스트입니다.
-    public var text: String? {
-        get {
-            return base.text
-        }
-        
-        set(inputValue) {
-            base.text = inputValue
-        }
+    //  isPositive: Bool
+    //  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
+    internal var isPositive: Bool = false {
+        didSet { setState() }
     }
     
     //  placeholder: String?
-    //  필드에 나타나는 placeholder의 텍스트입니다.
-    public var placeholder: String? {
-        get {
-            return base.placeholder
-        }
-        
-        set(inputValue) {
-            base.placeholder = inputValue
-        }
-    }
-    
-    //  fieldLabelText: String?
-    //  필드 위쪽에 나타나는 fieldLabel의 텍스트입니다.
-    //  nil이 들어오면 fieldLabel이 사라집니다.
-    public var fieldLabelText: String? {
-        get {
-            return fieldLabel.text
-        }
-        
-        set(inputValue) {
-            fieldLabel.text = inputValue
-            
-            if inputValue == nil {
-                fieldLabel.isHidden = true
-            } else {
-                fieldLabel.isHidden = false
-            }
-        }
-    }
-    
-    //  helperLabelText: String?
-    //  필드 아래쪽에 나타나는 helperLabel의 텍스트입니다.
-    //  nil이 들어오면 helperLabel이 사라집니다.
-    public var helperLabelText: String? {
-        get {
-            return helperLabel.text
-        }
-        
-        set(inputValue) {
-            helperLabel.text = inputValue
-            
-            if inputValue == nil {
-                helperLabel.isHidden = true
-            } else {
-                helperLabel.isHidden = false
-            }
-        }
+    //  새 값이 들어오면 setPlaceholderTextColor를 이용해
+    //  적절한 값을 가진 attributedPlaceholder로 변환합니다.
+    public override var placeholder: String? {
+        didSet { setPlaceholderTextColor() }
     }
     
     //  suffixLabelText: String?
     //  필드 우측에 나타나는 suffixLabel의 텍스트입니다.
-    public var suffixLabelText: String? {
+    internal var suffixLabelText: String? {
         get {
-            return base.suffixLabelText
+            return suffixLabel.text
         }
         
         set(inputValue) {
-            base.suffixLabelText = inputValue
+            suffixLabel.text = inputValue
+            
+            if inputValue == nil {
+                suffixLabel.isHidden = true
+            } else {
+                suffixLabel.isHidden = false
+            }
         }
     }
     
     
     //  MARK: - 내부에서 사용되는 상수
     
-    //  subviewSpacing: CGFloat
-    //  fieldLabel, baseTextField, helperLabel 사이 간격입니다.
-    private static let subviewSpacing: CGFloat = 8
+    //  leftMargin: CGFloat
+    //  필드 좌측 마진값입니다.
+    private static let leftMargin: CGFloat = 16
     
-    //  helperLabelHorizontalMargin: CGFloat
-    //  helperLabel의 좌우 마진값입니다.
-    private static let helperLabelHorizontalMargin: CGFloat = 8
+    //  rightMargin: CGFloat
+    //  필드 우측 마진값입니다.
+    private static let rightMargin: CGFloat = 16
+    
+    //  textFieldHeight: CGFloat
+    //  필드 높이입니다.
+    private static let textFieldHeight: CGFloat = 48
+    
+    //  subviewSpacing: CGFloat
+    //  필드 내 요소 사이 간격입니다. text label과 cleaButton 사이 거리로 사용됩니다.
+    private static let subviewSpacing: CGFloat = 4
+    
+    //  suffixLabelWidth: CGFloat
+    //  suffixLabel의 너비입니다.
+    private var suffixLabelWidth: CGFloat {
+        get {
+            return rightViewRect(forBounds: bounds).width
+        }
+    }
     
     
     //  MARK: - 뷰
     
-    //  stackView: UIStackView
-    //  fieldLabel, baseTextField, helperLabel을 담는 stackView입니다.
-    private let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        stackView.spacing = YDSSuffixTextField.subviewSpacing
-        return stackView
-    }()
-    
-    //  fieldLabel: YDSLabel (UILabel)
-    //  필드 위쪽에 나타나는 fieldlabel입니다.
-    private let fieldLabel = YDSLabel(style: .subtitle3)
-    
-    //  base: YDSSuffixTextFieldBase (UITextField)
-    //  필드 중앙의 실제 입력 필드입니다.
-    //  public으로 열려있으니 delegate를 등록하거나 addTarget, endEditing 등의 메소드를 호출할 때
-    //  suffixTextField.delegate 대신 suffixTextField.base.delegate 로 접근해주세요.
-    public let base: YDSSuffixTextFieldBase = {
-        let textField = YDSSuffixTextFieldBase()
-        return textField
-    }()
-    
-    //  helperLabel: YDSLabel (UILabel)
-    //  필드 아래쪽에 나타나는 helperLabel입니다.
-    private let helperLabel = YDSLabel(style: .caption1)
+    //  suffixLabel: YDSLabel (UILabel)
+    //  필드 오른쪽 나타나는 suffixLabel입니다.
+    private let suffixLabel = YDSLabel(style: .body1)
     
     
     // MARK: - 메소드
-    
-    public init() {
-        super.init(frame: CGRect.zero)
-        
-        setStackView()
-        setState()
+    internal init() {
+        super.init(frame: .zero)
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -173,53 +106,113 @@ public class YDSSuffixTextField: UIView {
     }
     
     
-    //  setStackView()
-    //  stackView 내부를 세팅합니다.
-    private func setStackView() {
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints {
-            $0.top.bottom.left.right.equalToSuperview()
+    //  setupView()
+    //  view를 세팅합니다.
+    private func setupView() {
+        self.font = YDSFont.body1
+        self.tintColor = YDSColor.textPointed
+        self.rightView = suffixLabel
+        self.rightViewMode = .always
+        
+        self.layer.cornerRadius = Constant.Rounding.r8
+        self.backgroundColor = YDSColor.inputFieldElevated
+        self.snp.makeConstraints {
+            $0.height.equalTo(YDSSuffixTextField.textFieldHeight)
         }
         
-        stackView.addArrangedSubview(fieldLabel)
-        stackView.addArrangedSubview(base)
-        stackView.addArrangedSubview(helperLabel)
-        
-        fieldLabel.snp.makeConstraints {
-            $0.width.equalToSuperview()
-        }
-        base.snp.makeConstraints {
-            $0.width.equalToSuperview()
-        }
-        helperLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().offset(-YDSSuffixTextField.helperLabelHorizontalMargin*2)
-        }
+        setState()
     }
     
     //  setState()
     //  필드의 상태를 세팅합니다.
     //  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setState() {
+        if isDisabled {
+            self.isEnabled = false
+            self.textColor = YDSColor.textDisabled
+            setPlaceholderTextColor()
+            self.suffixLabel.textColor = YDSColor.textDisabled
+            self.layer.borderWidth = 0
+            self.layer.borderColor = nil
+            return
+        }
+
+        if isNegative {
+            self.isEnabled = true
+            self.textColor = YDSColor.textSecondary
+            setPlaceholderTextColor()
+            self.suffixLabel.textColor = YDSColor.textTertiary
+            self.layer.borderWidth = Constant.Border.normal
+            self.layer.borderColor = YDSColor.textWarned.cgColor
+            return
+        }
+        
+        if isPositive {
+            self.isEnabled = true
+            self.textColor = YDSColor.textSecondary
+            setPlaceholderTextColor()
+            self.suffixLabel.textColor = YDSColor.textTertiary
+            self.layer.borderWidth = Constant.Border.normal
+            self.layer.borderColor = YDSColor.textPointed.cgColor
+            return
+        }
+        
+        self.isEnabled = true
+        self.textColor = YDSColor.textSecondary
+        setPlaceholderTextColor()
+        self.suffixLabel.textColor = YDSColor.textTertiary
+        self.layer.borderWidth = 0
+        self.layer.borderColor = nil
+    }
+    
+    //  setPlaceholderTextColor()
+    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
+    private func setPlaceholderTextColor() {
+        let placeholderTextColor: UIColor
+        
         if self.isDisabled {
-            fieldLabel.textColor = YDSColor.textDisabled
-            helperLabel.textColor = YDSColor.textDisabled
-            return
+            placeholderTextColor = YDSColor.textDisabled
+        } else {
+            placeholderTextColor = YDSColor.textTertiary
         }
         
-        if self.isNegative {
-            fieldLabel.textColor = YDSColor.textSecondary
-            helperLabel.textColor = YDSColor.textWarned
-            return
+        if let text = placeholder {
+            attributedPlaceholder = NSAttributedString(
+                string: text,
+                attributes: [NSAttributedString.Key.foregroundColor : placeholderTextColor]
+            )
         }
+    }
+    
+    //  rightViewRect()
+    //  rightView의 Bound에 관한 함수입니다.
+    //  suffix label의 너비를 설정하기 위해 사용합니다.
+    public override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.rightViewRect(forBounds: bounds)
+        return rect.offsetBy(dx: -(YDSSuffixTextField.rightMargin), dy: 0)
+    }
+    
+    //  textRect()
+    //  textRect의 Bound에 관한 함수입니다.
+    //  placeholder label의 너비를 설정하기 위해 사용합니다.
+    public override func textRect(forBounds bounds: CGRect) -> CGRect {
         
-        if self.isPositive {
-            fieldLabel.textColor = YDSColor.textSecondary
-            helperLabel.textColor = YDSColor.textTertiary
-            return
-        }
-        
-        fieldLabel.textColor = YDSColor.textSecondary
-        helperLabel.textColor = YDSColor.textTertiary
+        return bounds.inset(by: UIEdgeInsets(top: 0,
+                                             left: YDSSuffixTextField.leftMargin,
+                                             bottom: 0,
+                                             right: YDSSuffixTextField.rightMargin + self.suffixLabelWidth + YDSSuffixTextField.subviewSpacing
+        ))
+    }
+
+    //  editingRect()
+    //  editingRect의 Bound에 관한 함수입니다.
+    //  text label의 너비를 설정하기 위해 사용합니다.
+    public override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: UIEdgeInsets(top: 0,
+                                             left: YDSSuffixTextField.leftMargin,
+                                             bottom: 0,
+                                             right: YDSSuffixTextField.rightMargin + self.suffixLabelWidth + YDSSuffixTextField.subviewSpacing
+        ))
     }
     
 }

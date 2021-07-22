@@ -11,8 +11,8 @@ import SnapKit
 
 class SuffixTextFieldSampleViewController: UIViewController, UITextFieldDelegate {
     
-    let sampleTextField: YDSSuffixTextField = {
-        let textField = YDSSuffixTextField()
+    let sampleTextField: YDSSuffixTextFieldView = {
+        let textField = YDSSuffixTextFieldView()
         textField.fieldLabelText = "이메일"
         textField.placeholder = "dinohan"
         textField.helperLabelText = "이메일은 40글자 이상 80글자 이하여야 합니다."
@@ -38,14 +38,14 @@ class SuffixTextFieldSampleViewController: UIViewController, UITextFieldDelegate
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        _ = sampleTextField.base.becomeFirstResponder()
-        sampleTextField.base.delegate = self
-        sampleTextField.base.returnKeyType = .done
-        sampleTextField.base.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        _ = sampleTextField.textField.becomeFirstResponder()
+        sampleTextField.textField.delegate = self
+        sampleTextField.textField.returnKeyType = .done
+        sampleTextField.textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        sampleTextField.base.endEditing(true)
+        sampleTextField.textField.endEditing(true)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

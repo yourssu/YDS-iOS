@@ -11,8 +11,8 @@ import SnapKit
 
 class PasswordTextFieldSampleViewController: UIViewController, UITextFieldDelegate {
 
-    let sampleTextField: YDSPasswordTextField = {
-        let textField = YDSPasswordTextField()
+    let sampleTextField: YDSPasswordTextFieldView = {
+        let textField = YDSPasswordTextFieldView()
         textField.fieldLabelText = "비밀번호"
         textField.placeholder = "password1234!"
         textField.helperLabelText = "알파벳과 숫자를 포함해서 8자 이상으로 입력해 주세요."
@@ -38,15 +38,14 @@ class PasswordTextFieldSampleViewController: UIViewController, UITextFieldDelega
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        _ = sampleTextField.base.becomeFirstResponder()
-        sampleTextField.base.delegate = self
-        sampleTextField.base.keyboardType = .alphabet
-        sampleTextField.base.returnKeyType = .done
-        sampleTextField.base.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        _ = sampleTextField.textField.becomeFirstResponder()
+        sampleTextField.textField.delegate = self
+        sampleTextField.textField.returnKeyType = .done
+        sampleTextField.textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        sampleTextField.base.endEditing(true)
+        sampleTextField.textField.endEditing(true)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
