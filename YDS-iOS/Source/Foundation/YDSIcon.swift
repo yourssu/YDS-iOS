@@ -99,7 +99,7 @@ extension UIImage {
         return image
     }
     
-    public func resize(to: CGFloat) -> UIImage {
+    internal func resize(to: CGFloat) -> UIImage {
         let newSize = CGSize(width: to, height: to)
         let image = UIGraphicsImageRenderer(size: newSize).image { _ in
             draw(in: CGRect(origin: .zero, size: newSize))
