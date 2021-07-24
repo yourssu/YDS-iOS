@@ -13,7 +13,7 @@ public class YDSDivider: UIView {
         case thin
         case thick
         
-        fileprivate func getRawValue() -> CGFloat {
+        fileprivate var rawValue: CGFloat {
             switch self {
             case .thin:
                 return Constant.Border.thin
@@ -29,14 +29,18 @@ public class YDSDivider: UIView {
     }
     
     public var thickness: DividerThickness = .thin {
+        didSet {
+            setColor()
+            setThickness()
+        }
+    }
+    
+    private var direction: DividerDirection {
         didSet { setThickness() }
     }
     
-    public var direction: DividerDirection = .horizontal {
-        didSet { setDirection() }
-    }
-        
-    public init() {
+    public init(_ direction: DividerDirection) {
+        self.direction = direction
         super.init(frame: .zero)
         setupView()
     }
@@ -46,11 +50,11 @@ public class YDSDivider: UIView {
     }
     
     private func setupView() {
+        setColor()
         setThickness()
-        setDirection()
     }
     
-    private func setThickness() {
+    private func setColor() {
         switch thickness {
         case .thin:
             self.backgroundColor = YDSColor.borderNormal
@@ -59,15 +63,15 @@ public class YDSDivider: UIView {
         }
     }
     
-    private func setDirection() {
+    private func setThickness() {
         switch direction {
         case .horizontal:
             self.snp.updateConstraints {
-                $0.height.equalTo(thickness.getRawValue())
+                $0.height.equalTo(thickness.rawValue)
             }
         case .vertical:
             self.snp.updateConstraints {
-                $0.width.equalTo(thickness.getRawValue())
+                $0.width.equalTo(thickness.rawValue)
             }
         }
     }

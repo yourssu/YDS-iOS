@@ -10,22 +10,22 @@ import YDS_iOS
 import SnapKit
 
 class ViewController: UIViewController {
-    let icon: YDSIconView = {
-        let icon = YDSIconView()
-        icon.image = YDSIcon.adbadgeFilled
-        icon.tintColor = YDSColor.textPointed
-        icon.size = .extraSmall
-        return icon
+    let divider: YDSDivider = {
+        let divider = YDSDivider(.horizontal)
+        divider.thickness = .thick
+        return divider
     }()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
     }
 
-
     private func setUI(){
-        
+        self.view.addSubview(divider)
+        divider.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
     }
 }
