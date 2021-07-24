@@ -19,7 +19,10 @@ public class YDSBoxButton: UIButton {
     //  isDisabled: Bool
     //  버튼을 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
-        didSet { setBoxButtonColor() }
+        didSet {
+            self.isEnabled = !isDisabled
+            setBoxButtonColor()
+        }
     }
     
     //  isWarned: Bool
@@ -36,12 +39,12 @@ public class YDSBoxButton: UIButton {
     }
     
     //  size: BoxButtonSize ( extraLarge, large, medium, small )
-    //  버튼의 높이, 타이포 크기, 아이콘 크기, 패딩을 결정할 때 사용합니다/
+    //  버튼의 높이, 타이포 크기, 아이콘 크기, 패딩을 결정할 때 사용합니다.
     public var size: BoxButtonSize = .large {
         didSet { setBoxButtonSize() }
     }
     
-    //  rounding: BoxButtonRounding
+    //  rounding: BoxButtonRounding ( r4, r8 )
     //  버튼의 라운딩을 결정할 때 사용합니다.
     public var rounding: BoxButtonRounding = .r4 {
         didSet { setBoxButtonRounding() }
@@ -71,7 +74,8 @@ public class YDSBoxButton: UIButton {
     public override var isHighlighted: Bool {
         didSet {
             if oldValue != isHighlighted {
-                setBoxButtonColor()
+                setTintColorBasedOnIsHighlighted()
+                setBorderColorBasedOnIsHighlighted()
             }
         }
     }
@@ -162,7 +166,38 @@ public class YDSBoxButton: UIButton {
     //  subviewSpacing: CGFloat
     //  버튼 내 요소 사이 간격입니다. icon과 titleLabel 사이 간격에 사용됩니다.
     private static let subviewSpacing: CGFloat = 4
+    
+    
+    //  MARK: - 내부에서 사용되는 변수
 
+    //  fgColor: UIColor?
+    //  버튼의 아이콘, 글자 컬러입니다.
+    private var fgColor: UIColor?
+    
+    //  fgPressedColor: UIColor?
+    //  버튼이 pressed 되었을 때 아이콘, 글자 컬러입니다.
+    private var fgPressedColor: UIColor?
+    
+    //  bgColor: UIColor?
+    //  버튼의 배경 컬러입니다.
+    private var bgColor: UIColor?
+    
+    //  bgPressedColor: UIColor?
+    //  버튼이 pressed 되었을 때 배경 컬러입니다.
+    private var bgPressedColor: UIColor?
+    
+    //  borderColor: UIColor?
+    //  버튼의 border 컬러입니다.
+    private var borderColor: UIColor?
+    
+    //  borderPressedColor: UIColor?
+    //  버튼이 pressed 되었을 때 border 컬러입니다.
+    private var borderPressedColor: UIColor?
+    
+    //  borderWidth: CGFloat
+    //  버튼의 borderWidth입니다.
+    private var borderWidth: CGFloat = 0
+    
     
     //  MARK: - 메소드
     
@@ -192,113 +227,100 @@ public class YDSBoxButton: UIButton {
     //  버튼의 컬러 조합을 세팅합니다.
     //  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setBoxButtonColor() {
-        
-        self.isEnabled = !isDisabled
-        
         switch(type) {
         case .filled:
-            var foregroundColor: UIColor
-            var foregroundPressedColor: UIColor
-            var backgroundColor: UIColor
-            var backgroundPressedColor: UIColor
+            borderColor = nil
+            borderPressedColor = nil
+            borderWidth = 0
             
             if isDisabled {
-                foregroundColor = YDSColor.buttonDisabled
-                foregroundPressedColor = YDSColor.buttonDisabled
-                backgroundColor = YDSColor.buttonDisabledBG
-                backgroundPressedColor = YDSColor.buttonDisabledBG
+                fgColor = YDSColor.buttonDisabled
+                fgPressedColor = YDSColor.buttonDisabled
+                bgColor = YDSColor.buttonDisabledBG
+                bgPressedColor = YDSColor.buttonDisabledBG
             } else if isWarned {
-                foregroundColor = YDSColor.buttonReversed
-                foregroundPressedColor = YDSColor.buttonReversed
-                backgroundColor = YDSColor.buttonWarned
-                backgroundPressedColor = YDSColor.buttonWarnedPressed
+                fgColor = YDSColor.buttonReversed
+                fgPressedColor = YDSColor.buttonReversed
+                bgColor = YDSColor.buttonWarned
+                bgPressedColor = YDSColor.buttonWarnedPressed
             } else {
-                foregroundColor = YDSColor.buttonReversed
-                foregroundPressedColor = YDSColor.buttonReversed
-                backgroundColor = YDSColor.buttonPoint
-                backgroundPressedColor = YDSColor.buttonPointPressed
+                fgColor = YDSColor.buttonReversed
+                fgPressedColor = YDSColor.buttonReversed
+                bgColor = YDSColor.buttonPoint
+                bgPressedColor = YDSColor.buttonPointPressed
             }
-            
-            setBackgroundColor(backgroundColor, for: .normal)
-            setBackgroundColor(backgroundPressedColor, for: .highlighted)
-            
-            setTitleColor(foregroundColor, for: .normal)
-            setTitleColor(foregroundPressedColor, for: .highlighted)
-            
-            self.tintColor = !isHighlighted
-                ? foregroundColor
-                : foregroundPressedColor
-            
-            self.layer.borderWidth = 0
-            self.layer.borderColor = nil
             
         case .tinted:
-            var foregroundColor: UIColor
-            var foregroundPressedColor: UIColor
-            var backgroundColor: UIColor
-            var backgroundPressedColor: UIColor
+            borderColor = nil
+            borderPressedColor = nil
+            borderWidth = 0
             
             if isDisabled {
-                foregroundColor = YDSColor.buttonDisabled
-                foregroundPressedColor = YDSColor.buttonDisabled
-                backgroundColor = YDSColor.buttonDisabledBG
-                backgroundPressedColor = YDSColor.buttonDisabledBG
+                fgColor = YDSColor.buttonDisabled
+                fgPressedColor = YDSColor.buttonDisabled
+                bgColor = YDSColor.buttonDisabledBG
+                bgPressedColor = YDSColor.buttonDisabledBG
             } else if isWarned {
-                foregroundColor = YDSColor.buttonWarned
-                foregroundPressedColor = YDSColor.buttonWarnedPressed
-                backgroundColor = YDSColor.buttonWarnedBG
-                backgroundPressedColor = YDSColor.buttonWarnedBG
+                fgColor = YDSColor.buttonWarned
+                fgPressedColor = YDSColor.buttonWarnedPressed
+                bgColor = YDSColor.buttonWarnedBG
+                bgPressedColor = YDSColor.buttonWarnedBG
             } else {
-                foregroundColor = YDSColor.buttonPoint
-                foregroundPressedColor = YDSColor.buttonPointPressed
-                backgroundColor = YDSColor.buttonPointBG
-                backgroundPressedColor = YDSColor.buttonPointBG
+                fgColor = YDSColor.buttonPoint
+                fgPressedColor = YDSColor.buttonPointPressed
+                bgColor = YDSColor.buttonPointBG
+                bgPressedColor = YDSColor.buttonPointBG
             }
-            
-            setBackgroundColor(backgroundColor, for: .normal)
-            setBackgroundColor(backgroundPressedColor, for: .highlighted)
-            
-            setTitleColor(foregroundColor, for: .normal)
-            setTitleColor(foregroundPressedColor, for: .highlighted)
-            
-            self.tintColor = !isHighlighted
-                ? foregroundColor
-                : foregroundPressedColor
-            
-            self.layer.borderWidth = 0
-            self.layer.borderColor = nil
             
         case .line:
-            var foregroundColor: UIColor
-            var foregroundPressedColor: UIColor
+            bgColor = nil
+            bgPressedColor = nil
+            borderWidth = Constant.Border.normal
             
             if isDisabled {
-                foregroundColor = YDSColor.buttonDisabled
-                foregroundPressedColor = YDSColor.buttonDisabled
+                fgColor = YDSColor.buttonDisabled
+                fgPressedColor = YDSColor.buttonDisabled
+                borderColor = YDSColor.buttonDisabled
+                borderPressedColor = YDSColor.buttonDisabled
             } else if isWarned {
-                foregroundColor = YDSColor.buttonWarned
-                foregroundPressedColor = YDSColor.buttonWarnedPressed
+                fgColor = YDSColor.buttonWarned
+                fgPressedColor = YDSColor.buttonWarnedPressed
+                borderColor = YDSColor.buttonWarned
+                borderPressedColor = YDSColor.buttonWarnedPressed
             } else {
-                foregroundColor = YDSColor.buttonPoint
-                foregroundPressedColor = YDSColor.buttonPointPressed
+                fgColor = YDSColor.buttonPoint
+                fgPressedColor = YDSColor.buttonPointPressed
+                borderColor = YDSColor.buttonPoint
+                borderPressedColor = YDSColor.buttonPointPressed
             }
-            
-            setBackgroundColor(UIColor.clear, for: .normal)
-            setBackgroundColor(UIColor.clear, for: .highlighted)
-            
-            setTitleColor(foregroundColor, for: .normal)
-            setTitleColor(foregroundPressedColor, for: .highlighted)
-            
-            self.tintColor = !isHighlighted
-                ? foregroundColor
-                : foregroundPressedColor
-            
-            self.layer.borderWidth = Constant.Border.normal
-            self.layer.borderColor = !isHighlighted
-                ? foregroundColor.cgColor
-                : foregroundPressedColor.cgColor
         }
-
+        
+        setTitleColor(fgColor, for: .normal)
+        setTitleColor(fgPressedColor, for: .highlighted)
+        
+        setTintColorBasedOnIsHighlighted()
+        
+        setBackgroundColor(bgColor, for: .normal)
+        setBackgroundColor(bgPressedColor, for: .highlighted)
+        
+        self.layer.borderWidth = borderWidth
+        setBorderColorBasedOnIsHighlighted()
+    }
+    
+    //  setTintColorBasedOnIsHighlighted()
+    //  isHighlighted 값에 맞추어 tintColor를 변경합니다.
+    private func setTintColorBasedOnIsHighlighted() {
+        self.tintColor = !isHighlighted
+            ? fgColor
+            : fgPressedColor
+    }
+    
+    //  setBorderColorBasedOnIsHighlighted()
+    //  isHighlighted 값에 맞추어 borderColor를 변경합니다.
+    private func setBorderColorBasedOnIsHighlighted() {
+        self.layer.borderColor = !isHighlighted
+            ? borderColor?.cgColor
+            : borderPressedColor?.cgColor
     }
     
     //  setBoxButtonRounding()
@@ -376,10 +398,10 @@ public class YDSBoxButton: UIButton {
 }
 
 extension UIButton {
-    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
+    func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
         guard let context = UIGraphicsGetCurrentContext() else { return }
-        context.setFillColor(color.cgColor)
+        context.setFillColor(color?.cgColor ?? UIColor.clear.cgColor)
         context.fill(CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0))
         
         let backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
