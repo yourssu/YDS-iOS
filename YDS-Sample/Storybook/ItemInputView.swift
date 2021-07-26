@@ -18,7 +18,7 @@ class ItemInputView<T>: UIView {
         
     // MARK: - 뷰
     
-    private let stackView: UIStackView = {
+    public let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .fill

@@ -12,7 +12,7 @@ import RxSwift
 class BoxButtonViewModel {
     let bag = DisposeBag()
         
-    let textObservable = BehaviorSubject<String?>(value: "버튼")
+    let textObservable = BehaviorSubject<String?>(value: "")
     let leftIconObservable = BehaviorSubject<UIImage?>(value: nil)
     let rightIconObservable = BehaviorSubject<UIImage?>(value: nil)
     let typeObservable = BehaviorSubject<YDSBoxButton.BoxButtonType>(value: .filled)

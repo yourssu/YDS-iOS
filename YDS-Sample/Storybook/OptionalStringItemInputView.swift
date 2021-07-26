@@ -10,15 +10,22 @@ import YDS_iOS
 import RxSwift
 
 class OptionalStringInputView: ItemInputView<String?> {
+    
+    var isDisabled: Bool = true {
+        didSet {
+            optionalToggle.isOn = !isDisabled
+            textFieldView.isDisabled = isDisabled
+        }
+    }
 
     public override init() {
         super.init()
         
-        self.optionalToggle.isOn = true
         optionalToggle.addTarget(self, action: #selector(didToggleValueChanged(_:)), for: .valueChanged)
         
         textFieldView.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        textFieldView.isDisabled = true
     }
     
     required init?(coder: NSCoder) {
