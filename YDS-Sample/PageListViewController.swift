@@ -42,6 +42,7 @@ class PageListViewController: UIViewController {
         Page(title: "PasswordTextField", vc: PasswordTextFieldSampleViewController.self),
         Page(title: "SearchTextField", vc: SearchTextFieldSampleViewController.self),
         Page(title: "SearchBar", vc: SearchBarSampleViewController.self),
+        Page(title: "BoxButton", vc: BoxButtonViewController.self),
     ]
     
     let componentPages: [Page] = [
@@ -60,7 +61,16 @@ class PageListViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = YDSColor.bgNormal
         self.title = "YDS Sample"
-        self.navigationController?.navigationBar.tintColor = YDSColor.textPointed
+        
+        self.navigationController?.navigationBar.tintColor = YDSColor.buttonNormal
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: YDSColor.textPrimary,
+            NSAttributedString.Key.font: YDSFont.subtitle2,
+        ]
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
+
         
         pageListTableView.dataSource = self
         pageListTableView.delegate = self
