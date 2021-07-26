@@ -94,7 +94,7 @@ public class YDSBoxButton: UIButton {
     //  BoxButtonSize
     //  버튼의 size 종류입니다.
     //  각 size에 맞는 height, padding, font, iconSize를 computed property로 가지고 있습니다.
-    public enum BoxButtonSize: Int {
+    public enum BoxButtonSize {
         case extraLarge
         case large
         case medium
