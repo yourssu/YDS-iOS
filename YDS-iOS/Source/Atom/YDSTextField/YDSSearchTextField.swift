@@ -34,27 +34,9 @@ public class YDSSearchTextField: UITextField {
     
     //  MARK: - 내부에서 사용되는 상수
     
-    //  leftMargin: CGFloat
-    //  필드 좌측 마진값입니다.
-    private static let leftMargin: CGFloat = 16
-    
-    //  rightMargin: CGFloat
-    //  필드 우측 마진값입니다.
-    private static let rightMargin: CGFloat = 16
-    
     //  textFieldHeight: CGFloat
     //  필드 높이입니다.
     private static let textFieldHeight: CGFloat = 38
-    
-    //  subviewSpacing: CGFloat
-    //  필드 내 요소 사이 간격입니다. searchIcon과 textLabel과 cleaButton 사이 거리로 사용됩니다.
-    private static let subviewSpacing: CGFloat = 4
-
-    
-    //  clearButtonDefaultRightMargin: CGFloat
-    //  아무 설정을 하지 않았을 때 기본으로 주어지는 clearButton의 우측 마진 값입니다.
-    private static let clearButtonDefaultRightMargin: CGFloat = 6
-    
     
     //  searchIconWidth: CGFloat
     //  searchIcon의 너비입니다.
@@ -105,7 +87,7 @@ public class YDSSearchTextField: UITextField {
         
         self.addSubview(searchIcon)
         searchIcon.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(YDSSearchTextField.leftMargin)
+            $0.leading.equalToSuperview().offset(YDSTextField.Dimension.leftMargin)
             $0.centerY.equalToSuperview()
         }
         
@@ -164,7 +146,7 @@ public class YDSSearchTextField: UITextField {
     //  clearButton 우측 마진을 주기 위해 사용합니다.
     public override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.clearButtonRect(forBounds: bounds)
-        return rect.offsetBy(dx: -(YDSSearchTextField.rightMargin - YDSSearchTextField.clearButtonDefaultRightMargin),
+        return rect.offsetBy(dx: -(YDSTextField.Dimension.rightMargin - YDSTextField.Dimension.clearButtonDefaultRightMargin),
                              dy: 0
         )
     }
@@ -175,9 +157,9 @@ public class YDSSearchTextField: UITextField {
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
         
         return bounds.inset(by: UIEdgeInsets(top: 0,
-                                             left: YDSSearchTextField.leftMargin + self.searchIconWidth + YDSSearchTextField.subviewSpacing,
+                                             left: YDSTextField.Dimension.leftMargin + self.searchIconWidth + YDSTextField.Dimension.subviewSpacing,
                                              bottom: 0,
-                                             right: YDSSearchTextField.rightMargin + self.clearButtonWidth + YDSSearchTextField.subviewSpacing
+                                             right: YDSTextField.Dimension.rightMargin + self.clearButtonWidth + YDSTextField.Dimension.subviewSpacing
         ))
     }
 
@@ -186,9 +168,9 @@ public class YDSSearchTextField: UITextField {
     //  text label의 너비를 설정하기 위해 사용합니다.
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets(top: 0,
-                                             left: YDSSearchTextField.leftMargin + self.searchIconWidth + YDSSearchTextField.subviewSpacing,
+                                             left: YDSTextField.Dimension.leftMargin + self.searchIconWidth + YDSTextField.Dimension.subviewSpacing,
                                              bottom: 0,
-                                             right: YDSSearchTextField.rightMargin + self.clearButtonWidth + YDSSearchTextField.subviewSpacing
+                                             right: YDSTextField.Dimension.rightMargin + self.clearButtonWidth + YDSTextField.Dimension.subviewSpacing
         ))
     }
 

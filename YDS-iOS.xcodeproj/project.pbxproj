@@ -12,6 +12,8 @@
 		533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */; };
 		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
 		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
+		533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */; };
+		533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A353E26AEA05E00CCEEAE /* YDSTextField.swift */; };
 		53443D8A26A5A4770037B02E /* YDSPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */; };
 		53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */; };
 		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */; };
@@ -80,6 +82,8 @@
 		533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldView.swift; sourceTree = "<group>"; };
 		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
 		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
+		533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextFieldView.swift; sourceTree = "<group>"; };
+		533A353E26AEA05E00CCEEAE /* YDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextField.swift; sourceTree = "<group>"; };
 		53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextField.swift; sourceTree = "<group>"; };
 		53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextFieldView.swift; sourceTree = "<group>"; };
 		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				53443D9926A7D3130037B02E /* YDSSuffixTextField */,
 				53443D9A26A7D31D0037B02E /* YDSPasswordTextField */,
 				53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */,
+				533A353E26AEA05E00CCEEAE /* YDSTextField.swift */,
+				533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */,
 			);
 			path = YDSTextField;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,
 				DD6C6384264286FB004CFF46 /* YDSFont.swift in Sources */,
+				533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */,
 				53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */,
 				533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */,
 				53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */,
@@ -518,6 +525,7 @@
 				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
 				53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */,
 				DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */,
+				533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */,
 				DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

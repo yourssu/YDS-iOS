@@ -114,18 +114,7 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    
-    //  MARK: - 내부에서 사용되는 상수
-    
-    //  subviewSpacing: CGFloat
-    //  fieldLabel, textField, helperLabel 사이 간격입니다.
-    private static let subviewSpacing: CGFloat = 8
-    
-    //  helperLabelHorizontalMargin: CGFloat
-    //  helperLabel의 좌우 마진값입니다.
-    private static let helperLabelHorizontalMargin: CGFloat = 8
-    
-    
+
     //  MARK: - 뷰
     
     //  stackView: UIStackView
@@ -135,7 +124,7 @@ public class YDSPasswordTextFieldView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .center
-        stackView.spacing = YDSPasswordTextFieldView.subviewSpacing
+        stackView.spacing = YDSTextFieldView.Dimension.subviewSpacing
         return stackView
     }()
     
@@ -190,7 +179,7 @@ public class YDSPasswordTextFieldView: UIView {
             $0.width.equalToSuperview()
         }
         helperLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().offset(-YDSPasswordTextFieldView.helperLabelHorizontalMargin*2)
+            $0.width.equalToSuperview().offset(-YDSTextFieldView.Dimension.helperLabelHorizontalMargin*2)
         }
     }
     

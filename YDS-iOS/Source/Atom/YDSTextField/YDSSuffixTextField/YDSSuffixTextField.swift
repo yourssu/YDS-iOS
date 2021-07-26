@@ -66,22 +66,6 @@ public class YDSSuffixTextField: UITextField {
     
     //  MARK: - 내부에서 사용되는 상수
     
-    //  leftMargin: CGFloat
-    //  필드 좌측 마진값입니다.
-    private static let leftMargin: CGFloat = 16
-    
-    //  rightMargin: CGFloat
-    //  필드 우측 마진값입니다.
-    private static let rightMargin: CGFloat = 16
-    
-    //  textFieldHeight: CGFloat
-    //  필드 높이입니다.
-    private static let textFieldHeight: CGFloat = 48
-    
-    //  subviewSpacing: CGFloat
-    //  필드 내 요소 사이 간격입니다. text label과 cleaButton 사이 거리로 사용됩니다.
-    private static let subviewSpacing: CGFloat = 4
-    
     //  suffixLabelWidth: CGFloat
     //  suffixLabel의 너비입니다.
     private var suffixLabelWidth: CGFloat {
@@ -120,7 +104,7 @@ public class YDSSuffixTextField: UITextField {
         self.layer.cornerRadius = Constant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
-            $0.height.equalTo(YDSSuffixTextField.textFieldHeight)
+            $0.height.equalTo(YDSTextField.Dimension.textFieldHeight)
         }
         
         setState()
@@ -188,7 +172,7 @@ public class YDSSuffixTextField: UITextField {
     //  suffix label의 너비를 설정하기 위해 사용합니다.
     public override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.rightViewRect(forBounds: bounds)
-        return rect.offsetBy(dx: -(YDSSuffixTextField.rightMargin), dy: 0)
+        return rect.offsetBy(dx: -(YDSTextField.Dimension.rightMargin), dy: 0)
     }
     
     //  textRect()
@@ -197,9 +181,9 @@ public class YDSSuffixTextField: UITextField {
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
         
         return bounds.inset(by: UIEdgeInsets(top: 0,
-                                             left: YDSSuffixTextField.leftMargin,
+                                             left: YDSTextField.Dimension.leftMargin,
                                              bottom: 0,
-                                             right: YDSSuffixTextField.rightMargin + self.suffixLabelWidth + YDSSuffixTextField.subviewSpacing
+                                             right: YDSTextField.Dimension.rightMargin + self.suffixLabelWidth + YDSTextField.Dimension.subviewSpacing
         ))
     }
 
@@ -208,9 +192,9 @@ public class YDSSuffixTextField: UITextField {
     //  text label의 너비를 설정하기 위해 사용합니다.
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets(top: 0,
-                                             left: YDSSuffixTextField.leftMargin,
+                                             left: YDSTextField.Dimension.leftMargin,
                                              bottom: 0,
-                                             right: YDSSuffixTextField.rightMargin + self.suffixLabelWidth + YDSSuffixTextField.subviewSpacing
+                                             right: YDSTextField.Dimension.rightMargin + self.suffixLabelWidth + YDSTextField.Dimension.subviewSpacing
         ))
     }
     
