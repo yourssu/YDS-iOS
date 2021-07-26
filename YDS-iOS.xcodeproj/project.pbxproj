@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5337938826AF08E000BE5860 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938726AF08E000BE5860 /* RxSwift */; };
+		5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938926AF08E000BE5860 /* RxCocoa */; };
 		533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A278926A42E72009FD90A /* YDSTypoStyle.swift */; };
-		53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */; };
-		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
-		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSSimpleTextField.swift */; };
 		533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */; };
 		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
@@ -24,6 +23,7 @@
 		53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */; };
 		53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */; };
 		53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */; };
+		53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextField.swift */; };
@@ -81,9 +81,6 @@
 		3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		533A278926A42E72009FD90A /* YDSTypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
-		53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
-		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
-		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		533A279C26A48683009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldView.swift; sourceTree = "<group>"; };
 		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +94,7 @@
 		53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchTextField.swift; sourceTree = "<group>"; };
 		53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchBar.swift; sourceTree = "<group>"; };
 		53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSampleViewController.swift; sourceTree = "<group>"; };
+		53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
@@ -145,7 +143,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5337938826AF08E000BE5860 /* RxSwift in Frameworks */,
 				DDFBD01C26739BEB00C5F409 /* YDS_iOS.framework in Frameworks */,
+				5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */,
 				65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +379,10 @@
 				DDFBD01F26739BEB00C5F409 /* PBXTargetDependency */,
 			);
 			name = "YDS-Sample";
+			packageProductDependencies = (
+				5337938726AF08E000BE5860 /* RxSwift */,
+				5337938926AF08E000BE5860 /* RxCocoa */,
+			);
 			productName = "YDS-Sample";
 			productReference = DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */;
 			productType = "com.apple.product-type.application";
@@ -410,6 +414,9 @@
 				Base,
 			);
 			mainGroup = DD151FA02641820200795D7C;
+			packageReferences = (
+				5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = DD151FAB2641820200795D7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -833,6 +840,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5337938726AF08E000BE5860 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5337938926AF08E000BE5860 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD151FA12641820200795D7C /* Project object */;
 }
