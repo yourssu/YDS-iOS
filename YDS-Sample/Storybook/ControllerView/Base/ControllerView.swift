@@ -79,7 +79,6 @@ class ControllerView<T>: UIView {
     public init(defaultValue: T) {
         observable = BehaviorSubject<T>(value: defaultValue)
         super.init(frame: .zero)
-        observable.onNext(defaultValue)
         setupView()
     }
     

@@ -128,7 +128,7 @@ class StoryBookViewController: UIViewController {
     }
     
     //  Optional Image
-    public func addOption(description: String?, cases: [UIImage?], defaultIndex: Int,  task: @escaping (UIImage?) -> Void) {
+    public func addOption(description: String?, cases: [UIImage?], defaultIndex: Int?,  task: @escaping (UIImage?) -> Void) {
         let controllerView: OptionalImageControllerView = {
             let controllerView = OptionalImageControllerView(cases: cases, defaultIndex: defaultIndex)
             controllerView.parameterLabel.text = description
