@@ -51,31 +51,31 @@ class BoxButtonPageViewController: StoryBookViewController {
         
         addOption(description: "leftIcon",
                   cases: [YDSIcon.playcircleFilled, YDSIcon.groundFilled],
-                  defaultValue: YDSIcon.playcircleFilled) {
+                  defaultIndex: 0) {
             self.sampleButton.leftIcon = $0
         }
         
         addOption(description: "rightIcon",
                   cases: [YDSIcon.playcircleFilled, YDSIcon.groundFilled],
-                  defaultValue: YDSIcon.playcircleFilled) {
+                  defaultIndex: 0) {
             self.sampleButton.rightIcon = $0
         }
         
         addOption(description: "type",
                   cases: YDSBoxButton.BoxButtonType.allCases,
-                  defaultValue: YDSBoxButton.BoxButtonType.filled) {
+                  defaultIndex: 0) {
             self.sampleButton.type = $0
         }
         
         addOption(description: "size",
                   cases: YDSBoxButton.BoxButtonSize.allCases,
-                  defaultValue: YDSBoxButton.BoxButtonSize.large) {
+                  defaultIndex: 0) {
             self.sampleButton.size = $0
         }
         
         addOption(description: "rounding",
                   cases: YDSBoxButton.BoxButtonRounding.allCases,
-                  defaultValue: YDSBoxButton.BoxButtonRounding.r4) {
+                  defaultIndex: 0) {
             self.sampleButton.rounding = $0
         }
         

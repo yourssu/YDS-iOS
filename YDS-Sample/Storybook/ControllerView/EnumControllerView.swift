@@ -9,14 +9,22 @@ import UIKit
 
 class EnumControllerView<T>: PickerControllerView<T>, UIPickerViewDelegate {
 
-    public override init(cases: [T], defaultValue: T) {
-        super.init(cases: cases, defaultValue: defaultValue)
+    public override init(cases: [T], defaultIndex: Int) {
+        
+        super.init(cases: cases, defaultIndex: defaultIndex)
         
         pickerView.delegate = self
+        
+        setInitialState(index: defaultIndex)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setInitialState(index: Int) {
+        self.pickerView.selectRow(index, inComponent: 0, animated: true)
+        self.textFieldView.text = String(describing: cases[index])
     }
     
 

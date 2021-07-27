@@ -21,8 +21,17 @@ class OptionalStringControllerView: ControllerView<String?> {
     public override init(defaultValue: String?) {
         super.init(defaultValue: defaultValue)
         
-        optionalToggle.addTarget(self, action: #selector(didToggleValueChanged(_:)), for: .valueChanged)
-        textFieldView.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        optionalToggle.addTarget(
+            self,
+            action: #selector(didToggleValueChanged(_:)),
+            for: .valueChanged
+        )
+        
+        textFieldView.textField.addTarget(
+            self,
+            action: #selector(textFieldDidChange(_:)),
+            for: .editingChanged
+        )
         
         setInitialState(value: defaultValue)
     }

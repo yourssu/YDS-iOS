@@ -14,16 +14,21 @@ class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
     public let pickerView = UIPickerView()
     
     private let pickerViewToolbar: UIToolbar = {
-        let toolbar = UIToolbar(frame: CGRect(x:0, y: 0,width:UIScreen.main.bounds.width, height:44))
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width:UIScreen.main.bounds.width, height:44))
         let selectButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPickerView(_:)))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.setItems([spacer, selectButton], animated: true)
         return toolbar
     }()
     
-    public init(cases: [T], defaultValue: T) {
+    public init(cases: [T], defaultIndex: Int) {
         self.cases = cases
-        super.init(defaultValue: defaultValue)
+        
+        let index = cases.count > defaultIndex
+            ? defaultIndex
+            : 0
+        
+        super.init(defaultValue: cases[index])
         
         textFieldView.textField.inputView = pickerView
         textFieldView.textField.tintColor = .clear
@@ -31,13 +36,13 @@ class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
         textFieldView.textField.inputAccessoryView = pickerViewToolbar
 
         pickerView.dataSource = self
-        pickerView.selectRow(0, inComponent: 0, animated: true)
+        pickerView.selectRow(index, inComponent: 0, animated: true)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return cases.count
     }

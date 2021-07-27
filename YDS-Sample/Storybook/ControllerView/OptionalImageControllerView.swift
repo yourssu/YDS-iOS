@@ -18,8 +18,13 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
         }
     }
     
-    public override init(cases: [UIImage?], defaultValue: UIImage?) {
-        super.init(cases: cases, defaultValue: defaultValue)
+    public override init(cases: [UIImage?], defaultIndex: Int?) {
+        
+        if let index = defaultIndex {
+            super.init(cases: cases, defaultIndex: index)
+        } else {
+            super.init(cases: cases, defaultIndex: 0)
+        }
         
         pickerView.delegate = self
         
@@ -27,26 +32,29 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
             self,
             action: #selector(didToggleValueChanged(_:)),
             for: .valueChanged)
-    
-        setInitialState(value: defaultValue)
+        
+        setInitialState(index: defaultIndex)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setInitialState(value: UIImage?) {
-        if let value = value, let index = cases.firstIndex(of: value) {
+    private func setInitialState(index: Int?) {
+        if let index = index {
             self.isDisabled = false
             self.pickerView.selectRow(index, inComponent: 0, animated: true)
             self.textFieldView.text = cases[index]?.accessibilityIdentifier
         } else {
             self.isDisabled = true
+            self.pickerView.selectRow(0, inComponent: 0, animated: true)
+            self.textFieldView.text = cases[0]?.accessibilityIdentifier
         }
     }
     
     @objc
     private func didToggleValueChanged(_ toggle: Toggle) {
+        print("얍")
         textFieldView.isDisabled = !toggle.isOn
         
         if toggle.isOn {

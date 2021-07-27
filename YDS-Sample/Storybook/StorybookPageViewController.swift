@@ -128,9 +128,9 @@ class StoryBookViewController: UIViewController {
     }
     
     //  Optional Image
-    public func addOption(description: String?, cases: [UIImage?], defaultValue: UIImage?,  task: @escaping (UIImage?) -> Void) {
+    public func addOption(description: String?, cases: [UIImage?], defaultIndex: Int,  task: @escaping (UIImage?) -> Void) {
         let controllerView: OptionalImageControllerView = {
-            let controllerView = OptionalImageControllerView(cases: cases, defaultValue: defaultValue)
+            let controllerView = OptionalImageControllerView(cases: cases, defaultIndex: defaultIndex)
             controllerView.parameterLabel.text = description
             return controllerView
         }()
@@ -139,9 +139,9 @@ class StoryBookViewController: UIViewController {
     }
     
     //  Enum
-    public func addOption<T>(description: String?, cases: [T], defaultValue: T,  task: @escaping (T) -> Void) {
+    public func addOption<T>(description: String?, cases: [T], defaultIndex: Int,  task: @escaping (T) -> Void) {
         let controllerView: EnumControllerView<T> = {
-            let controllerView = EnumControllerView(cases: cases, defaultValue: defaultValue)
+            let controllerView = EnumControllerView(cases: cases, defaultIndex: defaultIndex)
             controllerView.parameterLabel.text = description
             return controllerView
         }()
