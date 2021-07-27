@@ -1,5 +1,5 @@
 //
-//  ItemPickerInputView.swift
+//  PickerControllerView.swift
 //  YDS-Sample
 //
 //  Created by Gyuni on 2021/07/27.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ItemPickerInputView<T>: ItemInputView<T>, UIPickerViewDataSource {
+class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
 
     public var cases: [T]
     
@@ -21,9 +21,9 @@ class ItemPickerInputView<T>: ItemInputView<T>, UIPickerViewDataSource {
         return toolbar
     }()
     
-    public init(cases: [T]) {
+    public init(cases: [T], defaultValue: T) {
         self.cases = cases
-        super.init()
+        super.init(defaultValue: defaultValue)
         
         textFieldView.textField.inputView = pickerView
         textFieldView.textField.tintColor = .clear

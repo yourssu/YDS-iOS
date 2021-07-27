@@ -1,5 +1,5 @@
 //
-//  OptionalStringItemInputView.swift
+//  OptionalStringControllerView.swift
 //  YDS-Sample
 //
 //  Created by Gyuni on 2021/07/27.
@@ -9,27 +9,35 @@ import UIKit
 import YDS_iOS
 import RxSwift
 
-class OptionalStringInputView: ItemInputView<String?> {
+class OptionalStringControllerView: ControllerView<String?> {
     
-    var isDisabled: Bool = true {
+    private var isDisabled: Bool = true {
         didSet {
             optionalToggle.isOn = !isDisabled
             textFieldView.isDisabled = isDisabled
         }
     }
 
-    public override init() {
-        super.init()
+    public override init(defaultValue: String?) {
+        super.init(defaultValue: defaultValue)
         
         optionalToggle.addTarget(self, action: #selector(didToggleValueChanged(_:)), for: .valueChanged)
-        
         textFieldView.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        textFieldView.isDisabled = true
+        setInitialState(value: defaultValue)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setInitialState(value: String?) {
+        if let value = value {
+            self.isDisabled = false
+            textFieldView.text = value
+        } else {
+            self.isDisabled = true
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

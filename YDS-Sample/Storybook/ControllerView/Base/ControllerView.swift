@@ -1,5 +1,5 @@
 //
-//  ItemInputView.swift
+//  ControllerView.swift
 //  YDS-Sample
 //
 //  Created by Gyuni on 2021/07/27.
@@ -11,9 +11,9 @@ import SnapKit
 import YDS_iOS
 import RxSwift
 
-class ItemInputView<T>: UIView {
+class ControllerView<T>: UIView {
     
-    public var observable = PublishSubject<T>()
+    public let observable: BehaviorSubject<T>
     let bag = DisposeBag()
         
     // MARK: - 뷰
@@ -76,9 +76,10 @@ class ItemInputView<T>: UIView {
     
     // MARK: - 함수
     
-    public init() {
+    public init(defaultValue: T) {
+        observable = BehaviorSubject<T>(value: defaultValue)
         super.init(frame: .zero)
-        
+        observable.onNext(defaultValue)
         setupView()
     }
     

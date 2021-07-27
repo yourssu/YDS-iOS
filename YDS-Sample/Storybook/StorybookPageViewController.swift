@@ -8,12 +8,15 @@
 import UIKit
 import YDS_iOS
 import SnapKit
+import RxSwift
 
 class StoryBookViewController: UIViewController {
+    
+    let bag = DisposeBag()
 
     let sampleView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 248/255, green: 249/255, blue: 250/255, alpha: 1)
+        view.backgroundColor = YDSColor.monoItemBG
         return view
     }()
     
@@ -38,7 +41,7 @@ class StoryBookViewController: UIViewController {
         setNotification()
     }
     
-    private func setUI(){
+    private func setUI() {
         self.view.backgroundColor = YDSColor.bgNormal
         setViewHierarchy()
         setAutolayout()
@@ -58,7 +61,8 @@ class StoryBookViewController: UIViewController {
         }
         scrollView.snp.makeConstraints { (make) in
             make.top.equalTo(sampleView.snp.bottom)
-            make.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
         }
         scrollView.contentLayoutGuide.snp.makeConstraints { (make) in
             make.top.equalTo(sampleView.snp.bottom)
@@ -67,11 +71,14 @@ class StoryBookViewController: UIViewController {
         
         stackView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview().offset(-32)
             make.leading.trailing.equalToSuperview()
         }
     }
     
+    
+    //  MARK: - 키보드 올릴 때 스크롤뷰가 자동으로 스크롤 되도록 만들어 텍스트 필드를 가리지 않게 함
+
     private func setNotification() {
         NotificationCenter.default.addObserver(
             self,
@@ -97,10 +104,70 @@ class StoryBookViewController: UIViewController {
         scrollView.contentInset.bottom = 0
     }
     
+    
+    // MARK: - 배경을 터치했을 때 키보드가 내려가도록 함
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         stackView.arrangedSubviews.forEach {
             $0.endEditing(true)
         }
+    }
+    
+    
+    //  MARK: - 옵션 추가를 위한 함수
+    
+    //  Optional String
+    public func addOption(description: String?, defaultValue: String?,  task: @escaping (String?) -> Void) {
+        let controllerView: OptionalStringControllerView = {
+            let controllerView = OptionalStringControllerView(defaultValue: defaultValue)
+            controllerView.parameterLabel.text = description
+            return controllerView
+        }()
+        
+        setControllerView(controllerView, task: task)
+    }
+    
+    //  Optional Image
+    public func addOption(description: String?, cases: [UIImage?], defaultValue: UIImage?,  task: @escaping (UIImage?) -> Void) {
+        let controllerView: OptionalImageControllerView = {
+            let controllerView = OptionalImageControllerView(cases: cases, defaultValue: defaultValue)
+            controllerView.parameterLabel.text = description
+            return controllerView
+        }()
+
+        setControllerView(controllerView, task: task)
+    }
+    
+    //  Enum
+    public func addOption<T>(description: String?, cases: [T], defaultValue: T,  task: @escaping (T) -> Void) {
+        let controllerView: EnumControllerView<T> = {
+            let controllerView = EnumControllerView(cases: cases, defaultValue: defaultValue)
+            controllerView.parameterLabel.text = description
+            return controllerView
+        }()
+
+        setControllerView(controllerView, task: task)
+    }
+    
+    //  Bool
+    public func addOption(description: String?, defaultValue: Bool,  task: @escaping (Bool) -> Void) {
+        let controllerView: BoolControllerView = {
+            let controllerView = BoolControllerView(defaultValue: defaultValue)
+            controllerView.parameterLabel.text = description
+            return controllerView
+        }()
+
+        setControllerView(controllerView, task: task)
+    }
+    
+    //  공통
+    private func setControllerView<T> (_ controllerView: ControllerView<T>, task: @escaping (T) -> Void) {
+        self.stackView.addArrangedSubview(controllerView)
+        
+        controllerView.observable.subscribe(onNext: { value in
+            task(value)
+        })
+        .disposed(by: bag)
     }
 
 }

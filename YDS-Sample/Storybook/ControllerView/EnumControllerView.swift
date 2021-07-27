@@ -1,5 +1,5 @@
 //
-//  EnumInputView.swift
+//  EnumControllerView.swift
 //  YDS-Sample
 //
 //  Created by Gyuni on 2021/07/27.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class EnumInputView<T>: ItemPickerInputView<T>, UIPickerViewDelegate {
+class EnumControllerView<T>: PickerControllerView<T>, UIPickerViewDelegate {
 
-    public override init(cases: [T]) {
-        super.init(cases: cases)
+    public override init(cases: [T], defaultValue: T) {
+        super.init(cases: cases, defaultValue: defaultValue)
         
         pickerView.delegate = self
     }

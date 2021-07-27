@@ -10,11 +10,9 @@
 		5337938826AF08E000BE5860 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938726AF08E000BE5860 /* RxSwift */; };
 		5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938926AF08E000BE5860 /* RxCocoa */; };
 		5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */; };
-		5337938E26AF09BF00BE5860 /* ItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938D26AF09BF00BE5860 /* ItemInputView.swift */; };
-		5337939026AF0A0600BE5860 /* OptionalStringItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938F26AF0A0600BE5860 /* OptionalStringItemInputView.swift */; };
-		5337939226AF0A7300BE5860 /* BoxButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337939126AF0A7300BE5860 /* BoxButtonViewController.swift */; };
-		5337939526AF0A8700BE5860 /* BoxButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337939426AF0A8700BE5860 /* BoxButtonViewModel.swift */; };
-		5337939726AF0A8F00BE5860 /* BoxButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337939626AF0A8F00BE5860 /* BoxButtonModel.swift */; };
+		5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938D26AF09BF00BE5860 /* ControllerView.swift */; };
+		5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */; };
+		5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */; };
 		533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSSimpleTextField.swift */; };
 		533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */; };
 		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
@@ -24,10 +22,10 @@
 		53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A278926A42E72009FD90A /* YDSTypoStyle.swift */; };
 		53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* YDSFont.swift */; };
 		53441AFC26AF14CC00CB6BC9 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
-		53441AFE26AF1E7E00CB6BC9 /* OptionalImageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441AFD26AF1E7E00CB6BC9 /* OptionalImageInputView.swift */; };
-		53441B0026AF233800CB6BC9 /* ItemPickerInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441AFF26AF233800CB6BC9 /* ItemPickerInputView.swift */; };
-		53441B0226AF248900CB6BC9 /* EnumInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B0126AF248900CB6BC9 /* EnumInputView.swift */; };
-		53441B0426AF287600CB6BC9 /* BoolInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B0326AF287600CB6BC9 /* BoolInputView.swift */; };
+		53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */; };
+		53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441AFF26AF233800CB6BC9 /* PickerControllerView.swift */; };
+		53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B0126AF248900CB6BC9 /* EnumControllerView.swift */; };
+		53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B0326AF287600CB6BC9 /* BoolControllerView.swift */; };
 		53443D8A26A5A4770037B02E /* YDSPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */; };
 		53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */; };
 		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */; };
@@ -91,11 +89,9 @@
 		3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageViewController.swift; sourceTree = "<group>"; };
-		5337938D26AF09BF00BE5860 /* ItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInputView.swift; sourceTree = "<group>"; };
-		5337938F26AF0A0600BE5860 /* OptionalStringItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringItemInputView.swift; sourceTree = "<group>"; };
-		5337939126AF0A7300BE5860 /* BoxButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonViewController.swift; sourceTree = "<group>"; };
-		5337939426AF0A8700BE5860 /* BoxButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonViewModel.swift; sourceTree = "<group>"; };
-		5337939626AF0A8F00BE5860 /* BoxButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonModel.swift; sourceTree = "<group>"; };
+		5337938D26AF09BF00BE5860 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
+		5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringControllerView.swift; sourceTree = "<group>"; };
+		5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonPageViewController.swift; sourceTree = "<group>"; };
 		533A278926A42E72009FD90A /* YDSTypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
 		533A279C26A48683009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldView.swift; sourceTree = "<group>"; };
@@ -103,10 +99,10 @@
 		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
 		533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextFieldView.swift; sourceTree = "<group>"; };
 		533A353E26AEA05E00CCEEAE /* YDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextField.swift; sourceTree = "<group>"; };
-		53441AFD26AF1E7E00CB6BC9 /* OptionalImageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageInputView.swift; sourceTree = "<group>"; };
-		53441AFF26AF233800CB6BC9 /* ItemPickerInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemPickerInputView.swift; path = "YDS-Sample/Storybook/ItemPickerInputView.swift"; sourceTree = SOURCE_ROOT; };
-		53441B0126AF248900CB6BC9 /* EnumInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumInputView.swift; sourceTree = "<group>"; };
-		53441B0326AF287600CB6BC9 /* BoolInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolInputView.swift; sourceTree = "<group>"; };
+		53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageControllerView.swift; sourceTree = "<group>"; };
+		53441AFF26AF233800CB6BC9 /* PickerControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerControllerView.swift; path = "YDS-Sample/Storybook/ControllerView/Base/PickerControllerView.swift"; sourceTree = SOURCE_ROOT; };
+		53441B0126AF248900CB6BC9 /* EnumControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumControllerView.swift; sourceTree = "<group>"; };
+		53441B0326AF287600CB6BC9 /* BoolControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolControllerView.swift; sourceTree = "<group>"; };
 		53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextField.swift; sourceTree = "<group>"; };
 		53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextFieldView.swift; sourceTree = "<group>"; };
 		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleViewController.swift; sourceTree = "<group>"; };
@@ -195,16 +191,6 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		5337939326AF0A7800BE5860 /* BoxButton */ = {
-			isa = PBXGroup;
-			children = (
-				5337939626AF0A8F00BE5860 /* BoxButtonModel.swift */,
-				5337939426AF0A8700BE5860 /* BoxButtonViewModel.swift */,
-				5337939126AF0A7300BE5860 /* BoxButtonViewController.swift */,
-			);
-			path = BoxButton;
-			sourceTree = "<group>";
-		};
 		533A27B526A52EC0009FD90A /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,14 +204,30 @@
 			isa = PBXGroup;
 			children = (
 				5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */,
-				5337938D26AF09BF00BE5860 /* ItemInputView.swift */,
-				53441AFF26AF233800CB6BC9 /* ItemPickerInputView.swift */,
-				53441B0326AF287600CB6BC9 /* BoolInputView.swift */,
-				53441B0126AF248900CB6BC9 /* EnumInputView.swift */,
-				5337938F26AF0A0600BE5860 /* OptionalStringItemInputView.swift */,
-				53441AFD26AF1E7E00CB6BC9 /* OptionalImageInputView.swift */,
+				53441B0526AF2AD100CB6BC9 /* ControllerView */,
 			);
 			path = Storybook;
+			sourceTree = "<group>";
+		};
+		53441B0526AF2AD100CB6BC9 /* ControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				53441B0626AF2B4800CB6BC9 /* Base */,
+				53441B0326AF287600CB6BC9 /* BoolControllerView.swift */,
+				53441B0126AF248900CB6BC9 /* EnumControllerView.swift */,
+				5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */,
+				53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */,
+			);
+			path = ControllerView;
+			sourceTree = "<group>";
+		};
+		53441B0626AF2B4800CB6BC9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5337938D26AF09BF00BE5860 /* ControllerView.swift */,
+				53441AFF26AF233800CB6BC9 /* PickerControllerView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		53443D9826A7D3050037B02E /* YDSSimpleTextField */ = {
@@ -276,7 +278,7 @@
 				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */,
 				53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */,
 				53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */,
-				5337939326AF0A7800BE5860 /* BoxButton */,
+				5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -595,24 +597,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53441B0226AF248900CB6BC9 /* EnumInputView.swift in Sources */,
-				5337939226AF0A7300BE5860 /* BoxButtonViewController.swift in Sources */,
+				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
+				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
 				53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */,
 				5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */,
 				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
-				53441AFE26AF1E7E00CB6BC9 /* OptionalImageInputView.swift in Sources */,
-				5337939726AF0A8F00BE5860 /* BoxButtonModel.swift in Sources */,
+				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				53443D9026A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift in Sources */,
-				5337939026AF0A0600BE5860 /* OptionalStringItemInputView.swift in Sources */,
-				5337938E26AF09BF00BE5860 /* ItemInputView.swift in Sources */,
+				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
+				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
-				53441B0426AF287600CB6BC9 /* BoolInputView.swift in Sources */,
-				53441B0026AF233800CB6BC9 /* ItemPickerInputView.swift in Sources */,
+				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
+				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
 				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
 				53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */,
-				5337939526AF0A8700BE5860 /* BoxButtonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  OptionalImageInputView.swift
+//  OptionalImageControllerView.swift
 //  YDS-Sample
 //
 //  Created by Gyuni on 2021/07/27.
@@ -9,17 +9,17 @@ import UIKit
 import YDS_iOS
 import RxSwift
 
-class OptionalImageInputView: ItemPickerInputView<UIImage?>, UIPickerViewDelegate {
+class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewDelegate {
 
-    var isDisabled: Bool = true {
+    private var isDisabled: Bool = true {
         didSet {
             optionalToggle.isOn = !isDisabled
             textFieldView.isDisabled = isDisabled
         }
     }
     
-    public override init(cases: [UIImage?]) {
-        super.init(cases: cases)
+    public override init(cases: [UIImage?], defaultValue: UIImage?) {
+        super.init(cases: cases, defaultValue: defaultValue)
         
         pickerView.delegate = self
         
@@ -28,11 +28,21 @@ class OptionalImageInputView: ItemPickerInputView<UIImage?>, UIPickerViewDelegat
             action: #selector(didToggleValueChanged(_:)),
             for: .valueChanged)
     
-        textFieldView.isDisabled = true
+        setInitialState(value: defaultValue)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setInitialState(value: UIImage?) {
+        if let value = value, let index = cases.firstIndex(of: value) {
+            self.isDisabled = false
+            self.pickerView.selectRow(index, inComponent: 0, animated: true)
+            self.textFieldView.text = cases[index]?.accessibilityIdentifier
+        } else {
+            self.isDisabled = true
+        }
     }
     
     @objc
