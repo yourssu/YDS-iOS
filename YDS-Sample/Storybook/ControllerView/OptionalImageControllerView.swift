@@ -49,6 +49,7 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
                     self.textFieldView.text = value?.accessibilityIdentifier
                 } else {
                     self.isDisabled = true
+                    self.textFieldView.text = self.cases[0]?.accessibilityIdentifier
                 }
             })
             .disposed(by: bag)
