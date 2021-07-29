@@ -128,15 +128,15 @@ class StoryBookViewController: UIViewController {
     }
     
     //  Optional Image
-    public func addOption(description: String?, cases: [UIImage?], defaultIndex: Int?,  task: @escaping (UIImage?) -> Void) {
+    public func addOption(description: String?, images: [UIImage?], defaultIndex: Int?,  task: @escaping (UIImage?) -> Void) {
         let controllerView: OptionalImageControllerView = {
-            let controllerView = OptionalImageControllerView(cases: cases, defaultIndex: defaultIndex)
+            let controllerView = OptionalImageControllerView(images: images, defaultIndex: defaultIndex)
             controllerView.parameterLabel.text = description
             return controllerView
         }()
         
         if let index = defaultIndex {
-            setControllerView(controllerView, defaultValue: cases[index], task: task)
+            setControllerView(controllerView, defaultValue: images[index], task: task)
         } else {
             setControllerView(controllerView, defaultValue: nil, task: task)
         }

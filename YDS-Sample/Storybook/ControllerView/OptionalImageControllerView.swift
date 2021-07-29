@@ -18,12 +18,12 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
         }
     }
     
-    public override init(cases: [UIImage?], defaultIndex: Int?) {
+    public init(images: [UIImage?], defaultIndex: Int?) {
         
         if let index = defaultIndex {
-            super.init(cases: cases, defaultIndex: index)
+            super.init(cases: images, defaultIndex: index)
         } else {
-            super.init(cases: cases, defaultIndex: 0)
+            super.init(cases: images, defaultIndex: 0)
         }
         
         pickerView.delegate = self
