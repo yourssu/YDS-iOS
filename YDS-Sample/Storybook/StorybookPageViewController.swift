@@ -124,7 +124,7 @@ class StoryBookViewController: UIViewController {
             return controllerView
         }()
         
-        setControllerView(controllerView, task: task)
+        setControllerView(controllerView, defaultValue: defaultValue, task: task)
         
         controllerView.observable.onNext(defaultValue)
     }
@@ -136,13 +136,11 @@ class StoryBookViewController: UIViewController {
             controllerView.parameterLabel.text = description
             return controllerView
         }()
-
-        setControllerView(controllerView, task: task)
         
         if let index = defaultIndex {
-            controllerView.observable.onNext(cases[index])
+            setControllerView(controllerView, defaultValue: cases[index], task: task)
         } else {
-            controllerView.observable.onNext(nil)
+            setControllerView(controllerView, defaultValue: nil, task: task)
         }
     }
     
@@ -154,9 +152,7 @@ class StoryBookViewController: UIViewController {
             return controllerView
         }()
 
-        setControllerView(controllerView, task: task)
-        
-        controllerView.observable.onNext(cases[defaultIndex])
+        setControllerView(controllerView, defaultValue: cases[defaultIndex], task: task)
     }
     
     //  Bool
@@ -167,19 +163,19 @@ class StoryBookViewController: UIViewController {
             return controllerView
         }()
 
-        setControllerView(controllerView, task: task)
-        
-        controllerView.observable.onNext(defaultValue)
+        setControllerView(controllerView, defaultValue: defaultValue, task: task)
     }
     
     //  공통
-    private func setControllerView<T> (_ controllerView: ControllerView<T>, task: @escaping (T) -> Void) {
+    private func setControllerView<T> (_ controllerView: ControllerView<T>, defaultValue: T, task: @escaping (T) -> Void) {
         self.stackView.addArrangedSubview(controllerView)
         
         controllerView.observable.subscribe(onNext: { value in
             task(value)
         })
         .disposed(by: bag)
+        
+        controllerView.observable.onNext(defaultValue)
     }
 
 }
