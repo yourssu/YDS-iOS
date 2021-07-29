@@ -59,20 +59,20 @@ class StoryBookViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(Screen.width * 3/4)
         }
-        scrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(sampleView.snp.bottom)
-            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
-            make.bottom.equalToSuperview()
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(sampleView.snp.bottom)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
-        scrollView.contentLayoutGuide.snp.makeConstraints { (make) in
-            make.top.equalTo(sampleView.snp.bottom)
-            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+        scrollView.contentLayoutGuide.snp.makeConstraints {
+            $0.top.equalTo(sampleView.snp.bottom)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        stackView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-32)
-            make.leading.trailing.equalToSuperview()
+        stackView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-32)
+            $0.leading.trailing.equalToSuperview()
         }
     }
     
