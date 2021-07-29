@@ -366,7 +366,7 @@ public class YDSBoxButton: UIButton {
         }
         
         if rightIcon != nil {
-            self.setImage(self.leftIcon?
+            self.setImage(self.rightIcon?
                             .resize(to: size.iconSize)
                             .withRenderingMode(.alwaysTemplate),
                           for: .normal)
