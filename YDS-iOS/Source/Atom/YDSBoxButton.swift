@@ -344,11 +344,41 @@ public class YDSBoxButton: UIButton {
     //  버튼의 아이콘 위치와 그에 따른 패딩을 설정합니다.
     //  우선순위는 leftIcon > rightIcon 입니다.
     private func setIcon() {
+        setIconImage()
+        setLayoutAccordingToIcon()
+    }
+    
+    //  setIconImage()
+    //  버튼의 아이콘 이미지를 설정합니다.
+    //  leftIcon이 존재할 경우 leftIcon을
+    //  leftIcon이 존재하지 않으면서 rightIcon이 존재할 경우 rightIcon을
+    //  둘 다 존재하지 않을 경우 nil을 채택합니다.
+    private func setIconImage() {
         if leftIcon != nil {
             self.setImage(self.leftIcon?
                             .resize(to: size.iconSize)
                             .withRenderingMode(.alwaysTemplate),
                           for: .normal)
+            return
+        }
+        
+        if rightIcon != nil {
+            self.setImage(self.leftIcon?
+                            .resize(to: size.iconSize)
+                            .withRenderingMode(.alwaysTemplate),
+                          for: .normal)
+            return
+        }
+        
+        self.setImage(nil, for: .normal)
+    }
+    
+    //  setLayoutAccordingToIcon()
+    //  아이콘 설정에 따른 버튼의 레이아웃을 결정합니다.
+    private func setLayoutAccordingToIcon() {
+        if leftIcon != nil && text != nil {
+            //  leftIcon != nil 이면서 text != nil인
+            //  2가지 경우에 대응합니다.
             
             self.semanticContentAttribute = .forceLeftToRight
             self.imageEdgeInsets = UIEdgeInsets(top: 0,
@@ -366,11 +396,12 @@ public class YDSBoxButton: UIButton {
             return
         }
         
-        if rightIcon != nil {
-            self.setImage(self.rightIcon?
-                            .resize(to: size.iconSize)
-                            .withRenderingMode(.alwaysTemplate),
-                          for: .normal)
+        
+        
+        if rightIcon != nil && text != nil {
+            //  위에서 걸러지지 않은 6가지 경우 중
+            //  rightIcon != nil 이면서 text != nil 인
+            //  1가지 경우에 대응합니다.
             
             self.semanticContentAttribute = .forceRightToLeft
             self.imageEdgeInsets = UIEdgeInsets(top: 0,
@@ -385,14 +416,15 @@ public class YDSBoxButton: UIButton {
                                                   left: size.padding+YDSBoxButton.subviewSpacing/2,
                                                   bottom: 0,
                                                   right: size.padding+YDSBoxButton.subviewSpacing/2)
-            return
         }
         
-        self.setImage(nil, for: .normal)
+        //  위에서 걸러지지 않은 5가지 경우
+        //  text == nil 인 경우 4가지
+        //  leftIcon == nil && rightIcon == nil 인 경우 2가지
+        //  둘의 합집합 5가지에 대응합니다.
         self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.contentEdgeInsets = UIEdgeInsets(top: 0, left: size.padding, bottom: 0, right: size.padding)
-        return
     }
 
 }
