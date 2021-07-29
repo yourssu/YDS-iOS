@@ -45,10 +45,10 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
             .take(1)
             .subscribe(onNext: { value in
                 if value != nil {
-                    self.isDisabled = false
+                    self.textFieldView.isDisabled = false
                     self.textFieldView.text = value?.accessibilityIdentifier
                 } else {
-                    self.isDisabled = true
+                    self.textFieldView.isDisabled = true
                     self.textFieldView.text = self.cases[0]?.accessibilityIdentifier
                 }
             })

@@ -125,8 +125,6 @@ class StoryBookViewController: UIViewController {
         }()
         
         setControllerView(controllerView, defaultValue: defaultValue, task: task)
-        
-        controllerView.observable.onNext(defaultValue)
     }
     
     //  Optional Image
