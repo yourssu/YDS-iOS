@@ -53,7 +53,10 @@ public class YDSBoxButton: UIButton {
     //  text: String?
     //  버튼의 글귀를 설정할 때 사용합니다.
     public var text: String? = nil {
-        didSet { setTitle(text, for: .normal) }
+        didSet {
+            setTitle(text, for: .normal)
+            setLayoutAccordingToIcon()
+        }
     }
     
     //  leftIcon: UIImage?
