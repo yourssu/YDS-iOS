@@ -23,7 +23,6 @@ class EnumControllerView<T>: PickerControllerView<T>, UIPickerViewDelegate {
     }
     
     private func setInitialState(index: Int) {
-        self.pickerView.selectRow(index, inComponent: 0, animated: true)
         self.textFieldView.text = String(describing: cases[index])
     }
     

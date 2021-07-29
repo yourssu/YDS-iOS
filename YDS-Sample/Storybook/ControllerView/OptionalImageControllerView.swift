@@ -43,12 +43,9 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
     private func setInitialState(index: Int?) {
         if let index = index {
             self.isDisabled = false
-            self.pickerView.selectRow(index, inComponent: 0, animated: true)
             self.textFieldView.text = cases[index]?.accessibilityIdentifier
         } else {
             self.isDisabled = true
-            self.pickerView.selectRow(0, inComponent: 0, animated: true)
-            self.textFieldView.text = cases[0]?.accessibilityIdentifier
         }
     }
     
