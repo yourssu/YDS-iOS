@@ -419,6 +419,7 @@ public class YDSBoxButton: UIButton {
                                                   left: size.padding+YDSBoxButton.subviewSpacing/2,
                                                   bottom: 0,
                                                   right: size.padding+YDSBoxButton.subviewSpacing/2)
+            return
         }
         
         //  위에서 걸러지지 않은 5가지 경우
