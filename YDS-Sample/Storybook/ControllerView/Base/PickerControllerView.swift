@@ -28,7 +28,7 @@ class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
             ? defaultIndex
             : 0
         
-        super.init(defaultValue: cases[index])
+        super.init()
         
         textFieldView.textField.inputView = pickerView
         textFieldView.textField.tintColor = .clear

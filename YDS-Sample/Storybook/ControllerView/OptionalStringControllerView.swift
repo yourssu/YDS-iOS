@@ -18,8 +18,8 @@ class OptionalStringControllerView: ControllerView<String?> {
         }
     }
 
-    public override init(defaultValue: String?) {
-        super.init(defaultValue: defaultValue)
+    public override init() {
+        super.init()
         
         optionalToggle.addTarget(
             self,
@@ -33,20 +33,25 @@ class OptionalStringControllerView: ControllerView<String?> {
             for: .editingChanged
         )
         
-        setInitialState(value: defaultValue)
+        setInitialState()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setInitialState(value: String?) {
-        if let value = value {
-            self.isDisabled = false
-            textFieldView.text = value
-        } else {
-            self.isDisabled = true
-        }
+    private func setInitialState() {
+        observable
+            .take(1)
+            .subscribe(onNext: { value in
+                if value != nil {
+                    self.isDisabled = false
+                    self.textFieldView.text = value
+                } else {
+                    self.isDisabled = true
+                }
+            })
+            .disposed(by: bag)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

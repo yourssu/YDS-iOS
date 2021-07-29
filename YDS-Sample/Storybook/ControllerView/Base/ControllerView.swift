@@ -13,7 +13,7 @@ import RxSwift
 
 class ControllerView<T>: UIView {
     
-    public let observable: BehaviorSubject<T>
+    public let observable: PublishSubject<T>
     let bag = DisposeBag()
         
     // MARK: - 뷰
@@ -76,8 +76,8 @@ class ControllerView<T>: UIView {
     
     // MARK: - 함수
     
-    public init(defaultValue: T) {
-        observable = BehaviorSubject<T>(value: defaultValue)
+    public init() {
+        observable = PublishSubject<T>()
         super.init(frame: .zero)
         setupView()
     }

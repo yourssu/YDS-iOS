@@ -119,12 +119,14 @@ class StoryBookViewController: UIViewController {
     //  Optional String
     public func addOption(description: String?, defaultValue: String?,  task: @escaping (String?) -> Void) {
         let controllerView: OptionalStringControllerView = {
-            let controllerView = OptionalStringControllerView(defaultValue: defaultValue)
+            let controllerView = OptionalStringControllerView()
             controllerView.parameterLabel.text = description
             return controllerView
         }()
         
         setControllerView(controllerView, task: task)
+        
+        controllerView.observable.onNext(defaultValue)
     }
     
     //  Optional Image
@@ -136,6 +138,12 @@ class StoryBookViewController: UIViewController {
         }()
 
         setControllerView(controllerView, task: task)
+        
+        if let index = defaultIndex {
+            controllerView.observable.onNext(cases[index])
+        } else {
+            controllerView.observable.onNext(nil)
+        }
     }
     
     //  Enum
@@ -147,17 +155,21 @@ class StoryBookViewController: UIViewController {
         }()
 
         setControllerView(controllerView, task: task)
+        
+        controllerView.observable.onNext(cases[defaultIndex])
     }
     
     //  Bool
     public func addOption(description: String?, defaultValue: Bool,  task: @escaping (Bool) -> Void) {
         let controllerView: BoolControllerView = {
-            let controllerView = BoolControllerView(defaultValue: defaultValue)
+            let controllerView = BoolControllerView()
             controllerView.parameterLabel.text = description
             return controllerView
         }()
 
         setControllerView(controllerView, task: task)
+        
+        controllerView.observable.onNext(defaultValue)
     }
     
     //  공통

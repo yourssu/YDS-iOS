@@ -33,20 +33,25 @@ class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewD
             action: #selector(didToggleValueChanged(_:)),
             for: .valueChanged)
         
-        setInitialState(index: defaultIndex)
+        setInitialState()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setInitialState(index: Int?) {
-        if let index = index {
-            self.isDisabled = false
-            self.textFieldView.text = cases[index]?.accessibilityIdentifier
-        } else {
-            self.isDisabled = true
-        }
+    private func setInitialState() {
+        observable
+            .take(1)
+            .subscribe(onNext: { value in
+                if value != nil {
+                    self.isDisabled = false
+                    self.textFieldView.text = value?.accessibilityIdentifier
+                } else {
+                    self.isDisabled = true
+                }
+            })
+            .disposed(by: bag)
     }
     
     @objc

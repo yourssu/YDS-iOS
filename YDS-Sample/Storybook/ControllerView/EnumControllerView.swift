@@ -15,15 +15,20 @@ class EnumControllerView<T>: PickerControllerView<T>, UIPickerViewDelegate {
         
         pickerView.delegate = self
         
-        setInitialState(index: defaultIndex)
+        setInitialState()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setInitialState(index: Int) {
-        self.textFieldView.text = String(describing: cases[index])
+    private func setInitialState() {
+        observable
+            .take(1)
+            .subscribe(onNext: { value in
+                self.textFieldView.text = String(describing: value)
+            })
+            .disposed(by: bag)
     }
     
 
