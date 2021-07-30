@@ -172,7 +172,6 @@
 		533A27B526A52EC0009FD90A /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				DDFBD00426739A6900C5F409 /* Main.storyboard */,
 				DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */,
 			);
 			path = storyboard;
@@ -302,6 +301,7 @@
 			children = (
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
+				DDFBD00426739A6900C5F409 /* Main.storyboard */,
 				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
@@ -513,6 +513,7 @@
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
+				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
 				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,
