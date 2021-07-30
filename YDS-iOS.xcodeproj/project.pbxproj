@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		533A278A26A42E72009FD90A /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A278926A42E72009FD90A /* YDSTypoStyle.swift */; };
-		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
-		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSSimpleTextField.swift */; };
 		533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */; };
 		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
@@ -44,7 +42,6 @@
 		DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* BasicColor.swift */; };
 		DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* SemanticColor.swift */; };
 		DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */; };
-		DDFBD00126739A6900C5F409 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD00026739A6900C5F409 /* SceneDelegate.swift */; };
 		DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */; };
 		DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00426739A6900C5F409 /* Main.storyboard */; };
 		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
@@ -81,8 +78,6 @@
 		3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		533A278926A42E72009FD90A /* YDSTypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
-		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
-		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		533A279C26A48683009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldView.swift; sourceTree = "<group>"; };
 		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +117,6 @@
 		DDDC3C81265E8276007ED3FE /* SemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColor.swift; sourceTree = "<group>"; };
 		DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDFBD00026739A6900C5F409 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldSampleViewController.swift; sourceTree = "<group>"; };
 		DDFBD00526739A6900C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,7 +172,6 @@
 		533A27B526A52EC0009FD90A /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				DDFBD00426739A6900C5F409 /* Main.storyboard */,
 				DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */,
 			);
 			path = storyboard;
@@ -308,7 +301,6 @@
 			children = (
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
-				DDFBD00026739A6900C5F409 /* SceneDelegate.swift */,
 				DDFBD00426739A6900C5F409 /* Main.storyboard */,
 				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
