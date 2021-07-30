@@ -105,6 +105,6 @@ extension UIImage {
             draw(in: CGRect(origin: .zero, size: newSize))
         }
             
-        return image.withRenderingMode(renderingMode)
+        return image
     }
 }
