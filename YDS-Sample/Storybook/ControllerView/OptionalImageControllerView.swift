@@ -9,7 +9,7 @@ import UIKit
 import YDS_iOS
 import RxSwift
 
-class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewDelegate {
+final class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPickerViewDelegate {
 
     private var isDisabled: Bool = true {
         didSet {

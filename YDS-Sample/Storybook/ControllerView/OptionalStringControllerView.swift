@@ -9,7 +9,7 @@ import UIKit
 import YDS_iOS
 import RxSwift
 
-class OptionalStringControllerView: ControllerView<String?> {
+final class OptionalStringControllerView: ControllerView<String?> {
     
     private var isDisabled: Bool = true {
         didSet {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EnumControllerView<T>: PickerControllerView<T>, UIPickerViewDelegate {
+final class EnumControllerView<T>: PickerControllerView<T>, UIPickerViewDelegate {
 
     public override init(cases: [T], defaultIndex: Int) {
         

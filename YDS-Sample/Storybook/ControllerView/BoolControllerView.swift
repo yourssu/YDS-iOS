@@ -8,7 +8,7 @@
 import UIKit
 import YDS_iOS
 
-class BoolControllerView: ControllerView<Bool> {
+final class BoolControllerView: ControllerView<Bool> {
 
     private let toggle = Toggle()
 
