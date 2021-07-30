@@ -172,6 +172,7 @@
 		533A27B526A52EC0009FD90A /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				DDFBD00426739A6900C5F409 /* Main.storyboard */,
 				DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */,
 			);
 			path = storyboard;
@@ -301,7 +302,6 @@
 			children = (
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
-				DDFBD00426739A6900C5F409 /* Main.storyboard */,
 				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
