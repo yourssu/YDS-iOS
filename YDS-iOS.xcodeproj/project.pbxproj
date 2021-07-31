@@ -579,6 +579,7 @@
 				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
 				53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */,
+				53A31B5E266F500300461C29 /* Toggle.swift in Sources */,
 				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,
 				533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */,
