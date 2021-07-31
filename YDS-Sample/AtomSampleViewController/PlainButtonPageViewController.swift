@@ -45,41 +45,41 @@ class PlainButtonPageViewController: StoryBookViewController {
     
     private func addOptions() {
         addOption(description: "text",
-                  defaultValue: "재생") {
-            self.sampleButton.text = $0
+                  defaultValue: "재생") { [weak self] value in
+            self?.sampleButton.text = value
         }
         
         addOption(description: "leftIcon",
                   images: ydsIconArray,
-                  defaultImage: YDSIcon.playcircleFilled) {
-            self.sampleButton.leftIcon = $0
+                  defaultImage: YDSIcon.playcircleFilled) { [weak self] value in
+            self?.sampleButton.leftIcon = value
         }
         
         addOption(description: "rightIcon",
                   images: ydsIconArray,
-                  defaultImage: YDSIcon.playcircleFilled) {
-            self.sampleButton.rightIcon = $0
+                  defaultImage: YDSIcon.playcircleFilled) { [weak self] value in
+            self?.sampleButton.rightIcon = value
         }
         
         addOption(description: "size",
                   cases: YDSPlainButton.PlainButtonSize.allCases,
-                  defaultIndex: 1) {
-            self.sampleButton.size = $0
+                  defaultIndex: 1) { [weak self] value in
+            self?.sampleButton.size = value
         }
     
         addOption(description: "isDisabled",
-                  defaultValue: false) {
-            self.sampleButton.isDisabled = $0
+                  defaultValue: false) { [weak self] value in
+            self?.sampleButton.isDisabled = value
         }
         
         addOption(description: "isWarned",
-                  defaultValue: false) {
-            self.sampleButton.isWarned = $0
+                  defaultValue: false) { [weak self] value in
+            self?.sampleButton.isWarned = value
         }
         
         addOption(description: "isPointed",
-                  defaultValue: false) {
-            self.sampleButton.isPointed = $0
+                  defaultValue: false) { [weak self] value in
+            self?.sampleButton.isPointed = value
         }
     }
 
