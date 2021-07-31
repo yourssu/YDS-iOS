@@ -49,20 +49,20 @@ class BadgePageViewController: StoryBookViewController {
     
     private func addOptions() {
         addOption(description: "text",
-                  defaultValue: "광고") {
-            self.sampleBadge.text = $0
+                  defaultValue: "광고") { [weak self] value in
+            self?.sampleBadge.text = value
         }
         
         addOption(description: "icon",
                   images: ydsIconArray,
-                  defaultImage: YDSIcon.adbadgeFilled) {
-            self.sampleBadge.icon = $0
+                  defaultImage: YDSIcon.adbadgeFilled) { [weak self] value in
+            self?.sampleBadge.icon = value
         }
         
         addOption(description: "color",
                   cases: YDSItemColor.allCases,
-                  defaultIndex: 3) {
-            self.sampleBadge.color = $0
+                  defaultIndex: 3) { [weak self] value in
+            self?.sampleBadge.color = value
         }
         
     }
