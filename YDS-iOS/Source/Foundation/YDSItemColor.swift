@@ -8,6 +8,7 @@
 import UIKit
 
 public enum YDSItemColor: String {
+    //  rawValue로 백엔드와 통신합니다.
     case mono = "Mono"
     case green = "Green"
     case emerald = "Emerald"
