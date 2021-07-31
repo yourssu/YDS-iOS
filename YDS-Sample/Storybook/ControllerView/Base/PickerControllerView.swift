@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_iOS
 
 class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
 
@@ -18,6 +19,7 @@ class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
         let selectButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPickerView(_:)))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.setItems([spacer, selectButton], animated: true)
+        toolbar.tintColor = YDSColor.buttonPoint
         return toolbar
     }()
     

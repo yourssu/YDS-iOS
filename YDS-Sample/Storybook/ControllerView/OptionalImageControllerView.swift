@@ -18,9 +18,9 @@ final class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPicke
         }
     }
     
-    public init(images: [UIImage?], defaultIndex: Int?) {
+    public init(images: [UIImage?], defaultImage: UIImage?) {
         
-        if let index = defaultIndex {
+        if let index = images.firstIndex(of: defaultImage) {
             super.init(cases: images, defaultIndex: index)
         } else {
             super.init(cases: images, defaultIndex: 0)
