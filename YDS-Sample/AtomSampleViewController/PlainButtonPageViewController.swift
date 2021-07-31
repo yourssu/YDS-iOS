@@ -50,13 +50,13 @@ class PlainButtonPageViewController: StoryBookViewController {
         }
         
         addOption(description: "leftIcon",
-                  images: [YDSIcon.playcircleFilled, YDSIcon.groundFilled],
+                  images: ydsIconArray,
                   defaultIndex: 0) {
             self.sampleButton.leftIcon = $0
         }
         
         addOption(description: "rightIcon",
-                  images: [YDSIcon.playcircleFilled, YDSIcon.groundFilled],
+                  images: ydsIconArray,
                   defaultIndex: nil) {
             self.sampleButton.rightIcon = $0
         }
