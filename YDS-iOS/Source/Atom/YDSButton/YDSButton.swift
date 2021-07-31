@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal protocol YDSButton {
+public protocol YDSButton {
     var isDisabled: Bool { get set }
     var isWarned: Bool { get set }
     var text: String? { get set }
