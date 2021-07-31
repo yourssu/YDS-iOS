@@ -61,8 +61,8 @@ public class YDSProfileImageView: UIImageView {
         newBorderLayer.frame = self.bounds
         newBorderLayer.path = path.cgPath
         newBorderLayer.fillColor = UIColor.clear.cgColor
-        newBorderLayer.lineWidth = Constant.Border.normal
-        newBorderLayer.strokeColor = YDSColor.borderThin.cgColor
+        newBorderLayer.lineWidth = Constant.Border.thin
+        newBorderLayer.strokeColor = YDSColor.borderNormal.cgColor
         
         if let oldBorderLayer = borderLayer {
             self.layer.replaceSublayer(oldBorderLayer, with: newBorderLayer)
