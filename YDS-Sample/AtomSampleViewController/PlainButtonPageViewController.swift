@@ -51,7 +51,7 @@ class PlainButtonPageViewController: StoryBookViewController {
         
         addOption(description: "leftIcon",
                   images: [YDSIcon.playcircleFilled, YDSIcon.groundFilled],
-                  defaultIndex: nil) {
+                  defaultIndex: 0) {
             self.sampleButton.leftIcon = $0
         }
         
