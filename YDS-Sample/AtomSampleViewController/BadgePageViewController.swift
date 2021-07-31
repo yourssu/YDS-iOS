@@ -75,4 +75,5 @@ class BadgePageViewController: StoryBookViewController {
 
 extension YDSItemColor: CaseIterable {
     public static var allCases: [YDSItemColor] = [.mono, .green, .emerald, .aqua, .blue, .indigo, .violet, .purple, .pink]
+
 }

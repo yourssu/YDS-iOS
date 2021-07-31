@@ -104,7 +104,7 @@ public class YDSBadge: UIView {
     private func setupViews() {
         setProperties()
         setLayouts()
-        
+
         setText()
         setIcon()
         setColor()
@@ -117,6 +117,7 @@ public class YDSBadge: UIView {
         setAutolayout()
     }
     
+
     //  setProperties()
     //  모서리 곡률을 2로 만듭니다.
     private func setProperties() {
