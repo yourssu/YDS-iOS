@@ -5,6 +5,10 @@
 //  Created by Gyuni on 2021/07/31.
 //
 
+//
+//  YDSBoxButton과 YDSPlainButton이 준수하는 protocol입니다.
+//
+
 import UIKit
 
 public protocol YDSButton {
