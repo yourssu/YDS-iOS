@@ -40,14 +40,25 @@ public class YDSPlainButton: UIButton {
     //  size: PlainButtonSize ( large, medium, small )
     //  타이포 크기, 아이콘 크기를 결정할 때 사용합니다.
     public var size: PlainButtonSize = .large {
-        didSet { setPlainButtonColor() }
+        didSet {
+            if size == .large {
+                setTitle(nil, for: .normal)
+            } else {
+                setTitle(text, for: .normal)
+            }
+            setPlainButtonSize()
+        }
     }
     
     //  text: String?
     //  버튼의 글귀를 설정할 때 사용합니다.
     public var text: String? = nil {
         didSet {
-            setTitle(text, for: .normal)
+            if size == .large {
+                setTitle(nil, for: .normal)
+            } else {
+                setTitle(text, for: .normal)
+            }
             setLayoutAccordingToIcon()
         }
     }
@@ -117,7 +128,7 @@ public class YDSPlainButton: UIButton {
     
     //  subviewSpacing: CGFloat
     //  버튼 내 요소 사이 간격입니다. icon과 titleLabel 사이 간격에 사용됩니다.
-    private static let subviewSpacing: CGFloat = 4
+    private static let subviewSpacing: CGFloat = 2
     
     
     //  MARK: - 내부에서 사용되는 변수
@@ -135,7 +146,6 @@ public class YDSPlainButton: UIButton {
     
     public init() {
         super.init(frame: .zero)
-        
         setupView()
     }
     
@@ -229,7 +239,7 @@ public class YDSPlainButton: UIButton {
     //  setLayoutAccordingToIcon()
     //  아이콘 설정에 따른 버튼의 레이아웃을 결정합니다.
     private func setLayoutAccordingToIcon() {
-        if leftIcon != nil && text != nil {
+        if leftIcon != nil && text != nil && size != .large {
             //  leftIcon != nil 이면서 text != nil인
             //  2가지 경우에 대응합니다.
             
@@ -251,7 +261,7 @@ public class YDSPlainButton: UIButton {
         
         
         
-        if rightIcon != nil && text != nil {
+        if rightIcon != nil && text != nil && size != .large {
             //  위에서 걸러지지 않은 6가지 경우 중
             //  rightIcon != nil 이면서 text != nil 인
             //  1가지 경우에 대응합니다.
