@@ -63,6 +63,7 @@ class PlainButtonPageViewController: StoryBookViewController {
                   images: ydsIconArray,
                   defaultImage: YDSIcon.playcircleFilled) { [weak self] value in
             self?.sampleButton.rightIcon = value
+
         }
         
         addOption(description: "size",
