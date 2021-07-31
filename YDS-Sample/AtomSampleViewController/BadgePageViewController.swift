@@ -55,6 +55,7 @@ class BadgePageViewController: StoryBookViewController {
         addOption(description: "text",
                   defaultValue: "광고") { [weak self] value in
             self?.sampleBadge.text = value
+
         }
         
         addOption(description: "icon",
@@ -75,5 +76,4 @@ class BadgePageViewController: StoryBookViewController {
 
 extension YDSItemColor: CaseIterable {
     public static var allCases: [YDSItemColor] = [.mono, .green, .emerald, .aqua, .blue, .indigo, .violet, .purple, .pink]
-
 }
