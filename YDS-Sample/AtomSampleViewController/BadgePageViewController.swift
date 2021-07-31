@@ -55,7 +55,6 @@ class BadgePageViewController: StoryBookViewController {
         addOption(description: "text",
                   defaultValue: "광고") { [weak self] value in
             self?.sampleBadge.text = value
-
         }
         
         addOption(description: "icon",
