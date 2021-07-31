@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_iOS
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: PageListViewController())
-        // window?.rootViewController = SuffixTextFieldSampleVC()
+        
         window?.makeKeyAndVisible()
+        
+        let backImage = YDSIcon.arrowLeftLine
+        UINavigationBar.appearance().backIndicatorImage = backImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
         
         return true
     }

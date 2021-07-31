@@ -96,6 +96,7 @@ extension UIImage {
             assert(false, "\(name) 이미지 로드 실패")
             return UIImage()
         }
+        image.accessibilityIdentifier = name
         return image
     }
     
