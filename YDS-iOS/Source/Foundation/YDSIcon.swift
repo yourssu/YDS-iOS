@@ -96,7 +96,16 @@ extension UIImage {
             assert(false, "\(name) 이미지 로드 실패")
             return UIImage()
         }
+        image.accessibilityIdentifier = name
+        return image
+    }
+    
+    internal func resize(to length: CGFloat) -> UIImage {
+        let newSize = CGSize(width: length, height: length)
+        let image = UIGraphicsImageRenderer(size: newSize).image { _ in
+            draw(in: CGRect(origin: .zero, size: newSize))
+        }
+            
         return image
     }
 }
-
