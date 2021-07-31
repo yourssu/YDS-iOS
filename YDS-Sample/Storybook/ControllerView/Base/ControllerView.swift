@@ -71,7 +71,7 @@ class ControllerView<T>: UIView {
         return textFieldView
     }()
     
-    private let divider = YDSDivider()
+    private let divider = YDSDivider(.horizontal)
         
     
     // MARK: - 함수
