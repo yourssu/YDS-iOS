@@ -51,19 +51,19 @@ class PlainButtonPageViewController: StoryBookViewController {
         
         addOption(description: "leftIcon",
                   images: ydsIconArray,
-                  defaultIndex: 0) {
+                  defaultImage: YDSIcon.playcircleFilled) {
             self.sampleButton.leftIcon = $0
         }
         
         addOption(description: "rightIcon",
                   images: ydsIconArray,
-                  defaultIndex: nil) {
+                  defaultImage: YDSIcon.playcircleFilled) {
             self.sampleButton.rightIcon = $0
         }
         
         addOption(description: "size",
                   cases: YDSPlainButton.PlainButtonSize.allCases,
-                  defaultIndex: 0) {
+                  defaultIndex: 1) {
             self.sampleButton.size = $0
         }
     

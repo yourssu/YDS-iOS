@@ -51,13 +51,13 @@ class BoxButtonPageViewController: StoryBookViewController {
         
         addOption(description: "leftIcon",
                   images: ydsIconArray,
-                  defaultIndex: nil) {
+                  defaultImage: nil) {
             self.sampleButton.leftIcon = $0
         }
         
         addOption(description: "rightIcon",
                   images: ydsIconArray,
-                  defaultIndex: nil) {
+                  defaultImage: nil) {
             self.sampleButton.rightIcon = $0
         }
         
