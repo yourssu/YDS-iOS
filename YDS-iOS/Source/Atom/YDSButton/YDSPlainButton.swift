@@ -11,7 +11,7 @@
 
 import UIKit
 
-public class YDSPlainButton: UIButton {
+public class YDSPlainButton: UIButton, YDSButton {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
 
