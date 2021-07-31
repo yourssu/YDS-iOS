@@ -47,6 +47,7 @@
 		53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */; };
 		53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */; };
 		53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */; };
+		53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */; };
 		53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB943826A1E33A00208496 /* YDSDivider.swift */; };
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
@@ -131,6 +132,7 @@
 		53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconArray.swift; sourceTree = "<group>"; };
 		53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBadge.swift; sourceTree = "<group>"; };
 		53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSItemColor.swift; sourceTree = "<group>"; };
+		53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePageViewController.swift; sourceTree = "<group>"; };
 		53EB943826A1E33A00208496 /* YDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDivider.swift; sourceTree = "<group>"; };
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -272,11 +274,11 @@
 		53443D9B26A7D32B0037B02E /* YDSTextField */ = {
 			isa = PBXGroup;
 			children = (
+				533A353E26AEA05E00CCEEAE /* YDSTextField.swift */,
 				53443D9826A7D3050037B02E /* YDSSimpleTextField */,
 				53443D9926A7D3130037B02E /* YDSSuffixTextField */,
 				53443D9A26A7D31D0037B02E /* YDSPasswordTextField */,
 				53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */,
-				533A353E26AEA05E00CCEEAE /* YDSTextField.swift */,
 				533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */,
 			);
 			path = YDSTextField;
@@ -292,6 +294,7 @@
 				53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */,
 				5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */,
 				53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */,
+				53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
+				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
