@@ -45,6 +45,8 @@
 		53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
 		53C9F6F926B5546500EF7B86 /* YDSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButton.swift */; };
 		53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */; };
+		53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */; };
+		53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */; };
 		53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB943826A1E33A00208496 /* YDSDivider.swift */; };
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
@@ -54,8 +56,8 @@
 		DD8B142B26737960000148F1 /* Pods_YDS_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */; };
 		DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */; };
 		DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13726786BD100EDD2B4 /* Animation.swift */; };
-		DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* BasicColor.swift */; };
-		DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* SemanticColor.swift */; };
+		DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */; };
+		DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */; };
 		DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */; };
 		DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */; };
 		DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00426739A6900C5F409 /* Main.storyboard */; };
@@ -127,6 +129,8 @@
 		53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainButtonPageViewController.swift; sourceTree = "<group>"; };
 		53C9F6F826B5546400EF7B86 /* YDSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSButton.swift; sourceTree = "<group>"; };
 		53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconArray.swift; sourceTree = "<group>"; };
+		53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBadge.swift; sourceTree = "<group>"; };
+		53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSItemColor.swift; sourceTree = "<group>"; };
 		53EB943826A1E33A00208496 /* YDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDivider.swift; sourceTree = "<group>"; };
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,8 +145,8 @@
 		DD6C63D526429C6C004CFF46 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
 		DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		DD8DF13726786BD100EDD2B4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		DDDC3C79265E7072007ED3FE /* BasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicColor.swift; sourceTree = "<group>"; };
-		DDDC3C81265E8276007ED3FE /* SemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColor.swift; sourceTree = "<group>"; };
+		DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBasicColor.swift; sourceTree = "<group>"; };
+		DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSemanticColor.swift; sourceTree = "<group>"; };
 		DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldSampleViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				53C9F6FA26B5563C00EF7B86 /* YDSButton */,
 				53443D9B26A7D32B0037B02E /* YDSTextField */,
 				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
+				53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -362,8 +367,9 @@
 			children = (
 				DD6C6383264286FB004CFF46 /* YDSFont.swift */,
 				533A278926A42E72009FD90A /* YDSTypoStyle.swift */,
-				DDDC3C79265E7072007ED3FE /* BasicColor.swift */,
-				DDDC3C81265E8276007ED3FE /* SemanticColor.swift */,
+				DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */,
+				DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */,
+				53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */,
 				53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */,
 				536FCA4F267CD25300158DFD /* YDSIcon.xcassets */,
 			);
@@ -585,13 +591,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */,
 				53441AFC26AF14CC00CB6BC9 /* Toggle.swift in Sources */,
 				53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */,
 				53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */,
 				53C9F6F926B5546500EF7B86 /* YDSButton.swift in Sources */,
 				5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */,
-				DDDC3C7A265E7072007ED3FE /* BasicColor.swift in Sources */,
-				DDDC3C82265E8276007ED3FE /* SemanticColor.swift in Sources */,
+				DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */,
+				DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */,
 				DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */,
 				5394692E2663D6DB003D7A44 /* Constant.swift in Sources */,
 				53443D8A26A5A4770037B02E /* YDSPasswordTextField.swift in Sources */,
@@ -599,6 +606,7 @@
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
+				53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */,
 				53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */,
 				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,
