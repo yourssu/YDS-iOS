@@ -61,7 +61,7 @@ class PageListViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = YDSColor.bgNormal
-        self.title = "YDS Sample"
+        self.title = "Storybook"
         
         self.navigationController?.navigationBar.tintColor = YDSColor.buttonNormal
         self.navigationController?.navigationBar.isTranslucent = false
