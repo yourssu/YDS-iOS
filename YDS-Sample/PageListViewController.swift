@@ -38,6 +38,7 @@ class PageListViewController: UIViewController {
     
     let atomPages: [Page] = [
         Page(title: "Checkbox", vc: CheckboxPageViewController.self),
+        Page(title: "ProfileImageView", vc: ProfileImageViewPageViewController.self),
         Page(title: "SimpleTextField", vc: SimpleTextFieldSampleViewController.self),
         Page(title: "SuffixTextField", vc: SuffixTextFieldSampleViewController.self),
         Page(title: "PasswordTextField", vc: PasswordTextFieldSampleViewController.self),
