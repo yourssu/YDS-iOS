@@ -400,7 +400,6 @@
 				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
 				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
-				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
 				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
