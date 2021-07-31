@@ -50,6 +50,8 @@
 		53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */; };
 		53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */; };
 		53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */; };
+		53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */; };
+		53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */; };
 		53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB943826A1E33A00208496 /* YDSDivider.swift */; };
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
@@ -137,6 +139,8 @@
 		53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSItemColor.swift; sourceTree = "<group>"; };
 		53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePageViewController.swift; sourceTree = "<group>"; };
 		53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckbox.swift; sourceTree = "<group>"; };
+		53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSProfileImageView.swift; sourceTree = "<group>"; };
+		53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewPageViewController.swift; sourceTree = "<group>"; };
 		53EB943826A1E33A00208496 /* YDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDivider.swift; sourceTree = "<group>"; };
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */,
+				53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */,
 				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */,
 				5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */,
 				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */,
@@ -363,6 +368,7 @@
 				53EB943826A1E33A00208496 /* YDSDivider.swift */,
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
 				53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */,
+				53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */,
 				53C9F6FA26B5563C00EF7B86 /* YDSButton */,
 				53443D9B26A7D32B0037B02E /* YDSTextField */,
 				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
@@ -605,6 +611,8 @@
 				53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */,
 				53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */,
 				53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */,
+				53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */,
+				53C9F6F926B5546500EF7B86 /* YDSButton.swift in Sources */,
 				5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */,
 				DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */,
 				DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */,
@@ -652,6 +660,7 @@
 				53443D9026A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
+				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
 				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
