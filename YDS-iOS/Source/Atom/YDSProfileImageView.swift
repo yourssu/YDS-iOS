@@ -46,7 +46,7 @@ public class YDSProfileImageView: UIImageView {
     //  size에 따른 squircle path를 만들고
     //  마스킹과 테두리를 적용시킵니다.
     private func setSquirclePathAccordingToSize() {
-        let path = squirclePath(CGFloat(size.rawValue))
+        let path = makeSquirclePath(CGFloat(size.rawValue))
         
         setMaskLayer(path: path)
         setBorderLayer(path: path)
@@ -88,11 +88,11 @@ public class YDSProfileImageView: UIImageView {
     //  기존의 borderLayer를 새 borderLayer로 바꿔줍니다.
     private var borderLayer: CALayer?
 
-    //  squirclePath()
+    //  makeSquirclePath()
     //  디자인 요구 사안에 맞는 UIBezierPath를 return합니다.
     //  벡터 다루기 싫어서 일러스트레이터 공부 안한건데
     //  iOS에서 벡터를 만지고 있을 줄은 몰랐습니다.
-    private func squirclePath(_ width: CGFloat) -> UIBezierPath {
+    private func makeSquirclePath(_ width: CGFloat) -> UIBezierPath {
         let point: [CGPoint] = [
             CGPoint(x: width/3, y: 0),
             CGPoint(x: width-width/3, y: 0),
