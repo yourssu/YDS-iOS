@@ -9,11 +9,11 @@ import UIKit
 
 public class YDSProfileImageView: UIImageView {
     
-    public var size: ImageSize = .small {
+    public var size: ProfileImageViewSize = .small {
         didSet { setImageSize() }
     }
     
-    public enum ImageSize: Int {
+    public enum ProfileImageViewSize: Int {
         case small = 36
         case medium = 48
         case large = 72
@@ -42,6 +42,9 @@ public class YDSProfileImageView: UIImageView {
         setSquirclePathAccordingToSize()
     }
     
+    //  setSquirclePathAccordingToSize()
+    //  size에 따른 squircle path를 만들고
+    //  마스킹과 테두리를 적용시킵니다.
     private func setSquirclePathAccordingToSize() {
         let path = squirclePath(CGFloat(size.rawValue))
         
@@ -49,6 +52,8 @@ public class YDSProfileImageView: UIImageView {
         setBorderLayer(path: path)
     }
     
+    //  setMaskLayer()
+    //  mask layer를 만들고 적용시킵니다.
     private func setMaskLayer(path: UIBezierPath) {
         let maskLayer = CAShapeLayer()
         maskLayer.frame = self.bounds
@@ -56,6 +61,8 @@ public class YDSProfileImageView: UIImageView {
         self.layer.mask = maskLayer
     }
     
+    //  setBorderLayer()
+    //  border layer를 만들고 적용시킵니다.
     private func setBorderLayer(path: UIBezierPath) {
         let newBorderLayer = CAShapeLayer()
         newBorderLayer.frame = self.bounds
@@ -73,37 +80,50 @@ public class YDSProfileImageView: UIImageView {
         borderLayer = newBorderLayer
     }
     
+    //  borderLayer: CALayer?
+    //  현재 상태의 borderLayer를 저장합니다.
+    //  size가 바뀜에 따라 새 borderLayer가 필요해지면
+    //  replaceSublayer() 함수에서
+    //  이 변수에 저장된 주소를 이용해
+    //  기존의 borderLayer를 새 borderLayer로 바꿔줍니다.
     private var borderLayer: CALayer?
 
+    //  squirclePath()
+    //  디자인 요구 사안에 맞는 UIBezierPath를 return합니다.
+    //  벡터 다루기 싫어서 일러스트레이터 공부 안한건데
+    //  iOS에서 벡터를 만지고 있을 줄은 몰랐습니다.
     private func squirclePath(_ width: CGFloat) -> UIBezierPath {
-        let controlPoint1 = CGPoint(x: width*6/100, y: 0)
-        let controlPoint2 = CGPoint(x: width-width*6/100, y: 0)
-        let controlPoint3 = CGPoint(x: width, y: width*6/100)
-        let controlPoint4 = CGPoint(x: width, y: width-width*6/100)
-        let controlPoint5 = CGPoint(x: width-width*6/100, y: width)
-        let controlPoint6 = CGPoint(x: width*6/100, y: width)
-        let controlPoint7 = CGPoint(x: 0, y: width-width*6/100)
-        let controlPoint8 = CGPoint(x: 0, y: width*6/100)
+        let point: [CGPoint] = [
+            CGPoint(x: width/3, y: 0),
+            CGPoint(x: width-width/3, y: 0),
+            CGPoint(x: width, y: width/3),
+            CGPoint(x: width, y: width-width/3),
+            CGPoint(x: width-width/3, y: width),
+            CGPoint(x: width/3, y: width),
+            CGPoint(x: 0, y: width-width/3),
+            CGPoint(x: 0, y: width/3),
+        ]
         
-        let point1 = CGPoint(x: width/3, y: 0)
-        let point2 = CGPoint(x: width-width/3, y: 0)
-        let point3 = CGPoint(x: width, y: width/3)
-        let point4 = CGPoint(x: width, y: width-width/3)
-        let point5 = CGPoint(x: width-width/3, y: width)
-        let point6 = CGPoint(x: width/3, y: width)
-        let point7 = CGPoint(x: 0, y: width-width/3)
-        let point8 = CGPoint(x: 0, y: width/3)
+        let controlPoint: [CGPoint] = [
+            CGPoint(x: width*6/100, y: 0),
+            CGPoint(x: width-width*6/100, y: 0),
+            CGPoint(x: width, y: width*6/100),
+            CGPoint(x: width, y: width-width*6/100),
+            CGPoint(x: width-width*6/100, y: width),
+            CGPoint(x: width*6/100, y: width),
+            CGPoint(x: 0, y: width-width*6/100),
+            CGPoint(x: 0, y: width*6/100),
+        ]
         
         let path = UIBezierPath()
-        path.move(to: point8)
-        path.addCurve(to: point1, controlPoint1: controlPoint8, controlPoint2: controlPoint1)
-        path.addCurve(to: point2, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
-        path.addCurve(to: point3, controlPoint1: controlPoint2, controlPoint2: controlPoint3)
-        path.addCurve(to: point4, controlPoint1: controlPoint3, controlPoint2: controlPoint4)
-        path.addCurve(to: point5, controlPoint1: controlPoint4, controlPoint2: controlPoint5)
-        path.addCurve(to: point6, controlPoint1: controlPoint5, controlPoint2: controlPoint6)
-        path.addCurve(to: point7, controlPoint1: controlPoint6, controlPoint2: controlPoint7)
-        path.addCurve(to: point8, controlPoint1: controlPoint7, controlPoint2: controlPoint8)
+        path.move(to: point[0])
+        for i in 1...point.count {
+            path.addCurve(
+                to: point[i%point.count],
+                controlPoint1: controlPoint[(i-1)%controlPoint.count],
+                controlPoint2: controlPoint[i%controlPoint.count]
+            )
+        }
         path.close()
     
         return path
