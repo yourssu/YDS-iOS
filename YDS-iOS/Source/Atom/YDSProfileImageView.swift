@@ -46,7 +46,7 @@ public class YDSProfileImageView: UIImageView {
     //  size에 따른 squircle path를 만들고
     //  마스킹과 테두리를 적용시킵니다.
     private func setSquirclePathAccordingToSize() {
-        let path = makeSquirclePath(CGFloat(size.rawValue))
+        let path = makeSquirclePath(CGFloat(size.rawValue), roundness: 0.2)
         
         setMaskLayer(path: path)
         setBorderLayer(path: path)
@@ -89,41 +89,57 @@ public class YDSProfileImageView: UIImageView {
     private var borderLayer: CALayer?
 
     //  makeSquirclePath()
+    //  width는 스쿼클의 너비, roundess는 곡률(0에서 1 사이로 넣어주세요)입니다.
     //  디자인 요구 사안에 맞는 UIBezierPath를 return합니다.
     //  벡터 다루기 싫어서 일러스트레이터 공부 안한건데
     //  iOS에서 벡터를 만지고 있을 줄은 몰랐습니다.
-    private func makeSquirclePath(_ width: CGFloat) -> UIBezierPath {
-        let point: [CGPoint] = [
-            CGPoint(x: width/3, y: 0),
-            CGPoint(x: width-width/3, y: 0),
-            CGPoint(x: width, y: width/3),
-            CGPoint(x: width, y: width-width/3),
-            CGPoint(x: width-width/3, y: width),
-            CGPoint(x: width/3, y: width),
-            CGPoint(x: 0, y: width-width/3),
-            CGPoint(x: 0, y: width/3),
-        ]
+    private func makeSquirclePath(_ width: CGFloat, roundness: CGFloat) -> UIBezierPath {
+        let radius = width/2
         
-        let controlPoint: [CGPoint] = [
-            CGPoint(x: width*6/100, y: 0),
-            CGPoint(x: width-width*6/100, y: 0),
-            CGPoint(x: width, y: width*6/100),
-            CGPoint(x: width, y: width-width*6/100),
-            CGPoint(x: width-width*6/100, y: width),
-            CGPoint(x: width*6/100, y: width),
-            CGPoint(x: 0, y: width-width*6/100),
-            CGPoint(x: 0, y: width*6/100),
-        ]
+        if roundness > 1 || roundness < 0 {
+            print("""
+            makeSquirclePath()
+            roundness 값은 0에서 1 사이로 넣어주세요.
+            """)
+        }
+        
+        let topPoint = CGPoint(x: radius, y: 0)
+        let rightPoint = CGPoint(x: radius*2, y: radius)
+        let bottomPoint = CGPoint(x: radius, y: radius*2)
+        let leftPoint = CGPoint(x: 0, y: radius)
+        
+        let inset = radius*roundness
+        let topLeftControlPoint = CGPoint(x: inset, y: 0)
+        let topRightControlPoint = CGPoint(x: radius*2-inset, y: 0)
+        let rightTopControlPoint = CGPoint(x: radius*2, y: inset)
+        let rightBottomControlPoint = CGPoint(x: radius*2, y: radius*2-inset)
+        let bottomRightControlPoint = CGPoint(x: radius*2-inset, y: radius*2)
+        let bottomLeftControlPoint = CGPoint(x: inset, y: radius*2)
+        let leftBottomControlPoint = CGPoint(x: 0, y: radius*2-inset)
+        let leftTopControlPoint = CGPoint(x: 0, y: inset)
         
         let path = UIBezierPath()
-        path.move(to: point[0])
-        for i in 1...point.count {
-            path.addCurve(
-                to: point[i%point.count],
-                controlPoint1: controlPoint[(i-1)%controlPoint.count],
-                controlPoint2: controlPoint[i%controlPoint.count]
-            )
-        }
+        path.move(to:topPoint)
+        path.addCurve(
+            to: rightPoint,
+            controlPoint1: topRightControlPoint,
+            controlPoint2: rightTopControlPoint
+        )
+        path.addCurve(
+            to: bottomPoint,
+            controlPoint1: rightBottomControlPoint,
+            controlPoint2: bottomRightControlPoint
+        )
+        path.addCurve(
+            to: leftPoint,
+            controlPoint1: bottomLeftControlPoint,
+            controlPoint2: leftBottomControlPoint
+        )
+        path.addCurve(
+            to: topPoint,
+            controlPoint1: leftTopControlPoint,
+            controlPoint2: topLeftControlPoint
+        )
         path.close()
     
         return path
