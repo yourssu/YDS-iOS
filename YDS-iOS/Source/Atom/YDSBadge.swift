@@ -103,12 +103,18 @@ public class YDSBadge: UIView {
     //  뷰를 세팅합니다.
     private func setupViews() {
         setProperties()
-        setViewHierarchy()
-        setAutolayout()
+        setLayouts()
         
         setText()
         setIcon()
         setColor()
+    }
+    
+    //  setLayouts()
+    //  뷰의 레이아웃을 설정합니다.
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
     }
     
     //  setProperties()
