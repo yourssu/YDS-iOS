@@ -46,7 +46,7 @@ public class YDSProfileImageView: UIImageView {
     //  size에 따른 squircle path를 만들고
     //  마스킹과 테두리를 적용시킵니다.
     private func setSquirclePathAccordingToSize() {
-        let path = makeSquirclePath(CGFloat(size.rawValue), roundness: 0.2)
+        let path = makeSquirclePath(CGFloat(size.rawValue), insetRatio: 0.2)
         
         setMaskLayer(path: path)
         setBorderLayer(path: path)
@@ -89,17 +89,17 @@ public class YDSProfileImageView: UIImageView {
     private var borderLayer: CALayer?
 
     //  makeSquirclePath()
-    //  width는 스쿼클의 너비, roundess는 곡률(0에서 1 사이로 넣어주세요)입니다.
+    //  width는 스쿼클의 너비, insetRatio는 곡률(0에서 1 사이로 넣어주세요)입니다.
     //  디자인 요구 사안에 맞는 UIBezierPath를 return합니다.
     //  벡터 다루기 싫어서 일러스트레이터 공부 안한건데
     //  iOS에서 벡터를 만지고 있을 줄은 몰랐습니다.
-    private func makeSquirclePath(_ width: CGFloat, roundness: CGFloat) -> UIBezierPath {
+    private func makeSquirclePath(_ width: CGFloat, insetRatio: CGFloat) -> UIBezierPath {
         let radius = width/2
         
-        if roundness > 1 || roundness < 0 {
+        if insetRatio > 1 || insetRatio < 0 {
             print("""
             makeSquirclePath()
-            roundness 값은 0에서 1 사이로 넣어주세요.
+            insetRatio 값은 0에서 1 사이로 넣어주세요.
             """)
         }
         
@@ -108,7 +108,7 @@ public class YDSProfileImageView: UIImageView {
         let bottomPoint = CGPoint(x: radius, y: radius*2)
         let leftPoint = CGPoint(x: 0, y: radius)
         
-        let inset = radius*roundness
+        let inset = radius*insetRatio
         let topLeftControlPoint = CGPoint(x: inset, y: 0)
         let topRightControlPoint = CGPoint(x: radius*2-inset, y: 0)
         let rightTopControlPoint = CGPoint(x: radius*2, y: inset)
