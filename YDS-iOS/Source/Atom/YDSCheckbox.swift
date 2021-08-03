@@ -100,6 +100,13 @@ public class YDSCheckbox: UIControl {
     
     
     //  MARK: - 뷰
+    
+    private let outsideStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
+    }()
         
     //  stackView: UIStackView
     //  icon과 label을 담는 stackView
@@ -107,7 +114,6 @@ public class YDSCheckbox: UIControl {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
 
@@ -143,7 +149,9 @@ public class YDSCheckbox: UIControl {
     }
     
     private func setViewHierarchy() {
-        self.addSubview(stackView)
+        self.addSubview(outsideStackView)
+        
+        outsideStackView.addArrangedSubview(stackView)
         
         [iconView, label].forEach {
             stackView.addArrangedSubview($0)
@@ -151,7 +159,7 @@ public class YDSCheckbox: UIControl {
     }
     
     private func setAutolayout() {
-        stackView.snp.makeConstraints {
+        outsideStackView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -191,7 +199,7 @@ public class YDSCheckbox: UIControl {
     }
     
     private func registerTapAction() {
-        [stackView, iconView, label].forEach {
+        [outsideStackView, stackView, iconView, label].forEach {
             $0.isUserInteractionEnabled = false
         }
         self.addTarget(self,
