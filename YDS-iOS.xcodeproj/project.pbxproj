@@ -42,12 +42,14 @@
 		53887E9C26B54834006E40F6 /* YDSPlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53887E9B26B54834006E40F6 /* YDSPlainButton.swift */; };
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
 		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
+		53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */; };
 		53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
 		53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
 		53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */; };
 		53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */; };
 		53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */; };
 		53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */; };
+		53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */; };
 		53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB943826A1E33A00208496 /* YDSDivider.swift */; };
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
@@ -127,12 +129,14 @@
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		53ADEA2226A1794800153636 /* YDSBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBundle.swift; sourceTree = "<group>"; };
+		53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPageViewController.swift; sourceTree = "<group>"; };
 		53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainButtonPageViewController.swift; sourceTree = "<group>"; };
 		53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSButtonProtocol.swift; sourceTree = "<group>"; };
 		53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconArray.swift; sourceTree = "<group>"; };
 		53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBadge.swift; sourceTree = "<group>"; };
 		53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSItemColor.swift; sourceTree = "<group>"; };
 		53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePageViewController.swift; sourceTree = "<group>"; };
+		53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckbox.swift; sourceTree = "<group>"; };
 		53EB943826A1E33A00208496 /* YDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDivider.swift; sourceTree = "<group>"; };
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 		53443D9C26A7D3CC0037B02E /* AtomSampleViewController */ = {
 			isa = PBXGroup;
 			children = (
+				53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */,
 				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */,
 				5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */,
 				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */,
@@ -357,6 +362,7 @@
 				DD48C1EB26735052004B288E /* BottomSheet.swift */,
 				53EB943826A1E33A00208496 /* YDSDivider.swift */,
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
+				53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */,
 				53C9F6FA26B5563C00EF7B86 /* YDSButton */,
 				53443D9B26A7D32B0037B02E /* YDSTextField */,
 				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
@@ -606,6 +612,7 @@
 				5394692E2663D6DB003D7A44 /* Constant.swift in Sources */,
 				53443D8A26A5A4770037B02E /* YDSPasswordTextField.swift in Sources */,
 				53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */,
+				53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */,
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
@@ -638,6 +645,7 @@
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
+				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
