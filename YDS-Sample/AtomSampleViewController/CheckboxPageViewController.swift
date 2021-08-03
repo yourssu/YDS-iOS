@@ -39,7 +39,8 @@ class CheckboxPageViewController: StoryBookViewController {
     
     private func setAutolayout() {
         sampleCheckbox.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
+//            $0.center.equalToSuperview()
         }
     }
     
