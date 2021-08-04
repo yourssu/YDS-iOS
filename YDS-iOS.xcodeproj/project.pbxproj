@@ -52,6 +52,8 @@
 		53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */; };
 		53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB943826A1E33A00208496 /* YDSDivider.swift */; };
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
+		53EFF5C926BA64D900732DCF /* YDSCheckboxBtnVer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5C826BA64D900732DCF /* YDSCheckboxBtnVer.swift */; };
+		53EFF5CB26BA6AD400732DCF /* CheckboxBtnVerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CA26BA6AD400732DCF /* CheckboxBtnVerPageViewController.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* BottomSheet.swift */; };
@@ -139,6 +141,8 @@
 		53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckbox.swift; sourceTree = "<group>"; };
 		53EB943826A1E33A00208496 /* YDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDivider.swift; sourceTree = "<group>"; };
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
+		53EFF5C826BA64D900732DCF /* YDSCheckboxBtnVer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckboxBtnVer.swift; sourceTree = "<group>"; };
+		53EFF5CA26BA6AD400732DCF /* CheckboxBtnVerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxBtnVerPageViewController.swift; sourceTree = "<group>"; };
 		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS/Pods-YDS-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS_YDS_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */,
+				53EFF5CA26BA6AD400732DCF /* CheckboxBtnVerPageViewController.swift */,
 				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */,
 				5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */,
 				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */,
@@ -362,6 +367,7 @@
 				DD48C1EB26735052004B288E /* BottomSheet.swift */,
 				53EB943826A1E33A00208496 /* YDSDivider.swift */,
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
+				53EFF5C826BA64D900732DCF /* YDSCheckboxBtnVer.swift */,
 				53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */,
 				53C9F6FA26B5563C00EF7B86 /* YDSButton */,
 				53443D9B26A7D32B0037B02E /* YDSTextField */,
@@ -624,6 +630,7 @@
 				53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */,
 				53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */,
 				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,
+				53EFF5C926BA64D900732DCF /* YDSCheckboxBtnVer.swift in Sources */,
 				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
 				53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */,
 				DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */,
@@ -638,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
+				53EFF5CB26BA6AD400732DCF /* CheckboxBtnVerPageViewController.swift in Sources */,
 				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
 				53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */,
 				5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */,
