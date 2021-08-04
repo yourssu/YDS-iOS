@@ -1,18 +1,18 @@
 //
-//  CheckboxPageViewController.swift
+//  CheckboxBtnVerPageViewController.swift
 //  YDS-Sample
 //
-//  Created by Gyuni on 2021/08/03.
+//  Created by Gyuni on 2021/08/04.
 //
 
 import UIKit
 import YDS_iOS
 import SnapKit
 
-class CheckboxPageViewController: StoryBookViewController {
+class CheckboxBtnVerPageViewController: StoryBookViewController {
         
-    let sampleCheckbox: YDSCheckbox = {
-        let checkbox = YDSCheckbox()
+    let sampleCheckbox: YDSCheckboxBtnVer = {
+        let checkbox = YDSCheckboxBtnVer()
         return checkbox
     }()
 
@@ -36,7 +36,7 @@ class CheckboxPageViewController: StoryBookViewController {
     }
     
     private func setViewProperty() {
-        self.title = "Checkbox"
+        self.title = "CheckboxBtnVer"
     }
     
     private func setViewHierarchy() {
@@ -57,7 +57,7 @@ class CheckboxPageViewController: StoryBookViewController {
         }
         
         addOption(description: "size",
-                  cases: YDSCheckbox.CheckboxSize.allCases,
+                  cases: YDSCheckboxBtnVer.CheckboxSize.allCases,
                   defaultIndex: 1) { [weak self] value in
             self?.sampleCheckbox.size = value
         }
@@ -72,6 +72,6 @@ class CheckboxPageViewController: StoryBookViewController {
 
 }
 
-extension YDSCheckbox.CheckboxSize: CaseIterable {
-    public static var allCases: [YDSCheckbox.CheckboxSize] = [.large, .medium, .small]
+extension YDSCheckboxBtnVer.CheckboxSize: CaseIterable {
+    public static var allCases: [YDSCheckboxBtnVer.CheckboxSize] = [.large, .medium, .small]
 }
