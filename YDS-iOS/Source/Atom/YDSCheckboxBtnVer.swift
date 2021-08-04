@@ -23,9 +23,7 @@ public class YDSCheckboxBtnVer: UIButton {
     //  isSelected: Bool
     //  체크박스의 선택 여부를 나타낼 때 사용합니다.
     public override var isSelected: Bool {
-        didSet {
-            setTintColor()
-        }
+        didSet { setTintColor() }
     }
   
     
@@ -108,14 +106,11 @@ public class YDSCheckboxBtnVer: UIButton {
     }
 
     private func setColor() {
-        //  UIControl.State의 rawValue
-        //  normal:         0
-        //  highlighted:    1
-        //  disabled:       2
-        //  selected:       4
-        
+        setTitleColor()
         setTintColor()
-        
+    }
+    
+    private func setTitleColor() {
         if isDisabled {
             self.setTitleColor(YDSColor.buttonDisabled, for: .normal)
             self.setTitleColor(YDSColor.buttonDisabled, for: .selected)
@@ -156,7 +151,7 @@ public class YDSCheckboxBtnVer: UIButton {
         self.setImage(YDSIcon.checkcircleFilled
                         .resize(to: size.iconSize)
                         .withRenderingMode(.alwaysTemplate),
-                      for: .selected.union(.disabled))
+                      for: UIControl.State.selected.union(.disabled))
         
         self.setImage(YDSIcon.checkcircleLine
                         .resize(to: size.iconSize)
