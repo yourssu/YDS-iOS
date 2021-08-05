@@ -47,7 +47,7 @@ class PageListViewController: UIViewController {
     ]
     
     let componentPages: [Page] = [
-        Page(title: "Sample", vc: UIViewController.self),
+        Page(title: "Toast", vc: ToastPageViewController.self),
     ]
 
     
