@@ -98,6 +98,10 @@ public class YDSToast: UIView {
     }
     
     public static func makeToast(text: String?, duration: ToastDuration = .long, at superview: UIView) {
+        if text == nil || text == "" {
+            return
+        }
+        
         let toast = YDSToast(text: text,
                              duration: duration)
         
