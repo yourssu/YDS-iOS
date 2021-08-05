@@ -20,8 +20,6 @@ public class YDSToast: UIView {
     
     private var duration: ToastDuration
     
-    private var alignment: ToastAlignment
-
     public enum ToastDuration {
         case short
         case long
@@ -35,26 +33,12 @@ public class YDSToast: UIView {
             }
         }
     }
-    
-    public enum ToastAlignment {
-        case left
-        case center
         
-        fileprivate var value: NSTextAlignment {
-            switch(self) {
-            case .left:
-                //  웹, 안드랑 싱크를 맞추기 위해 외부에서는 left 라고 호출해서 쓰지만
-                //  실제로 내부에서는 각 언어에 맞춘 정렬을 사용합니다.
-                return .natural
-            case .center:
-                return .center
-            }
-        }
-    }
-    
     private let label: YDSLabel = {
         let label = YDSLabel(style: .body2)
         label.textColor = YDSColor.textReversed
+        label.allowsDefaultTighteningForTruncation = true
+        label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         return label
     }()
@@ -71,9 +55,8 @@ public class YDSToast: UIView {
         }
     }
     
-    private init(text: String?, duration: ToastDuration, alignment: ToastAlignment) {
+    private init(text: String?, duration: ToastDuration) {
         self.duration = duration
-        self.alignment = alignment
         self.label.text = text
         super.init(frame: .zero)
         setupView()
@@ -99,7 +82,7 @@ public class YDSToast: UIView {
     
     private func setAutolayout() {
         label.snp.makeConstraints {
-            $0.width.equalToSuperview().offset(-Dimension.Padding.horizontal*2)
+            $0.width.lessThanOrEqualToSuperview().offset(-Dimension.Padding.horizontal*2)
             $0.height.equalToSuperview().offset(-Dimension.Padding.vertical*2)
             $0.center.equalToSuperview()
         }
@@ -112,13 +95,11 @@ public class YDSToast: UIView {
         self.layer.cornerRadius = 8
         self.clipsToBounds = true
         self.alpha = 0.0
-        label.textAlignment = alignment.value
     }
     
-    public static func makeToast(text: String?, duration: ToastDuration = .long, alignment: ToastAlignment = .center, at superview: UIView) {
+    public static func makeToast(text: String?, duration: ToastDuration = .long, at superview: UIView) {
         let toast = YDSToast(text: text,
-                             duration: duration,
-                             alignment: alignment)
+                             duration: duration)
         
         superview.addSubview(toast)
         toast.snp.makeConstraints {
