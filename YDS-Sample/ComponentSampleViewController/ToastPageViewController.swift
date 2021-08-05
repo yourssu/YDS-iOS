@@ -14,11 +14,9 @@ class ToastPageViewController: StoryBookViewController {
     private struct ToastModel {
         var text: String?
         var duration: YDSToast.ToastDuration
-        var alignment: YDSToast.ToastAlignment
     }
         
-    private var toastInfo = ToastModel(duration: .long,
-                                       alignment: .center)
+    private var toastInfo = ToastModel(duration: .long)
     
     private let showToastButton: YDSBoxButton = {
         let button = YDSBoxButton()
@@ -82,12 +80,6 @@ class ToastPageViewController: StoryBookViewController {
                   defaultIndex: 0) { [weak self] value in
             self?.toastInfo.duration = value
         }
-        
-        addOption(description: "alignment",
-                  cases: YDSToast.ToastAlignment.allCases,
-                  defaultIndex: 0) { [weak self] value in
-            self?.toastInfo.alignment = value
-        }
     }
     
     private func registerTapAction() {
@@ -104,7 +96,6 @@ class ToastPageViewController: StoryBookViewController {
         case showToastButton:
             YDSToast.makeToast(text: toastInfo.text,
                                duration: toastInfo.duration,
-                               alignment: toastInfo.alignment,
                                at: sampleView)
         default:
             return
@@ -115,8 +106,4 @@ class ToastPageViewController: StoryBookViewController {
 
 extension YDSToast.ToastDuration: CaseIterable {
     public static var allCases: [YDSToast.ToastDuration] = [.long, .short]
-}
-
-extension YDSToast.ToastAlignment: CaseIterable {
-    public static var allCases: [YDSToast.ToastAlignment] = [.left, .center]
 }
