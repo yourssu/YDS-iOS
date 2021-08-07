@@ -157,6 +157,12 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray100)
     }
     
+    
+    //MARK:- Toast
+    public static var toastBG: UIColor {
+        return color(light: YDSBasicColor.gray800)
+    }
+    
     //MARK:- Pressed
     public static var pressed: UIColor {
         return color(light: YDSBasicColor.gray900A10)
