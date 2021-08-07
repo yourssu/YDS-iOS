@@ -23,13 +23,17 @@ class PlainButtonPageViewController: StoryBookViewController {
     }
     
     private func setupView() {
+        setLayouts()
         setViewProperty()
-        setViewHierarchy()
-        setAutolayout()
     }
     
     private func setViewProperty() {
         self.title = "PlainButton"
+    }
+    
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
     }
     
     private func setViewHierarchy() {

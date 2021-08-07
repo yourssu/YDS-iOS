@@ -12,7 +12,7 @@
 
 import UIKit
 
-public class YDSBoxButton: UIButton, YDSButton {
+public class YDSBoxButton: UIButton, YDSButtonProtocol {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
 
