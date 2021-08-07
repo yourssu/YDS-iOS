@@ -35,6 +35,8 @@
 		53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */; };
 		53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
+		5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */; };
+		5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextField.swift */; };
 		5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */; };
@@ -121,6 +123,8 @@
 		53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSampleViewController.swift; sourceTree = "<group>"; };
 		53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
+		5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBottomBarController.swift; sourceTree = "<group>"; };
+		5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarControllerPageViewController.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
 		5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldView.swift; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				53EFF5CD26BA9CD400732DCF /* YDSToast.swift */,
+				5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
+				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
 			);
 			path = ComponentSampleViewController;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
+				5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */,
 				53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */,
 				53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */,
 				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
@@ -655,6 +662,7 @@
 			files = (
 				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
 				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
+				5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */,
 				53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */,
 				5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */,
 				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */,
