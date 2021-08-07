@@ -7,10 +7,10 @@
 
 import UIKit
 
-public class YDSCheckbox: UIControl {
+public class YDSCheckbox: UIButton {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
-    
+
     //  isDisabled: Bool
     //  체크박스를 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
@@ -23,10 +23,7 @@ public class YDSCheckbox: UIControl {
     //  isSelected: Bool
     //  체크박스의 선택 여부를 나타낼 때 사용합니다.
     public override var isSelected: Bool {
-        didSet {
-            setIconImage()
-            setColor()
-        }
+        didSet { setTintColor() }
     }
   
     
@@ -39,7 +36,10 @@ public class YDSCheckbox: UIControl {
     //  text: String?
     //  체크박스의 글귀를 설정할 때 사용합니다.
     public var text: String? = nil {
-        didSet { setText() }
+        didSet {
+            setTitle(text, for: .normal)
+            setLayoutAccordingToText()
+        }
     }
     
     
@@ -53,25 +53,25 @@ public class YDSCheckbox: UIControl {
         case medium
         case large
         
-        fileprivate var iconSize: YDSIconView.IconSize {
+        fileprivate var iconSize: CGFloat {
             switch self {
             case .small:
-                return  .extraSmall
+                return 16
             case .medium:
-                return .small
+                return 20
             case .large:
-                return .medium
+                return 24
             }
         }
         
-        fileprivate var font: String.TypoStyle {
+        fileprivate var font: UIFont {
             switch self {
             case .small:
-                return .button4
+                return YDSFont.button4
             case .medium:
-                return .button3
+                return YDSFont.button3
             case .large:
-                return .button3
+                return YDSFont.button3
             }
         }
         
@@ -87,45 +87,7 @@ public class YDSCheckbox: UIControl {
         }
     }
     
-    
-    //  MARK: - 내부에서 사용되는 상수
-    
-    //  isSelectedTrueIcon: YDSIcon (UIImage)
-    //  isSelected 상태가 true임을 나타내는 아이콘입니다.
-    private let isSelectedTrueIcon = YDSIcon.checkcircleFilled.withRenderingMode(.alwaysTemplate)
-    
-    //  isSelectedFalseIcon: YDSIcon (UIImage)
-    //  isSelected 상태가 false임을 나타내는 아이콘입니다.
-    private let isSelectedFalseIcon = YDSIcon.checkcircleLine.withRenderingMode(.alwaysTemplate)
-    
-    
-    //  MARK: - 뷰
-    
-    private let outsideStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        return stackView
-    }()
-        
-    //  stackView: UIStackView
-    //  icon과 label을 담는 stackView
-    private let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        return stackView
-    }()
 
-    //  label: YDSLabel (UILabel)
-    //  체크박스의 글자를 그리는 label입니다.
-    private let label = YDSLabel(style: .title1)
-
-    //  iconView: YDSIconView (UIImageView)
-    //  체크박스의 아이콘을 그리는 iconView입니다.
-    private let iconView = YDSIconView()
-    
-    
     //  MARK: - 메소드
     
     public init() {
@@ -139,69 +101,90 @@ public class YDSCheckbox: UIControl {
     }
     
     private func setupView() {
-        setViewHierarchy()
-        setAutolayout()
-        
-        setIconImage()
-        setText()
-        setSize()
         setColor()
+        setSize()
+    }
+
+    private func setColor() {
+        setTitleColor()
+        setTintColor()
     }
     
-    private func setViewHierarchy() {
-        self.addSubview(outsideStackView)
-        
-        outsideStackView.addArrangedSubview(stackView)
-        
-        [iconView, label].forEach {
-            stackView.addArrangedSubview($0)
+    private func setTitleColor() {
+        if isDisabled {
+            self.setTitleColor(YDSColor.buttonDisabled, for: .normal)
+            self.setTitleColor(YDSColor.buttonDisabled, for: .selected)
+            return
         }
+        
+        self.setTitleColor(YDSColor.buttonNormal, for: .normal)
+        self.setTitleColor(YDSColor.buttonPoint, for: .selected)
     }
     
-    private func setAutolayout() {
-        outsideStackView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+    private func setTintColor() {
+        if isDisabled {
+            self.tintColor = YDSColor.buttonDisabled
+            return
         }
-    }
-    
-    private func setIconImage() {
-        self.iconView.image = isSelected
-            ? isSelectedTrueIcon
-            : isSelectedFalseIcon
-    }
-    
-    private func setText() {
-        self.label.text = text
-        self.label.isHidden = (text == nil)
+        
+        self.tintColor = isSelected
+            ? YDSColor.buttonPoint
+            : YDSColor.buttonNormal
     }
     
     private func setSize() {
-        stackView.spacing = size.spacing
-        iconView.size = size.iconSize
-        label.style = size.font
+        setFont()
+        setIconImage()
+        setLayoutAccordingToText()
     }
     
-    private func setColor() {
-        if isDisabled {
-            iconView.tintColor = YDSColor.buttonDisabled
-            label.textColor = YDSColor.buttonDisabled
+    private func setFont() {
+        self.titleLabel?.font = size.font
+    }
+    
+    private func setIconImage() {
+        self.setImage(YDSIcon.checkcircleFilled
+                        .resize(to: size.iconSize)
+                        .withRenderingMode(.alwaysTemplate),
+                      for: .selected)
+        
+        self.setImage(YDSIcon.checkcircleFilled
+                        .resize(to: size.iconSize)
+                        .withRenderingMode(.alwaysTemplate),
+                      for: UIControl.State.selected.union(.disabled))
+        
+        self.setImage(YDSIcon.checkcircleLine
+                        .resize(to: size.iconSize)
+                        .withRenderingMode(.alwaysTemplate),
+                      for: .normal)
+    }
+    
+    //  setLayoutAccordingToIcon()
+    //  텍스트 설정에 따른 체크박스의 레이아웃을 결정합니다.
+    private func setLayoutAccordingToText() {
+        if text != nil {
+            self.imageEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: -size.spacing/2,
+                                                bottom: 0,
+                                                right: size.spacing/2)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: size.spacing/2,
+                                                bottom: 0,
+                                                right: -size.spacing/2)
+            self.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                                  left: size.spacing/2,
+                                                  bottom: 0,
+                                                  right: size.spacing/2)
             return
         }
         
-        if isSelected {
-            iconView.tintColor = YDSColor.buttonPoint
-            label.textColor = YDSColor.buttonPoint
-            return
-        }
         
-        iconView.tintColor = YDSColor.buttonNormal
-        label.textColor = YDSColor.buttonNormal
+        self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     private func registerTapAction() {
-        [outsideStackView, stackView, iconView, label].forEach {
-            $0.isUserInteractionEnabled = false
-        }
         self.addTarget(self,
                        action: #selector(checkboxDidTap(_:)),
                        for: .touchUpInside
