@@ -24,8 +24,7 @@ class BadgePageViewController: StoryBookViewController {
     
     private func setupView() {
         setViewProperty()
-        setViewHierarchy()
-        setAutolayout()
+        setLayouts()
     }
     
     private func setViewProperty() {
@@ -34,6 +33,11 @@ class BadgePageViewController: StoryBookViewController {
         //  mono 컬러의 badge가 배경이랑 색이 겹쳐서
         //  이 페이지는 임의로 하얀 컬러로 설정했습니다.
         sampleView.backgroundColor = YDSColor.bgNormal
+    }
+    
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
     }
     
     private func setViewHierarchy() {
