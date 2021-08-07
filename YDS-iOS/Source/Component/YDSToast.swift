@@ -37,8 +37,6 @@ public class YDSToast: UIView {
     private let label: YDSLabel = {
         let label = YDSLabel(style: .body2)
         label.textColor = YDSColor.textReversed
-        label.allowsDefaultTighteningForTruncation = true
-        label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         return label
     }()
@@ -57,8 +55,8 @@ public class YDSToast: UIView {
     
     private init(text: String?, duration: ToastDuration) {
         self.duration = duration
-        self.label.text = text
         super.init(frame: .zero)
+        self.text = text
         setupView()
     }
     
@@ -89,9 +87,7 @@ public class YDSToast: UIView {
     }
     
     private func setProperties() {
-        //  이거 임의로 해둔거고 새로 토스트용 컬러 만들어야 함!!!
-        //  디자이너가 일 안함!!!
-        self.backgroundColor = YDSColor.textSecondary
+        self.backgroundColor = YDSColor.toastBG
         self.layer.cornerRadius = 8
         self.clipsToBounds = true
         self.alpha = 0.0
