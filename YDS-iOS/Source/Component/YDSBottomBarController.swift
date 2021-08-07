@@ -7,23 +7,33 @@
 
 import UIKit
 
-class YDSBottomBarController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+open class YDSBottomBarController: UITabBarController {
+    
+    private enum Dimension {
+        static let iconSize = 24
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private var verticalPadding: CGFloat {
+        get {
+            (tabBar.bounds.height - CGFloat(Dimension.iconSize))/2
+        }
     }
-    */
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupView()
+    }
+    
+    private func setupView() {
+        setProperties()
+    }
+    
+    private func setProperties() {
+        tabBar.tintColor = YDSColor.bottomBarSelected
+        tabBar.unselectedItemTintColor = YDSColor.bottomBarNormal
+        tabBar.backgroundColor = YDSColor.bgElevated
+        tabBar.isTranslucent = false
+    }
 
 }

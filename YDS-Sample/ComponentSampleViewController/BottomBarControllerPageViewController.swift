@@ -6,24 +6,59 @@
 //
 
 import UIKit
+import YDS_iOS
+import SnapKit
 
 class BottomBarControllerPageViewController: YDSBottomBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    let page1: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .red
+        viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.homeLine, selectedImage: YDSIcon.homeFilled)
+        return viewController
+    }()
+    
+    let page2: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .blue
+        viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.boardLine, selectedImage: YDSIcon.boardFilled)
+        return viewController
+    }()
+    
+    let page3: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .yellow
+        viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.timecalendarLine, selectedImage: YDSIcon.timecalendarFilled)
+        return viewController
+    }()
+    
+    let page4: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .green
+        viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.rankLine, selectedImage: YDSIcon.rankFilled)
+        return viewController
+    }()
+    
+    let page5: UIViewController = {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .purple
+        viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.personLine, selectedImage: YDSIcon.personFilled)
+        return viewController
+    }()
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.viewControllers = [page1, page2, page3, page4, page5]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
 
 }
