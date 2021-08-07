@@ -24,12 +24,16 @@ class ProfileImageViewPageViewController: StoryBookViewController {
     
     private func setupView() {
         setViewProperty()
-        setViewHierarchy()
-        setAutolayout()
+        setLayouts()
     }
     
     private func setViewProperty() {
         self.title = "ProfileImageView"
+    }
+    
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
     }
     
     private func setViewHierarchy() {
