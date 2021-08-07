@@ -20,23 +20,22 @@ class CheckboxPageViewController: StoryBookViewController {
         super.viewDidLoad()
         setupView()
         addOptions()
+        registerTapAction()
     }
     
     private func setupView() {
         setViewProperty()
-        setViewHierarchy()
-        setAutolayout()
-        
-        sampleCheckbox.addTarget(self, action: #selector(printIsSelected(_:)), for: .touchUpInside)
-    }
-    
-    @objc
-    private func printIsSelected(_ sender: UIControl) {
-        print(sampleCheckbox.isSelected)
+        setLayouts()
+        registerTapAction()
     }
     
     private func setViewProperty() {
         self.title = "Checkbox"
+    }
+    
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
     }
     
     private func setViewHierarchy() {
@@ -68,6 +67,17 @@ class CheckboxPageViewController: StoryBookViewController {
         }
         
 
+    }
+    
+    private func registerTapAction() {
+        sampleCheckbox.addTarget(self,
+                                 action: #selector(printIsSelected(_:)),
+                                 for: .touchUpInside)
+    }
+    
+    @objc
+    private func printIsSelected(_ sender: UIControl) {
+        print(sampleCheckbox.isSelected)
     }
 
 }
