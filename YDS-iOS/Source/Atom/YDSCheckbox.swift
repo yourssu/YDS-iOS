@@ -79,9 +79,7 @@ public class YDSCheckbox: UIButton {
             switch self {
             case .small:
                 return 4
-            case .medium:
-                return 8
-            case .large:
+            case .medium, .large:
                 return 8
             }
         }
