@@ -16,13 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: PageListViewController())
+        let navigationController = YDSNavigationController(title: "Storybook", rootViewController: PageListViewController())
+        navigationController.shouldPushLastViewController = true
+        
+        window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()
-        
-        let backImage = YDSIcon.arrowLeftLine
-        UINavigationBar.appearance().backIndicatorImage = backImage
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
         
         return true
     }
