@@ -51,8 +51,10 @@ class PageListViewController: UIViewController {
     
     let componentPages: [Page] = [
         Page(title: "Toast", vc: ToastPageViewController.self),
+        Page(title: "NavigationController", vc: NavigationControllerPageViewController.self),
+        Page(title: "SingleLineTopBar", vc: SingleLineTopBarPageViewController.self),
+        Page(title: "DoubleLineTopBar", vc: DoubleLineTopBarPageViewController.self),
         Page(title: "BottomBarController", vc: BottomBarControllerPageViewController.self),
-        
     ]
 
     
@@ -66,17 +68,6 @@ class PageListViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = YDSColor.bgNormal
-        self.title = "Storybook"
-        
-        self.navigationController?.navigationBar.tintColor = YDSColor.buttonNormal
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: YDSColor.textPrimary,
-            NSAttributedString.Key.font: YDSFont.subtitle2,
-        ]
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
-
         
         pageListTableView.dataSource = self
         pageListTableView.delegate = self
