@@ -1,5 +1,5 @@
 //
-//  YDSDoubleLineTopBar.swift
+//  YDSDoubleTitleTopBar.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/08/07.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class YDSDoubleLineTopBar: YDSBaseTopBar {
+public class YDSDoubleTitleTopBar: YDSTopBar {
     
     public var title: String? {
         get {
@@ -63,8 +63,10 @@ public class YDSDoubleLineTopBar: YDSBaseTopBar {
 
     }
     
-    public override init() {
+    public init(title: String?, subtitle: String?) {
         super.init()
+        self.title = title
+        self.subtitle = subtitle
         setupView()
     }
     
@@ -93,10 +95,8 @@ public class YDSDoubleLineTopBar: YDSBaseTopBar {
             labelStackView.addArrangedSubview($0)
         }
         
-        self.topItem?.setLeftBarButton(
-            UIBarButtonItem(customView: labelStackView),
-            animated: true
-        )
+        self.topItem?.setLeftBarButton(UIBarButtonItem(customView: labelStackView),
+                                       animated: true)
     }
     
     private func setAutolayout() {
@@ -104,6 +104,10 @@ public class YDSDoubleLineTopBar: YDSBaseTopBar {
             $0.height.equalTo(Dimension.height)
         }
     }
+}
+
+
+extension YDSDoubleTitleTopBar {
     
     public override func layoutSubviews() {
         super.layoutSubviews()

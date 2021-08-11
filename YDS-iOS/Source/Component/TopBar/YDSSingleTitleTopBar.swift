@@ -1,5 +1,5 @@
 //
-//  YDSSingleLineTopBar.swift
+//  YDSSingleTitleTopBar.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/08/09.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class YDSSingleLineTopBar: YDSBaseTopBar {
+public class YDSSingleTitleTopBar: YDSTopBar {
 
     public var title: String? {
         get {
@@ -24,8 +24,9 @@ public class YDSSingleLineTopBar: YDSBaseTopBar {
         return label
     }()
     
-    public override init() {
+    public init(title: String?) {
         super.init()
+        self.title = title
         setupView()
     }
     
