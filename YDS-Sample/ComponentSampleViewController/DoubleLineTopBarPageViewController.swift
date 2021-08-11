@@ -24,6 +24,10 @@ class DoubleLineTopBarPageViewController: StoryBookViewController {
         return button
     }()
     
+    private let plusButton = YDSTopBarButton(image: YDSIcon.plusLine)
+    private let listButton = YDSTopBarButton(image: YDSIcon.listLine)
+    private let moreButton = YDSTopBarButton(image: YDSIcon.dotsVerticalLine)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addOptions()
@@ -54,6 +58,12 @@ class DoubleLineTopBarPageViewController: StoryBookViewController {
     private func setViewHierarchy() {
         self.view.addSubview(sampleTopBar)
         self.sampleView.addSubview(backButton)
+        
+        self.sampleTopBar.topItem?.setRightBarButtonItems(
+            [UIBarButtonItem(customView: moreButton),
+             UIBarButtonItem(customView: listButton),
+             UIBarButtonItem(customView: plusButton)],
+            animated: true)
     }
     
     private func setAutolayout() {
@@ -80,7 +90,9 @@ class DoubleLineTopBarPageViewController: StoryBookViewController {
     }
     
     private func registerTapAction() {
-        backButton.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
+        [backButton, moreButton, listButton, plusButton].forEach {
+            $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
+        }
     }
     
     @objc
@@ -88,6 +100,12 @@ class DoubleLineTopBarPageViewController: StoryBookViewController {
         switch(sender) {
         case backButton:
             self.navigationController?.popViewController(animated: true)
+        case plusButton:
+            print("plus")
+        case listButton:
+            print("list")
+        case moreButton:
+            print("more")
         default:
             return
         }
