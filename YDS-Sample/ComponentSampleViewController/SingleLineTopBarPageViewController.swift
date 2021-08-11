@@ -55,9 +55,10 @@ class SingleLineTopBarPageViewController: StoryBookViewController {
         
         
         
-        self.sampleTopBar.topItem?.setRightBarButtonItems([UIBarButtonItem(customView: writeButton),
-                                                           UIBarButtonItem(customView: searchButton),],
-                                                   animated: true)
+        self.sampleTopBar.topItem?.setRightBarButtonItems(
+            [UIBarButtonItem(customView: writeButton),
+             UIBarButtonItem(customView: searchButton),],
+            animated: true)
     }
     
     private func setAutolayout() {

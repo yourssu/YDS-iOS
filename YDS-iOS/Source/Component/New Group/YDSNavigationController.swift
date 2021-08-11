@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class YDSNavigationController: UINavigationController, UINavigationBarDelegate {
+public class YDSNavigationController: UINavigationController {
     
     public var shouldPushLastViewController: Bool = false
     
@@ -59,6 +59,7 @@ public class YDSNavigationController: UINavigationController, UINavigationBarDel
         super.viewDidLoad()
 
         setupView()
+        setupFullWidthBackGesture()
     }
     
     private func setupView() {
@@ -108,8 +109,31 @@ public class YDSNavigationController: UINavigationController, UINavigationBarDel
         super.viewDidLayoutSubviews()
         
         navigationBar.removeButtonBarSpacing()
-        navigationBar.setButtonBarPadding()
+        navigationBar.setButtonBarProperties()
     }
     
+    private lazy var fullWidthBackGestureRecognizer = UIPanGestureRecognizer()
+
+    private func setupFullWidthBackGesture() {
+        guard
+            let interactivePopGestureRecognizer = interactivePopGestureRecognizer,
+            let targets = interactivePopGestureRecognizer.value(forKey: "targets")
+        else {
+            return
+        }
+
+        fullWidthBackGestureRecognizer.setValue(targets, forKey: "targets")
+        fullWidthBackGestureRecognizer.delegate = self
+        view.addGestureRecognizer(fullWidthBackGestureRecognizer)
+    }
+    
+}
+
+extension YDSNavigationController: UIGestureRecognizerDelegate {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let isSystemSwipeToBackEnabled = interactivePopGestureRecognizer?.isEnabled == true
+        let isThereStackedViewControllers = viewControllers.count > 1
+        return isSystemSwipeToBackEnabled && isThereStackedViewControllers
+    }
 }
 
