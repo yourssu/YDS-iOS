@@ -51,14 +51,17 @@ class PageListViewController: UIViewController {
     
     let componentPages: [Page] = [
         Page(title: "Toast", vc: ToastPageViewController.self),
-        Page(title: "NavigationController", vc: NavigationControllerPageViewController.self),
-        Page(title: "SingleLineTopBar", vc: SingleLineTopBarPageViewController.self),
-        Page(title: "DoubleLineTopBar", vc: DoubleLineTopBarPageViewController.self),
+        Page(title: "TopBar", vc: TopBarPageViewController.self),
+        Page(title: "SingleTitleTopBar", vc: SingleTitleTopBarPageViewController.self),
+        Page(title: "DoubleTitleTopBar", vc: DoubleTitleTopBarPageViewController.self),
         Page(title: "BottomBarController", vc: BottomBarControllerPageViewController.self),
     ]
 
     
     //  MARK: - PageListViewController Setting
+    
+    private let searchButton = YDSTopBarButton(image: YDSIcon.searchLine)
+    private let bellButton = YDSTopBarButton(image: YDSIcon.bellLine)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +73,6 @@ class PageListViewController: UIViewController {
         view.backgroundColor = YDSColor.bgNormal
         
         pageListTableView.dataSource = self
-        pageListTableView.delegate = self
         pageListTableView.register(PageListTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         
         view.addSubview(pageListTableView)
@@ -79,8 +81,29 @@ class PageListViewController: UIViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
- 
+        
+        self.navigationItem.setRightBarButtonItems(
+            [UIBarButtonItem(customView: bellButton),
+             UIBarButtonItem(customView: searchButton)],
+            animated: true)
+        
+        [searchButton, bellButton].forEach {
+            $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
+        }
     }
+    
+    @objc
+    private func buttonTapAction(_ sender: UIButton) {
+        switch(sender) {
+        case searchButton:
+            YDSToast.makeToast(text: "Search button pressed", duration: .short, at: self.view)
+        case bellButton:
+            YDSToast.makeToast(text: "Bell button pressed", duration: .short, at: self.view)
+        default:
+            return
+        }
+    }
+
 
 }
 
@@ -132,8 +155,4 @@ extension PageListViewController: UITableViewDataSource {
         cell.parent = self
         return cell
     }
-}
-
-extension PageListViewController: UITableViewDelegate {
-    
 }

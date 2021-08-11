@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = YDSNavigationController(title: "Storybook", rootViewController: PageListViewController())
-        navigationController.shouldPushLastViewController = true
         
         window?.rootViewController = navigationController
         

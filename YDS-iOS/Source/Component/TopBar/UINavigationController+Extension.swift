@@ -9,6 +9,15 @@ import UIKit
 
 extension UINavigationBar {
     
+    private enum Dimension {
+        enum ButtonBar {
+            static let spacing: CGFloat = 2
+            enum Padding {
+                static let horizontal: CGFloat = 8
+            }
+        }
+    }
+    
     internal func removeButtonBarSpacing() {
         buttonBars?.forEach {
             let spaceConstraint = $0.constraints
@@ -22,15 +31,21 @@ extension UINavigationBar {
     
     internal func setButtonBarProperties() {
         if (isTheFirstItemOfLeftBarUIButton) {
-            leftButtonBar?.layoutMargins = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
+            leftButtonBar?.layoutMargins = UIEdgeInsets(top: 0,
+                                                        left: -Dimension.ButtonBar.Padding.horizontal,
+                                                        bottom: 0,
+                                                        right: Dimension.ButtonBar.Padding.horizontal)
             leftButtonBar?.alignment = .fill
-            leftButtonBar?.spacing = 2
+            leftButtonBar?.spacing = Dimension.ButtonBar.spacing
         }
 
         if (isTheFirstItemOfRightBarUIButton) {
-            rightButtonBar?.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: -8)
+            rightButtonBar?.layoutMargins = UIEdgeInsets(top: 0,
+                                                         left: Dimension.ButtonBar.Padding.horizontal,
+                                                         bottom: 0,
+                                                         right: -Dimension.ButtonBar.Padding.horizontal)
             rightButtonBar?.alignment = .fill
-            rightButtonBar?.spacing = 2
+            rightButtonBar?.spacing = Dimension.ButtonBar.spacing
         }
     }
     
