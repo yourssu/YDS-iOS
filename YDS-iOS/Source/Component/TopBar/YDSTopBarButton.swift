@@ -37,7 +37,14 @@ public class YDSTopBarButton: UIButton {
     //  버튼이 pressed 되었을 때 아이콘, 글자 컬러입니다.
     private var fgPressedColor: UIColor?
     
-    
+    private enum Dimension {
+        enum content {
+            static let imageSize: CGFloat = 24
+            enum Padding {
+                static let horizontal: CGFloat = 8
+            }
+        }
+    }
     
     public init(text: String?) {
         super.init(frame: .zero)
@@ -48,7 +55,7 @@ public class YDSTopBarButton: UIButton {
     public init(image: UIImage?) {
         super.init(frame: .zero)
         self.setImage(image?
-                        .resize(to: 24)
+                        .resize(to: Dimension.content.imageSize)
                         .withRenderingMode(.alwaysTemplate),
                       for: .normal)
         setupView()
@@ -61,7 +68,6 @@ public class YDSTopBarButton: UIButton {
     private func setupView() {
         setProperties()
         setColor()
-        setLayouts()
     }
     
     private func setProperties() {
@@ -69,7 +75,10 @@ public class YDSTopBarButton: UIButton {
         self.adjustsImageWhenDisabled = false
 
         self.titleLabel?.font = YDSFont.button0
-        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        self.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                              left: Dimension.content.Padding.horizontal,
+                                              bottom: 0,
+                                              right: Dimension.content.Padding.horizontal)
     }
     
     private func setColor() {
@@ -93,10 +102,6 @@ public class YDSTopBarButton: UIButton {
         self.tintColor = !isHighlighted
             ? fgColor
             : fgPressedColor
-    }
-    
-    private func setLayouts() {
-        
     }
 
 }
