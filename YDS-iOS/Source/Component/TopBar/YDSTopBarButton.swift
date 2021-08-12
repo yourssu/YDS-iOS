@@ -7,6 +7,12 @@
 
 import UIKit
 
+/**
+ YDSNavigationController와
+ YDSTopBar 또는 이를 상속받는 TopBar에서 사용하길 권장하는 Button 입니다.
+ PlainButton과 크게 비슷하지만 설정 가능 범위가 보다 좁아졌고
+ 패딩, 타이포 스타일이 다릅니다.
+ */
 public class YDSTopBarButton: UIButton {
 
     //  MARK: - 외부에서 지정할 수 있는 속성

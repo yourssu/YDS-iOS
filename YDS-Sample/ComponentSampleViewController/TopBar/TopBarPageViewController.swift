@@ -5,6 +5,11 @@
 //  Created by Gyuni on 2021/08/11.
 //
 
+//
+//  TopBarSampleViewController를 생성하기 위해 준비하는 ViewController 입니다.
+//  TopBar를 사용한 샘플 코드는 TopBarSampleViewController를 참고해주세요.
+//
+
 import UIKit
 import YDS_iOS
 import SnapKit

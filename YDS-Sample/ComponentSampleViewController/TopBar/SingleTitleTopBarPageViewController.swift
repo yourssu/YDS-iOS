@@ -5,6 +5,11 @@
 //  Created by Gyuni on 2021/08/09.
 //
 
+//
+//  SingleTitleTopBarSampleViewController를 생성하기 위해 준비하는 ViewController 입니다.
+//  SingleTitleTopBar를 사용한 샘플 코드는 SingleTitleTopBarSampleViewController를 참고해주세요.
+//
+
 import UIKit
 import YDS_iOS
 import SnapKit
@@ -43,7 +48,7 @@ class SingleTitleTopBarPageViewController: StoryBookViewController {
     }
     
     private func setViewProperty() {
-        self.title = "SingleLineTopBar"
+        self.title = "SingleTitleTopBar"
     }
     
     private func setLayouts() {

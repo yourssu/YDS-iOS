@@ -7,6 +7,11 @@
 
 import UIKit
 
+/**
+ YDS 스타일의 NavigationController입니다.
+ RootViewController는 굵은 Title이 표시됩니다.
+ 기본 NavigationController에서 배경색, 투명도, 글씨 폰트, 컬러, 버튼 간격 등이 커스텀 되었습니다.
+ */
 public class YDSNavigationController: UINavigationController {
     
     //  MARK: - 외부에서 지정할 수 있는 속성
