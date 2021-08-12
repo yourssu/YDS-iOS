@@ -64,8 +64,7 @@ class ToastPageViewController: StoryBookViewController {
     private func setAutolayout() {
         showToastButton.snp.makeConstraints {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-            $0.centerX.equalToSuperview()
-            $0.width.equalToSuperview().offset(-32)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(16)
         }
     }
     

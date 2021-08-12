@@ -196,7 +196,6 @@ public class YDSPlainButton: UIButton, YDSButtonProtocol {
             : fgPressedColor
     }
     
-
     //  setSize()
     //  버튼의 높이, 패딩, 폰트, 아이콘 크기를 세팅합니다.
     private func setSize() {
