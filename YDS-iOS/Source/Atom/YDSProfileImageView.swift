@@ -97,7 +97,7 @@ public class YDSProfileImageView: UIImageView {
         let radius = width/2
         
         if insetRatio > 1 || insetRatio < 0 {
-            print("""
+            assertionFailure("""
             makeSquirclePath()
             insetRatio 값은 0에서 1 사이로 넣어주세요.
             """)
