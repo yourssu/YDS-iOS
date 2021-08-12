@@ -11,7 +11,7 @@
 
 import UIKit
 
-public class YDSPlainButton: UIButton, YDSButton {
+public class YDSPlainButton: UIButton, YDSButtonProtocol {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
 
@@ -20,7 +20,7 @@ public class YDSPlainButton: UIButton, YDSButton {
     public var isDisabled: Bool = false {
         didSet {
             self.isEnabled = !isDisabled
-            setPlainButtonColor()
+            setColor()
         }
     }
     
@@ -28,13 +28,13 @@ public class YDSPlainButton: UIButton, YDSButton {
     //  삭제, 탈퇴 등 파괴적인 행위를 할 때
     //  버튼을 빨간색으로 표시해 경고하기 위해 사용합니다.
     public var isWarned: Bool = false {
-        didSet { setPlainButtonColor() }
+        didSet { setColor() }
     }
     
     //  isPointed: Bool
     //  버튼을 파란색 표시해 강조하기 위해 사용합니다.
     public var isPointed: Bool = false {
-        didSet { setPlainButtonColor() }
+        didSet { setColor() }
     }
     
     //  size: PlainButtonSize ( large, medium, small )
@@ -46,7 +46,7 @@ public class YDSPlainButton: UIButton, YDSButton {
             } else {
                 setTitle(text, for: .normal)
             }
-            setPlainButtonSize()
+            setSize()
         }
     }
     
@@ -159,14 +159,14 @@ public class YDSPlainButton: UIButton, YDSButton {
         self.adjustsImageWhenHighlighted = false
         self.adjustsImageWhenDisabled = false
         
-        setPlainButtonColor()
-        setPlainButtonSize()
+        setColor()
+        setSize()
     }
     
-    //  setPlainButtonColor()
+    //  setColor()
     //  버튼의 컬러 조합을 세팅합니다.
     //  우선순위는 isDisabled > isWarned > isPointed 입니다.
-    private func setPlainButtonColor() {
+    private func setColor() {
         if isDisabled {
             fgColor = YDSColor.buttonDisabled
             fgPressedColor = YDSColor.buttonDisabled
@@ -196,9 +196,10 @@ public class YDSPlainButton: UIButton, YDSButton {
             : fgPressedColor
     }
     
-    //  setPlainButtonSize()
+
+    //  setSize()
     //  버튼의 높이, 패딩, 폰트, 아이콘 크기를 세팅합니다.
-    private func setPlainButtonSize() {
+    private func setSize() {
         self.titleLabel?.font = size.font
         setIcon()
     }

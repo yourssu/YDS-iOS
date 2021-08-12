@@ -23,13 +23,18 @@ class PlainButtonPageViewController: StoryBookViewController {
     }
     
     private func setupView() {
+        setLayouts()
         setViewProperty()
-        setViewHierarchy()
-        setAutolayout()
     }
     
     private func setViewProperty() {
         self.title = "PlainButton"
+    }
+    
+
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
     }
     
     private func setViewHierarchy() {
@@ -39,7 +44,7 @@ class PlainButtonPageViewController: StoryBookViewController {
     
     private func setAutolayout() {
         sampleButton.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
     }
     
