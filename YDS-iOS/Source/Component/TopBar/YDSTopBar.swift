@@ -8,7 +8,12 @@
 import UIKit
 
 public class YDSTopBar: UINavigationBar {
+   
+    // MARK: - 메소드
     
+    /**
+     YDS 스타일의 TopBar(=NavigationBar)를 생성합니다.
+     */
     public init() {
         super.init(frame: .zero)
         setupView()
@@ -18,10 +23,16 @@ public class YDSTopBar: UINavigationBar {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+     뷰를 세팅합니다.
+     */
     private func setupView() {
         setProperties()
     }
     
+    /**
+     각종 프로퍼티를 세팅합니다.
+     */
     private func setProperties() {
         self.pushItem(UINavigationItem(), animated: true)
         self.barTintColor = YDSColor.bgElevated

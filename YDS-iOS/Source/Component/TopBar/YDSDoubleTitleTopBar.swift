@@ -9,6 +9,12 @@ import UIKit
 
 public class YDSDoubleTitleTopBar: YDSTopBar {
     
+    //  MARK: - 외부에서 지정할 수 있는 속성
+    
+    /**
+     NavigationBar 상단에 들어가는
+     굵은 Title의 String입니다.
+     */
     public var title: String? {
         get {
             return self.titleLabel.text
@@ -18,6 +24,10 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
         }
     }
     
+    /**
+     NavigationBar 상단에 들어가는
+     얇은 Title의 String입니다.
+     */
     public var subtitle: String? {
         get {
             return self.subtitleLabel.text
@@ -27,18 +37,32 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
         }
     }
     
+    
+    //  MARK: - 뷰
+    
+    /**
+     NavigationBar 상단 좌측에 들어가는
+     굵은 Title의 Label입니다.
+     */
     private let titleLabel: YDSLabel = {
         let label = YDSLabel(style: .title2)
         label.textColor = YDSColor.textPrimary
         return label
     }()
     
+    /**
+     NavigationBar 상단 좌측에 들어가는
+     얇은 Title의 Label입니다.
+     */
     private let subtitleLabel: YDSLabel = {
         let label = YDSLabel(style: .body2)
         label.textColor = YDSColor.textSecondary
         return label
     }()
     
+    /**
+     titleLabel과 subtitleLabel을 담는 StackView입니다.
+     */
     private let labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -47,6 +71,12 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
         return stackView
     }()
     
+    
+    //  MARK: - 내부에서 사용되는 상수
+    
+    /**
+     내부에서 사용되는 각종 레이아웃 관련 수치입니다.
+     */
     private enum Dimension {
         static let height: CGFloat = 72
         
@@ -63,6 +93,13 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
 
     }
     
+    /**
+     굵은 Title과 얇은 Title을 가진 TopBar(=NavigationBar)를 생성합니다.
+     
+     - Parameters:
+        - title: NavigationBar 상단에 들어가는 굵은 title의 String 값입니다.
+        - subtitle: NavigationBar 상단에 들어가는 얇은 title의 String 값입니다.
+     */
     public init(title: String?, subtitle: String?) {
         super.init()
         self.title = title
@@ -74,22 +111,34 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+     뷰를 세팅합니다.
+     */
     private func setupView() {
         setProperties()
         setLayouts()
     }
     
+    /**
+     각종 프로퍼티를 세팅합니다.
+     */
     private func setProperties() {
         self.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.clear,
         ]
     }
     
+    /**
+     레이아웃을 세팅합니다.
+     */
     private func setLayouts() {
         setViewHierarchy()
         setAutolayout()
     }
     
+    /**
+     뷰의 위계를 세팅합니다.
+     */
     private func setViewHierarchy() {
         [subtitleLabel, titleLabel].forEach {
             labelStackView.addArrangedSubview($0)
@@ -99,6 +148,9 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
                                        animated: true)
     }
     
+    /**
+     오토레이아웃을 세팅합니다.
+     */
     private func setAutolayout() {
         self.snp.makeConstraints {
             $0.height.equalTo(Dimension.height)
@@ -117,12 +169,20 @@ extension YDSDoubleTitleTopBar {
         setButtonBarConstraints()
     }
     
+    /**
+     NavigationBar와
+     그 하위의 contentView, backgroundView의 높이를 설정합니다.
+     */
     private func setHeight() {
         [self, contentView, backgroundView].forEach {
             $0?.frame.size.height = Dimension.height
         }
     }
     
+    /**
+     NavigationBar 내부의 ButtonBar 관련 Constraint 중
+     높이에 관련해 충돌을 일으킬 수 있는 일부 Constraint를 제거합니다.
+     */
     private func removeButtonBarConstraints() {
         contentView?.layoutGuides
             .filter { $0.description.contains("BarGuide")}
@@ -146,6 +206,10 @@ extension YDSDoubleTitleTopBar {
             }
     }
     
+    /**
+     NavigationBar 내부의 ButtonBar의 Constraint를
+     필요에 따라 설정해줍니다.
+     */
     private func setButtonBarConstraints() {
         leftButtonBar?.snp.makeConstraints {
             $0.bottom.equalToSuperview().offset(-Dimension.LabelStackView.Margin.bottom)
