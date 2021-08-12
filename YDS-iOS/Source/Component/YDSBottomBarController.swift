@@ -45,7 +45,7 @@ open class YDSBottomBarController: UITabBarController {
     /**
      각 Item을 Touch 했을 때 진동이 울리도록 만들어주는 feedbackGenerator입니다.
      */
-    let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
     
     
     //  MARK: - 메소드
