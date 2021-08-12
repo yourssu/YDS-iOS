@@ -169,7 +169,7 @@ public class YDSToast: UIView {
         
         superview.addSubview(toast)
         toast.snp.makeConstraints {
-            $0.bottom.equalTo(superview.safeAreaLayoutGuide.snp.bottom).offset(-Dimension.Margin.vertical)
+            $0.bottom.equalTo(superview.safeAreaLayoutGuide.snp.bottom).inset(Dimension.Margin.vertical)
             $0.leading.trailing.equalTo(superview.safeAreaLayoutGuide).inset(Dimension.Margin.horizontal)
             $0.centerX.equalToSuperview()
         }
