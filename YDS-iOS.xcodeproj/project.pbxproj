@@ -57,6 +57,7 @@
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
+		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
 		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* BottomSheet.swift */; };
@@ -329,6 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				53C9F6F826B5546400EF7B86 /* YDSButton.swift */,
+				53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */,
+				53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */,
+				53887E9B26B54834006E40F6 /* YDSPlainButton.swift */,
 			);
 			path = YDSButton;
 			sourceTree = "<group>";
@@ -630,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537A0AD326C51DB000142DCE /* YDSButton.swift in Sources */,
+				53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */,
 				53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */,
 				53441AFC26AF14CC00CB6BC9 /* Toggle.swift in Sources */,
 				53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */,
