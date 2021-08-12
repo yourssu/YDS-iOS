@@ -141,6 +141,9 @@ public class YDSToast: UIView {
         self.alpha = 0.0
     }
     
+    
+    //  MARK: - Toast Lifecycle
+    
     /**
      Toast를 생성하는 함수입니다.
      함수가 실행되면 화면 내 적절한 위치에 Toast가 생성됩니다.
