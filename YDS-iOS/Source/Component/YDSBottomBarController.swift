@@ -32,6 +32,14 @@ open class YDSBottomBarController: UITabBarController {
     }
     
     
+    //  MARK - 뷰
+    
+    /**
+     탭바 상단에 삽입되는 디바이더입니다.
+     */
+    private let divider = YDSDivider(.horizontal)
+    
+    
     //  MARK: - 진동 관련 인스턴스
     
     /**
@@ -54,6 +62,7 @@ open class YDSBottomBarController: UITabBarController {
      */
     private func setupView() {
         setProperties()
+        setLayouts()
     }
     
     /**
@@ -64,6 +73,19 @@ open class YDSBottomBarController: UITabBarController {
         tabBar.unselectedItemTintColor = YDSColor.bottomBarNormal
         tabBar.backgroundColor = YDSColor.bgElevated
         tabBar.isTranslucent = false
+        
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+    }
+    
+    /**
+     레이아웃을 세팅합니다.
+     */
+    private func setLayouts() {
+        tabBar.addSubview(divider)
+        divider.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+        }
     }
 
 }
