@@ -5,6 +5,11 @@
 //  Created by Gyuni on 2021/08/07.
 //
 
+//
+//  DoubleTitleTopBarSampleViewController를 생성하기 위해 준비하는 ViewController 입니다.
+//  DoubleTitleTopBar를 사용한 샘플 코드는 DoubleTitleTopBarSampleViewController를 참고해주세요.
+//
+
 import UIKit
 import YDS_iOS
 import SnapKit
@@ -43,7 +48,7 @@ class DoubleTitleTopBarPageViewController: StoryBookViewController {
     }
     
     private func setViewProperty() {
-        self.title = "DoubleLineTopBar"
+        self.title = "DoubleTitleTopBar"
     }
     
     private func setLayouts() {

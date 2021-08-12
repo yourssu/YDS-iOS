@@ -7,6 +7,12 @@
 
 import UIKit
 
+/**
+ YDS 스타일의 TopBar입니다.
+ NavigaionController의 TopBar를 사용할 수 없을 때
+ YDSTopBar를 단독으로 사용할 수 있습니다.
+ 기본 TopBar에서 배경색, 투명도, 글씨 폰트, 컬러, 버튼 간격 등이 커스텀 되었습니다.
+ */
 public class YDSTopBar: UINavigationBar {
    
     // MARK: - 메소드

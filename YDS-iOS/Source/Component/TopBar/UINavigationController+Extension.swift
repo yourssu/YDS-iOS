@@ -9,6 +9,8 @@ import UIKit
 
 extension UINavigationBar {
     
+    //  NavigationBar의 커스텀을 편하게 하기 위한 extension입니다.
+    
     /**
      UINavigationBar의 Layout을 Custom 할 때 사용하는
      각종 상수입니다.
