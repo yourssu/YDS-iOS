@@ -7,6 +7,19 @@
 
 import UIKit
 
+/**
+ YDSBottomBar를 포함하는 Controller입니다.
+ 
+ # 특징
+ 각 Item 터치 시 햅틱 반응과 함께 스프링 애니메이션이 재생됩니다.
+ 
+ # 주의
+ TabBarItem에 title이 nil이면 이미지를 자동으로 중앙 정렬 해줍니다.
+ imageInsets를 설정하지 마세요.
+ 
+ # 상속
+ UITabBarController를 상속받았습니다.
+ */
 open class YDSBottomBarController: UITabBarController {
     
     //  MARK: - 내부에서 사용되는 상수
