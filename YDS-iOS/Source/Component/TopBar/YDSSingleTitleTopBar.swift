@@ -7,6 +7,13 @@
 
 import UIKit
 
+/**
+ YDS 스타일의 TopBar입니다.
+ 굵은 Title 글씨가 들어간 TopBar가 필요하면서
+ NavigaionController의 TopBar를 사용할 수 없을 때
+ YDSSingleTitleTopBar를 단독으로 사용할 수 있습니다.
+ 기본 TopBar에서 배경색, 투명도, 글씨 폰트, 컬러, 버튼 간격 등이 커스텀 되었습니다.
+ */
 public class YDSSingleTitleTopBar: YDSTopBar {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
