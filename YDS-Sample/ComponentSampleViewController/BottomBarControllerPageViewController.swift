@@ -13,35 +13,35 @@ class BottomBarControllerPageViewController: YDSBottomBarController {
     
     let page1: UIViewController = {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .red
+        viewController.view.backgroundColor = YDSColor.pinkItemBG
         viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.homeLine, selectedImage: YDSIcon.homeFilled)
         return viewController
     }()
     
     let page2: UIViewController = {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .blue
+        viewController.view.backgroundColor = YDSColor.aquaItemBG
         viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.boardLine, selectedImage: YDSIcon.boardFilled)
         return viewController
     }()
     
     let page3: UIViewController = {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .yellow
+        viewController.view.backgroundColor = YDSColor.emeraldItemBG
         viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.timecalendarLine, selectedImage: YDSIcon.timecalendarFilled)
         return viewController
     }()
     
     let page4: UIViewController = {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .green
+        viewController.view.backgroundColor = YDSColor.indigoItemBG
         viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.rankLine, selectedImage: YDSIcon.rankFilled)
         return viewController
     }()
     
     let page5: UIViewController = {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = .purple
+        viewController.view.backgroundColor = YDSColor.monoItemBG
         viewController.tabBarItem = UITabBarItem(title: nil, image: YDSIcon.personLine, selectedImage: YDSIcon.personFilled)
         return viewController
     }()
@@ -59,6 +59,5 @@ class BottomBarControllerPageViewController: YDSBottomBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 
 }
