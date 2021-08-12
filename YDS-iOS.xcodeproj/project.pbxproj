@@ -50,7 +50,7 @@
 		539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */; };
 		539110B626C052670094FD08 /* YDSTopBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B526C052670094FD08 /* YDSTopBarButton.swift */; };
 		539110B826C1484A0094FD08 /* YDSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B726C1484A0094FD08 /* YDSNavigationController.swift */; };
-		539110BC26C373C90094FD08 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BB26C373C90094FD08 /* UINavigationController+Extension.swift */; };
+		539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */; };
 		539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BE26C3743D0094FD08 /* YDSTopBar.swift */; };
 		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
 		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
@@ -152,7 +152,7 @@
 		539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTitleTopBarPageViewController.swift; sourceTree = "<group>"; };
 		539110B526C052670094FD08 /* YDSTopBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBarButton.swift; sourceTree = "<group>"; };
 		539110B726C1484A0094FD08 /* YDSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSNavigationController.swift; sourceTree = "<group>"; };
-		539110BB26C373C90094FD08 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		539110BE26C3743D0094FD08 /* YDSTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBar.swift; sourceTree = "<group>"; };
 		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
@@ -359,7 +359,7 @@
 				539110B126C048020094FD08 /* YDSSingleTitleTopBar.swift */,
 				5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */,
 				539110B526C052670094FD08 /* YDSTopBarButton.swift */,
-				539110BB26C373C90094FD08 /* UINavigationController+Extension.swift */,
+				539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */,
 			);
 			path = TopBar;
 			sourceTree = "<group>";
@@ -715,7 +715,7 @@
 				DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */,
 				533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */,
 				5359A5C326BECF7400FCCECC /* YDSDoubleTitleTopBar.swift in Sources */,
-				539110BC26C373C90094FD08 /* UINavigationController+Extension.swift in Sources */,
+				539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */,
 				DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */,
 				53887E9C26B54834006E40F6 /* YDSPlainButton.swift in Sources */,
 			);

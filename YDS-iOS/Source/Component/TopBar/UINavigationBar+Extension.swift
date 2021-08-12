@@ -1,5 +1,5 @@
 //
-//  UINavigationController+Extension.swift
+//  UINavigationBar+Extension.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/08/11.
