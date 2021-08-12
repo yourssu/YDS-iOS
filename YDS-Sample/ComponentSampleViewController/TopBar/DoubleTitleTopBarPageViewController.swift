@@ -75,7 +75,7 @@ class DoubleTitleTopBarPageViewController: StoryBookViewController {
             self?.topBarInfo.title = value
         }
         
-        addOption(description: "title",
+        addOption(description: "subtitle",
                   defaultValue: "2021년 2학기") { [weak self] value in
             self?.topBarInfo.subtitle = value
         }
