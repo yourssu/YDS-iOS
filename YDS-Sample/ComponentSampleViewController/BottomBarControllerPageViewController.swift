@@ -49,7 +49,7 @@ class BottomBarControllerPageViewController: YDSBottomBarController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.viewControllers = [page1, page2, page3, page4, page5]
+        self.setViewControllers([page1, page2, page3, page4, page5], animated: true)
     }
     
     required init?(coder: NSCoder) {
