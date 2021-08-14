@@ -104,6 +104,17 @@ extension YDSBottomBarController {
     }
     
     /**
+     viewControllers에 viewController를 추가하는 메소드입니다.
+     새로운 viewController 배열이 들어오면
+     각 viewController에 할당된 TabBar의 title이 nil인지 아닌지 확인한 후
+     title이 nil이라면 image가 자동으로 중앙 정렬 되도록 설정합니다.
+     */
+    open override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        super.setViewControllers(viewControllers, animated: true)
+        setTabBarItemImageInsets()
+    }
+    
+    /**
      각 뷰 컨트롤러별 tabBarItem의 title 값이 nil이라면
      imageInsets을 조정해 image가 중앙에 오도록 만들어줍니다.
      */
