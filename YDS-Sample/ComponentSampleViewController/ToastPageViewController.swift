@@ -94,8 +94,7 @@ class ToastPageViewController: StoryBookViewController {
         switch(sender) {
         case showToastButton:
             YDSToast.makeToast(text: toastInfo.text,
-                               duration: toastInfo.duration,
-                               at: sampleView)
+                               duration: toastInfo.duration)
         default:
             return
         }
