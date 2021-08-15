@@ -57,13 +57,13 @@ public class YDSToast: UIView {
      */
     private enum Dimension {
         enum Margin {
-            static let horizontal = 8
-            static let vertical = 16
+            static let horizontal: CGFloat = 8
+            static let vertical: CGFloat = 66
         }
         
         enum Padding {
-            static let horizontal = 24
-            static let vertical = 20
+            static let horizontal: CGFloat = 24
+            static let vertical: CGFloat = 20
         }
     }
     
@@ -151,15 +151,13 @@ public class YDSToast: UIView {
      - Parameters:
          - text: Toast에 나타날 글귀입니다.
          - duration: Toast가 지속되는 시간입니다. .short는 1.5초, .long은 3초입니다.
-         - superview: Toast가 나타날 view 입니다. 해당 view의 하단에 Toast가 생성됩니다.
      
      ```
      YDSToast.makeToast(text: "Toast 내용",
-                        duration: .long,
-                        at: myView)
+                        duration: .long)
      ```
      */
-    public static func makeToast(text: String?, duration: ToastDuration = .long, at superview: UIView) {
+    public static func makeToast(text: String?, duration: ToastDuration = .long) {
         if text == nil || text == "" {
             return
         }
@@ -167,10 +165,15 @@ public class YDSToast: UIView {
         let toast = YDSToast(text: text,
                              duration: duration)
         
-        superview.addSubview(toast)
+        guard let delegate = UIApplication.shared.delegate,
+              let optionalWindow = delegate.window,
+              let window = optionalWindow
+        else { return }
+    
+        window.addSubview(toast)
         toast.snp.makeConstraints {
-            $0.bottom.equalTo(superview.safeAreaLayoutGuide.snp.bottom).inset(Dimension.Margin.vertical)
-            $0.leading.trailing.equalTo(superview.safeAreaLayoutGuide).inset(Dimension.Margin.horizontal)
+            $0.bottom.equalTo(window.safeAreaLayoutGuide.snp.bottom).inset(Dimension.Margin.vertical)
+            $0.leading.trailing.equalTo(window.safeAreaLayoutGuide).inset(Dimension.Margin.horizontal)
         }
         
         toast.showToast()
