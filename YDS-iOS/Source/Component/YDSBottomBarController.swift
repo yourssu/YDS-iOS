@@ -43,6 +43,12 @@ open class YDSBottomBarController: UITabBarController {
     //  MARK: - 진동 관련 인스턴스
     
     /**
+     TabBarItem이 터치됐을 때
+     진동 피드백을 전달할지 결정하는 변수입니다.
+     */
+    public var isImpactFeedbackEnabled: Bool = true
+    
+    /**
      각 Item을 Touch 했을 때 진동이 울리도록 만들어주는 feedbackGenerator입니다.
      */
     private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
@@ -151,8 +157,10 @@ extension YDSBottomBarController {
      진동을 발생시키고 스프링 애니메이션을 재생합니다.
      */
     open override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        feedbackGenerator.impactOccurred()
-        feedbackGenerator.prepare()
+        if isImpactFeedbackEnabled {
+            feedbackGenerator.impactOccurred()
+            feedbackGenerator.prepare()
+        }
                 
         guard let itemView = item.value(forKey: "view") as? UIView else { return }
         
