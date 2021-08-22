@@ -36,16 +36,12 @@ public class YDSSearchTextField: UITextField {
     
     ///  searchIcon의 너비입니다.
     private var searchIconWidth: CGFloat {
-        get {
-            return searchIcon.frame.width
-        }
+        get { return searchIcon.frame.width }
     }
     
     ///  clearButton의 너비입니다.
     private var clearButtonWidth: CGFloat {
-        get {
-            return clearButtonRect(forBounds: bounds).width
-        }
+        get { return clearButtonRect(forBounds: bounds).width }
     }
     
     

@@ -44,9 +44,7 @@ public class YDSSimpleTextField: UITextField {
     
     ///  clearButton의 너비입니다.
     private var clearButtonWidth: CGFloat {
-        get {
-            return clearButtonRect(forBounds: bounds).width
-        }
+        get { return clearButtonRect(forBounds: bounds).width }
     }
     
     

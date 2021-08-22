@@ -40,37 +40,24 @@ public class YDSSuffixTextFieldView: UIView {
     
     ///  필드에 입력된 텍스트입니다.
     public var text: String? {
-        get {
-            return textField.text
-        }
-        
-        set(inputValue) {
-            textField.text = inputValue
-        }
+        get { return textField.text }
+        set { textField.text = newValue }
     }
     
     ///  필드에 나타나는 placeholder의 텍스트입니다.
     public var placeholder: String? {
-        get {
-            return textField.placeholder
-        }
-        
-        set(inputValue) {
-            textField.placeholder = inputValue
-        }
+        get { return textField.placeholder }
+        set { textField.placeholder = newValue }
     }
     
     ///  필드 위쪽에 나타나는 fieldLabel의 텍스트입니다.
     ///  nil이 들어오면 fieldLabel이 사라집니다.
     public var fieldLabelText: String? {
-        get {
-            return fieldLabel.text
-        }
-        
-        set(inputValue) {
-            fieldLabel.text = inputValue
+        get { return fieldLabel.text }
+        set {
+            fieldLabel.text = newValue
             
-            if inputValue == nil {
+            if newValue == nil {
                 fieldLabel.isHidden = true
             } else {
                 fieldLabel.isHidden = false
@@ -81,14 +68,11 @@ public class YDSSuffixTextFieldView: UIView {
     ///  필드 아래쪽에 나타나는 helperLabel의 텍스트입니다.
     ///  nil이 들어오면 helperLabel이 사라집니다.
     public var helperLabelText: String? {
-        get {
-            return helperLabel.text
-        }
-        
-        set(inputValue) {
-            helperLabel.text = inputValue
+        get { return helperLabel.text }
+        set {
+            helperLabel.text = newValue
             
-            if inputValue == nil {
+            if newValue == nil {
                 helperLabel.isHidden = true
             } else {
                 helperLabel.isHidden = false
@@ -98,13 +82,8 @@ public class YDSSuffixTextFieldView: UIView {
     
     ///  필드 우측에 나타나는 suffixLabel의 텍스트입니다.
     public var suffixLabelText: String? {
-        get {
-            return textField.suffixLabelText
-        }
-        
-        set(inputValue) {
-            textField.suffixLabelText = inputValue
-        }
+        get { return textField.suffixLabelText }
+        set { textField.suffixLabelText = newValue }
     }
     
     

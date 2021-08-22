@@ -77,9 +77,8 @@ class PageListViewController: UIViewController {
         
         view.addSubview(pageListTableView)
         pageListTableView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
         
         self.navigationItem.setRightBarButtonItems(
