@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530F6DBB26D2141500856758 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBA26D2141500856758 /* PanModal */; };
+		530F6DBE26D2142100856758 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBD26D2142100856758 /* SnapKit */; };
 		5337938826AF08E000BE5860 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938726AF08E000BE5860 /* RxSwift */; };
 		5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938926AF08E000BE5860 /* RxCocoa */; };
 		5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */; };
@@ -72,11 +74,9 @@
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
-		65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */; };
 		DD151FAF2641820200795D7C /* YDS_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* BottomSheet.swift */; };
 		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
-		DD8B142B26737960000148F1 /* Pods_YDS_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */; };
 		DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */; };
 		DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13726786BD100EDD2B4 /* Animation.swift */; };
 		DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */; };
@@ -115,8 +115,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.release.xcconfig"; sourceTree = "<group>"; };
-		4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageViewController.swift; sourceTree = "<group>"; };
 		5337938D26AF09BF00BE5860 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
 		5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringControllerView.swift; sourceTree = "<group>"; };
@@ -177,10 +175,6 @@
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
-		554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS.release.xcconfig"; path = "Target Support Files/Pods-YDS-iOS/Pods-YDS-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDS_iOS_YDS_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAB6ABABCFBED4568643704E /* Pods-YDS-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDS-iOS.debug.xcconfig"; path = "Target Support Files/Pods-YDS-iOS/Pods-YDS-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DD151FAA2641820200795D7C /* YDS_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_iOS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -207,7 +201,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD8B142B26737960000148F1 /* Pods_YDS_iOS.framework in Frameworks */,
+				530F6DBB26D2141500856758 /* PanModal in Frameworks */,
+				530F6DBE26D2142100856758 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +213,6 @@
 				5337938826AF08E000BE5860 /* RxSwift in Frameworks */,
 				DDFBD01C26739BEB00C5F409 /* YDS_iOS.framework in Frameworks */,
 				5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */,
-				65D602EC02976C9E3372ED4A /* Pods_YDS_iOS_YDS_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +224,6 @@
 			children = (
 				DDFBD02926739C3C00C5F409 /* PanModal.framework */,
 				DDFBD02526739C3600C5F409 /* SnapKit.framework */,
-				4FEB73431441BFE393DF6291 /* Pods_YDS_iOS.framework */,
-				A6AB5AB4B4EFC1ED9289EEB3 /* Pods_YDS_iOS_YDS_Sample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -416,7 +408,6 @@
 				DD151FAC2641820200795D7C /* YDS-iOS */,
 				DDFBCFFD26739A6900C5F409 /* YDS-Sample */,
 				DD151FAB2641820200795D7C /* Products */,
-				FEB9DE8A5EAC7F1FB86CBD59 /* Pods */,
 				253AF81C549745374AD2F563 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -489,17 +480,6 @@
 			path = "YDS-Sample";
 			sourceTree = "<group>";
 		};
-		FEB9DE8A5EAC7F1FB86CBD59 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CAB6ABABCFBED4568643704E /* Pods-YDS-iOS.debug.xcconfig */,
-				83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */,
-				554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */,
-				3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -518,7 +498,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD151FB22641820200795D7C /* Build configuration list for PBXNativeTarget "YDS-iOS" */;
 			buildPhases = (
-				D5D809E58A4A66857060D2CC /* [CP] Check Pods Manifest.lock */,
 				DD151FA52641820200795D7C /* Headers */,
 				DD151FA62641820200795D7C /* Sources */,
 				DD151FA72641820200795D7C /* Frameworks */,
@@ -529,6 +508,10 @@
 			dependencies = (
 			);
 			name = "YDS-iOS";
+			packageProductDependencies = (
+				530F6DBA26D2141500856758 /* PanModal */,
+				530F6DBD26D2142100856758 /* SnapKit */,
+			);
 			productName = "YDS-iOS";
 			productReference = DD151FAA2641820200795D7C /* YDS_iOS.framework */;
 			productType = "com.apple.product-type.framework";
@@ -537,12 +520,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Sample" */;
 			buildPhases = (
-				A46D4F7DD0F7490B674159C1 /* [CP] Check Pods Manifest.lock */,
 				DDFBCFF826739A6900C5F409 /* Sources */,
 				DDFBCFF926739A6900C5F409 /* Frameworks */,
 				DDFBCFFA26739A6900C5F409 /* Resources */,
 				DDFBD02026739BEB00C5F409 /* Embed Frameworks */,
-				5017AE712C4ADA6C2DD1B848 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -587,6 +568,8 @@
 			mainGroup = DD151FA02641820200795D7C;
 			packageReferences = (
 				5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */,
+				530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DD151FAB2641820200795D7C /* Products */;
 			projectDirPath = "";
@@ -618,70 +601,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5017AE712C4ADA6C2DD1B848 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YDS-iOS-YDS-Sample/Pods-YDS-iOS-YDS-Sample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A46D4F7DD0F7490B674159C1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YDS-iOS-YDS-Sample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5D809E58A4A66857060D2CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YDS-iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD151FA62641820200795D7C /* Sources */ = {
@@ -924,7 +843,6 @@
 		};
 		DD151FB32641820200795D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAB6ABABCFBED4568643704E /* Pods-YDS-iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -951,7 +869,6 @@
 		};
 		DD151FB42641820200795D7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83D4CE5D94099965012AAC5F /* Pods-YDS-iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -977,7 +894,6 @@
 		};
 		DDFBD00D26739A6B00C5F409 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 554368B105B7A0A286055A24 /* Pods-YDS-iOS-YDS-Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -997,7 +913,6 @@
 		};
 		DDFBD00E26739A6B00C5F409 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F225A28A7B2166F374ABC3C /* Pods-YDS-iOS-YDS-Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1048,6 +963,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
+		530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -1059,6 +990,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		530F6DBA26D2141500856758 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
+		530F6DBD26D2142100856758 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		5337938726AF08E000BE5860 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */;
