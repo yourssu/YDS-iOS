@@ -20,6 +20,8 @@ class StoryBookViewController: UIViewController {
         return view
     }()
     
+    let divider = YDSDivider(.horizontal)
+    
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = YDSColor.bgElevated
@@ -50,6 +52,7 @@ class StoryBookViewController: UIViewController {
     private func setViewHierarchy() {
         self.view.addSubview(sampleView)
         self.view.addSubview(scrollView)
+        sampleView.addSubview(divider)
         scrollView.addSubview(stackView)
     }
     
@@ -59,11 +62,17 @@ class StoryBookViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(Screen.width * 3/4)
         }
+        
+        divider.snp.makeConstraints {
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
+        
         scrollView.snp.makeConstraints {
             $0.top.equalTo(sampleView.snp.bottom)
             $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
         }
+        
         scrollView.contentLayoutGuide.snp.makeConstraints {
             $0.top.equalTo(sampleView.snp.bottom)
             $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)

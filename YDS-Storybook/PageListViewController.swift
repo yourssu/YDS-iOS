@@ -42,11 +42,11 @@ class PageListViewController: UIViewController {
         Page(title: "BoxButton", vc: BoxButtonPageViewController.self),
         Page(title: "PlainButton", vc: PlainButtonPageViewController.self),
         Page(title: "Checkbox", vc: CheckboxPageViewController.self),
-        Page(title: "SimpleTextField", vc: SimpleTextFieldSampleViewController.self),
-        Page(title: "SuffixTextField", vc: SuffixTextFieldSampleViewController.self),
-        Page(title: "PasswordTextField", vc: PasswordTextFieldSampleViewController.self),
-        Page(title: "SearchTextField", vc: SearchTextFieldSampleViewController.self),
-        Page(title: "SearchBar", vc: SearchBarSampleViewController.self),
+        Page(title: "SimpleTextFieldView", vc: SimpleTextFieldViewPageViewController.self),
+        Page(title: "SuffixTextFieldView", vc: SuffixTextFieldViewPageViewController.self),
+        Page(title: "PasswordTextFieldView", vc: PasswordTextFieldViewPageViewController.self),
+        Page(title: "SearchTextField", vc: SearchTextFieldPageViewController.self),
+        Page(title: "SearchBar", vc: SearchBarPageViewController.self),
     ]
     
     let componentPages: [Page] = [
@@ -71,6 +71,7 @@ class PageListViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = YDSColor.bgNormal
+        self.extendedLayoutIncludesOpaqueBars = true
         
         pageListTableView.dataSource = self
         pageListTableView.register(PageListTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
