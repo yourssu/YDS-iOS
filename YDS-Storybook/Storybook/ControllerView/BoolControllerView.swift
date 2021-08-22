@@ -10,7 +10,7 @@ import YDS
 
 final class BoolControllerView: ControllerView<Bool> {
 
-    private let toggle = Toggle()
+    private let toggle = YDSToggle()
 
     public override init() {
         super.init()
@@ -35,7 +35,7 @@ final class BoolControllerView: ControllerView<Bool> {
     }
     
     @objc
-    private func didToggleValueChanged(_ toggle: Toggle) {
+    private func didToggleValueChanged(_ toggle: YDSToggle) {
         observable.onNext(toggle.isOn)
     }
 

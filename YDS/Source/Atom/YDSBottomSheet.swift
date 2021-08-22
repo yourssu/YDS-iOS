@@ -1,5 +1,5 @@
 //
-//  BottomSheet.swift
+//  YDSBottomSheet.swift
 //  YDS-iOS
 //
 //  Created by 김윤서 on 2021/06/11.
@@ -9,7 +9,7 @@ import PanModal
 import UIKit
 import SnapKit
 
-public class BottomSheet: UIViewController{
+public class YDSBottomSheet: UIViewController {
     private let vStack: UIStackView = {
         let vStack = UIStackView()
         vStack.axis = .vertical
@@ -23,13 +23,13 @@ public class BottomSheet: UIViewController{
         setScrollView()
     }
     
-    public func addViews(views : [UIView]){
+    public func addViews(views : [UIView]) {
         views.forEach {
             vStack.addArrangedSubview($0)
         }
     }
     
-    private func setScrollView(){
+    private func setScrollView() {
         
         let contentView = UIView()
         
@@ -58,7 +58,7 @@ public class BottomSheet: UIViewController{
     }
 }
 
-extension BottomSheet : PanModalPresentable{
+extension YDSBottomSheet : PanModalPresentable {
     public var panScrollable: UIScrollView? {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = YDSColor.bgNormal
@@ -66,27 +66,27 @@ extension BottomSheet : PanModalPresentable{
         return scrollView
     }
     
-    public var transitionDuration: Double{
+    public var transitionDuration: Double {
         return Animation.Duration.medium
     }
     
-    public var transitionAnimationOptions: UIView.AnimationOptions{
+    public var transitionAnimationOptions: UIView.AnimationOptions {
         return Animation.Options.curveEaseInOut
     }
     
-    public var allowsDragToDismiss: Bool{
+    public var allowsDragToDismiss: Bool {
         return true
     }
     
-    public var showDragIndicator: Bool{
+    public var showDragIndicator: Bool {
         return false
     }
     
-    public var cornerRadius: CGFloat{
+    public var cornerRadius: CGFloat {
         return Constant.Rounding.r8
     }
     
-    public var panModalBackgroundColor: UIColor{
+    public var panModalBackgroundColor: UIColor {
         return YDSColor.dimNormal
     }
 
@@ -97,14 +97,14 @@ extension BottomSheet : PanModalPresentable{
         var contentHeight : CGFloat = 0.0
         let padding : CGFloat = 40.0
         
-        if stackHeight + padding < BottomSheetHeight.min{
+        if stackHeight + padding < BottomSheetHeight.min {
             contentHeight = BottomSheetHeight.min
         }
-        else if stackHeight > BottomSheetHeight.max{
+        else if stackHeight > BottomSheetHeight.max {
             contentHeight = BottomSheetHeight.max
             panScrollable?.isScrollEnabled = true
         }
-        else{
+        else {
             contentHeight = stackHeight + padding
         }
         
@@ -112,7 +112,7 @@ extension BottomSheet : PanModalPresentable{
     }
 }
 
-fileprivate enum BottomSheetHeight{
+fileprivate enum BottomSheetHeight {
     static let min : CGFloat = 88.0
     static let max : CGFloat = Screen.height - 88.0
 }

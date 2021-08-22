@@ -56,7 +56,7 @@ final class OptionalImageControllerView: PickerControllerView<UIImage?>, UIPicke
     }
     
     @objc
-    private func didToggleValueChanged(_ toggle: Toggle) {
+    private func didToggleValueChanged(_ toggle: YDSToggle) {
         textFieldView.isDisabled = !toggle.isOn
         
         if toggle.isOn {

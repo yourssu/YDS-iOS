@@ -59,7 +59,7 @@ final class OptionalStringControllerView: ControllerView<String?> {
     }
     
     @objc
-    private func didToggleValueChanged(_ toggle: Toggle) {
+    private func didToggleValueChanged(_ toggle: YDSToggle) {
         textFieldView.isDisabled = !toggle.isOn
         
         if toggle.isOn {
