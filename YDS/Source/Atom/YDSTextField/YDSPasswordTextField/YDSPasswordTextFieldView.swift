@@ -5,19 +5,17 @@
 //  Created by Gyuni on 2021/07/19.
 //
 
-//
-//  비밀번호 입력을 위해 masking을 지원하고
-//  입력 필드에 maskingButton이 붙은 TextField입니다.
-//
-
 import UIKit
 
+/**
+ 비밀번호 입력을 위해 masking을 지원하고
+ 입력 필드에 maskingButton이 붙은 TextField입니다.
+ */
 public class YDSPasswordTextFieldView: UIView {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
     
-    //  isDisabled: Bool
-    //  필드를 비활성화 시킬 때 사용합니다.
+    ///  필드를 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
         didSet {
             setState()
@@ -25,8 +23,7 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  isNegative: Bool
-    //  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
+    ///  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
     public var isNegative: Bool = false {
         didSet {
             setState()
@@ -34,8 +31,7 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
 
-    //  isPositive: Bool
-    //  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
+    ///  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
     public var isPositive: Bool = false {
         didSet {
             setState()
@@ -43,8 +39,7 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  isMasked: Bool
-    //  필드에 들어온 입력이 마스킹 되어있는지 여부를 나타낼 때 사용합니다.
+    ///  필드에 들어온 입력이 마스킹 되어있는지 여부를 나타낼 때 사용합니다.
     public var isMasked: Bool = false {
         didSet {
             setState()
@@ -52,8 +47,7 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  text: String?
-    //  필드에 입력된 텍스트입니다.
+    ///  필드에 입력된 텍스트입니다.
     public var text: String? {
         get {
             return textField.text
@@ -64,8 +58,7 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  placeholder: String?
-    //  필드에 나타나는 placeholder의 텍스트입니다.
+    ///  필드에 나타나는 placeholder의 텍스트입니다.
     public var placeholder: String? {
         get {
             return textField.placeholder
@@ -76,9 +69,8 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  fieldLabelText: String?
-    //  필드 위쪽에 나타나는 fieldLabel의 텍스트입니다.
-    //  nil이 들어오면 fieldLabel이 사라집니다.
+    ///  필드 위쪽에 나타나는 fieldLabel의 텍스트입니다.
+    ///  nil이 들어오면 fieldLabel이 사라집니다.
     public var fieldLabelText: String? {
         get {
             return fieldLabel.text
@@ -95,9 +87,8 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  helperLabelText: String?
-    //  필드 아래쪽에 나타나는 helperLabel의 텍스트입니다.
-    //  nil이 들어오면 helperLabel이 사라집니다.
+    ///  필드 아래쪽에 나타나는 helperLabel의 텍스트입니다.
+    ///  nil이 들어오면 helperLabel이 사라집니다.
     public var helperLabelText: String? {
         get {
             return helperLabel.text
@@ -117,8 +108,7 @@ public class YDSPasswordTextFieldView: UIView {
 
     //  MARK: - 뷰
     
-    //  stackView: UIStackView
-    //  fieldLabel, textField, helperLabel을 담는 stackView입니다.
+    ///  fieldLabel, textField, helperLabel을 담는 stackView입니다.
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -128,21 +118,18 @@ public class YDSPasswordTextFieldView: UIView {
         return stackView
     }()
     
-    //  fieldLabel: YDSLabel (UILabel)
-    //  필드 위쪽에 나타나는 fieldlabel입니다.
+    ///  필드 위쪽에 나타나는 fieldlabel입니다.
     private let fieldLabel = YDSLabel(style: .subtitle3)
     
-    //  textField: YDSPasswordTextField (UITextField)
-    //  필드 중앙의 실제 입력 필드입니다.
-    //  public으로 열려있으니 delegate를 등록하거나 addTarget, endEditing 등의 메소드를 호출할 때
-    //  passwordTextField.delegate 대신 passwordTextField.textField.delegate 로 접근해주세요.
+    ///  필드 중앙의 실제 입력 필드입니다.
+    ///  public으로 열려있으니 delegate를 등록하거나 addTarget, endEditing 등의 메소드를 호출할 때
+    ///  passwordTextField.delegate 대신 passwordTextField.textField.delegate 로 접근해주세요.
     public let textField: YDSPasswordTextField = {
         let textField = YDSPasswordTextField()
         return textField
     }()
     
-    //  helperLabel: YDSLabel (UILabel)
-    //  필드 아래쪽에 나타나는 helperLabel입니다.
+    ///  필드 아래쪽에 나타나는 helperLabel입니다.
     private let helperLabel = YDSLabel(style: .caption1)
     
     
@@ -160,8 +147,7 @@ public class YDSPasswordTextFieldView: UIView {
     }
     
     
-    //  setStackView()
-    //  stackView 내부를 세팅합니다.
+    ///  stackView 내부를 세팅합니다.
     private func setStackView() {
         self.addSubview(stackView)
         stackView.snp.makeConstraints {
@@ -183,9 +169,8 @@ public class YDSPasswordTextFieldView: UIView {
         }
     }
     
-    //  setState()
-    //  필드의 상태를 세팅합니다.
-    //  우선순위는 isDisabled > isNegative > isPositive 입니다.
+    ///  필드의 상태를 세팅합니다.
+    ///  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setState() {
         if self.isDisabled {
             fieldLabel.textColor = YDSColor.textDisabled

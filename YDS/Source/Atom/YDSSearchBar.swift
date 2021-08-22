@@ -5,18 +5,16 @@
 //  Created by Gyuni on 2021/07/20.
 //
 
-//
-//  검색을 위한 TextField를 포함하고 있는 SearchBar입니다.
-//
-
 import UIKit
 
+/**
+ 검색을 위한 TextField를 포함하고 있는 SearchBar입니다.
+ */
 public class YDSSearchBar: UISearchBar {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
     
-    //  isDisabled: Bool
-    //  필드를 비활성화 시킬 때 사용합니다.
+    ///  필드를 비활성화 시킬 때 사용합니다.
     public var isDisabled: Bool = false {
         didSet {
             setState()
@@ -24,9 +22,8 @@ public class YDSSearchBar: UISearchBar {
         }
     }
     
-    //  placeholder: String?
-    //  새 값이 들어오면 setPlaceholderTextColor를 이용해
-    //  적절한 값을 가진 attributedPlaceholder로 변환합니다.
+    ///  새 값이 들어오면 setPlaceholderTextColor를 이용해
+    ///  적절한 값을 가진 attributedPlaceholder로 변환합니다.
     public override var placeholder: String? {
         didSet { setPlaceholderTextColor() }
     }
@@ -34,36 +31,28 @@ public class YDSSearchBar: UISearchBar {
     
     //  MARK: - 내부에서 사용되는 상수
     
-    //  outsideLeftMargin: CGFloat
-    //  필드 외부 좌측 마진값입니다.
+    ///  필드 외부 좌측 마진값입니다.
     private static let outsideLeftMargin: CGFloat = 16
     
-    //  outsideRightMargin: CGFloat
-    //  필드 외부 우측 마진값입니다.
+    ///  필드 외부 우측 마진값입니다.
     private static let outsideRightMargin: CGFloat = 16
     
-    //  leftMargin: CGFloat
-    //  필드 내부 좌측 마진값입니다.
+    ///  필드 내부 좌측 마진값입니다.
     private static let leftMargin: CGFloat = 16
     
-    //  rightMargin: CGFloat
-    //  필드 내부 우측 마진값입니다.
+    ///  필드 내부 우측 마진값입니다.
     private static let rightMargin: CGFloat = 16
     
-    //  searchBarHeight: CGFloat
-    //  서치바 전체 높이입니다.
+    ///  서치바 전체 높이입니다.
     private static let searchBarHeight: CGFloat = 44
     
-    //  searchIconSize: CGFloat
-    //  searchIcon의 사이즈입니다.
+    ///  searchIcon의 사이즈입니다.
     private static let searchIconSize: CGFloat = 16
     
-    //  searchIconDefaultLeftMargin: CGFloat
-    //  아무 설정을 하지 않았을 때 기본으로 주어지는 searchIcon의 우측 마진 값입니다.
+    ///  아무 설정을 하지 않았을 때 기본으로 주어지는 searchIcon의 우측 마진 값입니다.
     private static let searchIconDefaultLeftMargin: CGFloat = 6
     
-    //  clearButtonDefaultRightMargin: CGFloat
-    //  아무 설정을 하지 않았을 때 기본으로 주어지는 clearButton의 우측 마진 값입니다.
+    ///  아무 설정을 하지 않았을 때 기본으로 주어지는 clearButton의 우측 마진 값입니다.
     private static let clearButtonDefaultRightMargin: CGFloat = 6
     
     
@@ -77,8 +66,7 @@ public class YDSSearchBar: UISearchBar {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //  setupView()
-    //  view를 세팅합니다.
+    ///  view를 세팅합니다.
     private func setupView() {
         self.backgroundImage = UIImage()
         self.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0,
@@ -105,9 +93,8 @@ public class YDSSearchBar: UISearchBar {
         setState()
     }
     
-    //  setState()
-    //  필드의 상태를 세팅합니다.
-    //  우선순위는 isDisabled > isNegative > isPositive 입니다.
+    ///  필드의 상태를 세팅합니다.
+    ///  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setState() {
         if isDisabled {
             searchTextField.isEnabled = false
@@ -121,8 +108,7 @@ public class YDSSearchBar: UISearchBar {
         searchTextField.leftView?.tintColor = YDSColor.textSecondary
     }
 
-    //  setPlaceholderTextColor()
-    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
+    ///  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
     private func setPlaceholderTextColor() {
         let placeholderTextColor: UIColor
         

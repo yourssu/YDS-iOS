@@ -7,13 +7,13 @@
 
 import UIKit
 
-internal enum Animation{
-    internal enum Duration{
+internal enum Animation {
+    internal enum Duration {
         internal static let short = 0.01
         internal static let medium = 0.25
     }
     
-    internal enum Options{
+    internal enum Options {
         internal static let curveEaseInOut = UIView.AnimationOptions.curveEaseInOut
     }
 }
