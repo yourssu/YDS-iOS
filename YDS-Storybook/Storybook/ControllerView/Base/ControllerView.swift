@@ -59,8 +59,8 @@ class ControllerView<T>: UIView {
         return label
     }()
     
-    public let optionalToggle: Toggle = {
-        let toggle = Toggle()
+    public let optionalToggle: YDSToggle = {
+        let toggle = YDSToggle()
         toggle.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return toggle
     }()
