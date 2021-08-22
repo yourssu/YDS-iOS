@@ -1,0 +1,1016 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		530F6DBB26D2141500856758 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBA26D2141500856758 /* PanModal */; };
+		530F6DBE26D2142100856758 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBD26D2142100856758 /* SnapKit */; };
+		5337938826AF08E000BE5860 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938726AF08E000BE5860 /* RxSwift */; };
+		5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938926AF08E000BE5860 /* RxCocoa */; };
+		5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */; };
+		5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938D26AF09BF00BE5860 /* ControllerView.swift */; };
+		5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */; };
+		5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */; };
+		533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSSimpleTextField.swift */; };
+		533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */; };
+		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
+		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
+		533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */; };
+		533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A353E26AEA05E00CCEEAE /* YDSTextField.swift */; };
+		53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A278926A42E72009FD90A /* YDSTypoStyle.swift */; };
+		53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C6383264286FB004CFF46 /* YDSFont.swift */; };
+		53441AFC26AF14CC00CB6BC9 /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A31B5D266F500300461C29 /* Toggle.swift */; };
+		53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */; };
+		53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441AFF26AF233800CB6BC9 /* PickerControllerView.swift */; };
+		53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B0126AF248900CB6BC9 /* EnumControllerView.swift */; };
+		53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B0326AF287600CB6BC9 /* BoolControllerView.swift */; };
+		53443D8A26A5A4770037B02E /* YDSPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */; };
+		53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */; };
+		53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */; };
+		53443D9026A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */; };
+		53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */; };
+		53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */; };
+		53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */; };
+		53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */; };
+		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
+		5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */; };
+		5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */; };
+		5359A5C326BECF7400FCCECC /* YDSDoubleTitleTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */; };
+		5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */; };
+		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
+		5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextField.swift */; };
+		5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */; };
+		5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */; };
+		537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537A0ACD26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift */; };
+		537A0AD026C4189700142DCE /* SingleTitleTopBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537A0ACF26C4189700142DCE /* SingleTitleTopBarSampleViewController.swift */; };
+		537A0AD326C51DB000142DCE /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
+		537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FFAA326C3E5C200270C22 /* TopBarPageViewController.swift */; };
+		537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FFAA526C3E6F800270C22 /* TopBarSampleViewController.swift */; };
+		53887E9C26B54834006E40F6 /* YDSPlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53887E9B26B54834006E40F6 /* YDSPlainButton.swift */; };
+		539110B226C048020094FD08 /* YDSSingleTitleTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B126C048020094FD08 /* YDSSingleTitleTopBar.swift */; };
+		539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */; };
+		539110B626C052670094FD08 /* YDSTopBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B526C052670094FD08 /* YDSTopBarButton.swift */; };
+		539110B826C1484A0094FD08 /* YDSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B726C1484A0094FD08 /* YDSNavigationController.swift */; };
+		539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */; };
+		539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BE26C3743D0094FD08 /* YDSTopBar.swift */; };
+		5394692E2663D6DB003D7A44 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* Constant.swift */; };
+		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
+		53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */; };
+		53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
+		53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
+		53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */; };
+		53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */; };
+		53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */; };
+		53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */; };
+		53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */; };
+		53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */; };
+		53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */; };
+		53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB943826A1E33A00208496 /* YDSDivider.swift */; };
+		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
+		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
+		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
+		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
+		DD151FAF2641820200795D7C /* YDS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* BottomSheet.swift */; };
+		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
+		DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */; };
+		DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13726786BD100EDD2B4 /* Animation.swift */; };
+		DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */; };
+		DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */; };
+		DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */; };
+		DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */; };
+		DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00426739A6900C5F409 /* Main.storyboard */; };
+		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
+		DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */; };
+		DDFBD01C26739BEB00C5F409 /* YDS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; };
+		DDFBD01D26739BEB00C5F409 /* YDS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDFBD01E26739BEB00C5F409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD151FA12641820200795D7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD151FA92641820200795D7C;
+			remoteInfo = "YDS-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DDFBD02026739BEB00C5F409 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDFBD01D26739BEB00C5F409 /* YDS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageViewController.swift; sourceTree = "<group>"; };
+		5337938D26AF09BF00BE5860 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
+		5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringControllerView.swift; sourceTree = "<group>"; };
+		5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonPageViewController.swift; sourceTree = "<group>"; };
+		533A278926A42E72009FD90A /* YDSTypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
+		533A279C26A48683009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
+		533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldView.swift; sourceTree = "<group>"; };
+		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
+		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
+		533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextFieldView.swift; sourceTree = "<group>"; };
+		533A353E26AEA05E00CCEEAE /* YDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextField.swift; sourceTree = "<group>"; };
+		53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageControllerView.swift; sourceTree = "<group>"; };
+		53441AFF26AF233800CB6BC9 /* PickerControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerControllerView.swift; path = "YDS-Storybook/Storybook/ControllerView/Base/PickerControllerView.swift"; sourceTree = SOURCE_ROOT; };
+		53441B0126AF248900CB6BC9 /* EnumControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumControllerView.swift; sourceTree = "<group>"; };
+		53441B0326AF287600CB6BC9 /* BoolControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolControllerView.swift; sourceTree = "<group>"; };
+		53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextField.swift; sourceTree = "<group>"; };
+		53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPasswordTextFieldView.swift; sourceTree = "<group>"; };
+		53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldSampleViewController.swift; sourceTree = "<group>"; };
+		53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldSampleViewController.swift; sourceTree = "<group>"; };
+		53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchTextField.swift; sourceTree = "<group>"; };
+		53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchBar.swift; sourceTree = "<group>"; };
+		53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarSampleViewController.swift; sourceTree = "<group>"; };
+		53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
+		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
+		5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBottomBarController.swift; sourceTree = "<group>"; };
+		5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarControllerPageViewController.swift; sourceTree = "<group>"; };
+		5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDoubleTitleTopBar.swift; sourceTree = "<group>"; };
+		5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTitleTopBarPageViewController.swift; sourceTree = "<group>"; };
+		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
+		5370918126A5463C007CD775 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
+		5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldView.swift; sourceTree = "<group>"; };
+		5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixTextFieldSampleViewController.swift; sourceTree = "<group>"; };
+		537A0ACD26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTitleTopBarSampleViewController.swift; sourceTree = "<group>"; };
+		537A0ACF26C4189700142DCE /* SingleTitleTopBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTitleTopBarSampleViewController.swift; sourceTree = "<group>"; };
+		537FFAA326C3E5C200270C22 /* TopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarPageViewController.swift; sourceTree = "<group>"; };
+		537FFAA526C3E6F800270C22 /* TopBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarSampleViewController.swift; sourceTree = "<group>"; };
+		53887E9B26B54834006E40F6 /* YDSPlainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPlainButton.swift; sourceTree = "<group>"; };
+		539110B126C048020094FD08 /* YDSSingleTitleTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSingleTitleTopBar.swift; sourceTree = "<group>"; };
+		539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTitleTopBarPageViewController.swift; sourceTree = "<group>"; };
+		539110B526C052670094FD08 /* YDSTopBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBarButton.swift; sourceTree = "<group>"; };
+		539110B726C1484A0094FD08 /* YDSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSNavigationController.swift; sourceTree = "<group>"; };
+		539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		539110BE26C3743D0094FD08 /* YDSTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBar.swift; sourceTree = "<group>"; };
+		5394692D2663D6DB003D7A44 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		53A31B5D266F500300461C29 /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
+		53ADEA2226A1794800153636 /* YDSBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBundle.swift; sourceTree = "<group>"; };
+		53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPageViewController.swift; sourceTree = "<group>"; };
+		53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainButtonPageViewController.swift; sourceTree = "<group>"; };
+		53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSButtonProtocol.swift; sourceTree = "<group>"; };
+		53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconArray.swift; sourceTree = "<group>"; };
+		53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBadge.swift; sourceTree = "<group>"; };
+		53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSItemColor.swift; sourceTree = "<group>"; };
+		53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePageViewController.swift; sourceTree = "<group>"; };
+		53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSProfileImageView.swift; sourceTree = "<group>"; };
+		53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewPageViewController.swift; sourceTree = "<group>"; };
+		53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckbox.swift; sourceTree = "<group>"; };
+		53EB943826A1E33A00208496 /* YDSDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDivider.swift; sourceTree = "<group>"; };
+		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
+		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
+		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
+		DD151FAA2641820200795D7C /* YDS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD151FAD2641820200795D7C /* YDS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS.h; sourceTree = "<group>"; };
+		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD48C1EB26735052004B288E /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		DD6C6383264286FB004CFF46 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
+		DD6C63D526429C6C004CFF46 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
+		DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		DD8DF13726786BD100EDD2B4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBasicColor.swift; sourceTree = "<group>"; };
+		DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSemanticColor.swift; sourceTree = "<group>"; };
+		DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldSampleViewController.swift; sourceTree = "<group>"; };
+		DDFBD00526739A6900C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDFBD00A26739A6B00C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDFBD00C26739A6B00C5F409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFBD02526739C3600C5F409 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFBD02926739C3C00C5F409 /* PanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD151FA72641820200795D7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				530F6DBB26D2141500856758 /* PanModal in Frameworks */,
+				530F6DBE26D2142100856758 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFBCFF926739A6900C5F409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5337938826AF08E000BE5860 /* RxSwift in Frameworks */,
+				DDFBD01C26739BEB00C5F409 /* YDS.framework in Frameworks */,
+				5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		253AF81C549745374AD2F563 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDFBD02926739C3C00C5F409 /* PanModal.framework */,
+				DDFBD02526739C3600C5F409 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4999C890266CC38800CD5248 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				53ADEA2226A1794800153636 /* YDSBundle.swift */,
+				5394692C2663D6C7003D7A44 /* Rule */,
+				DD6C63E32642A602004CFF46 /* Foundation */,
+				DD6C63D426429C5B004CFF46 /* Atom */,
+				53EFF5CC26BA9A7B00732DCF /* Component */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		533A27B526A52EC0009FD90A /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DDFBD00426739A6900C5F409 /* Main.storyboard */,
+				DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		53441AF926AF0ECC00CB6BC9 /* Storybook */ = {
+			isa = PBXGroup;
+			children = (
+				5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */,
+				53441B0526AF2AD100CB6BC9 /* ControllerView */,
+			);
+			path = Storybook;
+			sourceTree = "<group>";
+		};
+		53441B0526AF2AD100CB6BC9 /* ControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				53441B0626AF2B4800CB6BC9 /* Base */,
+				53441B0326AF287600CB6BC9 /* BoolControllerView.swift */,
+				53441B0126AF248900CB6BC9 /* EnumControllerView.swift */,
+				5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */,
+				53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */,
+			);
+			path = ControllerView;
+			sourceTree = "<group>";
+		};
+		53441B0626AF2B4800CB6BC9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5337938D26AF09BF00BE5860 /* ControllerView.swift */,
+				53441AFF26AF233800CB6BC9 /* PickerControllerView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		53443D9826A7D3050037B02E /* YDSSimpleTextField */ = {
+			isa = PBXGroup;
+			children = (
+				533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */,
+				533A279C26A48683009FD90A /* YDSSimpleTextField.swift */,
+			);
+			path = YDSSimpleTextField;
+			sourceTree = "<group>";
+		};
+		53443D9926A7D3130037B02E /* YDSSuffixTextField */ = {
+			isa = PBXGroup;
+			children = (
+				5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */,
+				5370918126A5463C007CD775 /* YDSSuffixTextField.swift */,
+			);
+			path = YDSSuffixTextField;
+			sourceTree = "<group>";
+		};
+		53443D9A26A7D31D0037B02E /* YDSPasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				53443D8B26A5A4850037B02E /* YDSPasswordTextFieldView.swift */,
+				53443D8926A5A4770037B02E /* YDSPasswordTextField.swift */,
+			);
+			path = YDSPasswordTextField;
+			sourceTree = "<group>";
+		};
+		53443D9B26A7D32B0037B02E /* YDSTextField */ = {
+			isa = PBXGroup;
+			children = (
+				533A353E26AEA05E00CCEEAE /* YDSTextField.swift */,
+				53443D9826A7D3050037B02E /* YDSSimpleTextField */,
+				53443D9926A7D3130037B02E /* YDSSuffixTextField */,
+				53443D9A26A7D31D0037B02E /* YDSPasswordTextField */,
+				53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */,
+				533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */,
+			);
+			path = YDSTextField;
+			sourceTree = "<group>";
+		};
+		53443D9C26A7D3CC0037B02E /* AtomSampleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */,
+				53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */,
+				DDFBD00226739A6900C5F409 /* SimpleTextFieldSampleViewController.swift */,
+				5370918526A546DF007CD775 /* SuffixTextFieldSampleViewController.swift */,
+				53443D8D26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift */,
+				53443D8F26A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift */,
+				53443D9626A7000D0037B02E /* SearchBarSampleViewController.swift */,
+				5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */,
+				53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */,
+				53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */,
+			);
+			path = AtomSampleViewController;
+			sourceTree = "<group>";
+		};
+		537A0AD126C4189D00142DCE /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				537FFAA326C3E5C200270C22 /* TopBarPageViewController.swift */,
+				537FFAA526C3E6F800270C22 /* TopBarSampleViewController.swift */,
+				539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */,
+				537A0ACF26C4189700142DCE /* SingleTitleTopBarSampleViewController.swift */,
+				5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */,
+				537A0ACD26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		539110BD26C373D20094FD08 /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				539110B726C1484A0094FD08 /* YDSNavigationController.swift */,
+				539110BE26C3743D0094FD08 /* YDSTopBar.swift */,
+				539110B126C048020094FD08 /* YDSSingleTitleTopBar.swift */,
+				5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */,
+				539110B526C052670094FD08 /* YDSTopBarButton.swift */,
+				539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		5394692C2663D6C7003D7A44 /* Rule */ = {
+			isa = PBXGroup;
+			children = (
+				5394692D2663D6DB003D7A44 /* Constant.swift */,
+				DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */,
+				DD8DF13726786BD100EDD2B4 /* Animation.swift */,
+			);
+			path = Rule;
+			sourceTree = "<group>";
+		};
+		53C9F6FA26B5563C00EF7B86 /* YDSButton */ = {
+			isa = PBXGroup;
+			children = (
+				53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */,
+				53887E9B26B54834006E40F6 /* YDSPlainButton.swift */,
+				53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */,
+			);
+			path = YDSButton;
+			sourceTree = "<group>";
+		};
+		53EFF5CC26BA9A7B00732DCF /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				53EFF5CD26BA9CD400732DCF /* YDSToast.swift */,
+				5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */,
+				539110BD26C373D20094FD08 /* TopBar */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		53EFF5D026BBC22F00732DCF /* ComponentSampleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
+				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
+				537A0AD126C4189D00142DCE /* TopBar */,
+			);
+			path = ComponentSampleViewController;
+			sourceTree = "<group>";
+		};
+		DD151FA02641820200795D7C = {
+			isa = PBXGroup;
+			children = (
+				DD151FAC2641820200795D7C /* YDS */,
+				DDFBCFFD26739A6900C5F409 /* YDS-Storybook */,
+				DD151FAB2641820200795D7C /* Products */,
+				253AF81C549745374AD2F563 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DD151FAB2641820200795D7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD151FAA2641820200795D7C /* YDS.framework */,
+				DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD151FAC2641820200795D7C /* YDS */ = {
+			isa = PBXGroup;
+			children = (
+				4999C890266CC38800CD5248 /* Source */,
+				DD151FAD2641820200795D7C /* YDS.h */,
+				DD151FAE2641820200795D7C /* Info.plist */,
+			);
+			path = YDS;
+			sourceTree = "<group>";
+		};
+		DD6C63D426429C5B004CFF46 /* Atom */ = {
+			isa = PBXGroup;
+			children = (
+				DD6C63D526429C6C004CFF46 /* YDSLabel.swift */,
+				53A31B5D266F500300461C29 /* Toggle.swift */,
+				DD48C1EB26735052004B288E /* BottomSheet.swift */,
+				53EB943826A1E33A00208496 /* YDSDivider.swift */,
+				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
+				53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */,
+				53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */,
+				53C9F6FA26B5563C00EF7B86 /* YDSButton */,
+				53443D9B26A7D32B0037B02E /* YDSTextField */,
+				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
+				53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */,
+			);
+			path = Atom;
+			sourceTree = "<group>";
+		};
+		DD6C63E32642A602004CFF46 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				DD6C6383264286FB004CFF46 /* YDSFont.swift */,
+				533A278926A42E72009FD90A /* YDSTypoStyle.swift */,
+				DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */,
+				DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */,
+				53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */,
+				53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */,
+				536FCA4F267CD25300158DFD /* YDSIcon.xcassets */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		DDFBCFFD26739A6900C5F409 /* YDS-Storybook */ = {
+			isa = PBXGroup;
+			children = (
+				533A27B526A52EC0009FD90A /* storyboard */,
+				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
+				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
+				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
+				DDFBD00C26739A6B00C5F409 /* Info.plist */,
+				533A27B226A52E56009FD90A /* PageListViewController.swift */,
+				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
+				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
+				53EFF5D026BBC22F00732DCF /* ComponentSampleViewController */,
+				53441AF926AF0ECC00CB6BC9 /* Storybook */,
+			);
+			path = "YDS-Storybook";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DD151FA52641820200795D7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD151FAF2641820200795D7C /* YDS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DD151FA92641820200795D7C /* YDS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD151FB22641820200795D7C /* Build configuration list for PBXNativeTarget "YDS" */;
+			buildPhases = (
+				DD151FA52641820200795D7C /* Headers */,
+				DD151FA62641820200795D7C /* Sources */,
+				DD151FA72641820200795D7C /* Frameworks */,
+				DD151FA82641820200795D7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YDS;
+			packageProductDependencies = (
+				530F6DBA26D2141500856758 /* PanModal */,
+				530F6DBD26D2142100856758 /* SnapKit */,
+			);
+			productName = "YDS-iOS";
+			productReference = DD151FAA2641820200795D7C /* YDS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DDFBCFFB26739A6900C5F409 /* YDS-Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Sample" */;
+			buildPhases = (
+				DDFBCFF826739A6900C5F409 /* Sources */,
+				DDFBCFF926739A6900C5F409 /* Frameworks */,
+				DDFBCFFA26739A6900C5F409 /* Resources */,
+				DDFBD02026739BEB00C5F409 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDFBD01F26739BEB00C5F409 /* PBXTargetDependency */,
+			);
+			name = "YDS-Sample";
+			packageProductDependencies = (
+				5337938726AF08E000BE5860 /* RxSwift */,
+				5337938926AF08E000BE5860 /* RxCocoa */,
+			);
+			productName = "YDS-Sample";
+			productReference = DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD151FA12641820200795D7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					DD151FA92641820200795D7C = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
+					DDFBCFFB26739A6900C5F409 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = DD151FA42641820200795D7C /* Build configuration list for PBXProject "YDS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD151FA02641820200795D7C;
+			packageReferences = (
+				5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */,
+				530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = DD151FAB2641820200795D7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD151FA92641820200795D7C /* YDS */,
+				DDFBCFFB26739A6900C5F409 /* YDS-Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD151FA82641820200795D7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFBCFFA26739A6900C5F409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */,
+				DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */,
+				DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD151FA62641820200795D7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537A0AD326C51DB000142DCE /* YDSButtonProtocol.swift in Sources */,
+				53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */,
+				539110B826C1484A0094FD08 /* YDSNavigationController.swift in Sources */,
+				53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */,
+				53441AFC26AF14CC00CB6BC9 /* Toggle.swift in Sources */,
+				53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */,
+				53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */,
+				53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */,
+				53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */,
+				53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */,
+				5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */,
+				DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */,
+				DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */,
+				DD48C1EC26735052004B288E /* BottomSheet.swift in Sources */,
+				5394692E2663D6DB003D7A44 /* Constant.swift in Sources */,
+				53443D8A26A5A4770037B02E /* YDSPasswordTextField.swift in Sources */,
+				53EB943926A1E33A00208496 /* YDSDivider.swift in Sources */,
+				53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */,
+				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
+				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
+				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
+				5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */,
+				53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */,
+				53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */,
+				539110B626C052670094FD08 /* YDSTopBarButton.swift in Sources */,
+				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
+				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,
+				533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */,
+				53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */,
+				539110B226C048020094FD08 /* YDSSingleTitleTopBar.swift in Sources */,
+				53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */,
+				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,
+				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
+				53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */,
+				539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */,
+				DD8DF13826786BD100EDD2B4 /* Animation.swift in Sources */,
+				533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */,
+				5359A5C326BECF7400FCCECC /* YDSDoubleTitleTopBar.swift in Sources */,
+				539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */,
+				DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */,
+				53887E9C26B54834006E40F6 /* YDSPlainButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFBCFF826739A6900C5F409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
+				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
+				5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */,
+				53443D9726A7000D0037B02E /* SearchBarSampleViewController.swift in Sources */,
+				5370918626A546DF007CD775 /* SuffixTextFieldSampleViewController.swift in Sources */,
+				DDFBD00326739A6900C5F409 /* SimpleTextFieldSampleViewController.swift in Sources */,
+				537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */,
+				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
+				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
+				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
+				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
+				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
+				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
+				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
+				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
+				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
+				537A0AD026C4189700142DCE /* SingleTitleTopBarSampleViewController.swift in Sources */,
+				53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */,
+				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
+				53443D9026A5CC7E0037B02E /* SearchTextFieldSampleViewController.swift in Sources */,
+				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
+				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
+				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
+				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
+				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
+				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
+				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
+				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
+				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
+				53443D8E26A5A8C40037B02E /* PasswordTextFieldSampleViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDFBD01F26739BEB00C5F409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD151FA92641820200795D7C /* YDS */;
+			targetProxy = DDFBD01E26739BEB00C5F409 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDFBD00426739A6900C5F409 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFBD00526739A6900C5F409 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFBD00A26739A6B00C5F409 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD151FB02641820200795D7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DD151FB12641820200795D7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD151FB32641820200795D7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 86886QH957;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = YDS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourssu.YDS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD151FB42641820200795D7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 86886QH957;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = YDS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourssu.YDS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDFBD00D26739A6B00C5F409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N3PMJ78CA;
+				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDFBD00E26739A6B00C5F409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N3PMJ78CA;
+				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD151FA42641820200795D7C /* Build configuration list for PBXProject "YDS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD151FB02641820200795D7C /* Debug */,
+				DD151FB12641820200795D7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD151FB22641820200795D7C /* Build configuration list for PBXNativeTarget "YDS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD151FB32641820200795D7C /* Debug */,
+				DD151FB42641820200795D7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFBD00D26739A6B00C5F409 /* Debug */,
+				DDFBD00E26739A6B00C5F409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
+		530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		530F6DBA26D2141500856758 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
+		530F6DBD26D2142100856758 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		5337938726AF08E000BE5860 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5337938926AF08E000BE5860 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DD151FA12641820200795D7C /* Project object */;
+}
