@@ -9,9 +9,7 @@ import UIKit
 
 public class YDSLabel: UILabel {
     public var style : String.TypoStyle {
-        didSet {
-            setAttributedText()
-        }
+        didSet { setAttributedText() }
     }
     
     public init(style: String.TypoStyle) {
@@ -24,15 +22,11 @@ public class YDSLabel: UILabel {
     }
     
     public override var text: String? {
-        didSet {
-            setAttributedText()
-        }
+        didSet { setAttributedText() }
     }
 
     public override var textColor: UIColor! {
-        didSet {
-            setAttributedText()
-        }
+        didSet { setAttributedText() }
     }
     
     private func setAttributedText() {

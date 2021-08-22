@@ -49,9 +49,7 @@ public class YDSPasswordTextField: UITextField {
     
     ///  maskingButton의 너비입니다.
     private var maskingButtonWidth: CGFloat {
-        get {
-            return rightViewRect(forBounds: bounds).width
-        }
+        get { return rightViewRect(forBounds: bounds).width }
     }
     
     ///  masking 상태가 on임을 나타내는 아이콘입니다.

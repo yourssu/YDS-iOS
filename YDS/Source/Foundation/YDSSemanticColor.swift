@@ -13,7 +13,7 @@ public enum YDSColor {
                return UIColor { $0.userInterfaceStyle == .dark ? dark : light }
            }
            return light
-       }else {
+       } else {
            return light
        }
     }

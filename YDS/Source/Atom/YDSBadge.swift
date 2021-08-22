@@ -13,23 +13,17 @@ public class YDSBadge: UIView {
     
     ///  뱃지의 글귀를 설정할 때 사용합니다.
     public var text: String? = nil {
-        didSet {
-            setText()
-        }
+        didSet { setText() }
     }
     
     ///  뱃지에 들어갈 아이콘 이미지를 설정할 때 사용합니다.
     public var icon: UIImage? = nil {
-        didSet {
-            setIcon()
-        }
+        didSet { setIcon() }
     }
     
     ///  뱃지의 색상을 설정할 때 사용합니다.
     public var color: YDSItemColor = .mono {
-        didSet {
-            setColor()
-        }
+        didSet { setColor() }
     }
     
     //  MARK: - 내부에서 사용되는 상수

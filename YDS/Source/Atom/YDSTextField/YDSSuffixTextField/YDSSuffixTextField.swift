@@ -41,14 +41,11 @@ public class YDSSuffixTextField: UITextField {
     
     ///  필드 우측에 나타나는 suffixLabel의 텍스트입니다.
     internal var suffixLabelText: String? {
-        get {
-            return suffixLabel.text
-        }
-        
-        set(inputValue) {
-            suffixLabel.text = inputValue
+        get { return suffixLabel.text }
+        set {
+            suffixLabel.text = newValue
             
-            if inputValue == nil {
+            if newValue == nil {
                 suffixLabel.isHidden = true
             } else {
                 suffixLabel.isHidden = false
@@ -61,9 +58,7 @@ public class YDSSuffixTextField: UITextField {
     
     ///  suffixLabel의 너비입니다.
     private var suffixLabelWidth: CGFloat {
-        get {
-            return rightViewRect(forBounds: bounds).width
-        }
+        get { return rightViewRect(forBounds: bounds).width }
     }
     
     

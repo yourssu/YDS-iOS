@@ -22,12 +22,8 @@ public class YDSToast: UIView {
      Toast에 나타나는 글자의 String 값입니다.
      */
     private var text: String? {
-        get {
-            return label.text
-        }
-        set (inputValue) {
-            label.text = inputValue
-        }
+        get { return label.text }
+        set { label.text = newValue }
     }
     
     /**

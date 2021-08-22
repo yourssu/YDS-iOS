@@ -23,12 +23,8 @@ public class YDSSingleTitleTopBar: YDSTopBar {
      굵은 Title의 String입니다.
      */
     public var title: String? {
-        get {
-            return self.titleLabel.text
-        }
-        set(inputValue) {
-            self.titleLabel.text = inputValue
-        }
+        get { return self.titleLabel.text }
+        set { self.titleLabel.text = newValue }
     }
     
     

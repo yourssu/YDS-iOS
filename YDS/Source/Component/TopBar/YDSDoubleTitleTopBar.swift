@@ -22,12 +22,8 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
      굵은 Title의 String입니다.
      */
     public var title: String? {
-        get {
-            return self.titleLabel.text
-        }
-        set(inputValue) {
-            self.titleLabel.text = inputValue
-        }
+        get { return self.titleLabel.text }
+        set { self.titleLabel.text = newValue }
     }
     
     /**
@@ -35,12 +31,8 @@ public class YDSDoubleTitleTopBar: YDSTopBar {
      얇은 Title의 String입니다.
      */
     public var subtitle: String? {
-        get {
-            return self.subtitleLabel.text
-        }
-        set(inputValue) {
-            self.subtitleLabel.text = inputValue
-        }
+        get { return self.subtitleLabel.text }
+        set { self.subtitleLabel.text = newValue }
     }
     
     

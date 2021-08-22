@@ -65,7 +65,7 @@ class BadgePageViewController: StoryBookViewController {
         
         addOption(description: "color",
                   cases: YDSItemColor.allCases,
-                  defaultIndex: 3) { [weak self] value in
+                  defaultIndex: 6) { [weak self] value in
             self?.sampleBadge.color = value
         }
         

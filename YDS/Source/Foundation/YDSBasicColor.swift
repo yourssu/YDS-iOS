@@ -7,7 +7,7 @@
 
 import UIKit
 
-fileprivate extension UIColor{
+fileprivate extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
