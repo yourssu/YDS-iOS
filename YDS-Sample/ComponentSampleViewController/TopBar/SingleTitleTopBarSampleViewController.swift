@@ -86,9 +86,9 @@ class SingleTitleTopBarSampleViewController: UIViewController {
         case dismissButton:
             self.dismiss(animated: true, completion: nil)
         case searchButton:
-            YDSToast.makeToast(text: "Search button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "Search button pressed", duration: .short)
         case writeButton:
-            YDSToast.makeToast(text: "Write button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "Write button pressed", duration: .short)
         default:
             return
         }

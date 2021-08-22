@@ -37,8 +37,6 @@
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */; };
 		5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */; };
-		5359A5C326BECF7400FCCECC /* YDSDoubleLineTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C226BECF7400FCCECC /* YDSDoubleLineTopBar.swift */; };
-		5359A5C526BED19900FCCECC /* DoubleLineTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C426BED19900FCCECC /* DoubleLineTopBarPageViewController.swift */; };
 		5359A5C326BECF7400FCCECC /* YDSDoubleTitleTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */; };
 		5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
@@ -145,8 +143,6 @@
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBottomBarController.swift; sourceTree = "<group>"; };
 		5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarControllerPageViewController.swift; sourceTree = "<group>"; };
-		5359A5C226BECF7400FCCECC /* YDSDoubleLineTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDoubleLineTopBar.swift; sourceTree = "<group>"; };
-		5359A5C426BED19900FCCECC /* DoubleLineTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleLineTopBarPageViewController.swift; sourceTree = "<group>"; };
 		5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDoubleTitleTopBar.swift; sourceTree = "<group>"; };
 		5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTitleTopBarPageViewController.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
@@ -401,11 +397,6 @@
 			children = (
 				53EFF5CD26BA9CD400732DCF /* YDSToast.swift */,
 				5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */,
-				539110B526C052670094FD08 /* YDSTopBarButton.swift */,
-				539110B726C1484A0094FD08 /* YDSNavigationController.swift */,
-				539110B126C048020094FD08 /* YDSSingleLineTopBar.swift */,
-				5359A5C226BECF7400FCCECC /* YDSDoubleLineTopBar.swift */,
-				539110BD26C373D20094FD08 /* New Group */,
 				539110BD26C373D20094FD08 /* TopBar */,
 			);
 			path = Component;
@@ -416,9 +407,6 @@
 			children = (
 				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
 				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
-				5359A5C426BED19900FCCECC /* DoubleLineTopBarPageViewController.swift */,
-				539110B326C049BD0094FD08 /* SingleLineTopBarPageViewController.swift */,
-				539110B926C194250094FD08 /* NavigationControllerPageViewController.swift */,
 				537A0AD126C4189D00142DCE /* TopBar */,
 			);
 			path = ComponentSampleViewController;

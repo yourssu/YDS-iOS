@@ -91,11 +91,11 @@ class DoubleTitleTopBarSampleViewController: UIViewController {
         case dismissButton:
             self.dismiss(animated: true, completion: nil)
         case plusButton:
-            YDSToast.makeToast(text: "Plus button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "Plus button pressed", duration: .short)
         case listButton:
-            YDSToast.makeToast(text: "List button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "List button pressed", duration: .short)
         case moreButton:
-            YDSToast.makeToast(text: "More button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "More button pressed", duration: .short)
         default:
             return
         }
