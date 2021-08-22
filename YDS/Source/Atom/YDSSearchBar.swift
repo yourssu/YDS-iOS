@@ -43,9 +43,6 @@ public class YDSSearchBar: UISearchBar {
     ///  필드 내부 우측 마진값입니다.
     private static let rightMargin: CGFloat = 16
     
-    ///  서치바 전체 높이입니다.
-    private static let searchBarHeight: CGFloat = 44
-    
     ///  searchIcon의 사이즈입니다.
     private static let searchIconSize: CGFloat = 16
     
@@ -69,6 +66,7 @@ public class YDSSearchBar: UISearchBar {
     ///  view를 세팅합니다.
     private func setupView() {
         self.backgroundImage = UIImage()
+        self.setImage(YDSIcon.searchLine.resize(to: YDSSearchBar.searchIconSize), for: .search, state: .normal)
         self.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0,
                                                                 leading: YDSSearchBar.outsideLeftMargin,
                                                                 bottom: 0,
@@ -85,10 +83,6 @@ public class YDSSearchBar: UISearchBar {
 
         self.setPositionAdjustment(UIOffset(horizontal: YDSSearchBar.leftMargin - YDSSearchBar.searchIconDefaultLeftMargin, vertical: 0), for: .search)
         self.setPositionAdjustment(UIOffset(horizontal: -(YDSSearchBar.rightMargin - YDSSearchBar.clearButtonDefaultRightMargin), vertical: 0), for: .clear)
-
-        self.snp.makeConstraints {
-            $0.height.equalTo(YDSSearchBar.searchBarHeight)
-        }
         
         setState()
     }
