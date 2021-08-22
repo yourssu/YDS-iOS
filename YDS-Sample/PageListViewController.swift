@@ -96,9 +96,9 @@ class PageListViewController: UIViewController {
     private func buttonTapAction(_ sender: UIButton) {
         switch(sender) {
         case searchButton:
-            YDSToast.makeToast(text: "Search button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "Search button pressed", duration: .short)
         case bellButton:
-            YDSToast.makeToast(text: "Bell button pressed", duration: .short, at: self.view)
+            YDSToast.makeToast(text: "Bell button pressed", duration: .short)
         default:
             return
         }
