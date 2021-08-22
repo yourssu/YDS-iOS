@@ -57,7 +57,7 @@ public enum YDSColor {
     }
     
     public static var textPointed: UIColor {
-        return color(light: YDSBasicColor.pointBlue400)
+        return color(light: YDSBasicColor.pointColor400)
     }
     
     public static var textWarned: UIColor {
@@ -116,15 +116,15 @@ public enum YDSColor {
     }
     
     public static var buttonPoint: UIColor {
-        return color(light: YDSBasicColor.pointBlue400)
+        return color(light: YDSBasicColor.pointColor400)
     }
     
     public static var buttonPointPressed: UIColor {
-        return color(light: YDSBasicColor.pointBlue300)
+        return color(light: YDSBasicColor.pointColor300)
     }
     
     public static var buttonPointBG: UIColor {
-        return color(light: YDSBasicColor.pointBlue050)
+        return color(light: YDSBasicColor.pointColor050)
     }
     
     public static var buttonWarned: UIColor {

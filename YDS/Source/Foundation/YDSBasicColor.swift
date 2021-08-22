@@ -26,6 +26,192 @@ fileprivate extension UIColor{
 }
 
 internal enum YDSBasicColor {
+    
+    //  MARK: - 그라운드 컬러
+    
+    static var groundColor050: UIColor {
+        return UIColor(hex: "#E1F2FE")
+    }
+
+    static var groundColor100: UIColor {
+        return UIColor(hex: "#B6DDFE")
+    }
+
+    static var groundColor200: UIColor {
+        return UIColor(hex: "#86C8FE")
+    }
+
+    static var groundColor300: UIColor {
+        return UIColor(hex: "#4EB2FE")
+    }
+
+    static var groundColor400: UIColor {
+        return UIColor(hex: "#00A3FF")
+    }
+
+    static var groundColor500: UIColor {
+        return UIColor(hex: "#0092FE")
+    }
+
+    static var groundColor600: UIColor {
+        return UIColor(hex: "#0084F0")
+    }
+
+    static var groundColor700: UIColor {
+        return UIColor(hex: "#0072DD")
+    }
+
+    static var groundColor800: UIColor {
+        return UIColor(hex: "#0060CB")
+    }
+
+    static var groundColor900: UIColor {
+        return UIColor(hex: "#0042AB")
+    }
+    
+    
+    //  MARK: - 숨쉴때 컬러
+    
+    static var soomsilColor050: UIColor {
+        return UIColor(hex: "#EBE6FB")
+    }
+
+    static var soomsilColor100: UIColor {
+        return UIColor(hex: "#CBC1F6")
+    }
+
+    static var soomsilColor200: UIColor {
+        return UIColor(hex: "#B2A4EF")
+    }
+
+    static var soomsilColor300: UIColor {
+        return UIColor(hex: "#A797F0")
+    }
+
+    static var soomsilColor400: UIColor {
+        return UIColor(hex: "#816DEC")
+    }
+
+    static var soomsilColor500: UIColor {
+        return UIColor(hex: "#5D4DE8")
+    }
+
+    static var soomsilColor600: UIColor {
+        return UIColor(hex: "#3230DC")
+    }
+
+    static var soomsilColor700: UIColor {
+        return UIColor(hex: "#1B2CD6")
+    }
+
+    static var soomsilColor800: UIColor {
+        return UIColor(hex: "#0025CD")
+    }
+
+    static var soomsilColor900: UIColor {
+        return UIColor(hex: "#0020C5")
+    }
+    
+    
+    //  MARK: - Color Theme
+    
+    static var theme: YDSThemeColor.Theme {
+        get { return YDSThemeColor.theme }
+    }
+
+    static var pointColor050: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor050
+        case .soomsil:
+            return soomsilColor050
+        }
+    }
+
+    static var pointColor100: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor100
+        case .soomsil:
+            return soomsilColor100
+        }
+    }
+
+    static var pointColor200: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor200
+        case .soomsil:
+            return soomsilColor200
+        }
+    }
+
+    static var pointColor300: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor300
+        case .soomsil:
+            return soomsilColor300
+        }
+    }
+
+    static var pointColor400: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor400
+        case .soomsil:
+            return soomsilColor400
+        }
+    }
+
+    static var pointColor500: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor500
+        case .soomsil:
+            return soomsilColor500
+        }
+    }
+
+    static var pointColor600: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor600
+        case .soomsil:
+            return soomsilColor600
+        }
+    }
+
+    static var pointColor700: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor700
+        case .soomsil:
+            return soomsilColor700
+        }
+    }
+
+    static var pointColor800: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor800
+        case .soomsil:
+            return soomsilColor800
+        }
+    }
+
+    static var pointColor900: UIColor {
+        switch theme {
+        case .ground:
+            return groundColor900
+        case .soomsil:
+            return soomsilColor900
+        }
+    }
+    
+    
+    //  MARK: -
+    
     static var logoBlue: UIColor {
         return UIColor(hex: "#1653DB")
     }
@@ -54,45 +240,7 @@ internal enum YDSBasicColor {
         return UIColor(hex: "#111111")
     }
 
-    static var pointBlue050: UIColor {
-        return UIColor(hex: "#E1F2FE")
-    }
-
-    static var pointBlue100: UIColor {
-        return UIColor(hex: "#B6DDFE")
-    }
-
-    static var pointBlue200: UIColor {
-        return UIColor(hex: "#86C8FE")
-    }
-
-    static var pointBlue300: UIColor {
-        return UIColor(hex: "#4EB2FE")
-    }
-
-    static var pointBlue400: UIColor {
-        return UIColor(hex: "#00A3FF")
-    }
-
-    static var pointBlue500: UIColor {
-        return UIColor(hex: "#0092FE")
-    }
-
-    static var pointBlue600: UIColor {
-        return UIColor(hex: "#0084F0")
-    }
-
-    static var pointBlue700: UIColor {
-        return UIColor(hex: "#0072DD")
-    }
-
-    static var pointBlue800: UIColor {
-        return UIColor(hex: "#0060CB")
-    }
-
-    static var pointBlue900: UIColor {
-        return UIColor(hex: "#0042AB")
-    }
+    
 
     static var warningRed050: UIColor {
         return UIColor(hex: "#FFECEF")
