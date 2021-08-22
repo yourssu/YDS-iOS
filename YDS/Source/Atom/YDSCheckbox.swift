@@ -11,8 +11,9 @@ public class YDSCheckbox: UIButton {
 
     //  MARK: - 외부에서 지정할 수 있는 속성
 
-    //  isDisabled: Bool
-    //  체크박스를 비활성화 시킬 때 사용합니다.
+    /**
+     체크박스를 비활성화 시킬 때 사용합니다.
+     */
     public var isDisabled: Bool = false {
         didSet {
             self.isEnabled = !isDisabled
@@ -20,21 +21,24 @@ public class YDSCheckbox: UIButton {
         }
     }
 
-    //  isSelected: Bool
-    //  체크박스의 선택 여부를 나타낼 때 사용합니다.
+    /**
+     체크박스의 선택 여부를 나타낼 때 사용합니다.
+     */
     public override var isSelected: Bool {
         didSet { setTintColor() }
     }
   
     
-    //  size: CheckboxSize ( small, medium, large )
-    //  타이포 크기, 아이콘 크기, 아이콘과 라벨 사이 간격을 결정할 때 사용합니다.
+    /**
+     타이포 크기, 아이콘 크기, 아이콘과 라벨 사이 간격을 결정할 때 사용합니다.
+     */
     public var size: CheckboxSize = .large {
         didSet { setSize() }
     }
     
-    //  text: String?
-    //  체크박스의 글귀를 설정할 때 사용합니다.
+    /**
+     체크박스의 글귀를 설정할 때 사용합니다.
+     */
     public var text: String? = nil {
         didSet {
             setTitle(text, for: .normal)
@@ -45,9 +49,10 @@ public class YDSCheckbox: UIButton {
     
     //  MARK: - 외부에서 접근할 수 있는 enum
 
-    //  CheckboxSize
-    //  체크박스의 size 종류입니다.
-    //  각 size에 맞는 font, iconSize, spacing을 computed property로 가지고 있습니다.
+    /**
+     체크박스의 size 종류입니다.
+     각 size에 맞는 font, iconSize, spacing을 computed property로 가지고 있습니다.
+     */
     public enum CheckboxSize {
         case small
         case medium
@@ -157,8 +162,9 @@ public class YDSCheckbox: UIButton {
                       for: .normal)
     }
     
-    //  setLayoutAccordingToIcon()
-    //  텍스트 설정에 따른 체크박스의 레이아웃을 결정합니다.
+    /**
+     텍스트 설정에 따른 체크박스의 레이아웃을 결정합니다.
+     */
     private func setLayoutAccordingToText() {
         if text != nil {
             self.imageEdgeInsets = UIEdgeInsets(top: 0,

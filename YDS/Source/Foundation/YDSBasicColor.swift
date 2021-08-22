@@ -210,7 +210,7 @@ internal enum YDSBasicColor {
     }
     
     
-    //  MARK: -
+    //  MARK: - Logo Color
     
     static var logoBlue: UIColor {
         return UIColor(hex: "#1653DB")
@@ -220,6 +220,9 @@ internal enum YDSBasicColor {
         return UIColor(hex: "#FFC441")
     }
 
+    
+    //  MARK: - White & Black
+    
     static var white000: UIColor {
         return UIColor(hex: "#FFFFFF")
     }
@@ -241,6 +244,7 @@ internal enum YDSBasicColor {
     }
 
     
+    //  MARK: - Warning Red
 
     static var warningRed050: UIColor {
         return UIColor(hex: "#FFECEF")
@@ -282,6 +286,9 @@ internal enum YDSBasicColor {
         return UIColor(hex: "#C8111C")
     }
 
+    
+    //  MARK: - Gray
+    
     static var gray050: UIColor {
         return UIColor(hex: "#F8F9FA")
     }
@@ -334,6 +341,9 @@ internal enum YDSBasicColor {
         return UIColor(hex: "#252729" ,alpha: 0.7)
     }
 
+    
+    //  MARK: - Colors
+    
     static var pink050: UIColor {
         return UIColor(hex: "#FDE6F4")
     }

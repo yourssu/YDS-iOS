@@ -5,20 +5,17 @@
 //  Created by Gyuni on 2021/07/19.
 //
 
-//
-//  YDSSimpleTextFieldView의 기본이 되는 textField 입니다.
-//
-//  YDSSimpleTextField는 그 자체로 사용될 수 없습니다.
-//
-
 import UIKit
 
+/**
+ YDSSimpleTextFieldView의 기본이 되는 textField 입니다.
+ YDSSimpleTextField는 그 자체로 사용될 수 없습니다.
+ */
 public class YDSSimpleTextField: UITextField {
     
     //  MARK: - 외부에서 지정할 수 있는 속성
     
-    //  isDisabled: Bool
-    //  필드를 비활성화 시킬 때 사용합니다.
+    ///  필드를 비활성화 시킬 때 사용합니다.
     internal var isDisabled: Bool = false {
         didSet {
             setState()
@@ -26,21 +23,18 @@ public class YDSSimpleTextField: UITextField {
         }
     }
     
-    //  isNegative: Bool
-    //  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
+    ///  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
     internal var isNegative: Bool = false {
         didSet { setState() }
     }
     
-    //  isPositive: Bool
-    //  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
+    ///  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
     internal var isPositive: Bool = false {
         didSet { setState() }
     }
     
-    //  placeholder: String?
-    //  새 값이 들어오면 setPlaceholderTextColor를 이용해
-    //  적절한 값을 가진 attributedPlaceholder로 변환합니다.
+    ///  새 값이 들어오면 setPlaceholderTextColor를 이용해
+    ///  적절한 값을 가진 attributedPlaceholder로 변환합니다.
     public override var placeholder: String? {
         didSet { setPlaceholderTextColor() }
     }
@@ -48,8 +42,7 @@ public class YDSSimpleTextField: UITextField {
     
     //  MARK: - 내부에서 사용되는 상수
     
-    //  clearButtonWidth: CGFloat
-    //  clearButton의 너비입니다.
+    ///  clearButton의 너비입니다.
     private var clearButtonWidth: CGFloat {
         get {
             return clearButtonRect(forBounds: bounds).width
@@ -67,8 +60,7 @@ public class YDSSimpleTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //  setupView()
-    //  view를 세팅합니다.
+    ///  view를 세팅합니다.
     private func setupView() {
         self.font = YDSFont.body1
         self.tintColor = YDSColor.textPointed
@@ -83,9 +75,8 @@ public class YDSSimpleTextField: UITextField {
         setState()
     }
     
-    //  setState()
-    //  필드의 상태를 세팅합니다.
-    //  우선순위는 isDisabled > isNegative > isPositive 입니다.
+    ///  필드의 상태를 세팅합니다.
+    ///  우선순위는 isDisabled > isNegative > isPositive 입니다.
     private func setState() {
         if isDisabled {
             self.isEnabled = false
@@ -117,8 +108,7 @@ public class YDSSimpleTextField: UITextField {
         self.layer.borderColor = nil
     }
     
-    //  setPlaceholderTextColor()
-    //  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
+    ///  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
     private func setPlaceholderTextColor() {
         let placeholderTextColor: UIColor
         
@@ -136,9 +126,8 @@ public class YDSSimpleTextField: UITextField {
         }
     }
     
-    //  clearButtonRect()
-    //  clearButton의 Bound에 관한 함수입니다.
-    //  clearButton 우측 마진을 주기 위해 사용합니다.
+    ///  clearButton의 Bound에 관한 함수입니다.
+    ///  clearButton 우측 마진을 주기 위해 사용합니다.
     public override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.clearButtonRect(forBounds: bounds)
         return rect.offsetBy(dx: -(YDSTextField.Dimension.rightMargin - YDSTextField.Dimension.clearButtonDefaultRightMargin),
@@ -146,9 +135,8 @@ public class YDSSimpleTextField: UITextField {
         )
     }
     
-    //  textRect()
-    //  textRect의 Bound에 관한 함수입니다.
-    //  placeholder label의 너비를 설정하기 위해 사용합니다.
+    ///  textRect의 Bound에 관한 함수입니다.
+    ///  placeholder label의 너비를 설정하기 위해 사용합니다.
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
         
         return bounds.inset(by: UIEdgeInsets(top: 0,
@@ -158,9 +146,8 @@ public class YDSSimpleTextField: UITextField {
         ))
     }
 
-    //  editingRect()
-    //  editingRect의 Bound에 관한 함수입니다.
-    //  text label의 너비를 설정하기 위해 사용합니다.
+    ///  editingRect의 Bound에 관한 함수입니다.
+    ///  text label의 너비를 설정하기 위해 사용합니다.
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets(top: 0,
                                              left: YDSTextField.Dimension.leftMargin,

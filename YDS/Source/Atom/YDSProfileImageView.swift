@@ -42,9 +42,10 @@ public class YDSProfileImageView: UIImageView {
         setSquirclePathAccordingToSize()
     }
     
-    //  setSquirclePathAccordingToSize()
-    //  size에 따른 squircle path를 만들고
-    //  마스킹과 테두리를 적용시킵니다.
+    /**
+     size에 따른 squircle path를 만들고
+     마스킹과 테두리를 적용시킵니다.
+     */
     private func setSquirclePathAccordingToSize() {
         let path = makeSquirclePath(CGFloat(size.rawValue), insetRatio: 0.2)
         
@@ -52,8 +53,9 @@ public class YDSProfileImageView: UIImageView {
         setBorderLayer(path: path)
     }
     
-    //  setMaskLayer()
-    //  mask layer를 만들고 적용시킵니다.
+    /**
+     mask layer를 만들고 적용시킵니다.
+     */
     private func setMaskLayer(path: UIBezierPath) {
         let maskLayer = CAShapeLayer()
         maskLayer.frame = self.bounds
@@ -61,8 +63,9 @@ public class YDSProfileImageView: UIImageView {
         self.layer.mask = maskLayer
     }
     
-    //  setBorderLayer()
-    //  border layer를 만들고 적용시킵니다.
+    /**
+     border layer를 만들고 적용시킵니다.
+     */
     private func setBorderLayer(path: UIBezierPath) {
         let newBorderLayer = CAShapeLayer()
         newBorderLayer.frame = self.bounds
@@ -80,19 +83,21 @@ public class YDSProfileImageView: UIImageView {
         borderLayer = newBorderLayer
     }
     
-    //  borderLayer: CALayer?
-    //  현재 상태의 borderLayer를 저장합니다.
-    //  size가 바뀜에 따라 새 borderLayer가 필요해지면
-    //  replaceSublayer() 함수에서
-    //  이 변수에 저장된 주소를 이용해
-    //  기존의 borderLayer를 새 borderLayer로 바꿔줍니다.
+    /**
+     현재 상태의 borderLayer를 저장합니다.
+     size가 바뀜에 따라 새 borderLayer가 필요해지면
+     replaceSublayer() 함수에서
+     이 변수에 저장된 주소를 이용해
+     기존의 borderLayer를 새 borderLayer로 바꿔줍니다.
+     */
     private var borderLayer: CALayer?
 
-    //  makeSquirclePath()
-    //  width는 스쿼클의 너비, insetRatio는 곡률(0에서 1 사이로 넣어주세요)입니다.
-    //  디자인 요구 사안에 맞는 UIBezierPath를 return합니다.
-    //  벡터 다루기 싫어서 일러스트레이터 공부 안한건데
-    //  iOS에서 벡터를 만지고 있을 줄은 몰랐습니다.
+    /**
+     width는 스쿼클의 너비, insetRatio는 곡률(0에서 1 사이로 넣어주세요)입니다.
+     디자인 요구 사안에 맞는 UIBezierPath를 return합니다.
+     벡터 다루기 싫어서 일러스트레이터 공부 안한건데
+     iOS에서 벡터를 만지고 있을 줄은 몰랐습니다.
+     */
     private func makeSquirclePath(_ width: CGFloat, insetRatio: CGFloat) -> UIBezierPath {
         let radius = width/2
         

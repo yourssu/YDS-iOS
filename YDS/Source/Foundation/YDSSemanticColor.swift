@@ -18,7 +18,9 @@ public enum YDSColor {
        }
     }
 
-    //MARK:- Background
+    
+    //  MARK: - Background
+    
     public static var bgNormal: UIColor {
         return color(light: YDSBasicColor.white000)
     }
@@ -35,7 +37,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray100)
     }
     
-    //MARK:- Text
+    
+    //  MARK: - Text
+    
     public static var textPrimary: UIColor {
         return color(light: YDSBasicColor.gray900)
     }
@@ -64,7 +68,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.warningRed400)
     }
     
-    //MARK:- Dim
+    
+    //  MARK: - Dim
+    
     public static var dimNormal: UIColor {
         return color(light: YDSBasicColor.gray900A30)
     }
@@ -77,7 +83,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.white000A70)
     }
     
-    //MARK:- Border
+    
+    //  MARK: - Border
+    
     public static var borderThin: UIColor {
         return color(light: YDSBasicColor.gray100)
     }
@@ -90,7 +98,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray500)
     }
     
-    //MARK:- Button
+    
+    //  MARK: - Button
+    
     public static var buttonNormal: UIColor {
         return color(light: YDSBasicColor.gray700)
     }
@@ -139,7 +149,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.warningRed050)
     }
     
-    //MARK:- BottomBar
+    
+    //  MARK: - BottomBar
+    
     public static var bottomBarNormal: UIColor {
         return color(light: YDSBasicColor.gray600)
     }
@@ -148,7 +160,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray800)
     }
     
-    //MARK:- InputField
+    
+    //  MARK: - InputField
+    
     public static var inputFieldNormal: UIColor {
         return color(light: YDSBasicColor.white000)
     }
@@ -158,17 +172,23 @@ public enum YDSColor {
     }
     
     
-    //MARK:- Toast
+    
+    //  MARK: - Toast
+    
     public static var toastBG: UIColor {
         return color(light: YDSBasicColor.gray800)
     }
     
-    //MARK:- Pressed
+    
+    //  MARK: - Pressed
+    
     public static var pressed: UIColor {
         return color(light: YDSBasicColor.gray900A10)
     }
     
-    //MARK:- Shadow
+    
+    //  MARK: - Shadow
+    
     public static var shadowThin: UIColor {
         return color(light: YDSBasicColor.gray400)
     }
@@ -177,7 +197,9 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray500)
     }
     
-    //MARK:- Item
+    
+    //  MARK: - Item
+    
     public static var monoItemPrimary: UIColor {
        return color(light: YDSBasicColor.gray700)
     }
