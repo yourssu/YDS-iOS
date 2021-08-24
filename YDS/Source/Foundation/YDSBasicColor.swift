@@ -240,7 +240,11 @@ internal enum YDSBasicColor {
     }
 
     static var black000: UIColor {
-        return UIColor(hex: "#111111")
+        return UIColor(hex: "#101112")
+    }
+    
+    static var realBlack: UIColor {
+        return UIColor(hex: "#000000")
     }
 
     
@@ -329,8 +333,8 @@ internal enum YDSBasicColor {
         return UIColor(hex: "#252729")
     }
     
-    static var gray900A10: UIColor {
-        return UIColor(hex: "#252729" ,alpha: 0.1)
+    static var black000A10: UIColor {
+        return UIColor(hex: "#101112" ,alpha: 0.1)
     }
     
     static var gray900A30: UIColor {

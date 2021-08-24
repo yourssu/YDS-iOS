@@ -37,15 +37,23 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray100)
     }
     
+    public static var bgNormalReversed: UIColor {
+        return color(light: YDSBasicColor.realBlack)
+    }
+    
+    public static var  bgElevatedReversed: UIColor {
+        return color(light: YDSBasicColor.realBlack)
+    }
+    
     
     //  MARK: - Text
     
     public static var textPrimary: UIColor {
-        return color(light: YDSBasicColor.gray900)
+        return color(light: YDSBasicColor.black000)
     }
     
     public static var textSecondary: UIColor {
-        return color(light: YDSBasicColor.gray800)
+        return color(light: YDSBasicColor.gray900)
     }
     
     public static var textTertiary: UIColor {
@@ -91,7 +99,7 @@ public enum YDSColor {
     }
     
     public static var borderNormal: UIColor {
-        return color(light: YDSBasicColor.gray400)
+        return color(light: YDSBasicColor.black000A10)
     }
     
     public static var borderThick: UIColor {
@@ -183,7 +191,7 @@ public enum YDSColor {
     //  MARK: - Pressed
     
     public static var pressed: UIColor {
-        return color(light: YDSBasicColor.gray900A10)
+        return color(light: YDSBasicColor.black000A10)
     }
     
     
