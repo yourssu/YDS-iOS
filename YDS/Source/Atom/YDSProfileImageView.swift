@@ -14,6 +14,7 @@ public class YDSProfileImageView: UIImageView {
     }
     
     public enum ProfileImageViewSize: Int {
+        case extraSmall = 32
         case small = 36
         case medium = 48
         case large = 72
