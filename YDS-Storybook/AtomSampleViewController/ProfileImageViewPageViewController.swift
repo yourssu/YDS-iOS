@@ -63,7 +63,7 @@ class ProfileImageViewPageViewController: StoryBookViewController {
         
         addOption(description: "size",
                   cases: YDSProfileImageView.ProfileImageViewSize.allCases,
-                  defaultIndex: 3) { [weak self] value in
+                  defaultIndex: 4) { [weak self] value in
             self?.sampleProfileImageView.size = value
         }
     }
@@ -107,5 +107,5 @@ class ProfileImageViewPageViewController: StoryBookViewController {
 }
 
 extension YDSProfileImageView.ProfileImageViewSize: CaseIterable {
-    public static var allCases: [YDSProfileImageView.ProfileImageViewSize] = [.small, .medium, .large, .extraLarge]
+    public static var allCases: [YDSProfileImageView.ProfileImageViewSize] = [.extraSmall, .small, .medium, .large, .extraLarge]
 }
