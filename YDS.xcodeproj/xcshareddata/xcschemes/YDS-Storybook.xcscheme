@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DDFBCFFB26739A6900C5F409"
-               BuildableName = "YDS-Sample.app"
-               BlueprintName = "YDS-Sample"
+               BuildableName = "YDS-Storybook.app"
+               BlueprintName = "YDS-Storybook"
                ReferencedContainer = "container:YDS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DDFBCFFB26739A6900C5F409"
-            BuildableName = "YDS-Sample.app"
-            BlueprintName = "YDS-Sample"
+            BuildableName = "YDS-Storybook.app"
+            BlueprintName = "YDS-Storybook"
             ReferencedContainer = "container:YDS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DDFBCFFB26739A6900C5F409"
-            BuildableName = "YDS-Sample.app"
-            BlueprintName = "YDS-Sample"
+            BuildableName = "YDS-Storybook.app"
+            BlueprintName = "YDS-Storybook"
             ReferencedContainer = "container:YDS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
