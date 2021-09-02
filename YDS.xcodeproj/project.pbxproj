@@ -99,13 +99,6 @@
 			remoteGlobalIDString = DD151FA92641820200795D7C;
 			remoteInfo = YDS;
 		};
-		5383752926D27D45002E96AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD151FA12641820200795D7C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD151FA92641820200795D7C;
-			remoteInfo = YDS;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -539,7 +532,6 @@
 			);
 			dependencies = (
 				5383752626D27D32002E96AC /* PBXTargetDependency */,
-				5383752A26D27D45002E96AC /* PBXTargetDependency */,
 			);
 			name = "YDS-Storybook";
 			packageProductDependencies = (
@@ -707,11 +699,6 @@
 			isa = PBXTargetDependency;
 			target = DD151FA92641820200795D7C /* YDS */;
 			targetProxy = 5383752526D27D32002E96AC /* PBXContainerItemProxy */;
-		};
-		5383752A26D27D45002E96AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD151FA92641820200795D7C /* YDS */;
-			targetProxy = 5383752926D27D45002E96AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -915,6 +902,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
 				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -934,7 +922,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
 				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -944,6 +934,7 @@
 				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = GithubActions_Distribution;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
