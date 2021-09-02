@@ -1,8 +1,7 @@
 name: Archive and export
 on:
-  push:
-    tags: 
-      - v*
+  release:
+    types: [published, created, edited]
 jobs:
       build:
         runs-on: [macos-latest]
