@@ -1,0 +1,70 @@
+name: Archive and export
+on:
+  push:
+    tags: 
+      - v*
+jobs:
+      build:
+        runs-on: [macos-latest]
+        env:
+          XC_VERSION: ${{ '12.5.1' }}
+          XC_PROJECT: ${{ 'YDS.xcodeproj' }}
+          XC_SCHEME: ${{ 'YDS-Storybook' }}
+          XC_ARCHIVE_PATH:  ${{ './YDS.xcarichive' }}
+          XC_EXPORT_PATH: ${{ './artifacts' }}
+          KEYCHAIN: ${{ 'temporary.keychain' }}
+   
+          DECRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/yourssuCertification.p12' }}
+          ENCRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/yourssuCertification.p12.gpg' }}
+          
+          DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubActions_Distribution.mobileprovision' }}
+          ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubActions_Distribution.mobileprovision.gpg' }}
+          
+          CERTS_ENCRYPTION_PWD: ${{ secrets.CERTS_ENCRYPTION_PWD }}    
+          PROVISION_ENCRYPTION_PWD: ${{ secrets.PROVISION_ENCRYPTION_PWD }}     
+          CERTS_EXPORT_PWD: ${{ secrets.CERTS_EXPORT_PWD }}
+        steps:
+        - name: Select latest Xcode
+          run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+        - uses: actions/checkout@v2
+        - name: Get tag version
+          run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
+        - name: Set app version
+          run: sed -i .bak 's/MARKETING_VERSION = 1.0.0;/MARKETING_VERSION = ${{ env.RELEASE_VERSION }};/g' YDS.xcodeproj/project.pbxproj
+        - name: Configure Keychain
+          run: | 
+                  security create-keychain -p "" "$KEYCHAIN"
+                  security list-keychains -s "$KEYCHAIN"
+                  security default-keychain -s "$KEYCHAIN"
+                  security unlock-keychain -p "" "$KEYCHAIN"
+                  security set-keychain-settings  
+        - name : Configure Code Signing
+          run: |
+            gpg -d -o "$DECRYPTED_CERTS_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERTS_ENCRYPTION_PWD" "$ENCRYPTED_CERTS_FILE_PATH"  
+            gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROVISION_ENCRYPTION_PWD" "$ENCRYPTED_PROVISION_FILE_PATH"  
+            security import "$DECRYPTED_CERTS_FILE_PATH" -k "$KEYCHAIN" -P "$CERTS_EXPORT_PWD" -A        
+            security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"   
+    
+            mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles" 
+            cd ".github/secrets"
+            echo `ls *.mobileprovision`
+             for PROVISION in `ls *.mobileprovision`
+             do
+                   echo Hello, world!
+                   UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
+                   cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+            done
+        - name: Archive app
+          run: |       
+                mkdir artifacts
+                xcodebuild archive -project YDS.xcodeproj -scheme YDS-Storybook -configuration release -archivePath YDS.xcarchive
+        - name: Export app
+          run:  |  
+                  xcodebuild -exportArchive -archivePath YDS.xcarchive -exportOptionsPlist ExportOptions.Plist -exportPath "$XC_EXPORT_PATH"
+        - name: Upload app to TestFlight
+          uses: apple-actions/upload-testflight-build@v1
+          with:
+            app-path: 'YDS-Storybook.ipa'
+            issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+            api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+            api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
