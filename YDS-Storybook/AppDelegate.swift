@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = navigationController
         
+        window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
         
         return true
