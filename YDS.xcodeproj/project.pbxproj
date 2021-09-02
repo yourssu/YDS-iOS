@@ -195,7 +195,7 @@
 		DD8DF13726786BD100EDD2B4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBasicColor.swift; sourceTree = "<group>"; };
 		DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSemanticColor.swift; sourceTree = "<group>"; };
-		DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFBCFFC26739A6900C5F409 /* YDS-Storybook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Storybook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDFBD00526739A6900C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -425,7 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				DD151FAA2641820200795D7C /* YDS.framework */,
-				DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */,
+				DDFBCFFC26739A6900C5F409 /* YDS-Storybook.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,9 +526,9 @@
 			productReference = DD151FAA2641820200795D7C /* YDS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DDFBCFFB26739A6900C5F409 /* YDS-Sample */ = {
+		DDFBCFFB26739A6900C5F409 /* YDS-Storybook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Sample" */;
+			buildConfigurationList = DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Storybook" */;
 			buildPhases = (
 				DDFBCFF826739A6900C5F409 /* Sources */,
 				DDFBCFF926739A6900C5F409 /* Frameworks */,
@@ -541,13 +541,13 @@
 				5383752626D27D32002E96AC /* PBXTargetDependency */,
 				5383752A26D27D45002E96AC /* PBXTargetDependency */,
 			);
-			name = "YDS-Sample";
+			name = "YDS-Storybook";
 			packageProductDependencies = (
 				5337938726AF08E000BE5860 /* RxSwift */,
 				5337938926AF08E000BE5860 /* RxCocoa */,
 			);
 			productName = "YDS-Sample";
-			productReference = DDFBCFFC26739A6900C5F409 /* YDS-Sample.app */;
+			productReference = DDFBCFFC26739A6900C5F409 /* YDS-Storybook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -587,7 +587,7 @@
 			projectRoot = "";
 			targets = (
 				DD151FA92641820200795D7C /* YDS */,
-				DDFBCFFB26739A6900C5F409 /* YDS-Sample */,
+				DDFBCFFB26739A6900C5F409 /* YDS-Storybook */,
 			);
 		};
 /* End PBXProject section */
@@ -968,7 +968,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Sample" */ = {
+		DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Storybook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDFBD00D26739A6B00C5F409 /* Debug */,
