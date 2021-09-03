@@ -62,10 +62,8 @@ jobs:
         - name: Export app
           run:  |  
                   xcodebuild -exportArchive -archivePath YDS.xcarchive -exportOptionsPlist ExportOptions.Plist -exportPath "$XC_EXPORT_PATH"
-        - name: Upload app to TestFlight
-          uses: apple-actions/upload-testflight-build@v1
+        - name: Upload Artifact
+          uses: actions/upload-artifact@v2
           with:
-            app-path: 'YDS-Storybook.ipa'
-            issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
-            api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
-            api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+            name: Artifacts
+            path: ./artifacts
