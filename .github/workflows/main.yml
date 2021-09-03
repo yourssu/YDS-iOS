@@ -31,7 +31,7 @@ jobs:
           id: get_version
           run: echo ::set-output name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
         - name: Set app version
-          run: sed -i .bak 's/MARKETING_VERSION = 0.0.1;/MARKETING_VERSION = ${{ env.RELEASE_VERSION }};/g' YDS.xcodeproj/project.pbxproj
+          run: sed -i .bak 's/MARKETING_VERSION = 0.2.0;/MARKETING_VERSION = ${{ env.RELEASE_VERSION }};/g' YDS.xcodeproj/project.pbxproj
         - name: Configure Keychain
           run: | 
                   security create-keychain -p "" "$KEYCHAIN"
