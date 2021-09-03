@@ -11,7 +11,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.yourssu.YDS-Storybook</key>
-		<string>GithubActions_Distribution</string>
+		<string>GithubActions_Dist</string>
 	</dict>
 	<key>signingCertificate</key> 
 	<string>Apple Distribution</string>
