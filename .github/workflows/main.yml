@@ -9,7 +9,7 @@ jobs:
           XC_VERSION: ${{ '12.4' }}
           XC_PROJECT: ${{ 'YDS.xcodeproj' }}
           XC_SCHEME: ${{ 'YDS-Storybook' }}
-          XC_CONFIGURATION ${{ 'Automation' }}
+          XC_CONFIGURATION: ${{ 'Automation' }}
           XC_ARCHIVE_PATH:  ${{ './YDS.xcarichive' }}
           XC_EXPORT_PATH: ${{ './artifacts' }}
           KEYCHAIN: ${{ 'temporary.keychain' }}
