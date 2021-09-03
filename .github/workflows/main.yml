@@ -59,7 +59,7 @@ jobs:
                 xcodebuild archive -project YDS.xcodeproj -scheme YDS-Storybook -configuration $XC_CONFIGURATION -archivePath YDS.xcarchive "OTHER_CODE_SIGN_FLAGS=--keychain '$KEYCHAIN'"
         - name: Export app
           run:  |  
-                  xcodebuild -exportArchive -archivePath YDS.xcarchive -exportOptionsPlist .github/workflows/ExportOptions.Plist -exportPath "$XC_EXPORT_PATH"
+                  xcodebuild -exportArchive -archivePath YDS.xcarchive -exportOptionsPlist .github/ExportOptions.Plist -exportPath "$XC_EXPORT_PATH"
         - name: Upload Artifact
           uses: actions/upload-artifact@v2
           with:
