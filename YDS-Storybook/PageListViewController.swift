@@ -82,6 +82,10 @@ class PageListViewController: UIViewController {
             $0.bottom.equalToSuperview()
         }
         
+        if let titleLabel = self.navigationItem.leftBarButtonItem?.customView as? UILabel {
+            titleLabel.font = UIFont(name: "Avenir-Black", size: 22)
+        }
+        
         self.navigationItem.setRightBarButtonItems(
             [UIBarButtonItem(customView: bellButton),
              UIBarButtonItem(customView: searchButton)],
