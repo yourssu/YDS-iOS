@@ -10,8 +10,8 @@ import YDS
 
 class ColorsListTableViewController: UITableViewController {
     
-    private var model: ColorsListModel!
-    
+    private var model: ColorsListModel
+
     init(with model: ColorsListModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
