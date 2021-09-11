@@ -9,9 +9,7 @@ import UIKit
 import YDS
 
 class ColorsListItemCell: UITableViewCell {
-    
-    private var model: ColorsListItemModel!
-    
+        
     private enum Dimension {
         enum Padding {
             static let vertical: CGFloat = 16
@@ -104,7 +102,6 @@ class ColorsListItemCell: UITableViewCell {
     }
     
     func fillData(with model: ColorsListItemModel) {
-        self.model = model
         colorCircleView.backgroundColor = model.color
         titleLabel.text = model.title
         captionLabel.text = model.caption
