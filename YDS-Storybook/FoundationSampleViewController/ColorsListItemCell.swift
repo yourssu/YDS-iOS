@@ -93,11 +93,8 @@ class ColorsListItemCell: UITableViewCell {
     private func setViewHierarchy() {
         self.contentView.addSubview(stackView)
         
-        stackView.addArrangedSubview(colorCircleView)
-        stackView.addArrangedSubview(labelStackView)
-        
-        labelStackView.addArrangedSubview(titleLabel)
-        labelStackView.addArrangedSubview(captionLabel)
+        stackView.addArrangedSubviews(colorCircleView, labelStackView)
+        labelStackView.addArrangedSubviews(titleLabel, captionLabel)
     }
     
     private func setAutolayout() {
