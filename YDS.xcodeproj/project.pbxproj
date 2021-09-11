@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		530F6DBB26D2141500856758 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBA26D2141500856758 /* PanModal */; };
 		530F6DBE26D2142100856758 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBD26D2142100856758 /* SnapKit */; };
+		532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD126EC7323008C2354 /* UITableView+Generic.swift */; };
+		532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */; };
+		532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */; };
+		532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD826EC7863008C2354 /* UIViewController+Embed.swift */; };
 		5337938826AF08E000BE5860 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938726AF08E000BE5860 /* RxSwift */; };
 		5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938926AF08E000BE5860 /* RxCocoa */; };
 		5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */; };
@@ -50,6 +54,9 @@
 		5383752826D27D45002E96AC /* YDS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5386E42126D27B0200B1C44E /* YDSThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386E42026D27B0200B1C44E /* YDSThemeColor.swift */; };
 		53887E9C26B54834006E40F6 /* YDSPlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53887E9B26B54834006E40F6 /* YDSPlainButton.swift */; };
+		538ACCAE26EB40380044A437 /* ColorsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */; };
+		538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */; };
+		538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ACCB326EB40A60044A437 /* ColorsListTableViewController.swift */; };
 		539110B226C048020094FD08 /* YDSSingleTitleTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B126C048020094FD08 /* YDSSingleTitleTopBar.swift */; };
 		539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */; };
 		539110B626C052670094FD08 /* YDSTopBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110B526C052670094FD08 /* YDSTopBarButton.swift */; };
@@ -116,6 +123,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		532DBFD126EC7323008C2354 /* UITableView+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Generic.swift"; sourceTree = "<group>"; };
+		532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
+		532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
+		532DBFD826EC7863008C2354 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
 		5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageViewController.swift; sourceTree = "<group>"; };
 		5337938D26AF09BF00BE5860 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
 		5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringControllerView.swift; sourceTree = "<group>"; };
@@ -150,6 +161,9 @@
 		537FFAA526C3E6F800270C22 /* TopBarSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarSampleViewController.swift; sourceTree = "<group>"; };
 		5386E42026D27B0200B1C44E /* YDSThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSThemeColor.swift; sourceTree = "<group>"; };
 		53887E9B26B54834006E40F6 /* YDSPlainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPlainButton.swift; sourceTree = "<group>"; };
+		538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsPageViewController.swift; sourceTree = "<group>"; };
+		538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsListItemCell.swift; sourceTree = "<group>"; };
+		538ACCB326EB40A60044A437 /* ColorsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsListTableViewController.swift; sourceTree = "<group>"; };
 		539110B126C048020094FD08 /* YDSSingleTitleTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSingleTitleTopBar.swift; sourceTree = "<group>"; };
 		539110B326C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTitleTopBarPageViewController.swift; sourceTree = "<group>"; };
 		539110B526C052670094FD08 /* YDSTopBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBarButton.swift; sourceTree = "<group>"; };
@@ -240,6 +254,17 @@
 				53EFF5CC26BA9A7B00732DCF /* Component */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		532DBFD326EC7330008C2354 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				532DBFD126EC7323008C2354 /* UITableView+Generic.swift */,
+				532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */,
+				532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */,
+				532DBFD826EC7863008C2354 /* UIViewController+Embed.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		533A27B526A52EC0009FD90A /* storyboard */ = {
@@ -349,6 +374,16 @@
 				537A0ACD26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift */,
 			);
 			path = TopBar;
+			sourceTree = "<group>";
+		};
+		538ACCAA26EB40000044A437 /* FoundationSampleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				538ACCB326EB40A60044A437 /* ColorsListTableViewController.swift */,
+				538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */,
+				538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */,
+			);
+			path = FoundationSampleViewController;
 			sourceTree = "<group>";
 		};
 		539110BD26C373D20094FD08 /* TopBar */ = {
@@ -476,8 +511,10 @@
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
+				538ACCAA26EB40000044A437 /* FoundationSampleViewController */,
 				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
 				53EFF5D026BBC22F00732DCF /* ComponentSampleViewController */,
+				532DBFD326EC7330008C2354 /* Extension */,
 				53441AF926AF0ECC00CB6BC9 /* Storybook */,
 			);
 			path = "YDS-Storybook";
@@ -662,8 +699,11 @@
 				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
 				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
 				5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */,
+				532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */,
+				538ACCAE26EB40380044A437 /* ColorsPageViewController.swift in Sources */,
 				537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
+				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
@@ -672,6 +712,7 @@
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
+				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
 				537A0AD026C4189700142DCE /* SingleTitleTopBarSampleViewController.swift in Sources */,
@@ -683,8 +724,11 @@
 				53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */,
 				53E2CF4226D2A3DA000DE005 /* SearchTextFieldPageViewController.swift in Sources */,
 				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
+				532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
+				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
+				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
 				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
@@ -822,7 +866,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = GithubActions_Dist;
@@ -1021,7 +1065,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1042,7 +1086,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
