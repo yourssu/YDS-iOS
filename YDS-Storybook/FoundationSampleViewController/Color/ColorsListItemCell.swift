@@ -101,16 +101,10 @@ class ColorsListItemCell: UITableViewCell {
         }
     }
     
-    func fillData(with model: ColorsListItemModel) {
+    func fillData(with model: Color) {
         colorCircleView.backgroundColor = model.color
-        titleLabel.text = model.title
-        captionLabel.text = model.caption
+        titleLabel.text = model.name
+        captionLabel.text = model.basicColor
     }
     
-}
-
-struct ColorsListItemModel {
-    let color: UIColor?
-    let title: String?
-    let caption: String?
 }

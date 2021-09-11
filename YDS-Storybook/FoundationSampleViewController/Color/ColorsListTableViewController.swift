@@ -10,9 +10,9 @@ import YDS
 
 class ColorsListTableViewController: UITableViewController {
     
-    private var model: ColorsListModel
+    private var model: [Colors]
 
-    init(with model: ColorsListModel) {
+    init(with model: [Colors]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,17 +40,21 @@ class ColorsListTableViewController: UITableViewController {
 
 //  MARK: - DataSource
 extension ColorsListTableViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return model.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return model[section].description
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.items.count
+        return model[section].items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ColorsListItemCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.fillData(with: model.items[indexPath.row])
+        cell.fillData(with: model[indexPath.section].items[indexPath.row])
         return cell
     }
-}
-
-struct ColorsListModel {
-    var items: [ColorsListItemModel]
 }
