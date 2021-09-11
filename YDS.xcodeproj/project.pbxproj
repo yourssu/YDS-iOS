@@ -269,14 +269,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		532DBFDC26ED0CD5008C2354 /* Assets */ = {
+		532DBFDC26ED0CD5008C2354 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
 				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
 				532DBFDA26ED0508008C2354 /* YDSColorArray.swift */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		532DBFDD26ED0CEE008C2354 /* Color */ = {
@@ -524,7 +523,8 @@
 		DDFBCFFD26739A6900C5F409 /* YDS-Storybook */ = {
 			isa = PBXGroup;
 			children = (
-				532DBFDC26ED0CD5008C2354 /* Assets */,
+				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
+				532DBFDC26ED0CD5008C2354 /* Resources */,
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
