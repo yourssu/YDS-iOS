@@ -379,9 +379,9 @@
 		538ACCAA26EB40000044A437 /* FoundationSampleViewController */ = {
 			isa = PBXGroup;
 			children = (
+				538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */,
 				538ACCB326EB40A60044A437 /* ColorsListTableViewController.swift */,
 				538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */,
-				538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */,
 			);
 			path = FoundationSampleViewController;
 			sourceTree = "<group>";
