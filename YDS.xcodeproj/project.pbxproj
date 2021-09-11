@@ -13,6 +13,7 @@
 		532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */; };
 		532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */; };
 		532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD826EC7863008C2354 /* UIViewController+Embed.swift */; };
+		532DBFDB26ED0508008C2354 /* YDSColorArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFDA26ED0508008C2354 /* YDSColorArray.swift */; };
 		5337938826AF08E000BE5860 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938726AF08E000BE5860 /* RxSwift */; };
 		5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5337938926AF08E000BE5860 /* RxCocoa */; };
 		5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */; };
@@ -127,6 +128,7 @@
 		532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		532DBFD826EC7863008C2354 /* UIViewController+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
+		532DBFDA26ED0508008C2354 /* YDSColorArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSColorArray.swift; sourceTree = "<group>"; };
 		5337938B26AF096A00BE5860 /* StorybookPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageViewController.swift; sourceTree = "<group>"; };
 		5337938D26AF09BF00BE5860 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
 		5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringControllerView.swift; sourceTree = "<group>"; };
@@ -267,6 +269,26 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		532DBFDC26ED0CD5008C2354 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
+				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
+				532DBFDA26ED0508008C2354 /* YDSColorArray.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		532DBFDD26ED0CEE008C2354 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */,
+				538ACCB326EB40A60044A437 /* ColorsListTableViewController.swift */,
+				538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		533A27B526A52EC0009FD90A /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,9 +401,7 @@
 		538ACCAA26EB40000044A437 /* FoundationSampleViewController */ = {
 			isa = PBXGroup;
 			children = (
-				538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */,
-				538ACCB326EB40A60044A437 /* ColorsListTableViewController.swift */,
-				538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */,
+				532DBFDD26ED0CEE008C2354 /* Color */,
 			);
 			path = FoundationSampleViewController;
 			sourceTree = "<group>";
@@ -504,10 +524,9 @@
 		DDFBCFFD26739A6900C5F409 /* YDS-Storybook */ = {
 			isa = PBXGroup;
 			children = (
+				532DBFDC26ED0CD5008C2354 /* Assets */,
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
-				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
-				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
@@ -708,6 +727,7 @@
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
+				532DBFDB26ED0508008C2354 /* YDSColorArray.swift in Sources */,
 				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
