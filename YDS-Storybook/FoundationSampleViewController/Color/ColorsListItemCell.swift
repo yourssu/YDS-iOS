@@ -104,7 +104,7 @@ class ColorsListItemCell: UITableViewCell {
     func fillData(with model: Color) {
         colorCircleView.backgroundColor = model.color
         titleLabel.text = model.name
-        captionLabel.text = model.basicColor
+        captionLabel.text = model.basicColorName
     }
     
 }
