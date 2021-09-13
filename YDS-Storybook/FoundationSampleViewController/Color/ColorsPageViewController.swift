@@ -40,12 +40,12 @@ class ColorsPageViewController: UIViewController {
     }
     
     private func setViewHierarchy() {
-        self.view.addSubview(tableViewArea)
-        embed(colorsListTableViewController, at: tableViewArea)
+        self.embed(colorsListTableViewController)
+        self.view.addSubview(colorsListTableViewController.view)
     }
     
     private func setAutolayout() {
-        tableViewArea.snp.makeConstraints {
+        colorsListTableViewController.view.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
         }
