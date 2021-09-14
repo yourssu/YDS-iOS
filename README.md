@@ -24,7 +24,15 @@ YDS 컴포넌트를 직접 조작할 수 있는 샘플 어플리케이션입니�
 ## 📱 YDS를 사용해 개발한 어플리케이션
 개발 중
 
+## 💻 타 버전 저장소
+[YDS-Android](https://github.com/yourssu/YDS-Android)  
+[YDS-Web](https://github.com/yourssu/YDS-Web)  
+
 ## 🙏 의존하는 외부 라이브러리
 [SnapKit](https://github.com/SnapKit/SnapKit)  
 [PanModal](https://github.com/slackhq/PanModal)  
 [RxSwift](https://github.com/ReactiveX/RxSwift) - 샘플 어플리케이션 전용
+
+## 📚 참고한 자료
+[[SOCAR FRAME 만들기 #2] 다크 모드 받고 디자인 시스템 더블로 가! (1탄)](https://tech.socarcorp.kr/design/2020/07/10/dark-mode-01.html)  
+[[SOCAR FRAME 만들기 #2] 다크 모드 받고 디자인 시스템 더블로 가! (2탄)](https://tech.socarcorp.kr/design/2020/07/22/dark-mode-02.html)  
