@@ -6,8 +6,6 @@
 //
 
 import YDS
-import Foundation
-import UIKit
 
 struct Typographies {
     let items: [String.TypoStyle]

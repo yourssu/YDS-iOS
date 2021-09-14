@@ -1,5 +1,5 @@
 //
-//  TypoPageViewController.swift
+//  TypographiesPageViewController.swift
 //  YDS-Storybook
 //
 //  Created by Gyuni on 2021/09/14.
@@ -7,23 +7,46 @@
 
 import UIKit
 
-class TypoPageViewController: UIViewController {
+class TypographiesPageViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private let typographiesListTableViewController: TypographiesListTableViewController
+    
+    init() {
+        typographiesListTableViewController = TypographiesListTableViewController(with: typographies)
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupView()
+    }
+
+    private func setupView() {
+        setViewProperties()
+        setViewHierarchy()
+        setAutolayout()
+    }
+    
+    private func setViewProperties() {
+        self.title = "Typography"
+    }
+    
+    private func setViewHierarchy() {
+        self.embed(typographiesListTableViewController)
+        self.view.addSubview(typographiesListTableViewController.view)
+    }
+    
+    private func setAutolayout() {
+        typographiesListTableViewController.view.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
+        }
+    }
 
 }

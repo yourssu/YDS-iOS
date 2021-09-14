@@ -1,17 +1,18 @@
 //
-//  TypographiesTableViewController.swift
+//  TypographiesListTableViewController.swift
 //  YDS-Storybook
 //
 //  Created by Gyuni on 2021/09/14.
 //
 
 import UIKit
+import YDS
 
-class TypographiesTableViewController: UITableViewController {
+class TypographiesListTableViewController: UITableViewController {
     
-    private var model: [[String]]
+    private var model: [Typographies]
     
-    init(with model: [[String]]) {
+    init(with model: [Typographies]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,27 +33,25 @@ class TypographiesTableViewController: UITableViewController {
     
     private func setViewProperties() {
         self.tableView.register(TypographiesListItemCell.self, forCellReuseIdentifier: TypographiesListItemCell.reuseIdentifier)
-        self.tableView.separatorStyle = .none
+        self.tableView.separatorColor = YDSColor.borderNormal
     }
 
-    // MARK: - Table view data source
-
+    // MARK: - DataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return model.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return model[section][0]
+        return model[section].description
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return model[section].count
+        return model[section].items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TypographiesListItemCell = tableView.dequeueReusableCell(for: indexPath)
-
+        cell.fillData(with: model[indexPath.section].items[indexPath.row])
         return cell
     }
     
