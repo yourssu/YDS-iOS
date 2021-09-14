@@ -76,6 +76,10 @@
 		53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */; };
 		53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */; };
 		53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */; };
+		53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8526F0619E0036648E /* TypographiesPageViewController.swift */; };
+		53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8726F061F80036648E /* TypographiesListTableViewController.swift */; };
+		53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8926F062180036648E /* TypographiesListItemCell.swift */; };
+		53E26E8C26F0637A0036648E /* YDSTypographyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8B26F0637A0036648E /* YDSTypographyArray.swift */; };
 		53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2CF3B26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift */; };
 		53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2CF3D26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift */; };
 		53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2CF3F26D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift */; };
@@ -185,6 +189,10 @@
 		53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSProfileImageView.swift; sourceTree = "<group>"; };
 		53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewPageViewController.swift; sourceTree = "<group>"; };
 		53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckbox.swift; sourceTree = "<group>"; };
+		53E26E8526F0619E0036648E /* TypographiesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographiesPageViewController.swift; sourceTree = "<group>"; };
+		53E26E8726F061F80036648E /* TypographiesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographiesListTableViewController.swift; sourceTree = "<group>"; };
+		53E26E8926F062180036648E /* TypographiesListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographiesListItemCell.swift; sourceTree = "<group>"; };
+		53E26E8B26F0637A0036648E /* YDSTypographyArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypographyArray.swift; sourceTree = "<group>"; };
 		53E2CF3B26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewPageViewController.swift; sourceTree = "<group>"; };
 		53E2CF3D26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixTextFieldViewPageViewController.swift; sourceTree = "<group>"; };
 		53E2CF3F26D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldViewPageViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +282,7 @@
 			children = (
 				53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */,
 				532DBFDA26ED0508008C2354 /* YDSColorArray.swift */,
+				53E26E8B26F0637A0036648E /* YDSTypographyArray.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				532DBFDD26ED0CEE008C2354 /* Color */,
+				53E26E8426F061720036648E /* Typography */,
 			);
 			path = FoundationSampleViewController;
 			sourceTree = "<group>";
@@ -436,6 +446,16 @@
 				53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */,
 			);
 			path = YDSButton;
+			sourceTree = "<group>";
+		};
+		53E26E8426F061720036648E /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				53E26E8526F0619E0036648E /* TypographiesPageViewController.swift */,
+				53E26E8726F061F80036648E /* TypographiesListTableViewController.swift */,
+				53E26E8926F062180036648E /* TypographiesListItemCell.swift */,
+			);
+			path = Typography;
 			sourceTree = "<group>";
 		};
 		53EFF5CC26BA9A7B00732DCF /* Component */ = {
@@ -721,6 +741,7 @@
 				532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				538ACCAE26EB40380044A437 /* ColorsPageViewController.swift in Sources */,
 				537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */,
+				53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
@@ -735,7 +756,9 @@
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
+				53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */,
 				537A0AD026C4189700142DCE /* SingleTitleTopBarSampleViewController.swift in Sources */,
+				53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */,
 				53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
@@ -753,6 +776,7 @@
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
 				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
 				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
+				53E26E8C26F0637A0036648E /* YDSTypographyArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
