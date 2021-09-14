@@ -29,71 +29,72 @@ extension String {
         case caption1
         case caption2
         
-        internal func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
-            let finalFont: UIFont
-            let finalLineHeight: CGFloat
-            let paragraphStyle = NSMutableParagraphStyle()
-            
-            let lineHeight100: CGFloat = 1.0
-            let lineHeight130: CGFloat = 1.3
-            let lineHeight160: CGFloat = 1.6
-    
+        public var font: UIFont {
             switch self {
             case .title1:
-                finalFont = YDSFont.title1
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.title1
             case .title2:
-                finalFont = YDSFont.title2
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.title2
             case .title3:
-                finalFont = YDSFont.title3
-                finalLineHeight = finalFont.pointSize * lineHeight130
-                
+                return YDSFont.title3
+            
+            
             case .subtitle1:
-                finalFont = YDSFont.subtitle1
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.subtitle1
             case .subtitle2:
-                finalFont = YDSFont.subtitle2
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.subtitle2
             case .subtitle3:
-                finalFont = YDSFont.subtitle3
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.subtitle3
                 
             case .body1:
-                finalFont = YDSFont.body1
-                finalLineHeight = finalFont.pointSize * lineHeight160
+                return YDSFont.body1
             case .body2:
-                finalFont = YDSFont.body2
-                finalLineHeight = finalFont.pointSize * lineHeight160
+                return YDSFont.body2
                 
             case .button0:
-                finalFont = YDSFont.button0
-                finalLineHeight = finalFont.pointSize * lineHeight100
+                return YDSFont.button0
             case .button1:
-                finalFont = YDSFont.button1
-                finalLineHeight = finalFont.pointSize * lineHeight100
+                return YDSFont.button1
             case .button2:
-                finalFont = YDSFont.button2
-                finalLineHeight = finalFont.pointSize * lineHeight100
+                return YDSFont.button2
             case .button3:
-                finalFont = YDSFont.button3
-                finalLineHeight = finalFont.pointSize * lineHeight100
+                return YDSFont.button3
             case .button4:
-                finalFont = YDSFont.button4
-                finalLineHeight = finalFont.pointSize * lineHeight100
+                return YDSFont.button4
                 
             case .caption1:
-                finalFont = YDSFont.caption1
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.caption1
             case .caption2:
-                finalFont = YDSFont.caption2
-                finalLineHeight = finalFont.pointSize * lineHeight130
+                return YDSFont.caption2
             }
+        }
         
-            paragraphStyle.lineSpacing = finalLineHeight - finalFont.lineHeight
+        public var lineHeight: CGFloat {
+            switch self {
+            case .title1, .title2, .title3:
+                return 1.3
+                
+            case .subtitle1, .subtitle2, .subtitle3:
+                return 1.3
+                
+            case .body1, .body2:
+                return 1.6
+                
+            case .button0, .button1, .button2, .button3, .button4:
+                return 1.0
+                
+            case .caption1, .caption2:
+                return 1.3
+            }
+        }
+        
+        internal func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
+            let paragraphStyle = NSMutableParagraphStyle()
+            
+            paragraphStyle.lineSpacing = self.lineHeight - self.font.lineHeight
             let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: color ?? UIColor.black,
-                .font: finalFont,
+                .font: self.font,
                 .paragraphStyle: paragraphStyle
             ]
             return attributes
