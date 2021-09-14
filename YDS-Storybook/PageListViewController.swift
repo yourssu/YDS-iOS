@@ -16,7 +16,7 @@ class PageListViewController: UIViewController {
     //  MARK: - tableView에 들어갈 섹션과 셀에 대한 코드입니다.
     
     //  각 섹션의 타이틀로 사용될 문자열입니다.
-    let sections: [String] = ["0. Rule", "1. Foundation", "2. Atom", "3. Component"]
+    let sections: [String] = ["1. Foundation", "2. Atom", "3. Component"]
     
     
     //  title은 cell에 표시되는 글자입니다.
@@ -28,9 +28,6 @@ class PageListViewController: UIViewController {
     
     
     //  여기 아래에 각 단계에 맞는 Page를 추가해주세요.
-    let rulePages: [Page] = [
-        Page(title: "Sample", vc: UIViewController.self),
-    ]
     
     let foundationPages: [Page] = [
         Page(title: "Color", vc: ColorsPageViewController.self),
@@ -126,12 +123,10 @@ extension PageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
         case 0:
-            return rulePages.count
-        case 1:
             return foundationPages.count
-        case 2:
+        case 1:
             return atomPages.count
-        case 3:
+        case 2:
             return componentPages.count
         default:
             return 0
@@ -143,12 +138,10 @@ extension PageListViewController: UITableViewDataSource {
         
         switch(indexPath.section) {
         case 0:
-            page = rulePages[indexPath.row]
-        case 1:
             page = foundationPages[indexPath.row]
-        case 2:
+        case 1:
             page = atomPages[indexPath.row]
-        case 3:
+        case 2:
             page = componentPages[indexPath.row]
         default:
             page = Page(title: "error", vc: UIViewController.self)

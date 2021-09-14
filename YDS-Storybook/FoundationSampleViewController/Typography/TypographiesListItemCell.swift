@@ -173,9 +173,15 @@ fileprivate class TypographiesListItemCellDescriptionRow: UIView {
     }
     
     private func setupViews() {
-        
+        setViewHierarchy()
+        setAutolayout()
+    }
+    
+    private func setViewHierarchy() {
         self.addSubviews(categoryLabel, propertyLabel)
-        
+    }
+    
+    private func setAutolayout() {
         self.snp.makeConstraints {
             $0.height.equalTo(Dimension.height)
         }
@@ -191,7 +197,6 @@ fileprivate class TypographiesListItemCellDescriptionRow: UIView {
             $0.trailing.equalToSuperview()
             $0.top.bottom.equalToSuperview()
         }
-        
     }
     
 }
