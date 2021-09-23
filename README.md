@@ -15,7 +15,7 @@ YDS 문서는 노션 페이지에서 관리됩니다.
 컴포넌트 정보와 사용 예시 등을 확인할 수 있습니다.  
 
 ## 🛠 설치 방법
-[Swift Packag Manager로 YDS 설치하기](https://www.notion.so/yourssu/Siwft-Package-Manager-YDS-e6e102a96ca5433a907cc9d1ae3cb274)  
+[Swift Packag Manager로 YDS 설치하기](https://yourssu.notion.site/Siwft-Package-Manager-YDS-e6e102a96ca5433a907cc9d1ae3cb274)  
 
 ## 🧪 샘플 어플리케이션
 ![storybook](https://user-images.githubusercontent.com/54972653/133135378-f865e2ce-db15-4c1e-8631-74c4c04001c1.gif)
