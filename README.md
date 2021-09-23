@@ -6,7 +6,6 @@
   <a href="https://testflight.apple.com/join/00LW9q4d" target="_blank"><img src="https://img.shields.io/badge/TestFlight-0D96F6?style=flat-square&logo=Appstore&logoColor=white"/></a>
 </div>
 
-
 ## 🎨 YDS란
 YDS는 숭실대학교 동아리 유어슈에서 사용하는 디자인 시스템입니다. 뷰 컴포넌트 재사용성을 높여 코드 작성에 걸리는 시간을 단축함과 동시에 일관된 디자인 퀄리티를 보장하기 위해 고안됐습니다.
 
@@ -15,7 +14,10 @@ YDS는 숭실대학교 동아리 유어슈에서 사용하는 디자인 시스�
 YDS 문서는 노션 페이지에서 관리됩니다.  
 컴포넌트 정보와 사용 예시 등을 확인할 수 있습니다.  
 
-## 🛠 샘플 어플리케이션
+## 🛠 설치 방법
+[Swift Packag Manager로 YDS 설치하기](https://www.notion.so/yourssu/Siwft-Package-Manager-YDS-e6e102a96ca5433a907cc9d1ae3cb274)  
+
+## 🧪 샘플 어플리케이션
 ![storybook](https://user-images.githubusercontent.com/54972653/133135378-f865e2ce-db15-4c1e-8631-74c4c04001c1.gif)
 
 [YDS Storybook](https://testflight.apple.com/join/00LW9q4d)  
