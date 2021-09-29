@@ -91,7 +91,7 @@ extension String {
         internal func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
             let paragraphStyle = NSMutableParagraphStyle()
             
-            paragraphStyle.lineSpacing = self.lineHeight - self.font.lineHeight
+            paragraphStyle.lineSpacing = self.font.pointSize*self.lineHeight - self.font.lineHeight
             let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: color ?? UIColor.black,
                 .font: self.font,
