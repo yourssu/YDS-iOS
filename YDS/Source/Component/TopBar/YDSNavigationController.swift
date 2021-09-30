@@ -64,32 +64,28 @@ public class YDSNavigationController: UINavigationController {
      각종 프로퍼티를 세팅합니다.
      */
     private func setProperties() {
-        setNavigationBarBackIndicator()
-        setNavigationBarProperties()
-    }
-    
-
-    /**
-     NavigationBar의 뒤로가기 아이콘 이미지를 설정합니다.
-     */
-    private func setNavigationBarBackIndicator() {
-        let barAppearance =
-            UINavigationBar.appearance(whenContainedInInstancesOf: [YDSNavigationController.self])
-        barAppearance.backIndicatorImage = YDSIcon.arrowLeftLine
-        barAppearance.backIndicatorTransitionMaskImage = YDSIcon.arrowLeftLine
+        setNavigationBarAppearance()
     }
     
     /**
-     NavigationBar의 프로퍼티를 설정합니다.
+     NavigationBar의 외관을 설정합니다.
      */
-    private func setNavigationBarProperties() {
-        navigationBar.tintColor = YDSColor.buttonNormal
-        navigationBar.isTranslucent = false
-        navigationBar.shadowImage = UIImage()
-        navigationBar.titleTextAttributes = [
+    private func setNavigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = YDSColor.bgElevated
+        appearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: YDSColor.textPrimary,
             NSAttributedString.Key.font: YDSFont.subtitle2,
         ]
+        appearance.setBackIndicatorImage(YDSIcon.arrowLeftLine,
+                                         transitionMaskImage: YDSIcon.arrowLeftLine)
+        appearance.shadowColor = nil
+        
+        navigationBar.tintColor = YDSColor.buttonNormal
+        navigationBar.standardAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
+        navigationBar.compactAppearance = appearance
     }
     
     /**
