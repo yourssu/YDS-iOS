@@ -27,6 +27,7 @@ public class YDSSimpleTextFieldView: UIView {
         didSet {
             setState()
             textField.isNegative = self.isNegative
+            if !oldValue && isNegative && !isDisabled { playWarningAnimation() }
         }
     }
 
@@ -80,19 +81,6 @@ public class YDSSimpleTextFieldView: UIView {
             }
         }
     }
-    
-    
-    //  MARK: - 외부에서 재생할 수 있는 함수
-    
-    /**
-     필드가 좌우로 흔들리는 애니메이션을 재생합니다.
-     withHatic이 true면 진동도 함께 재생합니다.
-     */
-    public func shake(withHaptic: Bool) {
-        if withHaptic { playHaptic() }
-        playWarningAnimation()
-    }
-    
     
     //  MARK: - 진동 관련 인스턴스
     
@@ -206,6 +194,9 @@ extension YDSSimpleTextFieldView {
     }
  
     private func playWarningAnimation() {
+        feedbackGenerator.notificationOccurred(.warning)
+        feedbackGenerator.prepare()
+        
         let propertyAnimator = UIViewPropertyAnimator(duration: Transform.length,
                                                       dampingRatio: Transform.dumpingRatio) {
             self.transform = CGAffineTransform(translationX: -Transform.deltaX, y: 0)
@@ -213,10 +204,5 @@ extension YDSSimpleTextFieldView {
         propertyAnimator.addAnimations({ self.transform = .identity },
                                        delayFactor: CGFloat(Transform.length))
         propertyAnimator.startAnimation()
-    }
-    
-    private func playHaptic() {
-        feedbackGenerator.notificationOccurred(.warning)
-        feedbackGenerator.prepare()
     }
 }

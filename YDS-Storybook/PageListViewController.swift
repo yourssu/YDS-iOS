@@ -16,7 +16,7 @@ class PageListViewController: UIViewController {
     //  MARK: - tableView에 들어갈 섹션과 셀에 대한 코드입니다.
     
     //  각 섹션의 타이틀로 사용될 문자열입니다.
-    let sections: [String] = ["1. Foundation", "2. Atom", "3. Component", "4. Case Test"]
+    let sections: [String] = ["1. Foundation", "2. Atom", "3. Component"]
     
     
     //  title은 cell에 표시되는 글자입니다.
@@ -53,10 +53,6 @@ class PageListViewController: UIViewController {
         Page(title: "SingleTitleTopBar", vc: SingleTitleTopBarPageViewController.self),
         Page(title: "DoubleTitleTopBar", vc: DoubleTitleTopBarPageViewController.self),
         Page(title: "BottomBarController", vc: BottomBarControllerPageViewController.self),
-    ]
-    
-    let caseTestPages: [Page] = [
-        Page(title: "TextField-CaseA", vc: TextFieldSampleViewController.self),
     ]
 
     
@@ -132,8 +128,6 @@ extension PageListViewController: UITableViewDataSource {
             return atomPages.count
         case 2:
             return componentPages.count
-        case 3:
-            return caseTestPages.count
         default:
             return 0
         }
@@ -149,8 +143,6 @@ extension PageListViewController: UITableViewDataSource {
             page = atomPages[indexPath.row]
         case 2:
             page = componentPages[indexPath.row]
-        case 3:
-            page = caseTestPages[indexPath.row]
         default:
             page = Page(title: "error", vc: UIViewController.self)
         }
