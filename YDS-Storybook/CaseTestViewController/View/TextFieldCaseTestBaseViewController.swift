@@ -1,5 +1,5 @@
 //
-//  TextFieldSampleCaseAViewController.swift
+//  TextFieldCaseTestBaseViewController.swift
 //  YDS-Storybook
 //
 //  Created by Gyuni on 2021/10/02.
@@ -9,10 +9,10 @@ import UIKit
 import RxSwift
 import YDS
 
-class TextFieldSampleViewController: UIViewController {
+class TextFieldCaseTestBaseViewController: UIViewController {
     
     //  MARK: - ViewModel
-    private let viewModel = TextFieldSampleViewModel()
+    var viewModel: TextFieldCaseTestViewModel?
     private let bag = DisposeBag()
     
     //  MARK: - Dimension
@@ -64,7 +64,6 @@ class TextFieldSampleViewController: UIViewController {
     private func setViewProperties() {
         title = "회원가입"
         view.backgroundColor = YDSColor.bgNormal
-        nicknameTextField.textField.becomeFirstResponder()
         nicknameTextField.textField.addTarget(self,
                                               action: #selector(textFieldEditingChanged(_:)),
                                               for: .editingChanged)
@@ -90,67 +89,76 @@ class TextFieldSampleViewController: UIViewController {
         }
         
         confirmButton.snp.makeConstraints {
-            $0.top.equalTo(nicknameTextField.snp.bottom).offset(48)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(Dimension.Margin.vertical)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Dimension.Margin.horizontal)
         }
     }
     
     private func bindViewModel() {
-        viewModel.confirmButtonIsDisabled
-            .subscribe(onNext: { [weak self] value in
-                self?.confirmButton.isDisabled = value
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldIsPositive
-            .subscribe(onNext: { [weak self] value in
-                self?.nicknameTextField.isPositive = value
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldIsNegative
-            .subscribe(onNext: { [weak self] value in
-                self?.nicknameTextField.isNegative = value
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldShoudShake
-            .subscribe(onNext: { [weak self] value in
-                if value {
+        guard let viewModel = viewModel else { return }
+            viewModel.confirmButtonIsDisabled
+                .subscribe(onNext: { [weak self] value in
+                    self?.confirmButton.isDisabled = value
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldIsPositive
+                .subscribe(onNext: { [weak self] value in
+                    self?.nicknameTextField.isPositive = value
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldIsNegative
+                .subscribe(onNext: { [weak self] value in
+                    self?.nicknameTextField.isNegative = value
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldShoudShake
+                .filter { $0 }
+                .subscribe(onNext: { [weak self] _ in
                     self?.nicknameTextField.shake(withHaptic: false)
-                }
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldShoudShakeWithHaptic
-            .subscribe(onNext: { [weak self] value in
-                if value {
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldShoudShakeWithHaptic
+                .filter { $0 }
+                .subscribe(onNext: { [weak self] _ in
                     self?.nicknameTextField.shake(withHaptic: true)
-                }
-            })
-            .disposed(by: bag)
+                })
+                .disposed(by: bag)
+            
+            viewModel.shouldShowToastMessage
+                .filter { $0 }
+                .subscribe(onNext: { _ in
+                    YDSToast.makeToast(text: "중복 닉네임입니다.", duration: .short)
+                })
+                .disposed(by: bag)
         
-        viewModel.shouldShowToastMessage
-            .subscribe(onNext: { [weak self] value in
-                if value {
-                    YDSToast.makeToast(text: "중복 닉네임입니다.")
-                    self?.nicknameTextField.textField.resignFirstResponder()
-                }
-            })
-            .disposed(by: bag)
     }
 
 }
 
-//  MARK: - Extension
-extension TextFieldSampleViewController {
+//  MARK: - Action
+extension TextFieldCaseTestBaseViewController {
     @objc
     private func textFieldEditingChanged(_ textField: UITextField) {
-        viewModel.textFieldEditingChanged(text: textField.text)
+        if let viewModel = viewModel {
+            viewModel.textFieldEditingChanged(text: textField.text)
+        }
     }
     
     @objc
     private func confirmButtonDidTap(_ sender: UIControl) {
-        viewModel.confirmButtonDidTap()
+        if let viewModel = viewModel {
+            viewModel.confirmButtonDidTap()
+        }
+    }
+}
+
+//  MARK: - TextField Keyboard
+extension TextFieldCaseTestBaseViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
 }
