@@ -96,44 +96,44 @@ class TextFieldCaseTestBaseViewController: UIViewController {
     
     private func bindViewModel() {
         guard let viewModel = viewModel else { return }
-        viewModel.confirmButtonIsDisabled
-            .subscribe(onNext: { [weak self] value in
-                self?.confirmButton.isDisabled = value
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldIsPositive
-            .subscribe(onNext: { [weak self] value in
-                self?.nicknameTextField.isPositive = value
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldIsNegative
-            .subscribe(onNext: { [weak self] value in
-                self?.nicknameTextField.isNegative = value
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldShoudShake
-            .filter { $0 }
-            .subscribe(onNext: { [weak self] _ in
-                self?.nicknameTextField.shake(withHaptic: false)
-            })
-            .disposed(by: bag)
-        
-        viewModel.textFieldShoudShakeWithHaptic
-            .filter { $0 }
-            .subscribe(onNext: { [weak self] _ in
-                self?.nicknameTextField.shake(withHaptic: true)
-            })
-            .disposed(by: bag)
-        
-        viewModel.shouldShowToastMessage
-            .filter { $0 }
-            .subscribe(onNext: { _ in
-                YDSToast.makeToast(text: "중복 닉네임입니다.", duration: .short)
-            })
-            .disposed(by: bag)
+            viewModel.confirmButtonIsDisabled
+                .subscribe(onNext: { [weak self] value in
+                    self?.confirmButton.isDisabled = value
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldIsPositive
+                .subscribe(onNext: { [weak self] value in
+                    self?.nicknameTextField.isPositive = value
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldIsNegative
+                .subscribe(onNext: { [weak self] value in
+                    self?.nicknameTextField.isNegative = value
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldShoudShake
+                .filter { $0 }
+                .subscribe(onNext: { [weak self] _ in
+                    self?.nicknameTextField.shake(withHaptic: false)
+                })
+                .disposed(by: bag)
+            
+            viewModel.textFieldShoudShakeWithHaptic
+                .filter { $0 }
+                .subscribe(onNext: { [weak self] _ in
+                    self?.nicknameTextField.shake(withHaptic: true)
+                })
+                .disposed(by: bag)
+            
+            viewModel.shouldShowToastMessage
+                .filter { $0 }
+                .subscribe(onNext: { _ in
+                    YDSToast.makeToast(text: "중복 닉네임입니다.", duration: .short)
+                })
+                .disposed(by: bag)
         
     }
 
