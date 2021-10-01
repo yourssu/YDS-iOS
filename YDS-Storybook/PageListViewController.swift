@@ -56,7 +56,9 @@ class PageListViewController: UIViewController {
     ]
     
     let caseTestPages: [Page] = [
-        Page(title: "TextField-CaseA", vc: TextFieldSampleViewController.self),
+        Page(title: "TextField-WithHaptic", vc: TextFieldWithHapticViewController.self),
+        Page(title: "TextField-WithoutHaptic", vc: TextFieldWithoutHapticViewController.self),
+        Page(title: "TextField-WithoutAnimation", vc: TextFieldWithoutAnimationViewController.self),
     ]
 
     
