@@ -63,8 +63,8 @@ class TextFieldCaseTestViewModel {
     private func bind() {
         text
             .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { text in
-                self.textDidChanged(to: text)
+            .subscribe(onNext: { [weak self] text in
+                self?.textDidChanged(to: text)
             })
             .disposed(by: bag)
     }
