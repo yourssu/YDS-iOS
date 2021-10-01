@@ -27,7 +27,6 @@ public class YDSSimpleTextFieldView: UIView {
         didSet {
             setState()
             textField.isNegative = self.isNegative
-            if !oldValue && isNegative && !isDisabled { playWarningAnimation() }
         }
     }
 
@@ -82,13 +81,6 @@ public class YDSSimpleTextFieldView: UIView {
         }
     }
     
-    //  MARK: - 진동 관련 인스턴스
-    
-    /**
-     각 Item을 Touch 했을 때 진동이 울리도록 만들어주는 feedbackGenerator입니다.
-     */
-    private let feedbackGenerator = UINotificationFeedbackGenerator()
-    
 
     //  MARK: - 뷰
     
@@ -121,7 +113,6 @@ public class YDSSimpleTextFieldView: UIView {
     
     public init() {
         super.init(frame: CGRect.zero)
-        feedbackGenerator.prepare()
         
         setStackView()
         setState()
@@ -180,29 +171,3 @@ public class YDSSimpleTextFieldView: UIView {
     
 }
 
-
-//  MARK: - Warning 애니메이션 관련 세팅
-
-extension YDSSimpleTextFieldView {
-    /**
-     각종 애니메이션 관련 수치입니다.
-     */
-    private enum Transform {
-        static let length: TimeInterval = Animation.Duration.medium
-        static var deltaX: CGFloat { Screen.width * 0.02 }
-        static let dumpingRatio: CGFloat = 0.5
-    }
- 
-    private func playWarningAnimation() {
-        feedbackGenerator.notificationOccurred(.warning)
-        feedbackGenerator.prepare()
-        
-        let propertyAnimator = UIViewPropertyAnimator(duration: Transform.length,
-                                                      dampingRatio: Transform.dumpingRatio) {
-            self.transform = CGAffineTransform(translationX: -Transform.deltaX, y: 0)
-        }
-        propertyAnimator.addAnimations({ self.transform = .identity },
-                                       delayFactor: CGFloat(Transform.length))
-        propertyAnimator.startAnimation()
-    }
-}
