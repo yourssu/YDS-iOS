@@ -1,5 +1,5 @@
 //
-//  TextFieldCaseTestViewModel.swift
+//  TextFieldSampleViewModel.swift
 //  YDS-Storybook
 //
 //  Created by Gyuni on 2021/10/02.
@@ -8,34 +8,17 @@
 import Foundation
 import RxSwift
 
-class TextFieldCaseTestViewModel {
-    
-    //  MARK: - Type
-    enum CaseType {
-        case withHaptic
-        case withoutHaptic
-        case withoutAnimation
-    }
-    
-    private let caseType: CaseType
+class TextFieldSampleViewModel {
     
     //  MARK: - DisposeBag
     private let bag = DisposeBag()
     
     //  MARK: - INPUT
     func confirmButtonDidTap() {
+        textFieldShoudShakeWithHaptic.onNext(true)
         textFieldIsNegative.onNext(true)
         confirmButtonIsDisabled.onNext(true)
         shouldShowToastMessage.onNext(true)
-        
-        switch caseType {
-        case .withHaptic:
-            textFieldShoudShakeWithHaptic.onNext(true)
-        case .withoutHaptic:
-            textFieldShoudShake.onNext(true)
-        case .withoutAnimation:
-            return
-        }
     }
     
     func textFieldEditingChanged(text: String?) {
@@ -54,8 +37,7 @@ class TextFieldCaseTestViewModel {
     private let text = PublishSubject<String?>()
     
     //  MARK: - Init
-    init(_ caseType: CaseType) {
-        self.caseType = caseType
+    init() {
         bind()
     }
     

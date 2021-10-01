@@ -76,11 +76,8 @@
 		53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */; };
 		53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */; };
 		53C9F70C26B67CE900EF7B86 /* YDSCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */; };
-		53DD99AF27076DC400490C5B /* TextFieldCaseTestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99AE27076DC400490C5B /* TextFieldCaseTestBaseViewController.swift */; };
-		53DD99B12707724B00490C5B /* TextFieldCaseTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99B02707724B00490C5B /* TextFieldCaseTestViewModel.swift */; };
-		53DD99B327078B3900490C5B /* TextFieldWithHapticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99B227078B3900490C5B /* TextFieldWithHapticViewController.swift */; };
-		53DD99B527078C2F00490C5B /* TextFieldWithoutHapticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99B427078C2F00490C5B /* TextFieldWithoutHapticViewController.swift */; };
-		53DD99B727078C4900490C5B /* TextFieldWithoutAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99B627078C4900490C5B /* TextFieldWithoutAnimationViewController.swift */; };
+		53DD99AF27076DC400490C5B /* TextFieldSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99AE27076DC400490C5B /* TextFieldSampleViewController.swift */; };
+		53DD99B12707724B00490C5B /* TextFieldSampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD99B02707724B00490C5B /* TextFieldSampleViewModel.swift */; };
 		53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8526F0619E0036648E /* TypographiesPageViewController.swift */; };
 		53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8726F061F80036648E /* TypographiesListTableViewController.swift */; };
 		53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E26E8926F062180036648E /* TypographiesListItemCell.swift */; };
@@ -194,11 +191,8 @@
 		53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSProfileImageView.swift; sourceTree = "<group>"; };
 		53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewPageViewController.swift; sourceTree = "<group>"; };
 		53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSCheckbox.swift; sourceTree = "<group>"; };
-		53DD99AE27076DC400490C5B /* TextFieldCaseTestBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCaseTestBaseViewController.swift; sourceTree = "<group>"; };
-		53DD99B02707724B00490C5B /* TextFieldCaseTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCaseTestViewModel.swift; sourceTree = "<group>"; };
-		53DD99B227078B3900490C5B /* TextFieldWithHapticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithHapticViewController.swift; sourceTree = "<group>"; };
-		53DD99B427078C2F00490C5B /* TextFieldWithoutHapticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithoutHapticViewController.swift; sourceTree = "<group>"; };
-		53DD99B627078C4900490C5B /* TextFieldWithoutAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithoutAnimationViewController.swift; sourceTree = "<group>"; };
+		53DD99AE27076DC400490C5B /* TextFieldSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSampleViewController.swift; sourceTree = "<group>"; };
+		53DD99B02707724B00490C5B /* TextFieldSampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSampleViewModel.swift; sourceTree = "<group>"; };
 		53E26E8526F0619E0036648E /* TypographiesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographiesPageViewController.swift; sourceTree = "<group>"; };
 		53E26E8726F061F80036648E /* TypographiesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographiesListTableViewController.swift; sourceTree = "<group>"; };
 		53E26E8926F062180036648E /* TypographiesListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographiesListItemCell.swift; sourceTree = "<group>"; };
@@ -461,29 +455,10 @@
 		53DD99AD27076DA100490C5B /* CaseTestViewController */ = {
 			isa = PBXGroup;
 			children = (
-				53DD99B927078ED400490C5B /* ViewModel */,
-				53DD99B827078ECC00490C5B /* View */,
+				53DD99B02707724B00490C5B /* TextFieldSampleViewModel.swift */,
+				53DD99AE27076DC400490C5B /* TextFieldSampleViewController.swift */,
 			);
 			path = CaseTestViewController;
-			sourceTree = "<group>";
-		};
-		53DD99B827078ECC00490C5B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				53DD99AE27076DC400490C5B /* TextFieldCaseTestBaseViewController.swift */,
-				53DD99B227078B3900490C5B /* TextFieldWithHapticViewController.swift */,
-				53DD99B427078C2F00490C5B /* TextFieldWithoutHapticViewController.swift */,
-				53DD99B627078C4900490C5B /* TextFieldWithoutAnimationViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		53DD99B927078ED400490C5B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				53DD99B02707724B00490C5B /* TextFieldCaseTestViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		53E26E8426F061720036648E /* Typography */ = {
@@ -786,7 +761,7 @@
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
-				53DD99B12707724B00490C5B /* TextFieldCaseTestViewModel.swift in Sources */,
+				53DD99B12707724B00490C5B /* TextFieldSampleViewModel.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
 				532DBFDB26ED0508008C2354 /* YDSColorArray.swift in Sources */,
 				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
@@ -801,7 +776,7 @@
 				53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */,
 				53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
-				53DD99AF27076DC400490C5B /* TextFieldCaseTestBaseViewController.swift in Sources */,
+				53DD99AF27076DC400490C5B /* TextFieldSampleViewController.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
@@ -812,12 +787,9 @@
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
-				53DD99B727078C4900490C5B /* TextFieldWithoutAnimationViewController.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
-				53DD99B327078B3900490C5B /* TextFieldWithHapticViewController.swift in Sources */,
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
-				53DD99B527078C2F00490C5B /* TextFieldWithoutHapticViewController.swift in Sources */,
 				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
 				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
 				53E26E8C26F0637A0036648E /* YDSTypographyArray.swift in Sources */,
@@ -954,7 +926,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 0.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = GithubActions_Dist;
@@ -1153,7 +1125,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 0.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1174,7 +1146,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 0.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
