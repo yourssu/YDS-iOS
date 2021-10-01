@@ -26,7 +26,7 @@ class TextFieldCaseTestViewModel {
     func confirmButtonDidTap() {
         textFieldIsNegative.onNext(true)
         confirmButtonIsDisabled.onNext(true)
-        shouldShowToastMessage.onNext(true)
+        shouldPresentAlert.onNext(true)
         
         switch caseType {
         case .withHaptic:
@@ -48,7 +48,7 @@ class TextFieldCaseTestViewModel {
     let textFieldIsNegative = BehaviorSubject<Bool>(value: false)
     let textFieldShoudShake = PublishSubject<Bool>()
     let textFieldShoudShakeWithHaptic = PublishSubject<Bool>()
-    let shouldShowToastMessage = PublishSubject<Bool>()
+    let shouldPresentAlert = PublishSubject<Bool>()
     
     //  MARK: - Private Observable
     private let text = PublishSubject<String?>()
