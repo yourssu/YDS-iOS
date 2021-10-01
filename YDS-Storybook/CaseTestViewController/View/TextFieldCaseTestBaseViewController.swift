@@ -128,10 +128,10 @@ class TextFieldCaseTestBaseViewController: UIViewController {
             })
             .disposed(by: bag)
         
-        viewModel.shouldPresentAlert
+        viewModel.shouldShowToastMessage
             .filter { $0 }
-            .subscribe(onNext: { [weak self] _ in
-                self?.showAlert(title: nil, message: "중복 닉네임입니다.")
+            .subscribe(onNext: { _ in
+                YDSToast.makeToast(text: "중복 닉네임입니다.", duration: .short)
             })
             .disposed(by: bag)
         
@@ -160,16 +160,5 @@ extension TextFieldCaseTestBaseViewController {
 extension TextFieldCaseTestBaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
-    }
-}
-
-//  MARK: - Alert
-extension TextFieldCaseTestBaseViewController {
-    private func showAlert(title: String?, message: String?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .default, handler: nil)
-        alert.addAction(action)
-        alert.view.tintColor = YDSColor.buttonPoint
-        present(alert, animated: true, completion: nil)
     }
 }
