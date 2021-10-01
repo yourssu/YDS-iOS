@@ -216,7 +216,7 @@ extension YDSSimpleTextFieldView {
     }
     
     private func playHaptic() {
-        feedbackGenerator.notificationOccurred(.warning)
+        feedbackGenerator.notificationOccurred(.error)
         feedbackGenerator.prepare()
     }
 }
