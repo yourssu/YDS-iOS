@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = YDSNavigationController(title: "Storybook", rootViewController: PageListViewController())
+        let navigationController = YDSNavigationController(title: "Storybook", rootViewController: PagesListViewController())
         
         window?.rootViewController = navigationController
         

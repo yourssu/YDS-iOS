@@ -84,7 +84,7 @@ class ToastPageViewController: StoryBookViewController {
     private func registerTapAction() {
         showToastButton.addTarget(
             self,
-            action: #selector(buttonTapAction(_:)),
+            action: #selector(buttonDidTap(_:)),
             for: .touchUpInside
         )
     }

@@ -81,7 +81,7 @@ class DoubleTitleTopBarSampleViewController: UIViewController {
 
     private func registerTapAction() {
         [dismissButton, plusButton, listButton, moreButton].forEach {
-            $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
         }
     }
     

@@ -22,8 +22,7 @@
 		5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */; };
 		533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279C26A48683009FD90A /* YDSSimpleTextField.swift */; };
 		533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */; };
-		533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PageListViewController.swift */; };
-		533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B826A5351E009FD90A /* PageListTableViewCell.swift */; };
+		533A27B326A52E56009FD90A /* PagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A27B226A52E56009FD90A /* PagesListViewController.swift */; };
 		533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */; };
 		533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A353E26AEA05E00CCEEAE /* YDSTextField.swift */; };
 		53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A278926A42E72009FD90A /* YDSTypoStyle.swift */; };
@@ -43,6 +42,10 @@
 		5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */; };
 		5359A5C326BECF7400FCCECC /* YDSDoubleTitleTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */; };
 		5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */; };
+		536C115D27119A1800943C4A /* PagesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C115C27119A1800943C4A /* PagesListModel.swift */; };
+		536C116127119A3300943C4A /* PagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C116027119A3300943C4A /* PagesListTableViewController.swift */; };
+		536C11632711A86200943C4A /* PagesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C11622711A86200943C4A /* PagesListViewModel.swift */; };
+		536C11772711AB8600943C4A /* PagesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536C11762711AB8600943C4A /* PagesListViewModelTests.swift */; };
 		536FCA50267CD25300158DFD /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536FCA4F267CD25300158DFD /* YDSIcon.xcassets */; };
 		5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918126A5463C007CD775 /* YDSSuffixTextField.swift */; };
 		5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */; };
@@ -104,6 +107,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		536C11702711AB2200943C4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD151FA12641820200795D7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFBCFFB26739A6900C5F409;
+			remoteInfo = "YDS-Storybook";
+		};
 		5383752526D27D32002E96AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD151FA12641820200795D7C /* Project object */;
@@ -140,8 +150,7 @@
 		533A278926A42E72009FD90A /* YDSTypoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
 		533A279C26A48683009FD90A /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		533A279F26A48691009FD90A /* YDSSimpleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextFieldView.swift; sourceTree = "<group>"; };
-		533A27B226A52E56009FD90A /* PageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListViewController.swift; sourceTree = "<group>"; };
-		533A27B826A5351E009FD90A /* PageListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListTableViewCell.swift; sourceTree = "<group>"; };
+		533A27B226A52E56009FD90A /* PagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesListViewController.swift; sourceTree = "<group>"; };
 		533A353C26AE9E5800CCEEAE /* YDSTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextFieldView.swift; sourceTree = "<group>"; };
 		533A353E26AEA05E00CCEEAE /* YDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextField.swift; sourceTree = "<group>"; };
 		53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageControllerView.swift; sourceTree = "<group>"; };
@@ -158,6 +167,11 @@
 		5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarControllerPageViewController.swift; sourceTree = "<group>"; };
 		5359A5C226BECF7400FCCECC /* YDSDoubleTitleTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSDoubleTitleTopBar.swift; sourceTree = "<group>"; };
 		5359A5C426BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTitleTopBarPageViewController.swift; sourceTree = "<group>"; };
+		536C115C27119A1800943C4A /* PagesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesListModel.swift; sourceTree = "<group>"; };
+		536C116027119A3300943C4A /* PagesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesListTableViewController.swift; sourceTree = "<group>"; };
+		536C11622711A86200943C4A /* PagesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesListViewModel.swift; sourceTree = "<group>"; };
+		536C116C2711AB2200943C4A /* YDS-StorybookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YDS-StorybookTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		536C11762711AB8600943C4A /* PagesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesListViewModelTests.swift; sourceTree = "<group>"; };
 		536FCA4F267CD25300158DFD /* YDSIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YDSIcon.xcassets; sourceTree = "<group>"; };
 		5370918126A5463C007CD775 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
 		5370918326A5467D007CD775 /* YDSSuffixTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextFieldView.swift; sourceTree = "<group>"; };
@@ -223,6 +237,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		536C11692711AB2200943C4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD151FA72641820200795D7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +414,25 @@
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
 		};
+		536C115B27119A0500943C4A /* PagesList */ = {
+			isa = PBXGroup;
+			children = (
+				536C115C27119A1800943C4A /* PagesListModel.swift */,
+				536C11622711A86200943C4A /* PagesListViewModel.swift */,
+				533A27B226A52E56009FD90A /* PagesListViewController.swift */,
+				536C116027119A3300943C4A /* PagesListTableViewController.swift */,
+			);
+			path = PagesList;
+			sourceTree = "<group>";
+		};
+		536C116D2711AB2200943C4A /* YDS-StorybookTests */ = {
+			isa = PBXGroup;
+			children = (
+				536C11762711AB8600943C4A /* PagesListViewModelTests.swift */,
+			);
+			path = "YDS-StorybookTests";
+			sourceTree = "<group>";
+		};
 		537A0AD126C4189D00142DCE /* TopBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +523,7 @@
 			children = (
 				DD151FAC2641820200795D7C /* YDS */,
 				DDFBCFFD26739A6900C5F409 /* YDS-Storybook */,
+				536C116D2711AB2200943C4A /* YDS-StorybookTests */,
 				DD151FAB2641820200795D7C /* Products */,
 				253AF81C549745374AD2F563 /* Frameworks */,
 			);
@@ -493,6 +534,7 @@
 			children = (
 				DD151FAA2641820200795D7C /* YDS.framework */,
 				DDFBCFFC26739A6900C5F409 /* YDS-Storybook.app */,
+				536C116C2711AB2200943C4A /* YDS-StorybookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -548,8 +590,7 @@
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
-				533A27B226A52E56009FD90A /* PageListViewController.swift */,
-				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
+				536C115B27119A0500943C4A /* PagesList */,
 				538ACCAA26EB40000044A437 /* FoundationSampleViewController */,
 				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
 				53EFF5D026BBC22F00732DCF /* ComponentSampleViewController */,
@@ -573,6 +614,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		536C116B2711AB2200943C4A /* YDS-StorybookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 536C11722711AB2200943C4A /* Build configuration list for PBXNativeTarget "YDS-StorybookTests" */;
+			buildPhases = (
+				536C11682711AB2200943C4A /* Sources */,
+				536C11692711AB2200943C4A /* Frameworks */,
+				536C116A2711AB2200943C4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				536C11712711AB2200943C4A /* PBXTargetDependency */,
+			);
+			name = "YDS-StorybookTests";
+			productName = "YDS-StorybookTests";
+			productReference = 536C116C2711AB2200943C4A /* YDS-StorybookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DD151FA92641820200795D7C /* YDS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD151FB22641820200795D7C /* Build configuration list for PBXNativeTarget "YDS" */;
@@ -624,9 +683,13 @@
 		DD151FA12641820200795D7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					536C116B2711AB2200943C4A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = DDFBCFFB26739A6900C5F409;
+					};
 					DD151FA92641820200795D7C = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
@@ -656,11 +719,19 @@
 			targets = (
 				DD151FA92641820200795D7C /* YDS */,
 				DDFBCFFB26739A6900C5F409 /* YDS-Storybook */,
+				536C116B2711AB2200943C4A /* YDS-StorybookTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		536C116A2711AB2200943C4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD151FA82641820200795D7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,6 +753,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		536C11682711AB2200943C4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536C11772711AB8600943C4A /* PagesListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD151FA62641820200795D7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -746,21 +825,23 @@
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
+				536C115D27119A1800943C4A /* PagesListModel.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
 				532DBFDB26ED0508008C2354 /* YDSColorArray.swift in Sources */,
 				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
+				536C11632711A86200943C4A /* PagesListViewModel.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
 				53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */,
+				536C116127119A3300943C4A /* PagesListTableViewController.swift in Sources */,
 				537A0AD026C4189700142DCE /* SingleTitleTopBarSampleViewController.swift in Sources */,
 				53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */,
 				53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */,
-				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
@@ -768,7 +849,7 @@
 				53E2CF4226D2A3DA000DE005 /* SearchTextFieldPageViewController.swift in Sources */,
 				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
 				532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */,
-				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
+				533A27B326A52E56009FD90A /* PagesListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
@@ -783,6 +864,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		536C11712711AB2200943C4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFBCFFB26739A6900C5F409 /* YDS-Storybook */;
+			targetProxy = 536C11702711AB2200943C4A /* PBXContainerItemProxy */;
+		};
 		5383752626D27D32002E96AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DD151FA92641820200795D7C /* YDS */;
@@ -810,6 +896,81 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		536C11732711AB2200943C4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86886QH957;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gyuni.YDS-StorybookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YDS-Storybook.app/YDS-Storybook";
+			};
+			name = Debug;
+		};
+		536C11742711AB2200943C4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86886QH957;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gyuni.YDS-StorybookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YDS-Storybook.app/YDS-Storybook";
+			};
+			name = Release;
+		};
+		536C11752711AB2200943C4A /* Automation */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 86886QH957;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gyuni.YDS-StorybookTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YDS-Storybook.app/YDS-Storybook";
+			};
+			name = Automation;
+		};
 		53A5AB5326E1DC3B008E81AB /* Automation */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1142,6 +1303,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		536C11722711AB2200943C4A /* Build configuration list for PBXNativeTarget "YDS-StorybookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				536C11732711AB2200943C4A /* Debug */,
+				536C11742711AB2200943C4A /* Release */,
+				536C11752711AB2200943C4A /* Automation */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DD151FA42641820200795D7C /* Build configuration list for PBXProject "YDS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

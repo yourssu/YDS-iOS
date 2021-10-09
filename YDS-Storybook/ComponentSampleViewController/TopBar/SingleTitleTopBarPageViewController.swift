@@ -83,7 +83,7 @@ class SingleTitleTopBarPageViewController: StoryBookViewController {
     }
     
     private func registerTapAction() {
-        presentButton.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
+        presentButton.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
     }
     
     @objc
