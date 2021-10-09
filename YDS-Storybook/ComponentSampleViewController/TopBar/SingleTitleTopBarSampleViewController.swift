@@ -76,7 +76,7 @@ class SingleTitleTopBarSampleViewController: UIViewController {
 
     private func registerTapAction() {
         [dismissButton, searchButton, writeButton].forEach {
-            $0.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
         }
     }
     

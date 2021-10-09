@@ -25,7 +25,12 @@ final class PagesListViewModel {
     }
     
     func versionButtonDidTap() {
-        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+        let version = Bundle
+            .main
+            .infoDictionary?["CFBundleShortVersionString"]
+            as? String
+        
+        if let version = version {
             makeToast.onNext("Current Version: \(version)")
         }
     }

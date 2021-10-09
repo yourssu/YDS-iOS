@@ -73,7 +73,7 @@ class TopBarSampleViewController: UIViewController {
     
     private func registerTapAction() {
         [dismissButton, doneButton, cancelButton].forEach {
-            $0.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
         }
     }
     
