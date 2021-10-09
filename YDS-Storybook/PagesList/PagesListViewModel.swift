@@ -11,7 +11,7 @@ import RxSwift
 final class PagesListViewModel {
     
     //  MARK: - Model
-    let model: PagesListModel
+    private let model: PagesListModel
     
     //  MARK: - Input
     func itemDidTap(at indexPath: IndexPath) {

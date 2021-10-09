@@ -49,7 +49,7 @@ class PagesListViewController: UIViewController {
         view.backgroundColor = YDSColor.bgNormal
         extendedLayoutIncludesOpaqueBars = true
         
-        if let titleLabel = self.navigationItem.leftBarButtonItem?.customView as? UILabel {
+        if let titleLabel = navigationItem.leftBarButtonItem?.customView as? UILabel {
             titleLabel.font = UIFont(name: "Avenir-Black", size: 22)
         }
         
