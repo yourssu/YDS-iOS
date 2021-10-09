@@ -36,21 +36,27 @@ final class PagesListViewModel {
     }
     
     //  MARK: - Output
-    
     let pushViewController = PublishSubject<UIViewController>()
     
     let makeToast = PublishSubject<String>()
     
     var numberOfSectionsInTableView: Int {
-        return model.pagesSectionsList.count
+        return model
+            .pagesSectionsList
+            .count
     }
     
     func tableView(titleForHeaderInSection section: Int) -> String? {
-        return model.pagesSectionsList[section].title
+        return model
+            .pagesSectionsList[section]
+            .title
     }
     
     func tableView(numberOfRowsInSection section: Int) -> Int {
-        return model.pagesSectionsList[section].pages.count
+        return model
+            .pagesSectionsList[section]
+            .pages
+            .count
     }
     
     func tableView(titleForRowAt indexPath: IndexPath) -> String {
