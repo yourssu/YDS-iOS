@@ -125,6 +125,10 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray200)
     }
     
+    public static var buttonEmojiBG: UIColor {
+        return color(light: YDSBasicColor.gray100)
+    }
+    
     public static var buttonReversed: UIColor {
         return color(light: YDSBasicColor.white000)
     }
