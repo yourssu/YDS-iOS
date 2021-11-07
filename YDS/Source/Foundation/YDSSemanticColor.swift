@@ -25,8 +25,12 @@ public enum YDSColor {
         return color(light: YDSBasicColor.white000)
     }
     
-    public static var  bgElevated: UIColor {
+    public static var bgElevated: UIColor {
         return color(light: YDSBasicColor.white000)
+    }
+    
+    public static var bgRecomment: UIColor {
+        return color(light: YDSBasicColor.gray050)
     }
     
     public static var bgSelected: UIColor {
