@@ -26,6 +26,7 @@ extension String {
         case button3
         case button4
         
+        case caption0
         case caption1
         case caption2
         
@@ -62,6 +63,8 @@ extension String {
             case .button4:
                 return YDSFont.button4
                 
+            case .caption0:
+                return YDSFont.caption0
             case .caption1:
                 return YDSFont.caption1
             case .caption2:
@@ -83,7 +86,7 @@ extension String {
             case .button0, .button1, .button2, .button3, .button4:
                 return 1.0
                 
-            case .caption1, .caption2:
+            case .caption0, .caption1, .caption2:
                 return 1.3
             }
         }
