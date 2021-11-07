@@ -81,7 +81,7 @@ extension String {
                 return 1.3
                 
             case .body1, .body2:
-                return 1.6
+                return 1.5
                 
             case .button0, .button1, .button2, .button3, .button4:
                 return 1.0
