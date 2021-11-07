@@ -25,6 +25,7 @@ public enum YDSFont {
     public static let button3 = UIFont.systemFont(ofSize: 14, weight: .regular )
     public static let button4 = UIFont.systemFont(ofSize: 12, weight: .medium )
     
+    public static let caption0 = UIFont.systemFont(ofSize: 12, weight: .semibold )
     public static let caption1 = UIFont.systemFont(ofSize: 12, weight: .regular )
     public static let caption2 = UIFont.systemFont(ofSize: 11, weight: .regular )
 }
