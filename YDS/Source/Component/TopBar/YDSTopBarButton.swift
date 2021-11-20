@@ -81,6 +81,28 @@ public class YDSTopBarButton: UIButton {
     }
     
     /**
+     버튼의 Title을 설정합니다.
+     만약 이 버튼에 설정된 image가 있다면 이 메소드가 작동하지 않습니다.
+     
+     - Parameters:
+        - text: 버튼에 들어갈 글귀입니다.
+     */
+    public override func setTitle(_ title: String?,
+                                  for state: UIControl.State) {
+        if image(for: .normal) == nil
+            || image(for: .highlighted) == nil
+            || image(for: .disabled) == nil
+            || image(for: .selected) == nil
+            || image(for: .focused) == nil
+            || image(for: .application) == nil
+            || image(for: .reserved) == nil {
+            return
+        }
+        
+        super.setTitle(title, for: state)
+    }
+    
+    /**
      이미지만 들어가는 버튼을 생성합니다. 이 버튼은 TopBar에만 사용하길 권장합니다.
      
      - Parameters:
@@ -93,6 +115,29 @@ public class YDSTopBarButton: UIButton {
                         .withRenderingMode(.alwaysTemplate),
                       for: .normal)
         setupView()
+    }
+    
+    /**
+     버튼의 Image를 설정합니다.
+     만약 이 버튼에 설정된 Title이 있다면 이 메소드가 작동하지 않습니다.
+     
+     - Parameters:
+        - image: 버튼에 들어갈 이미지입니다.
+     */
+    public override func setImage(_ image: UIImage?,
+                                  for state: UIControl.State) {
+        if title(for: .normal) == nil
+            || title(for: .highlighted) == nil
+            || title(for: .disabled) == nil
+            || title(for: .selected) == nil
+            || title(for: .highlighted) == nil
+            || title(for: .focused) == nil
+            || title(for: .application) == nil
+            || title(for: .reserved) == nil {
+            return
+        }
+        
+        super.setImage(image, for: state)
     }
     
     required init?(coder: NSCoder) {
