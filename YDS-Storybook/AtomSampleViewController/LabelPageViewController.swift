@@ -26,7 +26,6 @@ class LabelPageViewController: StoryBookViewController {
     
     private func setViewProperty() {
         title = "Label"
-        sampleLabel.numberOfLines = 0
     }
     
     private func setViewLayouts() {
