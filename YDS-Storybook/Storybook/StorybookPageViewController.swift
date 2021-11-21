@@ -125,6 +125,17 @@ class StoryBookViewController: UIViewController {
     
     //  MARK: - 옵션 추가를 위한 함수
     
+    //  Int
+    public func addOption(description: String?, defaultValue: Int,  task: @escaping (Int) -> Void) {
+        let controllerView: IntControllerView = {
+            let controllerView = IntControllerView()
+            controllerView.parameterLabel.text = description
+            return controllerView
+        }()
+        
+        setControllerView(controllerView, defaultValue: defaultValue, task: task)
+    }
+    
     //  Optional String
     public func addOption(description: String?, defaultValue: String?,  task: @escaping (String?) -> Void) {
         let controllerView: OptionalStringControllerView = {

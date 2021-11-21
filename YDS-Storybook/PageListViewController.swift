@@ -35,6 +35,7 @@ class PageListViewController: UIViewController {
     ]
     
     let atomPages: [Page] = [
+        Page(title: "Label", vc: LabelPageViewController.self),
         Page(title: "ProfileImageView", vc: ProfileImageViewPageViewController.self),
         Page(title: "Badge", vc: BadgePageViewController.self),
         Page(title: "BoxButton", vc: BoxButtonPageViewController.self),

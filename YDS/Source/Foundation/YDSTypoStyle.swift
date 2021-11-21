@@ -91,10 +91,18 @@ extension String {
             }
         }
         
-        internal func style(color: UIColor? = nil) -> [NSAttributedString.Key: Any] {
+        internal func style(color: UIColor? = nil,
+                            lineBreakMode: NSLineBreakMode? = nil,
+                            lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil) -> [NSAttributedString.Key: Any] {
             let paragraphStyle = NSMutableParagraphStyle()
             
             paragraphStyle.lineSpacing = self.font.pointSize*self.lineHeight - self.font.lineHeight
+            if let lineBreakMode = lineBreakMode {
+                paragraphStyle.lineBreakMode = lineBreakMode
+            }
+            if let lineBreakStrategy = lineBreakStrategy {
+                paragraphStyle.lineBreakStrategy = lineBreakStrategy
+            }
             let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: color ?? UIColor.black,
                 .font: self.font,
@@ -105,8 +113,14 @@ extension String {
         
     }
     
-    internal func attributedString(byPreset preset: TypoStyle, color: UIColor? = nil) -> NSAttributedString {
-        return NSAttributedString.init(string : self, attributes: preset.style(color: color))
+    internal func attributedString(byPreset preset: TypoStyle,
+                                   color: UIColor? = nil,
+                                   lineBreakMode: NSLineBreakMode? = nil,
+                                   lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil) -> NSAttributedString {
+        return NSAttributedString.init(string : self,
+                                       attributes: preset.style(color: color,
+                                                                lineBreakMode: lineBreakMode,
+                                                                lineBreakStrategy: lineBreakStrategy))
     }
 
 }
