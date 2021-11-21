@@ -89,13 +89,13 @@ public class YDSTopBarButton: UIButton {
      */
     public override func setTitle(_ title: String?,
                                   for state: UIControl.State) {
-        if image(for: .normal) == nil
-            || image(for: .highlighted) == nil
-            || image(for: .disabled) == nil
-            || image(for: .selected) == nil
-            || image(for: .focused) == nil
-            || image(for: .application) == nil
-            || image(for: .reserved) == nil {
+        if image(for: .normal) != nil
+            || image(for: .highlighted) != nil
+            || image(for: .disabled) != nil
+            || image(for: .selected) != nil
+            || image(for: .focused) != nil
+            || image(for: .application) != nil
+            || image(for: .reserved) != nil {
             return
         }
         
@@ -126,14 +126,14 @@ public class YDSTopBarButton: UIButton {
      */
     public override func setImage(_ image: UIImage?,
                                   for state: UIControl.State) {
-        if title(for: .normal) == nil
-            || title(for: .highlighted) == nil
-            || title(for: .disabled) == nil
-            || title(for: .selected) == nil
-            || title(for: .highlighted) == nil
-            || title(for: .focused) == nil
-            || title(for: .application) == nil
-            || title(for: .reserved) == nil {
+        if title(for: .normal) != nil
+            || title(for: .highlighted) != nil
+            || title(for: .disabled) != nil
+            || title(for: .selected) != nil
+            || title(for: .highlighted) != nil
+            || title(for: .focused) != nil
+            || title(for: .application) != nil
+            || title(for: .reserved) != nil {
             return
         }
         
