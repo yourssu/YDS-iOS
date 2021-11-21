@@ -45,8 +45,6 @@ class TopBarSampleViewController: UIViewController {
     private func setProperties() {
         self.view.backgroundColor = YDSColor.bgNormal
         self.topBar.topItem?.title = topBarInfo?.title
-        editButton.setTitle("완료", for: .selected)
-        starButton.setImage(YDSIcon.starFilled, for: .selected)
     }
     
     private func setLayouts() {
@@ -82,8 +80,16 @@ class TopBarSampleViewController: UIViewController {
     @objc
     private func buttonTapAction(_ sender: UIButton) {
         switch(sender) {
-        case editButton, starButton:
-            sender.isSelected.toggle()
+        case editButton:
+            editButton.isSelected.toggle()
+            editButton.isSelected
+            ? editButton.setTitle("완료", for: .normal)
+            : editButton.setTitle("편집", for: .normal)
+        case starButton:
+            starButton.isSelected.toggle()
+            starButton.isSelected
+            ? starButton.setImage(YDSIcon.starFilled, for: .normal)
+            : starButton.setImage(YDSIcon.starLine, for: .normal)
         case dismissButton:
             self.dismiss(animated: true, completion: nil)
         default:

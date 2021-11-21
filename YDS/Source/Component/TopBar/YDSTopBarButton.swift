@@ -35,6 +35,7 @@ public class YDSTopBarButton: UIButton {
         didSet {
             if oldValue != isHighlighted {
                 setTintColorBasedOnIsHighlighted()
+                setTitleColorBasedOnIsHighlighted()
             }
         }
     }
@@ -137,7 +138,10 @@ public class YDSTopBarButton: UIButton {
             return
         }
         
-        super.setImage(image, for: state)
+        super.setImage(image?
+                        .resize(to: Dimension.content.imageSize)
+                        .withRenderingMode(.alwaysTemplate),
+                       for: state)
     }
     
     required init?(coder: NSCoder) {
@@ -178,14 +182,20 @@ public class YDSTopBarButton: UIButton {
             fgPressedColor = YDSColor.buttonNormalPressed
         }
         
-        setTitleColor(fgColor, for: .normal)
-        setTitleColor(fgPressedColor, for: .highlighted)
-        
+        setTitleColorBasedOnIsHighlighted()
         setTintColorBasedOnIsHighlighted()
     }
     
     /**
-     setTintColorBasedOnIsHighlighted()
+     isHighlighted 값에 맞추어 titleColor를 변경합니다.
+     */
+    private func setTitleColorBasedOnIsHighlighted() {
+        !isHighlighted
+        ? setTitleColor(fgColor, for: .normal)
+        : setTitleColor(fgPressedColor, for: .normal)
+    }
+    
+    /**
      isHighlighted 값에 맞추어 tintColor를 변경합니다.
      */
     private func setTintColorBasedOnIsHighlighted() {
