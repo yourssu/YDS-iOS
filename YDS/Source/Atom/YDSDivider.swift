@@ -16,9 +16,9 @@ public class YDSDivider: UIView {
         fileprivate var rawValue: CGFloat {
             switch self {
             case .thin:
-                return Constant.Border.thin
+                return YDS.Constant.Border.thin
             case .thick:
-                return Constant.Border.thick
+                return YDS.Constant.Border.thick
             }
         }
     }

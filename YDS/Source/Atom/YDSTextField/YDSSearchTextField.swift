@@ -79,7 +79,7 @@ public class YDSSearchTextField: UITextField {
             $0.centerY.equalToSuperview()
         }
         
-        self.layer.cornerRadius = Constant.Rounding.r8
+        self.layer.cornerRadius = YDS.Constant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         
         self.snp.makeConstraints {
