@@ -59,8 +59,7 @@ class PageListViewController: UIViewController {
     
     //  MARK: - PageListViewController Setting
     
-    private let searchButton = YDSTopBarButton(image: YDSIcon.searchLine)
-    private let bellButton = YDSTopBarButton(image: YDSIcon.bellLine)
+    private let versionCheckButton = YDSTopBarButton(image: YDSIcon.warningcircleLine)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,11 +85,10 @@ class PageListViewController: UIViewController {
         }
         
         self.navigationItem.setRightBarButtonItems(
-            [UIBarButtonItem(customView: bellButton),
-             UIBarButtonItem(customView: searchButton)],
+            [UIBarButtonItem(customView: versionCheckButton)],
             animated: true)
         
-        [searchButton, bellButton].forEach {
+        [versionCheckButton].forEach {
             $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
         }
     }
@@ -98,10 +96,10 @@ class PageListViewController: UIViewController {
     @objc
     private func buttonTapAction(_ sender: UIButton) {
         switch(sender) {
-        case searchButton:
-            YDSToast.makeToast(text: "Search button pressed", duration: .short)
-        case bellButton:
-            YDSToast.makeToast(text: "Bell button pressed", duration: .short)
+        case versionCheckButton:
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                YDSToast.makeToast(text: "Current Version : \(version)", duration: .short)
+            }
         default:
             return
         }
