@@ -180,7 +180,7 @@ public class YDSToast: UIView {
      */
     private func showToast() {
         UIView.animate(
-            withDuration: Animation.Duration.medium,
+            withDuration: YDS.Animation.Duration.medium,
             delay: 0.0,
             options: .curveEaseIn,
             animations:{
@@ -196,7 +196,7 @@ public class YDSToast: UIView {
      */
     private func hideToastAfterDuration() {
         UIView.animate(
-            withDuration: Animation.Duration.medium,
+            withDuration: YDS.Animation.Duration.medium,
             delay: self.duration.value,
             options: .curveEaseOut,
             animations: {
