@@ -102,7 +102,7 @@ public class YDSBadge: UIView {
 
     ///  모서리 곡률을 2로 만듭니다.
     private func setProperties() {
-        self.layer.cornerRadius = Constant.Rounding.r2
+        self.layer.cornerRadius = YDS.Constant.Rounding.r2
         self.clipsToBounds = true
     }
     

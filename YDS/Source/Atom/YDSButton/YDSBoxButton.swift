@@ -299,7 +299,7 @@ public class YDSBoxButton: UIButton, YDSButtonProtocol {
         case .line:
             bgColor = nil
             bgPressedColor = nil
-            borderWidth = Constant.Border.normal
+            borderWidth = YDS.Constant.Border.normal
             
             if isDisabled {
                 fgColor = YDSColor.buttonDisabled
