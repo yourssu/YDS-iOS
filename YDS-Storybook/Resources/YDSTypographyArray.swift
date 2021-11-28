@@ -42,7 +42,7 @@ let buttonTypographies = Typographies(
 
 let captionTypographies = Typographies(
     items: [
-        .caption1, .caption2
+        .caption0, .caption1, .caption2
     ],
     description: "Caption"
 )
