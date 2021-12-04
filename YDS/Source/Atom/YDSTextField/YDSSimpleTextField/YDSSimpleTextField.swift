@@ -64,7 +64,7 @@ public class YDSSimpleTextField: UITextField {
         self.tintColor = YDSColor.textPointed
         self.clearButtonMode = .whileEditing
         
-        self.layer.cornerRadius = YDS.Constant.Rounding.r8
+        self.layer.cornerRadius = Constant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
             $0.height.equalTo(YDSTextField.Dimension.textFieldHeight)
@@ -87,7 +87,7 @@ public class YDSSimpleTextField: UITextField {
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
-            self.layer.borderWidth = YDS.Constant.Border.normal
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
             return
         }
@@ -95,7 +95,7 @@ public class YDSSimpleTextField: UITextField {
         if isPositive {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
-            self.layer.borderWidth = YDS.Constant.Border.normal
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
             return
         }

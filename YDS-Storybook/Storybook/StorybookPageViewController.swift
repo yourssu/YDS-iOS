@@ -60,7 +60,7 @@ class StoryBookViewController: UIViewController {
         sampleView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(YDS.Screen.width * 3/4)
+            $0.height.equalTo(Screen.width * 3/4)
         }
         
         divider.snp.makeConstraints {

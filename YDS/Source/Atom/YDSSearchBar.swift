@@ -78,7 +78,7 @@ public class YDSSearchBar: UISearchBar {
         searchTextField.tintColor = YDSColor.textPointed
         searchTextField.font = YDSFont.body2
         searchTextField.clearButtonMode = .whileEditing
-        searchTextField.layer.cornerRadius = YDS.Constant.Rounding.r8
+        searchTextField.layer.cornerRadius = Constant.Rounding.r8
         searchTextField.backgroundColor = YDSColor.inputFieldElevated
 
         self.setPositionAdjustment(UIOffset(horizontal: YDSSearchBar.leftMargin - YDSSearchBar.searchIconDefaultLeftMargin, vertical: 0), for: .search)
