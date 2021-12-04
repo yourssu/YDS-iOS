@@ -23,7 +23,7 @@ let backgroundColors = Colors(
     items: [
         Color(color: YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000"),
         Color(color: YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000"),
-        Color(color: YDSColor.bgElevated, name: "bgRecomment", basicColorName: "gray050"),
+        Color(color: YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050"),
         Color(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "gray100"),
         Color(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "gray100"),
         Color(color: YDSColor.bgNormalReversed, name: "bgNormalReversed", basicColorName: "realBlack"),
@@ -68,7 +68,7 @@ let buttonColors = Colors(
         Color(color: YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700"),
         Color(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600"),
         Color(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200"),
-        Color(color: YDSColor.buttonBG, name: "buttonEmojiBG", basicColorName: "gray100"),
+        Color(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100"),
         Color(color: YDSColor.buttonReversed, name: "buttonReversed", basicColorName: "white000"),
         Color(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500"),
         Color(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200"),
