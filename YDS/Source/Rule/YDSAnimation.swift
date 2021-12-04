@@ -14,6 +14,8 @@ public enum YDSAnimation {
     }
     
     public enum Options {
-        public static let curveEaseInOut = UIView.AnimationOptions.curveEaseInOut
+        public static var curveEaseInOut: UIView.AnimationOptions {
+            return UIView.AnimationOptions.curveEaseInOut
+        }
     }
 }

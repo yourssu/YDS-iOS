@@ -95,7 +95,7 @@
 		DD151FAF2641820200795D7C /* YDS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD48C1EC26735052004B288E /* YDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* YDSBottomSheet.swift */; };
 		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
-		DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */; };
+		DD8DF13526786B3300EDD2B4 /* YDSScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13426786B3300EDD2B4 /* YDSScreenSize.swift */; };
 		DD8DF13826786BD100EDD2B4 /* YDSAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13726786BD100EDD2B4 /* YDSAnimation.swift */; };
 		DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */; };
 		DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */; };
@@ -212,7 +212,7 @@
 		DD48C1EB26735052004B288E /* YDSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBottomSheet.swift; sourceTree = "<group>"; };
 		DD6C6383264286FB004CFF46 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		DD6C63D526429C6C004CFF46 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
-		DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		DD8DF13426786B3300EDD2B4 /* YDSScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSScreenSize.swift; sourceTree = "<group>"; };
 		DD8DF13726786BD100EDD2B4 /* YDSAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSAnimation.swift; sourceTree = "<group>"; };
 		DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBasicColor.swift; sourceTree = "<group>"; };
 		DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSemanticColor.swift; sourceTree = "<group>"; };
@@ -438,7 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				5394692D2663D6DB003D7A44 /* YDSConstant.swift */,
-				DD8DF13426786B3300EDD2B4 /* ScreenSize.swift */,
+				DD8DF13426786B3300EDD2B4 /* YDSScreenSize.swift */,
 				DD8DF13726786BD100EDD2B4 /* YDSAnimation.swift */,
 			);
 			path = Rule;
@@ -725,7 +725,7 @@
 				539110B226C048020094FD08 /* YDSSingleTitleTopBar.swift in Sources */,
 				53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */,
 				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,
-				DD8DF13526786B3300EDD2B4 /* ScreenSize.swift in Sources */,
+				DD8DF13526786B3300EDD2B4 /* YDSScreenSize.swift in Sources */,
 				53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */,
 				539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */,
 				DD8DF13826786BD100EDD2B4 /* YDSAnimation.swift in Sources */,
