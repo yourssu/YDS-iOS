@@ -44,8 +44,8 @@ public class YDSBottomSheet: UIViewController {
             
             contentView.snp.makeConstraints {
                 $0.edges.equalTo(0)
-                $0.width.equalTo(Screen.width)
-                $0.height.equalTo(Screen.height)
+                $0.width.equalTo(YDSScreenSize.width)
+                $0.height.equalTo(YDSScreenSize.height)
             }
                     
             contentView.addSubview(vStack)
@@ -67,11 +67,11 @@ extension YDSBottomSheet : PanModalPresentable {
     }
     
     public var transitionDuration: Double {
-        return Animation.Duration.medium
+        return YDSAnimation.Duration.medium
     }
     
     public var transitionAnimationOptions: UIView.AnimationOptions {
-        return Animation.Options.curveEaseInOut
+        return YDSAnimation.Options.curveEaseInOut
     }
     
     public var allowsDragToDismiss: Bool {
@@ -83,7 +83,7 @@ extension YDSBottomSheet : PanModalPresentable {
     }
     
     public var cornerRadius: CGFloat {
-        return Constant.Rounding.r8
+        return YDSConstant.Rounding.r8
     }
     
     public var panModalBackgroundColor: UIColor {
@@ -114,5 +114,5 @@ extension YDSBottomSheet : PanModalPresentable {
 
 fileprivate enum BottomSheetHeight {
     static let min : CGFloat = 88.0
-    static let max : CGFloat = Screen.height - 88.0
+    static let max : CGFloat = YDSScreenSize.height - 88.0
 }
