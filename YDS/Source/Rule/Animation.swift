@@ -7,17 +7,13 @@
 
 import UIKit
 
-public extension YDS {
-    enum Animation { }
-}
-
-public extension YDS.Animation {
-    enum Duration {
-        static let short = 0.01
-        static let medium = 0.25
+internal enum Animation {
+    internal enum Duration {
+        internal static let short = 0.01
+        internal static let medium = 0.25
     }
     
-    enum Options {
-        static let curveEaseInOut = UIView.AnimationOptions.curveEaseInOut
+    internal enum Options {
+        internal static let curveEaseInOut = UIView.AnimationOptions.curveEaseInOut
     }
 }

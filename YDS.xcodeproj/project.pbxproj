@@ -38,7 +38,6 @@
 		53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */; };
 		53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */; };
 		53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */; };
-		5350D5BF27538568007FE636 /* YDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350D5BE27538568007FE636 /* YDS.swift */; };
 		5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359111A269DDA31000CFFE7 /* YDSIconView.swift */; };
 		5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */; };
 		5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */; };
@@ -156,7 +155,6 @@
 		53443D9126A5CD3E0037B02E /* YDSSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchTextField.swift; sourceTree = "<group>"; };
 		53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSearchBar.swift; sourceTree = "<group>"; };
 		53443D9D26A7D4BD0037B02E /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
-		5350D5BE27538568007FE636 /* YDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDS.swift; sourceTree = "<group>"; };
 		5359111A269DDA31000CFFE7 /* YDSIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIconView.swift; sourceTree = "<group>"; };
 		5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBottomBarController.swift; sourceTree = "<group>"; };
 		5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarControllerPageViewController.swift; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 		4999C890266CC38800CD5248 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5350D5BE27538568007FE636 /* YDS.swift */,
 				53ADEA2226A1794800153636 /* YDSBundle.swift */,
 				5394692C2663D6C7003D7A44 /* Rule */,
 				DD6C63E32642A602004CFF46 /* Foundation */,
@@ -720,7 +717,6 @@
 				5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */,
 				53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */,
 				53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */,
-				5350D5BF27538568007FE636 /* YDS.swift in Sources */,
 				539110B626C052670094FD08 /* YDSTopBarButton.swift in Sources */,
 				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
 				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,

@@ -7,11 +7,7 @@
 
 import UIKit
 
-public extension YDS {
-    enum Screen { }
-}
-
-public extension YDS.Screen {
-    static let width = UIScreen.main.bounds.width
-    static let height = UIScreen.main.bounds.height
+public enum Screen {
+    public static let width = UIScreen.main.bounds.width
+    public static let height = UIScreen.main.bounds.height
 }

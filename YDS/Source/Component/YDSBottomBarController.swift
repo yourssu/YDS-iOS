@@ -146,7 +146,7 @@ extension YDSBottomBarController {
      각종 애니메이션 관련 수치입니다.
      */
     private enum Transform {
-        static let length: TimeInterval = YDS.Animation.Duration.medium
+        static let length: TimeInterval = Animation.Duration.medium
         static let scale: CGFloat = 1.2
         static let dumpingRatio: CGFloat = 0.5
     }
