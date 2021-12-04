@@ -86,7 +86,7 @@ public class YDSSuffixTextField: UITextField {
         self.rightView = suffixLabel
         self.rightViewMode = .always
         
-        self.layer.cornerRadius = Constant.Rounding.r8
+        self.layer.cornerRadius = YDSConstant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
             $0.height.equalTo(YDSTextField.Dimension.textFieldHeight)
@@ -111,7 +111,7 @@ public class YDSSuffixTextField: UITextField {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
             self.suffixLabel.textColor = YDSColor.textTertiary
-            self.layer.borderWidth = Constant.Border.normal
+            self.layer.borderWidth = YDSConstant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
             return
         }
@@ -120,7 +120,7 @@ public class YDSSuffixTextField: UITextField {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
             self.suffixLabel.textColor = YDSColor.textTertiary
-            self.layer.borderWidth = Constant.Border.normal
+            self.layer.borderWidth = YDSConstant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
             return
         }

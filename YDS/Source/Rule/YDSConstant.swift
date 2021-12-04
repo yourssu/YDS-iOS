@@ -1,5 +1,5 @@
 //
-//  Constant.swift
+//  YDSConstant.swift
 //  YDS-iOS
 //
 //  Created by Gyuni on 2021/05/30.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum Constant {
+public enum YDSConstant {
     public enum Border {
         public static let thin: CGFloat = 1/UIScreen.main.scale
         public static let normal: CGFloat = 1
