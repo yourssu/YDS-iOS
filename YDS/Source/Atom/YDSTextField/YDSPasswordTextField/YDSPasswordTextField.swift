@@ -86,7 +86,7 @@ public class YDSPasswordTextField: UITextField {
         self.rightView = maskingButton
         self.rightViewMode = .always
         
-        self.layer.cornerRadius = YDS.Constant.Rounding.r8
+        self.layer.cornerRadius = Constant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
             $0.height.equalTo(YDSTextField.Dimension.textFieldHeight)
@@ -117,7 +117,7 @@ public class YDSPasswordTextField: UITextField {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
             maskingButton.tintColor = YDSColor.buttonNormal
-            self.layer.borderWidth = YDS.Constant.Border.normal
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textWarned.cgColor
             return
         }
@@ -126,7 +126,7 @@ public class YDSPasswordTextField: UITextField {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
             maskingButton.tintColor = YDSColor.buttonNormal
-            self.layer.borderWidth = YDS.Constant.Border.normal
+            self.layer.borderWidth = Constant.Border.normal
             self.layer.borderColor = YDSColor.textPointed.cgColor
             return
         }
