@@ -6,7 +6,7 @@ jobs:
       build:
         runs-on: [macos-latest]
         env:
-          XC_VERSION: ${{ '12.4' }}
+          XC_VERSION: ${{ '13.0' }}
           XC_PROJECT: ${{ 'YDS.xcodeproj' }}
           XC_SCHEME: ${{ 'YDS-Storybook' }}
           XC_CONFIGURATION: ${{ 'Automation' }}
