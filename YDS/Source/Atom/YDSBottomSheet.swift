@@ -9,7 +9,7 @@ import PanModal
 import UIKit
 import SnapKit
 
-public class YDSBottomSheet: UIViewController {
+open class YDSBottomSheet: UIViewController {
     private let vStack: UIStackView = {
         let vStack = UIStackView()
         vStack.axis = .vertical
