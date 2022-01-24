@@ -92,7 +92,8 @@
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
-		C7CD6E3E279C7077004FE0E1 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CD6E3D279C7077004FE0E1 /* BottomSheetViewController.swift */; };
+		C780FF2F279DDC260095C4FE /* ViewsControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780FF2E279DDC260095C4FE /* ViewsControllerView.swift */; };
+		C7CD6E3E279C7077004FE0E1 /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CD6E3D279C7077004FE0E1 /* BottomSheetPageViewController.swift */; };
 		DD151FAF2641820200795D7C /* YDS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD48C1EC26735052004B288E /* YDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* YDSBottomSheet.swift */; };
 		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
@@ -207,7 +208,8 @@
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
-		C7CD6E3D279C7077004FE0E1 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		C780FF2E279DDC260095C4FE /* ViewsControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsControllerView.swift; sourceTree = "<group>"; };
+		C7CD6E3D279C7077004FE0E1 /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		DD151FAA2641820200795D7C /* YDS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				5365FD5A274A4ED000B6FBF9 /* IntControllerView.swift */,
 				5337938F26AF0A0600BE5860 /* OptionalStringControllerView.swift */,
 				53441AFD26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift */,
+				C780FF2E279DDC260095C4FE /* ViewsControllerView.swift */,
 			);
 			path = ControllerView;
 			sourceTree = "<group>";
@@ -397,7 +400,7 @@
 				53E2CF3F26D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift */,
 				53E2CF4126D2A3DA000DE005 /* SearchTextFieldPageViewController.swift */,
 				53E2CF4326D2A462000DE005 /* SearchBarPageViewController.swift */,
-				C7CD6E3D279C7077004FE0E1 /* BottomSheetViewController.swift */,
+				C7CD6E3D279C7077004FE0E1 /* BottomSheetPageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -772,7 +775,7 @@
 				53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
-				C7CD6E3E279C7077004FE0E1 /* BottomSheetViewController.swift in Sources */,
+				C7CD6E3E279C7077004FE0E1 /* BottomSheetPageViewController.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
 				53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */,
@@ -781,6 +784,7 @@
 				532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
+				C780FF2F279DDC260095C4FE /* ViewsControllerView.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
