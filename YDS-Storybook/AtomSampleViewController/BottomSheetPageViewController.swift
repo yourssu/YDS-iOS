@@ -9,7 +9,7 @@ import UIKit
 import YDS
 import SnapKit
 
-class BottomSheetPageViewController: StoryBookViewController {
+final class BottomSheetPageViewController: StoryBookViewController {
     
     private let showBottomSheetButton: YDSBoxButton = {
         let button = YDSBoxButton()
