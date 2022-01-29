@@ -34,20 +34,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for i in 0..<names.count {
-            for j in 0...i {
-                let label = YDSLabel(style: .title1)
-                label.text = names[j]
-                
-                if j == 0 {
-                    viewsArrs.append([label])
-                } else {
-                    viewsArrs[i].append(label)
-                }
-            }
-        }
-        
+        setViewArrs()
         addOptions()
         setupView()
         registerTapAction()
@@ -106,6 +93,21 @@ final class BottomSheetPageViewController: StoryBookViewController {
             self.presentPanModal(bottomSheet)
         default:
             return
+        }
+    }
+    
+    private func setViewArrs() {
+        for i in 0..<names.count {
+            for j in 0...i {
+                let label = YDSLabel(style: .title1)
+                label.text = names[j]
+                
+                if j == 0 {
+                    viewsArrs.append([label])
+                } else {
+                    viewsArrs[i].append(label)
+                }
+            }
         }
     }
 }
