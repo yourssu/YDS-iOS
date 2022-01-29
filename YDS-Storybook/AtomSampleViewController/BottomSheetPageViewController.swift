@@ -38,7 +38,8 @@ final class BottomSheetPageViewController: StoryBookViewController {
     }
     
     private func addOptions() {
-        addOption(description: "View 갯수",
+        addOption(description: "Views",
+                  typeDescription: "[UIView]",
                   cases: ExampleCase.allCases,
                   defaultIndex: ExampleCase.allCases.count - 1) { [weak self] value in
             self?.numberOfViews = value.rawValue
@@ -100,20 +101,19 @@ final class BottomSheetPageViewController: StoryBookViewController {
             return
         }
     }
-}
+    
+    enum YourssuTeam: String, CaseIterable {
+        case iOS = "iOS"
+        case android = "Android"
+        case be = "Backend"
+        case fe = "Frontend"
+    }
 
-enum YourssuTeam: String, CaseIterable {
-    case iOS = "iOS"
-    case android = "Android"
-    case be = "Backend"
-    case fe = "Frontend"
+    enum ExampleCase: Int, CaseIterable {
+        case zero = 0
+        case one = 1
+        case two = 2
+        case three = 3
+        case four = 4
+    }
 }
-
-enum ExampleCase: Int, CaseIterable {
-    case zero = 0
-    case one = 1
-    case two = 2
-    case three = 3
-    case four = 4
-}
-
