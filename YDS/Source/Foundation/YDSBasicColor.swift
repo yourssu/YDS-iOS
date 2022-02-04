@@ -240,7 +240,7 @@ internal enum YDSBasicColor {
     }
 
     static var black000: UIColor {
-        return UIColor(hex: "#101112")
+        return UIColor(hex: "#101115")
     }
     
     static var realBlack: UIColor {
@@ -294,55 +294,55 @@ internal enum YDSBasicColor {
     //  MARK: - Gray
     
     static var gray050: UIColor {
-        return UIColor(hex: "#F8F9FA")
+        return UIColor(hex: "#F8F9FD")
     }
 
     static var gray100: UIColor {
-        return UIColor(hex: "#F3F5F7")
+        return UIColor(hex: "#F3F5FD")
     }
 
     static var gray200: UIColor {
-        return UIColor(hex: "#ECEEF0")
+        return UIColor(hex: "#ECEEF6")
     }
 
     static var gray300: UIColor {
-        return UIColor(hex: "#E2E5E8")
+        return UIColor(hex: "#E2E5F1")
     }
 
     static var gray400: UIColor {
-        return UIColor(hex: "#D4D8DC")
+        return UIColor(hex: "#D4D8E8")
     }
 
     static var gray500: UIColor {
-        return UIColor(hex: "#B5B9BD")
+        return UIColor(hex: "#B5B9C9")
     }
 
     static var gray600: UIColor {
-        return UIColor(hex: "#8E9398")
+        return UIColor(hex: "#8E93A3")
     }
 
     static var gray700: UIColor {
-        return UIColor(hex: "#505458")
+        return UIColor(hex: "#505464")
     }
 
     static var gray800: UIColor {
-        return UIColor(hex: "#3A3D40")
+        return UIColor(hex: "#3A3D49")
     }
 
     static var gray900: UIColor {
-        return UIColor(hex: "#252729")
+        return UIColor(hex: "#25272F")
     }
     
     static var black000A10: UIColor {
-        return UIColor(hex: "#101112" ,alpha: 0.1)
+        return UIColor(hex: "#101115" ,alpha: 0.1)
     }
     
     static var gray900A30: UIColor {
-        return UIColor(hex: "#252729" ,alpha: 0.3)
+        return UIColor(hex: "#25272F" ,alpha: 0.3)
     }
     
     static var gray900A70: UIColor {
-        return UIColor(hex: "#252729" ,alpha: 0.7)
+        return UIColor(hex: "#25272F" ,alpha: 0.7)
     }
 
     
