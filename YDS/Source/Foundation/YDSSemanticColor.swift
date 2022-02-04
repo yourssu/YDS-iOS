@@ -38,7 +38,7 @@ public enum YDSColor {
     }
     
     public static var bgPressed: UIColor {
-        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray900)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray800)
     }
     
     public static var bgNormalReversed: UIColor {
