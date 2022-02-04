@@ -73,7 +73,7 @@ public class YDSNavigationController: UINavigationController {
     private func setNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = YDSColor.bgElevated
+        appearance.backgroundColor = YDSColor.bgNormal
         appearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: YDSColor.textPrimary,
             NSAttributedString.Key.font: YDSFont.subtitle2,

@@ -79,9 +79,17 @@ open class YDSBottomBarController: UITabBarController {
         tabBar.unselectedItemTintColor = YDSColor.bottomBarNormal
         tabBar.backgroundColor = YDSColor.bgElevated
         tabBar.isTranslucent = false
+
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = YDSColor.bgElevated
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = tabBar.standardAppearance
+        }
         
-//        UITabBar.appearance().shadowImage = UIImage()
-//        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
     }
     
     /**

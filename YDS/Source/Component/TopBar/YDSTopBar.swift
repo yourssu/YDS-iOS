@@ -41,7 +41,7 @@ public class YDSTopBar: UINavigationBar {
      */
     private func setProperties() {
         self.pushItem(UINavigationItem(), animated: true)
-        self.barTintColor = YDSColor.bgElevated
+        self.barTintColor = YDSColor.bgNormal
         self.tintColor = YDSColor.buttonNormal
         self.isTranslucent = false
         self.shadowImage = UIImage()
