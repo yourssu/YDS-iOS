@@ -22,11 +22,11 @@ public enum YDSColor {
     //  MARK: - Background
     
     public static var bgNormal: UIColor {
-        return color(light: YDSBasicColor.white000)
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.black000)
     }
     
     public static var bgElevated: UIColor {
-        return color(light: YDSBasicColor.white000)
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.gray900)
     }
     
     public static var bgRecomment: UIColor {
@@ -38,7 +38,7 @@ public enum YDSColor {
     }
     
     public static var bgPressed: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray900)
     }
     
     public static var bgNormalReversed: UIColor {
@@ -53,15 +53,15 @@ public enum YDSColor {
     //  MARK: - Text
     
     public static var textPrimary: UIColor {
-        return color(light: YDSBasicColor.black000)
+        return color(light: YDSBasicColor.black000, dark: YDSBasicColor.white000)
     }
     
     public static var textSecondary: UIColor {
-        return color(light: YDSBasicColor.gray900)
+        return color(light: YDSBasicColor.gray900, dark: YDSBasicColor.gray050)
     }
     
     public static var textTertiary: UIColor {
-        return color(light: YDSBasicColor.gray600)
+        return color(light: YDSBasicColor.gray600, dark: YDSBasicColor.gray300)
     }
     
     public static var textDisabled: UIColor {
@@ -99,15 +99,15 @@ public enum YDSColor {
     //  MARK: - Border
     
     public static var borderThin: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray700)
     }
     
     public static var borderNormal: UIColor {
-        return color(light: YDSBasicColor.black000A10)
+        return color(light: YDSBasicColor.black000A10, dark: YDSBasicColor.white000A10)
     }
     
     public static var borderThick: UIColor {
-        return color(light: YDSBasicColor.gray500)
+        return color(light: YDSBasicColor.gray500, dark: YDSBasicColor.black000)
     }
     
     
@@ -169,11 +169,11 @@ public enum YDSColor {
     //  MARK: - BottomBar
     
     public static var bottomBarNormal: UIColor {
-        return color(light: YDSBasicColor.gray600)
+        return color(light: YDSBasicColor.gray600, dark: YDSBasicColor.gray300)
     }
     
     public static var bottomBarSelected: UIColor {
-        return color(light: YDSBasicColor.gray800)
+        return color(light: YDSBasicColor.gray800, dark: YDSBasicColor.white000)
     }
     
     
