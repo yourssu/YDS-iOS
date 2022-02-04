@@ -80,7 +80,7 @@ open class YDSBottomBarController: UITabBarController {
         tabBar.backgroundColor = YDSColor.bgElevated
         tabBar.isTranslucent = false
         
-        UITabBar.appearance().shadowImage = UIImage()
+//        UITabBar.appearance().shadowImage = UIImage()
 //        UITabBar.appearance().backgroundImage = UIImage()
     }
     
