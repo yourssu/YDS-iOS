@@ -22,7 +22,7 @@ public enum YDSColor {
     //  MARK: - Background
     
     public static var bgNormal: UIColor {
-        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.black000)
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.gray900)
     }
     
     public static var bgElevated: UIColor {
