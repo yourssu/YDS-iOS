@@ -189,21 +189,6 @@ class StoryBookViewController: UIViewController {
         setControllerView(controllerView, defaultValue: defaultValue, task: task)
     }
     
-    //  [UIView]
-    public func addOption(description: String?, viewsArrs: [[UIView]], defaultViews: [UIView], task: @escaping ([UIView]) -> Void) {
-        let controllerView: ViewsControllerView = {
-            let controllerView = ViewsControllerView(viewsArrs: viewsArrs, defaultViews: defaultViews)
-            controllerView.parameterLabel.text = description
-            return controllerView
-        }()
-        
-        if let index = viewsArrs.firstIndex(of: defaultViews) {
-            setControllerView(controllerView, defaultValue: viewsArrs[index], task: task)
-        } else {
-            setControllerView(controllerView, defaultValue: [], task: task)
-        }
-    }
-    
     //  공통
     private func setControllerView<T> (_ controllerView: ControllerView<T>, defaultValue: T, task: @escaping (T) -> Void) {
         self.stackView.addArrangedSubview(controllerView)
