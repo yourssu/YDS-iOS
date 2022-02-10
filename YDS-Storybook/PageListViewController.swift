@@ -46,6 +46,7 @@ class PageListViewController: UIViewController {
         Page(title: "PasswordTextFieldView", vc: PasswordTextFieldViewPageViewController.self),
         Page(title: "SearchTextField", vc: SearchTextFieldPageViewController.self),
         Page(title: "SearchBar", vc: SearchBarPageViewController.self),
+        Page(title: "BottomSheet", vc: BottomSheetPageViewController.self),
     ]
     
     let componentPages: [Page] = [
