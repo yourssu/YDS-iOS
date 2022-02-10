@@ -28,25 +28,21 @@ final class BottomSheetPageViewController: StoryBookViewController {
         return view
     }()
     
-    private var viewsArrs: [[UIView]] = []
-    private let names: [String] = ["iOS", "Android", "Web FrontEnd", "Backend"]
-    private var views: [UIView] = []
+    private var numberOfViews: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewArrs()
         addOptions()
         setupView()
         registerTapAction()
     }
     
     private func addOptions() {
-        if let defaultViews = viewsArrs.first {
-            addOption(description: "views",
-                      viewsArrs: viewsArrs,
-                      defaultViews: defaultViews) { [weak self] value in
-                self?.views = value
-            }
+        addOption(description: "Views",
+                  typeDescription: "[UIView]",
+                  cases: ExampleCase.allCases,
+                  defaultIndex: ExampleCase.allCases.count - 1) { [weak self] value in
+            self?.numberOfViews = value.rawValue
         }
     }
 
@@ -89,6 +85,16 @@ final class BottomSheetPageViewController: StoryBookViewController {
         switch(sender) {
         case showBottomSheetButton:
             let bottomSheet = YDSBottomSheet()
+            let views = YourssuDevTeam.allCases[0..<numberOfViews]
+                .map { $0.rawValue }
+                .map { text -> UIView in
+                    let label = YDSLabel(style: .title1)
+                    label.text = text
+                    label.snp.makeConstraints {
+                        $0.width.equalTo(YDSScreenSize.width - 48)
+                    }
+                    return label
+                }
             bottomSheet.addViews(views: views)
             self.presentPanModal(bottomSheet)
         default:
@@ -96,18 +102,18 @@ final class BottomSheetPageViewController: StoryBookViewController {
         }
     }
     
-    private func setViewArrs() {
-        for i in 0..<names.count {
-            for j in 0...i {
-                let label = YDSLabel(style: .title1)
-                label.text = names[j]
-                
-                if j == 0 {
-                    viewsArrs.append([label])
-                } else {
-                    viewsArrs[i].append(label)
-                }
-            }
-        }
+    enum YourssuDevTeam: String, CaseIterable {
+        case iOS = "iOS"
+        case android = "Android"
+        case be = "Backend"
+        case fe = "Frontend"
+    }
+
+    enum ExampleCase: Int, CaseIterable {
+        case zero = 0
+        case one = 1
+        case two = 2
+        case three = 3
+        case four = 4
     }
 }

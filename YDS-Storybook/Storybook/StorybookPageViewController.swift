@@ -163,10 +163,15 @@ class StoryBookViewController: UIViewController {
     }
     
     //  Enum
-    public func addOption<T>(description: String?, cases: [T], defaultIndex: Int,  task: @escaping (T) -> Void) {
+    public func addOption<T>(description: String?, typeDescription: String? = nil, cases: [T], defaultIndex: Int, task: @escaping (T) -> Void) {
         let controllerView: EnumControllerView<T> = {
             let controllerView = EnumControllerView(cases: cases, defaultIndex: defaultIndex)
             controllerView.parameterLabel.text = description
+            
+            //  nil일 경우에는 typeLabel의 기본 값을 사용하도록 함
+            if let typeDescription = typeDescription {
+                controllerView.typeLabel.text = typeDescription
+            }
             return controllerView
         }()
 

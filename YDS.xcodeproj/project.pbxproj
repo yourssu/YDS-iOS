@@ -67,6 +67,7 @@
 		539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */; };
 		539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BE26C3743D0094FD08 /* YDSTopBar.swift */; };
 		5394692E2663D6DB003D7A44 /* YDSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* YDSConstant.swift */; };
+		539C570827A5C5AC0064A90C /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */; };
 		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
 		53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */; };
 		53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
@@ -183,6 +184,7 @@
 		539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		539110BE26C3743D0094FD08 /* YDSTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBar.swift; sourceTree = "<group>"; };
 		5394692D2663D6DB003D7A44 /* YDSConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSConstant.swift; sourceTree = "<group>"; };
+		539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* YDSToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToggle.swift; sourceTree = "<group>"; };
 		53ADEA2226A1794800153636 /* YDSBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBundle.swift; sourceTree = "<group>"; };
 		53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPageViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				53E2CF4126D2A3DA000DE005 /* SearchTextFieldPageViewController.swift */,
 				53E2CF4326D2A462000DE005 /* SearchBarPageViewController.swift */,
 				C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */,
+				539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -787,6 +790,7 @@
 				C780FF2F279DDC260095C4FE /* ViewsControllerView.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
+				539C570827A5C5AC0064A90C /* BottomSheetPageViewController.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
 				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
