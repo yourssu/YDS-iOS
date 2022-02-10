@@ -85,7 +85,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
         switch(sender) {
         case showBottomSheetButton:
             let bottomSheet = YDSBottomSheet()
-            let views = YourssuTeam.allCases[0..<numberOfViews]
+            let views = YourssuDevTeam.allCases[0..<numberOfViews]
                 .map { $0.rawValue }
                 .map { text -> UIView in
                     let label = YDSLabel(style: .title1)
@@ -102,7 +102,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
         }
     }
     
-    enum YourssuTeam: String, CaseIterable {
+    enum YourssuDevTeam: String, CaseIterable {
         case iOS = "iOS"
         case android = "Android"
         case be = "Backend"
