@@ -42,6 +42,10 @@ public class YDSNavigationController: UINavigationController {
         self.title = title
     }
     
+    public init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -105,7 +109,7 @@ extension YDSNavigationController {
      backButton 옆에 상위 viewController의 title이 나타나지 않도록 합니다.
      */
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: true)
+        super.pushViewController(viewController, animated: animated)
         if viewControllers.count == 1 {
             titleLabel.text = title
             navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
