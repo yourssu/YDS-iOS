@@ -37,13 +37,14 @@ public class YDSNavigationController: UINavigationController {
         - title: RootViewController의 NavigationBar 상단에 들어가는 굵은 title의 String 값입니다.
         - rootViewController: NavigationController의 rootViewController입니다.
      */
-    public init(title: String?, rootViewController: UIViewController) {
+    public init(title: String? = nil, rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         self.title = title
     }
     
-    public init() {
+    public init(title: String? = nil) {
         super.init(nibName: nil, bundle: nil)
+        self.title = title
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -110,24 +111,12 @@ extension YDSNavigationController {
      */
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
-        if viewControllers.count == 1 {
-            titleLabel.text = title
-            navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
-                                                    animated: true)
-        } else {
-            navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
-        }
+        setRootViewControllerTitle()
     }
     
     public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
-        if viewControllers.count == 1 {
-            titleLabel.text = title
-            navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
-                                                    animated: true)
-        } else {
-            navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
-        }
+        setRootViewControllerTitle()
     }
     
     public override func viewDidLayoutSubviews() {
@@ -168,6 +157,16 @@ extension YDSNavigationController: UIGestureRecognizerDelegate {
         let isSystemSwipeToBackEnabled = interactivePopGestureRecognizer?.isEnabled == true
         let isThereStackedViewControllers = viewControllers.count > 1
         return isSystemSwipeToBackEnabled && isThereStackedViewControllers
+    }
+    
+    public func setRootViewControllerTitle() {
+        if viewControllers.count == 1 {
+            titleLabel.text = title
+            navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
+                                                    animated: true)
+        } else {
+            navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
+        }
     }
     
 }
