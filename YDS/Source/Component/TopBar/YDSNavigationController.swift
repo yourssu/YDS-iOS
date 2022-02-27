@@ -119,6 +119,17 @@ extension YDSNavigationController {
         }
     }
     
+    public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+        super.setViewControllers(viewControllers, animated: animated)
+        if viewControllers.count == 1 {
+            titleLabel.text = title
+            navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
+                                                    animated: true)
+        } else {
+            navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
+        }
+    }
+    
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
