@@ -111,12 +111,22 @@ extension YDSNavigationController {
      */
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
-        setRootViewControllerTitle()
+        setNavigationBarItem()
     }
     
     public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
-        setRootViewControllerTitle()
+        setNavigationBarItem()
+    }
+
+    private func setNavigationBarItem() {
+        if viewControllers.count == 1 {
+            titleLabel.text = title
+            navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
+                                                    animated: true)
+        } else {
+            navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
+        }
     }
     
     public override func viewDidLayoutSubviews() {
@@ -157,16 +167,6 @@ extension YDSNavigationController: UIGestureRecognizerDelegate {
         let isSystemSwipeToBackEnabled = interactivePopGestureRecognizer?.isEnabled == true
         let isThereStackedViewControllers = viewControllers.count > 1
         return isSystemSwipeToBackEnabled && isThereStackedViewControllers
-    }
-    
-    private func setRootViewControllerTitle() {
-        if viewControllers.count == 1 {
-            titleLabel.text = title
-            navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
-                                                    animated: true)
-        } else {
-            navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
-        }
     }
     
 }
