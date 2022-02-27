@@ -37,8 +37,13 @@ public class YDSNavigationController: UINavigationController {
         - title: RootViewController의 NavigationBar 상단에 들어가는 굵은 title의 String 값입니다.
         - rootViewController: NavigationController의 rootViewController입니다.
      */
-    public init(title: String?, rootViewController: UIViewController) {
+    public init(title: String? = nil, rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
+        self.title = title
+    }
+    
+    public init(title: String? = nil) {
+        super.init(nibName: nil, bundle: nil)
         self.title = title
     }
     
@@ -105,7 +110,16 @@ extension YDSNavigationController {
      backButton 옆에 상위 viewController의 title이 나타나지 않도록 합니다.
      */
     public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: true)
+        super.pushViewController(viewController, animated: animated)
+        setNavigationBarItem()
+    }
+    
+    public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+        super.setViewControllers(viewControllers, animated: animated)
+        setNavigationBarItem()
+    }
+
+    private func setNavigationBarItem() {
         if viewControllers.count == 1 {
             titleLabel.text = title
             navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
