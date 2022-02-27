@@ -159,7 +159,7 @@ extension YDSNavigationController: UIGestureRecognizerDelegate {
         return isSystemSwipeToBackEnabled && isThereStackedViewControllers
     }
     
-    public func setRootViewControllerTitle() {
+    private func setRootViewControllerTitle() {
         if viewControllers.count == 1 {
             titleLabel.text = title
             navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
