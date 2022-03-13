@@ -48,6 +48,7 @@ class PageListViewController: UIViewController {
         Page(title: "SearchTextField", vc: SearchTextFieldPageViewController.self),
         Page(title: "SearchBar", vc: SearchBarPageViewController.self),
         Page(title: "BottomSheet", vc: BottomSheetPageViewController.self),
+        Page(title: "TextView", vc: TextViewViewController.self),
     ]
     
     let componentPages: [Page] = [
