@@ -29,19 +29,32 @@ public class YDSTextView: UITextView {
     }
     
     private let placeholder: String
+    private let maxHeight: CGFloat?
 
     // MARK: - Init
     
     /// placeholder 사용을 위해서 UITextViewDelegate 구현 필수 (스토리북 참고)
-    public init(style: String.TypoStyle = .body1, placeholder: String) {
+    public init(style: String.TypoStyle = .body1, placeholder: String, maxHeight: CGFloat?) {
         self.style = style
         self.placeholder = placeholder
+        self.maxHeight = maxHeight
         super.init(frame: .zero, textContainer: nil)
         showPlaceholderIfNeeded()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard let maxHeight = maxHeight else { return }
+        if contentSize.height >= maxHeight {
+            isScrollEnabled = true
+        } else {
+            isScrollEnabled = false
+        }
     }
     
     public func hidePlaceholderIfNeeded() {
