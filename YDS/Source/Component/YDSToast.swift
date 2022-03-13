@@ -71,7 +71,7 @@ public class YDSToast: UIView {
      */
     private let label: YDSLabel = {
         let label = YDSLabel(style: .body2)
-        label.textColor = YDSColor.textReversed
+        label.textColor = YDSColor.textBright
         label.numberOfLines = 0
         return label
     }()

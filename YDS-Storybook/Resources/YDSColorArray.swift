@@ -38,7 +38,7 @@ let textColors = Colors(
         Color(color: YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900"),
         Color(color: YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600"),
         Color(color: YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500"),
-        Color(color: YDSColor.textReversed, name: "textReversed", basicColorName: "white000"),
+        Color(color: YDSColor.textBright, name: "textBright", basicColorName: "white000"),
         Color(color: YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400"),
         Color(color: YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400"),
     ],
@@ -49,7 +49,7 @@ let dimColors = Colors(
     items: [
         Color(color: YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30"),
         Color(color: YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70"),
-        Color(color: YDSColor.dimThickReversed, name: "dimThickReversed", basicColorName: "white000A70"),
+        Color(color: YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70"),
     ],
     description: "Dim"
 )
@@ -69,7 +69,7 @@ let buttonColors = Colors(
         Color(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600"),
         Color(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200"),
         Color(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100"),
-        Color(color: YDSColor.buttonReversed, name: "buttonReversed", basicColorName: "white000"),
+        Color(color: YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000"),
         Color(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500"),
         Color(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200"),
         Color(color: YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400"),

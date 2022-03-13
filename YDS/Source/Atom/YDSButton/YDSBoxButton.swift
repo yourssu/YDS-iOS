@@ -263,13 +263,13 @@ public class YDSBoxButton: UIButton, YDSButtonProtocol {
                 bgColor = YDSColor.buttonDisabledBG
                 bgPressedColor = YDSColor.buttonDisabledBG
             } else if isWarned {
-                fgColor = YDSColor.buttonReversed
-                fgPressedColor = YDSColor.buttonReversed
+                fgColor = YDSColor.buttonBright
+                fgPressedColor = YDSColor.buttonBright
                 bgColor = YDSColor.buttonWarned
                 bgPressedColor = YDSColor.buttonWarnedPressed
             } else {
-                fgColor = YDSColor.buttonReversed
-                fgPressedColor = YDSColor.buttonReversed
+                fgColor = YDSColor.buttonBright
+                fgPressedColor = YDSColor.buttonBright
                 bgColor = YDSColor.buttonPoint
                 bgPressedColor = YDSColor.buttonPointPressed
             }
