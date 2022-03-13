@@ -28,11 +28,12 @@ public class YDSTextView: UITextView {
         didSet { setAttributedText() }
     }
     
-    private let placeholder: String?
+    private let placeholder: String
 
     // MARK: - Init
-
-    public init(style: String.TypoStyle = .body1, placeholder: String? = nil) {
+    
+    /// placeholder 사용을 위해서 UITextViewDelegate 구현 필수 (스토리북 참고)
+    public init(style: String.TypoStyle = .body1, placeholder: String) {
         self.style = style
         self.placeholder = placeholder
         super.init(frame: .zero, textContainer: nil)
