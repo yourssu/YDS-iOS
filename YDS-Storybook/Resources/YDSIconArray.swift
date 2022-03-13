@@ -35,6 +35,7 @@ let ydsIconArray = [
     YDSIcon.dotbadgeLine,
     YDSIcon.dotsHorizontalLine,
     YDSIcon.dotsVerticalLine,
+    YDSIcon.emojiaddLine,
     YDSIcon.foodFilled,
     YDSIcon.foodLine,
     YDSIcon.foodcalendarFilled,
@@ -87,5 +88,3 @@ let ydsIconArray = [
     YDSIcon.warningcircleLine,
     YDSIcon.xLine,
 ]
-
-
