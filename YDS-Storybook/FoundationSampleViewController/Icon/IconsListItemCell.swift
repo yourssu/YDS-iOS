@@ -39,14 +39,8 @@ class IconsListItemCell: UITableViewCell {
     }()
     
     private let titleLabel: YDSLabel = {
-        let label = YDSLabel(style: .subtitle2)
-        label.textColor = YDSColor.textPrimary
-        
-        
-//        let label = YDSLabel(style: .body2)
-//        label.textColor = YDSColor.textTertiary
-        
-        
+        let label = YDSLabel(style: .body1)
+        label.textColor = YDSColor.textSecondary
         return label
     }()
     
