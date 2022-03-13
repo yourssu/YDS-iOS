@@ -13,7 +13,7 @@ public enum YDSPlaceholder {
 }
 
 class TextViewViewController: StoryBookViewController {
-    private let textView = YDSTextView(placeholder: YDSPlaceholder.comment)
+    private lazy var textView = YDSTextView(placeholder: YDSPlaceholder.comment, maxHeight: maxHeight)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +66,6 @@ class TextViewViewController: StoryBookViewController {
 }
 
 extension TextViewViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
-        if textView.contentSize.height >= maxHeight {
-            textView.isScrollEnabled = true
-        } else {
-            textView.isScrollEnabled = false
-        }
-    }
-    
     func textViewDidEndEditing(_ textView: UITextView) {
         guard let textView = textView as? YDSTextView else { return }
         textView.showPlaceholderIfNeeded()
@@ -82,5 +74,18 @@ extension TextViewViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         guard let textView = textView as? YDSTextView else { return }
         textView.hidePlaceholderIfNeeded()
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let inputString = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let currentString = textView.text,
+              let newRange = Range(range, in: currentString) else { return true }
+        let newString = currentString.replacingCharacters(in: newRange, with: inputString).trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        guard newString.count < 500 else {
+            print("error 최대 글자수 초과함")
+            return false
+        }
+        return true
     }
 }
