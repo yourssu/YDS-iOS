@@ -8,7 +8,6 @@
 import UIKit
 
 public enum YDSIcon {
-
     public static var adbadgeFilled: UIImage { .load(name: "ic_adbadge_filled") }
     public static var adbadgeLine: UIImage { .load(name: "ic_adbadge_line") }
     public static var arrowDownLine: UIImage { .load(name: "ic_arrow_down_line") }
@@ -36,6 +35,7 @@ public enum YDSIcon {
     public static var dotbadgeLine: UIImage { .load(name: "ic_dotbadge_line") }
     public static var dotsHorizontalLine: UIImage { .load(name: "ic_dots_horizontal_line") }
     public static var dotsVerticalLine: UIImage { .load(name: "ic_dots_vertical_line") }
+    public static var emojiaddLine: UIImage { .load(name: "ic_emojiadd_line")}
     public static var foodFilled: UIImage { .load(name: "ic_food_filled") }
     public static var foodLine: UIImage { .load(name: "ic_food_line") }
     public static var foodcalendarFilled: UIImage { .load(name: "ic_foodcalendar_filled") }
@@ -87,7 +87,6 @@ public enum YDSIcon {
     public static var warningcircleFilled: UIImage { .load(name: "ic_warningcircle_filled") }
     public static var warningcircleLine: UIImage { .load(name: "ic_warningcircle_line") }
     public static var xLine: UIImage { .load(name: "ic_x_line") }
-
 }
 
 extension UIImage {
