@@ -32,6 +32,7 @@ class PageListViewController: UIViewController {
     let foundationPages: [Page] = [
         Page(title: "Color", vc: ColorsPageViewController.self),
         Page(title: "Typography", vc: TypographiesPageViewController.self),
+        Page(title: "Icon", vc: IconsPageViewController.self),
     ]
     
     let atomPages: [Page] = [
