@@ -22,188 +22,199 @@ public enum YDSColor {
     //  MARK: - Background
     
     public static var bgNormal: UIColor {
-        return color(light: YDSBasicColor.white000)
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.black000)
     }
     
     public static var bgElevated: UIColor {
-        return color(light: YDSBasicColor.white000)
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.black000)
     }
     
     public static var bgRecomment: UIColor {
-        return color(light: YDSBasicColor.gray050)
+        return color(light: YDSBasicColor.gray050, dark: YDSBasicColor.realBlack)
     }
     
     public static var bgSelected: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray900)
     }
     
     public static var bgPressed: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray800)
     }
     
     public static var bgNormalReversed: UIColor {
-        return color(light: YDSBasicColor.realBlack)
+        return color(light: YDSBasicColor.realBlack, dark: YDSBasicColor.realBlack)
     }
     
     public static var  bgElevatedReversed: UIColor {
-        return color(light: YDSBasicColor.realBlack)
+        return color(light: YDSBasicColor.realBlack, dark: YDSBasicColor.realBlack)
     }
     
     
     //  MARK: - Text
     
     public static var textPrimary: UIColor {
-        return color(light: YDSBasicColor.black000)
+        return color(light: YDSBasicColor.black000, dark: YDSBasicColor.gray100)
     }
     
     public static var textSecondary: UIColor {
-        return color(light: YDSBasicColor.gray900)
+        return color(light: YDSBasicColor.gray900, dark: YDSBasicColor.gray200)
     }
     
     public static var textTertiary: UIColor {
-        return color(light: YDSBasicColor.gray600)
+        return color(light: YDSBasicColor.gray600, dark: YDSBasicColor.gray600)
     }
     
     public static var textDisabled: UIColor {
-        return color(light: YDSBasicColor.gray500)
+        return color(light: YDSBasicColor.gray500, dark: YDSBasicColor.gray700)
     }
     
-    public static var textReversed: UIColor {
-        return color(light: YDSBasicColor.white000)
+    public static var textBright: UIColor {
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.white000)
     }
     
     public static var textPointed: UIColor {
-        return color(light: YDSBasicColor.pointColor400)
+        return color(light: YDSBasicColor.pointColor400, dark: YDSBasicColor.pointColor300)
     }
     
     public static var textWarned: UIColor {
-        return color(light: YDSBasicColor.warningRed400)
+        return color(light: YDSBasicColor.warningRed400, dark: YDSBasicColor.warningRed300)
     }
     
     
     //  MARK: - Dim
     
     public static var dimNormal: UIColor {
-        return color(light: YDSBasicColor.gray900A30)
+        return color(light: YDSBasicColor.gray900A30, dark: YDSBasicColor.gray900A30)
     }
     
     public static var dimThick: UIColor {
-        return color(light: YDSBasicColor.gray900A70)
+        return color(light: YDSBasicColor.gray900A70, dark: YDSBasicColor.gray900A70)
     }
     
-    public static var dimThickReversed: UIColor {
-        return color(light: YDSBasicColor.white000A70)
+    public static var dimThickBright: UIColor {
+        return color(light: YDSBasicColor.white000A70, dark: YDSBasicColor.white000A70)
     }
     
     
     //  MARK: - Border
     
     public static var borderThin: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray900)
     }
     
     public static var borderNormal: UIColor {
-        return color(light: YDSBasicColor.black000A10)
+        return color(light: YDSBasicColor.black000A10, dark: YDSBasicColor.white000A10)
     }
     
     public static var borderThick: UIColor {
-        return color(light: YDSBasicColor.gray500)
+        return color(light: YDSBasicColor.gray500, dark: YDSBasicColor.gray500)
     }
     
     
     //  MARK: - Button
     
     public static var buttonNormal: UIColor {
-        return color(light: YDSBasicColor.gray700)
+        return color(light: YDSBasicColor.gray700, dark: YDSBasicColor.gray300)
     }
     
     public static var buttonNormalPressed: UIColor {
-        return color(light: YDSBasicColor.gray600)
+        return color(light: YDSBasicColor.gray600, dark: YDSBasicColor.gray200)
     }
     
     public static var buttonBG: UIColor {
-        return color(light: YDSBasicColor.gray200)
+        return color(light: YDSBasicColor.gray200, dark: YDSBasicColor.gray800)
     }
     
     public static var buttonEmojiBG: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray900)
     }
     
-    public static var buttonReversed: UIColor {
-        return color(light: YDSBasicColor.white000)
+    public static var buttonBright: UIColor {
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.white000)
     }
     
     public static var buttonDisabled: UIColor {
-        return color(light: YDSBasicColor.gray500)
+        return color(light: YDSBasicColor.gray500, dark: YDSBasicColor.gray600)
     }
     
     public static var buttonDisabledBG: UIColor {
-        return color(light: YDSBasicColor.gray200)
+        return color(light: YDSBasicColor.gray200, dark: YDSBasicColor.gray800)
     }
     
     public static var buttonPoint: UIColor {
-        return color(light: YDSBasicColor.pointColor400)
+        return color(light: YDSBasicColor.pointColor400, dark: YDSBasicColor.pointColor400)
     }
     
     public static var buttonPointPressed: UIColor {
-        return color(light: YDSBasicColor.pointColor300)
+        return color(light: YDSBasicColor.pointColor300, dark: YDSBasicColor.pointColor300)
     }
     
     public static var buttonPointBG: UIColor {
-        return color(light: YDSBasicColor.pointColor050)
+        return color(light: YDSBasicColor.pointColor050, dark: YDSBasicColor.pointColor050)
     }
     
     public static var buttonWarned: UIColor {
-        return color(light: YDSBasicColor.warningRed400)
+        return color(light: YDSBasicColor.warningRed400, dark: YDSBasicColor.warningRed400)
     }
     
     public static var buttonWarnedPressed: UIColor {
-        return color(light: YDSBasicColor.warningRed300)
+        return color(light: YDSBasicColor.warningRed300, dark: YDSBasicColor.warningRed300)
     }
     
     public static var buttonWarnedBG: UIColor {
-        return color(light: YDSBasicColor.warningRed050)
+        return color(light: YDSBasicColor.warningRed050, dark: YDSBasicColor.warningRed050)
     }
     
     
     //  MARK: - BottomBar
     
     public static var bottomBarNormal: UIColor {
-        return color(light: YDSBasicColor.gray600)
+        return color(light: YDSBasicColor.gray600, dark: YDSBasicColor.gray600)
     }
     
     public static var bottomBarSelected: UIColor {
-        return color(light: YDSBasicColor.gray800)
+        return color(light: YDSBasicColor.gray800, dark: YDSBasicColor.gray200)
     }
     
     
     //  MARK: - InputField
     
     public static var inputFieldNormal: UIColor {
-        return color(light: YDSBasicColor.white000)
+        return color(light: YDSBasicColor.white000, dark: YDSBasicColor.black000)
     }
     
     public static var inputFieldElevated: UIColor {
-        return color(light: YDSBasicColor.gray100)
+        return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray900)
     }
-    
     
     
     //  MARK: - Toast
     
     public static var toastBG: UIColor {
-        return color(light: YDSBasicColor.gray800)
+        return color(light: YDSBasicColor.gray800, dark: YDSBasicColor.gray800)
+    }
+    
+    
+    //  MARK: - Tooltip
+    
+    public static var tooltipBG: UIColor {
+        return color(light: YDSBasicColor.gray700, dark: YDSBasicColor.gray700)
+    }
+    
+    public static var tooltipPoint: UIColor {
+        return color(light: YDSBasicColor.pointColor400, dark: YDSBasicColor.pointColor400)
     }
     
     
     //  MARK: - Pressed
     
     public static var pressed: UIColor {
-        return color(light: YDSBasicColor.black000A10)
+        return color(light: YDSBasicColor.black000A10, dark: YDSBasicColor.black000A10)
     }
     
     
     //  MARK: - Shadow
+    //  다크모드에서는 Shadow를 사용하지 않습니다.
     
     public static var shadowThin: UIColor {
         return color(light: YDSBasicColor.gray400)
