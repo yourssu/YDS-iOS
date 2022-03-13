@@ -94,6 +94,9 @@
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
 		C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */; };
+		C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */; };
+		C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */; };
+		C7F6908D27DDDA03002B63C9 /* IconsListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908C27DDDA03002B63C9 /* IconsListItemCell.swift */; };
 		DD151FAF2641820200795D7C /* YDS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD151FAD2641820200795D7C /* YDS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD48C1EC26735052004B288E /* YDSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48C1EB26735052004B288E /* YDSBottomSheet.swift */; };
 		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
@@ -210,6 +213,9 @@
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
 		C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
+		C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsPageViewController.swift; sourceTree = "<group>"; };
+		C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsListTableViewController.swift; sourceTree = "<group>"; };
+		C7F6908C27DDDA03002B63C9 /* IconsListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsListItemCell.swift; sourceTree = "<group>"; };
 		DD151FAA2641820200795D7C /* YDS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD151FAD2641820200795D7C /* YDS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS.h; sourceTree = "<group>"; };
 		DD151FAE2641820200795D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 			children = (
 				532DBFDD26ED0CEE008C2354 /* Color */,
 				53E26E8426F061720036648E /* Typography */,
+				C7F6908727DDCD04002B63C9 /* Icon */,
 			);
 			path = FoundationSampleViewController;
 			sourceTree = "<group>";
@@ -488,6 +495,16 @@
 				537A0AD126C4189D00142DCE /* TopBar */,
 			);
 			path = ComponentSampleViewController;
+			sourceTree = "<group>";
+		};
+		C7F6908727DDCD04002B63C9 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */,
+				C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */,
+				C7F6908C27DDDA03002B63C9 /* IconsListItemCell.swift */,
+			);
+			path = Icon;
 			sourceTree = "<group>";
 		};
 		DD151FA02641820200795D7C = {
@@ -757,8 +774,10 @@
 				53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
 				5365FD5B274A4ED000B6FBF9 /* IntControllerView.swift in Sources */,
+				C7F6908D27DDDA03002B63C9 /* IconsListItemCell.swift in Sources */,
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
+				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
@@ -767,6 +786,7 @@
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
+				C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */,
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
