@@ -21,79 +21,79 @@ struct Colors {
 
 let backgroundColors = Colors(
     items: [
-        Color(color: YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000"),
-        Color(color: YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000"),
-        Color(color: YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050"),
-        Color(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "gray100"),
-        Color(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "gray100"),
-        Color(color: YDSColor.bgNormalReversed, name: "bgNormalReversed", basicColorName: "realBlack"),
-        Color(color: YDSColor.bgElevatedReversed, name: "bgElevatedReversed", basicColorName: "realBlack"),
+        Color(color: YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000 / black000"),
+        Color(color: YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000 / black000"),
+        Color(color: YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050 / realBlack"),
+        Color(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "gray100 / gray900"),
+        Color(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "gray100 / gray800"),
+        Color(color: YDSColor.bgNormalReversed, name: "bgNormalReversed", basicColorName: "realBlack / realBlack"),
+        Color(color: YDSColor.bgElevatedReversed, name: "bgElevatedReversed", basicColorName: "realBlack / realBlack"),
     ],
     description: "Background"
 )
 
 let textColors = Colors(
     items: [
-        Color(color: YDSColor.textPrimary, name: "textPrimary", basicColorName: "black000"),
-        Color(color: YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900"),
-        Color(color: YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600"),
-        Color(color: YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500"),
-        Color(color: YDSColor.textBright, name: "textBright", basicColorName: "white000"),
-        Color(color: YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400"),
-        Color(color: YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400"),
+        Color(color: YDSColor.textPrimary, name: "textPrimary", basicColorName: "black000 / gray100"),
+        Color(color: YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900 / gray200"),
+        Color(color: YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600 / gray600"),
+        Color(color: YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500/ gray700"),
+        Color(color: YDSColor.textBright, name: "textBright", basicColorName: "white000 / white000"),
+        Color(color: YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400 / pointColor300"),
+        Color(color: YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400 / warningRed300"),
     ],
     description: "Text"
 )
 
 let dimColors = Colors(
     items: [
-        Color(color: YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30"),
-        Color(color: YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70"),
-        Color(color: YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70"),
+        Color(color: YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30 / gray900A30"),
+        Color(color: YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70 / gray900A70"),
+        Color(color: YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70 / white000A70"),
     ],
     description: "Dim"
 )
 
 let borderColors = Colors(
     items: [
-        Color(color: YDSColor.borderThin, name: "borderThin", basicColorName: "gray100"),
-        Color(color: YDSColor.borderNormal, name: "borderNormal", basicColorName: "black000A10"),
-        Color(color: YDSColor.borderThick, name: "borderThick", basicColorName: "gray500"),
+        Color(color: YDSColor.borderThin, name: "borderThin", basicColorName: "gray100 / gray900"),
+        Color(color: YDSColor.borderNormal, name: "borderNormal", basicColorName: "black000A10 / white000A10"),
+        Color(color: YDSColor.borderThick, name: "borderThick", basicColorName: "gray500 / gray500"),
     ],
     description: "Border"
 )
 
 let buttonColors = Colors(
     items: [
-        Color(color: YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700"),
-        Color(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600"),
-        Color(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200"),
-        Color(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100"),
-        Color(color: YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000"),
-        Color(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500"),
-        Color(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200"),
-        Color(color: YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400"),
-        Color(color: YDSColor.buttonPointPressed, name: "buttonPointPressed", basicColorName: "pointColor300"),
-        Color(color: YDSColor.buttonPointBG, name: "buttonPointBG", basicColorName: "pointColor050"),
-        Color(color: YDSColor.buttonWarned, name: "buttonWarned", basicColorName: "warningRed400"),
-        Color(color: YDSColor.buttonWarnedPressed, name: "buttonWarnedPressed", basicColorName: "warningRed300"),
-        Color(color: YDSColor.buttonWarnedBG, name: "buttonWarnedBG", basicColorName: "warningRed050"),
+        Color(color: YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700 / gray300"),
+        Color(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600 / gray200"),
+        Color(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200 / gray800"),
+        Color(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100 / gray900"),
+        Color(color: YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000 / white000"),
+        Color(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500 / gray600"),
+        Color(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200 / gray800"),
+        Color(color: YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400 / pointColor400"),
+        Color(color: YDSColor.buttonPointPressed, name: "buttonPointPressed", basicColorName: "pointColor300 / pointColor300"),
+        Color(color: YDSColor.buttonPointBG, name: "buttonPointBG", basicColorName: "pointColor050 / pointColor050"),
+        Color(color: YDSColor.buttonWarned, name: "buttonWarned", basicColorName: "warningRed400 / warningRed400"),
+        Color(color: YDSColor.buttonWarnedPressed, name: "buttonWarnedPressed", basicColorName: "warningRed300 / warningRed300"),
+        Color(color: YDSColor.buttonWarnedBG, name: "buttonWarnedBG", basicColorName: "warningRed050 / warningRed050"),
     ],
     description: "Button"
 )
 
 let bottomBarColors = Colors(
     items: [
-        Color(color: YDSColor.bottomBarNormal, name: "bottomBarNormal", basicColorName: "gray600"),
-        Color(color: YDSColor.bottomBarSelected, name: "bottomBarSelected", basicColorName: "gray800"),
+        Color(color: YDSColor.bottomBarNormal, name: "bottomBarNormal", basicColorName: "gray600 / gray600"),
+        Color(color: YDSColor.bottomBarSelected, name: "bottomBarSelected", basicColorName: "gray800 / gray200"),
     ],
     description: "BottomBar"
 )
 
 let inputFieldColors = Colors(
     items: [
-        Color(color: YDSColor.inputFieldNormal, name: "inputFieldNormal", basicColorName: "white000"),
-        Color(color: YDSColor.inputFieldElevated, name: "inputFieldElevated", basicColorName: "gray100"),
+        Color(color: YDSColor.inputFieldNormal, name: "inputFieldNormal", basicColorName: "white000 / black000"),
+        Color(color: YDSColor.inputFieldElevated, name: "inputFieldElevated", basicColorName: "gray100 / gray900"),
     ],
     description: "InputField"
 )
@@ -101,14 +101,21 @@ let inputFieldColors = Colors(
 
 let toastColors = Colors(
     items: [
-        Color(color: YDSColor.toastBG, name: "toastBG", basicColorName: "gray800"),
+        Color(color: YDSColor.toastBG, name: "toastBG", basicColorName: "gray800 / gray800"),
     ],
     description: "Toast"
 )
 
+let tooltipColors = Colors(
+    items: [
+        Color(color: YDSColor.tooltipBG, name: "tooltipBG", basicColorName: "gray700 / gray700"),
+        Color(color: YDSColor.tooltipBG, name: "tooltipPoint", basicColorName: "gray400 / gray400"),
+    ],
+    description: "Tooltip")
+
 let pressedColors = Colors(
     items: [
-        Color(color: YDSColor.pressed, name: "pressed", basicColorName: "black000A10"),
+        Color(color: YDSColor.pressed, name: "pressed", basicColorName: "black000A10 / black000A10"),
     ],
     description: "Pressed"
 )
@@ -172,6 +179,7 @@ let colors = [
     bottomBarColors,
     inputFieldColors,
     toastColors,
+    tooltipColors,
     pressedColors,
     shadowColors,
     itemColors
