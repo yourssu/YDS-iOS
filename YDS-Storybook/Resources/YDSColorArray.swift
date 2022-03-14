@@ -27,7 +27,7 @@ let backgroundColors = Colors(
         Color(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "gray100 / gray900"),
         Color(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "gray100 / gray800"),
         Color(color: YDSColor.bgNormalDark, name: "bgNormalDark", basicColorName: "realBlack / realBlack"),
-        Color(color: YDSColor.bgElevatedReversed, name: "bgElevatedReversed", basicColorName: "realBlack / realBlack"),
+        Color(color: YDSColor.bgElevatedDark, name: "bgElevatedDark", basicColorName: "realBlack / realBlack"),
     ],
     description: "Background"
 )
