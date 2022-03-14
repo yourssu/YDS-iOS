@@ -109,7 +109,7 @@ let toastColors = Colors(
 let tooltipColors = Colors(
     items: [
         Color(color: YDSColor.tooltipBG, name: "tooltipBG", basicColorName: "gray700 / gray700"),
-        Color(color: YDSColor.tooltipBG, name: "tooltipPoint", basicColorName: "gray400 / gray400"),
+        Color(color: YDSColor.tooltipBG, name: "tooltipPoint", basicColorName: "pointColor400 / pointColor400"),
     ],
     description: "Tooltip")
 
