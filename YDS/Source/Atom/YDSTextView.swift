@@ -29,7 +29,13 @@ public class YDSTextView: UITextView {
     }
     
     private let placeholder: String
+    private var isPlaceholderShowing: Bool
     private let maxHeight: CGFloat?
+    
+    private var isOverHeight: Bool {
+        guard let maxHeight = maxHeight else { return false }
+        return contentSize.height >= maxHeight
+    }
 
     // MARK: - Init
     
@@ -38,6 +44,7 @@ public class YDSTextView: UITextView {
         self.style = style
         self.placeholder = placeholder
         self.maxHeight = maxHeight
+        self.isPlaceholderShowing = false
         super.init(frame: .zero, textContainer: nil)
         showPlaceholderIfNeeded()
     }
@@ -48,26 +55,22 @@ public class YDSTextView: UITextView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
-        guard let maxHeight = maxHeight else { return }
-        if contentSize.height >= maxHeight {
-            isScrollEnabled = true
-        } else {
-            isScrollEnabled = false
-        }
+        isScrollEnabled = isOverHeight
     }
     
     public func hidePlaceholderIfNeeded() {
-        if attributedText.string == placeholder {
+        if isPlaceholderShowing, attributedText.string == placeholder {
             text = nil
             textColor = YDSColor.textSecondary
+            isPlaceholderShowing.toggle()
         }
     }
     
     public func showPlaceholderIfNeeded() {
-        if attributedText.isEmpty {
+        if isPlaceholderShowing == false, attributedText.isEmpty {
             text = placeholder
             textColor = YDSColor.textTertiary
+            isPlaceholderShowing.toggle()
         }
     }
     
