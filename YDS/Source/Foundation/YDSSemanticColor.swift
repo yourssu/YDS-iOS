@@ -41,7 +41,7 @@ public enum YDSColor {
         return color(light: YDSBasicColor.gray100, dark: YDSBasicColor.gray800)
     }
     
-    public static var bgNormalReversed: UIColor {
+    public static var bgNormalDark: UIColor {
         return color(light: YDSBasicColor.realBlack, dark: YDSBasicColor.realBlack)
     }
     
