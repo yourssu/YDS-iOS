@@ -13,7 +13,13 @@ extension Optional where Wrapped == NSAttributedString {
         case .none:
             return true
         case .some(let wrapped):
-            return wrapped.length == 0
+            return wrapped.isEmpty
         }
+    }
+}
+
+extension NSAttributedString {
+    var isEmpty: Bool {
+        return length == 0
     }
 }

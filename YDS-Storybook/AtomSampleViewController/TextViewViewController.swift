@@ -83,7 +83,7 @@ extension TextViewViewController: UITextViewDelegate {
         let newString = currentString.replacingCharacters(in: newRange, with: inputString).trimmingCharacters(in: .whitespacesAndNewlines)
         
         guard newString.count < 500 else {
-            print("error 최대 글자수 초과함")
+            YDSToast.makeToast(text: "error: 최대 글자수 초과", duration: .short)
             return false
         }
         return true
