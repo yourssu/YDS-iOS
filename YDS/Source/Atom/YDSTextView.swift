@@ -29,7 +29,7 @@ public class YDSTextView: UITextView {
     }
     
     private let placeholder: String
-    private(set) var isShowingPlaceholder: Bool = false
+    public private(set) var isShowingPlaceholder: Bool = false
     private let maxHeight: CGFloat?
     
     private var isOverHeight: Bool {
