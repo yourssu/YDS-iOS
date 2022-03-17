@@ -14,11 +14,25 @@ public enum YDSPlaceholder {
 
 class TextViewViewController: StoryBookViewController {
     private lazy var textView = YDSTextView(placeholder: YDSPlaceholder.comment, maxHeight: maxHeight)
+    private lazy var titleLabel: YDSLabel = {
+        let label = YDSLabel(style: .subtitle2)
+        label.textColor = YDSColor.textPrimary
+        label.text = "isShowingPlaceholder"
+        return label
+    }()
+    private lazy var stateLabel: YDSLabel = {
+        let label = YDSLabel(style: .body2)
+        label.textColor = YDSColor.textSecondary
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        stateLabel.text = true.description
+        
         textView.delegate = self
+        textView.placeholderDelegate = self
         textView.isScrollEnabled = false
         textView.isEditable = true
         textView.textContainerInset = .init(top: 12, left: 0, bottom: 12, right: 0)
@@ -43,7 +57,7 @@ class TextViewViewController: StoryBookViewController {
     }
     
     private func setViewHierarchy() {
-        sampleView.addSubviews(textView)
+        sampleView.addSubviews(textView, titleLabel, stateLabel)
     }
     
     private func setAutolayout() {
@@ -52,6 +66,16 @@ class TextViewViewController: StoryBookViewController {
             $0.height.lessThanOrEqualTo(maxHeight)
             $0.width.equalTo(282)
             $0.centerX.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(textView.snp.bottom).offset(12)
+            $0.leading.trailing.equalToSuperview().inset(30)
+        }
+        
+        stateLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(30)
             $0.bottom.equalToSuperview().inset(12)
         }
     }
@@ -62,6 +86,12 @@ class TextViewViewController: StoryBookViewController {
         if touch.view != textView {
             view.endEditing(true)
         }
+    }
+}
+
+extension TextViewViewController: YDSTextViewPlaceholderDelegate {
+    func textView(_ textView: YDSTextView, shouldShowPlaceholder: Bool) {
+        stateLabel.text = shouldShowPlaceholder.description
     }
 }
 
