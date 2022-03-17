@@ -7,6 +7,10 @@
 
 import UIKit
 
+public protocol YDSTextViewPlaceholderDelegate: AnyObject {
+    func textView(_ textView: YDSTextView, shouldShowPlaceholder: Bool)
+}
+
 public class YDSTextView: UITextView {
     public var style : String.TypoStyle {
         didSet { setAttributedText() }
@@ -27,6 +31,8 @@ public class YDSTextView: UITextView {
     public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? {
         didSet { setAttributedText() }
     }
+    
+    public weak var placeholderDelegate: YDSTextViewPlaceholderDelegate?
     
     private let placeholder: String
     public private(set) var isShowingPlaceholder: Bool = false
@@ -63,6 +69,7 @@ public class YDSTextView: UITextView {
             text = nil
             textColor = YDSColor.textSecondary
             isShowingPlaceholder.toggle()
+            placeholderDelegate?.textView(self, shouldShowPlaceholder: isShowingPlaceholder)
         }
     }
     
@@ -71,6 +78,7 @@ public class YDSTextView: UITextView {
             text = placeholder
             textColor = YDSColor.textTertiary
             isShowingPlaceholder.toggle()
+            placeholderDelegate?.textView(self, shouldShowPlaceholder: isShowingPlaceholder)
         }
     }
     
