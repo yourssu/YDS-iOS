@@ -6,56 +6,65 @@
 //
 
 import UIKit
-
-public protocol YDSTextViewPlaceholderDelegate: AnyObject {
-    func textView(_ textView: YDSTextView, shouldShowPlaceholder: Bool)
-}
+import SnapKit
 
 public class YDSTextView: UITextView {
-    public var style : String.TypoStyle {
-        didSet { setAttributedText() }
+    public var style: String.TypoStyle {
+        didSet { setTextStyle() }
     }
     
     public override var text: String? {
-        didSet { setAttributedText() }
+        didSet { textDidChange() }
+    }
+    
+    public override var attributedText: NSAttributedString? {
+        didSet { textDidChange() }
     }
     
     public override var textColor: UIColor! {
-        didSet { setAttributedText() }
+        didSet { setTextStyle() }
     }
     
     public var lineBreakMode: NSLineBreakMode? {
-        didSet { setAttributedText() }
+        didSet { setTextStyle() }
     }
     
     public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? {
-        didSet { setAttributedText() }
+        didSet { setTextStyle() }
     }
     
-    public weak var placeholderDelegate: YDSTextViewPlaceholderDelegate?
+    public var placeholder: String? {
+        didSet {
+            if let placeholder = placeholder {
+                registerPlaceholder(placeholder)
+            } else {
+                removePlaceholder()
+            }
+        }
+    }
     
-    private let placeholder: String
-    public private(set) var isShowingPlaceholder: Bool = false
+    public var placeholderColor: UIColor = YDSColor.textTertiary {
+        didSet { placeholderLabel?.textColor = placeholderColor }
+    }
+    
+    private var placeholderLabel: YDSLabel?
     private let maxHeight: CGFloat?
     
-    private var isOverHeight: Bool {
-        guard let maxHeight = maxHeight else { return false }
-        return contentSize.height >= maxHeight
-    }
-
-    // MARK: - Init
+    // MARK: - Init, LifeCycle
     
-    /// placeholder 사용을 위해서 UITextViewDelegate 구현 필수 (스토리북 참고)
-    public init(style: String.TypoStyle = .body1, placeholder: String, maxHeight: CGFloat?) {
+    public init(style: String.TypoStyle = .body1, maxHeight: CGFloat? = nil) {
         self.style = style
-        self.placeholder = placeholder
         self.maxHeight = maxHeight
         super.init(frame: .zero, textContainer: nil)
-        showPlaceholderIfNeeded()
+        setTextStyle()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        removePlaceholder()
     }
     
     public override func layoutSubviews() {
@@ -64,29 +73,75 @@ public class YDSTextView: UITextView {
         invalidateIntrinsicContentSize()
     }
     
-    public func hidePlaceholderIfNeeded() {
-        if isShowingPlaceholder, attributedText.string == placeholder {
-            text = nil
-            textColor = YDSColor.textSecondary
-            isShowingPlaceholder.toggle()
-            placeholderDelegate?.textView(self, shouldShowPlaceholder: isShowingPlaceholder)
+    // MARK: - Public func
+    
+    /// textContainerInset이나 textContainer.lineFragmentPadding 변경시에 호출해야함
+    public func setNeedsPlaceholderInset() {
+        updatePlaceholderInset(placeholderInset)
+    }
+    
+    /// invalidatePlaceholderInset로 해결되지 않을 경우
+    /// 혹은 custom이 필요할 때
+    public func changePlaceholderInset(_ inset: UIEdgeInsets) {
+        updatePlaceholderInset(inset)
+    }
+    
+    private func updatePlaceholderInset(_ inset: UIEdgeInsets) {
+        placeholderLabel?.snp.updateConstraints {
+            $0.edges.equalToSuperview().inset(inset)
         }
     }
     
-    public func showPlaceholderIfNeeded() {
-        if isShowingPlaceholder == false, attributedText.isEmpty {
-            text = placeholder
-            textColor = YDSColor.textTertiary
-            isShowingPlaceholder.toggle()
-            placeholderDelegate?.textView(self, shouldShowPlaceholder: isShowingPlaceholder)
+    // MARK: - Private
+    
+    private func registerPlaceholder(_ text: String) {
+        if let placeholderLabel = placeholderLabel {
+            placeholderLabel.text = text
+        } else {
+            placeholderLabel = makePlaceholder(text)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(textDidChange),
+                                                   name: UITextView.textDidChangeNotification,
+                                                   object: nil)
         }
     }
     
-    private func setAttributedText() {
-        guard let text = self.text else { return }
-        attributedText = text.attributedString(byPreset: style,
-                                                color: textColor,
-                                                lineBreakMode: lineBreakMode,
-                                                lineBreakStrategy: lineBreakStrategy)
+    private func makePlaceholder(_ text: String) -> YDSLabel {
+        let label = YDSLabel(style: style)
+        label.text = text
+        label.textColor = placeholderColor
+        
+        self.addSubview(label)
+        label.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(placeholderInset)
+        }
+        return label
+    }
+    
+    private func removePlaceholder() {
+        placeholderLabel = nil
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: nil)
+    }
+    
+    private var placeholderInset: UIEdgeInsets {
+        var inset = textContainerInset
+        inset.left += textContainer.lineFragmentPadding
+        return inset
+    }
+    
+    private var isOverHeight: Bool {
+        guard let maxHeight = maxHeight else { return false }
+        return contentSize.height >= maxHeight
+    }
+    
+    private func setTextStyle() {
+        typingAttributes = style.style(color: textColor,
+                                       lineBreakMode: lineBreakMode,
+                                       lineBreakStrategy: lineBreakStrategy)
+    }
+    
+    @objc
+    private func textDidChange() {
+        placeholderLabel?.isHidden = !attributedText.isEmpty
     }
 }

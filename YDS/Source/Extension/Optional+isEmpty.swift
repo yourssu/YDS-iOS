@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Optional where Wrapped == NSAttributedString {
+public extension Optional where Wrapped == NSAttributedString {
     var isEmpty: Bool {
         switch self {
         case .none:
