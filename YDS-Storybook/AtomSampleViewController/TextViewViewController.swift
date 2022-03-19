@@ -13,11 +13,11 @@ public enum YDSPlaceholder {
 }
 
 class TextViewViewController: StoryBookViewController {
-    private lazy var textView = YDSTextView(placeholder: YDSPlaceholder.comment, maxHeight: maxHeight)
+    private lazy var textView = YDSTextView(maxHeight: maxHeight)
     private lazy var titleLabel: YDSLabel = {
         let label = YDSLabel(style: .subtitle2)
         label.textColor = YDSColor.textPrimary
-        label.text = "isShowingPlaceholder"
+        label.text = "TextView.text.isEmpty"
         return label
     }()
     private lazy var stateLabel: YDSLabel = {
@@ -29,15 +29,14 @@ class TextViewViewController: StoryBookViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stateLabel.text = true.description
-        
         textView.delegate = self
-        textView.placeholderDelegate = self
         textView.isScrollEnabled = false
         textView.isEditable = true
         textView.textContainerInset = .init(top: 12, left: 0, bottom: 12, right: 0)
+        textView.placeholder = YDSPlaceholder.comment
         
         setupView()
+        stateLabel.text = textView.attributedText.isEmpty.description
     }
     
     private let maxHeight: CGFloat = 150
@@ -89,21 +88,10 @@ class TextViewViewController: StoryBookViewController {
     }
 }
 
-extension TextViewViewController: YDSTextViewPlaceholderDelegate {
-    func textView(_ textView: YDSTextView, shouldShowPlaceholder: Bool) {
-        stateLabel.text = shouldShowPlaceholder.description
-    }
-}
-
 extension TextViewViewController: UITextViewDelegate {
-    func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         guard let textView = textView as? YDSTextView else { return }
-        textView.showPlaceholderIfNeeded()
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        guard let textView = textView as? YDSTextView else { return }
-        textView.hidePlaceholderIfNeeded()
+        stateLabel.text = textView.attributedText.isEmpty.description
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
