@@ -56,6 +56,7 @@ public class YDSTextView: UITextView {
         self.style = style
         self.maxHeight = maxHeight
         super.init(frame: .zero, textContainer: nil)
+        self.tintColor = YDSColor.textPointed
         setTextStyle()
     }
     
