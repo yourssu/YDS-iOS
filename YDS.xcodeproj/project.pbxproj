@@ -106,6 +106,8 @@
 		DD6C63D626429C6C004CFF46 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C63D526429C6C004CFF46 /* YDSLabel.swift */; };
 		DD8DF13526786B3300EDD2B4 /* YDSScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13426786B3300EDD2B4 /* YDSScreenSize.swift */; };
 		DD8DF13826786BD100EDD2B4 /* YDSAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8DF13726786BD100EDD2B4 /* YDSAnimation.swift */; };
+		DD9F4CAE27EB0623004F6CB5 /* YDSEmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F4CAD27EB0623004F6CB5 /* YDSEmojiButton.swift */; };
+		DD9F4CB027EB0663004F6CB5 /* EmojiButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9F4CAF27EB0663004F6CB5 /* EmojiButtonPageViewController.swift */; };
 		DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */; };
 		DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */; };
 		DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */; };
@@ -232,6 +234,8 @@
 		DD6C63D526429C6C004CFF46 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
 		DD8DF13426786B3300EDD2B4 /* YDSScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSScreenSize.swift; sourceTree = "<group>"; };
 		DD8DF13726786BD100EDD2B4 /* YDSAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSAnimation.swift; sourceTree = "<group>"; };
+		DD9F4CAD27EB0623004F6CB5 /* YDSEmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSEmojiButton.swift; sourceTree = "<group>"; };
+		DD9F4CAF27EB0663004F6CB5 /* EmojiButtonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonPageViewController.swift; sourceTree = "<group>"; };
 		DDDC3C79265E7072007ED3FE /* YDSBasicColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBasicColor.swift; sourceTree = "<group>"; };
 		DDDC3C81265E8276007ED3FE /* YDSSemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSemanticColor.swift; sourceTree = "<group>"; };
 		DDFBCFFC26739A6900C5F409 /* YDS-Storybook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YDS-Storybook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +422,7 @@
 				C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */,
 				539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */,
 				C37F357127DE34FE007DF859 /* TextViewViewController.swift */,
+				DD9F4CAF27EB0663004F6CB5 /* EmojiButtonPageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -570,6 +575,7 @@
 				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
 				53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */,
 				C37F356C27DE3475007DF859 /* YDSTextView.swift */,
+				DD9F4CAD27EB0623004F6CB5 /* YDSEmojiButton.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -766,6 +772,7 @@
 				533A279D26A48683009FD90A /* YDSSimpleTextField.swift in Sources */,
 				533A353D26AE9E5800CCEEAE /* YDSTextFieldView.swift in Sources */,
 				53443D9526A5D5DA0037B02E /* YDSSearchBar.swift in Sources */,
+				DD9F4CAE27EB0623004F6CB5 /* YDSEmojiButton.swift in Sources */,
 				539110B226C048020094FD08 /* YDSSingleTitleTopBar.swift in Sources */,
 				53443D9226A5CD3E0037B02E /* YDSSearchTextField.swift in Sources */,
 				53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */,
@@ -788,6 +795,7 @@
 			files = (
 				C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */,
 				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
+				DD9F4CB027EB0663004F6CB5 /* EmojiButtonPageViewController.swift in Sources */,
 				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
 				5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */,
 				532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */,
