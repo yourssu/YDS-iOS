@@ -105,6 +105,7 @@ public class YDSEmojiButton: UIControl {
         super.init(frame: .zero)
         setBorderColor()
         setEmojiButtonSize()
+        setColorBasedOnIsSelected()
     }
     
     required init?(coder: NSCoder) {
