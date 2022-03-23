@@ -41,6 +41,7 @@ class PageListViewController: UIViewController {
         Page(title: "Badge", vc: BadgePageViewController.self),
         Page(title: "BoxButton", vc: BoxButtonPageViewController.self),
         Page(title: "PlainButton", vc: PlainButtonPageViewController.self),
+        Page(title: "EmojiButton", vc: EmojiButtonPageViewController.self),
         Page(title: "Checkbox", vc: CheckboxPageViewController.self),
         Page(title: "SimpleTextFieldView", vc: SimpleTextFieldViewPageViewController.self),
         Page(title: "SuffixTextFieldView", vc: SuffixTextFieldViewPageViewController.self),
@@ -156,3 +157,4 @@ extension PageListViewController: UITableViewDataSource {
         return cell
     }
 }
+
