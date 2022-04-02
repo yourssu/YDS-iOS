@@ -161,10 +161,7 @@ public class YDSToast: UIView {
         let toast = YDSToast(text: text,
                              duration: duration)
         
-        guard let delegate = UIApplication.shared.delegate,
-              let optionalWindow = delegate.window,
-              let window = optionalWindow
-        else { return }
+        guard let window = UIApplication.findWindow() else { return }
     
         window.addSubview(toast)
         toast.snp.makeConstraints {
