@@ -96,6 +96,7 @@
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
+		C3985FB627F832EA00389A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB527F832EA00389A22 /* SceneDelegate.swift */; };
 		C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3498527E710F900005034 /* Optional+isEmpty.swift */; };
 		C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */; };
 		C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */; };
@@ -221,6 +222,7 @@
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
+		C3985FB527F832EA00389A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3A3498527E710F900005034 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsPageViewController.swift; sourceTree = "<group>"; };
@@ -602,6 +604,7 @@
 				532DBFDC26ED0CD5008C2354 /* Resources */,
 				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
+				C3985FB527F832EA00389A22 /* SceneDelegate.swift */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
 				533A27B226A52E56009FD90A /* PageListViewController.swift */,
 				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
@@ -821,6 +824,7 @@
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
 				53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */,
+				C3985FB627F832EA00389A22 /* SceneDelegate.swift in Sources */,
 				C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */,
 				537A0AD026C4189700142DCE /* SingleTitleTopBarSampleViewController.swift in Sources */,
 				53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */,
