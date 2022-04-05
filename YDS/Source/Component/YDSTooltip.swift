@@ -11,18 +11,14 @@ final public class YDSTooltip: UIView {
     
     //  MARK: - 외부에서 지정할 수 있는 속성
     
-    /**
-     툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
-     */
+    /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
     public var text: String? {
         didSet {
             label.text = text
         }
     }
     
-    /**
-     툴팁의 색깔을 설정합니다.
-     */
+    /// 툴팁의 색깔을 설정합니다.
     public var color: TooltipColor {
         didSet {
             self.backgroundColor = color == .tooltipBG ? YDSColor.tooltipBG : YDSColor.tooltipPoint
@@ -30,18 +26,14 @@ final public class YDSTooltip: UIView {
         }
     }
     
-    /**
-     툴팁의 꼬리 위치를 설정할 때 사용합니다.
-     */
+    /// 툴팁의 꼬리 위치를 설정할 때 사용합니다.
     public var tailPosition: TailPosition {
         didSet {
             makeTail()
         }
     }
     
-    /**
-     툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
-     */
+    /// 툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
     public var duration: TooltipDuration
     
     
@@ -88,32 +80,24 @@ final public class YDSTooltip: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /**
-     뷰를 세팅합니다.
-     */
+    /// 뷰를 세팅합니다.
     private func setupView() {
         setLayouts()
         setProperties()
     }
     
-    /**
-     레이아웃을 세팅합니다.
-     */
+    /// 레이아웃을 세팅합니다.
     private func setLayouts() {
         setViewHierarchy()
         setAutolayout()
     }
     
-    /**
-     뷰의 위계를 세팅합니다.
-     */
+    /// 뷰의 위계를 세팅합니다.
     private func setViewHierarchy() {
         self.addSubview(label)
     }
     
-    /**
-     뷰의 오토레이아웃을 세팅합니다.
-     */
+    /// 뷰의 오토레이아웃을 세팅합니다.
     private func setAutolayout() {
         label.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(Dimension.Margin.horizontal)
@@ -121,25 +105,19 @@ final public class YDSTooltip: UIView {
         }
     }
     
-    /**
-     뷰의 프로퍼티를 세팅합니다.
-     */
+    /// 뷰의 프로퍼티를 세팅합니다.
     private func setProperties() {
         self.layer.cornerRadius = 8
         self.alpha = 0.0
     }
     
-    /**
-     
-     */
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         makeTail()
     }
     
-    /**
-     툴팁의 꼬리 부분을 그립니다.
-     */
+    /// 툴팁의 꼬리 부분을 그립니다.
     private func makeTail() {
         if let firstLayer = self.layer.sublayers?.first {
             if firstLayer is CAShapeLayer {
@@ -203,9 +181,7 @@ final public class YDSTooltip: UIView {
         self.layer.insertSublayer(shape, at: 0)
     }
     
-    /**
-     애니메이션으로 툴팁이 뷰에 보여지고 지정된 duration 동안 유지된 후 사라지게 합니다.
-     */
+    /// 애니메이션으로 툴팁이 뷰에 보여지고 지정된 duration 동안 유지된 후 사라지게 합니다.
     public func show() {
         guard let superView = self.superview else { return }
         self.addDismissView(on: superView)
@@ -220,18 +196,14 @@ final public class YDSTooltip: UIView {
         })
     }
     
-    /**
-     화면 전체 영역을 차지하고 tap을 확인할 수 있는 뷰를 추가합니다.
-     */
+    /// 화면 전체 영역을 차지하고 tap을 확인할 수 있는 뷰를 추가합니다.
     private func addDismissView(on superView: UIView) {
         superView.addSubview(self.dismissView)
         self.dismissView.addGestureRecognizer(self.tapRecognizer)
         self.tapRecognizer.isEnabled = true
     }
     
-    /**
-     툴팁을 뷰에서 없애줍니다.
-     */
+    /// 툴팁을 뷰에서 없애줍니다.
     private func hide() {
         UIView.animate(withDuration: YDSAnimation.Duration.medium,
                        animations: { self.alpha = 0 },
@@ -242,9 +214,7 @@ final public class YDSTooltip: UIView {
         })
     }
 
-    /**
-     사용자가 뷰를 탭하면 hide()를 호출해서 툴팁을 뷰에서 없앱니다.
-     */
+    /// 사용자가 뷰를 탭하면 hide()를 호출해서 툴팁을 뷰에서 없앱니다.
     @objc private func didTapOnScreen() {
         self.hide()
     }
@@ -270,9 +240,7 @@ final public class YDSTooltip: UIView {
     
     //  MARK: - 외부에서 접근할 수 있는 enum
 
-    /**
-     툴팁의 꼬리 위치 종류입니다.
-     */
+    /// 툴팁의 꼬리 위치 종류입니다.
     public enum TailPosition {
         case left, right
         case topLeft, bottomLeft
