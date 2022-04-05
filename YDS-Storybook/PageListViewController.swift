@@ -58,6 +58,7 @@ class PageListViewController: UIViewController {
         Page(title: "SingleTitleTopBar", vc: SingleTitleTopBarPageViewController.self),
         Page(title: "DoubleTitleTopBar", vc: DoubleTitleTopBarPageViewController.self),
         Page(title: "BottomBarController", vc: BottomBarControllerPageViewController.self),
+        Page(title: "Tooltip", vc: TooltipPageViewController.self),
     ]
 
     
