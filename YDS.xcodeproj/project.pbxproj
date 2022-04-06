@@ -516,8 +516,7 @@
 				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
 				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
 				537A0AD126C4189D00142DCE /* TopBar */,
-				C3EC3D7227EE1D2B00AE79C7 /* TooltipPageViewController.swift */,
-				C39EEDFA27F9E2920021DDC1 /* TooltipSampleViewController.swift */,
+				C3CD116327FDB4780091B71B /* Tooltip */,
 			);
 			path = ComponentSampleViewController;
 			sourceTree = "<group>";
@@ -528,6 +527,15 @@
 				C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C3CD116327FDB4780091B71B /* Tooltip */ = {
+			isa = PBXGroup;
+			children = (
+				C3EC3D7227EE1D2B00AE79C7 /* TooltipPageViewController.swift */,
+				C39EEDFA27F9E2920021DDC1 /* TooltipSampleViewController.swift */,
+			);
+			path = Tooltip;
 			sourceTree = "<group>";
 		};
 		C7F6908727DDCD04002B63C9 /* Icon */ = {
