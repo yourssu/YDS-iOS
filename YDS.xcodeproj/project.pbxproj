@@ -93,12 +93,12 @@
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
+		C33267AB27FF111F0001EFA0 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33267A927FF111F0001EFA0 /* TooltipSampleViewController.swift */; };
+		C33267AC27FF111F0001EFA0 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33267AA27FF111F0001EFA0 /* TooltipPageViewController.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
-		C39EEDFB27F9E2920021DDC1 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39EEDFA27F9E2920021DDC1 /* TooltipSampleViewController.swift */; };
 		C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3498527E710F900005034 /* Optional+isEmpty.swift */; };
-		C3EC3D7327EE1D2B00AE79C7 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC3D7227EE1D2B00AE79C7 /* TooltipPageViewController.swift */; };
 		C3EC3D7527EE1D3600AE79C7 /* YDSTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC3D7427EE1D3600AE79C7 /* YDSTooltip.swift */; };
 		C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */; };
 		C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */; };
@@ -221,12 +221,12 @@
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
+		C33267A927FF111F0001EFA0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
+		C33267AA27FF111F0001EFA0 /* TooltipPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TooltipPageViewController.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
-		C39EEDFA27F9E2920021DDC1 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
 		C3A3498527E710F900005034 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
-		C3EC3D7227EE1D2B00AE79C7 /* TooltipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipPageViewController.swift; sourceTree = "<group>"; };
 		C3EC3D7427EE1D3600AE79C7 /* YDSTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTooltip.swift; sourceTree = "<group>"; };
 		C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsPageViewController.swift; sourceTree = "<group>"; };
@@ -516,9 +516,18 @@
 				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
 				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
 				537A0AD126C4189D00142DCE /* TopBar */,
-				C3CD116327FDB4780091B71B /* Tooltip */,
+				C33267A827FF11050001EFA0 /* Tooltip */,
 			);
 			path = ComponentSampleViewController;
+			sourceTree = "<group>";
+		};
+		C33267A827FF11050001EFA0 /* Tooltip */ = {
+			isa = PBXGroup;
+			children = (
+				C33267AA27FF111F0001EFA0 /* TooltipPageViewController.swift */,
+				C33267A927FF111F0001EFA0 /* TooltipSampleViewController.swift */,
+			);
+			path = Tooltip;
 			sourceTree = "<group>";
 		};
 		C37F356E27DE348C007DF859 /* Extension */ = {
@@ -527,15 +536,6 @@
 				C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		C3CD116327FDB4780091B71B /* Tooltip */ = {
-			isa = PBXGroup;
-			children = (
-				C3EC3D7227EE1D2B00AE79C7 /* TooltipPageViewController.swift */,
-				C39EEDFA27F9E2920021DDC1 /* TooltipSampleViewController.swift */,
-			);
-			path = Tooltip;
 			sourceTree = "<group>";
 		};
 		C7F6908727DDCD04002B63C9 /* Icon */ = {
@@ -826,7 +826,7 @@
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
-				C3EC3D7327EE1D2B00AE79C7 /* TooltipPageViewController.swift in Sources */,
+				C33267AB27FF111F0001EFA0 /* TooltipSampleViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
@@ -834,6 +834,7 @@
 				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
+				C33267AC27FF111F0001EFA0 /* TooltipPageViewController.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
 				C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */,
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
@@ -847,7 +848,6 @@
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
-				C39EEDFB27F9E2920021DDC1 /* TooltipSampleViewController.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
 				C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */,
 				53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */,
