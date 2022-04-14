@@ -11,30 +11,19 @@ final public class YDSTooltip: UIView {
     
     //  MARK: - 외부에서 지정할 수 있는 속성
     
-    /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
-    public var text: String? {
-        didSet {
-            label.text = text
-        }
-    }
-    
     /// 툴팁의 색깔을 설정합니다.
-    public var color: TooltipColor {
+    private var color: TooltipColor {
         didSet {
-            self.backgroundColor = color == .tooltipBG ? YDSColor.tooltipBG : YDSColor.tooltipPoint
+            self.backgroundColor = (color == .tooltipBG) ? (YDSColor.tooltipBG) : (YDSColor.tooltipPoint)
             makeTail()
         }
     }
     
     /// 툴팁의 꼬리 위치를 설정할 때 사용합니다.
-    public var tailPosition: TailPosition {
-        didSet {
-            makeTail()
-        }
-    }
+    private var tailPosition: TailPosition
     
     /// 툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
-    public var duration: TooltipDuration
+    private var duration: TooltipDuration
     
     
     // MARK: - 뷰
@@ -68,7 +57,7 @@ final public class YDSTooltip: UIView {
     // MARK: - 메소드
     
     public init(text: String, color: TooltipColor, tailPosition: TailPosition, duration: TooltipDuration) {
-        self.text = text
+        self.label.text = text
         self.color = color
         self.tailPosition = tailPosition
         self.duration = duration
@@ -119,19 +108,13 @@ final public class YDSTooltip: UIView {
     
     /// 툴팁의 꼬리 부분을 그립니다.
     private func makeTail() {
-        if let firstLayer = self.layer.sublayers?.first {
-            if firstLayer is CAShapeLayer {
-                firstLayer.removeFromSuperlayer()
-            }
-        }
-        
         let path = UIBezierPath()
 
         switch tailPosition {
         case .left, .right:
-            let point1 = CGPoint(x: tailPosition == .left ? 0 : self.frame.size.width,
+            let point1 = CGPoint(x: (tailPosition == .left) ? (0) : (self.frame.size.width),
                                  y: Dimension.Tail.start)
-            let point2 = CGPoint(x: tailPosition == .left ? point1.x - Dimension.Tail.height : point1.x + Dimension.Tail.height,
+            let point2 = CGPoint(x: (tailPosition == .left) ? (point1.x - Dimension.Tail.height) : (point1.x + Dimension.Tail.height),
                                  y: point1.y + Dimension.Tail.width/2)
             let point3 = CGPoint(x: point1.x,
                                  y: point1.y + Dimension.Tail.width)
@@ -141,9 +124,9 @@ final public class YDSTooltip: UIView {
             
         case .topLeft, .bottomLeft:
             let point1 = CGPoint(x: Dimension.Tail.start,
-                                 y: tailPosition == .topLeft ? 0 : self.frame.size.height)
+                                 y: (tailPosition == .topLeft) ? (0) : (self.frame.size.height))
             let point2 = CGPoint(x: point1.x + Dimension.Tail.width/2,
-                                 y: tailPosition == .topLeft ? -Dimension.Tail.height : point1.y + Dimension.Tail.height)
+                                 y: (tailPosition == .topLeft) ? (-Dimension.Tail.height) : (point1.y + Dimension.Tail.height))
             let point3 = CGPoint(x: point1.x + Dimension.Tail.width,
                                  y: point1.y)
             path.move(to: point1)
@@ -152,9 +135,9 @@ final public class YDSTooltip: UIView {
             
         case .topCenter, .bottomCenter:
             let point1 = CGPoint(x: self.frame.size.width/2 - Dimension.Tail.width/2,
-                                 y: tailPosition == .topCenter ? 0 : self.frame.size.height)
+                                 y: (tailPosition == .topCenter) ? (0) : (self.frame.size.height))
             let point2 = CGPoint(x: point1.x + Dimension.Tail.width/2,
-                                 y: tailPosition == .topCenter ? -Dimension.Tail.height : point1.y + Dimension.Tail.height)
+                                 y: (tailPosition == .topCenter) ? (-Dimension.Tail.height) : (point1.y + Dimension.Tail.height))
             let point3 = CGPoint(x: point1.x + Dimension.Tail.width,
                                  y: point1.y)
             path.move(to: point1)
@@ -163,9 +146,9 @@ final public class YDSTooltip: UIView {
             
         case .topRight, .bottomRight:
             let point1 = CGPoint(x: self.frame.size.width - Dimension.Tail.start,
-                                 y: tailPosition == .topRight ? 0 : self.frame.size.height)
+                                 y: (tailPosition == .topRight) ? (0) : (self.frame.size.height))
             let point2 = CGPoint(x: point1.x - Dimension.Tail.width/2,
-                                 y: tailPosition == .topRight ? -Dimension.Tail.height : point1.y + Dimension.Tail.height)
+                                 y: (tailPosition == .topRight) ? (-Dimension.Tail.height) : (point1.y + Dimension.Tail.height))
             let point3 = CGPoint(x: point1.x - Dimension.Tail.width,
                                  y: point1.y)
             path.move(to: point1)
@@ -176,7 +159,7 @@ final public class YDSTooltip: UIView {
         
         let shape = CAShapeLayer()
         shape.path = path.cgPath
-        shape.fillColor = color == .tooltipBG ? YDSColor.tooltipBG.cgColor : YDSColor.tooltipPoint.cgColor
+        shape.fillColor = (color == .tooltipBG) ? (YDSColor.tooltipBG.cgColor) : (YDSColor.tooltipPoint.cgColor)
 
         self.layer.insertSublayer(shape, at: 0)
     }
