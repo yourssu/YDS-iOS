@@ -93,6 +93,9 @@
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
+		C350ABE22808587600BFC9C0 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */; };
+		C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */; };
+		C350ABE6280858B900BFC9C0 /* YDSTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
@@ -220,6 +223,9 @@
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
+		C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipPageViewController.swift; sourceTree = "<group>"; };
+		C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
+		C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTooltip.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
@@ -503,6 +509,7 @@
 				53EFF5CD26BA9CD400732DCF /* YDSToast.swift */,
 				5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */,
 				539110BD26C373D20094FD08 /* TopBar */,
+				C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -513,8 +520,18 @@
 				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
 				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
 				537A0AD126C4189D00142DCE /* TopBar */,
+				C350ABE02808585500BFC9C0 /* Tooltip */,
 			);
 			path = ComponentSampleViewController;
+			sourceTree = "<group>";
+		};
+		C350ABE02808585500BFC9C0 /* Tooltip */ = {
+			isa = PBXGroup;
+			children = (
+				C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */,
+				C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */,
+			);
+			path = Tooltip;
 			sourceTree = "<group>";
 		};
 		C37F356E27DE348C007DF859 /* Extension */ = {
@@ -748,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537A0AD326C51DB000142DCE /* YDSButtonProtocol.swift in Sources */,
+				C350ABE6280858B900BFC9C0 /* YDSTooltip.swift in Sources */,
 				C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */,
 				53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */,
 				539110B826C1484A0094FD08 /* YDSNavigationController.swift in Sources */,
@@ -823,10 +841,12 @@
 				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
+				C350ABE22808587600BFC9C0 /* TooltipPageViewController.swift in Sources */,
 				C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */,
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
+				C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */,
 				53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */,
 				C3985FB627F832EA00389A22 /* SceneDelegate.swift in Sources */,
 				C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */,
