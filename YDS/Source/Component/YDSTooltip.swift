@@ -11,19 +11,29 @@ final public class YDSTooltip: UIView {
     
     //  MARK: - 외부에서 지정할 수 있는 속성
     
-    /// 툴팁의 색깔을 설정합니다.
-    private var color: TooltipColor {
+    /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
+    public var text: String? {
         didSet {
-            self.backgroundColor = (color == .tooltipBG) ? (YDSColor.tooltipBG) : (YDSColor.tooltipPoint)
-            makeTail()
+            setNeedsLayout()
+        }
+    }
+    
+    /// 툴팁의 색깔을 설정합니다.
+    public var color: TooltipColor {
+        didSet {
+            setNeedsLayout()
         }
     }
     
     /// 툴팁의 꼬리 위치를 설정할 때 사용합니다.
-    private var tailPosition: TailPosition
+    public var tailPosition: TailPosition {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     
     /// 툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
-    private var duration: TooltipDuration
+    public var duration: TooltipDuration
     
     
     // MARK: - 뷰
@@ -37,6 +47,12 @@ final public class YDSTooltip: UIView {
     }()
     
     //  MARK: - 외부에서 지정할 수 없는 속성
+    
+    private var tailLayer: CAShapeLayer = CAShapeLayer() {
+        didSet {
+            setNeedsLayout()
+        }
+    }
 
     /// 사용자의 탭을 확인하는 Recognizer
     private lazy var tapRecognizer: UITapGestureRecognizer = {
@@ -57,7 +73,7 @@ final public class YDSTooltip: UIView {
     // MARK: - 메소드
     
     public init(text: String, color: TooltipColor, tailPosition: TailPosition, duration: TooltipDuration) {
-        self.label.text = text
+        self.text = text
         self.color = color
         self.tailPosition = tailPosition
         self.duration = duration
@@ -103,11 +119,15 @@ final public class YDSTooltip: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        label.text = text
+        backgroundColor = (color == .tooltipBG) ? (YDSColor.tooltipBG) : (YDSColor.tooltipPoint)
         makeTail()
     }
     
     /// 툴팁의 꼬리 부분을 그립니다.
     private func makeTail() {
+        tailLayer.removeFromSuperlayer()
+        
         let path = UIBezierPath()
 
         switch tailPosition {
@@ -157,11 +177,10 @@ final public class YDSTooltip: UIView {
         }
         path.close()
         
-        let shape = CAShapeLayer()
-        shape.path = path.cgPath
-        shape.fillColor = (color == .tooltipBG) ? (YDSColor.tooltipBG.cgColor) : (YDSColor.tooltipPoint.cgColor)
-
-        self.layer.insertSublayer(shape, at: 0)
+        tailLayer.path = path.cgPath
+        tailLayer.fillColor = (color == .tooltipBG) ? (YDSColor.tooltipBG.cgColor) : (YDSColor.tooltipPoint.cgColor)
+        
+        self.layer.insertSublayer(tailLayer, at: 0)
     }
     
     /// 애니메이션으로 툴팁이 뷰에 보여지고 지정된 duration 동안 유지된 후 사라지게 합니다.
