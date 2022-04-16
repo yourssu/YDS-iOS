@@ -78,7 +78,7 @@ class TooltipPageViewController: StoryBookViewController {
     private func addOptions() {
         addOption(description: "text",
                   defaultValue: "홈에서 실시간 피드를 확인해보세요!") { [weak self] value in
-            self?.tooltip.text = value
+            self?.tooltip.text = value ?? ""
         }
 
         addOption(description: "color",
