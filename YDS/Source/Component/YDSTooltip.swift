@@ -12,7 +12,7 @@ final public class YDSTooltip: UIView {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
-    public var text: String? {
+    public var text: String {
         didSet {
             setNeedsLayout()
         }
@@ -114,6 +114,7 @@ final public class YDSTooltip: UIView {
     private func setProperties() {
         self.layer.cornerRadius = 8
         self.alpha = 0.0
+        self.layer.insertSublayer(tailLayer, at: 0)
     }
     
     
@@ -126,10 +127,8 @@ final public class YDSTooltip: UIView {
     
     /// 툴팁의 꼬리 부분을 그립니다.
     private func makeTail() {
-        tailLayer.removeFromSuperlayer()
-        
         let path = UIBezierPath()
-
+        
         switch tailPosition {
         case .left, .right:
             let point1 = CGPoint(x: (tailPosition == .left) ? (0) : (self.frame.size.width),
@@ -179,8 +178,6 @@ final public class YDSTooltip: UIView {
         
         tailLayer.path = path.cgPath
         tailLayer.fillColor = (color == .tooltipBG) ? (YDSColor.tooltipBG.cgColor) : (YDSColor.tooltipPoint.cgColor)
-        
-        self.layer.insertSublayer(tailLayer, at: 0)
     }
     
     /// 애니메이션으로 툴팁이 뷰에 보여지고 지정된 duration 동안 유지된 후 사라지게 합니다.
