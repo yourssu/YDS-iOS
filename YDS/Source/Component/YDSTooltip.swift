@@ -48,25 +48,14 @@ final public class YDSTooltip: UIView {
     
     //  MARK: - 외부에서 지정할 수 없는 속성
     
-    private var tailLayer: CAShapeLayer = CAShapeLayer() {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// 사용자의 탭을 확인하는 Recognizer
-    private lazy var tapRecognizer: UITapGestureRecognizer = {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapOnScreen))
-        tapRecognizer.numberOfTapsRequired = 1
-        return tapRecognizer
-    }()
-
-    ///  화면 전체 영역을 차지하고 tapRecognizer를 연결 할 뷰
-    private lazy var dismissView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
-        view.frame = UIScreen.main.bounds
-        return view
+    /// 툴팁의 꼬리 부분을 표현하는 Layer
+    private var tailLayer: CAShapeLayer = CAShapeLayer()
+    
+    ///  화면 전체 영역을 차지하고 사용자의 탭을 확인하는 UIControl
+    private lazy var touchControl: UIControl = {
+        let control = UIControl()
+        control.frame = UIScreen.main.bounds
+        return control
     }()
     
     
@@ -186,7 +175,7 @@ final public class YDSTooltip: UIView {
     /// 애니메이션으로 툴팁이 뷰에 보여지고 지정된 duration 동안 유지된 후 사라지게 합니다.
     public func show() {
         guard let superView = self.superview else { return }
-        self.addDismissView(on: superView)
+        self.addTouchControl(on: superView)
         
         UIView.animate(withDuration: YDSAnimation.Duration.medium,
                        animations: { self.alpha = 1.0 },
@@ -198,11 +187,10 @@ final public class YDSTooltip: UIView {
         })
     }
     
-    /// 화면 전체 영역을 차지하고 tap을 확인할 수 있는 뷰를 추가합니다.
-    private func addDismissView(on superView: UIView) {
-        superView.addSubview(self.dismissView)
-        self.dismissView.addGestureRecognizer(self.tapRecognizer)
-        self.tapRecognizer.isEnabled = true
+    /// 화면 전체 영역을 차지하고 tap을 확인할 수 있는 UIControl을 추가합니다.
+    private func addTouchControl(on superView: UIView) {
+        superview?.addSubview(touchControl)
+        touchControl.addTarget(self, action: #selector(didTapOnScreen), for: .touchDown)
     }
     
     /// 툴팁을 뷰에서 없애줍니다.
@@ -210,9 +198,8 @@ final public class YDSTooltip: UIView {
         UIView.animate(withDuration: YDSAnimation.Duration.medium,
                        animations: { self.alpha = 0 },
                        completion: { [weak self] _ in
-            self?.dismissView.removeFromSuperview()
+            self?.touchControl.removeFromSuperview()
             self?.removeFromSuperview()
-            self?.tapRecognizer.isEnabled = false
         })
     }
 
