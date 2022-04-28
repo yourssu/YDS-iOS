@@ -11,13 +11,22 @@ import SnapKit
 
 class TooltipSampleViewController: UIViewController {
     
-    let tooltip: YDSTooltip = {
-        let tooltip = YDSTooltip(text: "",
-                                 color: .tooltipPoint,
-                                 tailPosition: .bottomRight,
-                                 duration: .short)
-        return tooltip
-    }()
+    private let tooltip: YDSTooltip
+    
+    init(text: String,
+         color: YDSTooltip.TooltipColor,
+         tailPosition: YDSTooltip.TailPosition,
+         duration: YDSTooltip.TooltipDuration) {
+        tooltip = YDSTooltip(text: text,
+                             color: color,
+                             tailPosition: tailPosition,
+                             duration: duration)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
