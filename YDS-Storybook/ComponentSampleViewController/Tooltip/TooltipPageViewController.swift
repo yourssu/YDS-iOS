@@ -10,12 +10,18 @@ import YDS
 import SnapKit
 
 class TooltipPageViewController: StoryBookViewController {
-
-    let tooltip: YDSTooltip = {
-        let tooltip = YDSTooltip(text: "",
-                                 color: .tooltipPoint,
-                                 tailPosition: .bottomRight,
-                                 duration: .short)
+    
+    private struct TooltipModel {
+        var text: String = ""
+        var color: YDSTooltip.TooltipColor = .tooltipBG
+        var tailPosition: YDSTooltip.TailPosition = .bottomRight
+        var duration: YDSTooltip.TooltipDuration = .long
+    }
+    
+    private var tooltipInfo: TooltipModel = TooltipModel()
+    
+    private var tooltip: YDSTooltip = {
+        let tooltip = YDSTooltip()
         return tooltip
     }()
 
@@ -78,25 +84,28 @@ class TooltipPageViewController: StoryBookViewController {
     private func addOptions() {
         addOption(description: "text",
                   defaultValue: "홈에서 실시간 피드를 확인해보세요!") { [weak self] value in
-            self?.tooltip.text = value ?? ""
+            self?.tooltipInfo.text = value ?? ""
+            self?.resetupTooltip()
         }
 
         addOption(description: "color",
                   cases: YDSTooltip.TooltipColor.allCases,
                   defaultIndex: 0) { [weak self] value in
-            self?.tooltip.color = value
+            self?.tooltipInfo.color = value
+            self?.resetupTooltip()
         }
 
         addOption(description: "tailPosition",
                   cases: YDSTooltip.TailPosition.allCases,
                   defaultIndex: 2) { [weak self] value in
-            self?.tooltip.tailPosition = value
+            self?.tooltipInfo.tailPosition = value
+            self?.resetupTooltip()
         }
 
         addOption(description: "duration",
                   cases: YDSTooltip.TooltipDuration.allCases,
                   defaultIndex: 1) { [weak self] value in
-            self?.tooltip.duration = value
+            self?.tooltipInfo.duration = value
         }
     }
 
@@ -109,17 +118,30 @@ class TooltipPageViewController: StoryBookViewController {
         switch(sender) {
         case pushButton:
             let sampleViewController: TooltipSampleViewController = {
-                let viewController = TooltipSampleViewController()
-                viewController.tooltip.text = self.tooltip.text
-                viewController.tooltip.color = self.tooltip.color
-                viewController.tooltip.tailPosition = self.tooltip.tailPosition
-                viewController.tooltip.duration = self.tooltip.duration
+                let viewController = TooltipSampleViewController(text: tooltipInfo.text,
+                                                                 color: tooltipInfo.color,
+                                                                 tailPosition: tooltipInfo.tailPosition,
+                                                                 duration: tooltipInfo.duration)
                 return viewController
             }()
             
             self.navigationController?.pushViewController(sampleViewController, animated: true)
         default:
             return
+        }
+    }
+    
+    private func resetupTooltip() {
+        tooltip.removeFromSuperview()
+        tooltip = YDSTooltip(text: tooltipInfo.text ,
+                                   color: tooltipInfo.color,
+                                   tailPosition: tooltipInfo.tailPosition,
+                                   duration: tooltipInfo.duration)
+        tooltip.alpha = 1.0
+        
+        sampleView.addSubview(tooltip)
+        tooltip.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 }
