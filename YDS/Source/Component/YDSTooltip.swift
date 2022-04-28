@@ -9,33 +9,6 @@ import UIKit
 
 final public class YDSTooltip: UIView {
     
-    //  MARK: - 외부에서 지정할 수 있는 속성
-    
-    /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
-    public var text: String {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-    
-    /// 툴팁의 색깔을 설정합니다.
-    public var color: TooltipColor {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-    
-    /// 툴팁의 꼬리 위치를 설정할 때 사용합니다.
-    public var tailPosition: TailPosition {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-    
-    /// 툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
-    public var duration: TooltipDuration
-    
-    
     // MARK: - 뷰
     
     /// 툴팁 내부에서 텍스트를 보여주는 label
@@ -47,6 +20,30 @@ final public class YDSTooltip: UIView {
     }()
     
     //  MARK: - 외부에서 지정할 수 없는 속성
+    
+    /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
+    private var text: String {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    /// 툴팁의 색깔을 설정합니다.
+    private var color: TooltipColor {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    /// 툴팁의 꼬리 위치를 설정할 때 사용합니다.
+    private var tailPosition: TailPosition {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    /// 툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
+    private var duration: TooltipDuration
     
     /// 툴팁의 꼬리 부분을 표현하는 Layer
     private var tailLayer: CAShapeLayer = CAShapeLayer()
@@ -61,7 +58,10 @@ final public class YDSTooltip: UIView {
     
     // MARK: - 메소드
     
-    public init(text: String, color: TooltipColor, tailPosition: TailPosition, duration: TooltipDuration) {
+    public init(text: String = "",
+                color: TooltipColor = .tooltipBG,
+                tailPosition: TailPosition = .bottomRight,
+                duration: TooltipDuration = .long) {
         self.text = text
         self.color = color
         self.tailPosition = tailPosition
