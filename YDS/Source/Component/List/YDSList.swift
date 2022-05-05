@@ -9,23 +9,22 @@ import UIKit
 
 public class YDSList: UIView {
     
+    // MARK: - 뷰
+    
+    /// subheader label을 담는 view
     private var subheaderView: UIView = {
         let view = UIView()
         return view
     }()
     
-    private var subheader: UILabel = {
+    /// subheader 텍스트를 보여주는 label
+    private var subheaderLabel: UILabel = {
         let label = YDSLabel(style: .subtitle3)
         label.textColor = YDSColor.textSecondary
         return label
     }()
     
-    public var subheaderTitle: String? {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-    
+    /// ListItem, ListToggleItem을 담는 StackView
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -35,8 +34,24 @@ public class YDSList: UIView {
         return stackView
     }()
     
-    public init(subheaderTitle: String? = nil) {
-        self.subheaderTitle = subheaderTitle
+    //  MARK: - 외부에서 지정할 수 있는 속성
+    
+    /// List의 Subheader
+    public var subheader: String? {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    // MARK: - 메소드
+
+    /**
+     초기화할 때 subheader를 설정할 수 있습니다.
+     subheader가 값을 가지면 List의 subheader가 보이고
+     subheader가 nil을 가지면 List의 subheader가 안 보입니다.
+     */
+    public init(subheader: String? = nil) {
+        self.subheader = subheader
         super.init(frame: .zero)
         setupView()
     }
@@ -48,7 +63,6 @@ public class YDSList: UIView {
     /// 뷰를 세팅합니다.
     private func setupView() {
         setLayouts()
-        setProperties()
     }
     
     /// 레이아웃을 세팅합니다.
@@ -60,7 +74,7 @@ public class YDSList: UIView {
     /// 뷰의 위계를 세팅합니다.
     private func setViewHierarchy() {
         self.addSubview(subheaderView)
-        subheaderView.addSubview(subheader)
+        subheaderView.addSubview(subheaderLabel)
         self.addSubview(stackView)
     }
     
@@ -72,7 +86,7 @@ public class YDSList: UIView {
             $0.height.equalTo(Dimension.Subheader.height)
         }
         
-        subheader.snp.makeConstraints {
+        subheaderLabel.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(Dimension.Subheader.verticalPadding)
             $0.leading.trailing.equalToSuperview().inset(Dimension.Padding.horizontal)
         }
@@ -84,18 +98,26 @@ public class YDSList: UIView {
         }
     }
     
-    /// 뷰의 프로퍼티를 세팅합니다.
-    private func setProperties() {
-        self.backgroundColor = .systemBackground
-    }
-    
+    /// subheader를 세팅합니다.
     private func setSubheader() {
-        if subheaderTitle == nil {
+        if subheader == nil {
+            subheaderView.isHidden = true
+            
+            subheaderLabel.snp.updateConstraints {
+                $0.top.bottom.equalToSuperview()
+            }
+            
             subheaderView.snp.updateConstraints {
                 $0.height.equalTo(0)
             }
         } else {
-            subheader.text = subheaderTitle
+            subheaderView.isHidden = false
+            subheaderLabel.text = subheader
+            
+            subheaderLabel.snp.updateConstraints {
+                $0.top.bottom.equalToSuperview().inset(Dimension.Subheader.verticalPadding)
+            }
+            
             subheaderView.snp.updateConstraints {
                 $0.height.equalTo(Dimension.Subheader.height)
             }
@@ -107,15 +129,21 @@ public class YDSList: UIView {
         setSubheader()
         
         for view in stackView.arrangedSubviews {
-            if let view = view as? YDSListProtocol {
-                view.setWidth()
-            }
+            setSubviewWidth(view)
         }
     }
     
+    /// List에 Item을 넣을 때 사용합니다.
     public func addArrangedSubview(_ views: UIView...) {
         for view in views {
             self.stackView.addArrangedSubview(view)
+        }
+    }
+    
+    /// ListItem 또는 ListToggleItem의 너비를 세팅합니다.
+    private func setSubviewWidth(_ view: UIView) {
+        view.snp.makeConstraints {
+            $0.width.equalToSuperview()
         }
     }
     
