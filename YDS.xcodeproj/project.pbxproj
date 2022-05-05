@@ -106,7 +106,6 @@
 		C3DCB31D2820010D00F98257 /* YDSListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31C2820010D00F98257 /* YDSListItem.swift */; };
 		C3DCB31F2820081E00F98257 /* YDSListToggleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31E2820081E00F98257 /* YDSListToggleItem.swift */; };
 		C3DCB322282154D600F98257 /* ListPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB321282154D600F98257 /* ListPageViewController.swift */; };
-		C3DCB324282173D700F98257 /* YDSListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB323282173D700F98257 /* YDSListProtocol.swift */; };
 		C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */; };
 		C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */; };
 		C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */; };
@@ -241,7 +240,6 @@
 		C3DCB31C2820010D00F98257 /* YDSListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListItem.swift; sourceTree = "<group>"; };
 		C3DCB31E2820081E00F98257 /* YDSListToggleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListToggleItem.swift; sourceTree = "<group>"; };
 		C3DCB321282154D600F98257 /* ListPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPageViewController.swift; sourceTree = "<group>"; };
-		C3DCB323282173D700F98257 /* YDSListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListProtocol.swift; sourceTree = "<group>"; };
 		C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsPageViewController.swift; sourceTree = "<group>"; };
 		C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsListTableViewController.swift; sourceTree = "<group>"; };
@@ -561,7 +559,6 @@
 				C3DCB31A2820010800F98257 /* YDSList.swift */,
 				C3DCB31C2820010D00F98257 /* YDSListItem.swift */,
 				C3DCB31E2820081E00F98257 /* YDSListToggleItem.swift */,
-				C3DCB323282173D700F98257 /* YDSListProtocol.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -807,7 +804,6 @@
 				53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */,
 				53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */,
 				53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */,
-				C3DCB324282173D700F98257 /* YDSListProtocol.swift in Sources */,
 				5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */,
 				DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */,
 				DDDC3C82265E8276007ED3FE /* YDSSemanticColor.swift in Sources */,
