@@ -7,7 +7,11 @@
 
 import UIKit
 
-public class YDSListToggleItem: UIView, YDSListProtocol {
+public class YDSListToggleItem: UIView {
+
+    // MARK: - 뷰
+    
+    /// ListToggleItem의 title을 보여주는 label
     private let titleLabel: YDSLabel = {
         let label = YDSLabel(style: .body1)
         label.textAlignment = .left
@@ -15,6 +19,7 @@ public class YDSListToggleItem: UIView, YDSListProtocol {
         return label
     }()
     
+    /// ListToggleItem의 Toggle
     public let toggle: YDSToggle = {
         let toggle = YDSToggle()
         return toggle
@@ -61,12 +66,6 @@ public class YDSListToggleItem: UIView, YDSListProtocol {
         toggle.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(Dimension.Padding.horizontal)
-        }
-    }
-    
-    public func setWidth() {
-        self.snp.makeConstraints {
-            $0.width.equalToSuperview()
         }
     }
     

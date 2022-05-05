@@ -7,7 +7,11 @@
 
 import UIKit
 
-public class YDSListItem: UIView, YDSListProtocol {
+public class YDSListItem: UIView {
+    
+    // MARK: - 뷰
+    
+    /// ListItem의 title을 보여주는 label
     private let titleLabel: YDSLabel = {
         let label = YDSLabel(style: .body1)
         label.textColor = YDSColor.textSecondary
@@ -15,6 +19,7 @@ public class YDSListItem: UIView, YDSListProtocol {
         return label
     }()
     
+    /// 오른쪽 화살표를 보여주는 icon
     private let nextIconView: YDSIconView = {
         let icon = YDSIconView()
         icon.tintColor = YDSColor.buttonNormal
@@ -23,12 +28,16 @@ public class YDSListItem: UIView, YDSListProtocol {
         return icon
     }()
     
+    //  MARK: - 외부에서 지정할 수 있는 속성
+    
+    /// 오른쪽 화살표 icon을 보여줄지 말지 정하는 변수
     public var showNextIconView: Bool? {
         didSet {
             setNeedsLayout()
         }
     }
     
+    /// ListItem에 action을 지정할 수 있는 투명 버튼
     public var button: UIButton = {
         let button = UIButton()
         return button
@@ -87,12 +96,6 @@ public class YDSListItem: UIView, YDSListProtocol {
     public override func layoutSubviews() {
         super.layoutSubviews()
         nextIconView.isHidden = !(showNextIconView ?? false)
-    }
-    
-    public func setWidth() {
-        self.snp.makeConstraints {
-            $0.width.equalToSuperview()
-        }
     }
     
     //  MARK: - 외부에서 접근할 수 없는 enum
