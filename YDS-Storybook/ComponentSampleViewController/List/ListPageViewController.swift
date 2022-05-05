@@ -11,14 +11,10 @@ import SnapKit
 
 class ListPageViewController: StoryBookViewController {
     
-    private var subheaderTitle: String = "MY" {
-        didSet {
-            list.subheaderTitle = subheaderTitle
-        }
-    }
+    private var subheaderTitle: String = "MY"
     
     private var list: YDSList = {
-        let list = YDSList(subheaderTitle: "MY")
+        let list = YDSList(subheader: "MY")
         return list
     }()
     
@@ -60,6 +56,7 @@ class ListPageViewController: StoryBookViewController {
 
     private func setViewProperty() {
         self.title = "List"
+        self.list.backgroundColor = .systemBackground
     }
 
     private func setLayouts() {
@@ -78,17 +75,15 @@ class ListPageViewController: StoryBookViewController {
             $0.centerY.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
-        
-        
     }
 
     private func addOptions() {
-        addOption(description: "Subheader hidden",
+        addOption(description: "List의 Subheader",
                   defaultValue: true) { [weak self] value in
             if value {
-                self?.list.subheaderTitle = self?.subheaderTitle
+                self?.list.subheader = self?.subheaderTitle
             } else {
-                self?.list.subheaderTitle = nil
+                self?.list.subheader = nil
             }
         }
     }
