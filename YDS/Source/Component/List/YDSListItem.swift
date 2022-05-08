@@ -33,7 +33,7 @@ public class YDSListItem: UIView {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     /// 오른쪽 화살표 icon을 보여줄지 말지 정하는 변수
-    public var showNextIconView: Bool? {
+    public var isShowingNextIconView: Bool? {
         didSet {
             setNeedsLayout()
         }
@@ -49,7 +49,7 @@ public class YDSListItem: UIView {
         super.init(frame: .zero)
         setupView()
         titleLabel.text = title
-        self.showNextIconView = showNextIconView
+        self.isShowingNextIconView = showNextIconView
     }
 
     required init?(coder: NSCoder) {
@@ -98,7 +98,7 @@ public class YDSListItem: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        nextIconView.isHidden = !(showNextIconView ?? false)
+        nextIconView.isHidden = !(isShowingNextIconView ?? false)
     }
     
     //  MARK: - 외부에서 접근할 수 없는 enum
