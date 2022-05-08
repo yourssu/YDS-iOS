@@ -76,9 +76,5 @@ public class YDSListToggleItem: UIView {
             static let horizontal: CGFloat = 20
             static let vertical: CGFloat = 12.5
         }
-        
-        enum Toggle {
-            static let verticalPadding: CGFloat = 8.5
-        }
     }
 }
