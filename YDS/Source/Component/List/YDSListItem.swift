@@ -16,6 +16,8 @@ public class YDSListItem: UIView {
         let label = YDSLabel(style: .body1)
         label.textColor = YDSColor.textSecondary
         label.textAlignment = .left
+        label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -80,7 +82,8 @@ public class YDSListItem: UIView {
 
         titleLabel.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(Dimension.Padding.vertical)
-            $0.leading.trailing.equalToSuperview().inset(Dimension.Padding.horizontal)
+            $0.leading.equalToSuperview().offset(Dimension.Padding.horizontal)
+            $0.trailing.equalTo(nextIconView.snp.leading).inset(Dimension.Padding.gap)
         }
 
         nextIconView.snp.makeConstraints {
@@ -104,6 +107,7 @@ public class YDSListItem: UIView {
         enum Padding {
             static let horizontal: CGFloat = 20
             static let vertical: CGFloat = 12.5
+            static let gap: CGFloat = 8
         }
     }
 }

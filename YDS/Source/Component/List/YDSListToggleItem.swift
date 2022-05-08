@@ -16,6 +16,8 @@ public class YDSListToggleItem: UIView {
         let label = YDSLabel(style: .body1)
         label.textAlignment = .left
         label.textColor = YDSColor.textSecondary
+        label.numberOfLines = 1
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -58,14 +60,15 @@ public class YDSListToggleItem: UIView {
             $0.height.equalTo(48)
         }
 
-        titleLabel.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(Dimension.Padding.vertical)
-            $0.leading.trailing.equalToSuperview().inset(Dimension.Padding.horizontal)
-        }
-
         toggle.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(Dimension.Padding.horizontal)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(Dimension.Padding.vertical)
+            $0.leading.equalToSuperview().offset(Dimension.Padding.horizontal)
+            $0.trailing.equalTo(toggle.snp.leading).offset(Dimension.Padding.gap)
         }
     }
     
@@ -75,6 +78,7 @@ public class YDSListToggleItem: UIView {
         enum Padding {
             static let horizontal: CGFloat = 20
             static let vertical: CGFloat = 12.5
+            static let gap: CGFloat = 8
         }
     }
 }
