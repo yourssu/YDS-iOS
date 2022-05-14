@@ -13,6 +13,30 @@ public enum YDSPlaceholder {
 }
 
 class TextViewViewController: StoryBookViewController {
+    
+    private(set) lazy var inputStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .bottom
+        stackView.backgroundColor = YDSColor.inputFieldElevated
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    private(set) lazy var imageView: YDSProfileImageView = {
+        let profileImageView = YDSProfileImageView()
+        profileImageView.image = UIImage(named: "logo.png")
+        profileImageView.size = .medium
+        return profileImageView
+    }()
+    
+    private(set) lazy var writingButton: UIButton = {
+        let button = UIButton()
+        button.setImage(YDSIcon.penFilled, for: .normal)
+        button.setContentCompressionResistancePriority(.defaultHigh + 1, for: .horizontal)
+        return button
+    }()
+    
     private lazy var textView = YDSTextView(maxHeight: maxHeight)
     private lazy var titleLabel: YDSLabel = {
         let label = YDSLabel(style: .subtitle2)
@@ -56,15 +80,24 @@ class TextViewViewController: StoryBookViewController {
     }
     
     private func setViewHierarchy() {
-        sampleView.addSubviews(textView, titleLabel, stateLabel)
+        inputStackView.addArrangedSubviews(imageView, textView, writingButton)
+        sampleView.addSubviews(inputStackView, titleLabel, stateLabel)
     }
     
     private func setAutolayout() {
-        textView.snp.makeConstraints {
-            $0.height.greaterThanOrEqualTo(48).priority(999)
-            $0.height.lessThanOrEqualTo(maxHeight)
-            $0.width.equalTo(282)
+        inputStackView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(8)
+        }
+
+        textView.snp.makeConstraints {
+            $0.height.lessThanOrEqualTo(maxHeight)
+            $0.height.greaterThanOrEqualTo(48)
+        }
+
+        writingButton.snp.makeConstraints {
+            $0.width.equalTo(44)
+            $0.height.equalTo(48)
         }
         
         titleLabel.snp.makeConstraints {
