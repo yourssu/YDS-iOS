@@ -71,7 +71,10 @@ public class YDSTextView: UITextView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         isScrollEnabled = isOverHeight
-        invalidateIntrinsicContentSize()
+
+        if isScrollEnabled == false {
+            invalidateIntrinsicContentSize()
+        }
     }
     
     // MARK: - Public func
