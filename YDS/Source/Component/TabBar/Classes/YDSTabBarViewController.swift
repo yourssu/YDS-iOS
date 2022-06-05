@@ -265,6 +265,9 @@ open class YDSTabBarViewController:
         // Register default cell
         register(PagingTitleCell.self, for: PagingIndexItem.self)
         
+        if type == .fixed && viewControllers.count > 5 {
+            fatalError("fixed일 때는 최소 2개, 최대 5개 탭만 사용해주세요.")
+        }
         configureDataSource(for: viewControllers)
     }
     
