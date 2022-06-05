@@ -15,25 +15,9 @@ public struct PagingOptions {
     /// UIEdgeInsets.zero_
     public var menuInsets: UIEdgeInsets
 
-    /// Determine whether the menu items should be centered when all the
-    /// items can fit within the bounds of the view. _Default: .left_
-    public var menuHorizontalAlignment: PagingMenuHorizontalAlignment
-
-    /// Determine the position of the menu relative to the content.
-    /// _Default: .top_
-    public var menuPosition: PagingMenuPosition
-
-    /// Determine the transition behaviour of menu items while scrolling
-    /// the content. _Default: .scrollAlongside_
-    public var menuTransition: PagingMenuTransition
-
     /// Determine how users can interact with the menu items.
     /// _Default: .scrolling_
     public var menuInteraction: PagingMenuInteraction
-    
-    /// Determine how users can interact with the contents
-    /// _Default: .scrolling_
-    public var contentInteraction: PagingContentInteraction
 
     /// The class type for collection view layout. Override this if you
     /// want to use your own subclass of the layout. Setting this
@@ -41,11 +25,6 @@ public struct PagingOptions {
     /// collection view.
     /// _Default: PagingCollectionViewLayout.self_
     public var menuLayoutClass: PagingCollectionViewLayout.Type
-
-    /// Determine how the selected menu item should be aligned when it
-    /// is selected. Effectivly the same as the
-    /// `UICollectionViewScrollPosition`. _Default: .preferCentered_
-    public var selectedScrollPosition: PagingSelectedScrollPosition
 
     /// Add an indicator view to the selected menu item. The indicator
     /// width will be equal to the selected menu items width. Insets
@@ -59,20 +38,7 @@ public struct PagingOptions {
 
     /// Determine the color of the indicator view.
     public var indicatorColor: UIColor
-
-    /// Add a border at the bottom of the menu items. The border will be
-    /// as wide as all the menu items. Insets only apply horizontally.
-    /// _Default: .visible_
-    public var borderOptions: PagingBorderOptions
-
-    /// The class type for the border view. Override this if you want
-    /// your use your own subclass of PagingBorderView. _Default:
-    /// PagingBorderView.self_
-    public var borderClass: PagingBorderView.Type
-
-    /// Determine the color of the border view.
-    public var borderColor: UIColor
-
+    
     /// Updates the content inset for the menu items based on the
     /// .safeAreaInsets property. _Default: true_
     public var includeSafeAreaInsets: Bool
@@ -102,19 +68,8 @@ public struct PagingOptions {
     /// _Default: .white
     public var pagingContentBackgroundColor: UIColor
 
-    /// The scroll navigation orientation of the content in the page
-    /// view controller. _Default: .horizontal_
-    public var contentNavigationOrientation: PagingNavigationOrientation
-
     public var scrollPosition: UICollectionView.ScrollPosition {
-        switch selectedScrollPosition {
-        case .left:
-            return UICollectionView.ScrollPosition.left
-        case .right:
-            return UICollectionView.ScrollPosition.right
-        case .preferCentered, .center:
-            return UICollectionView.ScrollPosition.centeredHorizontally
-        }
+        return UICollectionView.ScrollPosition.centeredHorizontally
     }
 
     public var menuHeight: CGFloat {
@@ -127,51 +82,35 @@ public struct PagingOptions {
             return width
         case let .sizeToFit(minWidth, _):
             return minWidth
-        case let .selfSizing(estimatedItemWidth, _):
-            return estimatedItemWidth
         }
     }
 
     public init() {
-        selectedScrollPosition = .preferCentered
         menuItemSize = .sizeToFit(minWidth: 150, height: 40)
-        menuPosition = .top
-        menuTransition = .scrollAlongside
         menuInteraction = .scrolling
         menuInsets = UIEdgeInsets.zero
         menuItemSpacing = 0
-        menuItemLabelSpacing = 20
-        menuHorizontalAlignment = .left
+        menuItemLabelSpacing = 0
         includeSafeAreaInsets = true
         indicatorClass = PagingIndicatorView.self
-        borderClass = PagingBorderView.self
         menuLayoutClass = PagingCollectionViewLayout.self
 
         indicatorOptions = .visible(
-            height: 4,
+            height: 2,
             zIndex: Int.max,
             spacing: UIEdgeInsets.zero,
-            insets: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+            insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         )
+        
+        font = YDSFont.button2
+        selectedFont = YDSFont.button2
 
-        borderOptions = .visible(
-            height: 1,
-            zIndex: Int.max - 1,
-            insets: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        )
-
-        font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
-        selectedFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
-
-        textColor = UIColor.black
-        selectedTextColor = UIColor(red: 3 / 255, green: 125 / 255, blue: 233 / 255, alpha: 1)
+        textColor = YDSColor.bottomBarNormal
+        selectedTextColor = YDSColor.bottomBarSelected
         backgroundColor = .clear
         selectedBackgroundColor = .clear
-        pagingContentBackgroundColor = .white
-        menuBackgroundColor = UIColor.white
-        borderColor = UIColor(white: 0.9, alpha: 1)
-        indicatorColor = UIColor(red: 3 / 255, green: 125 / 255, blue: 233 / 255, alpha: 1)
-        contentNavigationOrientation = .horizontal
-        contentInteraction = .scrolling
+        pagingContentBackgroundColor = .clear
+        menuBackgroundColor = .systemBackground
+        indicatorColor = YDSColor.bottomBarSelected
     }
 }

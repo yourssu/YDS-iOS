@@ -17,6 +17,11 @@ open class PagingViewController:
     PageViewControllerDataSource,
     PageViewControllerDelegate {
     // MARK: Public Properties
+    
+    public enum PagingType {
+        case scrollable
+        case fixed
+    }
 
     /// The size for each of the menu items. _Default:
     /// .sizeToFit(minWidth: 150, height: 40)_
@@ -44,27 +49,6 @@ open class PagingViewController:
         set { options.menuInsets = newValue }
     }
 
-    /// Determine whether the menu items should be centered when all the
-    /// items can fit within the bounds of the view. _Default: .left_
-    public var menuHorizontalAlignment: PagingMenuHorizontalAlignment {
-        get { return options.menuHorizontalAlignment }
-        set { options.menuHorizontalAlignment = newValue }
-    }
-
-    /// Determine the position of the menu relative to the content.
-    /// _Default: .top_
-    public var menuPosition: PagingMenuPosition {
-        get { return options.menuPosition }
-        set { options.menuPosition = newValue }
-    }
-
-    /// Determine the transition behaviour of menu items while scrolling
-    /// the content. _Default: .scrollAlongside_
-    public var menuTransition: PagingMenuTransition {
-        get { return options.menuTransition }
-        set { options.menuTransition = newValue }
-    }
-
     /// Determine how users can interact with the menu items.
     /// _Default: .scrolling_
     public var menuInteraction: PagingMenuInteraction {
@@ -80,14 +64,6 @@ open class PagingViewController:
     public var menuLayoutClass: PagingCollectionViewLayout.Type {
         get { return options.menuLayoutClass }
         set { options.menuLayoutClass = newValue }
-    }
-
-    /// Determine how the selected menu item should be aligned when it
-    /// is selected. Effectivly the same as the
-    /// `UICollectionViewScrollPosition`. _Default: .preferCentered_
-    public var selectedScrollPosition: PagingSelectedScrollPosition {
-        get { return options.selectedScrollPosition }
-        set { options.selectedScrollPosition = newValue }
     }
 
     /// Add an indicator view to the selected menu item. The indicator
@@ -110,28 +86,6 @@ open class PagingViewController:
     public var indicatorColor: UIColor {
         get { return options.indicatorColor }
         set { options.indicatorColor = newValue }
-    }
-
-    /// Add a border at the bottom of the menu items. The border will be
-    /// as wide as all the menu items. Insets only apply horizontally.
-    /// _Default: .visible_
-    public var borderOptions: PagingBorderOptions {
-        get { return options.borderOptions }
-        set { options.borderOptions = newValue }
-    }
-
-    /// The class type for the border view. Override this if you want
-    /// your use your own subclass of PagingBorderView. _Default:
-    /// PagingBorderView.self_
-    public var borderClass: PagingBorderView.Type {
-        get { return options.borderClass }
-        set { options.borderClass = newValue }
-    }
-
-    /// Determine the color of the border view.
-    public var borderColor: UIColor {
-        get { return options.borderColor }
-        set { options.borderColor = newValue }
     }
 
     /// Updates the content inset for the menu items based on the
@@ -181,23 +135,6 @@ open class PagingViewController:
     public var menuBackgroundColor: UIColor {
         get { return options.menuBackgroundColor }
         set { options.menuBackgroundColor = newValue }
-    }
-
-    /// The scroll navigation orientation of the content in the page
-    /// view controller. _Default: .horizontal_
-    public var contentNavigationOrientation: PagingNavigationOrientation {
-        get { return options.contentNavigationOrientation }
-        set { options.contentNavigationOrientation = newValue }
-    }
-
-    /// Determine how users can interact with the page view controller.
-    /// _Default: .scrolling_
-    public var contentInteraction: PagingContentInteraction {
-      get { return options.contentInteraction }
-      set { 
-        options.contentInteraction = newValue
-        configureContentInteraction()
-      }
     }
 
     /// The current state of the menu items. Indicates whether an item
@@ -302,14 +239,19 @@ open class PagingViewController:
     private var dataSourceReference: DataSourceReference = .none
 
     // MARK: Initializers
-
-    /// Creates an instance of `PagingViewController`. You need to call
-    /// `select(pagingItem:animated:)` in order to set the initial view
-    /// controller before any items become visible.
-    ///
-    /// - Parameter options: An object with configuration options. These
-    /// parameters are also available directly on `PagingViewController`.
-    public init(options: PagingOptions = PagingOptions()) {
+    
+    public init(type: PagingType, viewControllers: [UIViewController]) {
+        var options: PagingOptions = PagingOptions()
+        
+        switch type {
+        case .scrollable:
+            options.menuItemSize = .fixed(width: 88, height: 48)
+            options.menuInteraction = .scrolling
+        case .fixed:
+            options.menuItemSize = .sizeToFit(minWidth: 1, height: 48)
+            options.menuInteraction = .none
+        }
+        
         self.options = options
         pagingController = PagingController(options: options)
         pageViewController = PageViewController(options: options)
@@ -322,37 +264,12 @@ open class PagingViewController:
 
         // Register default cell
         register(PagingTitleCell.self, for: PagingIndexItem.self)
-    }
-
-    /// Creates an instance of `PagingViewController`. The first view
-    /// controller will be selected by default.
-    ///
-    /// - Parameters:
-    ///   - options: An object with configuration options. These
-    ///   parameters are also available directly on `PagingViewController`.
-    ///   - viewControllers: An array of view controllers that you want
-    /// to display. The title of the view controllers will be used to
-    /// generate the menu items.
-    public convenience init(
-        options: PagingOptions = PagingOptions(),
-        viewControllers: [UIViewController]
-    ) {
-        self.init(options: options)
+        
         configureDataSource(for: viewControllers)
     }
-
-    /// Creates an instance of `PagingViewController`.
-    ///
-    /// - Parameter coder: An unarchiver object.
+    
     public required init?(coder: NSCoder) {
-        options = PagingOptions()
-        pagingController = PagingController(options: options)
-        pageViewController = PageViewController(options: options)
-        collectionViewLayout = createLayout(layout: options.menuLayoutClass.self)
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        super.init(coder: coder)
-        collectionView.delegate = self
-        configurePagingController()
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: Public Methods
@@ -472,6 +389,8 @@ open class PagingViewController:
             collectionView: collectionView,
             pageView: pageViewController.view
         )
+        
+        view.backgroundColor = .systemBackground
     }
 
     open override func viewDidLoad() {
@@ -567,12 +486,7 @@ open class PagingViewController:
     }
 
     private func configureContentInteraction() {
-        switch contentInteraction {
-        case .scrolling:
-            pageViewController.scrollView.isScrollEnabled = true
-        case .none:
-            pageViewController.scrollView.isScrollEnabled = false
-        }
+        pageViewController.scrollView.isScrollEnabled = true
     }
 
     // MARK: UIScrollViewDelegate

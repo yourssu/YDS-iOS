@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 /// A custom `UIView` subclass used by `PagingViewController`,
 /// responsible for setting up the view hierarchy and its layout
@@ -55,57 +56,15 @@ open class PagingView: UIView {
     /// Sets up all the layout constraints. Override this if you need to
     /// make changes to how the views are layed out.
     open func setupConstraints() {
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        pageView.translatesAutoresizingMaskIntoConstraints = false
-
-        let metrics = [
-            "height": options.menuHeight,
-        ]
-
-        let views = [
-            "collectionView": collectionView,
-            "pageView": pageView,
-        ]
-
-        let formatOptions = NSLayoutConstraint.FormatOptions()
-
-        let horizontalCollectionViewContraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[collectionView]|",
-            options: formatOptions,
-            metrics: metrics,
-            views: views
-        )
-
-        let horizontalPagingContentViewContraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[pageView]|",
-            options: formatOptions,
-            metrics: metrics,
-            views: views
-        )
-
-        let verticalConstraintsFormat: String
-        switch options.menuPosition {
-        case .top:
-            verticalConstraintsFormat = "V:|[collectionView(==height)][pageView]|"
-        case .bottom:
-            verticalConstraintsFormat = "V:|[pageView][collectionView(==height)]|"
+        collectionView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(safeAreaLayoutGuide)
+            $0.height.equalTo(48)
         }
-
-        let verticalContraints = NSLayoutConstraint.constraints(
-            withVisualFormat: verticalConstraintsFormat,
-            options: formatOptions,
-            metrics: metrics,
-            views: views
-        )
-
-        addConstraints(horizontalCollectionViewContraints)
-        addConstraints(horizontalPagingContentViewContraints)
-        addConstraints(verticalContraints)
-
-        for constraint in verticalContraints {
-            if constraint.firstAttribute == NSLayoutConstraint.Attribute.height {
-                heightConstraint = constraint
-            }
+        
+        pageView.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

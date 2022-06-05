@@ -24,13 +24,7 @@ open class PagingIndicatorLayoutAttributes: UICollectionViewLayoutAttributes {
         if case let .visible(height, index, _, insets) = options.indicatorOptions {
             backgroundColor = options.indicatorColor
             frame.size.height = height
-
-            switch options.menuPosition {
-            case .top:
-                frame.origin.y = options.menuHeight - height - insets.bottom + insets.top
-            case .bottom:
-                frame.origin.y = insets.bottom
-            }
+            frame.origin.y = options.menuHeight - height - insets.bottom + insets.top
             zIndex = index
         }
     }

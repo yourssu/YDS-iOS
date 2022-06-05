@@ -9,82 +9,40 @@ struct PagingDistance {
     private let fromAttributes: PagingCellLayoutAttributes?
     private let toItem: PagingItem
     private let toAttributes: PagingCellLayoutAttributes
-    private let selectedScrollPosition: PagingSelectedScrollPosition
     private let sizeCache: PagingSizeCache
-    private let navigationOrientation: PagingNavigationOrientation
 
     private var fromSize: CGFloat {
         guard let attributes = fromAttributes else { return 0 }
-        switch navigationOrientation {
-        case .vertical:
-            return attributes.bounds.height
-        case .horizontal:
-            return attributes.bounds.width
-        }
+        return attributes.bounds.width
     }
 
     private var fromCenter: CGFloat {
         guard let attributes = fromAttributes else { return 0 }
-        switch navigationOrientation {
-        case .vertical:
-            return attributes.center.y
-        case .horizontal:
-            return attributes.center.x
-        }
+        return attributes.center.x
     }
 
     private var toSize: CGFloat {
-        switch navigationOrientation {
-        case .vertical:
-            return toAttributes.bounds.height
-        case .horizontal:
-            return toAttributes.bounds.width
-        }
+        return toAttributes.bounds.width
     }
 
     private var toCenter: CGFloat {
-        switch navigationOrientation {
-        case .vertical:
-            return toAttributes.center.y
-        case .horizontal:
-            return toAttributes.center.x
-        }
+        return toAttributes.center.x
     }
 
     private var contentOffset: CGFloat {
-        switch navigationOrientation {
-        case .vertical:
-            return view.contentOffset.y
-        case .horizontal:
-            return view.contentOffset.x
-        }
+        return view.contentOffset.x
     }
 
     private var contentSize: CGFloat {
-        switch navigationOrientation {
-        case .vertical:
-            return view.contentSize.height
-        case .horizontal:
-            return view.contentSize.width
-        }
+        return view.contentSize.width
     }
 
     private var viewSize: CGFloat {
-        switch navigationOrientation {
-        case .vertical:
-            return view.bounds.height
-        case .horizontal:
-            return view.bounds.width
-        }
+        return view.bounds.width
     }
 
     private var viewCenter: CGFloat {
-        switch navigationOrientation {
-        case .vertical:
-            return view.bounds.midY
-        case .horizontal:
-            return view.bounds.midX
-        }
+        return view.bounds.midX
     }
 
     init?(
@@ -93,9 +51,7 @@ struct PagingDistance {
         upcomingPagingItem: PagingItem,
         visibleItems: PagingItems,
         sizeCache: PagingSizeCache,
-        selectedScrollPosition: PagingSelectedScrollPosition,
-        layoutAttributes: [IndexPath: PagingCellLayoutAttributes],
-        navigationOrientation: PagingNavigationOrientation
+        layoutAttributes: [IndexPath: PagingCellLayoutAttributes]
     ) {
         guard
             let upcomingIndexPath = visibleItems.indexPath(for: upcomingPagingItem),
@@ -111,9 +67,7 @@ struct PagingDistance {
         fromItem = currentPagingItem
         toItem = upcomingPagingItem
         toAttributes = upcomingAttributes
-        self.selectedScrollPosition = selectedScrollPosition
         self.sizeCache = sizeCache
-        self.navigationOrientation = navigationOrientation
 
         if let currentIndexPath = visibleItems.indexPath(for: currentPagingItem),
             let fromAttributes = layoutAttributes[currentIndexPath] {
@@ -130,14 +84,7 @@ struct PagingDistance {
     func calculate() -> CGFloat {
         var distance: CGFloat = 0
 
-        switch selectedScrollPosition {
-        case .left:
-            distance = distanceLeft()
-        case .right:
-            distance = distanceRight()
-        case .preferCentered, .center:
-            distance = distanceCentered()
-        }
+        distance = distanceCentered()
 
         // Update the distance to account for cases where the user has
         // scrolled all the way over to the other edge.
@@ -156,15 +103,10 @@ struct PagingDistance {
                     distance -= fromSize - fromWidth
                 }
 
-                // If the selected cells grows so much that it will move
-                // beyond the center of the view, we want to update the
-                // distance after all.
-                if selectedScrollPosition == .preferCentered {
-                    let center = viewCenter
-                    let centerAfterTransition = toCenter - distance
-                    if centerAfterTransition < center {
-                        distance = originalDistance
-                    }
+                let center = viewCenter
+                let centerAfterTransition = toCenter - distance
+                if centerAfterTransition < center {
+                    distance = originalDistance
                 }
             }
         }

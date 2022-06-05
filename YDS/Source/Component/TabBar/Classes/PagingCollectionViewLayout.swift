@@ -45,10 +45,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
     /// updated whenever the layout is invalidated.
     public private(set) var indicatorLayoutAttributes: PagingIndicatorLayoutAttributes?
 
-    /// The layout attributes for the bottom border view. This is
-    /// updated whenever the layout is invalidated.
-    public private(set) var borderLayoutAttributes: PagingBorderLayoutAttributes?
-
     /// The `InvalidatedState` is used to represent what to invalidate
     /// in a collection view layout based on the invalidation context.
     public var invalidationState: InvalidationState = .everything
@@ -115,7 +111,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
     private(set) var contentInsets: UIEdgeInsets = .zero
     private var contentSize: CGSize = .zero
     private let PagingIndicatorKind = "PagingIndicatorKind"
-    private let PagingBorderKind = "PagingBorderKind"
 
     // MARK: Public Methods
 
@@ -125,7 +120,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
         switch invalidationState {
         case .everything:
             layoutAttributes = [:]
-            borderLayoutAttributes = nil
             indicatorLayoutAttributes = nil
             createLayoutAttributes()
             createDecorationLayoutAttributes()
@@ -136,7 +130,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
             break
         }
 
-        updateBorderLayoutAttributes()
         updateIndicatorLayoutAttributes()
 
         invalidationState = .nothing
@@ -160,16 +153,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
 
     open override func shouldInvalidateLayout(forPreferredLayoutAttributes preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) -> Bool {
         switch options.menuItemSize {
-        // Invalidate the layout and update the layout attributes with the
-        // preferred width for each cell. The preferred size is based on
-        // the layout constraints in each cell.
-        case .selfSizing where originalAttributes is PagingCellLayoutAttributes:
-            if preferredAttributes.frame.width != originalAttributes.frame.width {
-                let pagingItem = visibleItems.pagingItem(for: originalAttributes.indexPath)
-                preferredSizeCache[pagingItem.identifier] = preferredAttributes.frame.width
-                return true
-            }
-            return false
         default:
             return false
         }
@@ -185,8 +168,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
         switch elementKind {
         case PagingIndicatorKind:
             return indicatorLayoutAttributes
-        case PagingBorderKind:
-            return borderLayoutAttributes
         default:
             return super.layoutAttributesForDecorationView(ofKind: elementKind, at: indexPath)
         }
@@ -206,17 +187,8 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
             at: IndexPath(item: 0, section: 0)
         )
 
-        let borderAttributes = layoutAttributesForDecorationView(
-            ofKind: PagingBorderKind,
-            at: IndexPath(item: 1, section: 0)
-        )
-
         if let indicatorAttributes = indicatorAttributes {
             layoutAttributes.append(indicatorAttributes)
-        }
-
-        if let borderAttributes = borderAttributes {
-            layoutAttributes.append(borderAttributes)
         }
 
         return layoutAttributes
@@ -227,17 +199,8 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
     private func optionsChanged(oldValue: PagingOptions) {
         var shouldInvalidateLayout: Bool = false
 
-        if options.borderClass != oldValue.borderClass {
-            registerBorderClass()
-            shouldInvalidateLayout = true
-        }
-
         if options.indicatorClass != oldValue.indicatorClass {
             registerIndicatorClass()
-            shouldInvalidateLayout = true
-        }
-
-        if options.borderColor != oldValue.borderColor {
             shouldInvalidateLayout = true
         }
 
@@ -251,16 +214,11 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
     }
 
     private func configure() {
-        registerBorderClass()
         registerIndicatorClass()
     }
 
     private func registerIndicatorClass() {
         register(options.indicatorClass, forDecorationViewOfKind: PagingIndicatorKind)
-    }
-
-    private func registerBorderClass() {
-        register(options.borderClass, forDecorationViewOfKind: PagingBorderKind)
     }
 
     private func createLayoutAttributes() {
@@ -294,12 +252,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
                     attributes.frame = CGRect(x: x, y: y, width: width, height: height)
                 case let .sizeToFit(minWidth, height):
                     attributes.frame = CGRect(x: x, y: y, width: minWidth, height: height)
-                case let .selfSizing(estimatedWidth, height):
-                    if let actualWidth = preferredSizeCache[pagingItem.identifier] {
-                        attributes.frame = CGRect(x: x, y: y, width: actualWidth, height: height)
-                    } else {
-                        attributes.frame = CGRect(x: x, y: y, width: estimatedWidth, height: height)
-                    }
                 }
             }
 
@@ -330,48 +282,15 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
             // all the other cases we want to center them if the menu
             // alignment is set to .center
             default:
-                if case .center = options.menuHorizontalAlignment {
-                    // Subtract the menu insets as they should not have an effect on
-                    // whether or not we should center the items.
-                    let offset = (view.bounds.width - previousFrame.maxX - adjustedMenuInsets.left) / 2
-                    for attributes in layoutAttributes.values {
-                        attributes.frame = attributes.frame.offsetBy(dx: offset, dy: 0)
-                    }
-                }
+                break
             }
         }
 
-        if case .center = options.selectedScrollPosition {
-            let attributes = layoutAttributes.values.sorted(by: { $0.indexPath < $1.indexPath })
-
-            if let first = attributes.first, let last = attributes.last {
-                let insetLeft = (view.bounds.width / 2) - (first.bounds.width / 2)
-                let insetRight = (view.bounds.width / 2) - (last.bounds.width / 2)
-
-                for attributes in layoutAttributes.values {
-                    attributes.frame = attributes.frame.offsetBy(dx: insetLeft, dy: 0)
-                }
-
-                contentInsets = UIEdgeInsets(
-                    top: 0,
-                    left: insetLeft + adjustedMenuInsets.left,
-                    bottom: 0,
-                    right: insetRight + adjustedMenuInsets.right
-                )
-
-                contentSize = CGSize(
-                    width: previousFrame.maxX + insetLeft + insetRight + adjustedMenuInsets.right,
-                    height: view.bounds.height
-                )
-            }
-
-        } else {
-            contentInsets = adjustedMenuInsets
-            contentSize = CGSize(
-                width: previousFrame.maxX + adjustedMenuInsets.right,
-                height: view.bounds.height
-            )
-        }
+        contentInsets = adjustedMenuInsets
+        contentSize = CGSize(
+            width: previousFrame.maxX + adjustedMenuInsets.right,
+            height: view.bounds.height
+        )
 
         self.layoutAttributes = layoutAttributes
     }
@@ -383,22 +302,6 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
                 with: IndexPath(item: 0, section: 0)
             )
         }
-
-        if case .visible = options.borderOptions {
-            borderLayoutAttributes = PagingBorderLayoutAttributes(
-                forDecorationViewOfKind: PagingBorderKind,
-                with: IndexPath(item: 1, section: 0)
-            )
-        }
-    }
-
-    private func updateBorderLayoutAttributes() {
-        borderLayoutAttributes?.configure(options)
-        borderLayoutAttributes?.update(
-            contentSize: collectionViewContentSize,
-            bounds: collectionView?.bounds ?? .zero,
-            safeAreaInsets: safeAreaInsets
-        )
     }
 
     private func updateIndicatorLayoutAttributes() {
