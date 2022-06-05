@@ -204,7 +204,7 @@ final class PagingController: NSObject {
                 reloadItems(around: upcomingPagingItem)
                 collectionView.selectItem(
                     at: visibleItems.indexPath(for: upcomingPagingItem),
-                    animated: options.menuTransition == .animateAfter,
+                    animated: false,
                     scrollPosition: options.scrollPosition
                 )
             }
@@ -221,7 +221,7 @@ final class PagingController: NSObject {
             reloadItems(around: pagingItem)
             collectionView.selectItem(
                 at: visibleItems.indexPath(for: pagingItem),
-                animated: options.menuTransition == .animateAfter,
+                animated: false,
                 scrollPosition: options.scrollPosition
             )
 
@@ -232,7 +232,7 @@ final class PagingController: NSObject {
 
                 collectionView.selectItem(
                     at: visibleItems.indexPath(for: pagingItem),
-                    animated: options.menuTransition == .animateAfter,
+                    animated: false,
                     scrollPosition: options.scrollPosition
                 )
             }
@@ -431,30 +431,28 @@ final class PagingController: NSObject {
             distance: distance
         )
 
-        if options.menuTransition == .scrollAlongside {
-            let invalidationContext = PagingInvalidationContext()
+        let invalidationContext = PagingInvalidationContext()
 
-            // We don't want to update the content offset if there is no
-            // upcoming item to scroll to. We still need to invalidate the
-            // layout in order to update the layout attributes for the
-            // decoration views. We need to use setContentOffset with no
-            // animation in order to stop any ongoing scroll.
-            if upcomingPagingItem != nil {
-                if collectionView.contentSize.width >= collectionView.bounds.width, state.progress != 0 {
-                    let contentOffset = CGPoint(
-                        x: initialContentOffset.x + (distance * abs(progress)),
-                        y: initialContentOffset.y
-                    )
-                    collectionView.setContentOffset(contentOffset, animated: false)
-                }
-
-                if sizeCache.implementsSizeDelegate {
-                    invalidationContext.invalidateSizes = true
-                }
+        // We don't want to update the content offset if there is no
+        // upcoming item to scroll to. We still need to invalidate the
+        // layout in order to update the layout attributes for the
+        // decoration views. We need to use setContentOffset with no
+        // animation in order to stop any ongoing scroll.
+        if upcomingPagingItem != nil {
+            if collectionView.contentSize.width >= collectionView.bounds.width, state.progress != 0 {
+                let contentOffset = CGPoint(
+                    x: initialContentOffset.x + (distance * abs(progress)),
+                    y: initialContentOffset.y
+                )
+                collectionView.setContentOffset(contentOffset, animated: false)
             }
 
-            collectionViewLayout.invalidateLayout(with: invalidationContext)
+            if sizeCache.implementsSizeDelegate {
+                invalidationContext.invalidateSizes = true
+            }
         }
+
+        collectionViewLayout.invalidateLayout(with: invalidationContext)
     }
 
     private func calculateTransition(
@@ -471,9 +469,7 @@ final class PagingController: NSObject {
             upcomingPagingItem: upcomingPagingItem,
             visibleItems: visibleItems,
             sizeCache: sizeCache,
-            selectedScrollPosition: options.selectedScrollPosition,
-            layoutAttributes: collectionViewLayout.layoutAttributes,
-            navigationOrientation: options.contentNavigationOrientation
+            layoutAttributes: collectionViewLayout.layoutAttributes
         )
 
         return PagingTransition(

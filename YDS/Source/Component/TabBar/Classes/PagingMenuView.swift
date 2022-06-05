@@ -29,20 +29,6 @@ open class PagingMenuView: UIView {
         set { options.menuInsets = newValue }
     }
 
-    /// Determine whether the menu items should be centered when all the
-    /// items can fit within the bounds of the view. _Default: .left_
-    public var menuHorizontalAlignment: PagingMenuHorizontalAlignment {
-        get { return options.menuHorizontalAlignment }
-        set { options.menuHorizontalAlignment = newValue }
-    }
-
-    /// Determine the transition behaviour of menu items while scrolling
-    /// the content. _Default: .scrollAlongside_
-    public var menuTransition: PagingMenuTransition {
-        get { return options.menuTransition }
-        set { options.menuTransition = newValue }
-    }
-
     /// Determine how users can interact with the menu items.
     /// _Default: .scrolling_
     public var menuInteraction: PagingMenuInteraction {
@@ -58,14 +44,6 @@ open class PagingMenuView: UIView {
     public var menuLayoutClass: PagingCollectionViewLayout.Type {
         get { return options.menuLayoutClass }
         set { options.menuLayoutClass = newValue }
-    }
-
-    /// Determine how the selected menu item should be aligned when it
-    /// is selected. Effectivly the same as the
-    /// `UICollectionViewScrollPosition`. _Default: .preferCentered_
-    public var selectedScrollPosition: PagingSelectedScrollPosition {
-        get { return options.selectedScrollPosition }
-        set { options.selectedScrollPosition = newValue }
     }
 
     /// Add an indicator view to the selected menu item. The indicator
@@ -88,28 +66,6 @@ open class PagingMenuView: UIView {
     public var indicatorColor: UIColor {
         get { return options.indicatorColor }
         set { options.indicatorColor = newValue }
-    }
-
-    /// Add a border at the bottom of the menu items. The border will be
-    /// as wide as all the menu items. Insets only apply horizontally.
-    /// _Default: .visible_
-    public var borderOptions: PagingBorderOptions {
-        get { return options.borderOptions }
-        set { options.borderOptions = newValue }
-    }
-
-    /// The class type for the border view. Override this if you want
-    /// your use your own subclass of PagingBorderView. _Default:
-    /// PagingBorderView.self_
-    public var borderClass: PagingBorderView.Type {
-        get { return options.borderClass }
-        set { options.borderClass = newValue }
-    }
-
-    /// Determine the color of the border view.
-    public var borderColor: UIColor {
-        get { return options.borderColor }
-        set { options.borderColor = newValue }
     }
 
     /// Updates the content inset for the menu items based on the

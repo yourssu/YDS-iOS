@@ -51,14 +51,8 @@ public final class PageViewController: UIViewController {
 
     public var options: PagingOptions {
         didSet {
-            switch options.contentNavigationOrientation {
-            case .vertical:
-                scrollView.alwaysBounceHorizontal = false
-                scrollView.alwaysBounceVertical = true
-            case .horizontal:
-                scrollView.alwaysBounceHorizontal = true
-                scrollView.alwaysBounceVertical = false
-            }
+            scrollView.alwaysBounceHorizontal = true
+            scrollView.alwaysBounceVertical = false
         }
     }
 
@@ -68,40 +62,22 @@ public final class PageViewController: UIViewController {
 
     /// The size of a single page.
     private var pageSize: CGFloat {
-        switch options.contentNavigationOrientation {
-        case .vertical:
-            return view.bounds.height
-        case .horizontal:
-            return view.bounds.width
-        }
+        return view.bounds.width
     }
 
     /// The size of all the pages in the scroll view.
     private var contentSize: CGSize {
-        switch options.contentNavigationOrientation {
-        case .horizontal:
-            return CGSize(
-                width: CGFloat(manager.state.count) * view.bounds.width,
-                height: view.bounds.height
-            )
-        case .vertical:
-            return CGSize(
-                width: view.bounds.width,
-                height: CGFloat(manager.state.count) * view.bounds.height
-            )
-        }
+        return CGSize(
+            width: CGFloat(manager.state.count) * view.bounds.width,
+            height: view.bounds.height
+        )
     }
 
     /// The content offset of the scroll view, adjusted for the current
     /// navigation orientation.
     private var contentOffset: CGFloat {
         get {
-            switch options.contentNavigationOrientation {
-            case .horizontal:
-                return scrollView.contentOffset.x
-            case .vertical:
-                return scrollView.contentOffset.y
-            }
+            return scrollView.contentOffset.x
         }
         set {
             scrollView.contentOffset = point(newValue)
@@ -109,16 +85,11 @@ public final class PageViewController: UIViewController {
     }
 
     private var isRightToLeft: Bool {
-        switch options.contentNavigationOrientation {
-        case .vertical:
+        if #available(iOS 9.0, *),
+            UIView.userInterfaceLayoutDirection(for: view.semanticContentAttribute) == .rightToLeft {
+            return true
+        } else {
             return false
-        case .horizontal:
-            if #available(iOS 9.0, *),
-                UIView.userInterfaceLayoutDirection(for: view.semanticContentAttribute) == .rightToLeft {
-                return true
-            } else {
-                return false
-            }
         }
     }
 
@@ -204,12 +175,7 @@ public final class PageViewController: UIViewController {
     }
 
     private func point(_ value: CGFloat) -> CGPoint {
-        switch options.contentNavigationOrientation {
-        case .horizontal:
-            return CGPoint(x: value, y: 0)
-        case .vertical:
-            return CGPoint(x: 0, y: value)
-        }
+        return CGPoint(x: value, y: 0)
     }
 }
 
@@ -311,22 +277,12 @@ extension PageViewController: PageViewManagerDelegate {
         view.layoutIfNeeded()
 
         for (index, viewController) in viewControllers.enumerated() {
-            switch options.contentNavigationOrientation {
-            case .horizontal:
-                viewController.view.frame = CGRect(
-                    x: CGFloat(index) * scrollView.bounds.width,
-                    y: 0,
-                    width: scrollView.bounds.width,
-                    height: scrollView.bounds.height
-                )
-            case .vertical:
-                viewController.view.frame = CGRect(
-                    x: 0,
-                    y: CGFloat(index) * scrollView.bounds.height,
-                    width: scrollView.bounds.width,
-                    height: scrollView.bounds.height
-                )
-            }
+            viewController.view.frame = CGRect(
+                x: CGFloat(index) * scrollView.bounds.width,
+                y: 0,
+                width: scrollView.bounds.width,
+                height: scrollView.bounds.height
+            )
         }
 
         // When updating the content offset we need to account for the
