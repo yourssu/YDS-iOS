@@ -5,71 +5,103 @@
 //  Created by Yonghyun on 2022/06/05.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import YDS
 
-class TabBarPageViewController: UIViewController {
+class TabBarPageViewController: StoryBookViewController {
+    
+    private struct TabBarModel {
+        var type: YDSTabBarViewController.TabBarType = .scrollable
+        var numberOfTaps: Int = 8
+    }
+    
+    private var tabBarInfo: TabBarModel = TabBarModel()
+    
+    private let numberOfTaps: [Int] = Array(2...10)
+    
+    private let pushButton: YDSBoxButton = {
+        let button = YDSBoxButton()
+        button.size = .large
+        button.rounding = .r8
+        button.type = .filled
+        button.text = "샘플 페이지 보기"
+        return button
+    }()
+    
+    private let spacer: UIView = {
+        let view = UIView()
+        view.snp.makeConstraints {
+            $0.height.equalTo(60)
+        }
+        return view
+    }()
+    
     override func viewDidLoad() {
-        self.view.backgroundColor = .systemBackground
-        
-        let button0 = UIButton()
-        button0.backgroundColor = .blue
-        
-        self.view.addSubview(button0)
-        
-        button0.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.top.equalToSuperview().offset(200)
+        super.viewDidLoad()
+        addOptions()
+        setupView()
+        registerTapAction()
+    }
+
+    private func setupView() {
+        setLayouts()
+    }
+
+    private func setLayouts() {
+        setViewHierarchy()
+        setAutolayout()
+    }
+
+    private func setViewHierarchy() {
+        self.view.addSubviews(pushButton)
+        stackView.addArrangedSubview(spacer)
+    }
+
+    private func setAutolayout() {
+        pushButton.snp.makeConstraints {
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+            $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(16)
         }
-        
-        button0.addTarget(self, action: #selector(button0TapAction(_:)), for: .touchUpInside)
-        
-        let button1 = UIButton()
-        button1.backgroundColor = .green
-        
-        self.view.addSubview(button1)
-        
-        button1.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.bottom.equalToSuperview().inset(200)
+    }
+
+    private func addOptions() {
+        addOption(description: "TabBarType",
+                  cases: YDSTabBarViewController.TabBarType.allCases,
+                  defaultIndex: 0) { [weak self] value in
+            self?.tabBarInfo.type = value
         }
-        
-        button1.addTarget(self, action: #selector(button1TapAction(_:)), for: .touchUpInside)
+
+        addOption(description: "number of tabs",
+                  cases: numberOfTaps,
+                  defaultIndex: 2) { [weak self] value in
+            self?.tabBarInfo.numberOfTaps = value
+        }
     }
     
-    @objc
-    private func button0TapAction(_ sender: UIButton) {
-        let viewControllers = [
-            ContentViewController(index: 0),
-            ContentViewController(index: 1),
-            ContentViewController(index: 2),
-            ContentViewController(index: 3),
-            ContentViewController(index: 4),
-            ContentViewController(index: 5),
-            ContentViewController(index: 6),
-            ContentViewController(index: 7),
-        ]
-        
-        let vc = PagingViewController(type: .scrollable,
-                                      viewControllers: viewControllers)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+    private func registerTapAction() {
+        pushButton.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
     }
-    
+
     @objc
-    private func button1TapAction(_ sender: UIButton) {
-        let viewControllers = [
-            ContentViewController(index: 0),
-            ContentViewController(index: 1),
-            ContentViewController(index: 2),
-//            ContentViewController(index: 3),
-        ]
-        
-        let vc = PagingViewController(type: .fixed,
-                                      viewControllers: viewControllers)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+    private func buttonTapAction(_ sender: UIButton) {
+        switch(sender) {
+        case pushButton:
+            var viewControllers: [UIViewController] = []
+            
+            for i in 0..<tabBarInfo.numberOfTaps {
+                viewControllers.append(ContentViewController(index: i))
+            }
+            
+            let sampleViewController: YDSTabBarViewController = YDSTabBarViewController(type: tabBarInfo.type,
+                                                                                        viewControllers: viewControllers)
+            self.navigationController?.pushViewController(sampleViewController, animated: true)
+        default:
+            return
+        }
     }
+}
+
+extension YDSTabBarViewController.TabBarType: CaseIterable {
+    public static var allCases: [YDSTabBarViewController.TabBarType] = [.scrollable, .fixed]
 }
