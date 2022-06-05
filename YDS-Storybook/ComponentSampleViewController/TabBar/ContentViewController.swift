@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import YDS
 
 final class ContentViewController: UIViewController {
     convenience init(index: Int) {
@@ -23,70 +24,19 @@ final class ContentViewController: UIViewController {
 
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 50, weight: UIFont.Weight.thin)
-        label.textColor = UIColor(red: 95 / 255, green: 102 / 255, blue: 108 / 255, alpha: 1)
+        label.textColor = YDSColor.bottomBarSelected
         label.textAlignment = .center
         label.text = content
         label.sizeToFit()
 
         view.addSubview(label)
-        view.constrainToEdges(label)
-        view.backgroundColor = .white
+        label.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        view.backgroundColor = .systemBackground
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension UIView {
-    func constrainToEdges(_ subview: UIView) {
-        subview.translatesAutoresizingMaskIntoConstraints = false
-
-        let topContraint = NSLayoutConstraint(
-            item: subview,
-            attribute: .top,
-            relatedBy: .equal,
-            toItem: self,
-            attribute: .top,
-            multiplier: 1.0,
-            constant: 0
-        )
-
-        let bottomConstraint = NSLayoutConstraint(
-            item: subview,
-            attribute: .bottom,
-            relatedBy: .equal,
-            toItem: self,
-            attribute: .bottom,
-            multiplier: 1.0,
-            constant: 0
-        )
-
-        let leadingContraint = NSLayoutConstraint(
-            item: subview,
-            attribute: .leading,
-            relatedBy: .equal,
-            toItem: self,
-            attribute: .leading,
-            multiplier: 1.0,
-            constant: 0
-        )
-
-        let trailingContraint = NSLayoutConstraint(
-            item: subview,
-            attribute: .trailing,
-            relatedBy: .equal,
-            toItem: self,
-            attribute: .trailing,
-            multiplier: 1.0,
-            constant: 0
-        )
-
-        addConstraints([
-            topContraint,
-            bottomConstraint,
-            leadingContraint,
-            trailingContraint,
-        ])
     }
 }
