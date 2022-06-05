@@ -12,7 +12,7 @@ public protocol PagingViewControllerSizeDelegate: AnyObject {
     /// given `PagingItem` is selected
     /// - Returns: The width for the `PagingItem`
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         widthForPagingItem pagingItem: PagingItem,
         isSelected: Bool
     ) -> CGFloat

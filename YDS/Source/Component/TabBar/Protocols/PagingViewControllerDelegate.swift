@@ -15,7 +15,7 @@ public protocol PagingViewControllerDelegate: AnyObject {
     /// the upcoming paging item
     /// - Parameter progress: The progress of the scroll transition
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         isScrollingFromItem currentPagingItem: PagingItem,
         toItem upcomingPagingItem: PagingItem?,
         startingViewController: UIViewController,
@@ -31,7 +31,7 @@ public protocol PagingViewControllerDelegate: AnyObject {
     /// - Parameter destinationViewController: The view controller for
     /// the upcoming paging item
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         willScrollToItem pagingItem: PagingItem,
         startingViewController: UIViewController,
         destinationViewController: UIViewController
@@ -47,7 +47,7 @@ public protocol PagingViewControllerDelegate: AnyObject {
     /// - Parameter transitionSuccessful: Boolean that indicates whether
     /// the transition to the paging item was successful or not
     func pagingViewController(
-        _ pagingViewController: PagingViewController,
+        _ pagingViewController: YDSTabBarViewController,
         didScrollToItem pagingItem: PagingItem,
         startingViewController: UIViewController?,
         destinationViewController: UIViewController,
@@ -59,14 +59,14 @@ public protocol PagingViewControllerDelegate: AnyObject {
     /// - Parameter pagingViewController: The `PagingViewController` instance
     /// - Parameter pagingItem: The item that was selected.
     func pagingViewController(
-        _ pagingViewController: PagingViewController,
+        _ pagingViewController: YDSTabBarViewController,
         didSelectItem pagingItem: PagingItem
     )
 }
 
 public extension PagingViewControllerDelegate {
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         isScrollingFromItem _: PagingItem,
         toItem _: PagingItem?,
         startingViewController _: UIViewController,
@@ -77,7 +77,7 @@ public extension PagingViewControllerDelegate {
     }
 
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         willScrollToItem _: PagingItem,
         startingViewController _: UIViewController,
         destinationViewController _: UIViewController
@@ -86,7 +86,7 @@ public extension PagingViewControllerDelegate {
     }
 
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         didScrollToItem _: PagingItem,
         startingViewController _: UIViewController?,
         destinationViewController _: UIViewController,
@@ -96,7 +96,7 @@ public extension PagingViewControllerDelegate {
     }
 
     func pagingViewController(
-        _: PagingViewController,
+        _: YDSTabBarViewController,
         didSelectItem _: PagingItem
     ) {
         return

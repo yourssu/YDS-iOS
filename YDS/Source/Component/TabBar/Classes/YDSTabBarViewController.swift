@@ -11,14 +11,14 @@ import UIKit
 /// `select(pagingItem:animated:)` to set the initial view controller.
 /// You can also use the same method to programmatically navigate to
 /// other view controllers.
-open class PagingViewController:
+open class YDSTabBarViewController:
     UIViewController,
     UICollectionViewDelegate,
     PageViewControllerDataSource,
     PageViewControllerDelegate {
     // MARK: Public Properties
     
-    public enum PagingType {
+    public enum TabBarType {
         case scrollable
         case fixed
     }
@@ -240,7 +240,7 @@ open class PagingViewController:
 
     // MARK: Initializers
     
-    public init(type: PagingType, viewControllers: [UIViewController]) {
+    public init(type: TabBarType, viewControllers: [UIViewController]) {
         var options: PagingOptions = PagingOptions()
         
         switch type {
@@ -615,7 +615,7 @@ open class PagingViewController:
     }
 }
 
-extension PagingViewController: PagingMenuDataSource {
+extension YDSTabBarViewController: PagingMenuDataSource {
     public func pagingItemBefore(pagingItem: PagingItem) -> PagingItem? {
         return infiniteDataSource?.pagingViewController(self, itemBefore: pagingItem)
     }
@@ -625,13 +625,13 @@ extension PagingViewController: PagingMenuDataSource {
     }
 }
 
-extension PagingViewController: PagingControllerSizeDelegate {
+extension YDSTabBarViewController: PagingControllerSizeDelegate {
     func width(for pagingItem: PagingItem, isSelected: Bool) -> CGFloat {
         return sizeDelegate?.pagingViewController(self, widthForPagingItem: pagingItem, isSelected: isSelected) ?? 0
     }
 }
 
-extension PagingViewController: PagingMenuDelegate {
+extension YDSTabBarViewController: PagingMenuDelegate {
     public func selectContent(pagingItem: PagingItem, direction: PagingDirection, animated: Bool) {
         guard let dataSource = infiniteDataSource else { return }
 

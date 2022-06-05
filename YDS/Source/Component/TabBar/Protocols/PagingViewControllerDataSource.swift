@@ -14,7 +14,7 @@ public protocol PagingViewControllerDataSource: AnyObject {
     /// - Parameter pagingViewController: The `PagingViewController`
     /// instance
     /// - Returns: The number of view controllers
-    func numberOfViewControllers(in pagingViewController: PagingViewController) -> Int
+    func numberOfViewControllers(in pagingViewController: YDSTabBarViewController) -> Int
 
     /// Return the view controller accociated with a given index. This
     /// method is only called for the currently selected `PagingItem`,
@@ -24,12 +24,12 @@ public protocol PagingViewControllerDataSource: AnyObject {
     /// instance
     /// - Parameter index: The index of a given `PagingItem`
     /// - Returns: The view controller for the given index
-    func pagingViewController(_: PagingViewController, viewControllerAt index: Int) -> UIViewController
+    func pagingViewController(_: YDSTabBarViewController, viewControllerAt index: Int) -> UIViewController
 
     /// Return the `PagingItem` instance for a given index
     ///
     /// - Parameter pagingViewController: The `PagingViewController`
     /// instance
     /// - Returns: The `PagingItem` instance
-    func pagingViewController(_: PagingViewController, pagingItemAt index: Int) -> PagingItem
+    func pagingViewController(_: YDSTabBarViewController, pagingItemAt index: Int) -> PagingItem
 }
