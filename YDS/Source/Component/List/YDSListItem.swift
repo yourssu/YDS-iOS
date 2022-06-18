@@ -100,6 +100,10 @@ public class YDSListItem: UIView {
         super.layoutSubviews()
         nextIconView.isHidden = !(isShowingNextIconView ?? false)
     }
+
+    public func getTitle() -> String {
+        return self.titleLabel.text ?? ""
+    }
     
     //  MARK: - 외부에서 접근할 수 없는 enum
     
