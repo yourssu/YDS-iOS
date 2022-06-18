@@ -103,9 +103,9 @@
 		C3985FB627F832EA00389A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB527F832EA00389A22 /* SceneDelegate.swift */; };
 		C3985FB827F839A700389A22 /* UIApplication+findWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */; };
 		C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3498527E710F900005034 /* Optional+isEmpty.swift */; };
+		C3A48BC3285DC90100601094 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = C3A48BC2285DC90100601094 /* Parchment */; };
 		C3BCE664284BB3C40098E49E /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCE663284BB3C40098E49E /* ContentViewController.swift */; };
 		C3BD4E39285DBCEA00B484DC /* YDSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */; };
-		C3D575F7285DC04100DC0CC3 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = C3D575F6285DC04100DC0CC3 /* Parchment */; };
 		C3DCB31B2820010800F98257 /* YDSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31A2820010800F98257 /* YDSList.swift */; };
 		C3DCB31D2820010D00F98257 /* YDSListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31C2820010D00F98257 /* YDSListItem.swift */; };
 		C3DCB31F2820081E00F98257 /* YDSListToggleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31E2820081E00F98257 /* YDSListToggleItem.swift */; };
@@ -278,7 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3D575F7285DC04100DC0CC3 /* Parchment in Frameworks */,
+				C3A48BC3285DC90100601094 /* Parchment in Frameworks */,
 				530F6DBB26D2141500856758 /* PanModal in Frameworks */,
 				530F6DBE26D2142100856758 /* SnapKit in Frameworks */,
 			);
@@ -723,7 +723,7 @@
 			packageProductDependencies = (
 				530F6DBA26D2141500856758 /* PanModal */,
 				530F6DBD26D2142100856758 /* SnapKit */,
-				C3D575F6285DC04100DC0CC3 /* Parchment */,
+				C3A48BC2285DC90100601094 /* Parchment */,
 			);
 			productName = "YDS-iOS";
 			productReference = DD151FAA2641820200795D7C /* YDS.framework */;
@@ -783,7 +783,7 @@
 				5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				530F6DB926D2141500856758 /* XCRemoteSwiftPackageReference "PanModal" */,
 				530F6DBC26D2142100856758 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				C3D575F5285DC04100DC0CC3 /* XCRemoteSwiftPackageReference "Parchment" */,
+				C3A48BC1285DC90100601094 /* XCRemoteSwiftPackageReference "Parchment" */,
 			);
 			productRefGroup = DD151FAB2641820200795D7C /* Products */;
 			projectDirPath = "";
@@ -1362,7 +1362,7 @@
 				minimumVersion = 6.2.0;
 			};
 		};
-		C3D575F5285DC04100DC0CC3 /* XCRemoteSwiftPackageReference "Parchment" */ = {
+		C3A48BC1285DC90100601094 /* XCRemoteSwiftPackageReference "Parchment" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yourssu/Parchment";
 			requirement = {
@@ -1393,9 +1393,9 @@
 			package = 5337938626AF08E000BE5860 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		C3D575F6285DC04100DC0CC3 /* Parchment */ = {
+		C3A48BC2285DC90100601094 /* Parchment */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C3D575F5285DC04100DC0CC3 /* XCRemoteSwiftPackageReference "Parchment" */;
+			package = C3A48BC1285DC90100601094 /* XCRemoteSwiftPackageReference "Parchment" */;
 			productName = Parchment;
 		};
 /* End XCSwiftPackageProductDependency section */
