@@ -8,11 +8,12 @@
 import UIKit
 import SnapKit
 import YDS
+import Parchment
 
 class TabBarPageViewController: StoryBookViewController {
     
     private struct TabBarModel {
-        var type: YDSTabBarViewController.TabBarType = .scrollable
+        var type: PagingViewController.TabBarType = .scrollable
         var numberOfTaps: Int = 8
     }
     
@@ -67,7 +68,7 @@ class TabBarPageViewController: StoryBookViewController {
 
     private func addOptions() {
         addOption(description: "TabBarType",
-                  cases: YDSTabBarViewController.TabBarType.allCases,
+                  cases: PagingViewController.TabBarType.allCases,
                   defaultIndex: 0) { [weak self] value in
             self?.tabBarInfo.type = value
         }
@@ -102,6 +103,6 @@ class TabBarPageViewController: StoryBookViewController {
     }
 }
 
-extension YDSTabBarViewController.TabBarType: CaseIterable {
-    public static var allCases: [YDSTabBarViewController.TabBarType] = [.scrollable, .fixed]
+extension PagingViewController.TabBarType: CaseIterable {
+    public static var allCases: [PagingViewController.TabBarType] = [.scrollable, .fixed]
 }
