@@ -71,6 +71,10 @@ public class YDSListToggleItem: UIView {
             $0.trailing.equalTo(toggle.snp.leading).offset(Dimension.Padding.gap)
         }
     }
+
+    public func getTitle() -> String {
+        return self.titleLabel.text ?? ""
+    }
     
     //  MARK: - 외부에서 접근할 수 없는 enum
     
