@@ -30,6 +30,7 @@ public class YDSList: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .center
+        stackView.spacing = 0
         stackView.spacing = YDSTextFieldView.Dimension.subviewSpacing
         return stackView
     }()
