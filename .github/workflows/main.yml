@@ -4,7 +4,7 @@ on:
     types: [published, edited]
 jobs:
       build:
-        runs-on: [macos-latest]
+        runs-on: macos-12
         env:
           XC_VERSION: ${{ '13.3.1' }}
           XC_PROJECT: ${{ 'YDS.xcodeproj' }}
