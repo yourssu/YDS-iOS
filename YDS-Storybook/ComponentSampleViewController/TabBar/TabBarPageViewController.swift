@@ -19,7 +19,7 @@ class TabBarPageViewController: StoryBookViewController {
     
     private var tabBarInfo: TabBarModel = TabBarModel()
     
-    private let numberOfTaps: [Int] = Array(2...10)
+    private let numberOfTapsArr: [Int] = Array(2...10)
     
     private let pushButton: YDSBoxButton = {
         let button = YDSBoxButton()
@@ -74,7 +74,7 @@ class TabBarPageViewController: StoryBookViewController {
         }
 
         addOption(description: "number of tabs",
-                  cases: numberOfTaps,
+                  cases: numberOfTapsArr,
                   defaultIndex: 2) { [weak self] value in
             self?.tabBarInfo.numberOfTaps = value
         }
