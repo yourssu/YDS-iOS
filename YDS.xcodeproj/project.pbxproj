@@ -1367,7 +1367,7 @@
 			repositoryURL = "https://github.com/yourssu/Parchment";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.7.0;
+				minimumVersion = 3.7.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

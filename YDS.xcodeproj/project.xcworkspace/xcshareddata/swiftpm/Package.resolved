@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yourssu/Parchment",
       "state" : {
-        "revision" : "3c192d8e78e49a534bfefaf47f814321a14628c0",
-        "version" : "3.7.0"
+        "revision" : "42036be5d011c83145e9f8e2705c7d3756e46607",
+        "version" : "3.7.2"
       }
     },
     {
