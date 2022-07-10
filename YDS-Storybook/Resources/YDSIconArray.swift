@@ -87,4 +87,5 @@ let ydsIconArray = [
     YDSIcon.warningcircleFilled,
     YDSIcon.warningcircleLine,
     YDSIcon.xLine,
+    YDSIcon.xcircle_filled
 ]
