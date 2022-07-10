@@ -66,7 +66,7 @@ public class YDSSearchBar: UISearchBar {
     ///  view를 세팅합니다.
     private func setupView() {
         self.backgroundImage = UIImage()
-        self.setImage(YDSIcon.searchLine.resize(to: YDSSearchBar.searchIconSize), for: .search, state: .normal)
+        self.setImage(YDSIcon.searchLine.resize(to: YDSSearchBar.searchIconSize).withRenderingMode(.alwaysTemplate), for: .search, state: .normal)
         self.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0,
                                                                 leading: YDSSearchBar.outsideLeftMargin,
                                                                 bottom: 0,
