@@ -87,6 +87,7 @@ public enum YDSIcon {
     public static var warningcircleFilled: UIImage { .load(name: "ic_warningcircle_filled") }
     public static var warningcircleLine: UIImage { .load(name: "ic_warningcircle_line") }
     public static var xLine: UIImage { .load(name: "ic_x_line") }
+    public static var xcircle_filled: UIImage { .load(name: "ic_xcircle_filled") }
 }
 
 extension UIImage {
