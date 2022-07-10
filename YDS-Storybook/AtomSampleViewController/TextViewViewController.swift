@@ -30,9 +30,9 @@ class TextViewViewController: StoryBookViewController {
         return profileImageView
     }()
     
-    private(set) lazy var writingButton: UIButton = {
-        let button = UIButton()
-        button.setImage(YDSIcon.penFilled, for: .normal)
+    private(set) lazy var writingButton: YDSPlainButton = {
+        let button = YDSPlainButton()
+        button.rightIcon = YDSIcon.penFilled
         button.setContentCompressionResistancePriority(.defaultHigh + 1, for: .horizontal)
         return button
     }()
