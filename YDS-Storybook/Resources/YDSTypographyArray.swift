@@ -12,6 +12,13 @@ struct Typographies {
     let description: String?
 }
 
+let displayTypographies = Typographies(
+    items: [
+        .display1, .display2
+    ],
+    description: "Display"
+)
+
 let titleTypographies = Typographies(
     items: [
         .title1, .title2, .title3
@@ -48,6 +55,7 @@ let captionTypographies = Typographies(
 )
 
 let typographies = [
+    displayTypographies,
     titleTypographies,
     subtitleTypographies,
     bodyTypographies,
