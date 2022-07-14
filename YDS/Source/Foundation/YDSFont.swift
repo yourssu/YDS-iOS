@@ -8,6 +8,9 @@
 import UIKit
 
 public enum YDSFont {
+    public static let display1 = UIFont.systemFont(ofSize: 40, weight: .bold )
+    public static let display2 = UIFont.systemFont(ofSize: 32, weight: .bold )
+    
     public static let title1 = UIFont.systemFont(ofSize: 28, weight: .bold )
     public static let title2 = UIFont.systemFont(ofSize: 24, weight: .bold )
     public static let title3 = UIFont.systemFont(ofSize: 20, weight: .bold )

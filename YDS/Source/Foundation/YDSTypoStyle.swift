@@ -9,6 +9,9 @@ import UIKit
 
 extension String {
     public enum TypoStyle {
+        case display1
+        case display2
+        
         case title1
         case title2
         case title3
@@ -32,6 +35,11 @@ extension String {
         
         public var font: UIFont {
             switch self {
+            case .display1:
+                return YDSFont.display1
+            case .display2:
+                return YDSFont.display2
+                
             case .title1:
                 return YDSFont.title1
             case .title2:
@@ -74,6 +82,9 @@ extension String {
         
         public var lineHeight: CGFloat {
             switch self {
+            case .display1, .display2:
+                return 1.3
+                
             case .title1, .title2, .title3:
                 return 1.3
                 
