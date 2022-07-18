@@ -97,6 +97,7 @@
 		C350ABE22808587600BFC9C0 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */; };
 		C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */; };
 		C350ABE6280858B900BFC9C0 /* YDSTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */; };
+		C35F27302883F35B0061C1A0 /* SetNeedsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35F272F2883F35B0061C1A0 /* SetNeedsLayout.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
@@ -235,6 +236,7 @@
 		C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipPageViewController.swift; sourceTree = "<group>"; };
 		C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
 		C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTooltip.swift; sourceTree = "<group>"; };
+		C35F272F2883F35B0061C1A0 /* SetNeedsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNeedsLayout.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				DD6C63E32642A602004CFF46 /* Foundation */,
 				DD6C63D426429C5B004CFF46 /* Atom */,
 				53EFF5CC26BA9A7B00732DCF /* Component */,
+				C35F272F2883F35B0061C1A0 /* SetNeedsLayout.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				5359111B269DDA31000CFFE7 /* YDSIconView.swift in Sources */,
 				533A27A026A48691009FD90A /* YDSSimpleTextFieldView.swift in Sources */,
 				53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */,
+				C35F27302883F35B0061C1A0 /* SetNeedsLayout.swift in Sources */,
 				5359A5BD26BEC30300FCCECC /* YDSBottomBarController.swift in Sources */,
 				C3DCB31F2820081E00F98257 /* YDSListToggleItem.swift in Sources */,
 				53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */,
