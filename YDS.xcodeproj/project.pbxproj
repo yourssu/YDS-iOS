@@ -67,11 +67,8 @@
 		539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */; };
 		539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539110BE26C3743D0094FD08 /* YDSTopBar.swift */; };
 		5394692E2663D6DB003D7A44 /* YDSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5394692D2663D6DB003D7A44 /* YDSConstant.swift */; };
-		539C570827A5C5AC0064A90C /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */; };
 		53ADEA2326A1794800153636 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADEA2226A1794800153636 /* YDSBundle.swift */; };
 		53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */; };
-		53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
-		53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
 		53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FB26B5568600EF7B86 /* YDSIconArray.swift */; };
 		53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */; };
 		53C9F70026B58EBB00EF7B86 /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6FF26B58EBB00EF7B86 /* YDSItemColor.swift */; };
@@ -92,7 +89,7 @@
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
-		53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
+		C30E373D2888604E003CDDB0 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
 		C31F2B0E284BB35D000CD31B /* TabBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F2B0D284BB35D000CD31B /* TabBarPageViewController.swift */; };
 		C350ABE22808587600BFC9C0 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */; };
 		C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */; };
@@ -824,14 +821,12 @@
 				537A0AD326C51DB000142DCE /* YDSButtonProtocol.swift in Sources */,
 				C350ABE6280858B900BFC9C0 /* YDSTooltip.swift in Sources */,
 				C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */,
-				53FE9B6D26C524C400107148 /* YDSButtonProtocol.swift in Sources */,
 				539110B826C1484A0094FD08 /* YDSNavigationController.swift in Sources */,
 				53C9F6FE26B58BFD00EF7B86 /* YDSBadge.swift in Sources */,
 				53441AFC26AF14CC00CB6BC9 /* YDSToggle.swift in Sources */,
 				53441AFB26AF14C500CB6BC9 /* YDSFont.swift in Sources */,
 				53441AFA26AF14B500CB6BC9 /* YDSTypoStyle.swift in Sources */,
 				53C9F70426B5BC1A00EF7B86 /* YDSProfileImageView.swift in Sources */,
-				53C9F6F926B5546500EF7B86 /* YDSButtonProtocol.swift in Sources */,
 				53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */,
 				5370918226A5463C007CD775 /* YDSSuffixTextField.swift in Sources */,
 				DDDC3C7A265E7072007ED3FE /* YDSBasicColor.swift in Sources */,
@@ -879,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30E373D2888604E003CDDB0 /* PlainButtonPageViewController.swift in Sources */,
 				C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */,
 				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
 				DD9F4CB027EB0663004F6CB5 /* EmojiButtonPageViewController.swift in Sources */,
@@ -895,11 +891,9 @@
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
-				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
 				532DBFDB26ED0508008C2354 /* YDSColorArray.swift in Sources */,
 				53C445B126B92BEB00AAC753 /* CheckboxPageViewController.swift in Sources */,
-				53C9F6F726B54B4000EF7B86 /* PlainButtonPageViewController.swift in Sources */,
 				C31F2B0E284BB35D000CD31B /* TabBarPageViewController.swift in Sources */,
 				DDFBCFFF26739A6900C5F409 /* AppDelegate.swift in Sources */,
 				53441AFE26AF1E7E00CB6BC9 /* OptionalImageControllerView.swift in Sources */,
@@ -930,7 +924,6 @@
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
-				539C570827A5C5AC0064A90C /* BottomSheetPageViewController.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
 				53441B0026AF233800CB6BC9 /* PickerControllerView.swift in Sources */,
