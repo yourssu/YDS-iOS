@@ -23,7 +23,7 @@ public class YDSBottomSheet: UIViewController {
         setScrollView()
     }
     
-    public func addViews(views : [UIView]) {
+    public func addViews(views: [UIView]) {
         views.forEach {
             vStack.addArrangedSubview($0)
         }
@@ -33,7 +33,7 @@ public class YDSBottomSheet: UIViewController {
         
         let contentView = UIView()
         
-        if let scrollView = panScrollable{
+        if let scrollView = panScrollable {
             view.addSubview(scrollView)
 
             scrollView.snp.makeConstraints {
@@ -58,7 +58,7 @@ public class YDSBottomSheet: UIViewController {
     }
 }
 
-extension YDSBottomSheet : PanModalPresentable {
+extension YDSBottomSheet: PanModalPresentable {
     public var panScrollable: UIScrollView? {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = YDSColor.bgNormal
