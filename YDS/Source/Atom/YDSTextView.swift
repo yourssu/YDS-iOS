@@ -9,42 +9,22 @@ import UIKit
 import SnapKit
 
 public class YDSTextView: UITextView {
-    public var style: String.TypoStyle {
-        didSet { setTextStyle() }
-    }
+    @SetNeedsLayout public var style: String.TypoStyle
+    @SetNeedsLayout public var lineBreakMode: NSLineBreakMode?
+    @SetNeedsLayout public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy?
+    @SetNeedsLayout public var placeholder: String?
+    @SetNeedsLayout public var placeholderColor: UIColor = YDSColor.textTertiary
     
     public override var text: String? {
-        didSet { textDidChange() }
+        didSet { setNeedsLayout() }
     }
     
     public override var attributedText: NSAttributedString? {
-        didSet { textDidChange() }
+        didSet { setNeedsLayout() }
     }
     
     public override var textColor: UIColor! {
-        didSet { setTextStyle() }
-    }
-    
-    public var lineBreakMode: NSLineBreakMode? {
-        didSet { setTextStyle() }
-    }
-    
-    public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? {
-        didSet { setTextStyle() }
-    }
-    
-    public var placeholder: String? {
-        didSet {
-            if let placeholder = placeholder {
-                registerPlaceholder(placeholder)
-            } else {
-                removePlaceholder()
-            }
-        }
-    }
-    
-    public var placeholderColor: UIColor = YDSColor.textTertiary {
-        didSet { placeholderLabel?.textColor = placeholderColor }
+        didSet { setNeedsLayout() }
     }
     
     private var placeholderLabel: YDSLabel?
@@ -75,6 +55,17 @@ public class YDSTextView: UITextView {
         if isScrollEnabled == false {
             invalidateIntrinsicContentSize()
         }
+        
+        setTextStyle()
+        textDidChange()
+        
+        if let placeholder = placeholder {
+            registerPlaceholder(placeholder)
+        } else {
+            removePlaceholder()
+        }
+        
+        placeholderLabel?.textColor = placeholderColor
     }
     
     // MARK: - Public func
