@@ -46,8 +46,7 @@ extension String {
                 return YDSFont.title2
             case .title3:
                 return YDSFont.title3
-            
-            
+                
             case .subtitle1:
                 return YDSFont.subtitle1
             case .subtitle2:
@@ -133,5 +132,4 @@ extension String {
                                                                 lineBreakMode: lineBreakMode,
                                                                 lineBreakStrategy: lineBreakStrategy))
     }
-
 }
