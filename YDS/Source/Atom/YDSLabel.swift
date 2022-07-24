@@ -8,9 +8,7 @@
 import UIKit
 
 public class YDSLabel: UILabel {
-    public var style : String.TypoStyle {
-        didSet { setAttributedText() }
-    }
+    @SetNeedsLayout public var style : String.TypoStyle
     
     public override var text: String? {
         didSet { setAttributedText() }
@@ -19,11 +17,11 @@ public class YDSLabel: UILabel {
     public override var textColor: UIColor! {
         didSet { setAttributedText() }
     }
-    
+
     public override var lineBreakMode: NSLineBreakMode {
         didSet { setAttributedText() }
     }
-    
+
     public override var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy {
         didSet { setAttributedText() }
     }
@@ -48,5 +46,9 @@ public class YDSLabel: UILabel {
                                                lineBreakMode: lineBreakMode,
                                                lineBreakStrategy: lineBreakStrategy)
     }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setAttributedText()
+    }
 }
-
