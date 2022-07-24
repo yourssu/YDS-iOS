@@ -641,18 +641,18 @@
 			isa = PBXGroup;
 			children = (
 				DD6C63D526429C6C004CFF46 /* YDSLabel.swift */,
-				53A31B5D266F500300461C29 /* YDSToggle.swift */,
-				DD48C1EB26735052004B288E /* YDSBottomSheet.swift */,
-				53EB943826A1E33A00208496 /* YDSDivider.swift */,
-				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
-				53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */,
 				53C9F70326B5BC1A00EF7B86 /* YDSProfileImageView.swift */,
+				53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */,
 				53C9F6FA26B5563C00EF7B86 /* YDSButton */,
+				DD9F4CAD27EB0623004F6CB5 /* YDSEmojiButton.swift */,
+				53C9F70B26B67CE900EF7B86 /* YDSCheckbox.swift */,
 				53443D9B26A7D32B0037B02E /* YDSTextField */,
 				53443D9426A5D5DA0037B02E /* YDSSearchBar.swift */,
-				53C9F6FD26B58BFD00EF7B86 /* YDSBadge.swift */,
+				DD48C1EB26735052004B288E /* YDSBottomSheet.swift */,
 				C37F356C27DE3475007DF859 /* YDSTextView.swift */,
-				DD9F4CAD27EB0623004F6CB5 /* YDSEmojiButton.swift */,
+				53EB943826A1E33A00208496 /* YDSDivider.swift */,
+				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
+				53A31B5D266F500300461C29 /* YDSToggle.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
