@@ -8,14 +8,14 @@ import UIKit
 
 public enum YDSColor {
     private static func color(light: UIColor, dark: UIColor? = nil) -> UIColor {
-       if let dark = dark  {
-           if #available(iOS 13.0, *) {
-               return UIColor { $0.userInterfaceStyle == .dark ? dark : light }
-           }
-           return light
-       } else {
-           return light
-       }
+        if let dark = dark  {
+            if #available(iOS 13.0, *) {
+                return UIColor { $0.userInterfaceStyle == .dark ? dark : light }
+            }
+            return light
+        } else {
+            return light
+        }
     }
 
     
@@ -333,8 +333,5 @@ public enum YDSColor {
 
     public static var pinkItemText: UIColor {
        return color(light: YDSBasicColor.pink600)
-    }
-       
+    }       
 }
-
-
