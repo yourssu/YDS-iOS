@@ -92,17 +92,17 @@ public enum YDSIcon {
 
 extension UIImage {
     fileprivate static func load(name: String) -> UIImage {
-        #if SWIFT_PACKAGE
-            guard let image = UIImage(named: name, in: .module, compatibleWith: nil) else {
-                assert(false, "\(name) 이미지 로드 실패")
-                return UIImage()
-            }
-        #else
+#if SWIFT_PACKAGE
+        guard let image = UIImage(named: name, in: .module, compatibleWith: nil) else {
+            assert(false, "\(name) 이미지 로드 실패")
+            return UIImage()
+        }
+#else
         guard let image = UIImage(named: name, in: YDSBundle.bundle, compatibleWith: nil) else {
-                assert(false, "\(name) 이미지 로드 실패")
-                return UIImage()
-            }
-        #endif
+            assert(false, "\(name) 이미지 로드 실패")
+            return UIImage()
+        }
+#endif
         image.accessibilityIdentifier = name
         return image
     }
@@ -112,7 +112,7 @@ extension UIImage {
         let image = UIGraphicsImageRenderer(size: newSize).image { _ in
             draw(in: CGRect(origin: .zero, size: newSize))
         }
-            
+        
         return image
     }
 }
