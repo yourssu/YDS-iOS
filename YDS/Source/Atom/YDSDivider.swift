@@ -28,16 +28,8 @@ public class YDSDivider: UIView {
         case vertical
     }
     
-    public var thickness: DividerThickness = .thin {
-        didSet {
-            setColor()
-            setThickness()
-        }
-    }
-    
-    private var direction: DividerDirection {
-        didSet { setThickness() }
-    }
+    @SetNeeds(.layout) public var thickness: DividerThickness = .thin
+    @SetNeeds(.layout) private var direction: DividerDirection = .horizontal
     
     public init(_ direction: DividerDirection) {
         self.direction = direction
@@ -75,5 +67,10 @@ public class YDSDivider: UIView {
             }
         }
     }
-
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setColor()
+        setThickness()
+    }
 }
