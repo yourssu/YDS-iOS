@@ -8,24 +8,22 @@
 import UIKit
 
 public class YDSLabel: UILabel {
-    public var style : String.TypoStyle {
-        didSet { setAttributedText() }
-    }
+    @SetNeeds(.layout) public var style: String.TypoStyle = .body1
     
     public override var text: String? {
-        didSet { setAttributedText() }
+        didSet { layoutIfNeeded() }
     }
-
+    
     public override var textColor: UIColor! {
-        didSet { setAttributedText() }
+        didSet { setNeedsLayout() }
     }
     
     public override var lineBreakMode: NSLineBreakMode {
-        didSet { setAttributedText() }
+        didSet { setNeedsLayout() }
     }
     
     public override var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy {
-        didSet { setAttributedText() }
+        didSet { setNeedsLayout() }
     }
     
     public init(style: String.TypoStyle = .body1) {
@@ -41,12 +39,16 @@ public class YDSLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setAttributedText() { 
+    private func setAttributedText() {
         guard let text = self.text else { return }
         attributedText = text.attributedString(byPreset: style,
                                                color: textColor,
                                                lineBreakMode: lineBreakMode,
                                                lineBreakStrategy: lineBreakStrategy)
     }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setAttributedText()
+    }
 }
-
