@@ -17,9 +17,7 @@ public class YDSIconView: UIImageView {
         case large = 48
     }
     
-    public var size: IconSize = .medium {
-        didSet { setIconSize() }
-    }
+    @SetNeeds(.layout) public var size: IconSize = .medium
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -36,5 +34,8 @@ public class YDSIconView: UIImageView {
         }
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setIconSize()
+    }
 }
-
