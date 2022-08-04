@@ -11,21 +11,16 @@ import UIKit
  검색을 위한 TextField를 포함하고 있는 SearchBar입니다.
  */
 public class YDSSearchBar: UISearchBar {
-
+    
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     ///  필드를 비활성화 시킬 때 사용합니다.
-    public var isDisabled: Bool = false {
-        didSet {
-            setState()
-            setPlaceholderTextColor()
-        }
-    }
+    @SetNeeds(.layout) public var isDisabled: Bool = false
     
     ///  새 값이 들어오면 setPlaceholderTextColor를 이용해
     ///  적절한 값을 가진 attributedPlaceholder로 변환합니다.
     public override var placeholder: String? {
-        didSet { setPlaceholderTextColor() }
+        didSet { setNeedsLayout() }
     }
     
     
@@ -80,7 +75,7 @@ public class YDSSearchBar: UISearchBar {
         searchTextField.clearButtonMode = .whileEditing
         searchTextField.layer.cornerRadius = YDSConstant.Rounding.r8
         searchTextField.backgroundColor = YDSColor.inputFieldElevated
-
+        
         self.setPositionAdjustment(UIOffset(horizontal: YDSSearchBar.leftMargin - YDSSearchBar.searchIconDefaultLeftMargin, vertical: 0), for: .search)
         self.setPositionAdjustment(UIOffset(horizontal: -(YDSSearchBar.rightMargin - YDSSearchBar.clearButtonDefaultRightMargin), vertical: 0), for: .clear)
         
@@ -101,7 +96,7 @@ public class YDSSearchBar: UISearchBar {
         searchTextField.textColor = YDSColor.textSecondary
         searchTextField.leftView?.tintColor = YDSColor.textSecondary
     }
-
+    
     ///  isDisabled의 값에 따라 placeholder label의 색이 달라집니다.
     private func setPlaceholderTextColor() {
         let placeholderTextColor: UIColor
@@ -120,6 +115,10 @@ public class YDSSearchBar: UISearchBar {
         }
     }
     
-    
-
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setState()
+        setPlaceholderTextColor()
+    }
 }
