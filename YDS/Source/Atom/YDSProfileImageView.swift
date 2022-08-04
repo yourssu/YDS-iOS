@@ -9,9 +9,7 @@ import UIKit
 
 public class YDSProfileImageView: UIImageView {
     
-    public var size: ProfileImageViewSize = .small {
-        didSet { setImageSize() }
-    }
+    @SetNeeds(.layout) public var size: ProfileImageViewSize = .small
     
     public enum ProfileImageViewSize: Int {
         case extraSmall = 24
@@ -150,5 +148,9 @@ public class YDSProfileImageView: UIImageView {
     
         return path
     }
-
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setImageSize()
+    }
 }
