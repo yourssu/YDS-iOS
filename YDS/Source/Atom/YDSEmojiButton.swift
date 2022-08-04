@@ -14,22 +14,12 @@ public class YDSEmojiButton: UIControl {
     /**
     이모지 버튼의 이모지를 설정합니다. (ex. 😆)
      */
-    public var emoji: String? = nil {
-        didSet {
-            self.emojiLabel.text = self.emoji
-            self.setEmojiButtonSize()
-        }
-    }
+    @SetNeeds(.layout) public var emoji: String? = nil
     
     /**
     이모지 버튼 옆에 들어갈 문구나 버튼을 설정합니다. (ex. 좋아요 3 또는 3)
      */
-    public var text: String? = nil {
-        didSet {
-            self.textLabel.text = self.text
-            self.setEmojiButtonSize()
-        }
-    }
+    @SetNeeds(.layout) public var text: String? = nil
     
     /**
      버튼의 높이, 타이포 크기, 아이콘 크기, 패딩을 결정할 때 사용합니다.
@@ -47,11 +37,7 @@ public class YDSEmojiButton: UIControl {
     }
 
     public override var isSelected: Bool {
-        didSet {
-            if oldValue != isSelected {
-                setColorBasedOnIsSelected()
-            }
-        }
+        didSet { setNeedsLayout() }
     }
     
     //  MARK: - 내부에서 사용되는 상수
@@ -114,7 +100,14 @@ public class YDSEmojiButton: UIControl {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
+        
         setCornerRadius()
+        
+        
+        emojiLabel.text = emoji
+        textLabel.text = text
+        setEmojiButtonSize()
+        setColorBasedOnIsSelected()
     }
 
     /**
@@ -168,4 +161,3 @@ public class YDSEmojiButton: UIControl {
         self.layer.cornerRadius = size.cornerRadius
     }
 }
-
