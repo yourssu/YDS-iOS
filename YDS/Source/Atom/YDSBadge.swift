@@ -12,19 +12,13 @@ public class YDSBadge: UIView {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     ///  뱃지의 글귀를 설정할 때 사용합니다.
-    public var text: String? = nil {
-        didSet { setText() }
-    }
+    @SetNeeds(.layout) public var text: String? = nil
     
     ///  뱃지에 들어갈 아이콘 이미지를 설정할 때 사용합니다.
-    public var icon: UIImage? = nil {
-        didSet { setIcon() }
-    }
+    @SetNeeds(.layout) public var icon: UIImage? = nil
     
     ///  뱃지의 색상을 설정할 때 사용합니다.
-    public var color: YDSItemColor = .mono {
-        didSet { setColor() }
-    }
+    @SetNeeds(.layout) public var color: YDSItemColor = .mono
     
     //  MARK: - 내부에서 사용되는 상수
     
@@ -158,4 +152,10 @@ public class YDSBadge: UIView {
         self.backgroundColor = color.backgroundColor
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setText()
+        setIcon()
+        setColor()
+    }
 }
