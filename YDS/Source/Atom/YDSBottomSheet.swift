@@ -23,7 +23,7 @@ public class YDSBottomSheet: UIViewController {
         setScrollView()
     }
     
-    public func addViews(views : [UIView]) {
+    public func addViews(views: [UIView]) {
         views.forEach {
             vStack.addArrangedSubview($0)
         }
@@ -33,9 +33,9 @@ public class YDSBottomSheet: UIViewController {
         
         let contentView = UIView()
         
-        if let scrollView = panScrollable{
+        if let scrollView = panScrollable {
             view.addSubview(scrollView)
-
+            
             scrollView.snp.makeConstraints {
                 $0.edges.equalToSuperview()
             }
@@ -47,7 +47,7 @@ public class YDSBottomSheet: UIViewController {
                 $0.width.equalTo(YDSScreenSize.width)
                 $0.height.equalTo(YDSScreenSize.height)
             }
-                    
+            
             contentView.addSubview(vStack)
             
             vStack.snp.makeConstraints {
@@ -58,7 +58,7 @@ public class YDSBottomSheet: UIViewController {
     }
 }
 
-extension YDSBottomSheet : PanModalPresentable {
+extension YDSBottomSheet: PanModalPresentable {
     public var panScrollable: UIScrollView? {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = YDSColor.bgNormal
@@ -89,22 +89,20 @@ extension YDSBottomSheet : PanModalPresentable {
     public var panModalBackgroundColor: UIColor {
         return YDSColor.dimNormal
     }
-
+    
     public var longFormHeight: PanModalHeight {
         let stackHeight = vStack.frame.height
         vStack.layoutIfNeeded()
         
-        var contentHeight : CGFloat = 0.0
-        let padding : CGFloat = 40.0
+        var contentHeight: CGFloat = 0.0
+        let padding: CGFloat = 40.0
         
         if stackHeight + padding < BottomSheetHeight.min {
             contentHeight = BottomSheetHeight.min
-        }
-        else if stackHeight > BottomSheetHeight.max {
+        } else if stackHeight > BottomSheetHeight.max {
             contentHeight = BottomSheetHeight.max
             panScrollable?.isScrollEnabled = true
-        }
-        else {
+        } else {
             contentHeight = stackHeight + padding
         }
         
@@ -113,6 +111,6 @@ extension YDSBottomSheet : PanModalPresentable {
 }
 
 fileprivate enum BottomSheetHeight {
-    static let min : CGFloat = 88.0
-    static let max : CGFloat = YDSScreenSize.height - 88.0
+    static let min: CGFloat = 88.0
+    static let max: CGFloat = YDSScreenSize.height - 88.0
 }
