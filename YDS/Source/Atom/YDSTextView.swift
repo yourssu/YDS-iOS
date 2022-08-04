@@ -9,43 +9,24 @@ import UIKit
 import SnapKit
 
 public class YDSTextView: UITextView {
-    public var style: String.TypoStyle {
-        didSet { setTextStyle() }
-    }
     
     public override var text: String? {
-        didSet { textDidChange() }
+        didSet { setNeedsLayout() }
     }
     
     public override var attributedText: NSAttributedString? {
-        didSet { textDidChange() }
+        didSet { setNeedsLayout() }
     }
     
     public override var textColor: UIColor! {
-        didSet { setTextStyle() }
+        didSet { setNeedsLayout() }
     }
     
-    public var lineBreakMode: NSLineBreakMode? {
-        didSet { setTextStyle() }
-    }
-    
-    public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? {
-        didSet { setTextStyle() }
-    }
-    
-    public var placeholder: String? {
-        didSet {
-            if let placeholder = placeholder {
-                registerPlaceholder(placeholder)
-            } else {
-                removePlaceholder()
-            }
-        }
-    }
-    
-    public var placeholderColor: UIColor = YDSColor.textTertiary {
-        didSet { placeholderLabel?.textColor = placeholderColor }
-    }
+    @SetNeeds(.layout) public var style: String.TypoStyle = .body1
+    @SetNeeds(.layout) public var lineBreakMode: NSLineBreakMode? = nil
+    @SetNeeds(.layout) public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil
+    @SetNeeds(.layout) public var placeholder: String? = nil
+    @SetNeeds(.layout) public var placeholderColor: UIColor = YDSColor.textTertiary
     
     private var placeholderLabel: YDSLabel?
     private let maxHeight: CGFloat?
@@ -70,11 +51,23 @@ public class YDSTextView: UITextView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
         isScrollEnabled = isOverHeight
-
+        
         if isScrollEnabled == false {
             invalidateIntrinsicContentSize()
         }
+        
+        setTextStyle()
+        textDidChange()
+        
+        if let placeholder = placeholder {
+            registerPlaceholder(placeholder)
+        } else {
+            removePlaceholder()
+        }
+        
+        placeholderLabel?.textColor = placeholderColor
     }
     
     // MARK: - Public func
