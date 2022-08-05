@@ -15,17 +15,12 @@ public class YDSSearchTextField: UITextField {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     ///  필드를 비활성화 시킬 때 사용합니다.
-    public var isDisabled: Bool = false {
-        didSet {
-            setState()
-            setPlaceholderTextColor()
-        }
-    }
+    @SetNeeds(.layout, .display) public var isDisabled: Bool = false
     
     ///  새 값이 들어오면 setPlaceholderTextColor를 이용해
     ///  적절한 값을 가진 attributedPlaceholder로 변환합니다.
     public override var placeholder: String? {
-        didSet { setPlaceholderTextColor() }
+        didSet { setNeedsDisplay() }
     }
     
     
@@ -156,5 +151,16 @@ public class YDSSearchTextField: UITextField {
                                              right: YDSTextField.Dimension.rightMargin + self.clearButtonWidth + YDSTextField.Dimension.subviewSpacing
         ))
     }
-
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setState()
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        setPlaceholderTextColor()
+    }
 }
