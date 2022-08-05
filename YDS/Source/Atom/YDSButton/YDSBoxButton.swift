@@ -17,77 +17,50 @@ public class YDSBoxButton: UIButton, YDSButtonProtocol {
     /**
      버튼을 비활성화 시킬 때 사용합니다.
      */
-    public var isDisabled: Bool = false {
-        didSet {
-            self.isEnabled = !isDisabled
-            setBoxButtonColor()
-        }
-    }
+    @SetNeeds(.layout, .display) public var isDisabled: Bool = false
     
     /**
      삭제, 탈퇴 등 파괴적인 행위를 할 때
      버튼을 빨간색으로 표시해 경고하기 위해 사용합니다.
      */
-    public var isWarned: Bool = false {
-        didSet { setBoxButtonColor() }
-    }
+    @SetNeeds(.display) public var isWarned: Bool = false
     
     /**
      버튼의 외관을 결정할 때 사용합니다.
      */
-    public var type: BoxButtonType = .filled {
-        didSet { setBoxButtonColor() }
-    }
+    @SetNeeds(.display) public var type: BoxButtonType = .filled
     
     /**
      버튼의 높이, 타이포 크기, 아이콘 크기, 패딩을 결정할 때 사용합니다.
      */
-    public var size: BoxButtonSize = .large {
-        didSet { setBoxButtonSize() }
-    }
+    @SetNeeds(.display) public var size: BoxButtonSize = .large
     
     /**
      버튼의 라운딩을 결정할 때 사용합니다.
      */
-    public var rounding: BoxButtonRounding = .r4 {
-        didSet { setBoxButtonRounding() }
-    }
+    @SetNeeds(.layout) public var rounding: BoxButtonRounding = .r4
     
     /**
      버튼의 글귀를 설정할 때 사용합니다.
      */
-    public var text: String? = nil {
-        didSet {
-            setTitle(text, for: .normal)
-            setLayoutAccordingToIcon()
-        }
-    }
+    @SetNeeds(.layout, .display) public var text: String? = nil
     
     /**
      버튼의 좌측에 들어갈 아이콘을 설정할 때 사용합니다.
      */
-    public var leftIcon: UIImage? = nil {
-        didSet { setIcon() }
-    }
+    @SetNeeds(.display) public var leftIcon: UIImage? = nil
     
     /**
      버튼의 우측에 들어갈 아이콘을 설정할 때 사용합니다.
      */
-    public var rightIcon: UIImage? = nil {
-        didSet { setIcon() }
-    }
+    @SetNeeds(.display) public var rightIcon: UIImage? = nil
     
     /**
      기본 속성을 override한 후 didSet을 설정하여
      값이 바뀔 때 ( = 버튼을 누르거나 땠을 때 ) 그에 맞춰 색을 바꿔줍니다.
      */
     public override var isHighlighted: Bool {
-        didSet {
-            if oldValue != isHighlighted {
-                setTintColorBasedOnIsHighlighted()
-                setBorderColorBasedOnIsHighlighted()
-            }
-        }
+        didSet { setNeedsDisplay() }
     }
     
     
@@ -459,7 +432,22 @@ public class YDSBoxButton: UIButton, YDSButtonProtocol {
         self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.contentEdgeInsets = UIEdgeInsets(top: 0, left: size.padding, bottom: 0, right: size.padding)
     }
-
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        isEnabled = !isDisabled
+        setTitle(text, for: .normal)
+        
+        setBoxButtonRounding()
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        setBoxButtonColor()
+        setBoxButtonSize()
+    }
 }
 
 extension UIButton {
