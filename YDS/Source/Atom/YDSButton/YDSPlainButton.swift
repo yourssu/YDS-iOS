@@ -17,81 +17,46 @@ public class YDSPlainButton: UIButton, YDSButtonProtocol {
     /**
      버튼을 비활성화 시킬 때 사용합니다.
      */
-    public var isDisabled: Bool = false {
-        didSet {
-            self.isEnabled = !isDisabled
-            setColor()
-        }
-    }
+    @SetNeeds(.layout, .display) public var isDisabled: Bool = false
     
     /**
      삭제, 탈퇴 등 파괴적인 행위를 할 때
      버튼을 빨간색으로 표시해 경고하기 위해 사용합니다.
      */
-    public var isWarned: Bool = false {
-        didSet { setColor() }
-    }
+    @SetNeeds(.display) public var isWarned: Bool = false
     
     
     /**
      버튼을 파란색 표시해 강조하기 위해 사용합니다.
      */
-    public var isPointed: Bool = false {
-        didSet { setColor() }
-    }
+    @SetNeeds(.display) public var isPointed: Bool = false
     
     /**
      타이포 크기, 아이콘 크기를 결정할 때 사용합니다.
      */
-    public var size: PlainButtonSize = .large {
-        didSet {
-            if size == .large {
-                setTitle(nil, for: .normal)
-            } else {
-                setTitle(text, for: .normal)
-            }
-            setSize()
-        }
-    }
+    @SetNeeds(.layout, .display) public var size: PlainButtonSize = .large
     
     /**
      버튼의 글귀를 설정할 때 사용합니다.
      */
-    public var text: String? = nil {
-        didSet {
-            if size == .large {
-                setTitle(nil, for: .normal)
-            } else {
-                setTitle(text, for: .normal)
-            }
-            setLayoutAccordingToIcon()
-        }
-    }
+    @SetNeeds(.layout, .display) public var text: String? = nil
     
     /**
      버튼의 좌측에 들어갈 아이콘을 설정할 때 사용합니다.
      */
-    public var leftIcon: UIImage? = nil {
-        didSet { setIcon() }
-    }
+    @SetNeeds(.display) public var leftIcon: UIImage? = nil
     
     /**
      버튼의 우측에 들어갈 아이콘을 설정할 때 사용합니다.
      */
-    public var rightIcon: UIImage? = nil {
-        didSet { setIcon() }
-    }
+    @SetNeeds(.display) public var rightIcon: UIImage? = nil
     
     /**
      기본 속성을 override한 후 didSet을 설정하여
      값이 바뀔 때 ( = 버튼을 누르거나 땠을 때 ) 그에 맞춰 색을 바꿔줍니다.
      */
     public override var isHighlighted: Bool {
-        didSet {
-            if oldValue != isHighlighted {
-                setTintColorBasedOnIsHighlighted()
-            }
-        }
+        didSet { setNeedsDisplay() }
     }
     
     
@@ -309,5 +274,23 @@ public class YDSPlainButton: UIButton, YDSButtonProtocol {
         self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        isEnabled = !isDisabled
+        
+        if size == .large {
+            setTitle(nil, for: .normal)
+        } else {
+            setTitle(text, for: .normal)
+        }
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        setColor()
+        setSize()
+    }
 }
