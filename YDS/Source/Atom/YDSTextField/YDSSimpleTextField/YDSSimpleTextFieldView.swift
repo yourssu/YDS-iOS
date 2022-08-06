@@ -15,28 +15,13 @@ public class YDSSimpleTextFieldView: UIView {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     ///  필드를 비활성화 시킬 때 사용합니다.
-    public var isDisabled: Bool = false {
-        didSet {
-            setState()
-            textField.isDisabled = self.isDisabled
-        }
-    }
+    @SetNeeds(.layout) public var isDisabled: Bool = false
     
     ///  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
-    public var isNegative: Bool = false {
-        didSet {
-            setState()
-            textField.isNegative = self.isNegative
-        }
-    }
+    @SetNeeds(.layout) public var isNegative: Bool = false
 
     ///  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
-    public var isPositive: Bool = false {
-        didSet {
-            setState()
-            textField.isPositive = self.isPositive
-        }
-    }
+    @SetNeeds(.layout) public var isPositive: Bool = false
     
     ///  필드에 입력된 텍스트입니다.
     public var text: String? {
@@ -169,5 +154,12 @@ public class YDSSimpleTextFieldView: UIView {
         helperLabel.textColor = YDSColor.textTertiary
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        setState()
+        textField.isDisabled = isDisabled
+        textField.isNegative = isNegative
+        textField.isPositive = isPositive
+    }
 }
-
