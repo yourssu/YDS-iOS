@@ -112,7 +112,7 @@ public class YDSPasswordTextField: UITextField {
             self.layer.borderColor = nil
             return
         }
-
+        
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
@@ -188,9 +188,9 @@ public class YDSPasswordTextField: UITextField {
                                              left: YDSTextField.Dimension.leftMargin,
                                              bottom: 0,
                                              right: YDSTextField.Dimension.rightMargin + self.maskingButtonWidth + YDSTextField.Dimension.subviewSpacing
-        ))
+                                            ))
     }
-
+    
     ///  editingRect의 Bound에 관한 함수입니다.
     ///  text label의 너비를 설정하기 위해 사용합니다.
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -198,7 +198,7 @@ public class YDSPasswordTextField: UITextField {
                                              left: YDSTextField.Dimension.leftMargin,
                                              bottom: 0,
                                              right: YDSTextField.Dimension.rightMargin + self.maskingButtonWidth + YDSTextField.Dimension.subviewSpacing
-        ))
+                                            ))
     }
     
     ///  이 값이 바뀔 때마다 isFirstResponder를 체크한 후
@@ -210,7 +210,7 @@ public class YDSPasswordTextField: UITextField {
             }
         }
     }
-
+    
     ///  이 메소드가 호출될 때 firstResponder가 되게 함과 동시에
     ///  기존에 필드에 입력된 값을 복사한 후, 임시 변수에 저장하고
     ///  기존에 필드에 입력된 값을 지운 후, 임시 변수에 저장한 값을 붙여넣습니다.
@@ -233,6 +233,5 @@ public class YDSPasswordTextField: UITextField {
             return false
         }
         return super.canPerformAction(action, withSender: sender)
-   }
+    }
 }
-
