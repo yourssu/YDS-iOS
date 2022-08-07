@@ -102,13 +102,13 @@
 		C3985FB827F839A700389A22 /* UIApplication+findWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */; };
 		C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3498527E710F900005034 /* Optional+isEmpty.swift */; };
 		C3A48BC3285DC90100601094 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = C3A48BC2285DC90100601094 /* Parchment */; };
+		C3AFE2E2289FB1FA007D391D /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AFE2E1289FB1FA007D391D /* BottomSheetPageViewController.swift */; };
 		C3BCE664284BB3C40098E49E /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCE663284BB3C40098E49E /* ContentViewController.swift */; };
 		C3BD4E39285DBCEA00B484DC /* YDSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */; };
 		C3DCB31B2820010800F98257 /* YDSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31A2820010800F98257 /* YDSList.swift */; };
 		C3DCB31D2820010D00F98257 /* YDSListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31C2820010D00F98257 /* YDSListItem.swift */; };
 		C3DCB31F2820081E00F98257 /* YDSListToggleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB31E2820081E00F98257 /* YDSListToggleItem.swift */; };
 		C3DCB322282154D600F98257 /* ListPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB321282154D600F98257 /* ListPageViewController.swift */; };
-		C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */; };
 		C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */; };
 		C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */; };
 		C7F6908D27DDDA03002B63C9 /* IconsListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6908C27DDDA03002B63C9 /* IconsListItemCell.swift */; };
@@ -203,7 +203,6 @@
 		539110BB26C373C90094FD08 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 		539110BE26C3743D0094FD08 /* YDSTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBar.swift; sourceTree = "<group>"; };
 		5394692D2663D6DB003D7A44 /* YDSConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSConstant.swift; sourceTree = "<group>"; };
-		539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		53A31B5D266F500300461C29 /* YDSToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToggle.swift; sourceTree = "<group>"; };
 		53ADEA2226A1794800153636 /* YDSBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBundle.swift; sourceTree = "<group>"; };
 		53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPageViewController.swift; sourceTree = "<group>"; };
@@ -240,13 +239,13 @@
 		C3985FB527F832EA00389A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+findWindow.swift"; sourceTree = "<group>"; };
 		C3A3498527E710F900005034 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
+		C3AFE2E1289FB1FA007D391D /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		C3BCE663284BB3C40098E49E /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSTabBarViewController.swift; sourceTree = "<group>"; };
 		C3DCB31A2820010800F98257 /* YDSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSList.swift; sourceTree = "<group>"; };
 		C3DCB31C2820010D00F98257 /* YDSListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListItem.swift; sourceTree = "<group>"; };
 		C3DCB31E2820081E00F98257 /* YDSListToggleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListToggleItem.swift; sourceTree = "<group>"; };
 		C3DCB321282154D600F98257 /* ListPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPageViewController.swift; sourceTree = "<group>"; };
-		C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		C7F6908827DDCD17002B63C9 /* IconsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsPageViewController.swift; sourceTree = "<group>"; };
 		C7F6908A27DDCDD3002B63C9 /* IconsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsListTableViewController.swift; sourceTree = "<group>"; };
 		C7F6908C27DDDA03002B63C9 /* IconsListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsListItemCell.swift; sourceTree = "<group>"; };
@@ -435,20 +434,19 @@
 			isa = PBXGroup;
 			children = (
 				5365FD58274A41F400B6FBF9 /* LabelPageViewController.swift */,
-				53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */,
 				53C9F70526B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift */,
+				53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */,
 				5337939126AF0A7300BE5860 /* BoxButtonPageViewController.swift */,
 				53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */,
-				53C9F70126B5976700EF7B86 /* BadgePageViewController.swift */,
+				DD9F4CAF27EB0663004F6CB5 /* EmojiButtonPageViewController.swift */,
+				53C445B026B92BEB00AAC753 /* CheckboxPageViewController.swift */,
 				53E2CF3B26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift */,
 				53E2CF3D26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift */,
 				53E2CF3F26D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift */,
 				53E2CF4126D2A3DA000DE005 /* SearchTextFieldPageViewController.swift */,
 				53E2CF4326D2A462000DE005 /* SearchBarPageViewController.swift */,
-				C79DF3E9279F3868009763AC /* BottomSheetPageViewController.swift */,
-				539C570727A5C5AC0064A90C /* BottomSheetPageViewController.swift */,
+				C3AFE2E1289FB1FA007D391D /* BottomSheetPageViewController.swift */,
 				C37F357127DE34FE007DF859 /* TextViewViewController.swift */,
-				DD9F4CAF27EB0663004F6CB5 /* EmojiButtonPageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -523,10 +521,10 @@
 			isa = PBXGroup;
 			children = (
 				53EFF5CD26BA9CD400732DCF /* YDSToast.swift */,
-				5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */,
 				539110BD26C373D20094FD08 /* TopBar */,
+				5359A5BC26BEC30300FCCECC /* YDSBottomBarController.swift */,
 				C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */,
-				C31F2A8C284BB2B9000CD31B /* TabBar */,
+				C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */,
 				C3DCB319282000E500F98257 /* List */,
 			);
 			path = Component;
@@ -536,21 +534,13 @@
 			isa = PBXGroup;
 			children = (
 				53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */,
-				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
 				537A0AD126C4189D00142DCE /* TopBar */,
+				5359A5C026BEC99700FCCECC /* BottomBarControllerPageViewController.swift */,
 				C350ABE02808585500BFC9C0 /* Tooltip */,
 				C31F2B0C284BB34D000CD31B /* TabBar */,
 				C3DCB320282154C500F98257 /* List */,
 			);
 			path = ComponentSampleViewController;
-			sourceTree = "<group>";
-		};
-		C31F2A8C284BB2B9000CD31B /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		C31F2B0C284BB34D000CD31B /* TabBar */ = {
@@ -879,7 +869,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30E373D2888604E003CDDB0 /* PlainButtonPageViewController.swift in Sources */,
-				C79DF3EA279F3868009763AC /* BottomSheetPageViewController.swift in Sources */,
 				53441B0226AF248900CB6BC9 /* EnumControllerView.swift in Sources */,
 				DD9F4CB027EB0663004F6CB5 /* EmojiButtonPageViewController.swift in Sources */,
 				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
@@ -887,6 +876,7 @@
 				532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				538ACCAE26EB40380044A437 /* ColorsPageViewController.swift in Sources */,
 				537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */,
+				C3AFE2E2289FB1FA007D391D /* BottomSheetPageViewController.swift in Sources */,
 				53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
 				5365FD5B274A4ED000B6FBF9 /* IntControllerView.swift in Sources */,
