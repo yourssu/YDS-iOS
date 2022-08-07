@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS, introduced: 13, deprecated: 15, message: "iOS 15 이상의 버전에서는 @Invalidating property wrapper를 사용해주세요")
 public struct SetNeedsOptions: OptionSet {
     public let rawValue: Int
 
@@ -18,6 +19,7 @@ public struct SetNeedsOptions: OptionSet {
     public static let layout = SetNeedsOptions(rawValue: 1 << 1)
 }
 
+@available(iOS, introduced: 13, deprecated: 15, message: "iOS 15 이상의 버전에서는 @Invalidating property wrapper를 사용해주세요")
 @propertyWrapper
 public struct SetNeeds<Value: Equatable> {
     private var value: Value
