@@ -20,24 +20,14 @@ public class YDSTopBarButton: UIButton {
     /**
      버튼을 비활성화 시킬 때 사용합니다.
      */
-    public var isDisabled: Bool = false {
-        didSet {
-            self.isEnabled = !isDisabled
-            setColor()
-        }
-    }
+    @SetNeeds(.layout, .display) public var isDisabled: Bool = false
     
     /**
      기본 속성을 override한 후 didSet을 설정하여
      값이 바뀔 때 ( = 버튼을 누르거나 땠을 때 ) 그에 맞춰 색을 바꿔줍니다.
      */
     public override var isHighlighted: Bool {
-        didSet {
-            if oldValue != isHighlighted {
-                setTintColorBasedOnIsHighlighted()
-                setTitleColorBasedOnIsHighlighted()
-            }
-        }
+        didSet { setNeedsDisplay() }
     }
     
     //  MARK: - 내부에서 사용되는 변수
@@ -203,5 +193,14 @@ public class YDSTopBarButton: UIButton {
             ? fgColor
             : fgPressedColor
     }
-
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        self.isEnabled = !isDisabled
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        setColor()
+    }
 }
