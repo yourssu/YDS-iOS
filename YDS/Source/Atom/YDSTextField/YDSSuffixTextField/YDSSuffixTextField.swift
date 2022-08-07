@@ -16,13 +16,13 @@ public class YDSSuffixTextField: UITextField {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     ///  필드를 비활성화 시킬 때 사용합니다.
-    @SetNeeds(.layout, .display) internal var isDisabled: Bool = false
+    @SetNeeds(.display) internal var isDisabled: Bool = false
     
     ///  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
-    @SetNeeds(.layout) internal var isNegative: Bool = false
+    @SetNeeds(.display) internal var isNegative: Bool = false
     
     ///  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
-    @SetNeeds(.layout) internal var isPositive: Bool = false
+    @SetNeeds(.display) internal var isPositive: Bool = false
     
     ///  새 값이 들어오면 setPlaceholderTextColor를 이용해
     ///  적절한 값을 가진 attributedPlaceholder로 변환합니다.
@@ -99,7 +99,7 @@ public class YDSSuffixTextField: UITextField {
             self.layer.borderColor = nil
             return
         }
-
+        
         if isNegative {
             self.isEnabled = true
             self.textColor = YDSColor.textSecondary
@@ -157,9 +157,9 @@ public class YDSSuffixTextField: UITextField {
                                              left: YDSTextField.Dimension.leftMargin,
                                              bottom: 0,
                                              right: YDSTextField.Dimension.rightMargin + self.suffixLabelWidth + YDSTextField.Dimension.subviewSpacing
-        ))
+                                            ))
     }
-
+    
     ///  editingRect의 Bound에 관한 함수입니다.
     ///  text label의 너비를 설정하기 위해 사용합니다.
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
@@ -167,18 +167,13 @@ public class YDSSuffixTextField: UITextField {
                                              left: YDSTextField.Dimension.leftMargin,
                                              bottom: 0,
                                              right: YDSTextField.Dimension.rightMargin + self.suffixLabelWidth + YDSTextField.Dimension.subviewSpacing
-        ))
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        setState()
+                                            ))
     }
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         
+        setState()
         setPlaceholderTextColor()
     }
 }

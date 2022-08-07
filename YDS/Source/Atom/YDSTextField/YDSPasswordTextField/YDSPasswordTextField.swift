@@ -16,32 +16,21 @@ public class YDSPasswordTextField: UITextField {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     ///  필드를 비활성화 시킬 때 사용합니다.
-    internal var isDisabled: Bool = false {
-        didSet {
-            setState()
-            setPlaceholderTextColor()
-        }
-    }
+    @SetNeeds(.display) internal var isDisabled: Bool = false
     
     ///  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
-    internal var isNegative: Bool = false {
-        didSet { setState() }
-    }
+    @SetNeeds(.display) internal var isNegative: Bool = false
     
     ///  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
-    internal var isPositive: Bool = false {
-        didSet { setState() }
-    }
+    @SetNeeds(.display) internal var isPositive: Bool = false
     
     ///  필드에 들어온 입력이 마스킹 되어있는지 여부를 나타낼 때 사용합니다.
-    internal var isMasked: Bool = true {
-        didSet { setMaskingState() }
-    }
+    @SetNeeds(.display) internal var isMasked: Bool = true
     
     ///  새 값이 들어오면 setPlaceholderTextColor를 이용해
     ///  적절한 값을 가진 attributedPlaceholder로 변환합니다.
     public override var placeholder: String? {
-        didSet { setPlaceholderTextColor() }
+        didSet { setNeedsDisplay() }
     }
     
     
@@ -143,9 +132,9 @@ public class YDSPasswordTextField: UITextField {
         self.isSecureTextEntry = isMasked
         
         if isMasked {
-            maskingButton.setImage(maskingOnIcon, for: .normal)
+            maskingButton.leftIcon = maskingOnIcon
         } else {
-            maskingButton.setImage(maskingOffIcon, for: .normal)
+            maskingButton.leftIcon = maskingOffIcon
         }
     }
     
@@ -233,5 +222,12 @@ public class YDSPasswordTextField: UITextField {
             return false
         }
         return super.canPerformAction(action, withSender: sender)
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        setState()
+        setPlaceholderTextColor()
+        setMaskingState()
     }
 }
