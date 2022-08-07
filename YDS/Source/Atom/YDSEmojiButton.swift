@@ -102,8 +102,6 @@ public class YDSEmojiButton: UIControl {
         super.layoutSubviews()
         
         setCornerRadius()
-        
-        
         emojiLabel.text = emoji
         textLabel.text = text
         setEmojiButtonSize()
