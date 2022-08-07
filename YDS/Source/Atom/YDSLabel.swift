@@ -49,6 +49,7 @@ public class YDSLabel: UILabel {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
         setAttributedText()
     }
 }

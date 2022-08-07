@@ -154,6 +154,7 @@ public class YDSBadge: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
         setText()
         setIcon()
         setColor()

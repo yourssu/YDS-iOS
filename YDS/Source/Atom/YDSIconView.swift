@@ -36,6 +36,7 @@ public class YDSIconView: UIImageView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
         setIconSize()
     }
 }

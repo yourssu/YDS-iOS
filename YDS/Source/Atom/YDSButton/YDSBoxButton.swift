@@ -438,7 +438,6 @@ public class YDSBoxButton: UIButton, YDSButtonProtocol {
         
         isEnabled = !isDisabled
         setTitle(text, for: .normal)
-        
         setBoxButtonRounding()
     }
     

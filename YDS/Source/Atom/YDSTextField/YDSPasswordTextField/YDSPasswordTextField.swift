@@ -226,6 +226,7 @@ public class YDSPasswordTextField: UITextField {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
+        
         setState()
         setPlaceholderTextColor()
         setMaskingState()
