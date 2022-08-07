@@ -22,25 +22,13 @@ final public class YDSTooltip: UIView {
     //  MARK: - 외부에서 지정할 수 없는 속성
     
     /// 툴팁 내부 label의 텍스트를 설정할 때 사용합니다.
-    private var text: String {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    @SetNeeds(.layout) private var text: String = ""
     
     /// 툴팁의 색깔을 설정합니다.
-    private var color: TooltipColor {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    @SetNeeds(.layout) private var color: TooltipColor = .tooltipBG
     
     /// 툴팁의 꼬리 위치를 설정할 때 사용합니다.
-    private var tailPosition: TailPosition {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    @SetNeeds(.layout) private var tailPosition: TailPosition = .bottomCenter
     
     /// 툴팁이 뷰에 유지되는 시간을 설정할 때 사용합니다.
     private var duration: TooltipDuration
