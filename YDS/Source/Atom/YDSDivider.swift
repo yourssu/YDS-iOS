@@ -70,6 +70,7 @@ public class YDSDivider: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
         setColor()
         setThickness()
     }

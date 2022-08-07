@@ -151,6 +151,7 @@ public class YDSProfileImageView: UIImageView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        
         setImageSize()
     }
 }
