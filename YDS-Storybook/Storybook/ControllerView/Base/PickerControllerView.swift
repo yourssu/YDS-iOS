@@ -16,7 +16,7 @@ class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
     
     private let pickerViewToolbar: UIToolbar = {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width:UIScreen.main.bounds.width, height:44))
-        let selectButton = UIBarButtonItem(barButtonSystemItem: .done, target: PickerControllerView<T>.self, action: #selector(dismissPickerView(_:)))
+        let selectButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPickerView(_:)))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.setItems([spacer, selectButton], animated: true)
         toolbar.tintColor = YDSColor.buttonPoint
