@@ -37,11 +37,7 @@ public class YDSList: UIView {
     //  MARK: - 외부에서 지정할 수 있는 속성
     
     /// List의 Subheader
-    public var subheader: String? {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    @SetNeeds(.layout) public var subheader: String? = nil
     
     // MARK: - 메소드
 
