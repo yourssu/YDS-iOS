@@ -20,7 +20,7 @@ YDS 문서는 노션 페이지에서 관리됩니다.
 ## 🧪 샘플 어플리케이션
 ![storybook](https://user-images.githubusercontent.com/54972653/133135378-f865e2ce-db15-4c1e-8631-74c4c04001c1.gif)
 
-[YDS Storybook](https://testflight.apple.com/join/00LW9q4d)  
+[YDS Storybook 앱스토어 링크](https://apps.apple.com/kr/app/yds-storybook/id1584167620)  
 YDS 컴포넌트를 직접 조작할 수 있는 샘플 어플리케이션입니다.  
 
 ## 📱 YDS를 사용해 개발한 어플리케이션
