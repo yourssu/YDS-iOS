@@ -19,7 +19,7 @@ public class YDSSimpleTextFieldView: UIView {
     
     ///  필드에 들어온 입력이 잘못되었음을 알릴 때 사용합니다.
     @SetNeeds(.layout) public var isNegative: Bool = false
-
+    
     ///  필드에 들어온 입력이 제대로 되었음을 알릴 때 사용합니다.
     @SetNeeds(.layout) public var isPositive: Bool = false
     
@@ -66,7 +66,7 @@ public class YDSSimpleTextFieldView: UIView {
         }
     }
     
-
+    
     //  MARK: - 뷰
     
     ///  fieldLabel, textField, helperLabel을 담는 stackView입니다.
