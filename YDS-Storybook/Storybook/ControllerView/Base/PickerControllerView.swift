@@ -14,7 +14,7 @@ class PickerControllerView<T>: ControllerView<T>, UIPickerViewDataSource {
     
     public let pickerView = UIPickerView()
     
-    private let pickerViewToolbar: UIToolbar = {
+    private lazy var pickerViewToolbar: UIToolbar = {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width:UIScreen.main.bounds.width, height:44))
         let selectButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPickerView(_:)))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
