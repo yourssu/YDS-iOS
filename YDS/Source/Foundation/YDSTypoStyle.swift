@@ -94,8 +94,11 @@ extension String {
             case .body1, .body2:
                 return 1.5
                 
-            case .button0, .button1, .button2, .button3, .button4:
-                return 1.0
+            case .button0, .button1, .button4:
+                return 1.4
+                
+            case .button2, .button3:
+                return 1.3
                 
             case .caption0, .caption1, .caption2:
                 return 1.3
