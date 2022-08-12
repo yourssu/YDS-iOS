@@ -33,6 +33,7 @@ YDS 컴포넌트를 직접 조작할 수 있는 샘플 어플리케이션입니�
 ## 🙏 의존하는 외부 라이브러리
 [SnapKit](https://github.com/SnapKit/SnapKit)  
 [PanModal](https://github.com/slackhq/PanModal)  
+[Parchment](https://github.com/rechsteiner/Parchment)  
 [RxSwift](https://github.com/ReactiveX/RxSwift) - 샘플 어플리케이션 전용
 
 ## 📚 참고한 자료
