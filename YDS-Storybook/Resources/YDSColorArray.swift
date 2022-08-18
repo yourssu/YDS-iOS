@@ -14,6 +14,12 @@ struct Color {
     let basicColorName: String
 }
 
+extension Color: CustomStringConvertible {
+    var description: String {
+        return self.name
+    }
+}
+
 struct Colors {
     let items: [Color]
     let description: String?

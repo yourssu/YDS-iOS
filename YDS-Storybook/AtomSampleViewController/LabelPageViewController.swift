@@ -63,9 +63,9 @@ class LabelPageViewController: StoryBookViewController {
         }
         
         addOption(description: "textColor",
-                  cases: textColors.items.map { $0.color },
-                  defaultIndex: 0) { [weak self] value in
-            self?.sampleLabel.textColor = value
+                  cases: textColors.items,
+                  defaultIndex: 0) { [weak self] colorInfo in
+            self?.sampleLabel.textColor = colorInfo.color
         }
         
         addOption(description: "lineBreakMode",
@@ -77,7 +77,7 @@ class LabelPageViewController: StoryBookViewController {
         if #available(iOS 14.0, *) {
             addOption(description: "lineBreakStrategy",
                       cases: NSParagraphStyle.LineBreakStrategy.allCases,
-                      defaultIndex: 1) { [weak self] value in
+                      defaultIndex: 2) { [weak self] value in
                 self?.sampleLabel.lineBreakStrategy = value
             }
         }
@@ -105,7 +105,8 @@ extension NSLineBreakMode: CaseIterable {
 
 @available(iOS 14.0, *)
 extension NSParagraphStyle.LineBreakStrategy: CaseIterable {
-    public static var allCases: [NSParagraphStyle.LineBreakStrategy] = [.pushOut,
+    public static var allCases: [NSParagraphStyle.LineBreakStrategy] = [[],
+                                                                        .pushOut,
                                                                         .hangulWordPriority,
                                                                         .standard,]
 }
