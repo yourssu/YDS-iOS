@@ -102,6 +102,9 @@
 		C3985FB827F839A700389A22 /* UIApplication+findWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */; };
 		C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3498527E710F900005034 /* Optional+isEmpty.swift */; };
 		C3A48BC3285DC90100601094 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = C3A48BC2285DC90100601094 /* Parchment */; };
+		C3A8033728AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A8033628AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift */; };
+		C3A8033928AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A8033828AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift */; };
+		C3A8033B28AE2A96008E2380 /* UIModalPresentationStyle+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A8033A28AE2A96008E2380 /* UIModalPresentationStyle+CustomStringConvertible.swift */; };
 		C3AFE2E2289FB1FA007D391D /* BottomSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AFE2E1289FB1FA007D391D /* BottomSheetPageViewController.swift */; };
 		C3BCE664284BB3C40098E49E /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCE663284BB3C40098E49E /* ContentViewController.swift */; };
 		C3BD4E39285DBCEA00B484DC /* YDSTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */; };
@@ -239,6 +242,9 @@
 		C3985FB527F832EA00389A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+findWindow.swift"; sourceTree = "<group>"; };
 		C3A3498527E710F900005034 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
+		C3A8033628AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLineBreakMode+CustomStringConvertible.swift"; sourceTree = "<group>"; };
+		C3A8033828AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift"; sourceTree = "<group>"; };
+		C3A8033A28AE2A96008E2380 /* UIModalPresentationStyle+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalPresentationStyle+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		C3AFE2E1289FB1FA007D391D /* BottomSheetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPageViewController.swift; sourceTree = "<group>"; };
 		C3BCE663284BB3C40098E49E /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		C3BD4E38285DBCEA00B484DC /* YDSTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSTabBarViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 		532DBFD326EC7330008C2354 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C3A8033528AE23B4008E2380 /* Description */,
 				532DBFD126EC7323008C2354 /* UITableView+Generic.swift */,
 				C3A3498527E710F900005034 /* Optional+isEmpty.swift */,
 				532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */,
@@ -568,6 +575,16 @@
 				C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C3A8033528AE23B4008E2380 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				C3A8033628AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift */,
+				C3A8033828AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift */,
+				C3A8033A28AE2A96008E2380 /* UIModalPresentationStyle+CustomStringConvertible.swift */,
+			);
+			path = Description;
 			sourceTree = "<group>";
 		};
 		C3DCB319282000E500F98257 /* List */ = {
@@ -896,8 +913,10 @@
 				C3BCE664284BB3C40098E49E /* ContentViewController.swift in Sources */,
 				C7F6908927DDCD17002B63C9 /* IconsPageViewController.swift in Sources */,
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
+				C3A8033928AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
+				C3A8033B28AE2A96008E2380 /* UIModalPresentationStyle+CustomStringConvertible.swift in Sources */,
 				C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */,
 				53E26E8626F0619E0036648E /* TypographiesPageViewController.swift in Sources */,
 				C3985FB627F832EA00389A22 /* SceneDelegate.swift in Sources */,
@@ -914,6 +933,7 @@
 				53E2CF4226D2A3DA000DE005 /* SearchTextFieldPageViewController.swift in Sources */,
 				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
 				532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */,
+				C3A8033728AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
