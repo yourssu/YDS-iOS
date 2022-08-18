@@ -37,7 +37,16 @@ class TextViewViewController: StoryBookViewController {
         return button
     }()
     
-    private lazy var textView = YDSTextView(maxHeight: maxHeight)
+    private lazy var textView: YDSTextView = {
+        let textView = YDSTextView(maxHeight: maxHeight)
+        textView.delegate = self
+        textView.isScrollEnabled = false
+        textView.isEditable = true
+        textView.textContainerInset = .init(top: 12, left: 0, bottom: 12, right: 0)
+        textView.placeholder = YDSPlaceholder.comment
+        return textView
+    }()
+    
     private lazy var titleLabel: YDSLabel = {
         let label = YDSLabel(style: .subtitle2)
         label.textColor = YDSColor.textPrimary
@@ -53,14 +62,8 @@ class TextViewViewController: StoryBookViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.delegate = self
-        textView.isScrollEnabled = false
-        textView.isEditable = true
-        textView.textContainerInset = .init(top: 12, left: 0, bottom: 12, right: 0)
-        textView.placeholder = YDSPlaceholder.comment
-        
         setupView()
-        stateLabel.text = textView.attributedText.isEmpty.description
+        addOptions()
     }
     
     private let maxHeight: CGFloat = 150
@@ -72,6 +75,7 @@ class TextViewViewController: StoryBookViewController {
     
     private func setViewProperty() {
         title = "TextView"
+        stateLabel.text = textView.attributedText.isEmpty.description
     }
     
     private func setViewLayouts() {
@@ -109,6 +113,34 @@ class TextViewViewController: StoryBookViewController {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(30)
             $0.bottom.equalToSuperview().inset(12)
+        }
+    }
+    
+    private func addOptions() {
+        addOption(description: "textColor",
+                  cases: textColors.items,
+                  defaultIndex: 0) { [weak self] colorInfo in
+            self?.textView.textColor = colorInfo.color
+        }
+        
+        addOption(description: "lineBreakMode",
+                  cases: NSLineBreakMode.allCases,
+                  defaultIndex: 0) { [weak self] value in
+            self?.textView.lineBreakMode = value
+        }
+        
+        if #available(iOS 14.0, *) {
+            addOption(description: "lineBreakStrategy",
+                      cases: NSParagraphStyle.LineBreakStrategy.allCases,
+                      defaultIndex: 2) { [weak self] value in
+                self?.textView.lineBreakStrategy = value
+            }
+        }
+        
+        addOption(description: "placeholder",
+                  cases: textColors.items,
+                  defaultIndex: 2) { [weak self] colorInfo in
+            self?.textView.placeholderColor = colorInfo.color
         }
     }
     
