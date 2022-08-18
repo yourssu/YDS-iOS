@@ -11,22 +11,43 @@ import SnapKit
 public class YDSTextView: UITextView {
     
     public override var text: String? {
-        didSet { setNeedsLayout() }
+        didSet { textDidChange() }
     }
     
     public override var attributedText: NSAttributedString? {
-        didSet { setNeedsLayout() }
+        didSet { textDidChange() }
     }
     
     public override var textColor: UIColor! {
-        didSet { setNeedsLayout() }
+        didSet { textColorDidChange() }
     }
     
-    @SetNeeds(.layout) public var style: String.TypoStyle = .body1
-    @SetNeeds(.layout) public var lineBreakMode: NSLineBreakMode? = nil
-    @SetNeeds(.layout) public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil
-    @SetNeeds(.layout) public var placeholder: String? = nil
-    @SetNeeds(.layout) public var placeholderColor: UIColor = YDSColor.textTertiary
+    public var style: String.TypoStyle = .body1 {
+        didSet { setTextStyle() }
+    }
+    public var lineBreakMode: NSLineBreakMode? = nil {
+        didSet { setTextStyle() }
+    }
+    public var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil {
+        didSet { setTextStyle() }
+    }
+    
+    public var placeholder: String? = nil {
+        didSet {
+            
+            if let placeholder = placeholder {
+                registerPlaceholder(placeholder)
+            } else {
+                removePlaceholder()
+            }
+        }
+    }
+    
+    public var placeholderColor: UIColor! = YDSColor.textTertiary {
+        didSet {
+            placeholderLabel?.textColor = placeholderColor
+        }
+    }
     
     private var placeholderLabel: YDSLabel?
     private let maxHeight: CGFloat?
@@ -38,7 +59,7 @@ public class YDSTextView: UITextView {
         self.maxHeight = maxHeight
         super.init(frame: .zero, textContainer: nil)
         self.tintColor = YDSColor.textPointed
-        setTextStyle()
+        typingAttributes = makeTextStyle()
     }
     
     required init?(coder: NSCoder) {
@@ -57,17 +78,6 @@ public class YDSTextView: UITextView {
         if isScrollEnabled == false {
             invalidateIntrinsicContentSize()
         }
-        
-        setTextStyle()
-        textDidChange()
-        
-        if let placeholder = placeholder {
-            registerPlaceholder(placeholder)
-        } else {
-            removePlaceholder()
-        }
-        
-        placeholderLabel?.textColor = placeholderColor
     }
     
     // MARK: - Public func
@@ -131,10 +141,26 @@ public class YDSTextView: UITextView {
         return contentSize.height >= maxHeight
     }
     
+    private func makeTextStyle() -> [NSAttributedString.Key : Any] {
+        return style.style(color: textColor,
+                           lineBreakMode: lineBreakMode,
+                           lineBreakStrategy: lineBreakStrategy)
+    }
+    
     private func setTextStyle() {
-        typingAttributes = style.style(color: textColor,
-                                       lineBreakMode: lineBreakMode,
-                                       lineBreakStrategy: lineBreakStrategy)
+        let attributes = makeTextStyle()
+        
+        if let attributedText = attributedText {
+            let attributedString = NSAttributedString(string: attributedText.string, attributes: attributes)
+            self.attributedText = attributedString
+        }
+        typingAttributes = attributes
+    }
+    
+    private func textColorDidChange() {
+        if let textColor = textColor {
+            typingAttributes.updateValue(textColor, forKey: .foregroundColor)
+        }
     }
     
     @objc
