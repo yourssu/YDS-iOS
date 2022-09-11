@@ -7,812 +7,730 @@
 
 import UIKit
 
-fileprivate extension UIColor {
-    convenience init(hex: String, alpha: CGFloat = 1.0) {
-        var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
-        
-        if hexFormatted.hasPrefix("#") {
-            hexFormatted = String(hexFormatted.dropFirst())
-        }
-        
-        assert(hexFormatted.count == 6, "Invalid hex code used.")
-        var rgbValue: UInt64 = 0
-        Scanner(string: hexFormatted).scanHexInt64(&rgbValue)
-        
-        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-                  blue: CGFloat(rgbValue & 0x0000FF) / 255.0, alpha: alpha)
-    }
-}
-
-internal enum YDSBasicColor {
+internal extension UIColor {
     
-    //  MARK: - 그라운드 컬러
+    //  MARK: - Logo
     
-    static var groundColor050: UIColor {
-        return UIColor(hex: "#E1F2FE")
-    }
-
-    static var groundColor100: UIColor {
-        return UIColor(hex: "#B6DDFE")
-    }
-
-    static var groundColor200: UIColor {
-        return UIColor(hex: "#86C8FE")
-    }
-
-    static var groundColor300: UIColor {
-        return UIColor(hex: "#4EB2FE")
-    }
-
-    static var groundColor400: UIColor {
-        return UIColor(hex: "#00A3FF")
-    }
-
-    static var groundColor500: UIColor {
-        return UIColor(hex: "#0092FE")
-    }
-
-    static var groundColor600: UIColor {
-        return UIColor(hex: "#0084F0")
-    }
-
-    static var groundColor700: UIColor {
-        return UIColor(hex: "#0072DD")
-    }
-
-    static var groundColor800: UIColor {
-        return UIColor(hex: "#0060CB")
-    }
-
-    static var groundColor900: UIColor {
-        return UIColor(hex: "#0042AB")
+    static var logoIndigo: UIColor {
+        return UIColor.load(name: "logoIndigo")
     }
     
-    
-    //  MARK: - 숨쉴때 컬러
-    
-    static var soomsilColor050: UIColor {
-        return UIColor(hex: "#EBE6FB")
-    }
-
-    static var soomsilColor100: UIColor {
-        return UIColor(hex: "#CBC1F6")
-    }
-
-    static var soomsilColor200: UIColor {
-        return UIColor(hex: "#B2A4EF")
-    }
-
-    static var soomsilColor300: UIColor {
-        return UIColor(hex: "#A797F0")
-    }
-
-    static var soomsilColor400: UIColor {
-        return UIColor(hex: "#816DEC")
-    }
-
-    static var soomsilColor500: UIColor {
-        return UIColor(hex: "#5D4DE8")
-    }
-
-    static var soomsilColor600: UIColor {
-        return UIColor(hex: "#3230DC")
-    }
-
-    static var soomsilColor700: UIColor {
-        return UIColor(hex: "#1B2CD6")
-    }
-
-    static var soomsilColor800: UIColor {
-        return UIColor(hex: "#0025CD")
-    }
-
-    static var soomsilColor900: UIColor {
-        return UIColor(hex: "#0020C5")
+    static var logoViolet: UIColor {
+        return UIColor.load(name: "logoViolet")
     }
     
-    
-    //  MARK: - Color Theme
-    
-    static var theme: YDSThemeColor.Theme {
-        get { return YDSThemeColor.theme }
-    }
-
-    static var pointColor050: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor050
-        case .soomsil:
-            return soomsilColor050
-        }
-    }
-
-    static var pointColor100: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor100
-        case .soomsil:
-            return soomsilColor100
-        }
-    }
-
-    static var pointColor200: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor200
-        case .soomsil:
-            return soomsilColor200
-        }
-    }
-
-    static var pointColor300: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor300
-        case .soomsil:
-            return soomsilColor300
-        }
-    }
-
-    static var pointColor400: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor400
-        case .soomsil:
-            return soomsilColor400
-        }
-    }
-
-    static var pointColor500: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor500
-        case .soomsil:
-            return soomsilColor500
-        }
-    }
-
-    static var pointColor600: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor600
-        case .soomsil:
-            return soomsilColor600
-        }
-    }
-
-    static var pointColor700: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor700
-        case .soomsil:
-            return soomsilColor700
-        }
-    }
-
-    static var pointColor800: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor800
-        case .soomsil:
-            return soomsilColor800
-        }
-    }
-
-    static var pointColor900: UIColor {
-        switch theme {
-        case .ground:
-            return groundColor900
-        case .soomsil:
-            return soomsilColor900
-        }
-    }
-    
-    
-    //  MARK: - Logo Color
-    
-    static var logoBlue: UIColor {
-        return UIColor(hex: "#1653DB")
-    }
-
     static var logoYellow: UIColor {
-        return UIColor(hex: "#FFC441")
+        return UIColor.load(name: "logoYellow")
     }
-
+    
+    
+    //  MARK: - PointColor
+    
+    static var pointColor050: UIColor {
+        return UIColor.load(name: "pointColor050")
+    }
+    
+    static var pointColor100: UIColor {
+        return UIColor.load(name: "pointColor100")
+    }
+    
+    static var pointColor200: UIColor {
+        return UIColor.load(name: "pointColor200")
+    }
+    
+    static var pointColor300: UIColor {
+        return UIColor.load(name: "pointColor300")
+    }
+    
+    static var pointColor400: UIColor {
+        return UIColor.load(name: "pointColor400")
+    }
+    
+    static var pointColor500: UIColor {
+        return UIColor.load(name: "pointColor500")
+    }
+    
+    static var pointColor600: UIColor {
+        return UIColor.load(name: "pointColor600")
+    }
+    
+    static var pointColor700: UIColor {
+        return UIColor.load(name: "pointColor700")
+    }
+    
+    static var pointColor800: UIColor {
+        return UIColor.load(name: "pointColor800")
+    }
+    
+    static var pointColor900: UIColor {
+        return UIColor.load(name: "pointColor900")
+    }
+    
+    
+    //  MARK: - WarningRed
+    
+    static var warningRed050: UIColor {
+        return UIColor.load(name: "warningRed050")
+    }
+    
+    static var warningRed100: UIColor {
+        return UIColor.load(name: "warningRed100")
+    }
+    
+    static var warningRed200: UIColor {
+        return UIColor.load(name: "warningRed200")
+    }
+    
+    static var warningRed300: UIColor {
+        return UIColor.load(name: "warningRed300")
+    }
+    
+    static var warningRed400: UIColor {
+        return UIColor.load(name: "warningRed400")
+    }
+    
+    static var warningRed500: UIColor {
+        return UIColor.load(name: "warningRed500")
+    }
+    
+    static var warningRed600: UIColor {
+        return UIColor.load(name: "warningRed600")
+    }
+    
+    static var warningRed700: UIColor {
+        return UIColor.load(name: "warningRed700")
+    }
+    
+    static var warningRed800: UIColor {
+        return UIColor.load(name: "warningRed800")
+    }
+    
+    static var warningRed900: UIColor {
+        return UIColor.load(name: "warningRed900")
+    }
+    
     
     //  MARK: - White & Black
     
     static var white000: UIColor {
-        return UIColor(hex: "#FFFFFF")
+        return UIColor.load(name: "white000")
     }
     
-    static var white000A10: UIColor {
-        return UIColor(hex: "#FFFFFF", alpha: 0.1)
-    }
-    
-    static var white000A30: UIColor {
-        return UIColor(hex: "#FFFFFF", alpha: 0.3)
-    }
-    
-    static var white000A70: UIColor {
-        return UIColor(hex: "#FFFFFF", alpha: 0.7)
-    }
-
     static var black000: UIColor {
-        return UIColor(hex: "#101112")
+        return UIColor.load(name: "black000")
     }
     
     static var realBlack: UIColor {
-        return UIColor(hex: "#000000")
+        return UIColor.load(name: "realBlack")
     }
-
     
-    //  MARK: - Warning Red
-
-    static var warningRed050: UIColor {
-        return UIColor(hex: "#FFECEF")
-    }
-
-    static var warningRed100: UIColor {
-        return UIColor(hex: "#FFCED4")
-    }
-
-    static var warningRed200: UIColor {
-        return UIColor(hex: "#F99C9D")
-    }
-
-    static var warningRed300: UIColor {
-        return UIColor(hex: "#F37476")
-    }
-
-    static var warningRed400: UIColor {
-        return UIColor(hex: "#FF5252")
-    }
-
-    static var warningRed500: UIColor {
-        return UIColor(hex: "#FF3E36")
-    }
-
-    static var warningRed600: UIColor {
-        return UIColor(hex: "#F73536")
-    }
-
-    static var warningRed700: UIColor {
-        return UIColor(hex: "#E42930")
-    }
-
-    static var warningRed800: UIColor {
-        return UIColor(hex: "#D72028")
-    }
-
-    static var warningRed900: UIColor {
-        return UIColor(hex: "#C8111C")
-    }
-
     
     //  MARK: - Gray
     
     static var gray050: UIColor {
-        return UIColor(hex: "#F8F9FA")
+        return UIColor.load(name: "gray050")
     }
-
+    
     static var gray100: UIColor {
-        return UIColor(hex: "#F3F5F7")
+        return UIColor.load(name: "gray100")
     }
-
+    
     static var gray200: UIColor {
-        return UIColor(hex: "#ECEEF0")
+        return UIColor.load(name: "gray200")
     }
-
+    
     static var gray300: UIColor {
-        return UIColor(hex: "#E2E5E8")
+        return UIColor.load(name: "gray300")
     }
-
+    
     static var gray400: UIColor {
-        return UIColor(hex: "#D4D8DC")
+        return UIColor.load(name: "gray400")
     }
-
+    
     static var gray500: UIColor {
-        return UIColor(hex: "#B5B9BD")
+        return UIColor.load(name: "gray500")
     }
-
+    
     static var gray600: UIColor {
-        return UIColor(hex: "#8E9398")
+        return UIColor.load(name: "gray600")
     }
-
+    
     static var gray700: UIColor {
-        return UIColor(hex: "#505458")
+        return UIColor.load(name: "gray700")
     }
-
+    
     static var gray800: UIColor {
-        return UIColor(hex: "#3A3D40")
+        return UIColor.load(name: "gray800")
     }
-
+    
     static var gray900: UIColor {
-        return UIColor(hex: "#252729")
+        return UIColor.load(name: "gray900")
+    }
+    
+    
+    //  MARK: - WB Alpha
+    
+    static var white000A5: UIColor {
+        return UIColor.load(name: "white000A5")
+    }
+    
+    static var white000A10: UIColor {
+        return UIColor.load(name: "white000A10")
+    }
+    
+    static var white000A30: UIColor {
+        return UIColor.load(name: "white000A30")
+    }
+    
+    static var white000A70: UIColor {
+        return UIColor.load(name: "white000A70")
+    }
+    
+    static var black000A5: UIColor {
+        return UIColor.load(name: "black000A5")
     }
     
     static var black000A10: UIColor {
-        return UIColor(hex: "#101112" ,alpha: 0.1)
+        return UIColor.load(name: "black000A10")
+    }
+    
+    static var black000A30: UIColor {
+        return UIColor.load(name: "black000A30")
+    }
+    
+    static var black000A70: UIColor {
+        return UIColor.load(name: "black000A70")
     }
     
     static var gray900A30: UIColor {
-        return UIColor(hex: "#252729" ,alpha: 0.3)
+        return UIColor.load(name: "gray900A30")
     }
     
     static var gray900A70: UIColor {
-        return UIColor(hex: "#252729" ,alpha: 0.7)
+        return UIColor.load(name: "gray900A70")
     }
-
     
-    //  MARK: - Colors
+    
+    //  MARK: - Pink
     
     static var pink050: UIColor {
-        return UIColor(hex: "#FDE6F4")
+        return UIColor.load(name: "pink050")
     }
-
+    
     static var pink100: UIColor {
-        return UIColor(hex: "#FBC1E5")
+        return UIColor.load(name: "pink100")
     }
-
+    
     static var pink200: UIColor {
-        return UIColor(hex: "#FC98D3")
+        return UIColor.load(name: "pink200")
     }
-
+    
     static var pink300: UIColor {
-        return UIColor(hex: "#FF6CBF")
+        return UIColor.load(name: "pink300")
     }
-
+    
     static var pink400: UIColor {
-        return UIColor(hex: "#FF47AD")
+        return UIColor.load(name: "pink400")
     }
-
+    
     static var pink500: UIColor {
-        return UIColor(hex: "#FF1F99")
+        return UIColor.load(name: "pink500")
     }
-
+    
     static var pink600: UIColor {
-        return UIColor(hex: "#F21F93")
+        return UIColor.load(name: "pink600")
     }
-
+    
     static var pink700: UIColor {
-        return UIColor(hex: "#DA1F8B")
+        return UIColor.load(name: "pink700")
     }
-
+    
     static var pink800: UIColor {
-        return UIColor(hex: "#C31F85")
+        return UIColor.load(name: "pink800")
     }
-
+    
+    
+    //  MARK: - Red
+    
     static var red050: UIColor {
-        return UIColor(hex: "#FFEBEE")
+        return UIColor.load(name: "red050")
     }
-
+    
     static var red100: UIColor {
-        return UIColor(hex: "#FFCDD2")
+        return UIColor.load(name: "red100")
     }
-
+    
     static var red200: UIColor {
-        return UIColor(hex: "#EF9A9A")
+        return UIColor.load(name: "red200")
     }
-
+    
     static var red300: UIColor {
-        return UIColor(hex: "#E57373")
+        return UIColor.load(name: "red300")
     }
-
+    
     static var red400: UIColor {
-        return UIColor(hex: "#EF5350")
+        return UIColor.load(name: "red400")
     }
-
+    
     static var red500: UIColor {
-        return UIColor(hex: "#F44236")
+        return UIColor.load(name: "red500")
     }
-
+    
     static var red600: UIColor {
-        return UIColor(hex: "#E53835")
+        return UIColor.load(name: "red600")
     }
-
+    
     static var red700: UIColor {
-        return UIColor(hex: "#D32E2F")
+        return UIColor.load(name: "red700")
     }
-
+    
     static var red800: UIColor {
-        return UIColor(hex: "#C62728")
+        return UIColor.load(name: "red800")
     }
-
+    
+    
+    //  MARK: - Orange
+    
     static var orange050: UIColor {
-        return UIColor(hex: "#FFF1E4")
+        return UIColor.load(name: "orange050")
     }
-
+    
     static var orange100: UIColor {
-        return UIColor(hex: "#FFDBBC")
+        return UIColor.load(name: "orange100")
     }
-
+    
     static var orange200: UIColor {
-        return UIColor(hex: "#FFC492")
+        return UIColor.load(name: "orange200")
     }
-
+    
     static var orange300: UIColor {
-        return UIColor(hex: "#FFAC6C")
+        return UIColor.load(name: "orange300")
     }
-
+    
     static var orange400: UIColor {
-        return UIColor(hex: "#FD9A55")
+        return UIColor.load(name: "orange400")
     }
-
+    
     static var orange500: UIColor {
-        return UIColor(hex: "#FC8A46")
+        return UIColor.load(name: "orange500")
     }
-
+    
     static var orange600: UIColor {
-        return UIColor(hex: "#F67F44")
+        return UIColor.load(name: "orange600")
     }
-
+    
     static var orange700: UIColor {
-        return UIColor(hex: "#EE7141")
+        return UIColor.load(name: "orange700")
     }
-
+    
     static var orange800: UIColor {
-        return UIColor(hex: "#E6623E")
+        return UIColor.load(name: "orange800")
     }
-
+    
+    
+    //  MARK: - Yellow
+    
     static var yellow050: UIColor {
-        return UIColor(hex: "#FFF8DC")
+        return UIColor.load(name: "yellow050")
     }
-
+    
     static var yellow100: UIColor {
-        return UIColor(hex: "#FFF0AB")
+        return UIColor.load(name: "yellow100")
     }
-
+    
     static var yellow200: UIColor {
-        return UIColor(hex: "#FFE672")
+        return UIColor.load(name: "yellow200")
     }
-
+    
     static var yellow300: UIColor {
-        return UIColor(hex: "#FFDC3A")
+        return UIColor.load(name: "yellow300")
     }
-
+    
     static var yellow400: UIColor {
-        return UIColor(hex: "#FFD200")
+        return UIColor.load(name: "yellow400")
     }
-
+    
     static var yellow500: UIColor {
-        return UIColor(hex: "#FBC000")
+        return UIColor.load(name: "yellow500")
     }
-
+    
     static var yellow600: UIColor {
-        return UIColor(hex: "#F6B000")
+        return UIColor.load(name: "yellow600")
     }
-
+    
     static var yellow700: UIColor {
-        return UIColor(hex: "#E1A714")
+        return UIColor.load(name: "yellow700")
     }
-
+    
     static var yellow800: UIColor {
-        return UIColor(hex: "#CC9200")
+        return UIColor.load(name: "yellow800")
     }
-
+    
+    
+    //  MARK: - Lime
+    
     static var lime050: UIColor {
-        return UIColor(hex: "#F9FBE7")
+        return UIColor.load(name: "lime050")
     }
-
+    
     static var lime100: UIColor {
-        return UIColor(hex: "#F0F4C3")
+        return UIColor.load(name: "lime100")
     }
-
+    
     static var lime200: UIColor {
-        return UIColor(hex: "#E5EE9C")
+        return UIColor.load(name: "lime200")
     }
-
+    
     static var lime300: UIColor {
-        return UIColor(hex: "#DBE775")
+        return UIColor.load(name: "lime300")
     }
-
+    
     static var lime400: UIColor {
-        return UIColor(hex: "#D3E157")
+        return UIColor.load(name: "lime400")
     }
-
+    
     static var lime500: UIColor {
-        return UIColor(hex: "#CCDC39")
+        return UIColor.load(name: "lime500")
     }
-
+    
     static var lime600: UIColor {
-        return UIColor(hex: "#BFCA33")
+        return UIColor.load(name: "lime600")
     }
-
+    
     static var lime700: UIColor {
-        return UIColor(hex: "#AEB42B")
+        return UIColor.load(name: "lime700")
     }
-
+    
     static var lime800: UIColor {
-        return UIColor(hex: "#9D9D24")
+        return UIColor.load(name: "lime800")
     }
-
+    
+    
+    //  MARK: - Green
+    
     static var green050: UIColor {
-        return UIColor(hex: "#E5F9EE")
+        return UIColor.load(name: "green050")
     }
-
+    
     static var green100: UIColor {
-        return UIColor(hex: "#BFF0D5")
+        return UIColor.load(name: "green100")
     }
-
+    
     static var green200: UIColor {
-        return UIColor(hex: "#93E7BB")
+        return UIColor.load(name: "green200")
     }
-
+    
     static var green300: UIColor {
-        return UIColor(hex: "#5BDE9F")
+        return UIColor.load(name: "green300")
     }
-
+    
     static var green400: UIColor {
-        return UIColor(hex: "#0BD588")
+        return UIColor.load(name: "green400")
     }
-
+    
     static var green500: UIColor {
-        return UIColor(hex: "#00CC74")
+        return UIColor.load(name: "green500")
     }
-
+    
     static var green600: UIColor {
-        return UIColor(hex: "#00BB68")
+        return UIColor.load(name: "green600")
     }
-
+    
     static var green700: UIColor {
-        return UIColor(hex: "#00A85B")
+        return UIColor.load(name: "green700")
     }
-
+    
     static var green800: UIColor {
-        return UIColor(hex: "#00964F")
+        return UIColor.load(name: "green800")
     }
-
+    
+    
+    //  MARK: - Emerald
+    
     static var emerald050: UIColor {
-        return UIColor(hex: "#E0F8F7")
+        return UIColor.load(name: "emerald050")
     }
-
+    
     static var emerald100: UIColor {
-        return UIColor(hex: "#B3ECEA")
+        return UIColor.load(name: "emerald100")
     }
-
+    
     static var emerald200: UIColor {
-        return UIColor(hex: "#82E0DF")
+        return UIColor.load(name: "emerald200")
     }
-
+    
     static var emerald300: UIColor {
-        return UIColor(hex: "#51D2D4")
+        return UIColor.load(name: "emerald300")
     }
-
+    
     static var emerald400: UIColor {
-        return UIColor(hex: "#2BC9CC")
+        return UIColor.load(name: "emerald400")
     }
-
+    
     static var emerald500: UIColor {
-        return UIColor(hex: "#00BFC7")
+        return UIColor.load(name: "emerald500")
     }
-
+    
     static var emerald600: UIColor {
-        return UIColor(hex: "#00AFB5")
+        return UIColor.load(name: "emerald600")
     }
-
+    
     static var emerald700: UIColor {
-        return UIColor(hex: "#069A9C")
+        return UIColor.load(name: "emerald700")
     }
-
+    
     static var emerald800: UIColor {
-        return UIColor(hex: "#088585")
+        return UIColor.load(name: "emerald800")
     }
-
+    
+    
+    //  MARK: - Aqua
+    
     static var aqua050: UIColor {
-        return UIColor(hex: "#E0F4FD")
+        return UIColor.load(name: "aqua050")
     }
-
+    
     static var aqua100: UIColor {
-        return UIColor(hex: "#B2E3FA")
+        return UIColor.load(name: "aqua100")
     }
-
+    
     static var aqua200: UIColor {
-        return UIColor(hex: "#7FD0F7")
+        return UIColor.load(name: "aqua200")
     }
-
+    
     static var aqua300: UIColor {
-        return UIColor(hex: "#4CBEF3")
+        return UIColor.load(name: "aqua300")
     }
-
+    
     static var aqua400: UIColor {
-        return UIColor(hex: "#26B0F1")
+        return UIColor.load(name: "aqua400")
     }
-
+    
     static var aqua500: UIColor {
-        return UIColor(hex: "#00A2EE")
+        return UIColor.load(name: "aqua500")
     }
-
+    
     static var aqua600: UIColor {
-        return UIColor(hex: "#0095DF")
+        return UIColor.load(name: "aqua600")
     }
-
+    
     static var aqua700: UIColor {
-        return UIColor(hex: "#0182CB")
+        return UIColor.load(name: "aqua700")
     }
-
+    
     static var aqua800: UIColor {
-        return UIColor(hex: "#0171B7")
+        return UIColor.load(name: "aqua800")
     }
-
+    
+    
+    //  MARK: - Blue
+    
     static var blue050: UIColor {
-        return UIColor(hex: "#E4F1FA")
+        return UIColor.load(name: "blue050")
     }
-
+    
     static var blue100: UIColor {
-        return UIColor(hex: "#BEDCF3")
+        return UIColor.load(name: "blue100")
     }
-
+    
     static var blue200: UIColor {
-        return UIColor(hex: "#98C6EC")
+        return UIColor.load(name: "blue200")
     }
-
+    
     static var blue300: UIColor {
-        return UIColor(hex: "#74B0E2")
+        return UIColor.load(name: "blue300")
     }
-
+    
     static var blue400: UIColor {
-        return UIColor(hex: "#489AE7")
+        return UIColor.load(name: "blue400")
     }
-
+    
     static var blue500: UIColor {
-        return UIColor(hex: "#4B90D7")
+        return UIColor.load(name: "blue500")
     }
-
+    
     static var blue600: UIColor {
-        return UIColor(hex: "#4582CA")
+        return UIColor.load(name: "blue600")
     }
-
+    
     static var blue700: UIColor {
-        return UIColor(hex: "#3C71B8")
+        return UIColor.load(name: "blue700")
     }
-
+    
     static var blue800: UIColor {
-        return UIColor(hex: "#3661A5")
+        return UIColor.load(name: "blue800")
     }
-
+    
+    
+    //  MARK: - Indigo
+    
     static var indigo050: UIColor {
-        return UIColor(hex: "#E8EAF6")
+        return UIColor.load(name: "indigo050")
     }
-
+    
     static var indigo100: UIColor {
-        return UIColor(hex: "#C5CAE9")
+        return UIColor.load(name: "indigo100")
     }
-
+    
     static var indigo200: UIColor {
-        return UIColor(hex: "#9FA8DA")
+        return UIColor.load(name: "indigo200")
     }
-
+    
     static var indigo300: UIColor {
-        return UIColor(hex: "#7986CB")
+        return UIColor.load(name: "indigo300")
     }
-
+    
     static var indigo400: UIColor {
-        return UIColor(hex: "#5C6CC0")
+        return UIColor.load(name: "indigo400")
     }
-
+    
     static var indigo500: UIColor {
-        return UIColor(hex: "#3F52B5")
+        return UIColor.load(name: "indigo500")
     }
-
+    
     static var indigo600: UIColor {
-        return UIColor(hex: "#394AAB")
+        return UIColor.load(name: "indigo600")
     }
-
+    
     static var indigo700: UIColor {
-        return UIColor(hex: "#2F409F")
+        return UIColor.load(name: "indigo700")
     }
-
+    
     static var indigo800: UIColor {
-        return UIColor(hex: "#273693")
+        return UIColor.load(name: "indigo800")
     }
-
+    
+    
+    //  MARK: - Violet
+    
     static var violet050: UIColor {
-        return UIColor(hex: "#EDE7F6")
+        return UIColor.load(name: "violet050")
     }
-
+    
     static var violet100: UIColor {
-        return UIColor(hex: "#D1C4E9")
+        return UIColor.load(name: "violet100")
     }
-
+    
     static var violet200: UIColor {
-        return UIColor(hex: "#B39DDB")
+        return UIColor.load(name: "violet200")
     }
-
+    
     static var violet300: UIColor {
-        return UIColor(hex: "#9575CD")
+        return UIColor.load(name: "violet300")
     }
-
+    
     static var violet400: UIColor {
-        return UIColor(hex: "#7E57C2")
+        return UIColor.load(name: "violet400")
     }
-
+    
     static var violet500: UIColor {
-        return UIColor(hex: "#673AB7")
+        return UIColor.load(name: "violet500")
     }
-
+    
     static var violet600: UIColor {
-        return UIColor(hex: "#5E35B1")
+        return UIColor.load(name: "violet600")
     }
-
+    
     static var violet700: UIColor {
-        return UIColor(hex: "#512DA8")
+        return UIColor.load(name: "violet700")
     }
-
+    
     static var violet800: UIColor {
-        return UIColor(hex: "#4527A0")
+        return UIColor.load(name: "violet800")
     }
-
+    
+    
+    //  MARK: - Purple
+    
     static var purple050: UIColor {
-        return UIColor(hex: "#F2E5F5")
+        return UIColor.load(name: "purple050")
     }
-
+    
     static var purple100: UIColor {
-        return UIColor(hex: "#DFBFE7")
+        return UIColor.load(name: "purple100")
     }
-
+    
     static var purple200: UIColor {
-        return UIColor(hex: "#CA95D8")
+        return UIColor.load(name: "purple200")
     }
-
+    
     static var purple300: UIColor {
-        return UIColor(hex: "#B56CC8")
+        return UIColor.load(name: "purple300")
     }
-
+    
     static var purple400: UIColor {
-        return UIColor(hex: "#A54DBB")
+        return UIColor.load(name: "purple400")
     }
-
+    
     static var purple500: UIColor {
-        return UIColor(hex: "#9632AF")
+        return UIColor.load(name: "purple500")
     }
-
+    
     static var purple600: UIColor {
-        return UIColor(hex: "#882EA9")
+        return UIColor.load(name: "purple600")
     }
-
+    
     static var purple700: UIColor {
-        return UIColor(hex:"#7629A0")
+        return UIColor.load(name: "purple700")
     }
-
+    
     static var purple800: UIColor {
-        return UIColor(hex:"#652597")
+        return UIColor.load(name: "purple800")
     }
-
+    
+    
+    //  MARK: - Brown
+    
     static var brown050: UIColor {
-        return UIColor(hex:"#EFEBE9")
+        return UIColor.load(name: "brown050")
     }
-
+    
     static var brown100: UIColor {
-        return UIColor(hex:"#D7CCC8")
+        return UIColor.load(name: "brown100")
     }
-
+    
     static var brown200: UIColor {
-        return UIColor(hex:"#BCAAA4")
+        return UIColor.load(name: "brown200")
     }
-
+    
     static var brown300: UIColor {
-        return UIColor(hex: "#A1887F")
+        return UIColor.load(name: "brown300")
     }
-
+    
     static var brown400: UIColor {
-        return UIColor(hex: "#8D6E63")
+        return UIColor.load(name: "brown400")
     }
-
+    
     static var brown500: UIColor {
-        return UIColor(hex: "#795548")
+        return UIColor.load(name: "brown500")
     }
-
+    
     static var brown600: UIColor {
-        return UIColor(hex: "#6D4C41")
+        return UIColor.load(name: "brown600")
     }
-
+    
     static var brown700: UIColor {
-        return UIColor(hex: "#5D4037")
+        return UIColor.load(name: "brown700")
     }
-
+    
     static var brown800: UIColor {
-        return UIColor(hex: "#4E342E")
+        return UIColor.load(name: "brown800")
+    }
+}
+
+fileprivate extension UIColor {
+    static func load(name: String) -> UIColor {
+#if SWIFT_PACKAGE
+        guard let color = UIColor(named: name, in: .module, compatibleWith: nil) else {
+            assert(false, "\(name) 컬러 로드 실패")
+            return UIColor.clear
+        }
+#else
+        guard let color = UIColor(named: name, in: YDSBundle.bundle, compatibleWith: nil) else {
+            assert(false, "\(name) 컬러 로드 실패")
+            return UIColor.clear
+        }
+#endif
+        return color
     }
 }
