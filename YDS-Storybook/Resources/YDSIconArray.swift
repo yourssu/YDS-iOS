@@ -36,6 +36,7 @@ let ydsIconArray = [
     YDSIcon.dotsHorizontalLine,
     YDSIcon.dotsVerticalLine,
     YDSIcon.emojiaddLine,
+    YDSIcon.eyeclosedLine,
     YDSIcon.foodFilled,
     YDSIcon.foodLine,
     YDSIcon.foodcalendarFilled,
