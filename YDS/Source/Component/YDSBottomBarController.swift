@@ -77,7 +77,9 @@ open class YDSBottomBarController: UITabBarController {
         appearance.backgroundColor = YDSColor.bgElevated
         appearance.shadowColor = .clear
         appearance.stackedLayoutAppearance.normal.iconColor = YDSColor.bottomBarNormal
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor : YDSColor.bottomBarNormal]
         appearance.stackedLayoutAppearance.selected.iconColor = YDSColor.bottomBarSelected
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor : YDSColor.bottomBarSelected]
 
         tabBar.standardAppearance = appearance
         if #available(iOS 15.0, *) {
