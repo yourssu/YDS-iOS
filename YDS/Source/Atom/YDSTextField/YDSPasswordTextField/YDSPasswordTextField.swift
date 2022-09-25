@@ -42,10 +42,10 @@ public class YDSPasswordTextField: UITextField {
     }
     
     ///  masking 상태가 on임을 나타내는 아이콘입니다.
-    private let maskingOnIcon = YDSIcon.starFilled.withRenderingMode(.alwaysTemplate)
+    private let maskingOnIcon = YDSIcon.eyeclosedLine.withRenderingMode(.alwaysTemplate)
     
     ///  masking 상태가 off임을 나타내는 아이콘입니다.
-    private let maskingOffIcon = YDSIcon.starLine.withRenderingMode(.alwaysTemplate)
+    private let maskingOffIcon = YDSIcon.eyeopenLine.withRenderingMode(.alwaysTemplate)
     
     
     //  MARK: - 뷰
@@ -133,7 +133,7 @@ public class YDSPasswordTextField: UITextField {
         
         if isMasked {
             maskingButton.leftIcon = maskingOnIcon
-        } else {
+        } else{
             maskingButton.leftIcon = maskingOffIcon
         }
     }

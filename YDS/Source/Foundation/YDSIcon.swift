@@ -36,6 +36,8 @@ public enum YDSIcon {
     public static var dotsHorizontalLine: UIImage { .load(name: "ic_dots_horizontal_line") }
     public static var dotsVerticalLine: UIImage { .load(name: "ic_dots_vertical_line") }
     public static var emojiaddLine: UIImage { .load(name: "ic_emojiadd_line")}
+    public static var eyeclosedLine: UIImage { .load(name: "ic_eyeclosed_line")}
+    public static var eyeopenLine: UIImage { .load(name: "ic_eyeopen_line")}
     public static var foodFilled: UIImage { .load(name: "ic_food_filled") }
     public static var foodLine: UIImage { .load(name: "ic_food_line") }
     public static var foodcalendarFilled: UIImage { .load(name: "ic_foodcalendar_filled") }
