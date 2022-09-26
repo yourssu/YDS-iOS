@@ -34,11 +34,11 @@ public enum YDSColor {
     }
     
     public static var bgPressed: UIColor {
-        return color(light: .black000, dark: .white000A5)
+        return color(light: .black000A10, dark: .white000A5)
     }
     
     public static var bgSelected: UIColor {
-        return color(light: .black000, dark: .white000A5)
+        return color(light: .black000A10, dark: .white000A5)
     }
     
     public static var bgNormalDark: UIColor {
