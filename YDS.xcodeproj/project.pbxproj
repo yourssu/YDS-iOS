@@ -717,11 +717,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD151FB22641820200795D7C /* Build configuration list for PBXNativeTarget "YDS" */;
 			buildPhases = (
+				020BEB7328E16D78001B6ADC /* SwiftLint Script */,
 				DD151FA52641820200795D7C /* Headers */,
 				DD151FA62641820200795D7C /* Sources */,
 				DD151FA72641820200795D7C /* Frameworks */,
 				DD151FA82641820200795D7C /* Resources */,
-				020BEB7328E16D78001B6ADC /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -741,6 +741,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDFBD00F26739A6B00C5F409 /* Build configuration list for PBXNativeTarget "YDS-Storybook" */;
 			buildPhases = (
+				C3C7134228E6C0DC00BA35D7 /* SwiftLint Script */,
 				DDFBCFF826739A6900C5F409 /* Sources */,
 				DDFBCFF926739A6900C5F409 /* Frameworks */,
 				DDFBCFFA26739A6900C5F409 /* Resources */,
@@ -842,7 +843,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C3C7134228E6C0DC00BA35D7 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
