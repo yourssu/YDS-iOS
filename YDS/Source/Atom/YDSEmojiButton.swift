@@ -14,12 +14,12 @@ public class YDSEmojiButton: UIControl {
     /**
     이모지 버튼의 이모지를 설정합니다. (ex. 😆)
      */
-    @SetNeeds(.layout) public var emoji: String?
+    @SetNeeds(wrappedValue: nil, .layout) public var emoji: String?
 
     /**
     이모지 버튼 옆에 들어갈 문구나 버튼을 설정합니다. (ex. 좋아요 3 또는 3)
      */
-    @SetNeeds(.layout) public var text: String?
+    @SetNeeds(wrappedValue: nil, .layout) public var text: String?
 
     /**
      버튼의 높이, 타이포 크기, 아이콘 크기, 패딩을 결정할 때 사용합니다.

@@ -31,7 +31,7 @@ public class YDSCheckbox: UIButton {
     /**
      체크박스의 글귀를 설정할 때 사용합니다.
      */
-    @SetNeeds(.layout) public var text: String?
+    @SetNeeds(wrappedValue: nil, .layout) public var text: String?
 
     // MARK: - 외부에서 접근할 수 있는 enum
 

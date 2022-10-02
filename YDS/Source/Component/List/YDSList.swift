@@ -39,7 +39,7 @@ public class YDSList: UIView {
     // MARK: - 외부에서 지정할 수 있는 속성
 
     /// List의 Subheader
-    @SetNeeds(.layout) public var subheader: String?
+    @SetNeeds(wrappedValue: nil, .layout) public var subheader: String?
 
     // MARK: - 메소드
 
@@ -49,8 +49,8 @@ public class YDSList: UIView {
      subheader가 nil을 가지면 List의 subheader가 안 보입니다.
      */
     public init(subheader: String? = nil) {
-        self.subheader = subheader
         super.init(frame: .zero)
+        self.subheader = subheader
         setupView()
     }
 

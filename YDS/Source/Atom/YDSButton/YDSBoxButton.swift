@@ -45,17 +45,17 @@ public class YDSBoxButton: UIButton, YDSButtonProtocol {
     /**
      버튼의 글귀를 설정할 때 사용합니다.
      */
-    @SetNeeds(.layout, .display) public var text: String?
+    @SetNeeds(wrappedValue: nil, .layout, .display) public var text: String?
 
     /**
      버튼의 좌측에 들어갈 아이콘을 설정할 때 사용합니다.
      */
-    @SetNeeds(.display) public var leftIcon: UIImage?
+    @SetNeeds(wrappedValue: nil, .display) public var leftIcon: UIImage?
 
     /**
      버튼의 우측에 들어갈 아이콘을 설정할 때 사용합니다.
      */
-    @SetNeeds(.display) public var rightIcon: UIImage?
+    @SetNeeds(wrappedValue: nil, .display) public var rightIcon: UIImage?
 
     /**
      기본 속성을 override한 후 didSet을 설정하여
