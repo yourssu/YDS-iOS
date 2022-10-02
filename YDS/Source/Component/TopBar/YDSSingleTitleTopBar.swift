@@ -16,8 +16,8 @@ import UIKit
  */
 public class YDSSingleTitleTopBar: YDSTopBar {
 
-    //  MARK: - 외부에서 지정할 수 있는 속성
-    
+    // MARK: - 외부에서 지정할 수 있는 속성
+
     /**
      NavigationBar 상단에 들어가는
      굵은 Title의 String입니다.
@@ -26,10 +26,9 @@ public class YDSSingleTitleTopBar: YDSTopBar {
         get { return self.titleLabel.text }
         set { self.titleLabel.text = newValue }
     }
-    
-    
-    //  MARK: - 뷰
-    
+
+    // MARK: - 뷰
+
     /**
      NavigationBar 상단 좌측에 들어가는
      굵은 Title의 Label입니다.
@@ -39,10 +38,9 @@ public class YDSSingleTitleTopBar: YDSTopBar {
         label.textColor = YDSColor.textPrimary
         return label
     }()
-    
-    
+
     // MARK: - 메소드
-    
+
     /**
      굵은 Title을 가진 TopBar(=NavigationBar)를 생성합니다.
      
@@ -54,11 +52,11 @@ public class YDSSingleTitleTopBar: YDSTopBar {
         self.title = title
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     /**
      뷰를 세팅합니다.
      */
@@ -66,28 +64,28 @@ public class YDSSingleTitleTopBar: YDSTopBar {
         setProperties()
         setLayouts()
     }
-    
+
     /**
      각종 프로퍼티를 세팅합니다.
      */
     private func setProperties() {
         self.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.clear,
+            NSAttributedString.Key.foregroundColor: UIColor.clear
         ]
     }
-    
+
     /**
      레이아웃을 세팅합니다.
      */
     private func setLayouts() {
         setViewHierarchy()
     }
-    
+
     /**
      뷰의 위계를 세팅합니다.
      */
     private func setViewHierarchy() {
         self.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel), animated: true)
     }
-        
+
 }

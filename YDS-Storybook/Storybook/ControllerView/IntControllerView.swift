@@ -11,22 +11,22 @@ final class IntControllerView: ControllerView<Int> {
 
     public override init() {
         super.init()
-        
+
         textFieldView.textField.addTarget(
             self,
             action: #selector(textFieldDidChange(_:)),
             for: .editingChanged
         )
-        
+
         textFieldView.textField.keyboardType = .numberPad
-        
+
         setInitialState()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setInitialState() {
         observable
             .take(1)
@@ -35,7 +35,7 @@ final class IntControllerView: ControllerView<Int> {
             })
             .disposed(by: bag)
     }
-    
+
     @objc
     func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text,
@@ -43,5 +43,5 @@ final class IntControllerView: ControllerView<Int> {
             observable.onNext(number)
         }
     }
-    
+
 }

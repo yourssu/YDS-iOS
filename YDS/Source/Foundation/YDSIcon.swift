@@ -89,7 +89,7 @@ public enum YDSIcon {
     public static var warningcircleFilled: UIImage { .load(name: "ic_warningcircle_filled") }
     public static var warningcircleLine: UIImage { .load(name: "ic_warningcircle_line") }
     public static var xLine: UIImage { .load(name: "ic_x_line") }
-    public static var xcircle_filled: UIImage { .load(name: "ic_xcircle_filled") }
+    public static var xcircleFilled: UIImage { .load(name: "ic_xcircle_filled") }
 }
 
 extension UIImage {
@@ -108,13 +108,13 @@ extension UIImage {
         image.accessibilityIdentifier = name
         return image
     }
-    
+
     internal func resize(to length: CGFloat) -> UIImage {
         let newSize = CGSize(width: length, height: length)
         let image = UIGraphicsImageRenderer(size: newSize).image { _ in
             draw(in: CGRect(origin: .zero, size: newSize))
         }
-        
+
         return image
     }
 }

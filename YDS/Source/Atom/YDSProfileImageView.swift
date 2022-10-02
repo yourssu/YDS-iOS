@@ -8,9 +8,9 @@
 import UIKit
 
 public class YDSProfileImageView: UIImageView {
-    
+
     @SetNeeds(.layout) public var size: ProfileImageViewSize = .small
-    
+
     public enum ProfileImageViewSize: Int {
         case extraSmall = 24
         case small = 32
@@ -18,40 +18,40 @@ public class YDSProfileImageView: UIImageView {
         case large = 72
         case extraLarge = 96
     }
-    
+
     public init() {
         super.init(frame: CGRect.zero)
         setupViews()
         setImageSize()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupViews() {
         self.contentMode = .scaleAspectFill
     }
-    
+
     private func setImageSize() {
         self.snp.updateConstraints {
             $0.height.width.equalTo(size.rawValue)
         }
-        
+
         setSquirclePathAccordingToSize()
     }
-    
+
     /**
      size에 따른 squircle path를 만들고
      마스킹과 테두리를 적용시킵니다.
      */
     private func setSquirclePathAccordingToSize() {
         let path = makeSquirclePath(CGFloat(size.rawValue), insetRatio: 0.2)
-        
+
         setMaskLayer(path: path)
         setBorderLayer(path: path)
     }
-    
+
     /**
      mask layer를 만들고 적용시킵니다.
      */
@@ -61,7 +61,7 @@ public class YDSProfileImageView: UIImageView {
         maskLayer.path = path.cgPath
         self.layer.mask = maskLayer
     }
-    
+
     /**
      border layer를 만들고 적용시킵니다.
      */
@@ -72,16 +72,16 @@ public class YDSProfileImageView: UIImageView {
         newBorderLayer.fillColor = UIColor.clear.cgColor
         newBorderLayer.lineWidth = YDSConstant.Border.normal
         newBorderLayer.strokeColor = YDSColor.borderNormal.cgColor
-        
+
         if let oldBorderLayer = borderLayer {
             self.layer.replaceSublayer(oldBorderLayer, with: newBorderLayer)
         } else {
             self.layer.addSublayer(newBorderLayer)
         }
-        
+
         borderLayer = newBorderLayer
     }
-    
+
     /**
      현재 상태의 borderLayer를 저장합니다.
      size가 바뀜에 따라 새 borderLayer가 필요해지면
@@ -99,19 +99,19 @@ public class YDSProfileImageView: UIImageView {
      */
     private func makeSquirclePath(_ width: CGFloat, insetRatio: CGFloat) -> UIBezierPath {
         let radius = width/2
-        
+
         if insetRatio > 1 || insetRatio < 0 {
             assertionFailure("""
             makeSquirclePath()
             insetRatio 값은 0에서 1 사이로 넣어주세요.
             """)
         }
-        
+
         let topPoint = CGPoint(x: radius, y: 0)
         let rightPoint = CGPoint(x: radius*2, y: radius)
         let bottomPoint = CGPoint(x: radius, y: radius*2)
         let leftPoint = CGPoint(x: 0, y: radius)
-        
+
         let inset = radius*insetRatio
         let topLeftControlPoint = CGPoint(x: inset, y: 0)
         let topRightControlPoint = CGPoint(x: radius*2-inset, y: 0)
@@ -121,9 +121,9 @@ public class YDSProfileImageView: UIImageView {
         let bottomLeftControlPoint = CGPoint(x: inset, y: radius*2)
         let leftBottomControlPoint = CGPoint(x: 0, y: radius*2-inset)
         let leftTopControlPoint = CGPoint(x: 0, y: inset)
-        
+
         let path = UIBezierPath()
-        path.move(to:topPoint)
+        path.move(to: topPoint)
         path.addCurve(
             to: rightPoint,
             controlPoint1: topRightControlPoint,
@@ -145,13 +145,13 @@ public class YDSProfileImageView: UIImageView {
             controlPoint2: topLeftControlPoint
         )
         path.close()
-    
+
         return path
     }
-    
+
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         setImageSize()
     }
 }

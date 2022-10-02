@@ -10,11 +10,11 @@ import YDS
 import SnapKit
 
 class SingleTitleTopBarSampleViewController: UIViewController {
-    
+
     private let topBar = YDSSingleTitleTopBar(title: nil)
     private let searchButton = YDSTopBarButton(image: YDSIcon.searchLine)
     private let writeButton = YDSTopBarButton(image: YDSIcon.penLine)
-    
+
     private let dismissButton: YDSBoxButton = {
         let button = YDSBoxButton()
         button.size = .large
@@ -23,7 +23,7 @@ class SingleTitleTopBarSampleViewController: UIViewController {
         button.text = "닫기"
         return button
     }()
-    
+
     public struct SingleTitleTopBarModel {
         var title: String?
         var modalPresentationStyle: UIModalPresentationStyle
@@ -36,22 +36,22 @@ class SingleTitleTopBarSampleViewController: UIViewController {
         setupView()
         registerTapAction()
     }
-    
+
     private func setupView() {
         setProperties()
         setLayouts()
     }
-    
+
     private func setProperties() {
         self.view.backgroundColor = YDSColor.bgNormal
         self.topBar.title = topBarInfo?.title
     }
-    
+
     private func setLayouts() {
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     private func setViewHierarchy() {
         self.view.addSubview(topBar)
         self.view.addSubview(dismissButton)
@@ -60,29 +60,28 @@ class SingleTitleTopBarSampleViewController: UIViewController {
              UIBarButtonItem(customView: searchButton)],
             animated: true)
     }
-    
+
     private func setAutolayout() {
         topBar.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
         }
-        
+
         dismissButton.snp.makeConstraints {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-32)
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().offset(-32)
         }
     }
-    
 
     private func registerTapAction() {
         [dismissButton, searchButton, writeButton].forEach {
             $0.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
         }
     }
-    
+
     @objc
     private func buttonTapAction(_ sender: UIButton) {
-        switch(sender) {
+        switch sender {
         case dismissButton:
             self.dismiss(animated: true, completion: nil)
         case searchButton:

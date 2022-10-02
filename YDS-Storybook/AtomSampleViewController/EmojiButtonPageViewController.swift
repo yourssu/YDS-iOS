@@ -10,38 +10,38 @@ import YDS
 import SnapKit
 
 class EmojiButtonPageViewController: StoryBookViewController {
-    
+
     let sampleButton: YDSEmojiButton = {
         let button = YDSEmojiButton()
         return button
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         addOptions()
     }
-    
+
     private func setupView() {
         setViewProperty()
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     private func setViewProperty() {
         self.title = "EmojiButton"
     }
-    
+
     private func setViewHierarchy() {
         sampleView.addSubview(sampleButton)
     }
-    
+
     private func setAutolayout() {
         sampleButton.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
         }
     }
-    
+
     private func addOptions() {
         addOption(description: "emoji",
                   defaultValue: "💜") { [weak self] value in
@@ -58,6 +58,5 @@ class EmojiButtonPageViewController: StoryBookViewController {
             self?.sampleButton.isSelected = value
         }
     }
-    
-}
 
+}

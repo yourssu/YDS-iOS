@@ -10,7 +10,7 @@ import YDS
 import SnapKit
 
 class SearchBarPageViewController: StoryBookViewController {
-        
+
     let sampleSearchBar: YDSSearchBar = {
         let searchBar = YDSSearchBar()
         return searchBar
@@ -23,11 +23,11 @@ class SearchBarPageViewController: StoryBookViewController {
         self.extendedLayoutIncludesOpaqueBars = true
         self.navigationItem.titleView = sampleSearchBar
     }
-    
+
     private func setupView() {
         setViewProperty()
     }
-    
+
     private func setViewProperty() {
         self.title = "SearchBar"
     }
@@ -37,13 +37,13 @@ class SearchBarPageViewController: StoryBookViewController {
                   defaultValue: "검색어를 입력해주세요.") { [weak self] value in
             self?.sampleSearchBar.placeholder = value
         }
-        
+
         addOption(description: "isDisabled",
                   defaultValue: false) { [weak self] value in
             self?.sampleSearchBar.isDisabled = value
         }
     }
-    
+
 }
 
 extension SearchBarPageViewController {

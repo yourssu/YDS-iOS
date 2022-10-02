@@ -5,28 +5,30 @@
 //  Created by Gyuni on 2021/09/10.
 //
 
+// swiftlint:disable nesting
+
 import UIKit
 import YDS
 
 class ColorsListItemCell: UITableViewCell {
-        
+
     private enum Dimension {
         enum Padding {
             static let vertical: CGFloat = 16
             static let horizontal: CGFloat = 24
         }
-        
+
         enum Circle {
             static let radius: CGFloat = 24
         }
     }
-    
+
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 16
         stackView.alignment = .center
-        
+
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: Dimension.Padding.vertical,
                                                left: Dimension.Padding.horizontal,
@@ -34,7 +36,7 @@ class ColorsListItemCell: UITableViewCell {
                                                right: Dimension.Padding.horizontal)
         return stackView
     }()
-    
+
     private let labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -43,7 +45,7 @@ class ColorsListItemCell: UITableViewCell {
         stackView.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return stackView
     }()
-    
+
     private let colorCircleView: UIView = {
         let view = UIView()
         view.snp.makeConstraints {
@@ -55,13 +57,13 @@ class ColorsListItemCell: UITableViewCell {
         view.layer.borderColor = YDSColor.borderNormal.cgColor
         return view
     }()
-    
+
     private let titleLabel: YDSLabel = {
         let label = YDSLabel(style: .subtitle2)
         label.textColor = YDSColor.textPrimary
         return label
     }()
-    
+
     private let captionLabel: YDSLabel = {
         let label = YDSLabel(style: .body2)
         label.textColor = YDSColor.textTertiary
@@ -70,41 +72,41 @@ class ColorsListItemCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         setupViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupViews() {
         setViewProperties()
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     private func setViewProperties() {
         self.selectionStyle = .none
     }
-    
+
     private func setViewHierarchy() {
         self.contentView.addSubview(stackView)
-        
+
         stackView.addArrangedSubviews(colorCircleView, labelStackView)
         labelStackView.addArrangedSubviews(titleLabel, captionLabel)
     }
-    
+
     private func setAutolayout() {
         stackView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
     }
-    
+
     func fillData(with model: Color) {
         colorCircleView.backgroundColor = model.color
         titleLabel.text = model.name
         captionLabel.text = model.basicColorName
     }
-    
+
 }

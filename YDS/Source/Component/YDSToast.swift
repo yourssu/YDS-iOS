@@ -5,6 +5,8 @@
 //  Created by Gyuni on 2021/08/04.
 //
 
+// swiftlint:disable nesting
+
 import UIKit
 
 /**
@@ -15,9 +17,9 @@ import UIKit
  YDSToast.makeToast() 함수를 이용해 Toast를 생성합니다.
  */
 public class YDSToast: UIView {
-    
-    //  MARK: - 내부에서 사용되는 변수 및 상수
-    
+
+    // MARK: - 내부에서 사용되는 변수 및 상수
+
     /**
      Toast에 나타나는 글자의 String 값입니다.
      */
@@ -25,21 +27,21 @@ public class YDSToast: UIView {
         get { return label.text }
         set { label.text = newValue }
     }
-    
+
     /**
      Toast의 지속시간입니다.
      */
     private var duration: ToastDuration
-    
+
     /**
      Toast의 지속시간에 관한 enum입니다.
      */
     public enum ToastDuration {
         case short
         case long
-        
+
         fileprivate var value: Double {
-            switch(self) {
+            switch self {
             case .short:
                 return 1.5
             case .long:
@@ -47,7 +49,7 @@ public class YDSToast: UIView {
             }
         }
     }
-    
+
     /**
      내부에서 사용되는 각종 레이아웃 관련 수치입니다.
      */
@@ -56,16 +58,15 @@ public class YDSToast: UIView {
             static let horizontal: CGFloat = 8
             static let vertical: CGFloat = 66
         }
-        
+
         enum Padding {
             static let horizontal: CGFloat = 24
             static let vertical: CGFloat = 20
         }
     }
-    
-    
-    //  MARK: - 뷰
-    
+
+    // MARK: - 뷰
+
     /**
      Toast에 나타나는 글자의 Label입니다.
      */
@@ -75,7 +76,7 @@ public class YDSToast: UIView {
         label.numberOfLines = 0
         return label
     }()
-    
+
     /**
      생성자는 private으로 막혀있습니다.
      생성자 대신 static으로 정의된 makeToast() 함수를 사용해주세요.
@@ -86,11 +87,11 @@ public class YDSToast: UIView {
         self.text = text
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     /**
      뷰를 세팅합니다.
      */
@@ -98,7 +99,7 @@ public class YDSToast: UIView {
         setLayouts()
         setProperties()
     }
-    
+
     /**
      레이아웃을 세팅합니다.
      */
@@ -106,14 +107,14 @@ public class YDSToast: UIView {
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     /**
      뷰의 위계를 세팅합니다.
      */
     private func setViewHierarchy() {
         self.addSubview(label)
     }
-    
+
     /**
      뷰의 오토레이아웃을 세팅합니다.
      label의 width에 lessThanOrEqualToSuperview() 를 사용했기 때문에
@@ -126,7 +127,7 @@ public class YDSToast: UIView {
             $0.center.equalToSuperview()
         }
     }
-    
+
     /**
      뷰의 프로퍼티를 세팅합니다.
      */
@@ -136,10 +137,9 @@ public class YDSToast: UIView {
         self.clipsToBounds = true
         self.alpha = 0.0
     }
-    
-    
-    //  MARK: - Toast Lifecycle
-    
+
+    // MARK: - Toast Lifecycle
+
     /**
      Toast를 생성하는 함수입니다.
      함수가 실행되면 화면 내 적절한 위치에 Toast가 생성됩니다.
@@ -157,21 +157,21 @@ public class YDSToast: UIView {
         if text == nil || text == "" {
             return
         }
-        
+
         let toast = YDSToast(text: text,
                              duration: duration)
-        
+
         guard let window = UIApplication.findWindow() else { return }
-    
+
         window.addSubview(toast)
         toast.snp.makeConstraints {
             $0.bottom.equalTo(window.safeAreaLayoutGuide.snp.bottom).inset(Dimension.Margin.vertical)
             $0.leading.trailing.equalTo(window.safeAreaLayoutGuide).inset(Dimension.Margin.horizontal)
         }
-        
+
         toast.showToast()
     }
-    
+
     /**
      Toast의 alpha 값을 0.0에서 1.0으로 변경하여 Toast가 보이도록 만듭니다.
      */
@@ -180,13 +180,13 @@ public class YDSToast: UIView {
             withDuration: YDSAnimation.Duration.medium,
             delay: 0.0,
             options: .curveEaseIn,
-            animations:{
+            animations: {
                 self.alpha = 1.0
             }, completion: { _ in
                 self.hideToastAfterDuration()
             })
     }
-    
+
     /**
      Duration으로 설정한 시간동안 Toast를 유지한 후
      alpha 값을 1.0에서 0.0으로 변경하여 Toast가 사라지도록 만듭니다.
@@ -202,12 +202,12 @@ public class YDSToast: UIView {
                 self.removeToast()
             })
     }
-    
+
     /**
      토스트를 제거합니다.
      */
     private func removeToast() {
         self.removeFromSuperview()
     }
-    
+
 }

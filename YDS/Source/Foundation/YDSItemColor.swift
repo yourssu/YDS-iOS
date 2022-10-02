@@ -18,7 +18,7 @@ public enum YDSItemColor: String {
     case violet = "Violet"
     case purple = "Purple"
     case pink = "Pink"
-    
+
     public var primaryColor: UIColor {
         switch self {
         case .mono:
@@ -41,7 +41,7 @@ public enum YDSItemColor: String {
             return YDSColor.pinkItemPrimary
         }
     }
-    
+
     public var backgroundColor: UIColor {
         switch self {
         case .mono:
@@ -64,7 +64,7 @@ public enum YDSItemColor: String {
             return YDSColor.pinkItemBG
         }
     }
-    
+
     public var textColor: UIColor {
         switch self {
         case .mono:
