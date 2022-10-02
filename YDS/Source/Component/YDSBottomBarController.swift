@@ -72,13 +72,17 @@ open class YDSBottomBarController: UITabBarController {
      각종 프로퍼티를 세팅합니다.
      */
     private func setProperties() {
-        tabBar.tintColor = YDSColor.bottomBarSelected
-        tabBar.unselectedItemTintColor = YDSColor.bottomBarNormal
-        tabBar.backgroundColor = YDSColor.bgElevated
-        tabBar.isTranslucent = false
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = YDSColor.bgElevated
+        appearance.shadowColor = .clear
+        appearance.stackedLayoutAppearance.normal.iconColor = YDSColor.bottomBarNormal
+        appearance.stackedLayoutAppearance.selected.iconColor = YDSColor.bottomBarSelected
 
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
 
     /**
