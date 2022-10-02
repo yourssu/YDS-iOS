@@ -10,33 +10,33 @@ import UIKit
 import YDS
 
 class LabelPageViewController: StoryBookViewController {
-    
+
     private let sampleLabel = YDSLabel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         addOptions()
     }
-    
+
     private func setupView() {
         setViewProperty()
         setViewLayouts()
     }
-    
+
     private func setViewProperty() {
         title = "Label"
     }
-    
+
     private func setViewLayouts() {
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     private func setViewHierarchy() {
         sampleView.addSubviews(sampleLabel)
     }
-    
+
     private func setAutolayout() {
         sampleLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
@@ -44,36 +44,36 @@ class LabelPageViewController: StoryBookViewController {
             $0.height.lessThanOrEqualToSuperview().inset(16)
         }
     }
-    
+
     private func addOptions() {
         addOption(description: "text",
                   defaultValue: "Label") { [weak self] value in
             self?.sampleLabel.text = value
         }
-        
+
         addOption(description: "style",
                   cases: String.TypoStyle.allCases,
                   defaultIndex: 0) { [weak self] value in
             self?.sampleLabel.style = value
         }
-        
+
         addOption(description: "numberOfLines",
                   defaultValue: 0) { [weak self] value in
             self?.sampleLabel.numberOfLines = value
         }
-        
+
         addOption(description: "textColor",
                   cases: textColors.items,
                   defaultIndex: 0) { [weak self] colorInfo in
             self?.sampleLabel.textColor = colorInfo.color
         }
-        
+
         addOption(description: "lineBreakMode",
                   cases: NSLineBreakMode.allCases,
                   defaultIndex: 0) { [weak self] value in
             self?.sampleLabel.lineBreakMode = value
         }
-        
+
         if #available(iOS 14.0, *) {
             addOption(description: "lineBreakStrategy",
                       cases: NSParagraphStyle.LineBreakStrategy.allCases,
@@ -82,7 +82,7 @@ class LabelPageViewController: StoryBookViewController {
             }
         }
     }
-    
+
 }
 
 extension String.TypoStyle: CaseIterable {
@@ -100,7 +100,7 @@ extension NSLineBreakMode: CaseIterable {
                                                      .byClipping,
                                                      .byTruncatingHead,
                                                      .byTruncatingMiddle,
-                                                     .byTruncatingTail,]
+                                                     .byTruncatingTail ]
 }
 
 @available(iOS 14.0, *)
@@ -108,5 +108,5 @@ extension NSParagraphStyle.LineBreakStrategy: CaseIterable {
     public static var allCases: [NSParagraphStyle.LineBreakStrategy] = [[],
                                                                         .pushOut,
                                                                         .hangulWordPriority,
-                                                                        .standard,]
+                                                                        .standard ]
 }

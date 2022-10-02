@@ -5,6 +5,8 @@
 //  Created by Gyuni on 2021/05/30.
 //
 
+// swiftlint:disable identifier_name
+
 import UIKit
 
 public enum YDSConstant {
@@ -13,7 +15,7 @@ public enum YDSConstant {
         public static let normal: CGFloat = 1
         public static let thick: CGFloat = 8
     }
-    
+
     public enum Rounding {
         public static let r2: CGFloat = 2
         public static let r4: CGFloat = 4

@@ -13,9 +13,9 @@ import UIKit
  기본 NavigationController에서 배경색, 투명도, 글씨 폰트, 컬러, 버튼 간격 등이 커스텀 되었습니다.
  */
 public class YDSNavigationController: UINavigationController {
-    
-    //  MARK: - 외부에서 지정할 수 있는 속성
-    
+
+    // MARK: - 외부에서 지정할 수 있는 속성
+
     /**
      RootViewController의 NavigationBar 상단에 들어가는
      굵은 Title의 String입니다.
@@ -23,13 +23,13 @@ public class YDSNavigationController: UINavigationController {
     public override var title: String? {
         didSet { self.titleLabel.text = title }
     }
-        
+
     private let titleLabel: YDSLabel = {
         let label = YDSLabel(style: .title2)
         label.textColor = YDSColor.textPrimary
         return label
     }()
-    
+
     /**
      YDS 스타일을 적용한 NavigationController를 생성합니다.
      
@@ -41,37 +41,37 @@ public class YDSNavigationController: UINavigationController {
         super.init(rootViewController: rootViewController)
         self.title = title
     }
-    
+
     public init(title: String? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.title = title
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
         setupFullWidthBackGesture()
     }
-    
+
     /**
      뷰를 세팅합니다.
      */
     private func setupView() {
         setProperties()
     }
-    
+
     /**
      각종 프로퍼티를 세팅합니다.
      */
     private func setProperties() {
         setNavigationBarAppearance()
     }
-    
+
     /**
      NavigationBar의 외관을 설정합니다.
      */
@@ -81,18 +81,18 @@ public class YDSNavigationController: UINavigationController {
         appearance.backgroundColor = YDSColor.bgElevated
         appearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: YDSColor.textPrimary,
-            NSAttributedString.Key.font: YDSFont.subtitle2,
+            NSAttributedString.Key.font: YDSFont.subtitle2
         ]
         appearance.setBackIndicatorImage(YDSIcon.arrowLeftLine,
                                          transitionMaskImage: YDSIcon.arrowLeftLine)
         appearance.shadowColor = nil
-        
+
         navigationBar.tintColor = YDSColor.buttonNormal
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.compactAppearance = appearance
     }
-    
+
     /**
      화면 중 어디를 스와이프해도 ViewController를 Pop 하기 위해
      UIPanGestureRecognizer를 생성합니다.
@@ -100,9 +100,8 @@ public class YDSNavigationController: UINavigationController {
     private lazy var fullWidthBackGestureRecognizer = UIPanGestureRecognizer()
 }
 
-
 extension YDSNavigationController {
-    
+
     /**
      ViewController가 Push될 때
      count가 1이라면(=root밖에 없다면) 굵은 titleLabel을 세팅합니다.
@@ -113,7 +112,7 @@ extension YDSNavigationController {
         super.pushViewController(viewController, animated: animated)
         setNavigationBarItem()
     }
-    
+
     public override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
         setNavigationBarItem()
@@ -128,18 +127,17 @@ extension YDSNavigationController {
             navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
         }
     }
-    
+
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         navigationBar.removeButtonBarSpacing()
         navigationBar.setButtonBarProperties()
     }
 }
 
-
 extension YDSNavigationController: UIGestureRecognizerDelegate {
-    
+
     /**
      화면 중 어디를 스와이프해도 ViewController를 Pop 하기 위해
      UIPanGestureRecognizer를 설정합니다.
@@ -156,7 +154,7 @@ extension YDSNavigationController: UIGestureRecognizerDelegate {
         fullWidthBackGestureRecognizer.delegate = self
         view.addGestureRecognizer(fullWidthBackGestureRecognizer)
     }
-    
+
     /**
      UINavigationController의
      기본 SwipeBack 옵션이 True 이면서
@@ -168,6 +166,5 @@ extension YDSNavigationController: UIGestureRecognizerDelegate {
         let isThereStackedViewControllers = viewControllers.count > 1
         return isSystemSwipeToBackEnabled && isThereStackedViewControllers
     }
-    
-}
 
+}

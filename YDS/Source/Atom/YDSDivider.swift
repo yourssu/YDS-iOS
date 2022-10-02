@@ -8,11 +8,11 @@
 import UIKit
 
 public class YDSDivider: UIView {
-    
+
     public enum DividerThickness {
         case thin
         case thick
-        
+
         fileprivate var rawValue: CGFloat {
             switch self {
             case .thin:
@@ -22,30 +22,30 @@ public class YDSDivider: UIView {
             }
         }
     }
-    
+
     public enum DividerDirection {
         case horizontal
         case vertical
     }
-    
+
     @SetNeeds(.layout) public var thickness: DividerThickness = .thin
     @SetNeeds(.layout) private var direction: DividerDirection = .horizontal
-    
+
     public init(_ direction: DividerDirection) {
         self.direction = direction
         super.init(frame: .zero)
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupView() {
         setColor()
         setThickness()
     }
-    
+
     private func setColor() {
         switch thickness {
         case .thin:
@@ -54,7 +54,7 @@ public class YDSDivider: UIView {
             self.backgroundColor = YDSColor.borderThin
         }
     }
-    
+
     private func setThickness() {
         switch direction {
         case .horizontal:
@@ -67,10 +67,10 @@ public class YDSDivider: UIView {
             }
         }
     }
-    
+
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         setColor()
         setThickness()
     }

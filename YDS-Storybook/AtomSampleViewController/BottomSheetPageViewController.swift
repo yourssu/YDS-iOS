@@ -5,12 +5,14 @@
 //  Created by Yonghyun on 2022/01/23.
 //
 
+// swiftlint:disable identifier_name
+
 import UIKit
 import YDS
 import SnapKit
 
 final class BottomSheetPageViewController: StoryBookViewController {
-    
+
     private let showBottomSheetButton: YDSBoxButton = {
         let button = YDSBoxButton()
         button.size = .large
@@ -27,7 +29,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
         }
         return view
     }()
-    
+
     private var numberOfViews: Int = 0
 
     override func viewDidLoad() {
@@ -36,7 +38,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
         setupView()
         registerTapAction()
     }
-    
+
     private func addOptions() {
         addOption(description: "Views",
                   typeDescription: "[UIView]",
@@ -82,7 +84,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
 
     @objc
     private func buttonTapAction(_ sender: UIButton) {
-        switch(sender) {
+        switch sender {
         case showBottomSheetButton:
             let bottomSheet = YDSBottomSheet()
             let views = YourssuDevTeam.allCases[0..<numberOfViews]
@@ -101,7 +103,7 @@ final class BottomSheetPageViewController: StoryBookViewController {
             return
         }
     }
-    
+
     enum YourssuDevTeam: String, CaseIterable {
         case iOS = "iOS"
         case android = "Android"

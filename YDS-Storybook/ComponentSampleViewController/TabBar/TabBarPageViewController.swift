@@ -11,16 +11,16 @@ import YDS
 import Parchment
 
 class TabBarPageViewController: StoryBookViewController {
-    
+
     private struct TabBarModel {
         var type: PagingViewController.TabBarType = .scrollable
         var numberOfTaps: Int = 8
     }
-    
+
     private var tabBarInfo: TabBarModel = TabBarModel()
-    
+
     private let numberOfTapsArr: [Int] = Array(2...10)
-    
+
     private let pushButton: YDSBoxButton = {
         let button = YDSBoxButton()
         button.size = .large
@@ -29,7 +29,7 @@ class TabBarPageViewController: StoryBookViewController {
         button.text = "샘플 페이지 보기"
         return button
     }()
-    
+
     private let spacer: UIView = {
         let view = UIView()
         view.snp.makeConstraints {
@@ -37,7 +37,7 @@ class TabBarPageViewController: StoryBookViewController {
         }
         return view
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addOptions()
@@ -79,23 +79,22 @@ class TabBarPageViewController: StoryBookViewController {
             self?.tabBarInfo.numberOfTaps = value
         }
     }
-    
+
     private func registerTapAction() {
         pushButton.addTarget(self, action: #selector(buttonTapAction(_:)), for: .touchUpInside)
     }
 
     @objc
     private func buttonTapAction(_ sender: UIButton) {
-        switch(sender) {
+        switch sender {
         case pushButton:
             var viewControllers: [UIViewController] = []
-            
-            for i in 0..<tabBarInfo.numberOfTaps {
-                viewControllers.append(ContentViewController(index: i))
+
+            for tap in 0..<tabBarInfo.numberOfTaps {
+                viewControllers.append(ContentViewController(index: tap))
             }
-            
-            let sampleViewController: YDSTabBarViewController = YDSTabBarViewController(type: tabBarInfo.type,
-                                                                                        viewControllers: viewControllers)
+
+            let sampleViewController = YDSTabBarViewController(type: tabBarInfo.type, viewControllers: viewControllers)
             self.navigationController?.pushViewController(sampleViewController, animated: true)
         default:
             return

@@ -12,7 +12,7 @@ public class YDSToggle: UISwitch {
         super.init(frame: frame)
         self.onTintColor = YDSColor.buttonPoint
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

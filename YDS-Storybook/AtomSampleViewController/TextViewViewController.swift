@@ -13,7 +13,7 @@ public enum YDSPlaceholder {
 }
 
 class TextViewViewController: StoryBookViewController {
-    
+
     private(set) lazy var inputStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -22,21 +22,21 @@ class TextViewViewController: StoryBookViewController {
         stackView.spacing = 8
         return stackView
     }()
-    
+
     private(set) lazy var imageView: YDSProfileImageView = {
         let profileImageView = YDSProfileImageView()
         profileImageView.image = UIImage(named: "logo.png")
         profileImageView.size = .medium
         return profileImageView
     }()
-    
+
     private(set) lazy var writingButton: YDSPlainButton = {
         let button = YDSPlainButton()
         button.rightIcon = YDSIcon.penFilled
         button.setContentCompressionResistancePriority(.defaultHigh + 1, for: .horizontal)
         return button
     }()
-    
+
     private lazy var textView: YDSTextView = {
         let textView = YDSTextView(maxHeight: maxHeight)
         textView.delegate = self
@@ -46,7 +46,7 @@ class TextViewViewController: StoryBookViewController {
         textView.placeholder = YDSPlaceholder.comment
         return textView
     }()
-    
+
     private lazy var titleLabel: YDSLabel = {
         let label = YDSLabel(style: .subtitle2)
         label.textColor = YDSColor.textPrimary
@@ -58,36 +58,36 @@ class TextViewViewController: StoryBookViewController {
         label.textColor = YDSColor.textSecondary
         return label
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupView()
         addOptions()
     }
-    
+
     private let maxHeight: CGFloat = 150
-    
+
     private func setupView() {
         setViewProperty()
         setViewLayouts()
     }
-    
+
     private func setViewProperty() {
         title = "TextView"
         stateLabel.text = textView.attributedText.isEmpty.description
     }
-    
+
     private func setViewLayouts() {
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     private func setViewHierarchy() {
         inputStackView.addArrangedSubviews(imageView, textView, writingButton)
         sampleView.addSubviews(inputStackView, titleLabel, stateLabel)
     }
-    
+
     private func setAutolayout() {
         inputStackView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -103,32 +103,32 @@ class TextViewViewController: StoryBookViewController {
             $0.width.equalTo(44)
             $0.height.equalTo(48)
         }
-        
+
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(textView.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(30)
         }
-        
+
         stateLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(30)
             $0.bottom.equalToSuperview().inset(12)
         }
     }
-    
+
     private func addOptions() {
         addOption(description: "textColor",
                   cases: textColors.items,
                   defaultIndex: 0) { [weak self] colorInfo in
             self?.textView.textColor = colorInfo.color
         }
-        
+
         addOption(description: "lineBreakMode",
                   cases: NSLineBreakMode.allCases,
                   defaultIndex: 0) { [weak self] value in
             self?.textView.lineBreakMode = value
         }
-        
+
         if #available(iOS 14.0, *) {
             addOption(description: "lineBreakStrategy",
                       cases: NSParagraphStyle.LineBreakStrategy.allCases,
@@ -136,14 +136,14 @@ class TextViewViewController: StoryBookViewController {
                 self?.textView.lineBreakStrategy = value
             }
         }
-        
+
         addOption(description: "placeholder",
                   cases: textColors.items,
                   defaultIndex: 2) { [weak self] colorInfo in
             self?.textView.placeholderColor = colorInfo.color
         }
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         guard let touch = touches.first else { return }
@@ -158,13 +158,16 @@ extension TextViewViewController: UITextViewDelegate {
         guard let textView = textView as? YDSTextView else { return }
         stateLabel.text = textView.attributedText.isEmpty.description
     }
-    
+
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let inputString = text.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let currentString = textView.text,
               let newRange = Range(range, in: currentString) else { return true }
-        let newString = currentString.replacingCharacters(in: newRange, with: inputString).trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        let newString = currentString
+                            .replacingCharacters(in: newRange,
+                                                 with: inputString)
+                            .trimmingCharacters(in: .whitespacesAndNewlines)
+
         guard newString.count < 500 else {
             YDSToast.makeToast(text: "error: 최대 글자수 초과", duration: .short)
             return false

@@ -10,16 +10,16 @@ import YDS
 import SnapKit
 
 class TooltipPageViewController: StoryBookViewController {
-    
+
     private struct TooltipModel {
         var text: String = ""
         var color: YDSTooltip.TooltipColor = .tooltipBG
         var tailPosition: YDSTooltip.TailPosition = .bottomRight
         var duration: YDSTooltip.TooltipDuration = .long
     }
-    
+
     private var tooltipInfo: TooltipModel = TooltipModel()
-    
+
     private var tooltip: YDSTooltip = {
         let tooltip = YDSTooltip()
         return tooltip
@@ -33,7 +33,7 @@ class TooltipPageViewController: StoryBookViewController {
         button.text = "샘플 페이지 보기"
         return button
     }()
-    
+
     private let spacer: UIView = {
         let view = UIView()
         view.snp.makeConstraints {
@@ -74,7 +74,7 @@ class TooltipPageViewController: StoryBookViewController {
         tooltip.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-        
+
         pushButton.snp.makeConstraints {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-32)
             $0.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(16)
@@ -115,7 +115,7 @@ class TooltipPageViewController: StoryBookViewController {
 
     @objc
     private func buttonTapAction(_ sender: UIButton) {
-        switch(sender) {
+        switch sender {
         case pushButton:
             let sampleViewController: TooltipSampleViewController = {
                 let viewController = TooltipSampleViewController(text: tooltipInfo.text,
@@ -124,13 +124,13 @@ class TooltipPageViewController: StoryBookViewController {
                                                                  duration: tooltipInfo.duration)
                 return viewController
             }()
-            
+
             self.navigationController?.pushViewController(sampleViewController, animated: true)
         default:
             return
         }
     }
-    
+
     private func resetupTooltip() {
         tooltip.removeFromSuperview()
         tooltip = YDSTooltip(text: tooltipInfo.text ,
@@ -138,7 +138,7 @@ class TooltipPageViewController: StoryBookViewController {
                                    tailPosition: tooltipInfo.tailPosition,
                                    duration: tooltipInfo.duration)
         tooltip.alpha = 1.0
-        
+
         sampleView.addSubview(tooltip)
         tooltip.snp.makeConstraints {
             $0.center.equalToSuperview()
@@ -151,7 +151,10 @@ extension YDSTooltip.TooltipColor: CaseIterable {
 }
 
 extension YDSTooltip.TailPosition: CaseIterable {
-    public static var allCases: [YDSTooltip.TailPosition] = [.left, .right, .topLeft, .bottomLeft, .topCenter, .bottomCenter, .topRight, .bottomRight]
+    public static var allCases: [YDSTooltip.TailPosition] = [.left, .right,
+                                                                .topLeft, .bottomLeft,
+                                                                .topCenter, .bottomCenter,
+                                                                .topRight, .bottomRight]
 }
 
 extension YDSTooltip.TooltipDuration: CaseIterable {
