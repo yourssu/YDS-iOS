@@ -35,7 +35,7 @@ public class YDSListItem: UIView {
     // MARK: - 외부에서 지정할 수 있는 속성
 
     /// 오른쪽 화살표 icon을 보여줄지 말지 정하는 변수
-    @SetNeeds(.layout) public var isShowingNextIconView: Bool?
+    @SetNeeds(wrappedValue: nil, .layout) public var isShowingNextIconView: Bool?
 
     /// ListItem에 action을 지정할 수 있는 투명 버튼
     public var button: UIButton = {

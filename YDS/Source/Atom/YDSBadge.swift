@@ -12,10 +12,10 @@ public class YDSBadge: UIView {
     // MARK: - 외부에서 지정할 수 있는 속성
 
     ///  뱃지의 글귀를 설정할 때 사용합니다.
-    @SetNeeds(.layout) public var text: String?
+    @SetNeeds(wrappedValue: nil, .layout) public var text: String?
 
     ///  뱃지에 들어갈 아이콘 이미지를 설정할 때 사용합니다.
-    @SetNeeds(.layout) public var icon: UIImage?
+    @SetNeeds(wrappedValue: nil, .layout) public var icon: UIImage?
 
     ///  뱃지의 색상을 설정할 때 사용합니다.
     @SetNeeds(.layout) public var color: YDSItemColor = .mono
