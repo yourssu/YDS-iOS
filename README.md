@@ -4,7 +4,7 @@
   <a href="https://www.apple.com/kr/ios/" target="_blank"><img src="https://img.shields.io/badge/13+-000000?style=flat-square&logo=iOS&logoColor=white"/></a>
   <a href="https://swift.org/package-manager/" target="_blank"><img src="https://img.shields.io/badge/Swift Package Manager-FA7343?style=flat-square&logo=Swift&logoColor=white"/></a>
   <a href="https://testflight.apple.com/join/00LW9q4d" target="_blank"><img src="https://img.shields.io/badge/TestFlight-0D96F6?style=flat-square&logo=Appstore&logoColor=white"/></a>
-    <a href="https://www.figma.com/community/file/1146974544001355129" target="_blank"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/></a>
+    <a href="https://www.figma.com/community/file/1146974544001355129" target="_blank"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white"/></a>
 </div>
 
 ## 🎨 YDS란
