@@ -76,10 +76,15 @@ open class YDSBottomBarController: UITabBarController {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = YDSColor.bgElevated
         appearance.shadowColor = .clear
-        appearance.stackedLayoutAppearance.normal.iconColor = YDSColor.bottomBarNormal
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor : YDSColor.bottomBarNormal]
-        appearance.stackedLayoutAppearance.selected.iconColor = YDSColor.bottomBarSelected
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor : YDSColor.bottomBarSelected]
+
+        let tabBarItemAppearance = UITabBarItemAppearance(style: .stacked)
+        tabBarItemAppearance.normal.iconColor = YDSColor.bottomBarNormal
+        tabBarItemAppearance.normal.titleTextAttributes = [.foregroundColor : YDSColor.bottomBarNormal]
+        tabBarItemAppearance.selected.iconColor = YDSColor.bottomBarSelected
+        tabBarItemAppearance.selected.titleTextAttributes = [.foregroundColor : YDSColor.bottomBarSelected]
+        appearance.stackedLayoutAppearance = tabBarItemAppearance
+        appearance.compactInlineLayoutAppearance = tabBarItemAppearance
+        appearance.inlineLayoutAppearance = tabBarItemAppearance
 
         tabBar.standardAppearance = appearance
         if #available(iOS 15.0, *) {
