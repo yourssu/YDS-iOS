@@ -106,8 +106,8 @@ extension String {
 
         internal func style(color: UIColor? = nil,
                             lineBreakMode: NSLineBreakMode? = nil,
-                            lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil)
-        -> [NSAttributedString.Key: Any] {
+                            lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil,
+                            alignment: NSTextAlignment? = nil) -> [NSAttributedString.Key: Any] {
             let paragraphStyle = NSMutableParagraphStyle()
 
             paragraphStyle.lineSpacing = self.font.pointSize*self.lineHeight - self.font.lineHeight
@@ -116,6 +116,9 @@ extension String {
             }
             if let lineBreakStrategy = lineBreakStrategy {
                 paragraphStyle.lineBreakStrategy = lineBreakStrategy
+            }
+            if let alignment = alignment {
+                paragraphStyle.alignment = alignment
             }
             let attributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: color ?? UIColor.black,
@@ -130,10 +133,12 @@ extension String {
     internal func attributedString(byPreset preset: TypoStyle,
                                    color: UIColor? = nil,
                                    lineBreakMode: NSLineBreakMode? = nil,
-                                   lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil) -> NSAttributedString {
-        return NSAttributedString.init(string: self,
+                                   lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil,
+                                   alignment: NSTextAlignment? = nil ) -> NSAttributedString {
+        return NSAttributedString.init(string : self,
                                        attributes: preset.style(color: color,
                                                                 lineBreakMode: lineBreakMode,
-                                                                lineBreakStrategy: lineBreakStrategy))
+                                                                lineBreakStrategy: lineBreakStrategy,
+                                                               alignment: alignment))
     }
 }

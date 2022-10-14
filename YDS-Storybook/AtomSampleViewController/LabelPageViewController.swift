@@ -73,7 +73,13 @@ class LabelPageViewController: StoryBookViewController {
                   defaultIndex: 0) { [weak self] value in
             self?.sampleLabel.lineBreakMode = value
         }
-
+        
+        addOption(description: "alignment",
+                  cases: NSTextAlignment.allCases,
+                  defaultIndex: 0) { [weak self] value in
+            self?.sampleLabel.alignment = value
+        }
+        
         if #available(iOS 14.0, *) {
             addOption(description: "lineBreakStrategy",
                       cases: NSParagraphStyle.LineBreakStrategy.allCases,
@@ -101,6 +107,14 @@ extension NSLineBreakMode: CaseIterable {
                                                      .byTruncatingHead,
                                                      .byTruncatingMiddle,
                                                      .byTruncatingTail ]
+}
+
+extension NSTextAlignment: CaseIterable {
+    public static var allCases: [NSTextAlignment] = [.left,
+                                                     .center,
+                                                     .right,
+                                                     .justified,
+                                                     .natural,]
 }
 
 @available(iOS 14.0, *)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0272DD4D28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */; };
 		530F6DBB26D2141500856758 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBA26D2141500856758 /* PanModal */; };
 		530F6DBE26D2142100856758 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBD26D2142100856758 /* SnapKit */; };
 		532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD126EC7323008C2354 /* UITableView+Generic.swift */; };
@@ -155,6 +156,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAlignment+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		532DBFD126EC7323008C2354 /* UITableView+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Generic.swift"; sourceTree = "<group>"; };
 		532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				C3A8033628AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift */,
+				0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */,
 				C3A8033828AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift */,
 				C3A8033A28AE2A96008E2380 /* UIModalPresentationStyle+CustomStringConvertible.swift */,
 			);
@@ -969,6 +972,7 @@
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
+				0272DD4D28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift in Sources */,
 				C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */,
 				53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */,
 				53E2CF4226D2A3DA000DE005 /* SearchTextFieldPageViewController.swift in Sources */,
