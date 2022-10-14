@@ -25,9 +25,14 @@ public class YDSLabel: UILabel {
     public override var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy {
         didSet { setNeedsLayout() }
     }
-
+    
+    public var alignment: NSTextAlignment {
+        didSet { setNeedsLayout() }
+    }
+    
     public init(style: String.TypoStyle = .body1) {
         self.style = style
+        self.alignment = .left
         super.init(frame: CGRect.zero)
 
         if #available(iOS 14.0, *) {
@@ -44,7 +49,8 @@ public class YDSLabel: UILabel {
         attributedText = text.attributedString(byPreset: style,
                                                color: textColor,
                                                lineBreakMode: lineBreakMode,
-                                               lineBreakStrategy: lineBreakStrategy)
+                                               lineBreakStrategy: lineBreakStrategy,
+                                               alignment: alignment)
     }
 
     public override func layoutSubviews() {
