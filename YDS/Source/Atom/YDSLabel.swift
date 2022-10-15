@@ -25,11 +25,11 @@ public class YDSLabel: UILabel {
     public override var lineBreakStrategy: NSParagraphStyle.LineBreakStrategy {
         didSet { setNeedsLayout() }
     }
-    
+
     public var alignment: NSTextAlignment {
         didSet { setNeedsLayout() }
     }
-    
+
     public init(style: String.TypoStyle = .body1) {
         self.style = style
         self.alignment = .left

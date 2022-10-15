@@ -135,10 +135,10 @@ extension String {
                                    lineBreakMode: NSLineBreakMode? = nil,
                                    lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil,
                                    alignment: NSTextAlignment? = nil ) -> NSAttributedString {
-        return NSAttributedString.init(string : self,
+        return NSAttributedString.init(string: self,
                                        attributes: preset.style(color: color,
                                                                 lineBreakMode: lineBreakMode,
                                                                 lineBreakStrategy: lineBreakStrategy,
-                                                               alignment: alignment))
+                                                                alignment: alignment))
     }
 }
