@@ -9,13 +9,9 @@ import UIKit
 
 extension UIApplication {
     class func findWindow() -> UIWindow? {
-         if #available(iOS 13, *) {
-             return shared.connectedScenes
-                 .compactMap { $0 as? UIWindowScene }
-                 .flatMap { $0.windows }
-                 .first { $0.isKeyWindow }
-         } else {
-             return shared.keyWindow
-         }
+        return shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .first { $0.isKeyWindow }
      }
 }
