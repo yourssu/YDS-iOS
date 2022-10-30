@@ -114,7 +114,7 @@ extension NSTextAlignment: CaseIterable {
                                                      .center,
                                                      .right,
                                                      .justified,
-                                                     .natural,]
+                                                     .natural]
 }
 
 @available(iOS 14.0, *)
@@ -122,5 +122,5 @@ extension NSParagraphStyle.LineBreakStrategy: CaseIterable {
     public static var allCases: [NSParagraphStyle.LineBreakStrategy] = [[],
                                                                         .pushOut,
                                                                         .hangulWordPriority,
-                                                                        .standard ]
+                                                                        .standard]
 }
