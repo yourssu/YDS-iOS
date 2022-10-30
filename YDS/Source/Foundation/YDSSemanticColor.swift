@@ -9,10 +9,7 @@ import UIKit
 public enum YDSColor {
     private static func color(light: UIColor, dark: UIColor? = nil) -> UIColor {
         if let dark = dark {
-            if #available(iOS 13.0, *) {
-                return UIColor { $0.userInterfaceStyle == .dark ? dark : light }
-            }
-            return light
+            return UIColor { $0.userInterfaceStyle == .dark ? dark : light }
         } else {
             return light
         }
