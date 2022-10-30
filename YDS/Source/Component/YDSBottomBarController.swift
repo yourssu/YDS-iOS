@@ -79,9 +79,9 @@ open class YDSBottomBarController: UITabBarController {
 
         let tabBarItemAppearance = UITabBarItemAppearance(style: .stacked)
         tabBarItemAppearance.normal.iconColor = YDSColor.bottomBarNormal
-        tabBarItemAppearance.normal.titleTextAttributes = [.foregroundColor : YDSColor.bottomBarNormal]
+        tabBarItemAppearance.normal.titleTextAttributes = [.foregroundColor: YDSColor.bottomBarNormal]
         tabBarItemAppearance.selected.iconColor = YDSColor.bottomBarSelected
-        tabBarItemAppearance.selected.titleTextAttributes = [.foregroundColor : YDSColor.bottomBarSelected]
+        tabBarItemAppearance.selected.titleTextAttributes = [.foregroundColor: YDSColor.bottomBarSelected]
         appearance.stackedLayoutAppearance = tabBarItemAppearance
         appearance.compactInlineLayoutAppearance = tabBarItemAppearance
         appearance.inlineLayoutAppearance = tabBarItemAppearance
