@@ -71,6 +71,7 @@ public class YDSSearchTextField: UITextField {
             $0.centerY.equalToSuperview()
         }
 
+        self.clipsToBounds = true
         self.layer.cornerRadius = YDSConstant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
 
