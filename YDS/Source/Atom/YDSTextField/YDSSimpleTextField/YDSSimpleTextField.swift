@@ -53,6 +53,7 @@ public class YDSSimpleTextField: UITextField {
         self.tintColor = YDSColor.textPointed
         self.clearButtonMode = .whileEditing
 
+        self.clipsToBounds = true
         self.layer.cornerRadius = YDSConstant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {

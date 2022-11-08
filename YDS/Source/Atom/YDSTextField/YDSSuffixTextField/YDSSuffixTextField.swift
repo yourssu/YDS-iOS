@@ -75,6 +75,7 @@ public class YDSSuffixTextField: UITextField {
         self.rightView = suffixLabel
         self.rightViewMode = .always
 
+        self.clipsToBounds = true
         self.layer.cornerRadius = YDSConstant.Rounding.r8
         self.backgroundColor = YDSColor.inputFieldElevated
         self.snp.makeConstraints {
