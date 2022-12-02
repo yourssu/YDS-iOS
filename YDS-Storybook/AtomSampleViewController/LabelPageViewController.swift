@@ -39,9 +39,7 @@ class LabelPageViewController: StoryBookViewController {
 
     private func setAutolayout() {
         sampleLabel.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.lessThanOrEqualToSuperview().inset(16)
-            $0.height.lessThanOrEqualToSuperview().inset(16)
+            $0.edges.equalToSuperview().inset(16)
         }
     }
 
@@ -76,7 +74,7 @@ class LabelPageViewController: StoryBookViewController {
 
         addOption(description: "alignment",
                   cases: NSTextAlignment.allCases,
-                  defaultIndex: 0) { [weak self] value in
+                  defaultIndex: 1) { [weak self] value in
             self?.sampleLabel.alignment = value
         }
 
