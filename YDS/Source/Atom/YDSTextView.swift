@@ -32,6 +32,62 @@ public class YDSTextView: UITextView {
         didSet { setTextStyle() }
     }
 
+    public enum TextViewType {
+            case title
+            case body
+
+            var placeholder: String {
+                switch self {
+                case .title:
+                    return "제목을 입력해주세요."
+                case .body:
+                    return "내용을 입력해주세요"
+                }
+            }
+
+            var font: UIFont {
+                switch self {
+                case .title:
+                    return YDSFont.subtitle1
+                case .body:
+                    return YDSFont.body1
+                }
+            }
+
+            var placeholderColor: UIColor {
+                return YDSColor.textTertiary
+            }
+
+            var textColor: UIColor {
+                return YDSColor.textPrimary
+            }
+        }
+
+        public var type: TextViewType = .body {
+            didSet {
+                setConstraints()
+            }
+        }
+
+        private func setConstraints() {
+            directionalLayoutMargins = .init(top: 0, leading: 0, bottom: -16, trailing: 0)
+            textColor = type.textColor
+            font = type.font
+            isScrollEnabled = false
+            tintColor = YDSColor.textPointed
+        }
+
+        public var isShowingPlaceholder: Bool = true {
+            didSet {
+                if isShowingPlaceholder {
+                    text = type.placeholder
+                    textColor = type.placeholderColor
+                } else {
+                    textColor = type.textColor
+                }
+            }
+        }
+
     public var placeholder: String? {
         didSet {
 
