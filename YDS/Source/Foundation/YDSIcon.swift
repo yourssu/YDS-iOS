@@ -44,6 +44,8 @@ public enum YDSIcon {
     public static var foodcalendarLine: UIImage { .load(name: "ic_foodcalendar_line") }
     public static var groundFilled: UIImage { .load(name: "ic_ground_filled") }
     public static var groundLine: UIImage { .load(name: "ic_ground_line") }
+    public static var heartFilled: UIImage { .load(name: "ic_heart_filled") }
+    public static var heartLine: UIImage { .load(name: "ic_heart_line") }
     public static var homeFilled: UIImage { .load(name: "ic_home_filled") }
     public static var homeLine: UIImage { .load(name: "ic_home_line") }
     public static var listLine: UIImage { .load(name: "ic_list_line") }
