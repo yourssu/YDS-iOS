@@ -133,7 +133,7 @@ class TooltipPageViewController: StoryBookViewController {
 
     private func resetupTooltip() {
         tooltip.removeFromSuperview()
-        tooltip = YDSTooltip(text: tooltipInfo.text ,
+        tooltip = YDSTooltip(text: tooltipInfo.text,
                                    color: tooltipInfo.color,
                                    tailPosition: tooltipInfo.tailPosition,
                                    duration: tooltipInfo.duration)

@@ -44,6 +44,8 @@ let ydsIconArray = [
     YDSIcon.foodcalendarLine,
     YDSIcon.groundFilled,
     YDSIcon.groundLine,
+    YDSIcon.heartFilled,
+    YDSIcon.heartLine,
     YDSIcon.homeFilled,
     YDSIcon.homeLine,
     YDSIcon.listLine,
