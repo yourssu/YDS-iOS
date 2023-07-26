@@ -552,6 +552,37 @@
 			path = ComponentSampleViewController;
 			sourceTree = "<group>";
 		};
+		6FFDB9612A717E00003A9519 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				532DBFDC26ED0CD5008C2354 /* Resources */,
+				533A27B526A52EC0009FD90A /* storyboard */,
+				533A27B226A52E56009FD90A /* PageListViewController.swift */,
+				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
+				538ACCAA26EB40000044A437 /* FoundationSampleViewController */,
+				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
+				53EFF5D026BBC22F00732DCF /* ComponentSampleViewController */,
+				532DBFD326EC7330008C2354 /* Extension */,
+				53441AF926AF0ECC00CB6BC9 /* Storybook */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		6FFDB9622A717E98003A9519 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				6FFDB9632A717EB6003A9519 /* Foundation */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		6FFDB9632A717EB6003A9519 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		C31F2B0C284BB34D000CD31B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,19 +716,12 @@
 		DDFBCFFD26739A6900C5F409 /* YDS-Storybook */ = {
 			isa = PBXGroup;
 			children = (
+				6FFDB9622A717E98003A9519 /* SwiftUI */,
+				6FFDB9612A717E00003A9519 /* UIKit */,
 				DDFBD00726739A6B00C5F409 /* Assets.xcassets */,
-				532DBFDC26ED0CD5008C2354 /* Resources */,
-				533A27B526A52EC0009FD90A /* storyboard */,
 				DDFBCFFE26739A6900C5F409 /* AppDelegate.swift */,
 				C3985FB527F832EA00389A22 /* SceneDelegate.swift */,
 				DDFBD00C26739A6B00C5F409 /* Info.plist */,
-				533A27B226A52E56009FD90A /* PageListViewController.swift */,
-				533A27B826A5351E009FD90A /* PageListTableViewCell.swift */,
-				538ACCAA26EB40000044A437 /* FoundationSampleViewController */,
-				53443D9C26A7D3CC0037B02E /* AtomSampleViewController */,
-				53EFF5D026BBC22F00732DCF /* ComponentSampleViewController */,
-				532DBFD326EC7330008C2354 /* Extension */,
-				53441AF926AF0ECC00CB6BC9 /* Storybook */,
 			);
 			path = "YDS-Storybook";
 			sourceTree = "<group>";
