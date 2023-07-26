@@ -95,6 +95,7 @@
 		6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */; };
 		6FFDB97F2A718548003A9519 /* YDSScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB97E2A718548003A9519 /* YDSScreenSize.swift */; };
 		6FFDB9812A71856F003A9519 /* YDSAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9802A71856F003A9519 /* YDSAnimation.swift */; };
+		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		C30E373D2888604E003CDDB0 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
 		C31F2B0E284BB35D000CD31B /* TabBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F2B0D284BB35D000CD31B /* TabBarPageViewController.swift */; };
 		C350ABE22808587600BFC9C0 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */; };
@@ -251,6 +252,7 @@
 		6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerControllerView.swift; sourceTree = "<group>"; };
 		6FFDB97E2A718548003A9519 /* YDSScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSScreenSize.swift; sourceTree = "<group>"; };
 		6FFDB9802A71856F003A9519 /* YDSAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSAnimation.swift; sourceTree = "<group>"; };
+		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		C31F2B0D284BB35D000CD31B /* TabBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPageViewController.swift; sourceTree = "<group>"; };
 		C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipPageViewController.swift; sourceTree = "<group>"; };
 		C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 		6FFDB9772A717FB5003A9519 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				6FFDB9822A718603003A9519 /* YDSFont.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				6FFDB9812A71856F003A9519 /* YDSAnimation.swift in Sources */,
 				6FFDB97B2A718089003A9519 /* YDSConstant.swift in Sources */,
 				6FFDB97F2A718548003A9519 /* YDSScreenSize.swift in Sources */,
+				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
