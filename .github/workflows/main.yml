@@ -16,8 +16,8 @@ jobs:
           DECRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/yourssuCertification.p12' }}
           ENCRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/yourssuCertification.p12.gpg' }}
           
-          DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubActions_Dist.mobileprovision' }}
-          ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubActions_Dist.mobileprovision.gpg' }}
+          DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/YDS_GithubActions_Dist.mobileprovision' }}
+          ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/YDS_GithubActions_Dist.mobileprovision.gpg' }}
           
           CERTS_ENCRYPTION_PWD: ${{ secrets.CERTS_ENCRYPTION_PWD }}    
           PROVISION_ENCRYPTION_PWD: ${{ secrets.PROVISION_ENCRYPTION_PWD }}     
