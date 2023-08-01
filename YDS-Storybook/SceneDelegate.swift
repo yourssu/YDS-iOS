@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import SwiftUI
 import YDS
+import YDS_SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,8 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = YDSBottomBarController()
         let navigationController = YDSNavigationController(title: "Storybook",
                                                            rootViewController: PageListViewController())
-        let navigationControllerSwiftUI = YDSNavigationController(title: "Storybook-SwiftUI",
-                                                           rootViewController: UIViewController())
+        let navigationControllerSwiftUI = UIHostingController(rootView: PageListView())
 
         let swiftImage = UIImage(systemName: "swift")
         let uikitImage = swiftImage?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal)
