@@ -32,18 +32,23 @@ let package = Package(
                 .product(name: "PanModal", package: "PanModal"),
                 .product(name: "SnapKit", package: "SnapKit"),
                 .product(name: "Parchment", package: "Parchment"),
-                .target(name: "YDS-Essential")
+                .targetItem(name: "YDS-Essential", condition: .none)
             ],
             path: "YDS/Source",
-            resources: [.process("YDS-Essential/Foundation/YDSIcon.xcassets")]
+            resources: []
         ),
         .target(
             name: "YDS-SwiftUI",
             dependencies: [
-                .target(name: "YDS-Essential")
+                .targetItem(name: "YDS-Essential", condition: .none)
             ],
             path: "YDS-SwiftUI/Source",
-            resources: [.process("YDS-Essential/Foundation/YDSIcon.xcassets")]
+            resources: []
+        ),
+        .target(
+            name: "YDS-Essential",
+            dependencies: [],
+            path: "YDS-Essential/Source"
         )
     ]
 )
