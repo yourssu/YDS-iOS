@@ -34,21 +34,23 @@ let package = Package(
                 .product(name: "Parchment", package: "Parchment"),
                 .targetItem(name: "YDS-Essential", condition: .none)
             ],
-            path: "YDS/Source",
-            resources: []
+            path: "YDS/Source"
         ),
         .target(
             name: "YDS-SwiftUI",
             dependencies: [
                 .targetItem(name: "YDS-Essential", condition: .none)
             ],
-            path: "YDS-SwiftUI/Source",
-            resources: []
+            path: "YDS-SwiftUI/Source"
         ),
         .target(
             name: "YDS-Essential",
             dependencies: [],
-            path: "YDS-Essential/Source"
+            path: "YDS-Essential/Source",
+            resources: [
+                .process("Foundation/YDSIcon.xcassets"),
+                .process("Foundation/YDSBasicColor.xcassets")
+            ]
         )
     ]
 )
