@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_Essential
 
 /**
  YDSSuffixTextFieldView의 기본이 되는 textField 입니다.

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_Essential
 
 /**
  검색을 위한 TextField를 포함하고 있는 SearchBar입니다.

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_Essential
 
 /**
  돋보기가 붙은 TextField입니다.

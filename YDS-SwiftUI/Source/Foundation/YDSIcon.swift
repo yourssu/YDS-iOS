@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import YDS_Essential
 
 public enum YDSIcon {
     public static var adbadgeFilled: Image { .load(name: "ic_adbadge_filled") }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import YDS_Essential
 import SnapKit
 
 public class YDSEmojiButton: UIControl {

@@ -9,6 +9,7 @@ import UIKit
 import YDS
 import SnapKit
 import RxSwift
+import YDS_Essential
 
 class StoryBookViewController: UIViewController {
 
