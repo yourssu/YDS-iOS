@@ -11,7 +11,12 @@ let package = Package(
     products: [
         .library(
             name: "YDS",
-            targets: ["YDS"])
+            targets: ["YDS"]
+        ),
+        .library(
+            name: "YDS-SwiftUI",
+            targets: ["YDS-SwiftUI"]
+        )
     ],
 
     dependencies: [
@@ -26,10 +31,19 @@ let package = Package(
             dependencies: [
                 .product(name: "PanModal", package: "PanModal"),
                 .product(name: "SnapKit", package: "SnapKit"),
-                .product(name: "Parchment", package: "Parchment")
+                .product(name: "Parchment", package: "Parchment"),
+                .target(name: "YDS-Essential")
             ],
             path: "YDS/Source",
-            resources: [.process("YDS/Source/Foundation/YDSIcon.xcassets")]
+            resources: [.process("YDS-Essential/Foundation/YDSIcon.xcassets")]
+        ),
+        .target(
+            name: "YDS-SwiftUI",
+            dependencies: [
+                .target(name: "YDS-Essential")
+            ],
+            path: "YDS-SwiftUI/Source",
+            resources: [.process("YDS-Essential/Foundation/YDSIcon.xcassets")]
         )
     ]
 )
