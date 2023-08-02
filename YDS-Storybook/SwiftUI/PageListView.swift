@@ -39,20 +39,25 @@ struct PageListView: View {
 
     // MARK: - body
     var body: some View {
+        let sectionPages: [(String, [Page])] = Array(
+            zip(
+                sections,
+                [foundationPages, atomPages, componentPages]
+            )
+        )
         NavigationStack {
             List {
-                Section {
-                    ForEach(foundationPages, id: \.id) { page in
-                        NavigationLink {
-                            AnyView(page.body)
-                        } label: {
-                            Text(page.title)
+                ForEach(sectionPages, id: \.0) { sectionTitle, pages in
+                    Section(sectionTitle) {
+                        ForEach(pages, id: \.id) { page in
+                            NavigationLink {
+                                AnyView(page.body)
+                            } label: {
+                                Text(page.title)
+                            }
                         }
                     }
-                } header: {
-                    Text("1. Foundation")
                 }
-
             }
         }
     }
