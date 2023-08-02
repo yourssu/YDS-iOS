@@ -347,8 +347,6 @@
 		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDFBD00A26739A6B00C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDFBD00C26739A6B00C5F409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDFBD02526739C3600C5F409 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDFBD02926739C3C00C5F409 /* PanModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PanModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,8 +393,6 @@
 		253AF81C549745374AD2F563 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DDFBD02926739C3C00C5F409 /* PanModal.framework */,
-				DDFBD02526739C3600C5F409 /* SnapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
