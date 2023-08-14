@@ -8,6 +8,7 @@
 // swiftlint:disable function_body_length nesting
 
 import UIKit
+import YDS_Essential
 
 final public class YDSTooltip: UIView {
 
@@ -252,3 +253,4 @@ final public class YDSTooltip: UIView {
         }
     }
 }
+// swiftlint:enable function_body_length nesting

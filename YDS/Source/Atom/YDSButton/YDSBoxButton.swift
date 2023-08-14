@@ -8,6 +8,7 @@
 // swiftlint:disable file_length type_body_length function_body_length identifier_name
 
 import UIKit
+import YDS_Essential
 
 /**
  네모난 Box 모양의 Button입니다.
@@ -459,3 +460,4 @@ extension UIButton {
         self.setBackgroundImage(image, for: state)
     }
 }
+// swiftlint:enable file_length type_body_length function_body_length identifier_name

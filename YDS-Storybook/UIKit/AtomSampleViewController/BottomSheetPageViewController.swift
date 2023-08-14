@@ -9,6 +9,7 @@
 
 import UIKit
 import YDS
+import YDS_Essential
 import SnapKit
 
 final class BottomSheetPageViewController: StoryBookViewController {
@@ -119,3 +120,4 @@ final class BottomSheetPageViewController: StoryBookViewController {
         case four = 4
     }
 }
+// swiftlint:enable identifier_name

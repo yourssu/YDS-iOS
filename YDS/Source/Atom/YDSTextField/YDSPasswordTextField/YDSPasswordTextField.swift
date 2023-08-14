@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_Essential
 
 /**
  YDSPasswordTextFieldView의 기본이 되는 textField 입니다.

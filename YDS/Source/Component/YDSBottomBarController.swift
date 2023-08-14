@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_Essential
 
 /**
  YDSBottomBar를 포함하는 Controller입니다.

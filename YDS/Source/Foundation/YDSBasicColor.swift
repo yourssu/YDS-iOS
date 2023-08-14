@@ -7,6 +7,7 @@
 
 // swiftlint:disable file_length
 
+import YDS_Essential
 import UIKit
 
 internal extension UIColor {

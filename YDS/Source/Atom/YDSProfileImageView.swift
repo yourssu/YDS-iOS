@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YDS_Essential
 
 public class YDSProfileImageView: UIImageView {
 

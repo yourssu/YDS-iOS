@@ -22,3 +22,5 @@ public enum YDSConstant {
         public static let r8: CGFloat = 8
     }
 }
+
+// swiftlint:enable identifier_name
