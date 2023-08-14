@@ -1,7 +1,7 @@
 name: Archive and export
 on:
   release:
-    types: [published, edited]
+    types: [published]
 jobs:
       build:
         runs-on: macos-latest
