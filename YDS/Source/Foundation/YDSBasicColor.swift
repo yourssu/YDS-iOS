@@ -705,17 +705,10 @@ internal extension UIColor {
 
 fileprivate extension UIColor {
     static func load(name: String) -> UIColor {
-#if SWIFT_PACKAGE
-        guard let color = UIColor(named: name, in: .module, compatibleWith: nil) else {
+        guard let color = UIColor(named: name, in: .ydsEssential, compatibleWith: nil) else {
             assert(false, "\(name) 컬러 로드 실패")
             return UIColor.clear
         }
-#else
-        guard let color = UIColor(named: name, in: YDSBundle.bundle, compatibleWith: nil) else {
-            assert(false, "\(name) 컬러 로드 실패")
-            return UIColor.clear
-        }
-#endif
         return color
     }
 }

@@ -97,17 +97,10 @@ public enum YDSIcon {
 
 extension UIImage {
     fileprivate static func load(name: String) -> UIImage {
-#if SWIFT_PACKAGE
-        guard let image = UIImage(named: name, in: .module, compatibleWith: nil) else {
+        guard let image = UIImage(named: name, in: .ydsEssential, compatibleWith: nil) else {
             assert(false, "\(name) 이미지 로드 실패")
             return UIImage()
         }
-#else
-        guard let image = UIImage(named: name, in: YDSBundle.bundle, compatibleWith: nil) else {
-            assert(false, "\(name) 이미지 로드 실패")
-            return UIImage()
-        }
-#endif
         image.accessibilityIdentifier = name
         return image
     }
