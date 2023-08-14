@@ -10,16 +10,14 @@ import Foundation
 public class YDSBundle {
     public static let bundle = Bundle(for: YDSBundle.self)
 }
-#if SWIFT_PACKAGE
 public extension Bundle {
+#if SWIFT_PACKAGE
     static var ydsEssential: Bundle {
         return .module
     }
-}
 #else
-public extension Bundle {
     static var ydsEssential: Bundle {
         return Bundle(for: YDSBundle.self)
     }
-}
 #endif
+}

@@ -48,7 +48,7 @@ let package = Package(
             dependencies: [],
             path: "YDS-Essential/Source",
             resources: [
-                .process("Foundation/YDSBasicColor.xcassets")
+                .process("Foundation/YDSBasicColor.xcassets"),
                 .process("Foundation/YDSIcon.xcassets")
             ]
         )
