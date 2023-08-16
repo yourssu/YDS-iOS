@@ -98,6 +98,8 @@
 		6F3C1F102A7A9428003D0D06 /* YDSScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C1F0D2A7A9428003D0D06 /* YDSScreenSize.swift */; };
 		6F3C1F112A7A9428003D0D06 /* YDSAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C1F0E2A7A9428003D0D06 /* YDSAnimation.swift */; };
 		6F3C1F122A7A9428003D0D06 /* YDSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C1F0F2A7A9428003D0D06 /* YDSConstant.swift */; };
+		6F956F1C2A8D5EB40023D0E3 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F956F1B2A8D5EB40023D0E3 /* Exported.swift */; };
+		6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F956F1D2A8D5F560023D0E3 /* Exported.swift */; };
 		6F95FE542A768C1E00B398CF /* YDSItemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95FE4D2A768C1E00B398CF /* YDSItemColor.swift */; };
 		6F95FE552A768C1E00B398CF /* YDSTypoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95FE4E2A768C1E00B398CF /* YDSTypoStyle.swift */; };
 		6F95FE562A768C1E00B398CF /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95FE4F2A768C1E00B398CF /* YDSIcon.swift */; };
@@ -295,6 +297,8 @@
 		6F3C1F0D2A7A9428003D0D06 /* YDSScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSScreenSize.swift; sourceTree = "<group>"; };
 		6F3C1F0E2A7A9428003D0D06 /* YDSAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSAnimation.swift; sourceTree = "<group>"; };
 		6F3C1F0F2A7A9428003D0D06 /* YDSConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSConstant.swift; sourceTree = "<group>"; };
+		6F956F1B2A8D5EB40023D0E3 /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
+		6F956F1D2A8D5F560023D0E3 /* Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exported.swift; sourceTree = "<group>"; };
 		6F95FE4D2A768C1E00B398CF /* YDSItemColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSItemColor.swift; sourceTree = "<group>"; };
 		6F95FE4E2A768C1E00B398CF /* YDSTypoStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSTypoStyle.swift; sourceTree = "<group>"; };
 		6F95FE4F2A768C1E00B398CF /* YDSIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 				DD6C63D426429C5B004CFF46 /* Atom */,
 				53EFF5CC26BA9A7B00732DCF /* Component */,
 				C35F272F2883F35B0061C1A0 /* SetNeeds.swift */,
+				6F956F1B2A8D5EB40023D0E3 /* Exported.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -711,6 +716,7 @@
 				6FFDB9772A717FB5003A9519 /* Foundation */,
 				6FFDB9782A717FBF003A9519 /* Atom */,
 				6FFDB9792A717FD8003A9519 /* Component */,
+				6F956F1D2A8D5F560023D0E3 /* Exported.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1157,6 +1163,7 @@
 				6F95FE582A768C1E00B398CF /* YDSSemanticColor.swift in Sources */,
 				6F95FE562A768C1E00B398CF /* YDSIcon.swift in Sources */,
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
+				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,6 +1211,7 @@
 				53443D8C26A5A4850037B02E /* YDSPasswordTextFieldView.swift in Sources */,
 				539110BF26C3743D0094FD08 /* YDSTopBar.swift in Sources */,
 				C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */,
+				6F956F1C2A8D5EB40023D0E3 /* Exported.swift in Sources */,
 				533A353F26AEA05F00CCEEAE /* YDSTextField.swift in Sources */,
 				5359A5C326BECF7400FCCECC /* YDSDoubleTitleTopBar.swift in Sources */,
 				539110BC26C373C90094FD08 /* UINavigationBar+Extension.swift in Sources */,
