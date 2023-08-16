@@ -8,7 +8,6 @@
 // swiftlint:disable file_length
 
 import SwiftUI
-import YDS_Essential
 
 internal extension Color {
 
@@ -705,11 +704,7 @@ internal extension Color {
 
 fileprivate extension Color {
     static func load(name: String) -> Color {
-#if SWIFT_PACKAGE
-        let color = Color(name, bundle: .module)
-#else
-        let color = Color(name, bundle: YDSBundle.bundle)
-#endif
+        let color = Color(name, bundle: .ydsEssential)
         return color
     }
 }

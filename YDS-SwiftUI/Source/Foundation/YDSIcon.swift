@@ -97,11 +97,7 @@ public enum YDSIcon {
 
 extension Image {
     fileprivate static func load(name: String) -> Image {
-#if SWIFT_PACKAGE
-        let image = Image(name, bundle: .module)
-#else
-        let image = Image(name, bundle: YDSBundle.bundle)
-#endif
+        let image = Image(name, bundle: .ydsEssential)
         return image
     }
 }

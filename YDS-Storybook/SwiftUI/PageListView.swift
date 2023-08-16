@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct PageListView: View {
 
     // MARK: - List에 들어갈 Section과 Row에 대한 정보
@@ -29,7 +27,7 @@ struct PageListView: View {
 
         }
     }
-    
+
     ///  각 섹션의 타이틀로 사용될 문자열
     let sections: [String] = ["1. Foundation", "2. Atom", "3. Component"]
 
@@ -72,6 +70,7 @@ struct PageListView: View {
                     componentPages
                 }
             }
+            .navigationTitle("Storybook-SwiftUI")
         }
     }
 }
