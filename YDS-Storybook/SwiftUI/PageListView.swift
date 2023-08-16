@@ -7,27 +7,29 @@
 
 import SwiftUI
 
-struct PageView<ViewType: View>: View {
-    let title: String
-    @ViewBuilder var content: () -> ViewType
-    var body: some View {
-        NavigationLink {
-            content()
-        } label: {
-            Text(title)
-        }
 
-    }
-}
 
 struct PageListView: View {
 
     // MARK: - List에 들어갈 Section과 Row에 대한 정보
 
-    /// List에 보여지는 Item의 기본 정보입니다
+    /// List에 보여지는 Item이 보여질 뷰입니다.
     /// title: Item에 표시될 문자열
-    /// body: 해당 Row에 표시될 View의 타입
+    /// content: 해당 Page가 선택되면 띄울 뷰
+    /// body: title과 content를 사용하는, 실제 List에 보여질 뷰
+    struct PageView<ViewType: View>: View {
+        let title: String
+        @ViewBuilder var content: () -> ViewType
+        var body: some View {
+            NavigationLink {
+                content()
+            } label: {
+                Text(title)
+            }
 
+        }
+    }
+    
     ///  각 섹션의 타이틀로 사용될 문자열
     let sections: [String] = ["1. Foundation", "2. Atom", "3. Component"]
 
