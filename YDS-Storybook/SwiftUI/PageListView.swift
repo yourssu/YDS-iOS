@@ -40,6 +40,9 @@ struct PageListView: View {
         PageView(title: "Empty") {
             EmptyView()
         }
+        PageView(title: "Icon") {
+            IconPageView()
+        }
     }
 
     @ViewBuilder
