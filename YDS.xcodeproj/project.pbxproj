@@ -85,6 +85,7 @@
 		53EB9FF0269DC45D00B7D14A /* YDSIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */; };
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
+		5A10B1B62A8F5C8500139E89 /* SwiftUIYDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */; };
 		6F2D527B2A79446000BAF200 /* ColorPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D527A2A79446000BAF200 /* ColorPageView.swift */; };
 		6F2D527D2A7944D800BAF200 /* PageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D527C2A7944D800BAF200 /* PageListView.swift */; };
 		6F3C1EEE2A7A8573003D0D06 /* YDS_Essential.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3C1EED2A7A8573003D0D06 /* YDS_Essential.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -290,6 +291,7 @@
 		53EB9FEF269DC45D00B7D14A /* YDSIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSIcon.swift; sourceTree = "<group>"; };
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
+		5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSIconArray.swift; sourceTree = "<group>"; };
 		6F2D527A2A79446000BAF200 /* ColorPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPageView.swift; sourceTree = "<group>"; };
 		6F2D527C2A7944D800BAF200 /* PageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListView.swift; sourceTree = "<group>"; };
 		6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_Essential.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -630,9 +632,18 @@
 			path = ComponentSampleViewController;
 			sourceTree = "<group>";
 		};
+		5A10B1B42A8F5C2600139E89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6F2D52782A79442B00BAF200 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5A10B1B42A8F5C2600139E89 /* Resources */,
 				6F2D527C2A7944D800BAF200 /* PageListView.swift */,
 				6F2D52792A79444C00BAF200 /* Foundation */,
 			);
@@ -1277,6 +1288,7 @@
 				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
 				532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */,
 				C3A8033728AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift in Sources */,
+				5A10B1B62A8F5C8500139E89 /* SwiftUIYDSIconArray.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
