@@ -86,6 +86,7 @@
 		53EFF5CE26BA9CD400732DCF /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5CD26BA9CD400732DCF /* YDSToast.swift */; };
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		5A10B1B62A8F5C8500139E89 /* SwiftUIYDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */; };
+		5A10B1B82A8F5FFF00139E89 /* IconPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1B72A8F5FFF00139E89 /* IconPageView.swift */; };
 		6F2D527B2A79446000BAF200 /* ColorPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D527A2A79446000BAF200 /* ColorPageView.swift */; };
 		6F2D527D2A7944D800BAF200 /* PageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D527C2A7944D800BAF200 /* PageListView.swift */; };
 		6F3C1EEE2A7A8573003D0D06 /* YDS_Essential.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3C1EED2A7A8573003D0D06 /* YDS_Essential.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -292,6 +293,7 @@
 		53EFF5CD26BA9CD400732DCF /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
 		5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSIconArray.swift; sourceTree = "<group>"; };
+		5A10B1B72A8F5FFF00139E89 /* IconPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPageView.swift; sourceTree = "<group>"; };
 		6F2D527A2A79446000BAF200 /* ColorPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPageView.swift; sourceTree = "<group>"; };
 		6F2D527C2A7944D800BAF200 /* PageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListView.swift; sourceTree = "<group>"; };
 		6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDS_Essential.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -654,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				6F2D527A2A79446000BAF200 /* ColorPageView.swift */,
+				5A10B1B72A8F5FFF00139E89 /* IconPageView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1249,6 +1252,7 @@
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
 				5365FD5B274A4ED000B6FBF9 /* IntControllerView.swift in Sources */,
 				C7F6908D27DDDA03002B63C9 /* IconsListItemCell.swift in Sources */,
+				5A10B1B82A8F5FFF00139E89 /* IconPageView.swift in Sources */,
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
