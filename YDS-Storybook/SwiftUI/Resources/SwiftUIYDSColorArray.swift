@@ -8,240 +8,240 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct SwiftUIColor {
+struct YDSColor {
     let color: SwiftUI.Color?
     let name: String
     let basicColorName: String
 }
 
-extension SwiftUIColor: CustomStringConvertible {
+extension YDSColor: CustomStringConvertible {
     var description: String {
         return self.name
     }
 }
 
-struct SwiftUIColors {
-    let items: [SwiftUIColor]
+struct YDSColors {
+    let items: [YDSColor]
     let description: String?
 }
 
-let swiftUIBackgroundColors = SwiftUIColors(
+let ydsBackgroundColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000 / black000"),
-        SwiftUIColor(color: YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000 / black000"),
-        SwiftUIColor(color: YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050 / realBlack"),
-        SwiftUIColor(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "black000A10 / white000A5"),
-        SwiftUIColor(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "black000A10 / white000A5"),
-        SwiftUIColor(color: YDSColor.bgNormalDark, name: "bgNormalDark", basicColorName: "realBlack / realBlack"),
-        SwiftUIColor(color: YDSColor.bgElevatedDark, name: "bgElevatedDark", basicColorName: "realBlack / realBlack"),
-        SwiftUIColor(color: YDSColor.bgDimDark, name: "bgDimDark", basicColorName: "gray900A30 / black000A30")
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000 / black000"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000 / black000"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050 / realBlack"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgPressed, name: "bgPressed", basicColorName: "black000A10 / white000A5"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgSelected, name: "bgSelected", basicColorName: "black000A10 / white000A5"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgNormalDark, name: "bgNormalDark", basicColorName: "realBlack / realBlack"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgElevatedDark, name: "bgElevatedDark", basicColorName: "realBlack / realBlack"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bgDimDark, name: "bgDimDark", basicColorName: "gray900A30 / black000A30")
     ],
     description: "Background"
 )
 
-let swiftUITextColors = SwiftUIColors(
+let ydsTextColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.textPrimary, name: "textPrimary", basicColorName: "black000 / gray900"),
-        SwiftUIColor(color: YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900 / gray800"),
-        SwiftUIColor(color: YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600 / gray600"),
-        SwiftUIColor(color: YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500/ gray400"),
-        SwiftUIColor(color: YDSColor.textBright, name: "textBright", basicColorName: "white000 / white000"),
-        SwiftUIColor(color: YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400 / pointColor400"),
-        SwiftUIColor(color: YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400 / warningRed400")
+        YDSColor(color: YDS_SwiftUI.YDSColor.textPrimary, name: "textPrimary", basicColorName: "black000 / gray900"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900 / gray800"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600 / gray600"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500/ gray400"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.textBright, name: "textBright", basicColorName: "white000 / white000"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400 / pointColor400"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400 / warningRed400")
     ],
     description: "Text"
 )
 
-let swiftUIDimColors = SwiftUIColors(
+let ydsDimColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30 / black000A30"),
-        SwiftUIColor(color: YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70 / black000A70"),
-        SwiftUIColor(color: YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70 / white000A70")
+        YDSColor(color: YDS_SwiftUI.YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30 / black000A30"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70 / black000A70"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70 / white000A70")
     ],
     description: "Dim"
 )
 
-let swiftUIBorderColors = SwiftUIColors(
+let ydsBorderColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.borderThin, name: "borderThin", basicColorName: "gray100 / gray100"),
-        SwiftUIColor(color: YDSColor.borderNormal, name: "borderNormal", basicColorName: "black000A10 / white000A10"),
-        SwiftUIColor(color: YDSColor.borderThick, name: "borderThick", basicColorName: "gray500 / gray500")
+        YDSColor(color: YDS_SwiftUI.YDSColor.borderThin, name: "borderThin", basicColorName: "gray100 / gray100"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.borderNormal, name: "borderNormal", basicColorName: "black000A10 / white000A10"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.borderThick, name: "borderThick", basicColorName: "gray500 / gray500")
     ],
     description: "Border"
 )
 
-let swiftUIButtonColors = SwiftUIColors(
+let ydsButtonColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700 / gray700"),
-        SwiftUIColor(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600 / gray600"),
-        SwiftUIColor(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200 / gray200"),
-        SwiftUIColor(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100 / gray100"),
-        SwiftUIColor(color: YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000 / white000"),
-        SwiftUIColor(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500 / gray500"),
-        SwiftUIColor(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200 / gray200"),
-        SwiftUIColor(color: YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400 / pointColor400"),
-        SwiftUIColor(color: YDSColor.buttonPointPressed, name: "buttonPointPressed", basicColorName: "pointColor300 / pointColor300"),
-        SwiftUIColor(color: YDSColor.buttonPointBG, name: "buttonPointBG", basicColorName: "pointColor050 / pointColor050"),
-        SwiftUIColor(color: YDSColor.buttonWarned, name: "buttonWarned", basicColorName: "warningRed400 / warningRed400"),
-        SwiftUIColor(color: YDSColor.buttonWarnedPressed, name: "buttonWarnedPressed", basicColorName: "warningRed300 / warningRed300"),
-        SwiftUIColor(color: YDSColor.buttonWarnedBG, name: "buttonWarnedBG", basicColorName: "warningRed050 / warningRed050")
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700 / gray700"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600 / gray600"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200 / gray200"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100 / gray100"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000 / white000"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500 / gray500"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200 / gray200"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400 / pointColor400"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonPointPressed, name: "buttonPointPressed", basicColorName: "pointColor300 / pointColor300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonPointBG, name: "buttonPointBG", basicColorName: "pointColor050 / pointColor050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonWarned, name: "buttonWarned", basicColorName: "warningRed400 / warningRed400"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonWarnedPressed, name: "buttonWarnedPressed", basicColorName: "warningRed300 / warningRed300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.buttonWarnedBG, name: "buttonWarnedBG", basicColorName: "warningRed050 / warningRed050")
     ],
     description: "Button"
 )
 
-let swiftUIBottomBarColors = SwiftUIColors(
+let ydsBottomBarColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.bottomBarNormal, name: "bottomBarNormal", basicColorName: "gray600 / gray600"),
-        SwiftUIColor(color: YDSColor.bottomBarSelected, name: "bottomBarSelected", basicColorName: "gray800 / gray800")
+        YDSColor(color: YDS_SwiftUI.YDSColor.bottomBarNormal, name: "bottomBarNormal", basicColorName: "gray600 / gray600"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.bottomBarSelected, name: "bottomBarSelected", basicColorName: "gray800 / gray800")
     ],
     description: "BottomBar"
 )
 
-let swiftUIInputFieldColors = SwiftUIColors(
+let ydsInputFieldColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.inputFieldNormal, name: "inputFieldNormal", basicColorName: "white000 / black000"),
-        SwiftUIColor(color: YDSColor.inputFieldElevated, name: "inputFieldElevated", basicColorName: "gray100 / gray100")
+        YDSColor(color: YDS_SwiftUI.YDSColor.inputFieldNormal, name: "inputFieldNormal", basicColorName: "white000 / black000"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.inputFieldElevated, name: "inputFieldElevated", basicColorName: "gray100 / gray100")
     ],
     description: "InputField"
 )
 
-let swiftUIToastColors = SwiftUIColors(
+let ydsToastColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.toastBG, name: "toastBG", basicColorName: "gray800 / gray300")
+        YDSColor(color: YDS_SwiftUI.YDSColor.toastBG, name: "toastBG", basicColorName: "gray800 / gray300")
     ],
     description: "Toast"
 )
 
-let swiftUITooltipColors = SwiftUIColors(
+let ydsTooltipColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.tooltipBG, name: "tooltipBG", basicColorName: "gray700 / gray400"),
-        SwiftUIColor(color: YDSColor.tooltipPoint, name: "tooltipPoint", basicColorName: "pointColor400 / pointColor400")
+        YDSColor(color: YDS_SwiftUI.YDSColor.tooltipBG, name: "tooltipBG", basicColorName: "gray700 / gray400"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.tooltipPoint, name: "tooltipPoint", basicColorName: "pointColor400 / pointColor400")
     ],
     description: "Tooltip"
 )
 
-let swiftUIPickerColors = SwiftUIColors(
+let ydsPickerColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.dimPickerReverse, name: "dimPickerReverse", basicColorName: "white000A70 / white000A70")
+        YDSColor(color: YDS_SwiftUI.YDSColor.dimPickerReverse, name: "dimPickerReverse", basicColorName: "white000A70 / white000A70")
     ],
     description: "Picker"
 )
 
-let swiftUIPressedColors = SwiftUIColors(
+let ydsPressedColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.pressed, name: "pressed", basicColorName: "black000A10 / white000A10")
+        YDSColor(color: YDS_SwiftUI.YDSColor.pressed, name: "pressed", basicColorName: "black000A10 / white000A10")
     ],
     description: "Pressed"
 )
 
-let swiftUIShadowColors = SwiftUIColors(
+let ydsShadowColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.shadowThin, name: "shadowThin", basicColorName: "gray400"),
-        SwiftUIColor(color: YDSColor.shadowNormal, name: "shadowNormal", basicColorName: "gray500")
+        YDSColor(color: YDS_SwiftUI.YDSColor.shadowThin, name: "shadowThin", basicColorName: "gray400"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.shadowNormal, name: "shadowNormal", basicColorName: "gray500")
     ],
     description: "Shadow"
 )
 
-let swiftUIMonoItemColors = SwiftUIColors(
+let ydsMonoItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.monoItemPrimary, name: "monoItemPrimary", basicColorName: "gray700 / gray700"),
-        SwiftUIColor(color: YDSColor.monoItemBG, name: "monoItemBG", basicColorName: "gray100 / gray100"),
-        SwiftUIColor(color: YDSColor.monoItemText, name: "monoItemText", basicColorName: "gray800 / gray800")
+        YDSColor(color: YDS_SwiftUI.YDSColor.monoItemPrimary, name: "monoItemPrimary", basicColorName: "gray700 / gray700"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.monoItemBG, name: "monoItemBG", basicColorName: "gray100 / gray100"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.monoItemText, name: "monoItemText", basicColorName: "gray800 / gray800")
     ],
     description: "MonoItem"
 )
 
-let swiftUIGreenItemColors = SwiftUIColors(
+let ydsGreenItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.greenItemPrimary, name: "greenItemPrimary", basicColorName: "green300"),
-        SwiftUIColor(color: YDSColor.greenItemBG, name: "greenItemBG", basicColorName: "green050"),
-        SwiftUIColor(color: YDSColor.greenItemText, name: "greenItemText", basicColorName: "green800")
+        YDSColor(color: YDS_SwiftUI.YDSColor.greenItemPrimary, name: "greenItemPrimary", basicColorName: "green300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.greenItemBG, name: "greenItemBG", basicColorName: "green050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.greenItemText, name: "greenItemText", basicColorName: "green800")
     ],
     description: "GreenItem"
 )
 
-let swiftUIEmeraldItemColors = SwiftUIColors(
+let ydsEmeraldItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.emeraldItemPrimary, name: "emeraldItemPrimary", basicColorName: "emerald300 / emerald300"),
-        SwiftUIColor(color: YDSColor.emeraldItemBG, name: "emeraldItemBG", basicColorName: "emerald050 / emerald050"),
-        SwiftUIColor(color: YDSColor.emeraldItemText, name: "emeraldItemText", basicColorName: "emerald800 / emerald800")
+        YDSColor(color: YDS_SwiftUI.YDSColor.emeraldItemPrimary, name: "emeraldItemPrimary", basicColorName: "emerald300 / emerald300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.emeraldItemBG, name: "emeraldItemBG", basicColorName: "emerald050 / emerald050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.emeraldItemText, name: "emeraldItemText", basicColorName: "emerald800 / emerald800")
     ],
     description: "EmeraldItem"
 )
 
-let swiftUIAquaItemColors = SwiftUIColors(
+let ydsAquaItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.aquaItemPrimary, name: "aquaItemPrimary", basicColorName: "aqua300 / aqua300"),
-        SwiftUIColor(color: YDSColor.aquaItemBG, name: "aquaItemBG", basicColorName: "aqua050 / aqua050"),
-        SwiftUIColor(color: YDSColor.aquaItemText, name: "aquaItemText", basicColorName: "aqua700 / aqua700")
+        YDSColor(color: YDS_SwiftUI.YDSColor.aquaItemPrimary, name: "aquaItemPrimary", basicColorName: "aqua300 / aqua300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.aquaItemBG, name: "aquaItemBG", basicColorName: "aqua050 / aqua050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.aquaItemText, name: "aquaItemText", basicColorName: "aqua700 / aqua700")
     ],
     description: "AquaItem"
 )
 
-let swiftUIBlueItemColors = SwiftUIColors(
+let ydsBlueItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.blueItemPrimary, name: "blueItemPrimary", basicColorName: "blue300 / blue300"),
-        SwiftUIColor(color: YDSColor.blueItemBG, name: "blueItemBG", basicColorName: "blue050 / blue050"),
-        SwiftUIColor(color: YDSColor.blueItemText, name: "blueItemText", basicColorName: "blue700 / blue700")
+        YDSColor(color: YDS_SwiftUI.YDSColor.blueItemPrimary, name: "blueItemPrimary", basicColorName: "blue300 / blue300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.blueItemBG, name: "blueItemBG", basicColorName: "blue050 / blue050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.blueItemText, name: "blueItemText", basicColorName: "blue700 / blue700")
     ],
     description: "BlueItem"
 )
 
-let swiftUIIndigoItemColors = SwiftUIColors(
+let ydsIndigoItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.indigoItemPrimary, name: "indigoItemPrimary", basicColorName: "indigo300 / indigo300"),
-        SwiftUIColor(color: YDSColor.indigoItemBG, name: "indigoItemBG", basicColorName: "indigo050 / indigo050"),
-        SwiftUIColor(color: YDSColor.indigoItemText, name: "indigoItemText", basicColorName: "indigo400 / indigo400")
+        YDSColor(color: YDS_SwiftUI.YDSColor.indigoItemPrimary, name: "indigoItemPrimary", basicColorName: "indigo300 / indigo300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.indigoItemBG, name: "indigoItemBG", basicColorName: "indigo050 / indigo050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.indigoItemText, name: "indigoItemText", basicColorName: "indigo400 / indigo400")
     ],
     description: "IndigoItem"
 )
 
-let swiftUIVioletItemColors = SwiftUIColors(
+let ydsVioletItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.violetItemPrimary, name: "violetItemPrimary", basicColorName: "violet300 / violet300"),
-        SwiftUIColor(color: YDSColor.violetItemBG, name: "violetItemBG", basicColorName: "violet050 / violet050"),
-        SwiftUIColor(color: YDSColor.violetItemText, name: "violetItemText", basicColorName: "violet400 / violet400")
+        YDSColor(color: YDS_SwiftUI.YDSColor.violetItemPrimary, name: "violetItemPrimary", basicColorName: "violet300 / violet300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.violetItemBG, name: "violetItemBG", basicColorName: "violet050 / violet050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.violetItemText, name: "violetItemText", basicColorName: "violet400 / violet400")
     ],
     description: "VioletItem"
 )
 
-let swiftUIPurpleItemColors = SwiftUIColors(
+let ydsPurpleItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.purpleItemPrimary, name: "purpleItemPrimary", basicColorName: "purple300 / purple300"),
-        SwiftUIColor(color: YDSColor.purpleItemBG, name: "purpleItemBG", basicColorName: "purple050 / purple050"),
-        SwiftUIColor(color: YDSColor.purpleItemText, name: "purpleItemText", basicColorName: "purple400 / purple400")
+        YDSColor(color: YDS_SwiftUI.YDSColor.purpleItemPrimary, name: "purpleItemPrimary", basicColorName: "purple300 / purple300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.purpleItemBG, name: "purpleItemBG", basicColorName: "purple050 / purple050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.purpleItemText, name: "purpleItemText", basicColorName: "purple400 / purple400")
     ],
     description: "PurpleItem"
 )
 
-let swiftUIPinkItemColors = SwiftUIColors(
+let ydsPinkItemColors = YDSColors(
     items: [
-        SwiftUIColor(color: YDSColor.pinkItemPrimary, name: "pinkItemPrimary", basicColorName: "pink300 / pink300"),
-        SwiftUIColor(color: YDSColor.pinkItemBG, name: "pinkItemBG", basicColorName: "pink050 / pink050"),
-        SwiftUIColor(color: YDSColor.pinkItemText, name: "pinkItemText", basicColorName: "pink600 / pink600")
+        YDSColor(color: YDS_SwiftUI.YDSColor.pinkItemPrimary, name: "pinkItemPrimary", basicColorName: "pink300 / pink300"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.pinkItemBG, name: "pinkItemBG", basicColorName: "pink050 / pink050"),
+        YDSColor(color: YDS_SwiftUI.YDSColor.pinkItemText, name: "pinkItemText", basicColorName: "pink600 / pink600")
     ],
     description: "PinkItem"
 )
 
-let swiftUIColors = [
-    swiftUIBackgroundColors,
-    swiftUITextColors,
-    swiftUIDimColors,
-    swiftUIBorderColors,
-    swiftUIButtonColors,
-    swiftUIBottomBarColors,
-    swiftUIInputFieldColors,
-    swiftUIToastColors,
-    swiftUITooltipColors,
-    swiftUIPressedColors,
-    swiftUIShadowColors,
-    swiftUIMonoItemColors,
-    swiftUIGreenItemColors,
-    swiftUIEmeraldItemColors,
-    swiftUIAquaItemColors,
-    swiftUIBlueItemColors,
-    swiftUIIndigoItemColors,
-    swiftUIVioletItemColors,
-    swiftUIPurpleItemColors,
-    swiftUIPinkItemColors
+let ydsColors = [
+    ydsBackgroundColors,
+    ydsTextColors,
+    ydsDimColors,
+    ydsBorderColors,
+    ydsButtonColors,
+    ydsBottomBarColors,
+    ydsInputFieldColors,
+    ydsToastColors,
+    ydsTooltipColors,
+    ydsPressedColors,
+    ydsShadowColors,
+    ydsMonoItemColors,
+    ydsGreenItemColors,
+    ydsEmeraldItemColors,
+    ydsAquaItemColors,
+    ydsBlueItemColors,
+    ydsIndigoItemColors,
+    ydsVioletItemColors,
+    ydsPurpleItemColors,
+    ydsPinkItemColors
 ]
