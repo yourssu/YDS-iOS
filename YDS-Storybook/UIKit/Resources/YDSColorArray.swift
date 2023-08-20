@@ -10,222 +10,222 @@
 import UIKit
 import YDS
 
-struct Color {
+struct WrappedUIKitColor {
     let color: UIColor?
     let name: String
     let basicColorName: String
 }
 
-extension Color: CustomStringConvertible {
+extension WrappedUIKitColor: CustomStringConvertible {
     var description: String {
         return self.name
     }
 }
 
-struct Colors {
-    let items: [Color]
+struct WrappedUIKitColors {
+    let items: [WrappedUIKitColor]
     let description: String?
 }
 
-let backgroundColors = Colors(
+private let backgroundColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000 / black000"),
-        Color(color: YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000 / black000"),
-        Color(color: YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050 / realBlack"),
-        Color(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "black000A10 / white000A5"),
-        Color(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "black000A10 / white000A5"),
-        Color(color: YDSColor.bgNormalDark, name: "bgNormalDark", basicColorName: "realBlack / realBlack"),
-        Color(color: YDSColor.bgElevatedDark, name: "bgElevatedDark", basicColorName: "realBlack / realBlack"),
-        Color(color: YDSColor.bgDimDark, name: "bgDimDark", basicColorName: "gray900A30 / black000A30")
+        WrappedUIKitColor(color: YDSColor.bgNormal, name: "bgNormal", basicColorName: "white000 / black000"),
+        WrappedUIKitColor(color: YDSColor.bgElevated, name: "bgElevated", basicColorName: "white000 / black000"),
+        WrappedUIKitColor(color: YDSColor.bgRecomment, name: "bgRecomment", basicColorName: "gray050 / realBlack"),
+        WrappedUIKitColor(color: YDSColor.bgPressed, name: "bgPressed", basicColorName: "black000A10 / white000A5"),
+        WrappedUIKitColor(color: YDSColor.bgSelected, name: "bgSelected", basicColorName: "black000A10 / white000A5"),
+        WrappedUIKitColor(color: YDSColor.bgNormalDark, name: "bgNormalDark", basicColorName: "realBlack / realBlack"),
+        WrappedUIKitColor(color: YDSColor.bgElevatedDark, name: "bgElevatedDark", basicColorName: "realBlack / realBlack"),
+        WrappedUIKitColor(color: YDSColor.bgDimDark, name: "bgDimDark", basicColorName: "gray900A30 / black000A30")
     ],
     description: "Background"
 )
 
-let textColors = Colors(
+private let textColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.textPrimary, name: "textPrimary", basicColorName: "black000 / gray900"),
-        Color(color: YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900 / gray800"),
-        Color(color: YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600 / gray600"),
-        Color(color: YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500/ gray400"),
-        Color(color: YDSColor.textBright, name: "textBright", basicColorName: "white000 / white000"),
-        Color(color: YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400 / pointColor400"),
-        Color(color: YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400 / warningRed400")
+        WrappedUIKitColor(color: YDSColor.textPrimary, name: "textPrimary", basicColorName: "black000 / gray900"),
+        WrappedUIKitColor(color: YDSColor.textSecondary, name: "textSecondary", basicColorName: "gray900 / gray800"),
+        WrappedUIKitColor(color: YDSColor.textTertiary, name: "textTertiary", basicColorName: "gray600 / gray600"),
+        WrappedUIKitColor(color: YDSColor.textDisabled, name: "textDisabled", basicColorName: "gray500/ gray400"),
+        WrappedUIKitColor(color: YDSColor.textBright, name: "textBright", basicColorName: "white000 / white000"),
+        WrappedUIKitColor(color: YDSColor.textPointed, name: "textPointed", basicColorName: "pointColor400 / pointColor400"),
+        WrappedUIKitColor(color: YDSColor.textWarned, name: "textWarned", basicColorName: "warningRed400 / warningRed400")
     ],
     description: "Text"
 )
 
-let dimColors = Colors(
+private let dimColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30 / black000A30"),
-        Color(color: YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70 / black000A70"),
-        Color(color: YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70 / white000A70")
+        WrappedUIKitColor(color: YDSColor.dimNormal, name: "dimNormal", basicColorName: "gray900A30 / black000A30"),
+        WrappedUIKitColor(color: YDSColor.dimThick, name: "dimThick", basicColorName: "gray900A70 / black000A70"),
+        WrappedUIKitColor(color: YDSColor.dimThickBright, name: "dimThickBright", basicColorName: "white000A70 / white000A70")
     ],
     description: "Dim"
 )
 
-let borderColors = Colors(
+private let borderColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.borderThin, name: "borderThin", basicColorName: "gray100 / gray100"),
-        Color(color: YDSColor.borderNormal, name: "borderNormal", basicColorName: "black000A10 / white000A10"),
-        Color(color: YDSColor.borderThick, name: "borderThick", basicColorName: "gray500 / gray500")
+        WrappedUIKitColor(color: YDSColor.borderThin, name: "borderThin", basicColorName: "gray100 / gray100"),
+        WrappedUIKitColor(color: YDSColor.borderNormal, name: "borderNormal", basicColorName: "black000A10 / white000A10"),
+        WrappedUIKitColor(color: YDSColor.borderThick, name: "borderThick", basicColorName: "gray500 / gray500")
     ],
     description: "Border"
 )
 
-let buttonColors = Colors(
+private let buttonColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700 / gray700"),
-        Color(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600 / gray600"),
-        Color(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200 / gray200"),
-        Color(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100 / gray100"),
-        Color(color: YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000 / white000"),
-        Color(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500 / gray500"),
-        Color(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200 / gray200"),
-        Color(color: YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400 / pointColor400"),
-        Color(color: YDSColor.buttonPointPressed, name: "buttonPointPressed", basicColorName: "pointColor300 / pointColor300"),
-        Color(color: YDSColor.buttonPointBG, name: "buttonPointBG", basicColorName: "pointColor050 / pointColor050"),
-        Color(color: YDSColor.buttonWarned, name: "buttonWarned", basicColorName: "warningRed400 / warningRed400"),
-        Color(color: YDSColor.buttonWarnedPressed, name: "buttonWarnedPressed", basicColorName: "warningRed300 / warningRed300"),
-        Color(color: YDSColor.buttonWarnedBG, name: "buttonWarnedBG", basicColorName: "warningRed050 / warningRed050")
+        WrappedUIKitColor(color: YDSColor.buttonNormal, name: "buttonNormal", basicColorName: "gray700 / gray700"),
+        WrappedUIKitColor(color: YDSColor.buttonNormalPressed, name: "buttonNormalPressed", basicColorName: "gray600 / gray600"),
+        WrappedUIKitColor(color: YDSColor.buttonBG, name: "buttonBG", basicColorName: "gray200 / gray200"),
+        WrappedUIKitColor(color: YDSColor.buttonEmojiBG, name: "buttonEmojiBG", basicColorName: "gray100 / gray100"),
+        WrappedUIKitColor(color: YDSColor.buttonBright, name: "buttonBright", basicColorName: "white000 / white000"),
+        WrappedUIKitColor(color: YDSColor.buttonDisabled, name: "buttonDisabled", basicColorName: "gray500 / gray500"),
+        WrappedUIKitColor(color: YDSColor.buttonDisabledBG, name: "buttonDisabledBG", basicColorName: "gray200 / gray200"),
+        WrappedUIKitColor(color: YDSColor.buttonPoint, name: "buttonPoint", basicColorName: "pointColor400 / pointColor400"),
+        WrappedUIKitColor(color: YDSColor.buttonPointPressed, name: "buttonPointPressed", basicColorName: "pointColor300 / pointColor300"),
+        WrappedUIKitColor(color: YDSColor.buttonPointBG, name: "buttonPointBG", basicColorName: "pointColor050 / pointColor050"),
+        WrappedUIKitColor(color: YDSColor.buttonWarned, name: "buttonWarned", basicColorName: "warningRed400 / warningRed400"),
+        WrappedUIKitColor(color: YDSColor.buttonWarnedPressed, name: "buttonWarnedPressed", basicColorName: "warningRed300 / warningRed300"),
+        WrappedUIKitColor(color: YDSColor.buttonWarnedBG, name: "buttonWarnedBG", basicColorName: "warningRed050 / warningRed050")
     ],
     description: "Button"
 )
 
-let bottomBarColors = Colors(
+private let bottomBarColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.bottomBarNormal, name: "bottomBarNormal", basicColorName: "gray600 / gray600"),
-        Color(color: YDSColor.bottomBarSelected, name: "bottomBarSelected", basicColorName: "gray800 / gray800")
+        WrappedUIKitColor(color: YDSColor.bottomBarNormal, name: "bottomBarNormal", basicColorName: "gray600 / gray600"),
+        WrappedUIKitColor(color: YDSColor.bottomBarSelected, name: "bottomBarSelected", basicColorName: "gray800 / gray800")
     ],
     description: "BottomBar"
 )
 
-let inputFieldColors = Colors(
+private let inputFieldColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.inputFieldNormal, name: "inputFieldNormal", basicColorName: "white000 / black000"),
-        Color(color: YDSColor.inputFieldElevated, name: "inputFieldElevated", basicColorName: "gray100 / gray100")
+        WrappedUIKitColor(color: YDSColor.inputFieldNormal, name: "inputFieldNormal", basicColorName: "white000 / black000"),
+        WrappedUIKitColor(color: YDSColor.inputFieldElevated, name: "inputFieldElevated", basicColorName: "gray100 / gray100")
     ],
     description: "InputField"
 )
 
-let toastColors = Colors(
+private let toastColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.toastBG, name: "toastBG", basicColorName: "gray800 / gray300")
+        WrappedUIKitColor(color: YDSColor.toastBG, name: "toastBG", basicColorName: "gray800 / gray300")
     ],
     description: "Toast"
 )
 
-let tooltipColors = Colors(
+private let tooltipColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.tooltipBG, name: "tooltipBG", basicColorName: "gray700 / gray400"),
-        Color(color: YDSColor.tooltipPoint, name: "tooltipPoint", basicColorName: "pointColor400 / pointColor400")
+        WrappedUIKitColor(color: YDSColor.tooltipBG, name: "tooltipBG", basicColorName: "gray700 / gray400"),
+        WrappedUIKitColor(color: YDSColor.tooltipPoint, name: "tooltipPoint", basicColorName: "pointColor400 / pointColor400")
     ],
     description: "Tooltip"
 )
 
-let pickerColors = Colors(
+private let pickerColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.dimPickerReverse, name: "dimPickerReverse", basicColorName: "white000A70 / white000A70")
+        WrappedUIKitColor(color: YDSColor.dimPickerReverse, name: "dimPickerReverse", basicColorName: "white000A70 / white000A70")
     ],
     description: "Picker"
 )
 
-let pressedColors = Colors(
+private let pressedColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.pressed, name: "pressed", basicColorName: "black000A10 / white000A10")
+        WrappedUIKitColor(color: YDSColor.pressed, name: "pressed", basicColorName: "black000A10 / white000A10")
     ],
     description: "Pressed"
 )
 
-let shadowColors = Colors(
+private let shadowColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.shadowThin, name: "shadowThin", basicColorName: "gray400"),
-        Color(color: YDSColor.shadowNormal, name: "shadowNormal", basicColorName: "gray500")
+        WrappedUIKitColor(color: YDSColor.shadowThin, name: "shadowThin", basicColorName: "gray400"),
+        WrappedUIKitColor(color: YDSColor.shadowNormal, name: "shadowNormal", basicColorName: "gray500")
     ],
     description: "Shadow"
 )
 
-let monoItemColors = Colors(
+private let monoItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.monoItemPrimary, name: "monoItemPrimary", basicColorName: "gray700 / gray700"),
-        Color(color: YDSColor.monoItemBG, name: "monoItemBG", basicColorName: "gray100 / gray100"),
-        Color(color: YDSColor.monoItemText, name: "monoItemText", basicColorName: "gray800 / gray800")
+        WrappedUIKitColor(color: YDSColor.monoItemPrimary, name: "monoItemPrimary", basicColorName: "gray700 / gray700"),
+        WrappedUIKitColor(color: YDSColor.monoItemBG, name: "monoItemBG", basicColorName: "gray100 / gray100"),
+        WrappedUIKitColor(color: YDSColor.monoItemText, name: "monoItemText", basicColorName: "gray800 / gray800")
     ],
     description: "MonoItem"
 )
 
-let greenItemColors = Colors(
+private let greenItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.greenItemPrimary, name: "greenItemPrimary", basicColorName: "green300"),
-        Color(color: YDSColor.greenItemBG, name: "greenItemBG", basicColorName: "green050"),
-        Color(color: YDSColor.greenItemText, name: "greenItemText", basicColorName: "green800")
+        WrappedUIKitColor(color: YDSColor.greenItemPrimary, name: "greenItemPrimary", basicColorName: "green300"),
+        WrappedUIKitColor(color: YDSColor.greenItemBG, name: "greenItemBG", basicColorName: "green050"),
+        WrappedUIKitColor(color: YDSColor.greenItemText, name: "greenItemText", basicColorName: "green800")
     ],
     description: "GreenItem"
 )
 
-let emeraldItemColors = Colors(
+private let emeraldItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.emeraldItemPrimary, name: "emeraldItemPrimary", basicColorName: "emerald300 / emerald300"),
-        Color(color: YDSColor.emeraldItemBG, name: "emeraldItemBG", basicColorName: "emerald050 / emerald050"),
-        Color(color: YDSColor.emeraldItemText, name: "emeraldItemText", basicColorName: "emerald800 / emerald800")
+        WrappedUIKitColor(color: YDSColor.emeraldItemPrimary, name: "emeraldItemPrimary", basicColorName: "emerald300 / emerald300"),
+        WrappedUIKitColor(color: YDSColor.emeraldItemBG, name: "emeraldItemBG", basicColorName: "emerald050 / emerald050"),
+        WrappedUIKitColor(color: YDSColor.emeraldItemText, name: "emeraldItemText", basicColorName: "emerald800 / emerald800")
     ],
     description: "EmeraldItem"
 )
 
-let aquaItemColors = Colors(
+private let aquaItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.aquaItemPrimary, name: "aquaItemPrimary", basicColorName: "aqua300 / aqua300"),
-        Color(color: YDSColor.aquaItemBG, name: "aquaItemBG", basicColorName: "aqua050 / aqua050"),
-        Color(color: YDSColor.aquaItemText, name: "aquaItemText", basicColorName: "aqua700 / aqua700")
+        WrappedUIKitColor(color: YDSColor.aquaItemPrimary, name: "aquaItemPrimary", basicColorName: "aqua300 / aqua300"),
+        WrappedUIKitColor(color: YDSColor.aquaItemBG, name: "aquaItemBG", basicColorName: "aqua050 / aqua050"),
+        WrappedUIKitColor(color: YDSColor.aquaItemText, name: "aquaItemText", basicColorName: "aqua700 / aqua700")
     ],
     description: "AquaItem"
 )
 
-let blueItemColors = Colors(
+private let blueItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.blueItemPrimary, name: "blueItemPrimary", basicColorName: "blue300 / blue300"),
-        Color(color: YDSColor.blueItemBG, name: "blueItemBG", basicColorName: "blue050 / blue050"),
-        Color(color: YDSColor.blueItemText, name: "blueItemText", basicColorName: "blue700 / blue700")
+        WrappedUIKitColor(color: YDSColor.blueItemPrimary, name: "blueItemPrimary", basicColorName: "blue300 / blue300"),
+        WrappedUIKitColor(color: YDSColor.blueItemBG, name: "blueItemBG", basicColorName: "blue050 / blue050"),
+        WrappedUIKitColor(color: YDSColor.blueItemText, name: "blueItemText", basicColorName: "blue700 / blue700")
     ],
     description: "BlueItem"
 )
 
-let indigoItemColors = Colors(
+private let indigoItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.indigoItemPrimary, name: "indigoItemPrimary", basicColorName: "indigo300 / indigo300"),
-        Color(color: YDSColor.indigoItemBG, name: "indigoItemBG", basicColorName: "indigo050 / indigo050"),
-        Color(color: YDSColor.indigoItemText, name: "indigoItemText", basicColorName: "indigo400 / indigo400")
+        WrappedUIKitColor(color: YDSColor.indigoItemPrimary, name: "indigoItemPrimary", basicColorName: "indigo300 / indigo300"),
+        WrappedUIKitColor(color: YDSColor.indigoItemBG, name: "indigoItemBG", basicColorName: "indigo050 / indigo050"),
+        WrappedUIKitColor(color: YDSColor.indigoItemText, name: "indigoItemText", basicColorName: "indigo400 / indigo400")
     ],
     description: "IndigoItem"
 )
 
-let violetItemColors = Colors(
+private let violetItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.violetItemPrimary, name: "violetItemPrimary", basicColorName: "violet300 / violet300"),
-        Color(color: YDSColor.violetItemBG, name: "violetItemBG", basicColorName: "violet050 / violet050"),
-        Color(color: YDSColor.violetItemText, name: "violetItemText", basicColorName: "violet400 / violet400")
+        WrappedUIKitColor(color: YDSColor.violetItemPrimary, name: "violetItemPrimary", basicColorName: "violet300 / violet300"),
+        WrappedUIKitColor(color: YDSColor.violetItemBG, name: "violetItemBG", basicColorName: "violet050 / violet050"),
+        WrappedUIKitColor(color: YDSColor.violetItemText, name: "violetItemText", basicColorName: "violet400 / violet400")
     ],
     description: "VioletItem"
 )
 
-let purpleItemColors = Colors(
+private let purpleItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.purpleItemPrimary, name: "purpleItemPrimary", basicColorName: "purple300 / purple300"),
-        Color(color: YDSColor.purpleItemBG, name: "purpleItemBG", basicColorName: "purple050 / purple050"),
-        Color(color: YDSColor.purpleItemText, name: "purpleItemText", basicColorName: "purple400 / purple400")
+        WrappedUIKitColor(color: YDSColor.purpleItemPrimary, name: "purpleItemPrimary", basicColorName: "purple300 / purple300"),
+        WrappedUIKitColor(color: YDSColor.purpleItemBG, name: "purpleItemBG", basicColorName: "purple050 / purple050"),
+        WrappedUIKitColor(color: YDSColor.purpleItemText, name: "purpleItemText", basicColorName: "purple400 / purple400")
     ],
     description: "PurpleItem"
 )
 
-let pinkItemColors = Colors(
+private let pinkItemColors = WrappedUIKitColors(
     items: [
-        Color(color: YDSColor.pinkItemPrimary, name: "pinkItemPrimary", basicColorName: "pink300 / pink300"),
-        Color(color: YDSColor.pinkItemBG, name: "pinkItemBG", basicColorName: "pink050 / pink050"),
-        Color(color: YDSColor.pinkItemText, name: "pinkItemText", basicColorName: "pink600 / pink600")
+        WrappedUIKitColor(color: YDSColor.pinkItemPrimary, name: "pinkItemPrimary", basicColorName: "pink300 / pink300"),
+        WrappedUIKitColor(color: YDSColor.pinkItemBG, name: "pinkItemBG", basicColorName: "pink050 / pink050"),
+        WrappedUIKitColor(color: YDSColor.pinkItemText, name: "pinkItemText", basicColorName: "pink600 / pink600")
     ],
     description: "PinkItem"
 )
 
-let colors = [
+let wrappedUIKitColors = [
     backgroundColors,
     textColors,
     dimColors,
@@ -235,6 +235,7 @@ let colors = [
     inputFieldColors,
     toastColors,
     tooltipColors,
+    pickerColors,
     pressedColors,
     shadowColors,
     monoItemColors,
@@ -247,3 +248,5 @@ let colors = [
     purpleItemColors,
     pinkItemColors
 ]
+
+// swiftlint:enable line_length
