@@ -118,7 +118,7 @@ class TextViewViewController: StoryBookViewController {
 
     private func addOptions() {
         addOption(description: "textColor",
-                  cases: textColors.items,
+                  cases: YDSUIKitColorWrapper.textColors.items,
                   defaultIndex: 0) { [weak self] colorInfo in
             self?.textView.textColor = colorInfo.color
         }
@@ -138,7 +138,7 @@ class TextViewViewController: StoryBookViewController {
         }
 
         addOption(description: "placeholder",
-                  cases: textColors.items,
+                  cases: YDSUIKitColorWrapper.textColors.items,
                   defaultIndex: 2) { [weak self] colorInfo in
             self?.textView.placeholderColor = colorInfo.color
         }
