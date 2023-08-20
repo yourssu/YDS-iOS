@@ -15,7 +15,7 @@ class ColorsPageViewController: UIViewController {
     private let colorsListTableViewController: ColorsListTableViewController
 
     init() {
-        colorsListTableViewController = ColorsListTableViewController(with: wrappedUIKitColors)
+        colorsListTableViewController = ColorsListTableViewController(with: YDSUIKitColorWrapper.colors)
         super.init(nibName: nil, bundle: nil)
     }
 
