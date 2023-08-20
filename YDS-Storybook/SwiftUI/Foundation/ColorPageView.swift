@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ColorPageView: View {
+    var colors = YDSSwiftUIColorWrapper.colors
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
