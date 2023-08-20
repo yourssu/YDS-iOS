@@ -61,7 +61,7 @@ class LabelPageViewController: StoryBookViewController {
         }
 
         addOption(description: "textColor",
-                  cases: textColors.items,
+                  cases: YDSUIKitColorWrapper.textColors.items,
                   defaultIndex: 0) { [weak self] colorInfo in
             self?.sampleLabel.textColor = colorInfo.color
         }
