@@ -73,7 +73,9 @@ struct PageListView: View {
                     componentPages
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("Storybook-SwiftUI")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
