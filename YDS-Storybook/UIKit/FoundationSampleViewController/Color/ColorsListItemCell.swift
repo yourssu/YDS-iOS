@@ -110,3 +110,4 @@ class ColorsListItemCell: UITableViewCell {
     }
 
 }
+// swiftlint:enable nesting

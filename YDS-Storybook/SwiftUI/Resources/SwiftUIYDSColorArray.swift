@@ -21,9 +21,21 @@ extension WrappedSwiftUIColor: CustomStringConvertible {
     }
 }
 
+extension WrappedSwiftUIColor: Identifiable {
+    var id: String {
+        return self.name
+    }
+}
+
 struct WrappedSwiftUIColors {
     let items: [WrappedSwiftUIColor]
     let description: String?
+}
+
+extension WrappedSwiftUIColors: Identifiable {
+    var id: UUID {
+        UUID()
+    }
 }
 
 struct YDSSwiftUIColorWrapper {
