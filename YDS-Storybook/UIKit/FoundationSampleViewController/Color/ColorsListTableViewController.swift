@@ -10,9 +10,9 @@ import YDS
 
 class ColorsListTableViewController: UITableViewController {
 
-    private var model: [Colors]
+    private var model: [WrappedUIKitColors]
 
-    init(with model: [Colors]) {
+    init(with model: [WrappedUIKitColors]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }

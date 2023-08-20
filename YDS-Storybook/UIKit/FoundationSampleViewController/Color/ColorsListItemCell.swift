@@ -103,7 +103,7 @@ class ColorsListItemCell: UITableViewCell {
         }
     }
 
-    func fillData(with model: Color) {
+    func fillData(with model: WrappedUIKitColor) {
         colorCircleView.backgroundColor = model.color
         titleLabel.text = model.name
         captionLabel.text = model.basicColorName
