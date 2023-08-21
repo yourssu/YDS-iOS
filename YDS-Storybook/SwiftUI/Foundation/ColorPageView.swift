@@ -45,9 +45,9 @@ struct ColorPageView: View {
     private let colors = YDSSwiftUIColorWrapper.colors
     var body: some View {
         List {
-            ForEach(colors, id: \.id) { wrappedColors in
+            ForEach(colors) { wrappedColors in
                 Section {
-                    ForEach(wrappedColors.items, id: \.id) { color in
+                    ForEach(wrappedColors.items) { color in
                         ColorsListItem(colorInfo: color)
                             .listRowSeparator(.hidden)
                     }
