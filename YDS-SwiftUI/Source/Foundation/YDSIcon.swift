@@ -9,7 +9,7 @@ import SwiftUI
 import YDS_Essential
 
 public enum YDSIcon {
-    public static var adbadgeFilled: Image { .load(name: "ic_adbadge_filled") }
+    public static var adbadgeFilled: Image { .load(name: "ic_adbadge_filled" )}
     public static var adbadgeLine: Image { .load(name: "ic_adbadge_line") }
     public static var arrowDownLine: Image { .load(name: "ic_arrow_down_line") }
     public static var arrowLeftLine: Image { .load(name: "ic_arrow_left_line") }
@@ -36,9 +36,9 @@ public enum YDSIcon {
     public static var dotbadgeLine: Image { .load(name: "ic_dotbadge_line") }
     public static var dotsHorizontalLine: Image { .load(name: "ic_dots_horizontal_line") }
     public static var dotsVerticalLine: Image { .load(name: "ic_dots_vertical_line") }
-    public static var emojiaddLine: Image { .load(name: "ic_emojiadd_line")}
-    public static var eyeclosedLine: Image { .load(name: "ic_eyeclosed_line")}
-    public static var eyeopenLine: Image { .load(name: "ic_eyeopen_line")}
+    public static var emojiaddLine: Image { .load(name: "ic_emojiadd_line") }
+    public static var eyeclosedLine: Image { .load(name: "ic_eyeclosed_line") }
+    public static var eyeopenLine: Image { .load(name: "ic_eyeopen_line") }
     public static var foodFilled: Image { .load(name: "ic_food_filled") }
     public static var foodLine: Image { .load(name: "ic_food_line") }
     public static var foodcalendarFilled: Image { .load(name: "ic_foodcalendar_filled") }
