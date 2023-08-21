@@ -7,14 +7,33 @@
 
 import SwiftUI
 
+import YDS_SwiftUI
+
 struct BoolOptionView: View {
+    @Binding private var isOn: Bool
+    
+    private let description: String?
+    
+    init(description: String?, isOn: Binding<Bool>) {
+        self.description = description
+        self._isOn = isOn
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            if let description = description {
+                Text(description)
+                    .font(YDSFont.subtitle2)
+            }
+            Text("Bool")
+                .font(YDSFont.body2)
+            Toggle("", isOn: $isOn)
+        }
     }
 }
 
 struct BoolOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        BoolOptionView()
+        BoolOptionView(description: "isDisabled", isOn: .constant(true))
     }
 }
