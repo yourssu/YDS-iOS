@@ -49,7 +49,7 @@ struct YDSSwiftUITypoWrapper {
         buttonFonts,
         captionFonts
    ]
-    
+
     static let displayFonts = WrappedSwiftUITypos(
         items: [
             WrappedSwiftUITypo(font: YDSFont.display1, typoStyle: "display1", size: "40pt", weight: "Bold", lineHeight: "130%"),

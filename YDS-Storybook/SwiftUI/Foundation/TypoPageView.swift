@@ -20,8 +20,8 @@ struct TypoListItem: View {
 
         enum Description {
             enum Padding {
-                static let vertical: CGFloat = 8
-                static let horizontal: CGFloat = 20
+                static let leading: CGFloat = -150
+                static let trailing: CGFloat = -55
             }
         }
     }
@@ -48,38 +48,37 @@ struct TypoListItem: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .fill(YDSColor.monoItemBG)
-                            .frame(height: 90)
+                            .frame(height: 95)
                         VStack(spacing: 7) {
                             HStack {
                                 Text("size")
                                     .font(YDSFont.subtitle3)
                                     .foregroundColor(YDSColor.textTertiary)
-                                    .padding(.horizontal, -155)
+                                    .padding(.horizontal, Dimension.Description.Padding.leading)
                                 Text(self.fontInfo.size)
                                     .font(YDSFont.body2)
                                     .foregroundColor(YDSColor.monoItemText)
-                                    .padding(.horizontal, -55)
+                                    .padding(.horizontal, Dimension.Description.Padding.trailing)
                             }
                             HStack {
                                 Text("weight")
                                     .font(YDSFont.subtitle3)
                                     .foregroundColor(YDSColor.textTertiary)
-                                    .padding(.horizontal, -155)
+                                    .padding(.horizontal, Dimension.Description.Padding.leading)
                                 Text(self.fontInfo.weight)
                                     .font(YDSFont.body2)
                                     .foregroundColor(YDSColor.monoItemText)
-                                    .padding(.horizontal, -55)
+                                    .padding(.horizontal, Dimension.Description.Padding.trailing)
                             }
                             HStack {
                                 Text("lineHeight")
                                     .font(YDSFont.subtitle3)
                                     .foregroundColor(YDSColor.textTertiary)
-                                    .padding(.horizontal, 16)
-                                Spacer()
+                                    .padding(.horizontal, Dimension.Description.Padding.leading)
                                 Text(self.fontInfo.lineHeight)
                                     .font(YDSFont.body2)
                                     .foregroundColor(YDSColor.monoItemText)
-                                    .padding(.horizontal, -225)
+                                    .padding(.horizontal, Dimension.Description.Padding.trailing)
                             }
                         }
                     }
