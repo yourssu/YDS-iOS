@@ -113,6 +113,8 @@
 		6FFDB9702A717F15003A9519 /* YDS_SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */; };
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
+		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
+		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
 		C30E373D2888604E003CDDB0 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
 		C31F2B0E284BB35D000CD31B /* TabBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31F2B0D284BB35D000CD31B /* TabBarPageViewController.swift */; };
 		C350ABE22808587600BFC9C0 /* TooltipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */; };
@@ -317,6 +319,8 @@
 		6FFDB96B2A717F15003A9519 /* YDS_SwiftUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_SwiftUI.h; sourceTree = "<group>"; };
 		6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerControllerView.swift; sourceTree = "<group>"; };
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
+		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
+		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
 		C31F2B0D284BB35D000CD31B /* TabBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPageViewController.swift; sourceTree = "<group>"; };
 		C350ABE12808587600BFC9C0 /* TooltipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipPageViewController.swift; sourceTree = "<group>"; };
 		C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
@@ -641,6 +645,7 @@
 			children = (
 				6CA05E812A90846B00B07920 /* SwiftUIYDSColorArray.swift */,
 				5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */,
+				956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 			children = (
 				6F2D527A2A79446000BAF200 /* ColorPageView.swift */,
 				5A10B1B72A8F5FFF00139E89 /* IconPageView.swift */,
+				956C40182A949BAE0098BB8F /* TypoPageView.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1254,6 +1260,7 @@
 				53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
 				5365FD5B274A4ED000B6FBF9 /* IntControllerView.swift in Sources */,
+				956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */,
 				C7F6908D27DDDA03002B63C9 /* IconsListItemCell.swift in Sources */,
 				5A10B1B82A8F5FFF00139E89 /* IconPageView.swift in Sources */,
 				6CA05E822A90846B00B07920 /* SwiftUIYDSColorArray.swift in Sources */,
@@ -1285,6 +1292,7 @@
 				53E26E8A26F062180036648E /* TypographiesListItemCell.swift in Sources */,
 				53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */,
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
+				956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
 				6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,

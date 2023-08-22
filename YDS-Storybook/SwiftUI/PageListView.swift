@@ -37,8 +37,8 @@ struct PageListView: View {
         PageView(title: "Color") {
             ColorPageView()
         }
-        PageView(title: "Empty") {
-            EmptyView()
+        PageView(title: "Typography") {
+            TypoPageView()
         }
         PageView(title: "Icon") {
             IconPageView()
