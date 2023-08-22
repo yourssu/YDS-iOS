@@ -36,7 +36,6 @@ class TypographiesListItemCell: UITableViewCell {
                                                left: Dimension.Padding.horizontal,
                                                bottom: Dimension.Padding.vertical,
                                                right: Dimension.Padding.horizontal)
-        stackView.backgroundColor = .yellow
         return stackView
     }()
 

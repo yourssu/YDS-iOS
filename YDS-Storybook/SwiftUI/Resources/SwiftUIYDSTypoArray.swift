@@ -40,6 +40,14 @@ extension WrappedSwiftUITypos: Identifiable {
     }
 }
 
+struct SampleLabel {
+    static let sampleLabel = """
+        계절이 지나가는 하늘에는 가을로 가득 차 있습니다.
+        나는 아무 걱정도 없이 가을 속의 별들을 다 헬 듯합니다.
+        가슴 속에 하나 둘 새겨지는 별을 이제 다 못 헤는 것은 쉬이 아침이 오는 까닭이요, 내일 밤이 남은 까닭이요, 아직 나의 청춘이 다하지 않은 까닭입니다.
+        """
+}
+
 struct YDSSwiftUITypoWrapper {
    static let fonts = [
         displayFonts,
@@ -69,9 +77,9 @@ struct YDSSwiftUITypoWrapper {
 
     static let subtitleFonts = WrappedSwiftUITypos(
         items: [
-            WrappedSwiftUITypo(font: YDSFont.subtitle1, typoStyle: "title1", size: "20pt", weight: "Semibold", lineHeight: "130%"),
-            WrappedSwiftUITypo(font: YDSFont.subtitle2, typoStyle: "title2", size: "16pt", weight: "Semibold", lineHeight: "130%"),
-            WrappedSwiftUITypo(font: YDSFont.subtitle3, typoStyle: "title3", size: "14pt", weight: "Semibold", lineHeight: "130%")
+            WrappedSwiftUITypo(font: YDSFont.subtitle1, typoStyle: "subtitle1", size: "20pt", weight: "Semibold", lineHeight: "130%"),
+            WrappedSwiftUITypo(font: YDSFont.subtitle2, typoStyle: "subtitle2", size: "16pt", weight: "Semibold", lineHeight: "130%"),
+            WrappedSwiftUITypo(font: YDSFont.subtitle3, typoStyle: "subtitle3", size: "14pt", weight: "Semibold", lineHeight: "130%")
         ],
         description: "Subtitle"
     )
