@@ -9,6 +9,21 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct OptionalImageOptionView: View {
+    private enum Dimension {
+        enum Spacing {
+            static let vstack: CGFloat = 8
+            static let textSpacing: CGFloat = 4
+        }
+        
+        enum Padding {
+            static let button: CGFloat = 16
+        }
+        
+        enum Rectangle {
+            static let cornerRadius: CGFloat = 8
+        }
+    }
+    
     @Binding private var selectedImage: Image?
     
     private let description: String?
@@ -25,9 +40,9 @@ struct OptionalImageOptionView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
             HStack {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: Dimension.Spacing.textSpacing) {
                     if let description = description {
                         Text(description)
                             .font(YDSFont.subtitle2)
@@ -50,10 +65,10 @@ struct OptionalImageOptionView: View {
             }) {
                 Text(images[placeholderIndex] ?? YDSIcon.adbadgeFilled)
                     .font(YDSFont.body1)
-                    .padding()
+                    .padding(Dimension.Padding.button)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: Dimension.Rectangle.cornerRadius)
                             .fill(YDSColor.inputFieldElevated)
                     )
             }

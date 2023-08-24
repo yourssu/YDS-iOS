@@ -9,22 +9,27 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct EnumOptionView: View {
+    private enum Dimension {
+        enum Spacing {
+            static let vstack: CGFloat = 8
+            static let textSpacing: CGFloat = 4
+        }
+    }
+    
     @Binding private var selectedIndex: Int
     
     private let description: String?
     private let cases: [Any]
     
-    @State private var showingBottomSheet = false
-    
-    init(description: String?, cases: [Any], selectedIndex:Binding<Int> ) {
+    init(description: String?, cases: [Any], selectedIndex: Binding<Int>) {
         self.description = description
         self.cases = cases
         self._selectedIndex = selectedIndex
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
+            VStack(alignment: .leading, spacing: Dimension.Spacing.textSpacing) {
                 if let description = description {
                     Text(description)
                         .font(YDSFont.subtitle2)
@@ -47,9 +52,10 @@ struct EnumOptionView: View {
 
 struct EnumOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        @State var index:Int = 0
-        VStack(alignment: .leading) {
-            EnumOptionView(description: "rouding", cases: ["example1","example2"], selectedIndex: $index)
-        }
+        EnumOptionView(
+            description: "rouding",
+            cases: ["example1","example2"],
+            selectedIndex: .constant(1)
+        )
     }
 }

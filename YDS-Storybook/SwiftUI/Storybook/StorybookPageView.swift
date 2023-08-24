@@ -9,15 +9,38 @@ import SwiftUI
 
 import YDS_SwiftUI
 
+struct OptionListItem: View {
+    private enum Dimension {
+        enum Spacing {
+            static let vstack: CGFloat = 16
+        }
+        
+        enum Padding {
+            static let vstack: CGFloat = 16
+        }
+    }
+    
+    private let option: Option
+    
+    init(option: Option) {
+        self.option = option
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
+            option.body
+            Divider()
+        }
+        .padding(Dimension.Padding.vstack)
+    }
+}
+
 struct StorybookPageView<ViewType: View>: View {
     @ViewBuilder private var sample: () -> ViewType
     
     private let options: [Option]
     
-    init(
-        sample: @escaping () -> ViewType,
-        options: [Option]
-    ) {
+    init(sample: @escaping () -> ViewType, options: [Option]) {
         self.sample = sample
         self.options = options
     }
@@ -25,8 +48,8 @@ struct StorybookPageView<ViewType: View>: View {
     var body: some View {
         VStack(spacing: 0) {
             sampleExpaned
-            divider
-            optionScrollView
+            Divider()
+            optionScroll
         }
     }
 }
@@ -40,36 +63,36 @@ private extension StorybookPageView {
             )
     }
     
-    var divider: some View {
-        Divider()
-    }
-    
-    var optionScrollView: some View {
+    var optionScroll: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 ForEach(options.indices, id: \.self) { index in
-                    VStack(alignment: .leading, spacing: 16) {
-                        options[index].body
-                        divider
-                    }
+                    OptionListItem(option: options[index])
                 }
             }
-            .padding()
         }
     }
 }
 
 struct StorybookPageView_Previews: PreviewProvider {
     static var previews: some View {
+        enum BoxButtonType: CaseIterable {
+            case filled, tinted, line
+        }
+        
+        let images = [
+            YDSIcon.adbadgeFilled,
+            YDSIcon.arrowRightLine,
+            YDSIcon.boardLine,
+            YDSIcon.cameracircleLine,
+            YDSIcon.dotbadgeLine
+        ]
+        
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
         @State var numberOfLines = 1
         @State var selectedBoxButtonType = 0
         @State var icon: Image? = YDSIcon.adbadgeFilled
-        
-        enum BoxButtonType: CaseIterable {
-            case filled, tinted, line
-        }
         
         return StorybookPageView(
             sample: {
@@ -87,23 +110,9 @@ struct StorybookPageView_Previews: PreviewProvider {
             options: [
                 Option.bool(description: "isDisabled", isOn: $isDisabled),
                 Option.int(description: "numberOfLines", value: $numberOfLines),
-                Option.enum(
-                    description: "buttonType",
-                    cases: BoxButtonType.allCases,
-                    selectedIndex: $selectedBoxButtonType
-                ),
+                Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
                 Option.optionalString(description: "text", text: $text),
-                Option.optionalImage(
-                    description: "icon",
-                    images: [
-                        YDSIcon.adbadgeFilled,
-                        YDSIcon.arrowRightLine,
-                        YDSIcon.boardLine,
-                        YDSIcon.cameracircleLine,
-                        YDSIcon.dotbadgeLine
-                    ],
-                    selectedImage: $icon
-                )
+                Option.optionalImage(description: "icon", images: images, selectedImage: $icon)
             ]
         )
     }
