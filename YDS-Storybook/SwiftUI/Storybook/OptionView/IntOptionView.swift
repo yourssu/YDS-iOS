@@ -9,6 +9,21 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct IntOptionView: View {
+    private enum Dimension {
+        enum Spacing {
+            static let vstack: CGFloat = 8
+            static let textSpacing: CGFloat = 4
+        }
+        
+        enum Padding {
+            static let textField: CGFloat = 16
+        }
+        
+        enum Rectangle {
+            static let cornerRadius: CGFloat = 8
+        }
+    }
+    
     @Binding private var value: Int
     
     private let description: String?
@@ -19,8 +34,8 @@ struct IntOptionView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
+            VStack(alignment: .leading, spacing: Dimension.Spacing.textSpacing) {
                 if let description = description {
                     Text(description)
                         .font(YDSFont.subtitle2)
@@ -28,12 +43,13 @@ struct IntOptionView: View {
                 Text("Int")
                     .font(YDSFont.body2)
             }
+            
             TextField("", value: $value, format: .number)
                 .font(YDSFont.body1)
                 .tint(YDSColor.textPointed)
-                .padding()
+                .padding(Dimension.Padding.textField)
                 .background(
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: Dimension.Rectangle.cornerRadius)
                         .fill(YDSColor.inputFieldElevated)
                 )
         }

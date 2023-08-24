@@ -9,7 +9,13 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct ShowPickerButton: View {
-    @Binding var selectedIndex: Int
+    private enum Dimension {
+        enum Rectangle {
+            static let cornerRadius: CGFloat = 8
+        }
+    }
+    
+    @Binding private var selectedIndex: Int
     
     private let cases: [String]
     
@@ -29,7 +35,7 @@ struct ShowPickerButton: View {
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: Dimension.Rectangle.cornerRadius)
                         .fill(YDSColor.inputFieldElevated)
                 )
         }

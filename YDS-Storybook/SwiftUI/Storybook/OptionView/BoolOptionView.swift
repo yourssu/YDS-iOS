@@ -10,6 +10,13 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct BoolOptionView: View {
+    private enum Dimension {
+        enum Spacing {
+            static let vstack: CGFloat = 8
+            static let textSpacing: CGFloat = 4
+        }
+    }
+    
     @Binding private var isOn: Bool
     
     private let description: String?
@@ -20,8 +27,8 @@ struct BoolOptionView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
+            VStack(alignment: .leading, spacing: Dimension.Spacing.textSpacing) {
                 if let description = description {
                     Text(description)
                         .font(YDSFont.subtitle2)
