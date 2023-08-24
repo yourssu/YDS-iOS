@@ -46,9 +46,12 @@ private extension StorybookPageView {
     
     var optionScrollView: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .leading) {
                 ForEach(options.indices, id: \.self) { index in
-                    options[index].body
+                    VStack(alignment: .leading, spacing: 16) {
+                        options[index].body
+                        divider
+                    }
                 }
             }
             .padding()
@@ -78,7 +81,7 @@ struct StorybookPageView_Previews: PreviewProvider {
             options: [
                 Option.bool(description: "isDisabled", isOn: $isDisabled),
                 Option.int(description: "numberOfLines", value: $numberOfLines),
-                Option.enum(description: "", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
+                Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
                 Option.optionalString(description: "text", text: $text)
             ]
         )

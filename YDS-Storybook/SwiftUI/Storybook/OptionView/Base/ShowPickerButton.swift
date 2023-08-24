@@ -6,28 +6,35 @@
 //
 
 import SwiftUI
+import YDS_SwiftUI
 
 struct ShowPickerButton: View {
-    private let cases: [String]
     @Binding var selectedIndex: Int
     
-    @State private var showBottomSheet = false
+    private let cases: [String]
     
-    let screenWidth = UIScreen.main.bounds.size.width
+    @State private var isShowBottomSheet = false
     
-    init(cases:[String], selectedIndex:Binding<Int>) {
+    init(cases: [String], selectedIndex: Binding<Int>) {
         self.cases = cases
         self._selectedIndex = selectedIndex
     }
     
     var body: some View {
         Button(action: {
-            showBottomSheet.toggle()
-        })
-        {
-            Text(cases[selectedIndex]) }
-        .sheet(isPresented: $showBottomSheet)
-        {
+            isShowBottomSheet.toggle()
+        }) {
+            Text(cases[selectedIndex])
+                .font(YDSFont.body1)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(YDSColor.inputFieldElevated)
+                )
+        }
+        .tint(YDSColor.textPrimary)
+        .sheet(isPresented: $isShowBottomSheet) {
             Picker(cases[selectedIndex], selection: $selectedIndex) {
                 ForEach(0..<cases.count, id:\.self) { index in
                     Text(cases[index])
@@ -37,8 +44,6 @@ struct ShowPickerButton: View {
             .pickerStyle(.wheel)
             .presentationDetents([.height(200)])
         }
-        .padding()
-        .border(.black)
     }
 }
 

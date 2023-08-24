@@ -21,13 +21,16 @@ struct BoolOptionView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let description = description {
-                Text(description)
-                    .font(YDSFont.subtitle2)
+            VStack(alignment: .leading, spacing: 4) {
+                if let description = description {
+                    Text(description)
+                        .font(YDSFont.subtitle2)
+                }
+                Text("Bool")
+                    .font(YDSFont.body2)
             }
-            Text("Bool")
-                .font(YDSFont.body2)
             Toggle("", isOn: $isOn)
+                .labelsHidden()
         }
     }
 }

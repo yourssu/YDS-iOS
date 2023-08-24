@@ -9,8 +9,9 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct IntOptionView: View {
-    private let description: String?
     @Binding private var value: Int
+    
+    private let description: String?
     
     init(description: String?, value: Binding<Int>) {
         self.description = description
@@ -19,25 +20,28 @@ struct IntOptionView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let description = description {
-                Text(description)
-                    .font(YDSFont.subtitle2)
+            VStack(alignment: .leading, spacing: 4) {
+                if let description = description {
+                    Text(description)
+                        .font(YDSFont.subtitle2)
+                }
+                Text("Int")
+                    .font(YDSFont.body2)
             }
-            Text("Int")
-                .font(YDSFont.body2)
             TextField("", value: $value, format: .number)
+                .font(YDSFont.body1)
+                .tint(YDSColor.textPointed)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(YDSColor.inputFieldElevated)
+                )
         }
     }
 }
 
 struct IntOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        @State var value: Int = 0
-        let description: String = "numberOfLines"
-        
-        VStack {
-            Text("\(value)")
-            IntOptionView(description: description, value: $value)
-        }
+        IntOptionView(description: "numberOfLines", value: .constant(1))
     }
 }
