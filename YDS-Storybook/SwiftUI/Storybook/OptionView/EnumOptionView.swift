@@ -9,9 +9,10 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct EnumOptionView: View {
+    @Binding private var selectedIndex: Int
+    
     private let description: String?
     private let cases: [Any]
-    @Binding private var selectedIndex:Int
     
     @State private var showingBottomSheet = false
     
@@ -23,18 +24,23 @@ struct EnumOptionView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let description = description {
-                Text(description)
-                    .font(YDSFont.subtitle2)
-            }
-            if !cases.isEmpty {
-                let mirror = Mirror(reflecting: cases[0])
-                if let enumTypeName = "\(mirror.subjectType)".split(separator: ".").first {
-                    Text(String(enumTypeName))
-                        .font(YDSFont.body2)
+            VStack(alignment: .leading, spacing: 4) {
+                if let description = description {
+                    Text(description)
+                        .font(YDSFont.subtitle2)
+                }
+                if !cases.isEmpty {
+                    let mirror = Mirror(reflecting: cases[0])
+                    if let enumTypeName = "\(mirror.subjectType)".split(separator: ".").first {
+                        Text(String(enumTypeName))
+                            .font(YDSFont.body2)
+                    }
                 }
             }
-            ShowPickerButton(cases: cases.map(  {String(describing: $0)}), selectedIndex: $selectedIndex)
+            ShowPickerButton(
+                cases: cases.map({ String(describing: $0) }),
+                selectedIndex: $selectedIndex
+            )
         }
     }
 }
