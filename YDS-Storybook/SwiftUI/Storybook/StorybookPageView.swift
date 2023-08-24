@@ -58,8 +58,29 @@ private extension StorybookPageView {
 
 struct StorybookPageView_Previews: PreviewProvider {
     static var previews: some View {
-        StorybookPageView(sample: {
-            Text("Text")
-        }, options: [])
+        @State var text: String? = "BoxButton"
+        @State var isDisabled = false
+        @State var numberOfLines = 1
+        @State var selectedBoxButtonType = 0
+        
+        enum BoxButtonType: CaseIterable {
+            case filled, tinted, line
+        }
+        
+        return StorybookPageView(
+            sample: {
+                Button(action: {}) {
+                    Text(text ?? "")
+                        .lineLimit(numberOfLines)
+                }
+                .disabled(isDisabled)
+            },
+            options: [
+                Option.bool(description: "isDisabled", isOn: $isDisabled),
+                Option.int(description: "numberOfLines", value: $numberOfLines),
+                Option.enum(description: "", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
+                Option.optionalString(description: "text", text: $text)
+            ]
+        )
     }
 }
