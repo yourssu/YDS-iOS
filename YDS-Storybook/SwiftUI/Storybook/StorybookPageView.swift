@@ -65,6 +65,7 @@ struct StorybookPageView_Previews: PreviewProvider {
         @State var isDisabled = false
         @State var numberOfLines = 1
         @State var selectedBoxButtonType = 0
+        @State var icon: Image? = YDSIcon.adbadgeFilled
         
         enum BoxButtonType: CaseIterable {
             case filled, tinted, line
@@ -73,16 +74,36 @@ struct StorybookPageView_Previews: PreviewProvider {
         return StorybookPageView(
             sample: {
                 Button(action: {}) {
-                    Text(text ?? "")
-                        .lineLimit(numberOfLines)
+                    HStack {
+                        if let icon = icon {
+                            icon
+                        }
+                        Text(text ?? "")
+                            .lineLimit(numberOfLines)
+                    }
                 }
                 .disabled(isDisabled)
             },
             options: [
                 Option.bool(description: "isDisabled", isOn: $isDisabled),
                 Option.int(description: "numberOfLines", value: $numberOfLines),
-                Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
-                Option.optionalString(description: "text", text: $text)
+                Option.enum(
+                    description: "buttonType",
+                    cases: BoxButtonType.allCases,
+                    selectedIndex: $selectedBoxButtonType
+                ),
+                Option.optionalString(description: "text", text: $text),
+                Option.optionalImage(
+                    description: "icon",
+                    images: [
+                        YDSIcon.adbadgeFilled,
+                        YDSIcon.arrowRightLine,
+                        YDSIcon.boardLine,
+                        YDSIcon.cameracircleLine,
+                        YDSIcon.dotbadgeLine
+                    ],
+                    selectedImage: $icon
+                )
             ]
         )
     }

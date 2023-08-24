@@ -61,6 +61,7 @@ struct OptionalStringOptionView: View {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(YDSColor.inputFieldElevated)
             )
+            .disabled(text == nil)
         }
     }
 }
