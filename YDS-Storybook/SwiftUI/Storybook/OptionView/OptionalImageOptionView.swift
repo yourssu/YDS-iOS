@@ -60,35 +60,13 @@ struct OptionalImageOptionView: View {
                 .tint(YDSColor.buttonPoint)
             }
             
-            Button(action: {
-                isPresentPicker.toggle()
-            }) {
-                Text(images[placeholderIndex] ?? YDSIcon.adbadgeFilled)
-                    .font(YDSFont.body1)
-                    .padding(Dimension.Padding.button)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: Dimension.Rectangle.cornerRadius)
-                            .fill(YDSColor.inputFieldElevated)
-                    )
-            }
-            .tint(YDSColor.textPointed)
+            ShowPickerButton(cases: images, selectedIndex: Binding(get: {
+                placeholderIndex
+            }, set: { index in
+                placeholderIndex = index
+                selectedImage = images[index]
+            }))
             .disabled(selectedImage == nil)
-            .sheet(isPresented: $isPresentPicker) {
-                Picker("", selection: Binding(get: {
-                    placeholderIndex
-                }, set: { index in
-                    placeholderIndex = index
-                    selectedImage = images[index]
-                })) {
-                    ForEach(images.indices, id: \.self) { index in
-                        Text(images[index] ?? YDSIcon.adbadgeFilled)
-                            .tag(index)
-                    }
-                }
-                .pickerStyle(.wheel)
-                .presentationDetents([.height(200)])
-            }
         }
     }
 }
