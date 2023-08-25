@@ -49,8 +49,9 @@ struct StorybookPageView<ViewType: View>: View {
         VStack(spacing: 0) {
             sampleExpaned
             Divider()
-            optionScroll
+            scrollableOptions
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -59,13 +60,14 @@ private extension StorybookPageView {
         sample()
             .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
             .background(
-                YDSColor.monoItemBG
+                Rectangle()
+                    .fill(YDSColor.monoItemBG)
             )
     }
     
-    var optionScroll: some View {
+    var scrollableOptions: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 0) {
                 ForEach(options.indices, id: \.self) { index in
                     OptionListItem(option: options[index])
                 }

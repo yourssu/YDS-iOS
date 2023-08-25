@@ -8,20 +8,14 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct ShowPickerButton: View {
-    private enum Dimension {
-        enum Rectangle {
-            static let cornerRadius: CGFloat = 8
-        }
-    }
-    
+struct ShowPickerButton<T>: View {
     @Binding private var selectedIndex: Int
     
-    private let cases: [String]
+    private let cases: [T]
     
     @State private var isShowBottomSheet = false
     
-    init(cases: [String], selectedIndex: Binding<Int>) {
+    init(cases: [T], selectedIndex: Binding<Int>) {
         self.cases = cases
         self._selectedIndex = selectedIndex
     }
@@ -30,21 +24,37 @@ struct ShowPickerButton: View {
         Button(action: {
             isShowBottomSheet.toggle()
         }) {
-            Text(cases[selectedIndex])
-                .font(YDSFont.body1)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(
-                    RoundedRectangle(cornerRadius: Dimension.Rectangle.cornerRadius)
-                        .fill(YDSColor.inputFieldElevated)
-                )
+            if cases[selectedIndex] is Image? {
+                Text(cases[selectedIndex] as! Image? ?? YDSIcon.adbadgeFilled)
+                    .font(YDSFont.body1)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(YDSColor.inputFieldElevated)
+                    )
+            } else {
+                Text(String(describing: cases[selectedIndex]))
+                    .font(YDSFont.body1)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(YDSColor.inputFieldElevated)
+                    )
+            }
         }
         .tint(YDSColor.textPrimary)
         .sheet(isPresented: $isShowBottomSheet) {
-            Picker(cases[selectedIndex], selection: $selectedIndex) {
+            Picker("", selection: $selectedIndex) {
                 ForEach(0..<cases.count, id:\.self) { index in
-                    Text(cases[index])
-                        .tag(index)
+                    if cases[selectedIndex] is Image? {
+                        Text(cases[index] as! Image? ?? YDSIcon.adbadgeFilled)
+                            .tag(index)
+                    } else {
+                        Text(String(describing: cases[index]))
+                            .tag(index)
+                    }
                 }
             }
             .pickerStyle(.wheel)
@@ -55,6 +65,15 @@ struct ShowPickerButton: View {
 
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowPickerButton(cases: ["example1","example2"], selectedIndex: .constant(0))
+        VStack {
+            ShowPickerButton(
+                cases: ["example1","example2"],
+                selectedIndex: .constant(0)
+            )
+            ShowPickerButton(
+                cases: [YDSIcon.adbadgeFilled, YDSIcon.foodFilled],
+                selectedIndex: .constant(0)
+            )
+        }
     }
 }
