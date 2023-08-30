@@ -8,14 +8,14 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct ShowPickerButton<T>: View {
+struct ShowPickerButton: View {
     @Binding private var selectedIndex: Int
     
-    private let cases: [T]
+    private let cases: [String]
     
     @State private var isShowBottomSheet = false
     
-    init(cases: [T], selectedIndex: Binding<Int>) {
+    init(cases: [String], selectedIndex: Binding<Int>) {
         self.cases = cases
         self._selectedIndex = selectedIndex
     }
@@ -24,37 +24,19 @@ struct ShowPickerButton<T>: View {
         Button(action: {
             isShowBottomSheet.toggle()
         }) {
-            if cases[selectedIndex] is Image? {
-                Text(cases[selectedIndex] as! Image? ?? YDSIcon.adbadgeFilled)
-                    .font(YDSFont.body1)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(YDSColor.inputFieldElevated)
-                    )
-            } else {
-                Text(String(describing: cases[selectedIndex]))
-                    .font(YDSFont.body1)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(YDSColor.inputFieldElevated)
-                    )
-            }
+            Text(cases[selectedIndex]).font(YDSFont.body1)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(YDSColor.inputFieldElevated))
         }
         .tint(YDSColor.textPrimary)
         .sheet(isPresented: $isShowBottomSheet) {
             Picker("", selection: $selectedIndex) {
                 ForEach(0..<cases.count, id:\.self) { index in
-                    if cases[selectedIndex] is Image? {
-                        Text(cases[index] as! Image? ?? YDSIcon.adbadgeFilled)
-                            .tag(index)
-                    } else {
-                        Text(String(describing: cases[index]))
-                            .tag(index)
-                    }
+                    Text(cases[index])
+                        .tag(index)
                 }
             }
             .pickerStyle(.wheel)
@@ -68,10 +50,6 @@ struct PickerView_Previews: PreviewProvider {
         VStack {
             ShowPickerButton(
                 cases: ["example1","example2"],
-                selectedIndex: .constant(0)
-            )
-            ShowPickerButton(
-                cases: [YDSIcon.adbadgeFilled, YDSIcon.foodFilled],
                 selectedIndex: .constant(0)
             )
         }
