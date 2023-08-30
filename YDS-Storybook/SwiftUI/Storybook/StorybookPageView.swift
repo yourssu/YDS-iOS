@@ -82,7 +82,7 @@ struct StorybookPageView_Previews: PreviewProvider {
             case filled, tinted, line
         }
         
-        let images = YDSSwiftUIIcon.icons
+        let icons = YDSSwiftUIIcon.icons
         
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
@@ -108,7 +108,7 @@ struct StorybookPageView_Previews: PreviewProvider {
                 Option.int(description: "numberOfLines", value: $numberOfLines),
                 Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
                 Option.optionalString(description: "text", text: $text),
-                Option.optionalImage(description: "icon", images: images, selectedImage: $icon)
+                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon)
             ]
         )
     }

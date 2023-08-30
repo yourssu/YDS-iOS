@@ -12,7 +12,7 @@ enum Option: View {
     case `enum`(description:String?, cases:[Any], selectedIndex:Binding<Int>)
     case int(description: String?, value: Binding<Int>)
     case optionalString(description: String?, text: Binding<String?>)
-    case optionalImage(description:String?, images:[SwiftUIIcon], selectedImage: Binding<SwiftUIIcon?>)
+    case optionalIcon(description:String?, icons:[SwiftUIIcon], selectedIcon: Binding<SwiftUIIcon?>)
     
     @ViewBuilder
     var body: some View {
@@ -25,8 +25,8 @@ enum Option: View {
             IntOptionView(description: description, value: value)
         case .optionalString(let description, let text):
             OptionalStringOptionView(description: description, text: text)
-        case .optionalImage(let description, let images, let selectedImage):
-            OptionalImageOptionView(description: description, images: images, selectedImage: selectedImage)
+        case .optionalIcon(let description, let icons, let selectedIcon):
+            OptionalIconOptionView(description: description, icons: icons, selectedIcon: selectedIcon)
         }
     }
 }

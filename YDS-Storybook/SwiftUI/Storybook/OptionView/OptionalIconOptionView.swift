@@ -8,7 +8,7 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct OptionalImageOptionView: View {
+struct OptionalIconOptionView: View {
     private enum Dimension {
         enum Spacing {
             static let vstack: CGFloat = 8
@@ -24,18 +24,18 @@ struct OptionalImageOptionView: View {
         }
     }
     
-    @Binding private var selectedImage: SwiftUIIcon?
+    @Binding private var selectedIcon: SwiftUIIcon?
     
     private let description: String?
-    private let images: [SwiftUIIcon]
+    private let icons: [SwiftUIIcon]
     
     @State private var placeholderIndex: Int
     @State private var isPresentPicker = false
     
-    init(description: String?, images: [SwiftUIIcon], selectedImage: Binding<SwiftUIIcon?>) {
+    init(description: String?, icons: [SwiftUIIcon], selectedIcon: Binding<SwiftUIIcon?>) {
         self.description = description
-        self.images = images
-        self._selectedImage = selectedImage
+        self.icons = icons
+        self._selectedIcon = selectedIcon
         self.placeholderIndex = 0
     }
     
@@ -52,31 +52,31 @@ struct OptionalImageOptionView: View {
                 }
                 Spacer()
                 Toggle("", isOn: Binding(get: {
-                    selectedImage != nil
+                    selectedIcon != nil
                 }, set: { isOn in
-                    isOn ? (selectedImage = images[placeholderIndex]) : (selectedImage = nil)
+                    isOn ? (selectedIcon = icons[placeholderIndex]) : (selectedIcon = nil)
                 }))
                 .labelsHidden()
                 .tint(YDSColor.buttonPoint)
             }
             
-            ShowPickerButton(cases: images.map({ $0.name }), selectedIndex: Binding(get: {
+            ShowPickerButton(cases: icons.map({ $0.name }), selectedIndex: Binding(get: {
                 placeholderIndex
             }, set: { index in
                 placeholderIndex = index
-                selectedImage = images[index]
+                selectedIcon = icons[index]
             }))
-            .disabled(selectedImage == nil)
+            .disabled(selectedIcon == nil)
         }
     }
 }
 
-struct OptionalImageOptionView_Previews: PreviewProvider {
+struct OptionalIconOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        OptionalImageOptionView(
+        OptionalIconOptionView(
             description: "icon",
-            images: YDSSwiftUIIcon.icons,
-            selectedImage: .constant(YDSSwiftUIIcon.icons[0])
+            icons: YDSSwiftUIIcon.icons,
+            selectedIcon: .constant(YDSSwiftUIIcon.icons[0])
         )
     }
 }
