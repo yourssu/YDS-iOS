@@ -115,13 +115,12 @@
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
-		B9E4E8C82A90BDB90076473C /* Storybook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8C72A90BDB90076473C /* Storybook.swift */; };
 		B9E4E8C82A90BDB90076473C /* StorybookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */; };
 		B9E4E8CE2A90BF500076473C /* BoolOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */; };
 		B9E4E8D02A90BF7E0076473C /* EnumOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */; };
 		B9E4E8D22A90BF870076473C /* IntOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D12A90BF870076473C /* IntOptionView.swift */; };
 		B9E4E8D42A90BFA10076473C /* OptionalStringOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */; };
-		B9E4E8D62A90BFB60076473C /* OptionalImageOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D52A90BFB60076473C /* OptionalImageOptionView.swift */; };
+		B9E4E8D62A90BFB60076473C /* OptionalIconOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */; };
 		B9E4E8E22A93B1AF0076473C /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8E12A93B1AF0076473C /* Option.swift */; };
 		B9E4E8EC2A97071E0076473C /* ShowPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8EB2A97071E0076473C /* ShowPickerButton.swift */; };
 		C30E373D2888604E003CDDB0 /* PlainButtonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F626B54B4000EF7B86 /* PlainButtonPageViewController.swift */; };
@@ -330,13 +329,12 @@
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
-		B9E4E8C72A90BDB90076473C /* Storybook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storybook.swift; sourceTree = "<group>"; };
 		B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageView.swift; sourceTree = "<group>"; };
 		B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8D12A90BF870076473C /* IntOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringOptionView.swift; sourceTree = "<group>"; };
-		B9E4E8D52A90BFB60076473C /* OptionalImageOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageOptionView.swift; sourceTree = "<group>"; };
+		B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalIconOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8E12A93B1AF0076473C /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		B9E4E8EB2A97071E0076473C /* ShowPickerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPickerButton.swift; sourceTree = "<group>"; };
 		C31F2B0D284BB35D000CD31B /* TabBarPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPageViewController.swift; sourceTree = "<group>"; };
@@ -807,7 +805,7 @@
 				B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */,
 				B9E4E8D12A90BF870076473C /* IntOptionView.swift */,
 				B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */,
-				B9E4E8D52A90BFB60076473C /* OptionalImageOptionView.swift */,
+				B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */,
 			);
 			path = OptionView;
 			sourceTree = "<group>";
@@ -1317,7 +1315,7 @@
 				B9E4E8E22A93B1AF0076473C /* Option.swift in Sources */,
 				5A10B1B82A8F5FFF00139E89 /* IconPageView.swift in Sources */,
 				6CA05E822A90846B00B07920 /* SwiftUIYDSColorArray.swift in Sources */,
-				B9E4E8D62A90BFB60076473C /* OptionalImageOptionView.swift in Sources */,
+				B9E4E8D62A90BFB60076473C /* OptionalIconOptionView.swift in Sources */,
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
