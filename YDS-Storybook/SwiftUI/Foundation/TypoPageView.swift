@@ -46,7 +46,7 @@ struct TypoListItem: View {
                     .frame(height: Dimension.Rectangle.idHeight)
             }
             .padding(.top, Dimension.Padding.hstack)
-            Text(SampleLabel.sampleLabel)
+            Text(SampleText.sampleText)
                 .font(self.fontInfo.font ?? .title2)
                 .foregroundColor(YDSColor.textPrimary)
             HStack(spacing: Dimension.Spacing.hstack) {
