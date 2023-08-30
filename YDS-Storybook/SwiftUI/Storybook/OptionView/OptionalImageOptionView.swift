@@ -24,19 +24,19 @@ struct OptionalImageOptionView: View {
         }
     }
     
-    @Binding private var selectedImage: Image?
+    @Binding private var selectedImage: SwiftUIIcon?
     
     private let description: String?
-    private let images: [Image?]
+    private let images: [SwiftUIIcon]
     
     @State private var placeholderIndex: Int
     @State private var isPresentPicker = false
     
-    init(description: String?, images: [Image?], selectedImage: Binding<Image?>) {
+    init(description: String?, images: [SwiftUIIcon], selectedImage: Binding<SwiftUIIcon?>) {
         self.description = description
         self.images = images
         self._selectedImage = selectedImage
-        self.placeholderIndex = images.firstIndex(of: selectedImage.wrappedValue) ?? 0
+        self.placeholderIndex = 0
     }
     
     var body: some View {
@@ -60,7 +60,7 @@ struct OptionalImageOptionView: View {
                 .tint(YDSColor.buttonPoint)
             }
             
-            ShowPickerButton(cases: images, selectedIndex: Binding(get: {
+            ShowPickerButton(cases: images.map({ $0.name }), selectedIndex: Binding(get: {
                 placeholderIndex
             }, set: { index in
                 placeholderIndex = index
@@ -75,14 +75,8 @@ struct OptionalImageOptionView_Previews: PreviewProvider {
     static var previews: some View {
         OptionalImageOptionView(
             description: "icon",
-            images: [
-                YDSIcon.adbadgeFilled,
-                YDSIcon.arrowRightLine,
-                YDSIcon.boardLine,
-                YDSIcon.cameracircleLine,
-                YDSIcon.dotbadgeLine
-            ],
-            selectedImage: .constant(YDSIcon.bellFilled)
+            images: YDSSwiftUIIcon.icons,
+            selectedImage: .constant(YDSSwiftUIIcon.icons[0])
         )
     }
 }
