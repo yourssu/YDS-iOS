@@ -47,8 +47,8 @@ struct PageListView: View {
 
     @ViewBuilder
     var atomPages: some View {
-        PageView(title: "Empty") {
-            EmptyView()
+        PageView(title: "Label") {
+            LabelPageView()
         }
     }
 
