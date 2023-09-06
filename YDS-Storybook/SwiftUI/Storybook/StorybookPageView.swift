@@ -81,15 +81,15 @@ struct StorybookPageView_Previews: PreviewProvider {
         enum BoxButtonType: CaseIterable {
             case filled, tinted, line
         }
-        
+
         let icons = YDSSwiftUIIcon.icons
-        
+
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
         @State var numberOfLines = 1
         @State var selectedBoxButtonType = 0
         @State var icon: SwiftUIIcon?
-        
+
         return StorybookPageView(
             sample: {
                 Button(action: {}) {
