@@ -28,10 +28,10 @@ struct OptionalIconOptionView: View {
     
     private let description: String?
     private let icons: [SwiftUIIcon]
-    
+
     @State private var placeholderIndex: Int
     @State private var isPresentPicker = false
-    
+
     init(description: String?, icons: [SwiftUIIcon], selectedIcon: Binding<SwiftUIIcon?>) {
         self.description = description
         self.icons = icons

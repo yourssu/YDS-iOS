@@ -115,6 +115,9 @@
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
+		AF75281F2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */; };
+		AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */; };
+		AF7528242AA5F637001174E7 /* OptionalImageOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */; };
 		B9E4E8C82A90BDB90076473C /* StorybookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */; };
 		B9E4E8CE2A90BF500076473C /* BoolOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */; };
 		B9E4E8D02A90BF7E0076473C /* EnumOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */; };
@@ -329,6 +332,9 @@
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
+		AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSImageArray.swift; sourceTree = "<group>"; };
+		AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePageView.swift; sourceTree = "<group>"; };
+		AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageView.swift; sourceTree = "<group>"; };
 		B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumOptionView.swift; sourceTree = "<group>"; };
@@ -662,6 +668,7 @@
 				6CA05E812A90846B00B07920 /* SwiftUIYDSColorArray.swift */,
 				5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */,
 				956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */,
+				AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -672,6 +679,7 @@
 				5A10B1B42A8F5C2600139E89 /* Resources */,
 				6F2D527C2A7944D800BAF200 /* PageListView.swift */,
 				6F2D52792A79444C00BAF200 /* Foundation */,
+				AF7528202AA5F05B001174E7 /* Atom */,
 				B9E4E8C62A90BC3C0076473C /* Storybook */,
 			);
 			path = SwiftUI;
@@ -788,6 +796,14 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		AF7528202AA5F05B001174E7 /* Atom */ = {
+			isa = PBXGroup;
+			children = (
+				AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */,
+			);
+			path = Atom;
+			sourceTree = "<group>";
+		};
 		B9E4E8C62A90BC3C0076473C /* Storybook */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +822,7 @@
 				B9E4E8D12A90BF870076473C /* IntOptionView.swift */,
 				B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */,
 				B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */,
+				AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */,
 			);
 			path = OptionView;
 			sourceTree = "<group>";
@@ -1302,6 +1319,7 @@
 				6F2D527D2A7944D800BAF200 /* PageListView.swift in Sources */,
 				5337939226AF0A7300BE5860 /* BoxButtonPageViewController.swift in Sources */,
 				5359A5C126BEC99700FCCECC /* BottomBarControllerPageViewController.swift in Sources */,
+				AF75281F2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift in Sources */,
 				532DBFD726EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				538ACCAE26EB40380044A437 /* ColorsPageViewController.swift in Sources */,
 				537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */,
@@ -1359,12 +1377,14 @@
 				53C9F70626B5BCCE00EF7B86 /* ProfileImageViewPageViewController.swift in Sources */,
 				532DBFD926EC7863008C2354 /* UIViewController+Embed.swift in Sources */,
 				C3A8033728AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift in Sources */,
+				AF7528242AA5F637001174E7 /* OptionalImageOptionView.swift in Sources */,
 				5A10B1B62A8F5C8500139E89 /* SwiftUIYDSIconArray.swift in Sources */,
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
 				B9E4E8D22A90BF870076473C /* IntOptionView.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
+				AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
 				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
