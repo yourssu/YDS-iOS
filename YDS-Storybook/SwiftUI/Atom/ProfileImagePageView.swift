@@ -9,19 +9,19 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct SquircleShape: Shape {
+fileprivate struct ProfileImageReshaper: Shape {
     var insetRatio: CGFloat
     var width: CGFloat
-    
+
     func path(in rect: CGRect) -> Path {
         let radius = width / 2
         let inset = radius * insetRatio
-        
+
         let topPoint = CGPoint(x: radius, y: 0)
         let rightPoint = CGPoint(x: radius * 2, y: radius)
         let bottomPoint = CGPoint(x: radius, y: radius * 2)
         let leftPoint = CGPoint(x: 0, y: radius)
-        
+
         var path = Path()
         path.move(to: topPoint)
         path.addCurve(
@@ -44,7 +44,7 @@ struct SquircleShape: Shape {
             control1: CGPoint(x: 0, y: inset),
             control2: CGPoint(x: inset, y: 0)
         )
-        
+
         return path
     }
 }
@@ -72,8 +72,8 @@ struct ProfileImagePageView: View {
                         .resizable()
                         .frame(width: ProfileImageViewSize.allCases[sizeSelectedIndex].rawValue,
                             height: ProfileImageViewSize.allCases[sizeSelectedIndex].rawValue)
-                        .clipShape(SquircleShape(insetRatio: 0.2, width: ProfileImageViewSize.allCases[sizeSelectedIndex].rawValue))
-                        .overlay(SquircleShape(insetRatio: 0.2, width: ProfileImageViewSize.allCases[sizeSelectedIndex].rawValue)
+                        .clipShape(ProfileImageReshaper(insetRatio: 0.2, width: ProfileImageViewSize.allCases[sizeSelectedIndex].rawValue))
+                        .overlay(ProfileImageReshaper(insetRatio: 0.2, width: ProfileImageViewSize.allCases[sizeSelectedIndex].rawValue)
                             .stroke(YDSColor.borderNormal, lineWidth: YDSConstant.Border.normal))
                 }
             }
