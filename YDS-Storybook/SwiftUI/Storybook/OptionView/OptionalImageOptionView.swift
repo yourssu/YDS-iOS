@@ -9,40 +9,28 @@
 import SwiftUI
 import YDS_SwiftUI
 
-
 struct OptionalImageOptionView: View {
     private enum Dimension {
         enum Spacing {
-            static let vstack: CGFloat = 8
             static let textSpacing: CGFloat = 4
         }
-        
-        enum Padding {
-            static let button: CGFloat = 16
-        }
-        
-        enum Rectangle {
-            static let cornerRadius: CGFloat = 8
-        }
     }
-    
-    @Binding private var selectedImage: SwiftUIImage?
-    
+
     private let description: String?
     private let images: [SwiftUIImage]
-    
+    @Binding private var selectedImage: SwiftUIImage?
     @State private var placeholderIndex: Int
     @State private var isPresentPicker = false
-    
+
     init(description: String?, images: [SwiftUIImage], selectedImage: Binding<SwiftUIImage?>) {
         self.description = description
         self.images = images
         self._selectedImage = selectedImage
         self.placeholderIndex = 0
     }
-    
+
     var body: some View {
-        VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
+        VStack(alignment: .leading) {
             HStack {
                 VStack(alignment: .leading, spacing: Dimension.Spacing.textSpacing) {
                     if let description = description {
@@ -61,7 +49,7 @@ struct OptionalImageOptionView: View {
                 .labelsHidden()
                 .tint(YDSColor.buttonPoint)
             }
-            
+
             ShowPickerButton(cases: images.map({ $0.name }), selectedIndex: Binding(get: {
                 placeholderIndex
             }, set: { index in
