@@ -122,7 +122,7 @@ public struct YDSProfileImageView: View {
      - Returns: nil
      */
     init?() {
-        fatalError("initialize")
+        fatalError("Initialization failed: YDSProfileImageView requires an Image and a size to be initialized.")
     }
 
     public var body: some View {
