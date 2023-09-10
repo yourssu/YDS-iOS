@@ -19,13 +19,21 @@ struct ProfileImagePageView: View {
     var body: some View {
         StorybookPageView(sample: {
             VStack {
-                if let image = image?.image {
-                    YDSProfileImageView(image: image, size: YDSProfileImageView.ProfileImageViewSize.allCases[sizeSelectedIndex])
+                image?.image.map {
+                    YDSProfileImageView(
+                        image: $0,
+                        size: YDSProfileImageView.ProfileImageViewSize.allCases[sizeSelectedIndex])
                 }
             }
         }, options: [
-            Option.optionalImage(description: "image", images: YDSSwiftUIImage.images, selectedImage: $image),
-            Option.enum(description: "size", cases: YDSProfileImageView.ProfileImageViewSize.allCases, selectedIndex: $sizeSelectedIndex),
+            Option.optionalImage(
+                description: "image",
+                images: YDSSwiftUIImage.images,
+                selectedImage: $image),
+            Option.enum(
+                description: "size",
+                cases: YDSProfileImageView.ProfileImageViewSize.allCases,
+                selectedIndex: $sizeSelectedIndex)
         ])
         .navigationTitle(title)
     }
