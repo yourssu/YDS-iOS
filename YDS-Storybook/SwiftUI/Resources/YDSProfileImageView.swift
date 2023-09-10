@@ -71,23 +71,33 @@ public struct YDSProfileImageView: View {
         }
     }
 
+    /// 컨텐츠 모드 설정
+    public enum ProfileImageContentMode {
+        case fit
+        case fill
+    }
+
     private let image: Image?
     private let size: ProfileImageViewSize
     private var color = YDSColor.borderNormal
     private var width = YDSConstant.Border.normal
+    private let contentMode: ProfileImageContentMode
 
     /**
-     프로필 이미지와 크기를 설정하는 초기화 함수
-     
+     프로필 이미지와 크기를 설정
      - Parameters:
         - image: 표시할 이미지
-        - size: 이미지의 크기. `ProfileImageViewSize` enum 값을 사용
-     
+        - size: 이미지의 크기. `ProfileImageViewSize` enum 값을 사용.
+     default value는 `.small`.
+        - contentMode: 해당 프레임에 이미지 비율을 어떻게 넣을 지 결정.
+     `ProfileImageContentMode` enum 값을 사용.
+     default value는 `.fit`.
      - Returns: YDSProfileImageView 인스턴스
      */
-    public init(image: Image, size: ProfileImageViewSize?) {
+    public init(image: Image, size: ProfileImageViewSize = .small, contentMode: ProfileImageContentMode = .fit) {
         self.image = image
-        self.size = size ?? .small
+        self.size = size
+        self.contentMode = contentMode
     }
 
     /**
@@ -119,6 +129,7 @@ public struct YDSProfileImageView: View {
         if let image = image {
             image
                 .resizable()
+                .aspectRatio(contentMode: contentMode == .fit ? .fit : .fill)
                 .frame(width: size.size, height: size.size)
                 .clipShape(ProfileImageReshaper(insetRatio: 0.2, width: size.size))
                 .overlay(ProfileImageReshaper(insetRatio: 0.2, width: size.size)
