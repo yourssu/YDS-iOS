@@ -51,12 +51,24 @@ private struct ProfileImageReshaper: Shape {
 
 public struct YDSProfileImageView: View {
     /// 프로필 이미지 크기
-    public enum ProfileImageViewSize: CGFloat {
-        case extraSmall = 24
-        case small = 32
-        case medium = 48
-        case large = 72
-        case extraLarge = 96
+    public enum ProfileImageViewSize {
+        case extraSmall
+        case small
+        case medium
+        case large
+        case extraLarge
+        case custom(CGFloat)
+
+        fileprivate var size: CGFloat {
+            switch self {
+            case .extraSmall: return 24
+            case .small: return 32
+            case .medium: return 48
+            case .large: return 72
+            case .extraLarge: return 96
+            case let .custom(value): return value
+            }
+        }
     }
 
     private let image: Image?
@@ -107,9 +119,9 @@ public struct YDSProfileImageView: View {
         if let image = image {
             image
                 .resizable()
-                .frame(width: size.rawValue, height: size.rawValue)
-                .clipShape(ProfileImageReshaper(insetRatio: 0.2, width: size.rawValue))
-                .overlay(ProfileImageReshaper(insetRatio: 0.2, width: size.rawValue)
+                .frame(width: size.size, height: size.size)
+                .clipShape(ProfileImageReshaper(insetRatio: 0.2, width: size.size))
+                .overlay(ProfileImageReshaper(insetRatio: 0.2, width: size.size)
                     .stroke(color, lineWidth: width))
         }
     }
