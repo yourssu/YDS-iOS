@@ -23,9 +23,9 @@ class TypographiesListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupViews()
     }
+    
 
     private func setupViews() {
         setViewProperties()
@@ -48,6 +48,10 @@ class TypographiesListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model[section].items.count
+    }
+    // UITableView에서 셀의 높이를 고정하는 메서드
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 350
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
