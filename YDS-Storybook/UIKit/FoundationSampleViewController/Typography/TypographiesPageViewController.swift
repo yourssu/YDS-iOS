@@ -26,6 +26,7 @@ class TypographiesPageViewController: UIViewController {
 
         setupView()
     }
+    
 
     private func setupView() {
         setViewProperties()
