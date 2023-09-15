@@ -118,7 +118,6 @@
 		AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */; };
 		95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C62AB482E200FA2492 /* LabelPageView.swift */; };
 		95E535C92AB4835E00FA2492 /* OptionalTextColorOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C82AB4835E00FA2492 /* OptionalTextColorOptionView.swift */; };
-		95E535CB2AB4838600FA2492 /* TypoStyleOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535CA2AB4838600FA2492 /* TypoStyleOptionView.swift */; };
 		95E535CD2AB4839F00FA2492 /* YDSLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535CC2AB4839F00FA2492 /* YDSLabelView.swift */; };
 		AF75281F2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */; };
 		AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */; };
@@ -341,7 +340,6 @@
 		AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		95E535C62AB482E200FA2492 /* LabelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPageView.swift; sourceTree = "<group>"; };
 		95E535C82AB4835E00FA2492 /* OptionalTextColorOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalTextColorOptionView.swift; sourceTree = "<group>"; };
-		95E535CA2AB4838600FA2492 /* TypoStyleOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoStyleOptionView.swift; sourceTree = "<group>"; };
 		95E535CC2AB4839F00FA2492 /* YDSLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YDSLabelView.swift; path = "YDS-Storybook/SwiftUI/Storybook/OptionView/YDSLabelView.swift"; sourceTree = SOURCE_ROOT; };
 		AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSImageArray.swift; sourceTree = "<group>"; };
 		AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePageView.swift; sourceTree = "<group>"; };
@@ -836,7 +834,6 @@
 				B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */,
 				B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */,
 				B9E4E8D12A90BF870076473C /* IntOptionView.swift */,
-				95E535CA2AB4838600FA2492 /* TypoStyleOptionView.swift */,
 				B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */,
 				B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */,
 				AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */,
@@ -1410,7 +1407,6 @@
 				AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
 				53E2CF3E26D2A1ED000DE005 /* SuffixTextFieldViewPageViewController.swift in Sources */,
-				95E535CB2AB4838600FA2492 /* TypoStyleOptionView.swift in Sources */,
 				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
 				5365FD59274A41F400B6FBF9 /* LabelPageViewController.swift in Sources */,
 				53E26E8C26F0637A0036648E /* YDSTypographyArray.swift in Sources */,
