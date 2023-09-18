@@ -115,6 +115,7 @@
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
+		AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */; };
 		AF75281F2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */; };
 		AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */; };
 		AF7528242AA5F637001174E7 /* OptionalImageOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */; };
@@ -333,10 +334,11 @@
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
+		AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSImageArray.swift; sourceTree = "<group>"; };
 		AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePageView.swift; sourceTree = "<group>"; };
 		AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageOptionView.swift; sourceTree = "<group>"; };
-		AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YDSProfileImageView.swift; path = "YDS-Storybook/SwiftUI/Resources/YDSProfileImageView.swift"; sourceTree = SOURCE_ROOT; };
+		AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YDSProfileImageView.swift; path = "YDS-SwiftUI/Source/Atom/YDSProfileImageView.swift"; sourceTree = SOURCE_ROOT; };
 		B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageView.swift; sourceTree = "<group>"; };
 		B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumOptionView.swift; sourceTree = "<group>"; };
@@ -764,8 +766,8 @@
 			isa = PBXGroup;
 			children = (
 				6FFDB9772A717FB5003A9519 /* Foundation */,
-				6FFDB9782A717FBF003A9519 /* Atom */,
-				6FFDB9792A717FD8003A9519 /* Component */,
+				AF1E6EFD2AB88D8A0071C963 /* Atom */,
+				AF1E6EFE2AB88DB80071C963 /* Component */,
 				6F956F1D2A8D5F560023D0E3 /* Exported.swift */,
 			);
 			path = Source;
@@ -784,7 +786,7 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		6FFDB9782A717FBF003A9519 /* Atom */ = {
+		AF1E6EFD2AB88D8A0071C963 /* Atom */ = {
 			isa = PBXGroup;
 			children = (
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
@@ -792,9 +794,10 @@
 			path = Atom;
 			sourceTree = "<group>";
 		};
-		6FFDB9792A717FD8003A9519 /* Component */ = {
+		AF1E6EFE2AB88DB80071C963 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1256,6 +1259,7 @@
 				6F95FE562A768C1E00B398CF /* YDSIcon.swift in Sources */,
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
+				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
