@@ -7,7 +7,7 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct UIKitLabelView: UIViewRepresentable {
+struct YDSLabel: UIViewRepresentable {
     let text: String
     let typoStyle: UIFont
     let textColor: UIColor?
@@ -61,7 +61,7 @@ struct LabelPageView: View {
             VStack {
                 GeometryReader { geometry in
                     let UITextColor = UIColor(YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color ?? .black)
-                    UIKitLabelView(
+                    YDSLabel(
                         text: text ?? "",
                         typoStyle: String.TypoStyle.allCases[typoStyleSelectedIndex].font,
                         textColor: UITextColor,
