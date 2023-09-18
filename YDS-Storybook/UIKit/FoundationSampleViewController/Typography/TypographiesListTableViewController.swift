@@ -25,7 +25,6 @@ class TypographiesListTableViewController: UITableViewController {
         super.viewDidLoad()
         setupViews()
     }
-    
 
     private func setupViews() {
         setViewProperties()
