@@ -115,10 +115,9 @@
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
-		AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */; };
 		95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C62AB482E200FA2492 /* LabelPageView.swift */; };
 		95E535C92AB4835E00FA2492 /* OptionalTextColorOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C82AB4835E00FA2492 /* OptionalTextColorOptionView.swift */; };
-		95E535CD2AB4839F00FA2492 /* YDSLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535CC2AB4839F00FA2492 /* YDSLabelView.swift */; };
+		AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */; };
 		AF75281F2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */; };
 		AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */; };
 		AF7528242AA5F637001174E7 /* OptionalImageOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */; };
@@ -337,10 +336,9 @@
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
-		AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		95E535C62AB482E200FA2492 /* LabelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPageView.swift; sourceTree = "<group>"; };
 		95E535C82AB4835E00FA2492 /* OptionalTextColorOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalTextColorOptionView.swift; sourceTree = "<group>"; };
-		95E535CC2AB4839F00FA2492 /* YDSLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YDSLabelView.swift; path = "YDS-Storybook/SwiftUI/Storybook/OptionView/YDSLabelView.swift"; sourceTree = SOURCE_ROOT; };
+		AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		AF75281E2AA5BF08001174E7 /* SwiftUIYDSImageArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSImageArray.swift; sourceTree = "<group>"; };
 		AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImagePageView.swift; sourceTree = "<group>"; };
 		AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageOptionView.swift; sourceTree = "<group>"; };
@@ -796,7 +794,6 @@
 			isa = PBXGroup;
 			children = (
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
-				95E535CC2AB4839F00FA2492 /* YDSLabelView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1261,7 +1258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F95FE552A768C1E00B398CF /* YDSTypoStyle.swift in Sources */,
-				95E535CD2AB4839F00FA2492 /* YDSLabelView.swift in Sources */,
 				6F95FE542A768C1E00B398CF /* YDSItemColor.swift in Sources */,
 				6F95FE592A768C1E00B398CF /* YDSBasicColor.swift in Sources */,
 				AFA307202AAAF7CE00916C7E /* YDSProfileImageView.swift in Sources */,
