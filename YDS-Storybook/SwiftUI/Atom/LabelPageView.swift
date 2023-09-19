@@ -7,43 +7,6 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct UIKitLabelView: UIViewRepresentable {
-    let text: String
-    let typoStyle: UIFont
-    let textColor: UIColor?
-
-    var maxWidth: CGFloat
-
-    let numberOfLines: Int
-    let lineBreakMode: NSLineBreakMode
-    let alignment: NSTextAlignment
-    let lineBreakStrategy: NSParagraphStyle.LineBreakStrategy
-
-    func makeUIView(context: Context) -> UILabel {
-        let label = UILabel()
-        label.text = text
-        label.font = typoStyle
-        label.textColor = textColor
-        label.numberOfLines = numberOfLines
-        label.lineBreakMode = lineBreakMode
-        label.textAlignment = alignment
-        label.lineBreakStrategy = lineBreakStrategy
-        label.preferredMaxLayoutWidth = maxWidth
-
-        return label
-    }
-
-    func updateUIView(_ uiView: UILabel, context: Context) {
-        uiView.text = text
-        uiView.font = typoStyle
-        uiView.textColor = textColor
-        uiView.numberOfLines = numberOfLines
-        uiView.lineBreakMode = lineBreakMode
-        uiView.textAlignment = alignment
-        uiView.lineBreakStrategy = lineBreakStrategy
-    }
-}
-
 struct LabelPageView: View {
     let title: String = "Label"
 
@@ -60,8 +23,10 @@ struct LabelPageView: View {
         StorybookPageView(sample: {
             VStack {
                 GeometryReader { geometry in
-                    let UITextColor = UIColor(YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color ?? .black)
-                    UIKitLabelView(
+                    let UITextColor = UIColor(
+                        YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color
+                        ?? .black)
+                    YDSLabel(
                         text: text ?? "",
                         typoStyle: String.TypoStyle.allCases[typoStyleSelectedIndex].font,
                         textColor: UITextColor,
