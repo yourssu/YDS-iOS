@@ -113,6 +113,7 @@
 		6FFDB9702A717F15003A9519 /* YDS_SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */; };
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
+		951261322AB969560012B5F9 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951261312AB969560012B5F9 /* YDSLabel.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
 		95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C62AB482E200FA2492 /* LabelPageView.swift */; };
@@ -334,6 +335,7 @@
 		6FFDB96B2A717F15003A9519 /* YDS_SwiftUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDS_SwiftUI.h; sourceTree = "<group>"; };
 		6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerControllerView.swift; sourceTree = "<group>"; };
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
+		951261312AB969560012B5F9 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
 		95E535C62AB482E200FA2492 /* LabelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPageView.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 			isa = PBXGroup;
 			children = (
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
+				951261312AB969560012B5F9 /* YDSLabel.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1266,6 +1269,7 @@
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
+				951261322AB969560012B5F9 /* YDSLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
