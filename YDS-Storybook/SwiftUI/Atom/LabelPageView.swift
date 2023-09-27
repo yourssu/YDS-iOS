@@ -4,32 +4,33 @@
 //
 //  Created by 박지윤 on 2023/09/11.
 //
+
 import SwiftUI
 import YDS_SwiftUI
 
-struct LabelPageView: View {
+@frozen public struct LabelPageView: View {
     let title: String = "Label"
 
+    @State var text: String? = "Label"
+    @State var int: Int = 0
     @State var typoStyleSelectedIndex = 0
     @State var textColorSelectedIndex: Int = 0
     @State var lineBreakModeSelectedIndex: Int = 0
     @State var alignmentSelectedIndex: Int = 1
     @State var lineBreakStrategySelectedIndex: Int = 2
 
-    @State var text: String? = "Label"
-    @State var int: Int = 0
+    var selectedColor: Color { return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color
+        ?? .black }
+    var selectedTypoStyle: Font { return Font(String.TypoStyle.allCases[typoStyleSelectedIndex].font) }
 
-    var body: some View {
+    public var body: some View {
         StorybookPageView(sample: {
             VStack {
                 GeometryReader { geometry in
-                    let UITextColor = UIColor(
-                        YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color
-                        ?? .black)
                     YDSLabel(
                         text: text ?? "",
                         typoStyle: String.TypoStyle.allCases[typoStyleSelectedIndex].font,
-                        textColor: UITextColor,
+                        textColor: selectedColor,
                         maxWidth: geometry.size.width - 32,
                         numberOfLines: int,
                         lineBreakMode: NSLineBreakMode.allCases[lineBreakModeSelectedIndex],
