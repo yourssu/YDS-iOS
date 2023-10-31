@@ -163,6 +163,10 @@
 		C35F27302883F35B0061C1A0 /* SetNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35F272F2883F35B0061C1A0 /* SetNeeds.swift */; };
 		C37563DC2AF09ADB00857405 /* YDSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DB2AF09ADB00857405 /* YDSChip.swift */; };
 		C37563DE2AF0A54100857405 /* ChipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DD2AF0A54100857405 /* ChipPageViewController.swift */; };
+		C37563DA2AEFD9E400857405 /* YDSTopBarEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563D92AEFD9E400857405 /* YDSTopBarEx.swift */; };
+		C37AC5A92AE67C57005E3593 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37AC5A82AE67C57005E3593 /* TopBarView.swift */; };
+		C37AC5AB2AE6E473005E3593 /* YDSTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37AC5AA2AE6E473005E3593 /* YDSTopBar.swift */; };
+		C37AC5AD2AE7A710005E3593 /* TopBarSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
@@ -400,6 +404,10 @@
 		C35F272F2883F35B0061C1A0 /* SetNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNeeds.swift; sourceTree = "<group>"; };
 		C37563DB2AF09ADB00857405 /* YDSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSChip.swift; sourceTree = "<group>"; };
 		C37563DD2AF0A54100857405 /* ChipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPageViewController.swift; sourceTree = "<group>"; };
+		C37563D92AEFD9E400857405 /* YDSTopBarEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBarEx.swift; sourceTree = "<group>"; };
+		C37AC5A82AE67C57005E3593 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		C37AC5AA2AE6E473005E3593 /* YDSTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBar.swift; sourceTree = "<group>"; };
+		C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarSampleView.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
@@ -740,6 +748,7 @@
 				AF7528202AA5F05B001174E7 /* Atom */,
 				6FA276362AF0E8DC00197C3C /* Components */,
 				954C482B2AFF6B0A002F9FAC /* Component */,
+				C37AC5A72AE67C26005E3593 /* Component */,
 				B9E4E8C62A90BC3C0076473C /* Storybook */,
 			);
 			path = SwiftUI;
@@ -883,6 +892,8 @@
 				954C482E2AFF6B92002F9FAC /* YDSBottomBarController.swift */,
 				80CC69212B0FB08700CDAFA7 /* YDSList.swift */,
 				80CC69232B0FB16F00CDAFA7 /* YDSListItem.swift */,
+				C37AC5AA2AE6E473005E3593 /* YDSTopBar.swift */,
+				C37563D92AEFD9E400857405 /* YDSTopBarEx.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -975,6 +986,15 @@
 				C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */,
 			);
 			path = Tooltip;
+			sourceTree = "<group>";
+		};
+		C37AC5A72AE67C26005E3593 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C37AC5A82AE67C57005E3593 /* TopBarView.swift */,
+				C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		C37F356E27DE348C007DF859 /* Extension */ = {
@@ -1384,11 +1404,13 @@
 				80CC69222B0FB08700CDAFA7 /* YDSList.swift in Sources */,
 				6F95FE562A768C1E00B398CF /* YDSIcon.swift in Sources */,
 				0299354E2AEF83F000F46712 /* YDSBoxButton.swift in Sources */,
+				C37AC5AB2AE6E473005E3593 /* YDSTopBar.swift in Sources */,
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 				AF23ED872AEE9C2800F3D5E2 /* YDSSearchTextField.swift in Sources */,
 				954C482F2AFF6B92002F9FAC /* YDSBottomBarController.swift in Sources */,
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF23ED812AEE9BF600F3D5E2 /* YDSSimpleTextField.swift in Sources */,
+				C37563DA2AEFD9E400857405 /* YDSTopBarEx.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
 				6C9A10B82B3AB8C600757ABC /* YDSTextView.swift in Sources */,
 				951261322AB969560012B5F9 /* YDSLabel.swift in Sources */,
@@ -1470,6 +1492,7 @@
 				53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */,
 				6C9A10BA2B3B463000757ABC /* TextViewPageView.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
+				C37AC5A92AE67C57005E3593 /* TopBarView.swift in Sources */,
 				5365FD5B274A4ED000B6FBF9 /* IntControllerView.swift in Sources */,
 				029935502AEF84D400F46712 /* BoxButtonPageView.swift in Sources */,
 				956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */,
@@ -1548,6 +1571,7 @@
 				5337938C26AF096A00BE5860 /* StorybookPageViewController.swift in Sources */,
 				5365FD59274A41F400B6FBF9 /* LabelPageViewController.swift in Sources */,
 				53E26E8C26F0637A0036648E /* YDSTypographyArray.swift in Sources */,
+				C37AC5AD2AE7A710005E3593 /* TopBarSampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
