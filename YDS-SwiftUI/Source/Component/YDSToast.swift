@@ -6,15 +6,81 @@
 //
 
 import SwiftUI
+import UIKit
+import YDS_Essential
 
-struct YDSToast: View {
-    var body: some View {
-        Text("Hello, World!")
+public struct YDSToast: Equatable {
+    var text: String
+    var duration: ToastDuration
+    public enum ToastDuration: CaseIterable {
+        case short
+        case long
+
+        fileprivate var value: Double {
+            switch self {
+            case .short:
+                return 1.5
+            case .long:
+                return 3
+            }
+        }
     }
 }
 
-struct YDSToast_Previews: PreviewProvider {
-    static var previews: some View {
-        YDSToast()
+public struct YDSToastView: View {
+    var text: String
+    public init(_ text: String) {
+        self.text = text
+    }
+    public var body: some View {
+        YDSColor.toastBG
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .frame(maxWidth: .infinity, maxHeight: 66)
+            .overlay(
+                Text(text)
+                    .foregroundColor(YDSColor.textBright)
+            )
+            .padding()
+    }
+}
+
+public struct YDSToastModifier: ViewModifier {
+    @Binding public var isShowing: Bool
+    @Binding public var toast: YDSToast
+    public func body(content: Content) -> some View {
+        content
+            .overlay(alignment: .bottom) {
+                if isShowing {
+                    YDSToastView(toast.text)
+                        .opacity(isShowing ? 1.0 : 0.0)
+                }
+            }
+            .onChange(of: isShowing) { value in
+                if value {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration.value) {
+                        isShowing = false
+                    }
+                }
+            }
+            .animation(.easeInOut, value: isShowing)
+    }
+}
+
+extension View {
+    public func ydsToast(
+        _ text: Binding<String?>,
+        duration: YDSToast.ToastDuration = .short,
+        isShowing: Binding<Bool>
+    ) -> some View {
+        self.modifier(
+            YDSToastModifier(
+                isShowing: isShowing,
+                toast: .init(get: {
+                    YDSToast(text: text.wrappedValue ?? "", duration: duration)
+                }, set: { ydsToast in
+                    text.wrappedValue = ydsToast.text
+                })
+            )
+        )
     }
 }
