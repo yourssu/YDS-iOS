@@ -136,6 +136,8 @@
 		C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */; };
 		C350ABE6280858B900BFC9C0 /* YDSTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */; };
 		C35F27302883F35B0061C1A0 /* SetNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35F272F2883F35B0061C1A0 /* SetNeeds.swift */; };
+		C37563DC2AF09ADB00857405 /* YDSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DB2AF09ADB00857405 /* YDSChip.swift */; };
+		C37563DE2AF0A54100857405 /* ChipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DD2AF0A54100857405 /* ChipPageViewController.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
@@ -356,6 +358,8 @@
 		C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
 		C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTooltip.swift; sourceTree = "<group>"; };
 		C35F272F2883F35B0061C1A0 /* SetNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNeeds.swift; sourceTree = "<group>"; };
+		C37563DB2AF09ADB00857405 /* YDSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSChip.swift; sourceTree = "<group>"; };
+		C37563DD2AF0A54100857405 /* ChipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPageViewController.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
@@ -584,6 +588,7 @@
 				53E2CF4326D2A462000DE005 /* SearchBarPageViewController.swift */,
 				C3AFE2E1289FB1FA007D391D /* BottomSheetPageViewController.swift */,
 				C37F357127DE34FE007DF859 /* TextViewViewController.swift */,
+				C37563DD2AF0A54100857405 /* ChipPageViewController.swift */,
 			);
 			path = AtomSampleViewController;
 			sourceTree = "<group>";
@@ -963,6 +968,7 @@
 				53EB943826A1E33A00208496 /* YDSDivider.swift */,
 				5359111A269DDA31000CFFE7 /* YDSIconView.swift */,
 				53A31B5D266F500300461C29 /* YDSToggle.swift */,
+				C37563DB2AF09ADB00857405 /* YDSChip.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1300,6 +1306,7 @@
 				C3BD4E39285DBCEA00B484DC /* YDSTabBarViewController.swift in Sources */,
 				C3985FB827F839A700389A22 /* UIApplication+findWindow.swift in Sources */,
 				53443D9E26A7D4BD0037B02E /* YDSBoxButton.swift in Sources */,
+				C37563DC2AF09ADB00857405 /* YDSChip.swift in Sources */,
 				539110B626C052670094FD08 /* YDSTopBarButton.swift in Sources */,
 				C3DCB31D2820010D00F98257 /* YDSListItem.swift in Sources */,
 				5370918426A5467D007CD775 /* YDSSuffixTextFieldView.swift in Sources */,
@@ -1350,6 +1357,7 @@
 				6CA05E822A90846B00B07920 /* SwiftUIYDSColorArray.swift in Sources */,
 				B9E4E8D62A90BFB60076473C /* OptionalIconOptionView.swift in Sources */,
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
+				C37563DE2AF0A54100857405 /* ChipPageViewController.swift in Sources */,
 				95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
