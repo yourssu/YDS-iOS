@@ -126,6 +126,5 @@ public struct YDSLabel: UIViewRepresentable {
         uiView.textAlignment = alignment ?? .center
         uiView.lineBreakStrategy = lineBreakStrategy ?? .hangulWordPriority
         uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        uiView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
 }
