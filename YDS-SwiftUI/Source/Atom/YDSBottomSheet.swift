@@ -7,25 +7,69 @@
 
 import SwiftUI
 
-struct YDSBottomSheet: ViewModifier {
-    @State var height = CGFloat.zero
-
+struct YDSBottomSheet<ViewType>: ViewModifier where ViewType: View {
     @Binding var isPresent: Bool
 
+    @State var offset: CGFloat = .zero
+
+    let content: () -> ViewType
+
     func body(content: Content) -> some View {
-        content
-            .sheet(isPresented: $isPresent) {
-                Text("Hello")
-                    .presentationDetents([.medium])
+        ZStack {
+            content
+
+            ZStack(alignment: .bottom) {
+                if isPresent {
+                    YDSColor.dimNormal
+                        .onTapGesture {
+                            isPresent = false
+                        }
+                    self.content()
+                        .padding(.bottom, 40)
+                        .frame(maxWidth: .infinity, minHeight: 88)
+                        .background(
+                            YDSColor.bgNormal
+                        )
+                        .cornerRadius(YDSConstant.Rounding.r8)
+                        .transition(.move(edge: .bottom))
+                        .offset(y: offset)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    withAnimation {
+                                        offset = value.translation.height > 0 ? value.translation.height : offset
+                                    }
+                                }
+                                .onEnded { _ in
+                                    if offset > 40 {
+                                        isPresent = false
+                                        offset = .zero
+                                    } else {
+                                        offset = .zero
+                                    }
+                                }
+                        )
+                }
             }
+            .ignoresSafeArea()
+            .animation(.easeInOut(duration: 0.3), value: isPresent)
+        }
     }
 }
 
 extension View {
-    public func ydsBottomSheet(
-        isPresent: Binding<Bool>
-    ) -> some View {
+    public func ydsBottomSheet<ViewType>(
+        isPresent: Binding<Bool>,
+        content: @escaping () -> ViewType
+    ) -> some View where ViewType: View {
         self
-            .modifier(YDSBottomSheet(isPresent: isPresent))
+            .modifier(
+                YDSBottomSheet(
+                    isPresent: isPresent,
+                    content: {
+                        content()
+                    }
+                )
+            )
     }
 }
