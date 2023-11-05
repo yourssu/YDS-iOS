@@ -9,7 +9,7 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct ChipPageView: View {
-    let title: String = "EmojiButton"
+    let title: String = "Chip"
 
     @State var text: String? = "IT대학"
     @State var isSelected: Bool = false
@@ -28,7 +28,6 @@ struct ChipPageView: View {
                     )
                 }
             }
-
         }, options: [
             Option.optionalString(
                 description: "text",

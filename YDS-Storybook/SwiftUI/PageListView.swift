@@ -53,6 +53,9 @@ struct PageListView: View {
         PageView(title: "ProfileImageView") {
             ProfileImagePageView()
         }
+        PageView(title: "ChipView") {
+            ChipPageView()
+        }
     }
 
     @ViewBuilder
