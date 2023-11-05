@@ -38,6 +38,7 @@ struct BoolOptionView: View {
             }
             Toggle("", isOn: $isOn)
                 .labelsHidden()
+                .tint(YDSColor.buttonPoint)
         }
     }
 }
