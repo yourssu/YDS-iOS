@@ -23,8 +23,8 @@ struct YDSTextFieldBase: View {
     private var borderColor: Color
     private var helperTextColor: Color
     private var textColor: Color
-
     private let isSecure: Bool
+    private let onSubmit: () -> Void
 
     init(
         fieldText: String? = nil,
@@ -37,7 +37,8 @@ struct YDSTextFieldBase: View {
         isNegative: Bool = false,
         isPositive: Bool = false,
         borderColor: Color = .clear,
-        isSecure: Bool = false
+        isSecure: Bool = false,
+        onSubmit: @escaping () -> Void = {}
     ) {
             self.fieldText = fieldText
             self.placeholder = placeholder
@@ -55,6 +56,8 @@ struct YDSTextFieldBase: View {
 
             self.isSecure = isSecure
             self.textColor = YDSColor.textSecondary
+
+            self.onSubmit = onSubmit
 
             /// isDisabled > isNegative > isPositive
             if isDisabled {
@@ -107,6 +110,9 @@ struct YDSTextFieldBase: View {
                         .accentColor(YDSColor.textPointed)
                         .foregroundColor(textColor)
                         .disabled(isDisabled)
+                        .onSubmit {
+                            onSubmit()
+                        }
                 }
 
                 trailing

@@ -8,13 +8,14 @@
 import SwiftUI
 
 public struct YDSSimpleTextField: View, YDSTextFieldProtocol {
-    var fieldText: String?
-    var placeholder: String?
-    var helperText: String?
+    let fieldText: String?
+    let placeholder: String?
+    let helperText: String?
     @Binding var text: String
-    var isDisabled: Bool
-    var isNegative: Bool
-    var isPositive: Bool
+    let isDisabled: Bool
+    let isNegative: Bool
+    let isPositive: Bool
+    let onSubmit: () -> Void
 
     public init(
         fieldText: String? = nil,
@@ -23,7 +24,8 @@ public struct YDSSimpleTextField: View, YDSTextFieldProtocol {
         text: Binding<String>,
         isDisabled: Bool = false,
         isNegative: Bool = false,
-        isPositive: Bool = false
+        isPositive: Bool = false,
+        onSubmit: @escaping () -> Void = {}
     ) {
         self.fieldText = fieldText
         self.placeholder = placeholder
@@ -32,6 +34,7 @@ public struct YDSSimpleTextField: View, YDSTextFieldProtocol {
         self.isDisabled = isDisabled
         self.isNegative = isNegative
         self.isPositive = isPositive
+        self.onSubmit = onSubmit
     }
 
     init?() {
@@ -61,7 +64,8 @@ public struct YDSSimpleTextField: View, YDSTextFieldProtocol {
             ),
             isDisabled: isDisabled,
             isNegative: isNegative,
-            isPositive: isPositive
+            isPositive: isPositive,
+            onSubmit: onSubmit
          )
     }
 }

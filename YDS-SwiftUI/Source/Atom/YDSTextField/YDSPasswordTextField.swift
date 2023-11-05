@@ -16,6 +16,7 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
     let isDisabled: Bool
     let isNegative: Bool
     let isPositive: Bool
+    let onSubmit: () -> Void
 
     @State var isSecured: Bool = true
 
@@ -27,7 +28,8 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
         suffixText: String? = nil,
         isDisabled: Bool = false,
         isNegative: Bool = false,
-        isPositive: Bool = false
+        isPositive: Bool = false,
+        onSubmit: @escaping () -> Void = {}
     ) {
             self.fieldText = fieldText
             self.placeholder = placeholder
@@ -37,6 +39,7 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
             self.isDisabled = isDisabled
             self.isNegative = isNegative
             self.isPositive = isPositive
+            self.onSubmit = onSubmit
         }
 
     init?() {
@@ -61,7 +64,8 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
             isDisabled: isDisabled,
             isNegative: isNegative,
             isPositive: isPositive,
-            isSecure: isSecured
+            isSecure: isSecured,
+            onSubmit: onSubmit
             )
     }
 }
