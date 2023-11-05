@@ -54,7 +54,7 @@ struct YDSTextFieldBase: View {
             self.helperTextColor = YDSColor.textTertiary
 
             self.isSecure = isSecure
-        self.textColor = YDSColor.textSecondary
+            self.textColor = YDSColor.textSecondary
 
             /// isDisabled > isNegative > isPositive
             if isDisabled {
