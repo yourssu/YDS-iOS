@@ -14,7 +14,6 @@ struct BadgePageView: View {
     let title: String = "BadgeView"
     
     @State var text: String? = "광고"
-    @State var iconSelectedIndex = 0
     @State var badgeColorSelectedIndex = 0
     @State var icons: SwiftUIIcon? = YDSSwiftUIIcon.icons[0]
     
@@ -28,7 +27,7 @@ struct BadgePageView: View {
             VStack {
                 GeometryReader { geometry in
                     YDSBadge(
-                        text: text ?? "", 
+                        text: text ?? nil,
                         icon: icons?.icon,
                         color: selectedColor
                     )
