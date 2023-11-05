@@ -84,7 +84,7 @@ struct YDSTextFieldBase: View {
         }
 
     init?() {
-        fatalError("Initialization failed: YDSTextField requires an Image and a size to be initialized.")
+        fatalError("Initialization failed: YDSTextFieldBase initializing failed.")
     }
 
     public var body: some View {

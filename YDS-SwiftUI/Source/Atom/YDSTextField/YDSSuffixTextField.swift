@@ -41,7 +41,7 @@ public struct YDSSuffixTextField: View, YDSTextFieldProtocol {
         }
 
     init?() {
-        fatalError("Initialization failed: YDSProfileImageView requires an Image and a size to be initialized.")
+        fatalError("Initialization failed: YDSSuffixTextField initializing failed.")
     }
 
     public var body: some View {
