@@ -24,13 +24,13 @@ public struct YDSBadge: View {
     
     public var body: some View {
         HStack(spacing: 4) {
-            if let icon = icon {
+            if let icon {
                 icon
                     .resizable()
                     .frame(width: 16, height: 16)
             }
 
-            if let text = text {
+            if let text {
                 Text(text)
                     .font(YDSFont.caption1)
             }
