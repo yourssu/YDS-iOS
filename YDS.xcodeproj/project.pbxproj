@@ -136,11 +136,13 @@
 		C350ABE42808589200BFC9C0 /* TooltipSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */; };
 		C350ABE6280858B900BFC9C0 /* YDSTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */; };
 		C35F27302883F35B0061C1A0 /* SetNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35F272F2883F35B0061C1A0 /* SetNeeds.swift */; };
+		C37563E02AF0CBB500857405 /* YDSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DF2AF0CBB500857405 /* YDSChip.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
 		C37F357027DE34A3007DF859 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */; };
 		C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F357127DE34FE007DF859 /* TextViewViewController.swift */; };
 		C3985FB627F832EA00389A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB527F832EA00389A22 /* SceneDelegate.swift */; };
 		C3985FB827F839A700389A22 /* UIApplication+findWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */; };
+		C39DFEFA2AF7820000AE11B4 /* ChipPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39DFEF92AF7820000AE11B4 /* ChipPageView.swift */; };
 		C3A3498627E710F900005034 /* Optional+isEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A3498527E710F900005034 /* Optional+isEmpty.swift */; };
 		C3A48BC3285DC90100601094 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = C3A48BC2285DC90100601094 /* Parchment */; };
 		C3A8033728AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A8033628AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift */; };
@@ -356,11 +358,13 @@
 		C350ABE32808589200BFC9C0 /* TooltipSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipSampleViewController.swift; sourceTree = "<group>"; };
 		C350ABE5280858B900BFC9C0 /* YDSTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTooltip.swift; sourceTree = "<group>"; };
 		C35F272F2883F35B0061C1A0 /* SetNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNeeds.swift; sourceTree = "<group>"; };
+		C37563DF2AF0CBB500857405 /* YDSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSChip.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		C37F356F27DE34A3007DF859 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C37F357127DE34FE007DF859 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
 		C3985FB527F832EA00389A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3985FB727F839A700389A22 /* UIApplication+findWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+findWindow.swift"; sourceTree = "<group>"; };
+		C39DFEF92AF7820000AE11B4 /* ChipPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPageView.swift; sourceTree = "<group>"; };
 		C3A3498527E710F900005034 /* Optional+isEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isEmpty.swift"; sourceTree = "<group>"; };
 		C3A8033628AE23D3008E2380 /* NSLineBreakMode+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLineBreakMode+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		C3A8033828AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift"; sourceTree = "<group>"; };
@@ -795,6 +799,7 @@
 			children = (
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
 				951261312AB969560012B5F9 /* YDSLabel.swift */,
+				C37563DF2AF0CBB500857405 /* YDSChip.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 			children = (
 				AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */,
 				95E535C62AB482E200FA2492 /* LabelPageView.swift */,
+				C39DFEF92AF7820000AE11B4 /* ChipPageView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1266,6 +1272,7 @@
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
+				C37563E02AF0CBB500857405 /* YDSChip.swift in Sources */,
 				951261322AB969560012B5F9 /* YDSLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1368,6 +1375,7 @@
 				532DBFD526EC734F008C2354 /* UIView+AddSubviews.swift in Sources */,
 				C3A8033928AE27E9008E2380 /* NSParagraphStyle.LineBreakStrategy+CustomStringConvertible.swift in Sources */,
 				B9E4E8EC2A97071E0076473C /* ShowPickerButton.swift in Sources */,
+				C39DFEFA2AF7820000AE11B4 /* ChipPageView.swift in Sources */,
 				B9E4E8D42A90BFA10076473C /* OptionalStringOptionView.swift in Sources */,
 				537A0ACE26C4188C00142DCE /* DoubleTitleTopBarSampleViewController.swift in Sources */,
 				537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */,
