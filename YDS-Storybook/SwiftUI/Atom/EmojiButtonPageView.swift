@@ -8,7 +8,7 @@
 import SwiftUI
 import YDS_SwiftUI
 
-struct EmojiButtonView: View {
+struct EmojiButtonPageView: View {
     let title: String = "EmojiButton"
     
     @State var emoji: String? = "💜"
@@ -21,12 +21,16 @@ struct EmojiButtonView: View {
             VStack {
                 GeometryReader { geometry in
                     YDSEmojiButton(emoji: emoji,
-                                   text: text)
+                                   text: text,
+                                   isSelected: isSelected)
                     .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
                     .background(
+                        Rectangle()
+                            .fill(.white)
                     )
                 }
             }
+
         }, options: [
             Option.optionalString(
                 description: "emoji",
@@ -43,5 +47,5 @@ struct EmojiButtonView: View {
 }
 
 #Preview {
-    EmojiButtonView()
+    EmojiButtonPageView()
 }
