@@ -14,7 +14,7 @@ struct BadgePageView: View {
     let title: String = "BadgeView"
     
     @State var text: String? = "광고"
-    @State var badgeColorSelectedIndex = 0
+    @State var badgeColorSelectedIndex = 6
     @State var icons: SwiftUIIcon? = YDSSwiftUIIcon.icons[0]
     
     var selectedColor: Color {
@@ -27,10 +27,12 @@ struct BadgePageView: View {
             VStack {
                 GeometryReader { geometry in
                     YDSBadge(
-                        text: text ?? nil,
+                        text: text,
                         icon: icons?.icon,
                         color: selectedColor
                     )
+                    //텍스트컬러는 이런식으로 추가가능
+                    //.foregroundColor(.blue)
                     .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
                     .background(
                         Rectangle()
