@@ -11,11 +11,11 @@ import YDS_Essential
 public struct YDSEmojiButton: View {
     let emoji: String?
     let text: String?
-    var isSelected: Bool?
+    var isSelected: Bool
     
     public init(emoji: String?, 
                 text: String?,
-                isSelected: Bool?) {
+                isSelected: Bool) {
         self.emoji = emoji
         self.text = text
         self.isSelected = isSelected
@@ -35,7 +35,7 @@ public struct YDSEmojiButton: View {
                 if let text = text{
                     Text(text)
                         .font(YDSFont.button4)
-                        .foregroundColor(isSelected ?? false ? YDSColor.buttonPoint : YDSColor.buttonNormal)
+                        .foregroundColor(isSelected ? YDSColor.buttonPoint : YDSColor.buttonNormal)
                 }
             }
         }
@@ -43,7 +43,7 @@ public struct YDSEmojiButton: View {
         .frame(height: 32)
         .padding(.horizontal, 8)
         .background(
-            RoundedRectangle(cornerRadius: 16).fill(isSelected ?? false ? YDSColor.buttonPointBG : YDSColor.buttonEmojiBG)
+            RoundedRectangle(cornerRadius: 16).fill(isSelected ? YDSColor.buttonPointBG : YDSColor.buttonEmojiBG)
         )
         .overlay(
             RoundedRectangle(cornerRadius: 16)
