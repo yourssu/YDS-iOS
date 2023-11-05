@@ -16,6 +16,7 @@ public struct YDSSuffixTextField: View, YDSTextFieldProtocol {
     let isDisabled: Bool
     let isNegative: Bool
     let isPositive: Bool
+    let onSubmit: () -> Void
 
     public init(
         fieldText: String? = nil,
@@ -25,7 +26,9 @@ public struct YDSSuffixTextField: View, YDSTextFieldProtocol {
         suffixText: String? = nil,
         isDisabled: Bool = false,
         isNegative: Bool = false,
-        isPositive: Bool = false) {
+        isPositive: Bool = false,
+        onSubmit: @escaping () -> Void = {}
+    ) {
             self.fieldText = fieldText
             self.placeholder = placeholder
             self.helperText = helperText
@@ -34,6 +37,7 @@ public struct YDSSuffixTextField: View, YDSTextFieldProtocol {
             self.isDisabled = isDisabled
             self.isNegative = isNegative
             self.isPositive = isPositive
+            self.onSubmit = onSubmit
         }
 
     init?() {
@@ -61,7 +65,8 @@ public struct YDSSuffixTextField: View, YDSTextFieldProtocol {
             ),
             isDisabled: isDisabled,
             isNegative: isNegative,
-            isPositive: isPositive
+            isPositive: isPositive,
+            onSubmit: onSubmit
             )
     }
 }

@@ -12,19 +12,21 @@ public struct YDSSearchTextField: View, YDSTextFieldProtocol {
     let isPositive: Bool = false
     let fieldText: String? = nil
     let helperText: String? = nil
-
     @Binding var text: String
     let placeholder: String?
     let isDisabled: Bool
+    let onSubmit: () -> Void
 
     public init(
         placeholder: String? = nil,
         text: Binding<String>,
-        isDisabled: Bool = false
+        isDisabled: Bool = false,
+        onSubmit: @escaping () -> Void = {}
     ) {
         self.placeholder = placeholder
         self._text = text
         self.isDisabled = isDisabled
+        self.onSubmit = onSubmit
     }
 
     init?() {
@@ -52,7 +54,8 @@ public struct YDSSearchTextField: View, YDSTextFieldProtocol {
                         }
                     }
                 ),
-            isDisabled: isDisabled
+            isDisabled: isDisabled,
+            onSubmit: onSubmit
         )
     }
 }
