@@ -168,7 +168,7 @@
 		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
 		DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */; };
 		E565330B2AF7D64900520002 /* YDSEmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330A2AF7D64900520002 /* YDSEmojiButton.swift */; };
-		E565330D2AF7D6C200520002 /* EmojiButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330C2AF7D6C200520002 /* EmojiButtonView.swift */; };
+		E565330D2AF7D6C200520002 /* EmojiButtonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,7 +394,7 @@
 		DDFBD00A26739A6B00C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDFBD00C26739A6B00C5F409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E565330A2AF7D64900520002 /* YDSEmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSEmojiButton.swift; sourceTree = "<group>"; };
-		E565330C2AF7D6C200520002 /* EmojiButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonView.swift; sourceTree = "<group>"; };
+		E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -817,7 +817,7 @@
 			children = (
 				AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */,
 				95E535C62AB482E200FA2492 /* LabelPageView.swift */,
-				E565330C2AF7D6C200520002 /* EmojiButtonView.swift */,
+				E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1393,7 +1393,7 @@
 				6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
-				E565330D2AF7D6C200520002 /* EmojiButtonView.swift in Sources */,
+				E565330D2AF7D6C200520002 /* EmojiButtonPageView.swift in Sources */,
 				0272DD4D28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift in Sources */,
 				C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */,
 				53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */,
