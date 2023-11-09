@@ -20,9 +20,9 @@ struct ProfileImagePageView: View {
         StorybookPageView(sample: {
             VStack {
                 image?.image.map {
-                    YDSProfileImageView(
-                        image: $0,
-                        size: YDSProfileImageView.ProfileImageViewSize.allCases[sizeSelectedIndex])
+                                    YDSProfileImageView(
+                                        image: $0,
+                                        size: YDSProfileImageView.ProfileImageViewSize.allCases[sizeSelectedIndex])
                 }
             }
         }, options: [
