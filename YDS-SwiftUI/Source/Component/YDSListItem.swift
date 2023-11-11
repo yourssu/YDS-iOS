@@ -42,7 +42,7 @@ struct YDSListItem: View {
                     .tint(YDSColor.buttonPoint)
                 
             }
-        }
+        }.frame(height: 48)
     }
 }
 
@@ -50,6 +50,6 @@ struct YDSListItem: View {
 
 struct YDSListItem_Previews: PreviewProvider {
     static var previews: some View {
-        YDSListItem(text:"계정관리", icon: false, toggle: true, isOn: .constant(true))
+        YDSListItem(text:"비밀번호 변경", icon: false, toggle: false, isOn: .constant(true))
     }
 }
