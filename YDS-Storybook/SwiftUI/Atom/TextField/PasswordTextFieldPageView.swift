@@ -9,7 +9,7 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct PasswordTextFieldPageView: View {
-    let title: String = "ProfileImageView"
+    let title: String = "PasswordTextFieldView"
 
     @State var fieldText: String? = "비밀번호"
     @State var placeHolder: String? = "1234qwer!@#$"
