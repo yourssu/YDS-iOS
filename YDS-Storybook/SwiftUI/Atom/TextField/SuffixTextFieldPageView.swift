@@ -9,7 +9,7 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct SuffixTextFieldPageView: View {
-    let title: String = "SuffixTextField"
+    let title: String = "SuffixTextFieldView"
 
     @State var fieldText: String? = "학교 이메일"
     @State var placeHolder: String? = "아이디"
