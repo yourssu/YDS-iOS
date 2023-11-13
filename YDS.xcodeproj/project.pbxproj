@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026BCF1F2B02619C00AE91E9 /* PlainButtonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BCF1E2B02619C00AE91E9 /* PlainButtonPageView.swift */; };
+		026BCF212B0261BA00AE91E9 /* YDSPlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026BCF202B0261BA00AE91E9 /* YDSPlainButton.swift */; };
 		0272DD4D28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */; };
 		0299354E2AEF83F000F46712 /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299354D2AEF83F000F46712 /* YDSBoxButton.swift */; };
 		029935502AEF84D400F46712 /* BoxButtonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */; };
@@ -240,6 +242,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		026BCF1E2B02619C00AE91E9 /* PlainButtonPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainButtonPageView.swift; sourceTree = "<group>"; };
+		026BCF202B0261BA00AE91E9 /* YDSPlainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSPlainButton.swift; sourceTree = "<group>"; };
 		0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAlignment+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		0299354D2AEF83F000F46712 /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
 		0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonPageView.swift; sourceTree = "<group>"; };
@@ -800,6 +804,7 @@
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
 				951261312AB969560012B5F9 /* YDSLabel.swift */,
 				0299354D2AEF83F000F46712 /* YDSBoxButton.swift */,
+				026BCF202B0261BA00AE91E9 /* YDSPlainButton.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -818,6 +823,7 @@
 				AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */,
 				95E535C62AB482E200FA2492 /* LabelPageView.swift */,
 				0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */,
+				026BCF1E2B02619C00AE91E9 /* PlainButtonPageView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1274,6 +1280,7 @@
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
 				951261322AB969560012B5F9 /* YDSLabel.swift in Sources */,
+				026BCF212B0261BA00AE91E9 /* YDSPlainButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1360,6 +1367,7 @@
 				538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */,
 				95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
+				026BCF1F2B02619C00AE91E9 /* PlainButtonPageView.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
