@@ -10,8 +10,8 @@ import UIKit
 import YDS_Essential
 
 public struct YDSToast: Equatable {
-    var text: String
-    var duration: ToastDuration
+    let text: String
+    let duration: ToastDuration
     public enum ToastDuration: CaseIterable {
         case short
         case long
@@ -28,7 +28,7 @@ public struct YDSToast: Equatable {
 }
 
 public struct YDSToastView: View {
-    var text: String
+    let text: String
     public init(_ text: String) {
         self.text = text
     }
