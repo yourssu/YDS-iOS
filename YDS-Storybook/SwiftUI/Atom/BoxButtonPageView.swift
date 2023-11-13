@@ -13,8 +13,8 @@ public struct BoxButtonPageView: View {
 
     @State var text: String? = "재생"
     @State var int: Int = 0
-    @State var leftIcon: SwiftUIIcon? = nil
-    @State var rightIcon: SwiftUIIcon? = nil
+    @State var leftIcon: SwiftUIIcon?
+    @State var rightIcon: SwiftUIIcon?
     @State var typeSelectedIndex: Int = 0
     @State var sizeSelectedIndex: Int = 3
     @State var roundingSelectedIndex: Int = 1

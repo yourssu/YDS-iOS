@@ -4,7 +4,7 @@
 //
 //  Created by 이조은 on 2023/10/30.
 //
-//  swiftlint:disable line_length
+//  swiftlint:disable identifier_name
 
 import SwiftUI
 import YDS_Essential
