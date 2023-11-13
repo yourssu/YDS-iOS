@@ -56,6 +56,9 @@ struct PageListView: View {
         PageView(title: "BoxButton") {
             BoxButtonPageView()
         }
+        PageView(title: "PlainButton") {
+            PlainButtonPageView()
+        }
     }
 
     @ViewBuilder
