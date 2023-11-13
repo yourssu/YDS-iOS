@@ -4,6 +4,7 @@
 //
 //  Created by 이조은 on 2023/11/13.
 //
+//  swiftlint:disable identifier_name
 
 import SwiftUI
 import YDS_Essential

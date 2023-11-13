@@ -14,7 +14,7 @@ struct PlainButtonPageView: View {
     @State var text: String? = "재생"
     @State var int: Int = 0
     @State var leftIcon: SwiftUIIcon? = YDSSwiftUIIcon.icons[56]
-    @State var rightIcon: SwiftUIIcon? = nil
+    @State var rightIcon: SwiftUIIcon?
     @State var sizeSelectedIndex: Int = 1
     @State var isDisabled: Bool = false
     @State var isWarned: Bool = false
