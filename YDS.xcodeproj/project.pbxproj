@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0272DD4D28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */; };
+		0299354E2AEF83F000F46712 /* YDSBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299354D2AEF83F000F46712 /* YDSBoxButton.swift */; };
+		029935502AEF84D400F46712 /* BoxButtonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */; };
 		530F6DBB26D2141500856758 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBA26D2141500856758 /* PanModal */; };
 		530F6DBE26D2142100856758 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 530F6DBD26D2142100856758 /* SnapKit */; };
 		532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBFD126EC7323008C2354 /* UITableView+Generic.swift */; };
@@ -239,6 +241,8 @@
 
 /* Begin PBXFileReference section */
 		0272DD4C28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAlignment+CustomStringConvertible.swift"; sourceTree = "<group>"; };
+		0299354D2AEF83F000F46712 /* YDSBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBoxButton.swift; sourceTree = "<group>"; };
+		0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxButtonPageView.swift; sourceTree = "<group>"; };
 		532DBFD126EC7323008C2354 /* UITableView+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Generic.swift"; sourceTree = "<group>"; };
 		532DBFD426EC734F008C2354 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		532DBFD626EC736C008C2354 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
@@ -795,6 +799,7 @@
 			children = (
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
 				951261312AB969560012B5F9 /* YDSLabel.swift */,
+				0299354D2AEF83F000F46712 /* YDSBoxButton.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 			children = (
 				AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */,
 				95E535C62AB482E200FA2492 /* LabelPageView.swift */,
+				0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1263,6 +1269,7 @@
 				AFA307202AAAF7CE00916C7E /* YDSProfileImageView.swift in Sources */,
 				6F95FE582A768C1E00B398CF /* YDSSemanticColor.swift in Sources */,
 				6F95FE562A768C1E00B398CF /* YDSIcon.swift in Sources */,
+				0299354E2AEF83F000F46712 /* YDSBoxButton.swift in Sources */,
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
@@ -1342,6 +1349,7 @@
 				53E26E8826F061F80036648E /* TypographiesListTableViewController.swift in Sources */,
 				53E2CF3C26D29F62000DE005 /* SimpleTextFieldViewPageViewController.swift in Sources */,
 				5365FD5B274A4ED000B6FBF9 /* IntControllerView.swift in Sources */,
+				029935502AEF84D400F46712 /* BoxButtonPageView.swift in Sources */,
 				956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */,
 				C7F6908D27DDDA03002B63C9 /* IconsListItemCell.swift in Sources */,
 				B9E4E8C82A90BDB90076473C /* StorybookPageView.swift in Sources */,
