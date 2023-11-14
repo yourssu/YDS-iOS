@@ -54,8 +54,8 @@ struct PageListView: View {
             ProfileImagePageView()
         }
         PageView(title: "EmojiButton") {
-                    EmojiButtonPageView()
-                }
+            EmojiButtonPageView()
+        }
     }
 
     @ViewBuilder

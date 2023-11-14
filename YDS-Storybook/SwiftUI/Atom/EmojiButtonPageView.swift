@@ -22,7 +22,7 @@ struct EmojiButtonPageView: View {
                 GeometryReader { geometry in
                     YDSEmojiButton(emoji: emoji,
                                    text: text,
-                                   isSelected: isSelected)
+                                   isSelected: $isSelected)
                     .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
                     .background(
                         Rectangle()

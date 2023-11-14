@@ -11,28 +11,28 @@ import YDS_Essential
 public struct YDSEmojiButton: View {
     let emoji: String?
     let text: String?
-    var isSelected: Bool
+    @Binding var isSelected: Bool
     
-    public init(emoji: String?, 
+    public init(emoji: String?,
                 text: String?,
-                isSelected: Bool) {
+                isSelected: Binding<Bool>) {
         self.emoji = emoji
         self.text = text
-        self.isSelected = isSelected
+        _isSelected = isSelected
     }
     
     public var body: some View {
         Button {
-        //Button이 눌렸을때,안눌렸을때 처리
-        //isSelected.toggle()
+            
+            isSelected.toggle()
         } label: {
             HStack(spacing:2){
-                if let emoji = emoji{
+                if let emoji {
                     Text(emoji)
                         .font(YDSFont.button1)
                         .foregroundColor(YDSColor.bgNormal)
                 }
-                if let text = text{
+                if let text {
                     Text(text)
                         .font(YDSFont.button4)
                         .foregroundColor(isSelected ? YDSColor.buttonPoint : YDSColor.buttonNormal)
