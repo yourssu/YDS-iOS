@@ -8,8 +8,6 @@
 import SwiftUI
 import YDS_SwiftUI
 
-
-
 struct BadgePageView: View {
     let title: String = "BadgeView"
     
@@ -20,7 +18,6 @@ struct BadgePageView: View {
     var selectedColor: Color {
         return YDSItemColor.allCases[badgeColorSelectedIndex].backgroundColor
     }
-
     
     public var body: some View {
         StorybookPageView(sample: {
@@ -31,8 +28,8 @@ struct BadgePageView: View {
                         icon: icons?.icon,
                         color: selectedColor
                     )
-                    //텍스트컬러는 이런식으로 추가가능
-                    //.foregroundColor(.blue)
+                    /*Text컬러는 이런식으로 추가가능합니다.
+                     .foregroundColor(.blue)*/
                     .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
                     .background(
                         Rectangle()
@@ -58,7 +55,17 @@ struct BadgePageView: View {
 }
 
 extension YDSItemColor: CaseIterable {
-    public static var allCases: [YDSItemColor] = [.mono, .green, .emerald, .aqua, .blue, .indigo, .violet, .purple, .pink]
+    public static var allCases: [YDSItemColor] = [
+        .mono,
+        .green,
+        .emerald,
+        .aqua,
+        .blue,
+        .indigo,
+        .violet,
+        .purple,
+        .pink
+    ]
 }
 
 #Preview("Badge") {
