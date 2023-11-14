@@ -8,12 +8,11 @@
 import SwiftUI
 import YDS_Essential
 
-
 public struct YDSBadge: View {
     let text: String?
     let icon: Image?
     let color: Color?
-
+    
     public init(text: String?,
                 icon: Image?,
                 color: Color?) {
@@ -29,7 +28,7 @@ public struct YDSBadge: View {
                     .resizable()
                     .frame(width: 16, height: 16)
             }
-
+            
             if let text {
                 Text(text)
                     .font(YDSFont.caption1)
