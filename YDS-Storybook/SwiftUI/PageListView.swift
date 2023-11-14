@@ -77,6 +77,7 @@ struct PageListView: View {
     var componentPages: some View {
         PageView(title: "Toast") {
             ToastPageView()
+        }
         PageView(title: "BottomBarController") {
             BottomBarControllerPageView()
         }
