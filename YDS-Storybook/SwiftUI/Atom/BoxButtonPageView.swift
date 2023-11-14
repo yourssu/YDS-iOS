@@ -24,9 +24,9 @@ public struct BoxButtonPageView: View {
     public var body: some View {
         StorybookPageView(sample: {
             YDSBoxButton(
-                text: text ?? "",
-                leftIcon: leftIcon?.icon ?? nil,
-                rightIcon: rightIcon?.icon ?? nil,
+                text: text,
+                leftIcon: leftIcon?.icon,
+                rightIcon: rightIcon?.icon,
                 type: YDSBoxButton.BoxButtonType.allCases[typeSelectedIndex],
                 size: YDSBoxButton.BoxButtonSize.allCases[sizeSelectedIndex],
                 rounding: YDSBoxButton.BoxButtonRounding.allCases[roundingSelectedIndex],
