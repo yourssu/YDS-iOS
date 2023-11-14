@@ -12,6 +12,7 @@ import YDS_SwiftUI
     let title: String = "TextView"
 
     @State var text = ""
+    @State var height: CGFloat = 0
     @State var stateLabel: YDSLabel = YDSLabel(text: "true",
                                                typoStyle: .body2,
                                                textColor: YDSColor.textSecondary)
@@ -19,13 +20,14 @@ import YDS_SwiftUI
     @State var lineBreakModeSelectedIndex: Int = 0
     @State var lineBreakStrategySelectedIndex: Int = 2
     @State var placeholderSelectedIndex: Int = 2
+//    @State var placeholderComments: String?
 
     var selectedTextColor: Color {
         return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color ?? YDSColor.textPrimary
     }
 
     var selectedPlaceholder: Color {
-        return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color ?? YDSColor.textTertiary
+        return YDSSwiftUIColorWrapper.textColors.items[placeholderSelectedIndex].color ?? YDSColor.textTertiary
     }
 
     public var body: some View {
@@ -33,15 +35,16 @@ import YDS_SwiftUI
             VStack {
                 GeometryReader { geometry in
                     YDSTextView(text: $text,
+                                height: $height,
                                 textColor: selectedTextColor,
                                 lineBreakMode: NSLineBreakMode.allCases[lineBreakModeSelectedIndex],
                                 lineBreakStrategy:
                                     NSParagraphStyle.LineBreakStrategy.allCases[lineBreakStrategySelectedIndex],
                                 placeholderColor: selectedPlaceholder,
-                    placeholderComment: "댓글을 입력ㅗㅗ해주세요.")
-                    .frame(height: YDSScreenSize.width * 3/4 - 32)
-//                    .frame(height: 20)
-                    .padding(16)
+                                placeholderComment: "댓글을 입력해주세요.")
+                    .frame(height: height)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 100)
                     .clipped()
                 }
             }
