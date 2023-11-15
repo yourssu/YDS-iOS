@@ -73,6 +73,9 @@ struct PageListView: View {
         }
         PageView(title: "PasswordTextFieldPageView") {
             PasswordTextFieldPageView()
+		}
+        PageView(title: "BottomSheet") {
+            BottomSheetPageView()
         }
         PageView(title: "Badge") {
             BadgePageView()

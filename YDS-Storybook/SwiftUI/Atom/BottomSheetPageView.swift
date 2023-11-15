@@ -24,6 +24,7 @@ struct BottomSheetPageView: View {
         case four = 4
     }
 
+    private let title = "BottomSheetPageView"
     private let allViews = ExampleCase.allCases
     private let allTeams = YourssuDevTeam.allCases
 
@@ -69,6 +70,7 @@ struct BottomSheetPageView: View {
                     .frame(maxWidth: .infinity)
                 }
             )
+            .navigationTitle(title)
     }
 }
 
