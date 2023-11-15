@@ -100,10 +100,6 @@ public struct YDSBottomBarButton: View {
             static let horizontal: CGFloat = 10
             static let vertical: CGFloat = -5
         }
-        
-        enum Spacing {
-            static let spacing: CGFloat = 4
-        }
     }
 
     public init(
@@ -137,7 +133,7 @@ public struct YDSBottomBarButton: View {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.success)
         }) {
-            VStack(spacing: 4) {
+            VStack {
                 if selectedTab != index {
                     icon
                         .resizable()
