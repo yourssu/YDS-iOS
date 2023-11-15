@@ -7,13 +7,13 @@
 
 import SwiftUI
 import YDS_Essential
+
 struct YDSListStackView: View {
-    @State var isDisabled: Bool = true
     var body: some View {
         VStack(){
-            YDSListItem(text: "비밀번호 변경", icon: false, toggle: false, isOn: $isDisabled)
-            YDSListItem(text: "계정관리", icon: true, toggle: false, isOn: $isDisabled)
-            YDSListItem(text: "알림받기", icon: false, toggle: true, isOn: $isDisabled)
+            YDSListItem(text: "비밀번호 변경")
+            YDSListItem(text: "계정관리", icon: true)
+            YDSListItem(text: "알림받기", toggle: true)
         }
     }
 }

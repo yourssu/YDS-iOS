@@ -23,14 +23,12 @@ public struct YDSList: View {
                     Text("MY")
                         .fontWeight(.semibold)
                         .foregroundColor(YDSColor.textSecondary)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 20)
+                        .padding(20)
                     Spacer()
                 }
             }
             YDSListStackView()
         }.background(.white)
-            .frame(height: 48)
     }
     
 }

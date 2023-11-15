@@ -11,29 +11,25 @@ struct YDSListItem: View {
     var icon: Bool?
     var toggle: Bool?
     var text: String?
+    @State var isOn: Bool = true
     
-    @Binding var isOn: Bool
-    
-    public init(text: String?, icon: Bool?, toggle: Bool?, isOn: Binding<Bool>) {
+    public init(text: String?, icon: Bool? = nil, toggle: Bool? = nil) {
         self.text = text
         self.icon = icon
         self.toggle = toggle
-        self._isOn = isOn
     }
     public var body: some View {
         HStack {
-            if let text = text{
+            if let text {
                 Text(text)
                     .foregroundColor(YDSColor.textSecondary)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 20)
+                    .padding(20)
                     .frame(height: 23)
             }
             Spacer()
-            if let icon = icon, icon {
+            if let icon, icon {
                 YDSIcon.arrowRightLine
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 20)
+                    .padding(20)
             } else if let toggle = toggle, toggle {
                 Toggle("", isOn: $isOn)
                     .labelsHidden()
@@ -42,7 +38,8 @@ struct YDSListItem: View {
                     .tint(YDSColor.buttonPoint)
                 
             }
-        }.frame(height: 48)
+        }
+        .frame(height: 48)
     }
 }
 
@@ -50,6 +47,6 @@ struct YDSListItem: View {
 
 struct YDSListItem_Previews: PreviewProvider {
     static var previews: some View {
-        YDSListItem(text:"비밀번호 변경", icon: false, toggle: false, isOn: .constant(true))
+        YDSListItem(text:"비밀번호 변경", icon: false, toggle: true)
     }
 }
