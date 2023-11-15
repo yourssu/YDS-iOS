@@ -58,10 +58,10 @@ struct YDSBottomSheet<ViewType>: ViewModifier where ViewType: View {
 }
 
 extension View {
-    public func ydsBottomSheet<ViewType>(
+    public func ydsBottomSheet(
         isPresent: Binding<Bool>,
-        content: @escaping () -> ViewType
-    ) -> some View where ViewType: View {
+        content: @escaping () -> some View
+    ) -> some View {
         self
             .modifier(
                 YDSBottomSheet(
