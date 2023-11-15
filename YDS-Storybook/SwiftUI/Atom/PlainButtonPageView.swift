@@ -23,9 +23,9 @@ struct PlainButtonPageView: View {
     public var body: some View {
         StorybookPageView(sample: {
             YDSPlainButton(
-                text: text ?? "",
-                leftIcon: leftIcon?.icon ?? nil,
-                rightIcon: rightIcon?.icon ?? nil,
+                text: text,
+                leftIcon: leftIcon?.icon,
+                rightIcon: rightIcon?.icon,
                 size: YDSPlainButton.PlainButtonSize.allCases[sizeSelectedIndex],
                 isDisabled: isDisabled,
                 isWarned: isWarned,
