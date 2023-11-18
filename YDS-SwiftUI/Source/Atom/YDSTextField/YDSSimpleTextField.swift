@@ -47,7 +47,7 @@ public struct YDSSimpleTextField: View, YDSTextFieldProtocol {
             placeholder: placeholder,
             helperText: helperText,
             text: $text,
-            trailing:
+            trailing:{
                 AnyView(
                     Group {
                     if !text.isEmpty {
@@ -61,7 +61,7 @@ public struct YDSSimpleTextField: View, YDSTextFieldProtocol {
                         EmptyView()
                     }
                 }
-            ),
+            )},
             isDisabled: isDisabled,
             isNegative: isNegative,
             isPositive: isPositive,

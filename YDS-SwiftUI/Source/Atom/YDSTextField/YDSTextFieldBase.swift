@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct YDSTextFieldBase: View {
+struct YDSTextFieldBase<Leading: View, Trailing: View>: View {
     private let fieldText: String?
     private let placeholder: String?
     private let helperText: String?
-    private let text: Binding<String>
+    @Binding private var text: String
     private let isDisabled: Bool
     private let isNegative: Bool
     private let isPositive: Bool
 
-    private let leading: AnyView?
-    private let trailing: AnyView?
+    @ViewBuilder private var leading: () -> Leading?
+    @ViewBuilder private var trailing: () -> Trailing?
 
     private var fieldTextColor: Color
     private var borderColor: Color
@@ -30,9 +30,9 @@ struct YDSTextFieldBase: View {
         fieldText: String? = nil,
         placeholder: String? = nil,
         helperText: String? = nil,
-        leading: AnyView? = AnyView(EmptyView()),
+        @ViewBuilder leading: @escaping () -> Leading? = { EmptyView() },
         text: Binding<String>,
-        trailing: AnyView? = AnyView(EmptyView()),
+        @ViewBuilder trailing: @escaping () -> Trailing? = { EmptyView() },
         isDisabled: Bool = false,
         isNegative: Bool = false,
         isPositive: Bool = false,
@@ -44,7 +44,7 @@ struct YDSTextFieldBase: View {
             self.placeholder = placeholder
             self.helperText = helperText
             self.leading = leading
-            self.text = text
+            self._text = text
             self.trailing = trailing
             self.isDisabled = isDisabled
             self.isNegative = isNegative
@@ -98,15 +98,15 @@ struct YDSTextFieldBase: View {
             }
 
             HStack {
-                leading
-
+                leading()
+                
                 if isSecure {
-                    SecureField(placeholder ?? "", text: text)
+                    SecureField(placeholder ?? "", text: $text)
                         .accentColor(YDSColor.textPointed)
                         .foregroundColor(textColor)
                         .disabled(isDisabled)
                 } else {
-                    TextField(placeholder ?? "", text: text)
+                    TextField(placeholder ?? "", text: $text)
                         .accentColor(YDSColor.textPointed)
                         .foregroundColor(textColor)
                         .disabled(isDisabled)
@@ -115,7 +115,7 @@ struct YDSTextFieldBase: View {
                         }
                 }
 
-                trailing
+                trailing()
             }
             .padding(.vertical, 12)
             .padding(.horizontal, 16)
@@ -146,9 +146,9 @@ struct YDSTextFieldBase_Previews: PreviewProvider {
             fieldText: "hello world",
             placeholder: "hello world",
             helperText: "helper",
-            leading: AnyView(YDSLabel(text: "le")),
+            leading: { YDSLabel(text: "le") },
             text: .constant(""),
-            trailing: AnyView(YDSLabel(text: "tr"))
+            trailing: { YDSLabel(text: "tr") }
         ).padding()
     }
 }

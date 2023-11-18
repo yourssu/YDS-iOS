@@ -17,9 +17,9 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
     let isNegative: Bool
     let isPositive: Bool
     let onSubmit: () -> Void
-
+    
     @State var isSecured: Bool = true
-
+    
     public init(
         fieldText: String? = nil,
         placeholder: String? = nil,
@@ -31,28 +31,28 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
         isPositive: Bool = false,
         onSubmit: @escaping () -> Void = {}
     ) {
-            self.fieldText = fieldText
-            self.placeholder = placeholder
-            self.helperText = helperText
-            self._text = text
-            self.suffixText = suffixText
-            self.isDisabled = isDisabled
-            self.isNegative = isNegative
-            self.isPositive = isPositive
-            self.onSubmit = onSubmit
-        }
-
+        self.fieldText = fieldText
+        self.placeholder = placeholder
+        self.helperText = helperText
+        self._text = text
+        self.suffixText = suffixText
+        self.isDisabled = isDisabled
+        self.isNegative = isNegative
+        self.isPositive = isPositive
+        self.onSubmit = onSubmit
+    }
+    
     init?() {
         fatalError("Initialization failed: YDSPasswordTextField initializing failed.")
     }
-
+    
     public var body: some View {
         YDSTextFieldBase(
             fieldText: fieldText,
             placeholder: placeholder,
             helperText: helperText,
             text: $text,
-            trailing: AnyView(
+            trailing: {
                 Button(action: {
                     isSecured.toggle()
                 }) {
@@ -60,13 +60,13 @@ public struct YDSPasswordTextField: View, YDSTextFieldProtocol {
                         .accentColor(YDSColor.buttonNormal)
                         .frame(width: 24, height: 24)
                 }
-            ),
+            },
             isDisabled: isDisabled,
             isNegative: isNegative,
             isPositive: isPositive,
             isSecure: isSecured,
             onSubmit: onSubmit
-            )
+        )
     }
 }
 

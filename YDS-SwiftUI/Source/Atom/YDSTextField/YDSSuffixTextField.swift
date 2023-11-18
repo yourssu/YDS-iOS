@@ -45,24 +45,24 @@ public struct YDSSuffixTextField: View, YDSTextFieldProtocol {
     }
 
     public var body: some View {
-        YDSTextFieldBase(
+        YDSTextFieldBase<EmptyView, AnyView>(
             fieldText: fieldText,
             placeholder: placeholder,
             helperText: helperText,
             text: $text,
-            trailing:
+            trailing: {
                 AnyView(
-                    Group {
-                        if let suffixText {
-                            YDSLabel(
-                                text: suffixText,
-                                textColor: YDSColor.textTertiary
-                            )
-                        } else {
-                            EmptyView()
-                        }
-                }
-            ),
+                Group {
+                    if let suffixText {
+                        YDSLabel(
+                            text: suffixText,
+                            textColor: YDSColor.textTertiary
+                        )
+                    } else {
+                        EmptyView()
+                    }
+                })
+            },
             isDisabled: isDisabled,
             isNegative: isNegative,
             isPositive: isPositive,
