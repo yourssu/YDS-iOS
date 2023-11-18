@@ -16,7 +16,7 @@ public struct YDSSearchTextField: View, YDSTextFieldProtocol {
     let placeholder: String?
     let isDisabled: Bool
     let onSubmit: () -> Void
-
+    
     public init(
         placeholder: String? = nil,
         text: Binding<String>,
@@ -28,20 +28,20 @@ public struct YDSSearchTextField: View, YDSTextFieldProtocol {
         self.isDisabled = isDisabled
         self.onSubmit = onSubmit
     }
-
+    
     init?() {
         fatalError("Initialization failed: YDSSearchTextField initializing failed.")
     }
-
+    
     public var body: some View {
         YDSTextFieldBase(
             placeholder: placeholder,
-            leading: AnyView(
+            leading: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(YDSColor.textTertiary)
-            ),
+            },
             text: $text,
-            trailing:
+            trailing: {
                 AnyView(
                     Group {
                         if !text.isEmpty {
@@ -53,7 +53,8 @@ public struct YDSSearchTextField: View, YDSTextFieldProtocol {
                             })
                         }
                     }
-                ),
+                )
+            },
             isDisabled: isDisabled,
             onSubmit: onSubmit
         )
