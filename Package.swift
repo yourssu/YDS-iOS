@@ -5,7 +5,7 @@ let package = Package(
     name: "YDS",
 
     platforms: [
-        .iOS(.v13)
+        .iOS(.v14)
     ],
 
     products: [
@@ -32,14 +32,14 @@ let package = Package(
                 .product(name: "PanModal", package: "PanModal"),
                 .product(name: "SnapKit", package: "SnapKit"),
                 .product(name: "Parchment", package: "Parchment"),
-                .targetItem(name: "YDS-Essential", condition: .none)
+                .target(name: "YDS-Essential")
             ],
             path: "YDS/Source"
         ),
         .target(
             name: "YDS-SwiftUI",
             dependencies: [
-                .targetItem(name: "YDS-Essential", condition: .none)
+                .target(name: "YDS-Essential")
             ],
             path: "YDS-SwiftUI/Source"
         ),
