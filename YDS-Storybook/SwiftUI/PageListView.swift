@@ -56,12 +56,30 @@ struct PageListView: View {
         PageView(title: "ChipView") {
             ChipPageView()
         }
+        PageView(title: "BoxButton") {
+            BoxButtonPageView()
+        }
+        PageView(title: "PlainButton") {
+            PlainButtonPageView()
+        }
+        PageView(title: "SimpleTextField") {
+            SimpleTextFieldPageView()
+        }
+        PageView(title: "SuffixTextFieldPageView") {
+            SuffixTextFieldPageView()
+        }
+        PageView(title: "SearchTextFieldPageView") {
+            SearchTextFieldPageView()
+        }
+        PageView(title: "PasswordTextFieldPageView") {
+            PasswordTextFieldPageView()
+        }
     }
 
     @ViewBuilder
     var componentPages: some View {
-        PageView(title: "Empty") {
-            EmptyView()
+        PageView(title: "Toast") {
+            ToastPageView()
         }
     }
 
