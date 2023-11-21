@@ -13,21 +13,28 @@ import YDS_SwiftUI
 
     @State var text = ""
     @State var height: CGFloat = 0
-    @State var stateLabel: YDSLabel = YDSLabel(text: "true",
-                                               typoStyle: .body2,
-                                               textColor: YDSColor.textSecondary)
+    @State var styleSelectedIndex = 0
+    @State var maxHeight: CGFloat = 150
     @State var textColorSelectedIndex: Int = 0
     @State var lineBreakModeSelectedIndex: Int = 0
     @State var lineBreakStrategySelectedIndex: Int = 2
-    @State var placeholderSelectedIndex: Int = 2
-//    @State var placeholderComments: String?
+    @State var placeholderColorSelectedIndex: Int = 2
+    @State var placeholderText: String? = "댓글을 입력해주세요."
+
+    @State var stateLabel: YDSLabel = YDSLabel(text: "true",
+                                               typoStyle: .body2,
+                                               textColor: YDSColor.textSecondary)
+
+    var selectedStyle: Font {
+        return Font(String.TypoStyle.allCases[styleSelectedIndex].font)
+    }
 
     var selectedTextColor: Color {
         return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color ?? YDSColor.textPrimary
     }
 
-    var selectedPlaceholder: Color {
-        return YDSSwiftUIColorWrapper.textColors.items[placeholderSelectedIndex].color ?? YDSColor.textTertiary
+    var selectedPlaceholderColor: Color {
+        return YDSSwiftUIColorWrapper.textColors.items[placeholderColorSelectedIndex].color ?? YDSColor.textTertiary
     }
 
     public var body: some View {
@@ -36,12 +43,15 @@ import YDS_SwiftUI
                 GeometryReader { geometry in
                     YDSTextView(text: $text,
                                 height: $height,
+                                style: YDSTextView.TypoStyle.allCases[styleSelectedIndex],
+                                maxHeight: maxHeight,
+                                maxWidth: geometry.size.width - 32,
                                 textColor: selectedTextColor,
                                 lineBreakMode: NSLineBreakMode.allCases[lineBreakModeSelectedIndex],
                                 lineBreakStrategy:
                                     NSParagraphStyle.LineBreakStrategy.allCases[lineBreakStrategySelectedIndex],
-                                placeholderColor: selectedPlaceholder,
-                                placeholderComment: "댓글을 입력해주세요.")
+                                placeholderColor: selectedPlaceholderColor,
+                                placeholderText: placeholderText)
                     .frame(height: height)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 100)
@@ -49,6 +59,10 @@ import YDS_SwiftUI
                 }
             }
         }, options: [
+            Option.enum(
+                description: "style",
+                cases: String.TypoStyle.allCases,
+                selectedIndex: $styleSelectedIndex),
             Option.enum(
                 description: "textColor",
                 cases: YDSSwiftUIColorWrapper.textColors.items,
@@ -62,9 +76,11 @@ import YDS_SwiftUI
                 cases: NSParagraphStyle.LineBreakStrategy.allCases,
                 selectedIndex: $lineBreakStrategySelectedIndex),
             Option.enum(
-                description: "placeholder",
+                description: "placeholderColor",
                 cases: YDSSwiftUIColorWrapper.textColors.items,
-                selectedIndex: $placeholderSelectedIndex)
+                selectedIndex: $placeholderColorSelectedIndex),
+            Option.optionalString(
+                description: "placeholderText", text: $placeholderText)
         ])
         .navigationTitle(title)
     }

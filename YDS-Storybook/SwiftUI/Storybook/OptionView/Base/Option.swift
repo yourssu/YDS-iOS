@@ -14,6 +14,7 @@ enum Option: View {
     case optionalString(description: String?, text: Binding<String?>)
     case optionalIcon(description: String?, icons: [SwiftUIIcon], selectedIcon: Binding<SwiftUIIcon?>)
     case optionalImage(description: String?, images: [SwiftUIImage], selectedImage: Binding<SwiftUIImage?>)
+    case optionalCGFloat(description: String?, value: Binding<CGFloat?>)
 
     @ViewBuilder
     var body: some View {
@@ -30,6 +31,8 @@ enum Option: View {
             OptionalIconOptionView(description: description, icons: icons, selectedIcon: selectedIcon)
         case .optionalImage(let description, let images, let selectedImage):
             OptionalImageOptionView(description: description, images: images, selectedImage: selectedImage)
+        case .optionalCGFloat(let description, let value):
+            OptionalCGFloatOptionView(description: description, value: value)
         }
     }
 }
