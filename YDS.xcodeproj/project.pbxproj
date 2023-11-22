@@ -56,8 +56,6 @@
 		537A0AD326C51DB000142DCE /* YDSButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C9F6F826B5546400EF7B86 /* YDSButtonProtocol.swift */; };
 		537FFAA426C3E5C200270C22 /* TopBarPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FFAA326C3E5C200270C22 /* TopBarPageViewController.swift */; };
 		537FFAA626C3E6F800270C22 /* TopBarSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537FFAA526C3E6F800270C22 /* TopBarSampleViewController.swift */; };
-		5383752726D27D45002E96AC /* YDS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; };
-		5383752826D27D45002E96AC /* YDS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53887E9C26B54834006E40F6 /* YDSPlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53887E9B26B54834006E40F6 /* YDSPlainButton.swift */; };
 		538ACCAE26EB40380044A437 /* ColorsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ACCAD26EB40380044A437 /* ColorsPageViewController.swift */; };
 		538ACCB226EB409C0044A437 /* ColorsListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ACCB126EB409C0044A437 /* ColorsListItemCell.swift */; };
@@ -96,9 +94,7 @@
 		6F2D527D2A7944D800BAF200 /* PageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D527C2A7944D800BAF200 /* PageListView.swift */; };
 		6F3C1EEE2A7A8573003D0D06 /* YDS_Essential.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3C1EED2A7A8573003D0D06 /* YDS_Essential.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F3C1EF32A7A85B7003D0D06 /* YDS_Essential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */; };
-		6F3C1EF42A7A85B7003D0D06 /* YDS_Essential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F3C1EF82A7A85BE003D0D06 /* YDS_Essential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */; };
-		6F3C1EF92A7A85BE003D0D06 /* YDS_Essential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F3C1F022A7A8BF5003D0D06 /* YDSBasicColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F95FE502A768C1E00B398CF /* YDSBasicColor.xcassets */; };
 		6F3C1F032A7A8C08003D0D06 /* YDSIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F95FE532A768C1E00B398CF /* YDSIcon.xcassets */; };
 		6F3C1F0C2A7A8EC6003D0D06 /* YDSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95FE5B2A768CAF00B398CF /* YDSBundle.swift */; };
@@ -113,9 +109,13 @@
 		6F95FE582A768C1E00B398CF /* YDSSemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95FE512A768C1E00B398CF /* YDSSemanticColor.swift */; };
 		6F95FE592A768C1E00B398CF /* YDSBasicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F95FE522A768C1E00B398CF /* YDSBasicColor.swift */; };
 		6FA276382AF0E92F00197C3C /* ToastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA276372AF0E92F00197C3C /* ToastPageView.swift */; };
+		6FAF423C2B0E050100349424 /* YDS_Essential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */; };
+		6FAF423D2B0E050100349424 /* YDS_Essential.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C1EEB2A7A8572003D0D06 /* YDS_Essential.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FAF423F2B0E053600349424 /* YDS_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */; };
+		6FAF42402B0E053600349424 /* YDS_SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FAF42412B0E053700349424 /* YDS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; };
+		6FAF42422B0E053700349424 /* YDS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD151FAA2641820200795D7C /* YDS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FFDB96C2A717F15003A9519 /* YDS_SwiftUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FFDB96B2A717F15003A9519 /* YDS_SwiftUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6FFDB96F2A717F15003A9519 /* YDS_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */; };
-		6FFDB9702A717F15003A9519 /* YDS_SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB97C2A7183F7003A9519 /* PickerControllerView.swift */; };
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		951261322AB969560012B5F9 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951261312AB969560012B5F9 /* YDSLabel.swift */; };
@@ -210,6 +210,13 @@
 			remoteGlobalIDString = 6F3C1EEA2A7A8572003D0D06;
 			remoteInfo = "YDS-Essential";
 		};
+		6FAF42342B0E04C200349424 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD151FA12641820200795D7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F3C1EEA2A7A8572003D0D06;
+			remoteInfo = "YDS-Essential";
+		};
 		6FFDB96D2A717F15003A9519 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD151FA12641820200795D7C /* Project object */;
@@ -220,36 +227,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5383752B26D27D45002E96AC /* Embed Frameworks */ = {
+		6FAF423E2B0E050100349424 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5383752826D27D45002E96AC /* YDS.framework in Embed Frameworks */,
-				6FFDB9702A717F15003A9519 /* YDS_SwiftUI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F3C1EF72A7A85B7003D0D06 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6F3C1EF42A7A85B7003D0D06 /* YDS_Essential.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F3C1EFC2A7A85BE003D0D06 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6F3C1EF92A7A85BE003D0D06 /* YDS_Essential.framework in Embed Frameworks */,
+				6FAF423D2B0E050100349424 /* YDS_Essential.framework in Embed Frameworks */,
+				6FAF42422B0E053700349424 /* YDS.framework in Embed Frameworks */,
+				6FAF42402B0E053600349424 /* YDS_SwiftUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,10 +448,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FAF42412B0E053700349424 /* YDS.framework in Frameworks */,
+				6FAF423F2B0E053600349424 /* YDS_SwiftUI.framework in Frameworks */,
 				5337938826AF08E000BE5860 /* RxSwift in Frameworks */,
-				5383752726D27D45002E96AC /* YDS.framework in Frameworks */,
+				6FAF423C2B0E050100349424 /* YDS_Essential.framework in Frameworks */,
 				5337938A26AF08E000BE5860 /* RxCocoa in Frameworks */,
-				6FFDB96F2A717F15003A9519 /* YDS_SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1138,7 +1125,6 @@
 				6FFDB9652A717F15003A9519 /* Sources */,
 				6FFDB9662A717F15003A9519 /* Frameworks */,
 				6FFDB9672A717F15003A9519 /* Resources */,
-				6F3C1EFC2A7A85BE003D0D06 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1159,7 +1145,6 @@
 				DD151FA62641820200795D7C /* Sources */,
 				DD151FA72641820200795D7C /* Frameworks */,
 				DD151FA82641820200795D7C /* Resources */,
-				6F3C1EF72A7A85B7003D0D06 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1184,13 +1169,14 @@
 				DDFBCFF826739A6900C5F409 /* Sources */,
 				DDFBCFF926739A6900C5F409 /* Frameworks */,
 				DDFBCFFA26739A6900C5F409 /* Resources */,
-				5383752B26D27D45002E96AC /* Embed Frameworks */,
+				6FAF423E2B0E050100349424 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5383752626D27D32002E96AC /* PBXTargetDependency */,
 				6FFDB96E2A717F15003A9519 /* PBXTargetDependency */,
+				6FAF42352B0E04C200349424 /* PBXTargetDependency */,
 			);
 			name = "YDS-Storybook";
 			packageProductDependencies = (
@@ -1535,6 +1521,11 @@
 			target = 6F3C1EEA2A7A8572003D0D06 /* YDS-Essential */;
 			targetProxy = 6F3C1EFA2A7A85BE003D0D06 /* PBXContainerItemProxy */;
 		};
+		6FAF42352B0E04C200349424 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F3C1EEA2A7A8572003D0D06 /* YDS-Essential */;
+			targetProxy = 6FAF42342B0E04C200349424 /* PBXContainerItemProxy */;
+		};
 		6FFDB96E2A717F15003A9519 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6FFDB9682A717F15003A9519 /* YDS-SwiftUI */;
@@ -1654,11 +1645,11 @@
 		53A5AB5526E1DC3B008E81AB /* Automation */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2N3PMJ78CA;
 				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
@@ -2069,10 +2060,10 @@
 		DDFBD00D26739A6B00C5F409 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
 				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -2091,11 +2082,11 @@
 		DDFBD00E26739A6B00C5F409 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2N3PMJ78CA;
 				INFOPLIST_FILE = "YDS-Storybook/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
