@@ -81,6 +81,9 @@ struct PageListView: View {
         PageView(title: "BottomBarController") {
             BottomBarControllerPageView()
         }
+        PageView(title: "List") {
+            ListPageView()
+        }
     }
 
     // MARK: - body
