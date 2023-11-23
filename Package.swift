@@ -5,7 +5,7 @@ let package = Package(
     name: "YDS",
     
     platforms: [
-        .iOS(.v16)
+        .iOS(.v14)
     ],
 
     products: [
