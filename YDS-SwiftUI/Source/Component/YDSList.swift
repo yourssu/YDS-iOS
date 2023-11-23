@@ -13,8 +13,8 @@ public struct YDSList: View {
     var subheader: Bool?
     let items: [YDSListItem]
     
-    public init(subheaderHas: Bool? = nil, items: [YDSListItem]) {
-        self.subheader = subheaderHas
+    public init(hasSubHeader: Bool? = nil, items: [YDSListItem]) {
+        self.subheader = hasSubHeader
         self.items = items
     }
 
@@ -40,7 +40,7 @@ public struct YDSList: View {
 
 struct YDSList_Previews: PreviewProvider {
     static var previews: some View {
-        YDSList(subheaderHas: true, items: [YDSListItem(text: "비밀번호 변경"),
+        YDSList(hasSubHeader: true, items: [YDSListItem(text: "비밀번호 변경"),
                                             YDSListItem(text: "계정관리", icon: true),
                                             YDSListItem(text: "알림받기", toggle: true)])
     }
