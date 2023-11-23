@@ -4,7 +4,7 @@ on:
     types: [published]
 jobs:
       build:
-        runs-on: macos-14
+        runs-on: macos-13
         env:
           XC_PROJECT: ${{ 'YDS.xcodeproj' }}
           XC_SCHEME: ${{ 'YDS-Storybook' }}
