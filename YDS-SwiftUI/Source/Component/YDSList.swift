@@ -20,7 +20,7 @@ public struct YDSList: View {
 
     public var body: some View {
         VStack {
-            if let subheader = subheader {
+            if let subheader = subheader, subheader {
                 HStack {
                     Text("MY")
                         .fontWeight(.semibold)
