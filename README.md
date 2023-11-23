@@ -34,8 +34,8 @@ YDS 컴포넌트를 직접 조작할 수 있는 샘플 어플리케이션입니�
 개발 중
 
 ## 💻 타 버전 저장소
-[YDS-Android](https://github.com/yourssu/YDS-Android)
-[YDS-React](https://github.com/yourssu/YDS-React)
+[YDS-Android](https://github.com/yourssu/YDS-Android)  
+[YDS-Web](https://github.com/yourssu/YDS-Web)  
 
 ## 🙏 의존하는 외부 라이브러리
 [SnapKit](https://github.com/SnapKit/SnapKit)  

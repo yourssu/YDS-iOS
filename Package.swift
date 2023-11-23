@@ -1,11 +1,11 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
     name: "YDS",
-    
+
     platforms: [
-        .iOS(.v16)
+        .iOS(.v13)
     ],
 
     products: [

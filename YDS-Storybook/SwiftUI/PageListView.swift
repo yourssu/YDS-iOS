@@ -53,24 +53,6 @@ struct PageListView: View {
         PageView(title: "ProfileImageView") {
             ProfileImagePageView()
         }
-        PageView(title: "BoxButton") {
-            BoxButtonPageView()
-        }
-        PageView(title: "PlainButton") {
-            PlainButtonPageView()
-        }
-        PageView(title: "SimpleTextField") {
-            SimpleTextFieldPageView()
-        }
-        PageView(title: "SuffixTextFieldPageView") {
-            SuffixTextFieldPageView()
-        }
-        PageView(title: "SearchTextFieldPageView") {
-            SearchTextFieldPageView()
-        }
-        PageView(title: "PasswordTextFieldPageView") {
-            PasswordTextFieldPageView()
-        }
     }
 
     @ViewBuilder
