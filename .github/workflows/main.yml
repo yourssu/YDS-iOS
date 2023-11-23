@@ -23,7 +23,6 @@ jobs:
           PROVISION_ENCRYPTION_PWD: ${{ secrets.PROVISION_ENCRYPTION_PWD }}     
           CERTS_EXPORT_PWD: ${{ secrets.CERTS_EXPORT_PWD }}
         steps:
-        - name: Select latest Xcode
         - uses: maxim-lobanov/setup-xcode@v1
           with:
             xcode-version: '15.0.1'
