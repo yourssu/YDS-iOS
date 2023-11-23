@@ -9,16 +9,18 @@ import SwiftUI
 import YDS_Essential
 
 public struct YDSList: View {
+
+    var subheader: Bool?
+    let items: [YDSListItem]
     
-    let subheader: Bool?
-    
-    public init(subheader: Bool?) {
-        self.subheader = subheader
+    public init(subheaderHas: Bool? = nil, items: [YDSListItem]) {
+        self.subheader = subheaderHas
+        self.items = items
     }
-    
+
     public var body: some View {
-        VStack() {
-            if let subheader = subheader, subheader {
+        VStack {
+            if let subheader = subheader {
                 HStack {
                     Text("MY")
                         .fontWeight(.semibold)
@@ -27,13 +29,19 @@ public struct YDSList: View {
                     Spacer()
                 }
             }
-            YDSListStackView()
+            ForEach(items) { item in
+                item
+            }
         }.background(.white)
     }
-    
+
 }
+
+
 struct YDSList_Previews: PreviewProvider {
     static var previews: some View {
-        YDSList(subheader: true)
+        YDSList(subheaderHas: true, items: [YDSListItem(text: "비밀번호 변경"),
+                                            YDSListItem(text: "계정관리", icon: true),
+                                            YDSListItem(text: "알림받기", toggle: true)])
     }
 }

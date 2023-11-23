@@ -115,7 +115,6 @@
 		6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFDB9822A718603003A9519 /* YDSFont.swift */; };
 		803EDDB22AF026F000723E4B /* ListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EDDB12AF026F000723E4B /* ListPageView.swift */; };
 		803EDDB42AF0295800723E4B /* YDSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EDDB32AF0295800723E4B /* YDSList.swift */; };
-		803EDDB82AF5761100723E4B /* YDSListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EDDB72AF5761100723E4B /* YDSListStackView.swift */; };
 		803EDDBA2AF6148400723E4B /* YDSListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EDDB92AF6148400723E4B /* YDSListItem.swift */; };
 		951261322AB969560012B5F9 /* YDSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951261312AB969560012B5F9 /* YDSLabel.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
@@ -340,7 +339,6 @@
 		6FFDB9822A718603003A9519 /* YDSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSFont.swift; sourceTree = "<group>"; };
 		803EDDB12AF026F000723E4B /* ListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPageView.swift; sourceTree = "<group>"; };
 		803EDDB32AF0295800723E4B /* YDSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSList.swift; sourceTree = "<group>"; };
-		803EDDB72AF5761100723E4B /* YDSListStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListStackView.swift; sourceTree = "<group>"; };
 		803EDDB92AF6148400723E4B /* YDSListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSListItem.swift; sourceTree = "<group>"; };
 		951261312AB969560012B5F9 /* YDSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSLabel.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
@@ -821,7 +819,6 @@
 			children = (
 				AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */,
 				803EDDB32AF0295800723E4B /* YDSList.swift */,
-				803EDDB72AF5761100723E4B /* YDSListStackView.swift */,
 				803EDDB92AF6148400723E4B /* YDSListItem.swift */,
 			);
 			path = Component;
@@ -1288,7 +1285,6 @@
 				6FFDB9832A718603003A9519 /* YDSFont.swift in Sources */,
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
-				803EDDB82AF5761100723E4B /* YDSListStackView.swift in Sources */,
 				951261322AB969560012B5F9 /* YDSLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

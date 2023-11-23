@@ -16,7 +16,9 @@ struct ListPageView: View {
         StorybookPageView(sample: {
             VStack {
                 Spacer()
-                YDSList(subheader: isDisabled)
+                YDSList(subheaderHas: isDisabled, items: [YDSListItem(text: "비밀번호 변경"),
+                                                          YDSListItem(text: "계정관리", icon: true),
+                                                          YDSListItem(text: "알림받기", toggle: true)])
                 Spacer()
             }
         }, options: [
