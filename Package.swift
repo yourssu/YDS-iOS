@@ -3,6 +3,10 @@ import PackageDescription
 
 let package = Package(
     name: "YDS",
+    
+    platforms: [
+        .iOS(.v16)
+    ],
 
     products: [
         .library(
