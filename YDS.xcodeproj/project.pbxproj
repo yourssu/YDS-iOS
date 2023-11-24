@@ -1066,6 +1066,8 @@
 				6F3C1EFB2A7A85BE003D0D06 /* PBXTargetDependency */,
 			);
 			name = "YDS-SwiftUI";
+			packageProductDependencies = (
+			);
 			productName = "YDS-SwiftUI";
 			productReference = 6FFDB9692A717F15003A9519 /* YDS_SwiftUI.framework */;
 			productType = "com.apple.product-type.framework";

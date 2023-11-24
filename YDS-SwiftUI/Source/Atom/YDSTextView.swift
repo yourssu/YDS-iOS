@@ -7,7 +7,8 @@
 
 import SwiftUI
 import YDS_Essential
-import SnapKit
+import YDS
+ import SnapKit
 
 public struct YDSTextView: UIViewRepresentable {
     @Binding var text: String
@@ -136,10 +137,10 @@ public struct YDSTextView: UIViewRepresentable {
         }
 
         textView.addSubview(placeholderLabel)
-        placeholderLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.left.equalToSuperview()
-        }
+            placeholderLabel.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.left.equalToSuperview()
+            }
         context.coordinator.placeholderLabel = placeholderLabel
 
         self.height = textView.frame.height
