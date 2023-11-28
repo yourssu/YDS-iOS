@@ -190,9 +190,9 @@
 		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
 		DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */; };
 		E565330D2AF7D6C200520002 /* EmojiButtonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */; };
-		E5F0600E2B0332B60013EAE1 /* YDSEmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330A2AF7D64900520002 /* YDSEmojiButton.swift */; };
 		E5E7B6742AF0AAED005F0B84 /* BadgePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7B6732AF0AAED005F0B84 /* BadgePageView.swift */; };
 		E5E7B6762AF0EDE3005F0B84 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */; };
+		E5F0600E2B0332B60013EAE1 /* YDSEmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330A2AF7D64900520002 /* YDSEmojiButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1686,7 +1686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
+				MARKETING_VERSION = 3.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = GithubActions_Dist;
@@ -2099,7 +2099,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
+				MARKETING_VERSION = 3.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2122,7 +2122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1.2;
+				MARKETING_VERSION = 3.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourssu.YDS-Storybook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
