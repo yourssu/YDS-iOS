@@ -55,13 +55,42 @@ struct PageListView: View {
         }
         PageView(title: "EmojiButton") {
             EmojiButtonPageView()
+        PageView(title: "BoxButton") {
+            BoxButtonPageView()
+        }
+        PageView(title: "PlainButton") {
+            PlainButtonPageView()
+        }
+        PageView(title: "SimpleTextField") {
+            SimpleTextFieldPageView()
+        }
+        PageView(title: "SuffixTextFieldPageView") {
+            SuffixTextFieldPageView()
+        }
+        PageView(title: "SearchTextFieldPageView") {
+            SearchTextFieldPageView()
+        }
+        PageView(title: "PasswordTextFieldPageView") {
+            PasswordTextFieldPageView()
+        }
+        PageView(title: "Badge") {
+            BadgePageView()
+        }
+        PageView(title: "Badge") {
+            BadgePageView()
         }
     }
 
     @ViewBuilder
     var componentPages: some View {
-        PageView(title: "Empty") {
-            EmptyView()
+        PageView(title: "Toast") {
+            ToastPageView()
+        }
+        PageView(title: "BottomBarController") {
+            BottomBarControllerPageView()
+        }
+        PageView(title: "List") {
+            ListPageView()
         }
     }
 
