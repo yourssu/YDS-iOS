@@ -51,7 +51,7 @@ struct BottomSheetPageView: View {
                 ]
             )
             .overlay(alignment: .bottom) {
-                Button(action: { // TODO: 컴포넌트 버튼으로 수정
+                Button(action: { // 컴포넌트 버튼으로 수정 예정
                     isPresentBottomSheet = true
                 }, label: {
                     Text("바텀시트 생성")
@@ -63,8 +63,7 @@ struct BottomSheetPageView: View {
                 content: {
                     VStack(alignment: .leading) {
                         ForEach(teams, id: \.self) { team in
-                            YDSLabel(text: team, typoStyle: String.TypoStyle.title1.font)
-                                .frame(height: 36) // TODO: 이슈 해결 후 수정
+                            YDSLabel(text: team, typoStyle: .title1)
                         }
                     }
                     .frame(maxWidth: .infinity)
