@@ -189,6 +189,8 @@
 		DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00426739A6900C5F409 /* Main.storyboard */; };
 		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
 		DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */; };
+		E565330D2AF7D6C200520002 /* EmojiButtonPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */; };
+		E5F0600E2B0332B60013EAE1 /* YDSEmojiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E565330A2AF7D64900520002 /* YDSEmojiButton.swift */; };
 		E5E7B6742AF0AAED005F0B84 /* BadgePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7B6732AF0AAED005F0B84 /* BadgePageView.swift */; };
 		E5E7B6762AF0EDE3005F0B84 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */; };
 /* End PBXBuildFile section */
@@ -423,6 +425,8 @@
 		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDFBD00A26739A6B00C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDFBD00C26739A6B00C5F409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E565330A2AF7D64900520002 /* YDSEmojiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSEmojiButton.swift; sourceTree = "<group>"; };
+		E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiButtonPageView.swift; sourceTree = "<group>"; };
 		E5E7B6732AF0AAED005F0B84 /* BadgePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePageView.swift; sourceTree = "<group>"; };
 		E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBadge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -850,6 +854,7 @@
 			children = (
 				AFA3071F2AAAF7CE00916C7E /* YDSProfileImageView.swift */,
 				951261312AB969560012B5F9 /* YDSLabel.swift */,
+				E565330A2AF7D64900520002 /* YDSEmojiButton.swift */,
 				0299354D2AEF83F000F46712 /* YDSBoxButton.swift */,
 				026BCF202B0261BA00AE91E9 /* YDSPlainButton.swift */,
 				AF23ED7F2AEE9BBB00F3D5E2 /* YDSTextField */,
@@ -887,6 +892,7 @@
 			children = (
 				AF7528212AA5F0A1001174E7 /* ProfileImagePageView.swift */,
 				95E535C62AB482E200FA2492 /* LabelPageView.swift */,
+				E565330C2AF7D6C200520002 /* EmojiButtonPageView.swift */,
 				0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */,
 				026BCF1E2B02619C00AE91E9 /* PlainButtonPageView.swift */,
 				AFEC225D2AEFF54500B062F4 /* TextField */,
@@ -1347,6 +1353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F0600E2B0332B60013EAE1 /* YDSEmojiButton.swift in Sources */,
 				AF23ED832AEE9C0F00F3D5E2 /* YDSSuffixTextField.swift in Sources */,
 				80CC69242B0FB16F00CDAFA7 /* YDSListItem.swift in Sources */,
 				AF23ED852AEE9C1F00F3D5E2 /* YDSPasswordTextField.swift in Sources */,
@@ -1500,6 +1507,7 @@
 				6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
+				E565330D2AF7D6C200520002 /* EmojiButtonPageView.swift in Sources */,
 				0272DD4D28F870290005832E /* NSTextAlignment+CustomStringConvertible.swift in Sources */,
 				C37F357227DE34FE007DF859 /* TextViewViewController.swift in Sources */,
 				53E2CF4026D2A2B1000DE005 /* PasswordTextFieldViewPageViewController.swift in Sources */,
