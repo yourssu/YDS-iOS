@@ -189,6 +189,8 @@
 		DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00426739A6900C5F409 /* Main.storyboard */; };
 		DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00726739A6B00C5F409 /* Assets.xcassets */; };
 		DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFBD00926739A6B00C5F409 /* LaunchScreen.storyboard */; };
+		E5E7B6742AF0AAED005F0B84 /* BadgePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7B6732AF0AAED005F0B84 /* BadgePageView.swift */; };
+		E5E7B6762AF0EDE3005F0B84 /* YDSBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -421,6 +423,8 @@
 		DDFBD00726739A6B00C5F409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDFBD00A26739A6B00C5F409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDFBD00C26739A6B00C5F409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5E7B6732AF0AAED005F0B84 /* BadgePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgePageView.swift; sourceTree = "<group>"; };
+		E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSBadge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -849,6 +853,7 @@
 				0299354D2AEF83F000F46712 /* YDSBoxButton.swift */,
 				026BCF202B0261BA00AE91E9 /* YDSPlainButton.swift */,
 				AF23ED7F2AEE9BBB00F3D5E2 /* YDSTextField */,
+				E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -885,6 +890,7 @@
 				0299354F2AEF84D400F46712 /* BoxButtonPageView.swift */,
 				026BCF1E2B02619C00AE91E9 /* PlainButtonPageView.swift */,
 				AFEC225D2AEFF54500B062F4 /* TextField */,
+				E5E7B6732AF0AAED005F0B84 /* BadgePageView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1346,6 +1352,7 @@
 				AF23ED852AEE9C1F00F3D5E2 /* YDSPasswordTextField.swift in Sources */,
 				6F95FE552A768C1E00B398CF /* YDSTypoStyle.swift in Sources */,
 				6F95FE542A768C1E00B398CF /* YDSItemColor.swift in Sources */,
+				E5E7B6762AF0EDE3005F0B84 /* YDSBadge.swift in Sources */,
 				6F95FE592A768C1E00B398CF /* YDSBasicColor.swift in Sources */,
 				AFFD69422AF1D52400CC8A1B /* YDSTextFieldBase.swift in Sources */,
 				AFA307202AAAF7CE00916C7E /* YDSProfileImageView.swift in Sources */,
@@ -1457,6 +1464,7 @@
 				95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */,
 				53E2CF4426D2A462000DE005 /* SearchBarPageViewController.swift in Sources */,
 				026BCF1F2B02619C00AE91E9 /* PlainButtonPageView.swift in Sources */,
+				E5E7B6742AF0AAED005F0B84 /* BadgePageView.swift in Sources */,
 				C7F6908B27DDCDD3002B63C9 /* IconsListTableViewController.swift in Sources */,
 				53C9F6FC26B5568600EF7B86 /* YDSIconArray.swift in Sources */,
 				53C9F70226B5976700EF7B86 /* BadgePageViewController.swift in Sources */,
