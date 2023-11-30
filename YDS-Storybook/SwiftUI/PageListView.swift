@@ -53,6 +53,9 @@ struct PageListView: View {
         PageView(title: "ProfileImageView") {
             ProfileImagePageView()
         }
+        PageView(title: "EmojiButton") {
+            EmojiButtonPageView()
+        }
         PageView(title: "BoxButton") {
             BoxButtonPageView()
         }
@@ -71,6 +74,9 @@ struct PageListView: View {
         PageView(title: "PasswordTextFieldPageView") {
             PasswordTextFieldPageView()
         }
+        PageView(title: "Badge") {
+            BadgePageView()
+        }
     }
 
     @ViewBuilder
@@ -86,6 +92,12 @@ struct PageListView: View {
         }
         PageView(title: "DoubleTitleTopBar") {
             DoubleTitleTopBarView()
+        }
+        PageView(title: "BottomBarController") {
+            BottomBarControllerPageView()
+        }
+        PageView(title: "List") {
+            ListPageView()
         }
     }
 
