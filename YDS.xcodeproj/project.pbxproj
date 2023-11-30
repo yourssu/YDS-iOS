@@ -988,9 +988,9 @@
 			isa = PBXGroup;
 			children = (
 				C37AC5A82AE67C57005E3593 /* TopBarView.swift */,
-				C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */,
 				C3A961D42B0DB2740059F336 /* SingleTitleTopBarView.swift */,
 				C30A86C62B16067700BA9EBE /* DoubleTitleTopBarView.swift */,
+				C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */,
 			);
 			path = TopBar;
 			sourceTree = "<group>";

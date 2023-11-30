@@ -10,44 +10,64 @@ import YDS_SwiftUI
 import YDS
 
 public struct TopBarSampleView: View {
+    @Binding var isPresenting: Bool
     @State var title: String? = "커뮤니티"
+    @State var isLeftButtonSelected: Bool = false
+    @State var isRightButtonSelected: Bool = false
+    
+    public var body: some View {
+        NavigationStack {
+            VStack {
+                Text("")
+                    .ydsTopBar($title, isLeftButtonSelected: $isLeftButtonSelected, isRightButtonSelected: $isRightButtonSelected)
+                Spacer()
+                Button(action: {
+                    self.isPresenting.toggle()
+                }) {
+                    Text("닫기")
+                }
+            }
+        }
+    }
+}
+
+
+public struct TopBarSingleTitleSampleView: View {
+    @Binding var isPresenting: Bool
+    @State var title: String? = "커뮤니티"
+    @State var isShowing: Bool = false
     
     public var body: some View {
         NavigationStack {
             Text("")
-                .ydsTopBar($title)
+                .ydsSingleTitleTopBar($title, isShowing: $isShowing)
+            Spacer()
+            Button(action: {
+                self.isPresenting.toggle()
+            }) {
+                Text("닫기")
+            }
         }
     }
     
 }
 
 public struct TopBarDoubleTitleSampleView: View {
+    @Binding var isPresenting: Bool
     @State var title: String? = "커뮤니티"
     @State var subtitle: String? = "커뮤니티"
+    @State var isShowing: Bool = false
     
     public var body: some View {
         NavigationStack {
             Text("")
-                .ydsDoubleTitleTopBar(title: $title, subtitle: $subtitle)
+                .ydsDoubleTitleTopBar(title: $title, subtitle: $subtitle, isShowing: $isShowing)
+            Spacer()
+            Button(action: {
+                self.isPresenting.toggle()
+            }) {
+                Text("닫기")
+            }
         }
-    }
-    
-}
-
-public struct TopBarSingleTitleSampleView: View {
-    @State var title: String? = "커뮤니티"
-    
-    public var body: some View {
-        NavigationStack {
-            Text("")
-                .ydsSingleTitleTopBar($title)
-        }
-    }
-    
-}
-
-struct TopBarSampleView_Previews: PreviewProvider {
-    static var previews: some View {
-        TopBarSingleTitleSampleView()
     }
 }

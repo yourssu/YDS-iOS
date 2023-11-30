@@ -78,6 +78,15 @@ struct PageListView: View {
         PageView(title: "Toast") {
             ToastPageView()
         }
+        PageView(title: "TopBar") {
+            TopBarView()
+        }
+        PageView(title: "SingleTitleTopBar") {
+            SingleTitleTopBarView()
+        }
+        PageView(title: "DoubleTitleTopBar") {
+            DoubleTitleTopBarView()
+        }
     }
 
     // MARK: - body

@@ -30,15 +30,10 @@ struct SingleTitleTopBarView: View {
         .navigationTitle(navigationTitle)
         .overlay(alignment: .bottom) {
             Button("샘플 페이지 보기") {
-                // 이후 YDSBoxButton이 바뀌면 추가하겠습니다
                 isPresenting.toggle()
             }
-            .fullScreenCover(isPresented: $isPresenting,
-                             onDismiss: didDismiss) {
-                TopBarSampleView()
-                .onTapGesture {
-                    isPresenting.toggle()
-                }
+            .fullScreenCover(isPresented: $isPresenting) {
+                TopBarSingleTitleSampleView(isPresenting: $isPresenting, title: title)
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity,
                        maxHeight: .infinity)
@@ -46,11 +41,6 @@ struct SingleTitleTopBarView: View {
                 .ignoresSafeArea(edges: .all)
             }
         }
-    }
-
-
-    func didDismiss() {
-        // dissmising action
     }
 }
 
