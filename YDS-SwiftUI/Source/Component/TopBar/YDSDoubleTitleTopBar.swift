@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct YDSDoubleTitleTopBarModifier: ViewModifier {
-    @Binding var isShowing: Bool
     @Binding public var topBar: YDSDoubleTitleTopBar
+    @Binding var isShowing: Bool
     
     public func body(content: Content) -> some View {
         return content
@@ -21,7 +21,7 @@ struct YDSDoubleTitleTopBarModifier: ViewModifier {
                 ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
-                                isShowing = true
+                                isShowing.toggle()
                             }, label: {
                                 YDSIcon.plusLine
                             })
@@ -30,7 +30,7 @@ struct YDSDoubleTitleTopBarModifier: ViewModifier {
                 ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
-                                isShowing = true
+                                isShowing.toggle()
                             }, label: {
                                 YDSIcon.listLine
                             })
@@ -38,7 +38,7 @@ struct YDSDoubleTitleTopBarModifier: ViewModifier {
                 ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
-                                isShowing = true
+                                isShowing.toggle()
                             }, label: {
                                 YDSIcon.dotsVerticalLine
                             })
@@ -70,15 +70,14 @@ extension View {
     public func ydsDoubleTitleTopBar(title: Binding<String?>, subtitle: Binding<String?>, isShowing: Binding<Bool>) -> some View {
       modifier(
         YDSDoubleTitleTopBarModifier( 
-            isShowing: isShowing,
             topBar: .init(get: {
-            YDSDoubleTitleTopBar(
+                YDSDoubleTitleTopBar(
                     title: title.wrappedValue ?? "",
                     subtitle: subtitle.wrappedValue ?? "")
             }, set: { ydsTopBar in
                 title.wrappedValue = ydsTopBar.title
                 subtitle.wrappedValue = ydsTopBar.subtitle
-            })
+            }), isShowing: isShowing
         )
       )
   }

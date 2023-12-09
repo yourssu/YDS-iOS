@@ -30,12 +30,7 @@ struct DoubleTitleTopBarView: View {
                 isPresenting.toggle()
             }
             .fullScreenCover(isPresented: $isPresenting) {
-                TopBarDoubleTitleSampleView(isPresenting: $isPresenting, title: title, subtitle: subtitle)
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity,
-                       maxHeight: .infinity)
-                .background(Color.white)
-                .ignoresSafeArea(edges: .all)
+                TopBarDoubleTitleSampleView(title: title, subtitle: subtitle, isPresenting: $isPresenting)
             }
         }
     }

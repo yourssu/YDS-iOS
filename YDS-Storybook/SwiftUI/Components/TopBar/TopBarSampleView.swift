@@ -9,11 +9,13 @@ import SwiftUI
 import YDS_SwiftUI
 import YDS
 
+
 public struct TopBarSampleView: View {
-    @Binding var isPresenting: Bool
     @State var title: String? = "커뮤니티"
     @State var isLeftButtonSelected: Bool = false
     @State var isRightButtonSelected: Bool = false
+    
+    @Environment(\.dismiss) var dismiss
     
     public var body: some View {
         NavigationStack {
@@ -22,7 +24,7 @@ public struct TopBarSampleView: View {
                     .ydsTopBar($title, isLeftButtonSelected: $isLeftButtonSelected, isRightButtonSelected: $isRightButtonSelected)
                 Spacer()
                 Button(action: {
-                    self.isPresenting.toggle()
+                    dismiss()
                 }) {
                     Text("닫기")
                 }
@@ -33,41 +35,52 @@ public struct TopBarSampleView: View {
 
 
 public struct TopBarSingleTitleSampleView: View {
-    @Binding var isPresenting: Bool
     @State var title: String? = "커뮤니티"
-    @State var isShowing: Bool = false
+    @State var buttonTitle: String? = "button clicked"
+    @State private var isShowing: Bool = false
+    @Binding var isPresenting: Bool
     
     public var body: some View {
         NavigationStack {
-            Text("")
-                .ydsSingleTitleTopBar($title, isShowing: $isShowing)
-            Spacer()
+            VStack {
+                Text("")
+                    .ydsSingleTitleTopBar($title, isShowing: $isShowing)
+                Spacer()
+            }
+        }
+        .overlay(alignment: .bottom) {
             Button(action: {
-                self.isPresenting.toggle()
+                isPresenting.toggle()
             }) {
                 Text("닫기")
             }
         }
+        .ydsToast($buttonTitle, isShowing: $isShowing)
     }
-    
 }
 
 public struct TopBarDoubleTitleSampleView: View {
-    @Binding var isPresenting: Bool
     @State var title: String? = "커뮤니티"
     @State var subtitle: String? = "커뮤니티"
-    @State var isShowing: Bool = false
+    @State var buttonTitle: String? = "button clicked"
+    @State private var isShowing: Bool = false
+    @Binding var isPresenting: Bool
+    
+    @Environment(\.dismiss) var dismiss
     
     public var body: some View {
         NavigationStack {
             Text("")
                 .ydsDoubleTitleTopBar(title: $title, subtitle: $subtitle, isShowing: $isShowing)
             Spacer()
+        }
+        .overlay(alignment: .bottom) {
             Button(action: {
-                self.isPresenting.toggle()
+                isPresenting.toggle()
             }) {
                 Text("닫기")
             }
         }
+        .ydsToast($buttonTitle, isShowing: $isShowing)
     }
 }

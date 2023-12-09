@@ -32,14 +32,9 @@ struct SingleTitleTopBarView: View {
             Button("샘플 페이지 보기") {
                 isPresenting.toggle()
             }
-            .fullScreenCover(isPresented: $isPresenting) {
-                TopBarSingleTitleSampleView(isPresenting: $isPresenting, title: title)
-                .foregroundColor(.black)
-                .frame(maxWidth: .infinity,
-                       maxHeight: .infinity)
-                .background(Color.white)
-                .ignoresSafeArea(edges: .all)
-            }
+        }
+        .fullScreenCover(isPresented: $isPresenting) {
+            TopBarSingleTitleSampleView(title: title, isPresenting: $isPresenting)
         }
     }
 }
