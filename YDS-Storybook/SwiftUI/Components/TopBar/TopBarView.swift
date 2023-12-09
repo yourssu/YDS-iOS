@@ -39,7 +39,7 @@ public struct TopBarView: View {
             })
             .padding()
             .fullScreenCover(isPresented: $isPresenting) {
-                TopBarSampleView(isPresenting: $isPresenting, title: title)
+                TopBarSampleView(title: title)
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity,
                            maxHeight: .infinity)

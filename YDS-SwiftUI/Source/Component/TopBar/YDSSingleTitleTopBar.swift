@@ -6,17 +6,10 @@
 //
 
 import SwiftUI
-import YDS_Essential
 
-enum ButtonName: String {
-    case Searchbutton
-    case Writebutton
-}
-
-struct YDSSingleTitleTopBar: ViewModifier {
+struct YDSSingleTitleTopBarModifier: ViewModifier {
+    @Binding public var topBar: YDSSingleTitleTopBar
     @Binding public var isShowing: Bool
-    @State private var selectedButton: ButtonName?
-    @Binding public var topBar: SingleTitleTopBar
     
     public func body(content: Content) -> some View {
         content
@@ -25,19 +18,19 @@ struct YDSSingleTitleTopBar: ViewModifier {
                         .topBarLeading) {
                             SingleTitleBar(topBar.title)
                 }
-                ToolbarItem(placement: 
+                
+                ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
-                                selectedButton = .Searchbutton
                                 isShowing.toggle()
                             }, label: {
                                 YDSIcon.searchLine
                             })
                 }
-                ToolbarItem(placement: 
+                
+                ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
-                                selectedButton = .Writebutton
                                 isShowing.toggle()
                             }, label: {
                                 YDSIcon.penLine
@@ -47,7 +40,7 @@ struct YDSSingleTitleTopBar: ViewModifier {
     }
 }
 
-public struct SingleTitleTopBar: Equatable {
+public struct YDSSingleTitleTopBar: Equatable {
     let title: String
 }
 
@@ -66,14 +59,15 @@ struct SingleTitleBar: View {
 
 extension View {
     public func ydsSingleTitleTopBar(_ title: Binding<String?>, isShowing: Binding<Bool>) -> some View {
-        modifier(
+      modifier(
+        YDSSingleTitleTopBarModifier( topBar: .init(get: {
             YDSSingleTitleTopBar(
-                isShowing: isShowing, topBar: .init(get: {
-                    SingleTitleTopBar(title: title.wrappedValue ?? "")
-                }, set: { ydsTopBar in
-                    title.wrappedValue = ydsTopBar.title
-                })
-            )
+                title: title.wrappedValue ?? "")
+        }, set: { ydsTopBar in
+            title.wrappedValue = ydsTopBar.title
+        }), isShowing: isShowing
         )
-    }
+      )
+  }
 }
+
