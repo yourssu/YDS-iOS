@@ -8,10 +8,17 @@
 import SwiftUI
 import UIKit
 import YDS_Essential
+import Combine
+/*
+ YDSToast 사용 방법
+ 1. 최상단 뷰에 .registerYDSToast() Modifier를 붙여준다.
+ 2. toast를 띄우고 싶을 때 YDSToast()를 불러준다.
+ */
 
-public struct YDSToast: Equatable {
+public struct YDSToastModel: Equatable {
     let text: String
     let duration: ToastDuration
+    let haptic: HapticType
     public enum ToastDuration: CaseIterable {
         case short
         case long
@@ -25,6 +32,30 @@ public struct YDSToast: Equatable {
             }
         }
     }
+    public enum HapticType: CaseIterable {
+        case success
+        case failed
+        case none
+    }
+    var playHaptic: () -> Void {
+        switch haptic {
+        case .success: {
+                HapticManager.instance.notification(type: .success)
+            }
+        case .failed: {
+                HapticManager.instance.notification(type: .warning)
+            }
+        case .none: {}
+        }
+    }
+}
+
+public func YDSToast(
+    _ text: String,
+    duration: YDSToastModel.ToastDuration = .short,
+    haptic: YDSToastModel.HapticType = .none
+) {
+    YDSToastHelper.shared.enqueueToast(YDSToastModel(text: text, duration: duration, haptic: haptic))
 }
 
 public struct YDSToastView: View {
@@ -44,43 +75,53 @@ public struct YDSToastView: View {
     }
 }
 
-public struct YDSToastModifier: ViewModifier {
-    @Binding public var isShowing: Bool
-    @Binding public var toast: YDSToast
-    public func body(content: Content) -> some View {
+private class YDSToastHelper: ObservableObject {
+    static let shared = YDSToastHelper()
+    @Published var isShowing: Bool = false
+    @Published var showingToast: YDSToastModel?
+    private let subject = PassthroughSubject<YDSToastModel, Never>()
+    private var cancellables = Set<AnyCancellable>()
+    init() {
+        initSubscription()
+    }
+    private func initSubscription() {
+        subject
+            .receive(on: RunLoop.main)
+            .sink { [weak self] toast in
+                self?.isShowing = false
+                self?.isShowing = true
+                self?.showingToast = toast
+                toast.playHaptic()
+                DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration.value) {
+                    self?.isShowing = false
+                    self?.showingToast = nil
+                }
+            }
+            .store(in: &cancellables)
+    }
+    func enqueueToast(_ toast: YDSToastModel) {
+        subject.send(toast)
+    }
+}
+
+struct YDSToastModifier: ViewModifier {
+    @StateObject private var toastHelper = YDSToastHelper.shared
+    func body(content: Content) -> some View {
         content
             .overlay(alignment: .bottom) {
-                if isShowing {
+                if toastHelper.isShowing, let toast = toastHelper.showingToast {
                     YDSToastView(toast.text)
-                        .opacity(isShowing ? 1.0 : 0.0)
+                        .opacity(toastHelper.isShowing ? 1.0 : 0.0)
                 }
             }
-            .onChange(of: isShowing) { value in
-                if value {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration.value) {
-                        isShowing = false
-                    }
-                }
-            }
-            .animation(.easeInOut, value: isShowing)
+            .animation(.easeInOut, value: toastHelper.isShowing)
     }
 }
 
 extension View {
-    public func ydsToast(
-        _ text: Binding<String?>,
-        duration: YDSToast.ToastDuration = .short,
-        isShowing: Binding<Bool>
-    ) -> some View {
+    public func registerYDSToast() -> some View {
         self.modifier(
-            YDSToastModifier(
-                isShowing: isShowing,
-                toast: .init(get: {
-                    YDSToast(text: text.wrappedValue ?? "", duration: duration)
-                }, set: { ydsToast in
-                    text.wrappedValue = ydsToast.text
-                })
-            )
+            YDSToastModifier()
         )
     }
 }
