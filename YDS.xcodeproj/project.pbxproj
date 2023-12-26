@@ -89,6 +89,7 @@
 		53EFF5D426BBC26900732DCF /* ToastPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */; };
 		5A10B1B62A8F5C8500139E89 /* SwiftUIYDSIconArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */; };
 		5A10B1B82A8F5FFF00139E89 /* IconPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A10B1B72A8F5FFF00139E89 /* IconPageView.swift */; };
+		6C9A10B82B3AB8C600757ABC /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9A10B72B3AB8C600757ABC /* YDSTextView.swift */; };
 		6CA05E822A90846B00B07920 /* SwiftUIYDSColorArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA05E812A90846B00B07920 /* SwiftUIYDSColorArray.swift */; };
 		6F124C632B399953004187E6 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F124C612B399753004187E6 /* HapticManager.swift */; };
 		6F2D527B2A79446000BAF200 /* ColorPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2D527A2A79446000BAF200 /* ColorPageView.swift */; };
@@ -329,6 +330,7 @@
 		53EFF5D326BBC26900732DCF /* ToastPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPageViewController.swift; sourceTree = "<group>"; };
 		5A10B1B52A8F5C8500139E89 /* SwiftUIYDSIconArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSIconArray.swift; sourceTree = "<group>"; };
 		5A10B1B72A8F5FFF00139E89 /* IconPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPageView.swift; sourceTree = "<group>"; };
+		6C9A10B72B3AB8C600757ABC /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
 		6CA05E812A90846B00B07920 /* SwiftUIYDSColorArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSColorArray.swift; sourceTree = "<group>"; };
 		6F124C612B399753004187E6 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		6F2D527A2A79446000BAF200 /* ColorPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPageView.swift; sourceTree = "<group>"; };
@@ -862,6 +864,7 @@
 				026BCF202B0261BA00AE91E9 /* YDSPlainButton.swift */,
 				AF23ED7F2AEE9BBB00F3D5E2 /* YDSTextField */,
 				E5E7B6752AF0EDE3005F0B84 /* YDSBadge.swift */,
+				6C9A10B72B3AB8C600757ABC /* YDSTextView.swift */,
 			);
 			path = Atom;
 			sourceTree = "<group>";
@@ -1377,6 +1380,7 @@
 				6F956F1E2A8D5F560023D0E3 /* Exported.swift in Sources */,
 				AF23ED812AEE9BF600F3D5E2 /* YDSSimpleTextField.swift in Sources */,
 				AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */,
+				6C9A10B82B3AB8C600757ABC /* YDSTextView.swift in Sources */,
 				951261322AB969560012B5F9 /* YDSLabel.swift in Sources */,
 				026BCF212B0261BA00AE91E9 /* YDSPlainButton.swift in Sources */,
 				AF23ED892AEE9C7700F3D5E2 /* YDSTextFieldProtocol.swift in Sources */,
