@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-public struct YDSColor {
+public enum YDSColor {
     private static func color(light: Color, dark: Color? = nil) -> Color {
         if let dark = dark {
             return Color(uiColor: UIColor { $0.userInterfaceStyle == .dark ? UIColor(dark) : UIColor(light) })
