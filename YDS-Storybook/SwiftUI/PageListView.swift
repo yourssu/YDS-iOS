@@ -77,6 +77,9 @@ struct PageListView: View {
         PageView(title: "Badge") {
             BadgePageView()
         }
+        PageView(title: "TextView") {
+            TextViewPageView()
+        }
     }
 
     @ViewBuilder
