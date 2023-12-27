@@ -18,7 +18,7 @@ public struct YDSLabel: UIViewRepresentable {
     let alignment: NSTextAlignment?
     let lineBreakStrategy: NSParagraphStyle.LineBreakStrategy?
 
-    public enum TypoStyle: CaseIterable {
+    public enum LabelTypoStyle: CaseIterable {
         case display1
         case display2
 
@@ -86,7 +86,7 @@ public struct YDSLabel: UIViewRepresentable {
     }
 
     public init(text: String,
-                typoStyle: TypoStyle = .body1,
+                typoStyle: LabelTypoStyle = .body1,
                 textColor: Color = Color.black,
                 maxWidth: CGFloat = .greatestFiniteMagnitude,
                 numberOfLines: Int = 0,

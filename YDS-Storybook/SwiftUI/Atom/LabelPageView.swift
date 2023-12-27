@@ -29,7 +29,7 @@ import YDS_SwiftUI
                 GeometryReader { geometry in
                     YDSLabel(
                         text: text ?? "",
-                        typoStyle: YDSLabel.TypoStyle.allCases[typoStyleSelectedIndex],
+                        typoStyle: YDSLabel.LabelTypoStyle.allCases[typoStyleSelectedIndex],
                         textColor: selectedColor,
                         maxWidth: geometry.size.width - 32,
                         numberOfLines: int,
