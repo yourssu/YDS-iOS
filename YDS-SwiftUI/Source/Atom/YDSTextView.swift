@@ -13,7 +13,7 @@ public struct YDSTextView: View {
 
     let textColor: Color
     let placeholderText: String?
-    let placeholderTextColor: Color?
+    let placeholderTextColor: Color
     let style: String.SwiftUITypoStyle
     let multilineTextAlignment: TextAlignment
     let minHeight: CGFloat
@@ -22,8 +22,8 @@ public struct YDSTextView: View {
     public init(text: Binding<String>,
                 textColor: Color = YDSColor.textPrimary,
                 placeholderText: String? = "댓글을 입력해주세요.",
-                placeholderTextColor: Color? = YDSColor.textTertiary,
-                style: String.SwiftUITypoStyle = .body1,
+                placeholderTextColor: Color = YDSColor.textTertiary,
+                style: String.SwiftUITypoStyle,
                 multilineTextAlignment: TextAlignment = .leading,
                 minHeight: CGFloat,
                 maxHeight: CGFloat? = nil) {
