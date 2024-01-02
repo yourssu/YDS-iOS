@@ -53,15 +53,12 @@ struct PageListView: View {
         PageView(title: "ProfileImageView") {
             ProfileImagePageView()
         }
-        PageView(title: "ChipView") {
-            ChipPageView()
-        }
     }
 
     @ViewBuilder
     var componentPages: some View {
-        PageView(title: "Empty") {
-            EmptyView()
+        PageView(title: "Toast") {
+            ToastPageView()
         }
     }
 
