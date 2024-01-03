@@ -9,23 +9,23 @@ import SwiftUI
 
 import YDS_SwiftUI
 
-struct OptionListItem: View {
-    private enum Dimension {
-        enum Spacing {
-            static let vstack: CGFloat = 16
-        }
-        
-        enum Padding {
-            static let vstack: CGFloat = 16
-        }
+private enum Dimension {
+    enum Spacing {
+        static let vstack: CGFloat = 16
     }
-    
+
+    enum Padding {
+        static let vstack: CGFloat = 16
+    }
+}
+
+struct OptionListItem: View {
     private let option: Option
-    
+
     init(option: Option) {
         self.option = option
     }
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
             option.body
@@ -37,14 +37,14 @@ struct OptionListItem: View {
 
 struct StorybookPageView<ViewType: View>: View {
     @ViewBuilder private var sample: () -> ViewType
-    
+
     private let options: [Option]
-    
+
     init(sample: @escaping () -> ViewType, options: [Option]) {
         self.sample = sample
         self.options = options
     }
-    
+
     var body: some View {
         VStack(spacing: 0) {
             sampleExpaned
@@ -64,7 +64,7 @@ private extension StorybookPageView {
                     .fill(Color.white)
             )
     }
-    
+
     var scrollableOptions: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
@@ -92,7 +92,7 @@ struct StorybookPageView_Previews: PreviewProvider {
 
         return StorybookPageView(
             sample: {
-                Button(action: {}) {
+                Button {} label: {
                     HStack {
                         if let icon = icon?.icon {
                             icon
@@ -106,7 +106,11 @@ struct StorybookPageView_Previews: PreviewProvider {
             options: [
                 Option.bool(description: "isDisabled", isOn: $isDisabled),
                 Option.int(description: "numberOfLines", value: $numberOfLines),
-                Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
+                Option.enum(
+                    description: "buttonType",
+                    cases: BoxButtonType.allCases,
+                    selectedIndex: $selectedBoxButtonType
+                ),
                 Option.optionalString(description: "text", text: $text),
                 Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon)
             ]
