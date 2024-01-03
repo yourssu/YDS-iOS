@@ -61,7 +61,7 @@ private extension StorybookPageView {
             .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
             .background(
                 Rectangle()
-                    .fill(Color.white)
+                    .fill(YDSColor.monoItemBG)
             )
     }
 
