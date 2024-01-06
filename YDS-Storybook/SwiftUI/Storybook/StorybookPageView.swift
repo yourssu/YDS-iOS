@@ -112,7 +112,7 @@ struct StorybookPageView_Previews: PreviewProvider {
                     selectedIndex: $selectedBoxButtonType
                 ),
                 Option.optionalString(description: "text", text: $text),
-                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon)
+                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon, placeholderIndex: 0)
             ]
         )
     }

@@ -44,7 +44,7 @@ struct BadgePageView: View {
             Option.optionalIcon(
                 description: "icon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $icons),
+                selectedIcon: $icons, placeholderIndex: 0),
             Option.enum(
                 description: "color",
                 cases: YDSItemColor.allCases,

@@ -41,11 +41,11 @@ struct PlainButtonPageView: View {
             Option.optionalIcon(
                 description: "leftIcon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $leftIcon),
+                selectedIcon: $leftIcon, placeholderIndex: 56),
             Option.optionalIcon(
                 description: "rightIcon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $rightIcon),
+                selectedIcon: $rightIcon, placeholderIndex: 56),
             Option.enum(
                 description: "size",
                 cases: YDSPlainButton.PlainButtonSize.allCases,
