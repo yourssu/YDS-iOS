@@ -108,7 +108,7 @@ struct StorybookPageView_Previews: PreviewProvider {
                 Option.int(description: "numberOfLines", value: $numberOfLines),
                 Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
                 Option.optionalString(description: "text", text: $text),
-                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon)
+                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon, placeholderIndex: 0)
             ]
         )
     }
