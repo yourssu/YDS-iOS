@@ -166,42 +166,39 @@ public struct YDSBoxButton: View {
     }
 
     public var body: some View {
-        Button {
-
-        } label: {
-            HStack(spacing: 4) {
-                if let leftIcon {
-                    leftIcon
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: size.iconSize, height: size.iconSize)
-                        .foregroundColor(pointColor(for: type))
-                }
-                if let text {
-                    Text(text)
-                        .font(size.font)
-                }
-                if let rightIcon {
-                    rightIcon
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: size.iconSize, height: size.iconSize)
-                        .foregroundColor(pointColor(for: type))
-                }
+        HStack(spacing: 4) {
+            if let leftIcon {
+                leftIcon
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: size.iconSize, height: size.iconSize)
+                    .foregroundColor(pointColor(for: type))
             }
-            .padding(.vertical, size.padding)
-            .padding(.horizontal, size.padding)
-            .frame(height: size.height)
-            .foregroundColor(pointColor(for: type))
-            .background(backgroundColor(for: type))
-            .cornerRadius(rounding.rawValue)
-            .overlay(
-                RoundedRectangle(cornerRadius: rounding.rawValue)
-                    .stroke(borderColor(for: type) ?? Color.clear)
-            )
-        }.disabled(isDisabled)
+            if let text {
+                Text(text)
+                    .font(size.font)
+            }
+            if let rightIcon {
+                rightIcon
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: size.iconSize, height: size.iconSize)
+                    .foregroundColor(pointColor(for: type))
+            }
+        }
+        .padding(.vertical, size.padding)
+        .padding(.horizontal, size.padding)
+        .frame(height: size.height)
+        .foregroundColor(pointColor(for: type))
+        .background(backgroundColor(for: type))
+        .disabled(isDisabled)
+        .cornerRadius(rounding.rawValue)
+        .overlay(
+            RoundedRectangle(cornerRadius: rounding.rawValue)
+                .stroke(borderColor(for: type) ?? Color.clear)
+        )
     }
 }
 
