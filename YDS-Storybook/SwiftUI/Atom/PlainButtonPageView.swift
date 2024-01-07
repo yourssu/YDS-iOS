@@ -11,6 +11,8 @@ import YDS_SwiftUI
 struct PlainButtonPageView: View {
     let title: String = "PlainButtonView"
 
+    @State private var isPressed = false
+
     @State var text: String? = "재생"
     @State var int: Int = 0
     @State var leftIcon: SwiftUIIcon? = YDSSwiftUIIcon.icons[56]
@@ -22,15 +24,20 @@ struct PlainButtonPageView: View {
 
     public var body: some View {
         StorybookPageView(sample: {
-            YDSPlainButton(
-                text: text,
-                leftIcon: leftIcon?.icon,
-                rightIcon: rightIcon?.icon,
-                size: YDSPlainButton.PlainButtonSize.allCases[sizeSelectedIndex],
-                isDisabled: isDisabled,
-                isWarned: isWarned,
-                isPointed: isPointed
-            )
+            Button(action: {
+                print("YDSPlainButton Click!!")
+            }, label: {
+                YDSPlainButton(
+                    text: text,
+                    leftIcon: leftIcon?.icon,
+                    rightIcon: rightIcon?.icon,
+                    size: YDSPlainButton.PlainButtonSize.allCases[sizeSelectedIndex],
+                    isDisabled: isDisabled,
+                    isWarned: isWarned,
+                    isPointed: isPointed
+                )
+            })
+            .disabled(isDisabled)
             .frame(height: YDSScreenSize.width * 3/4 - 32)
             .padding(16)
             .clipped()

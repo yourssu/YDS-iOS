@@ -23,16 +23,21 @@ public struct BoxButtonPageView: View {
 
     public var body: some View {
         StorybookPageView(sample: {
-            YDSBoxButton(
-                text: text,
-                leftIcon: leftIcon?.icon,
-                rightIcon: rightIcon?.icon,
-                type: YDSBoxButton.BoxButtonType.allCases[typeSelectedIndex],
-                size: YDSBoxButton.BoxButtonSize.allCases[sizeSelectedIndex],
-                rounding: YDSBoxButton.BoxButtonRounding.allCases[roundingSelectedIndex],
-                isDisabled: isDisabled,
-                isWarned: isWarned
-            )
+            Button(action: {
+                print("YDSBoxButton Click!!")
+            }, label: {
+                YDSBoxButton(
+                    text: text,
+                    leftIcon: leftIcon?.icon,
+                    rightIcon: rightIcon?.icon,
+                    type: YDSBoxButton.BoxButtonType.allCases[typeSelectedIndex],
+                    size: YDSBoxButton.BoxButtonSize.allCases[sizeSelectedIndex],
+                    rounding: YDSBoxButton.BoxButtonRounding.allCases[roundingSelectedIndex],
+                    isDisabled: isDisabled,
+                    isWarned: isWarned
+                )
+            })
+            .disabled(isDisabled)
             .frame(height: YDSScreenSize.width * 3/4 - 32)
             .padding(16)
             .clipped()

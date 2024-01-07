@@ -62,7 +62,7 @@ public struct YDSPlainButton: View {
             case .large:
                 return YDSFont.button2
             case .medium:
-                return YDSFont.button2
+                return YDSFont.button3
             case .small:
                 return YDSFont.button4
             }
@@ -73,7 +73,7 @@ public struct YDSPlainButton: View {
             case .large:
                 return 24
             case .medium:
-                return 24
+                return 20
             case .small:
                 return 16
             }
@@ -103,36 +103,33 @@ public struct YDSPlainButton: View {
     }
 
     public var body: some View {
-        Button {
-
-        } label: {
-            HStack(spacing: 4) {
-                if let leftIcon {
-                    leftIcon
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: size.iconSize, height: size.iconSize)
-                        .foregroundColor(pointColor())
-                }
-                if let text {
-                    Text(text)
-                        .font(size.font)
-                }
-                if let rightIcon {
-                    rightIcon
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: size.iconSize, height: size.iconSize)
-                        .foregroundColor(pointColor())
-                }
+        HStack(spacing: 4) {
+            if let leftIcon {
+                leftIcon
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: size.iconSize, height: size.iconSize)
+                    .foregroundColor(pointColor())
             }
-            .padding(.vertical, size.padding)
-            .padding(.horizontal, size.padding)
-            .frame(height: size.height)
-            .foregroundColor(pointColor())
-        }.disabled(isDisabled)
+            if let text {
+                Text(text)
+                    .font(size.font)
+            }
+            if let rightIcon {
+                rightIcon
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: size.iconSize, height: size.iconSize)
+                    .foregroundColor(pointColor())
+            }
+        }
+        .padding(.vertical, size.padding)
+        .padding(.horizontal, size.padding)
+        .frame(height: size.height)
+        .foregroundColor(pointColor())
+        .disabled(isDisabled)
     }
 }
 
