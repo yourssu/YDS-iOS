@@ -4,19 +4,20 @@
 //
 //  Created by 신종원 on 2023/10/24.
 //
+// swiftlint:disable multiple_closures_with_trailing_closure
+// swiftlint:disable line_length
 
 import SwiftUI
 import YDS_SwiftUI
 import YDS
 
-
 public struct TopBarSampleView: View {
     @State var title: String? = "커뮤니티"
     @State var isLeftButtonSelected: Bool = false
     @State var isRightButtonSelected: Bool = false
-    
+
     @Environment(\.dismiss) var dismiss
-    
+
     public var body: some View {
         NavigationStack {
             VStack {
@@ -33,13 +34,12 @@ public struct TopBarSampleView: View {
     }
 }
 
-
 public struct TopBarSingleTitleSampleView: View {
     @State var title: String? = "커뮤니티"
     @State var buttonTitle: String? = "button clicked"
     @State private var isShowing: Bool = false
     @Binding var isPresenting: Bool
-    
+
     public var body: some View {
         NavigationStack {
             VStack {
@@ -65,9 +65,8 @@ public struct TopBarDoubleTitleSampleView: View {
     @State var buttonTitle: String? = "button clicked"
     @State private var isShowing: Bool = false
     @Binding var isPresenting: Bool
-    
     @Environment(\.dismiss) var dismiss
-    
+
     public var body: some View {
         NavigationStack {
             Text("")
@@ -84,3 +83,5 @@ public struct TopBarDoubleTitleSampleView: View {
         .ydsToast($buttonTitle, isShowing: $isShowing)
     }
 }
+// swiftlint:enable multiple_closures_with_trailing_closure
+// swiftlint:enable line_length

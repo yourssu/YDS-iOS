@@ -8,24 +8,20 @@
 import SwiftUI
 import YDS_SwiftUI
 
-public enum modalPresentationStyle{
-    case fullScreen
-    case automatic
-}
-
 struct SingleTitleTopBarView: View {
     let navigationTitle: String = "SingleTitleTopBar"
-    
+
     @State private var title: String? = "커뮤니티"
     @State private var isPresenting = false
     @State private var modalPresentationStyleSelectedIndex = 0
-    
+
     public var body: some View {
         StorybookPageView(sample: {
             EmptyView()
         }, options: [
             Option.optionalString(description: "title", text: $title),
-            Option.enum(description: "modalpresentationStyle", cases: [modalPresentationStyle.fullScreen, modalPresentationStyle.automatic], selectedIndex: $modalPresentationStyleSelectedIndex)
+            // swiftlint:disable:next line_length
+            Option.enum(description: "modalpresentationStyle", cases: [ModalPresentationStyle.fullScreen, ModalPresentationStyle.automatic], selectedIndex: $modalPresentationStyleSelectedIndex)
         ])
         .navigationTitle(navigationTitle)
         .overlay(alignment: .bottom) {

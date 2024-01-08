@@ -4,6 +4,7 @@
 //
 //  Created by 신종원 on 11/28/23.
 //
+//  swiftlint:disable identifier_name
 
 import SwiftUI
 import YDS_Essential
@@ -14,7 +15,7 @@ public struct YDSTopBarButton: View {
     let rightIcon: Image?
     let size: PlainButtonSize
     let isDisabled: Bool
-    
+
     fileprivate func pointColor() -> Color? {
         if isDisabled {
             return YDSColor.buttonDisabled
@@ -22,7 +23,7 @@ public struct YDSTopBarButton: View {
             return YDSColor.buttonNormal
         }
     }
-    
+
     public enum PlainButtonSize {
         case large
 
@@ -54,12 +55,12 @@ public struct YDSTopBarButton: View {
             }
         }
     }
-    
+
     public enum BoxButtonRounding: CGFloat {
         case r8 = 8
         case r4 = 4
     }
-    
+
     public init(
         text: String? = nil,
         leftIcon: Image? = nil,
@@ -73,7 +74,7 @@ public struct YDSTopBarButton: View {
         self.size = size
         self.isDisabled = isDisabled
     }
-    
+
     public var body: some View {
         Button {
         } label: {
@@ -105,3 +106,4 @@ public struct YDSTopBarButton: View {
         }.disabled(isDisabled)
     }
 }
+//  swiftlint:enable identifier_name

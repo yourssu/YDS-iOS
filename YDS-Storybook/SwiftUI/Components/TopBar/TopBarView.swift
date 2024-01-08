@@ -8,13 +8,18 @@
 import SwiftUI
 import YDS_SwiftUI
 
+public enum ModalPresentationStyle {
+    case fullScreen
+    case automatic
+}
+
 public struct TopBarView: View {
     let navigationTitle: String = "Topbar"
-    
+
     @State var title: String? = "Topbar"
     @State private var isPresenting = false
     @State var modalPresentationStyleSelectedIndex = 0
-    
+
     public var body: some View {
         StorybookPageView(
             sample: {
@@ -26,7 +31,7 @@ public struct TopBarView: View {
             ),
             Option.enum(
                 description: "modalPresentationStyle",
-                cases: [modalPresentationStyle.fullScreen, modalPresentationStyle.automatic],
+                cases: [ModalPresentationStyle.fullScreen, ModalPresentationStyle.automatic],
                 selectedIndex: $modalPresentationStyleSelectedIndex
             )]
         )
