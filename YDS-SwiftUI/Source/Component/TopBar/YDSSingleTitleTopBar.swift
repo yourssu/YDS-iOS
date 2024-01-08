@@ -10,15 +10,14 @@ import SwiftUI
 struct YDSSingleTitleTopBarModifier: ViewModifier {
     @Binding public var topBar: YDSSingleTitleTopBar
     @Binding public var isShowing: Bool
-    
+
     public func body(content: Content) -> some View {
         content
             .toolbar {
-                ToolbarItem(placement: 
+                ToolbarItem(placement:
                         .topBarLeading) {
                             SingleTitleBar(topBar.title)
                 }
-                
                 ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
@@ -27,7 +26,6 @@ struct YDSSingleTitleTopBarModifier: ViewModifier {
                                 YDSIcon.searchLine
                             })
                 }
-                
                 ToolbarItem(placement:
                         .topBarTrailing) {
                             Button(action: {
@@ -46,12 +44,12 @@ public struct YDSSingleTitleTopBar: Equatable {
 
 struct SingleTitleBar: View {
     let title: String
-    
+
     public init(_ title: String) {
         self.title = title
     }
-    
-    public var body : some View {
+
+    public var body: some View {
         Text(title)
             .font(YDSFont.title2)
     }
@@ -70,4 +68,3 @@ extension View {
       )
   }
 }
-

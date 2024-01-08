@@ -11,29 +11,28 @@ struct YDSTopBarModifier: ViewModifier {
     @Binding var isLeftButtonSelected: Bool
     @Binding var isRightButtonSelected: Bool
     @Binding public var topBar: YDSTopBar
-    
+
     public func body(content: Content) -> some View {
         content
             .toolbar {
                 ToolbarItem(placement:
-                        .topBarLeading){
+                        .topBarLeading) {
                             Button(action: {isLeftButtonSelected.toggle()}, label: {
                                 isLeftButtonSelected ? YDSIcon.starFilled : YDSIcon.starLine
                             })
                 }
-                ToolbarItem(placement: .principal){
+                ToolbarItem(placement: .principal) {
                     Text(topBar.title)
                         .font(YDSFont.subtitle2)
                 }
                 ToolbarItem(placement:
-                        .topBarTrailing){
+                        .topBarTrailing) {
                             Text(isRightButtonSelected ? "완료" : "편집")
                                 .onTapGesture {
                                     isRightButtonSelected.toggle()
                                 }
                         }
             }
-        
     }
 }
 
@@ -42,10 +41,11 @@ public struct YDSTopBar: Equatable {
 }
 
 extension View {
+    // swiftlint:disable line_length
     public func ydsTopBar(_ title: Binding<String?>, isLeftButtonSelected: Binding<Bool>, isRightButtonSelected: Binding<Bool>) -> some View {
         self.modifier(
             YDSTopBarModifier(
-                isLeftButtonSelected: isLeftButtonSelected, isRightButtonSelected: isRightButtonSelected,topBar: .init(get: {
+                isLeftButtonSelected: isLeftButtonSelected, isRightButtonSelected: isRightButtonSelected, topBar: .init(get: {
                     YDSTopBar(title: title.wrappedValue ?? "")
                 }, set: { ydsTopBar in
                     title.wrappedValue = ydsTopBar.title
@@ -53,4 +53,5 @@ extension View {
             )
         )
     }
+    // swiftlint:enable line_length
 }
