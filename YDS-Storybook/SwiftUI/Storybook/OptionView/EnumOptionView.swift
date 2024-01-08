@@ -15,7 +15,7 @@ struct EnumOptionView: View {
             static let textSpacing: CGFloat = 4
         }
     }
-    
+
     @Binding private var selectedIndex: Int
     
     private let description: String?

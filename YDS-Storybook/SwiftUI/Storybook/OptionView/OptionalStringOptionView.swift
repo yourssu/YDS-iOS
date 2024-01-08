@@ -14,28 +14,28 @@ struct OptionalStringOptionView: View {
             static let vstack: CGFloat = 8
             static let textSpacing: CGFloat = 4
         }
-        
+
         enum Padding {
             static let button: CGFloat = 16
         }
-        
+
         enum Rectangle {
             static let cornerRadius: CGFloat = 8
         }
     }
-    
+
     @Binding private var text: String?
-    
+
     private let description: String?
-    
+
     @State private var placeholder: String
-    
+
     init(description: String?, text: Binding<String?>) {
         self.description = description
         self._text = text
         self.placeholder = text.wrappedValue ?? ""
     }
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
             HStack {

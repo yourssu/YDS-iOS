@@ -16,11 +16,11 @@ struct BoolOptionView: View {
             static let textSpacing: CGFloat = 4
         }
     }
-    
+
     @Binding private var isOn: Bool
-    
+
     private let description: String?
-    
+
     init(description: String?, isOn: Binding<Bool>) {
         self.description = description
         self._isOn = isOn

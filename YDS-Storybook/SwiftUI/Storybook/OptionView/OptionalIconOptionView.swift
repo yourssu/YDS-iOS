@@ -14,18 +14,18 @@ struct OptionalIconOptionView: View {
             static let vstack: CGFloat = 8
             static let textSpacing: CGFloat = 4
         }
-        
+
         enum Padding {
             static let button: CGFloat = 16
         }
-        
+
         enum Rectangle {
             static let cornerRadius: CGFloat = 8
         }
     }
-    
+
     @Binding private var selectedIcon: SwiftUIIcon?
-    
+
     private let description: String?
     private let icons: [SwiftUIIcon]
 

@@ -10,9 +10,9 @@ import YDS_SwiftUI
 
 struct ShowPickerButton: View {
     @Binding private var selectedIndex: Int
-    
+
     private let cases: [String]
-    
+
     @State private var isShowBottomSheet = false
     
     init(cases: [String], selectedIndex: Binding<Int>) {

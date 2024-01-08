@@ -14,20 +14,20 @@ struct IntOptionView: View {
             static let vstack: CGFloat = 8
             static let textSpacing: CGFloat = 4
         }
-        
+
         enum Padding {
             static let textField: CGFloat = 16
         }
-        
+
         enum Rectangle {
             static let cornerRadius: CGFloat = 8
         }
     }
-    
+
     @Binding private var value: Int
-    
+
     private let description: String?
-    
+
     init(description: String?, value: Binding<Int>) {
         self.description = description
         self._value = value

@@ -16,18 +16,14 @@ struct ChipPageView: View {
     
     public var body: some View {
         StorybookPageView(sample: {
-            VStack {
-                GeometryReader { geometry in
-                    YDSChip(
-                        text: text,
-                        isSelected: isSelected)
-                    .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
-                    .background(
-                        Rectangle()
-                            .fill(.white)
-                    )
-                }
-            }
+            YDSChip(
+                text: text,
+                isSelected: isSelected)
+            .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
+            .background(
+                Rectangle()
+                    .fill(.white)
+            )
         }, options: [
             Option.optionalString(
                 description: "text",
