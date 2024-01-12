@@ -16,7 +16,6 @@ struct TextViewPageView: View {
     @State var placeholderText: String? = "댓글을 입력해주세요."
     @State var placeholderTextColorSelectedIndex: Int = 2
     @State var multilineTextAlignmentSelectedIndex: Int = 0
-    @State var textViewTextIsEmpty: Bool = true
 
     var selectedTextColor: Color {
         return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color ?? YDSColor.textPrimary
@@ -32,50 +31,40 @@ struct TextViewPageView: View {
 
     public var body: some View {
         StorybookPageView(sample: {
-            GeometryReader { geometry in
-                VStack {
+            VStack {
+                Spacer()
+                HStack {
+                    YDSProfileImageView(image: Image("profileImageSample1"),
+                                        size: .medium)
                     Spacer()
-                    HStack {
-                        YDSProfileImageView(image: Image("profileImageSample1"),
-                                            size: .medium)
-                        Spacer()
-                        YDSTextView(
-                            text: $text,
-                            textColor: selectedTextColor,
-                            placeholderText: placeholderText,
-                            placeholderTextColor: selectedPlaceholderTextColor,
-                            style: .body1,
-                            multilineTextAlignment: selectedMultilineTextAlignment,
-                            minHeight: 35,
-                            maxHeight: 150)
-                        .clipped()
-                        Spacer()
-                        YDSPlainButton(rightIcon: YDSIcon.penFilled,
-                                       size: .medium)
-                    }
-                    .padding(.horizontal, 15)
-                    .padding(.bottom, 15)
-                    Text("TextView.text.isEmpty")
-                        .font(YDSFont.subtitle2)
-                        .foregroundColor(YDSColor.textPrimary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 25)
-                    if ( text.isEmpty ) {
-                        Text("true")
-                            .font(YDSFont.body2)
-                            .foregroundColor(YDSColor.textSecondary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 25)
-                    } else {
-                        Text("false")
-                            .font(YDSFont.body2)
-                            .foregroundColor(YDSColor.textSecondary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 25)
-                    }
+                    YDSTextView(
+                        text: $text,
+                        textColor: selectedTextColor,
+                        placeholderText: placeholderText,
+                        placeholderTextColor: selectedPlaceholderTextColor,
+                        typoStyle: .body1,
+                        multilineTextAlignment: selectedMultilineTextAlignment,
+                        maxHeight: 150
+                    )
+                    .clipped()
+                    Spacer()
+                    YDSPlainButton(rightIcon: YDSIcon.penFilled,
+                                   size: .medium)
                 }
-                .padding(.bottom, 10)
+                .padding(.horizontal, 15)
+                .padding(.bottom, 15)
+                Text("TextView.text.isEmpty")
+                    .font(YDSFont.subtitle2)
+                    .foregroundColor(YDSColor.textPrimary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 25)
+                Text(text.isEmpty ? "true" : "false")
+                    .font(YDSFont.body2)
+                    .foregroundColor(YDSColor.textSecondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 25)
             }
+            .padding(.bottom, 10)
             .background(YDSColor.inputFieldElevated)
         }, options: [
             Option.enum(
@@ -99,13 +88,4 @@ struct TextViewPageView: View {
 
 #Preview {
     TextViewPageView()
-}
-
-extension String.SwiftUITypoStyle {
-    public static var allCases: [String.SwiftUITypoStyle] = [.display1, .display2,
-                                                             .title1, .title2, .title3,
-                                                             .subtitle1, .subtitle2, .subtitle3,
-                                                             .body1, .body2,
-                                                             .button0, .button1, .button2, .button3, .button4,
-                                                             .caption0, .caption1, .caption2]
 }
