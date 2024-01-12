@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct YDSTextView: View {
     @Binding var text: String
-    @State var size = CGSize(width: 0.0, height: 0.0)
+//    @State var size = CGSize(width: 0.0, height: 0.0)
 
     let textColor: Color
     let placeholderText: String?
