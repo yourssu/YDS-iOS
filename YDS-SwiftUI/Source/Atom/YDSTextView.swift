@@ -14,44 +14,41 @@ public struct YDSTextView: View {
     let textColor: Color
     let placeholderText: String?
     let placeholderTextColor: Color
-    let style: String.SwiftUITypoStyle
+    let typoStyle: String.SwiftUITypoStyle
     let multilineTextAlignment: TextAlignment
-    let minHeight: CGFloat
     let maxHeight: CGFloat?
 
     public init(text: Binding<String>,
                 textColor: Color = YDSColor.textPrimary,
-                placeholderText: String? = "댓글을 입력해주세요.",
+                placeholderText: String? = nil,
                 placeholderTextColor: Color = YDSColor.textTertiary,
-                style: String.SwiftUITypoStyle,
+                typoStyle: String.SwiftUITypoStyle = .body1,
                 multilineTextAlignment: TextAlignment = .leading,
-                minHeight: CGFloat,
-                maxHeight: CGFloat? = nil) {
+                maxHeight: CGFloat? = nil
+                ) {
         self._text = text
         self.textColor = textColor
         self.placeholderText = placeholderText
         self.placeholderTextColor = placeholderTextColor
-        self.style = style
+        self.typoStyle = typoStyle
         self.multilineTextAlignment = multilineTextAlignment
-        self.minHeight = minHeight
         self.maxHeight = maxHeight
     }
 
     public var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack(alignment: .leading) {
             TextEditor(text: $text)
                 .foregroundColor(textColor)
-                .font(style.font)
+                .font(typoStyle.font)
                 .multilineTextAlignment(multilineTextAlignment)
-                .frame(minHeight: minHeight, maxHeight: maxHeight)
+                .frame(minHeight: 35, maxHeight: maxHeight)
                 .fixedSize(horizontal: false, vertical: true)
 
             if text.isEmpty {
                 Text(placeholderText ?? "")
                     .foregroundColor(placeholderTextColor)
-                    .font(style.font)
+                    .font(typoStyle.font)
                     .allowsHitTesting(false)
-                    .padding(.top, 7)
                     .padding(.leading, 5)
             }
         }
