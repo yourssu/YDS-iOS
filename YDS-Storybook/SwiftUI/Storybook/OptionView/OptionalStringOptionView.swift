@@ -27,7 +27,8 @@ struct OptionalStringOptionView: View {
     @Binding private var text: String?
     
     private let description: String?
-    
+
+    @State private var isToggleOn = true
     @State private var placeholder: String
     
     init(description: String?, text: Binding<String?>) {
@@ -54,6 +55,7 @@ struct OptionalStringOptionView: View {
                     },
                     set: { isOn in
                         isOn ? (text = placeholder) : (text = nil)
+                        self.isToggleOn = isOn
                     }
                 ))
                 .labelsHidden()
@@ -72,6 +74,7 @@ struct OptionalStringOptionView: View {
             .font(YDSFont.body1)
             .tint(YDSColor.textPointed)
             .padding(Dimension.Padding.button)
+            .foregroundColor(isToggleOn ? YDSColor.bgNormalDark : YDSColor.bgDimDark)
             .background(
                 RoundedRectangle(cornerRadius: Dimension.Rectangle.cornerRadius)
                     .fill(YDSColor.inputFieldElevated)
