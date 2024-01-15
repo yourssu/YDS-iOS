@@ -86,7 +86,7 @@ struct StorybookPageView_Previews: PreviewProvider {
 
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
-        @State var numberOfLines = 1
+        @State var lineLimit: Int? = 1
         @State var selectedBoxButtonType = 0
         @State var icon: SwiftUIIcon?
 
@@ -98,14 +98,14 @@ struct StorybookPageView_Previews: PreviewProvider {
                             icon
                         }
                         Text(text ?? "")
-                            .lineLimit(numberOfLines)
+                            .lineLimit(lineLimit)
                     }
                 }
                 .disabled(isDisabled)
             },
             options: [
                 Option.bool(description: "isDisabled", isOn: $isDisabled),
-                Option.int(description: "numberOfLines", value: $numberOfLines),
+                Option.optionalInt(description: "lineLimit", value: $lineLimit),
                 Option.enum(
                     description: "buttonType",
                     cases: BoxButtonType.allCases,

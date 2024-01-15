@@ -129,6 +129,7 @@
 		954C48392B036D5D002F9FAC /* BottomBarControllerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C48382B036D5D002F9FAC /* BottomBarControllerPageView.swift */; };
 		956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */; };
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
+		95CC861E2B55A81F0088E44E /* OptionalIntOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC861D2B55A81F0088E44E /* OptionalIntOptionView.swift */; };
 		95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C62AB482E200FA2492 /* LabelPageView.swift */; };
 		AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */; };
 		AF23ED812AEE9BF600F3D5E2 /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23ED802AEE9BF600F3D5E2 /* YDSSimpleTextField.swift */; };
@@ -150,7 +151,6 @@
 		B9E4E8C82A90BDB90076473C /* StorybookPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */; };
 		B9E4E8CE2A90BF500076473C /* BoolOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */; };
 		B9E4E8D02A90BF7E0076473C /* EnumOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */; };
-		B9E4E8D22A90BF870076473C /* IntOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D12A90BF870076473C /* IntOptionView.swift */; };
 		B9E4E8D42A90BFA10076473C /* OptionalStringOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */; };
 		B9E4E8D62A90BFB60076473C /* OptionalIconOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */; };
 		B9E4E8E22A93B1AF0076473C /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4E8E12A93B1AF0076473C /* Option.swift */; };
@@ -367,6 +367,7 @@
 		954C48382B036D5D002F9FAC /* BottomBarControllerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarControllerPageView.swift; sourceTree = "<group>"; };
 		956C40162A949B640098BB8F /* SwiftUIYDSTypoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIYDSTypoArray.swift; sourceTree = "<group>"; };
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
+		95CC861D2B55A81F0088E44E /* OptionalIntOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalIntOptionView.swift; sourceTree = "<group>"; };
 		95E535C62AB482E200FA2492 /* LabelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPageView.swift; sourceTree = "<group>"; };
 		AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		AF23ED802AEE9BF600F3D5E2 /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
@@ -388,7 +389,6 @@
 		B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookPageView.swift; sourceTree = "<group>"; };
 		B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumOptionView.swift; sourceTree = "<group>"; };
-		B9E4E8D12A90BF870076473C /* IntOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalStringOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalIconOptionView.swift; sourceTree = "<group>"; };
 		B9E4E8E12A93B1AF0076473C /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -942,7 +942,7 @@
 				B9E4E8CA2A90BF180076473C /* Base */,
 				B9E4E8CD2A90BF500076473C /* BoolOptionView.swift */,
 				B9E4E8CF2A90BF7E0076473C /* EnumOptionView.swift */,
-				B9E4E8D12A90BF870076473C /* IntOptionView.swift */,
+				95CC861D2B55A81F0088E44E /* OptionalIntOptionView.swift */,
 				B9E4E8D32A90BFA10076473C /* OptionalStringOptionView.swift */,
 				B9E4E8D52A90BFB60076473C /* OptionalIconOptionView.swift */,
 				AF7528232AA5F637001174E7 /* OptionalImageOptionView.swift */,
@@ -1524,6 +1524,7 @@
 				533A27B926A5351E009FD90A /* PageListTableViewCell.swift in Sources */,
 				956C40172A949B640098BB8F /* SwiftUIYDSTypoArray.swift in Sources */,
 				539110B426C049BD0094FD08 /* SingleTitleTopBarPageViewController.swift in Sources */,
+				95CC861E2B55A81F0088E44E /* OptionalIntOptionView.swift in Sources */,
 				6FFDB97D2A7183F7003A9519 /* PickerControllerView.swift in Sources */,
 				5337939026AF0A0600BE5860 /* OptionalStringControllerView.swift in Sources */,
 				5337938E26AF09BF00BE5860 /* ControllerView.swift in Sources */,
@@ -1540,7 +1541,6 @@
 				533A27B326A52E56009FD90A /* PageListViewController.swift in Sources */,
 				532DBFD226EC7323008C2354 /* UITableView+Generic.swift in Sources */,
 				5359A5C526BED19900FCCECC /* DoubleTitleTopBarPageViewController.swift in Sources */,
-				B9E4E8D22A90BF870076473C /* IntOptionView.swift in Sources */,
 				538ACCB426EB40A60044A437 /* ColorsListTableViewController.swift in Sources */,
 				AF7528222AA5F0A1001174E7 /* ProfileImagePageView.swift in Sources */,
 				53441B0426AF287600CB6BC9 /* BoolControllerView.swift in Sources */,
