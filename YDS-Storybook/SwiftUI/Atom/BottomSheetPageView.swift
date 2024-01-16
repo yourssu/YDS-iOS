@@ -32,15 +32,18 @@ struct BottomSheetPageView: View {
     @State var isPresentBottomSheet = false
 
     private var teams: [String] {
-        allTeams[0..<selectedIndex].map { $0.rawValue }
+        switch selectedIndex {
+        case 0...allTeams.count:
+            return allTeams[0..<selectedIndex].map { $0.rawValue }
+        default:
+            return []
+        }
     }
 
     var body: some View {
             StorybookPageView(
                 sample: {
-                    Rectangle()
-                        .fill(Color.clear)
-                        .frame(height: YDSScreenSize.width * 3/4 - 32)
+                    EmptyView()
                 },
                 options: [
                     Option.enum(
