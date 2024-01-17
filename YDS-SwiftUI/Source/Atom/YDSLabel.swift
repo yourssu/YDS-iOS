@@ -14,7 +14,7 @@ extension Text.TruncationMode {
 
 public struct YDSLabel: View {
     let text: String?
-    let style: Font
+    let font: Font
     let lineLimit: Int?
     let textColor: Color
     let alignment: TextAlignment
@@ -22,7 +22,7 @@ public struct YDSLabel: View {
     let allowsTightening: Bool
 
     public init(text: String? = "Label",
-                style: Font = YDSFont.display1,
+                font: Font = YDSFont.display1,
                 lineLimit: Int? = nil,
                 textColor: Color = YDSColor.textPrimary,
                 alignment: TextAlignment = .center,
@@ -30,7 +30,7 @@ public struct YDSLabel: View {
                 allowsTightening: Bool = false
     ) {
         self.text = text
-        self.style = style
+        self.font = font
         self.lineLimit = lineLimit
         self.textColor = textColor
         self.alignment = alignment
@@ -41,7 +41,7 @@ public struct YDSLabel: View {
     public var body: some View {
         if let text = text {
             Text(text)
-                .font(style)
+                .font(font)
                 .lineLimit(lineLimit)
                 .foregroundColor(textColor)
                 .multilineTextAlignment(alignment)

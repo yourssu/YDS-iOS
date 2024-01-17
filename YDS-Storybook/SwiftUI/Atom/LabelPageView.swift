@@ -13,7 +13,7 @@ import YDS_SwiftUI
 
     @State var text: String? = "Label"
     @State var typoStyleSelectedIndex = 0
-    @State var lineLimit: Int? = nil
+    @State var lineLimit: Int?
     @State var textColorSelectedIndex: Int = 0
     @State var alignmentSelectedIndex: Int = 1
     @State var truncationModeSelectedIndex: Int = 2
@@ -38,7 +38,7 @@ import YDS_SwiftUI
             VStack {
                 YDSLabel(
                     text: text,
-                    style: selectedTypoStyle,
+                    font: selectedTypoStyle,
                     lineLimit: lineLimit,
                     textColor: selectedColor,
                     alignment: selectedAlignment,
