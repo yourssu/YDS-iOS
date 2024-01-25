@@ -146,6 +146,8 @@ public struct YDSBoxButton: View {
         case r4 = 4
     }
 
+    let action: () -> Void
+
     public init(text: String? = nil,
                 leftIcon: Image? = nil,
                 rightIcon: Image? = nil,
@@ -153,7 +155,8 @@ public struct YDSBoxButton: View {
                 size: BoxButtonSize = .small,
                 rounding: BoxButtonRounding = .r4,
                 isDisabled: Bool = false,
-                isWarned: Bool = false
+                isWarned: Bool = false,
+                action: @escaping () -> Void
     ) {
         self.text = text
         self.leftIcon = leftIcon
@@ -163,47 +166,51 @@ public struct YDSBoxButton: View {
         self.rounding = rounding
         self.isDisabled = isDisabled
         self.isWarned = isWarned
+        self.action = action
     }
 
     public var body: some View {
-        HStack(spacing: 4) {
-            if let leftIcon {
-                leftIcon
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: size.iconSize, height: size.iconSize)
-                    .foregroundColor(pointColor(for: type))
+        Button(action: action) {
+            HStack(spacing: 4) {
+                if let leftIcon {
+                    leftIcon
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: size.iconSize, height: size.iconSize)
+                        .foregroundColor(pointColor(for: type))
+                }
+                if let text {
+                    Text(text)
+                        .font(size.font)
+                }
+                if let rightIcon {
+                    rightIcon
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: size.iconSize, height: size.iconSize)
+                        .foregroundColor(pointColor(for: type))
+                }
             }
-            if let text {
-                Text(text)
-                    .font(size.font)
-            }
-            if let rightIcon {
-                rightIcon
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: size.iconSize, height: size.iconSize)
-                    .foregroundColor(pointColor(for: type))
-            }
-        }
-        .padding(.vertical, size.padding)
-        .padding(.horizontal, size.padding)
-        .frame(height: size.height)
-        .foregroundColor(pointColor(for: type))
-        .background(backgroundColor(for: type))
-        .disabled(isDisabled)
-        .cornerRadius(rounding.rawValue)
-        .overlay(
-            RoundedRectangle(cornerRadius: rounding.rawValue)
-                .stroke(borderColor(for: type) ?? Color.clear)
-        )
+            .padding(.vertical, size.padding)
+            .padding(.horizontal, size.padding)
+            .frame(height: size.height)
+            .foregroundColor(pointColor(for: type))
+            .background(backgroundColor(for: type))
+            .cornerRadius(rounding.rawValue)
+            .overlay(
+                RoundedRectangle(cornerRadius: rounding.rawValue)
+                    .stroke(borderColor(for: type) ?? Color.clear)
+            )
+        }.disabled(isDisabled)
     }
 }
 
 struct YDSBoxButton_Previews: PreviewProvider {
     static var previews: some View {
-        YDSBoxButton()
+        YDSBoxButton(action: {
+            print("YDSBoxButton tapped!")
+        })
     }
 }

@@ -24,23 +24,17 @@ struct PlainButtonPageView: View {
 
     public var body: some View {
         StorybookPageView(sample: {
-            Button(action: {
-                print("YDSPlainButton Click!!")
-            }, label: {
-                YDSPlainButton(
-                    text: text,
-                    leftIcon: leftIcon?.icon,
-                    rightIcon: rightIcon?.icon,
-                    size: YDSPlainButton.PlainButtonSize.allCases[sizeSelectedIndex],
-                    isDisabled: isDisabled,
-                    isWarned: isWarned,
-                    isPointed: isPointed
-                )
-            })
-            .disabled(isDisabled)
-            .frame(height: YDSScreenSize.width * 3/4 - 32)
-            .padding(16)
-            .clipped()
+            YDSPlainButton(
+                text: text,
+                leftIcon: leftIcon?.icon,
+                rightIcon: rightIcon?.icon,
+                size: YDSPlainButton.PlainButtonSize.allCases[sizeSelectedIndex],
+                isDisabled: isDisabled,
+                isWarned: isWarned,
+                isPointed: isPointed,
+                action: {
+                    print("This is YDSPlainButton.")
+                })
         }, options: [
             Option.optionalString(
                 description: "text",
