@@ -66,7 +66,7 @@ struct BottomSheetPageView: View {
                 content: {
                     VStack(alignment: .leading) {
                         ForEach(teams, id: \.self) { team in
-                            YDSLabel(text: team, typoStyle: .title1)
+                            YDSLabel(text: team, font: String.SwiftUITypoStyle.title1.font)
                         }
                     }
                     .frame(maxWidth: .infinity)

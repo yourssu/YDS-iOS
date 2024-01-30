@@ -104,7 +104,7 @@ extension String {
             }
         }
 
-        public static var allCases: [String.TypoStyle] = [.display1, .display2,
+        public static var allCases: [SwiftUITypoStyle] = [.display1, .display2,
                                                           .title1, .title2, .title3,
                                                           .subtitle1, .subtitle2, .subtitle3,
                                                           .body1, .body2,

@@ -20,7 +20,7 @@ import YDS_SwiftUI
     @State var isAllowsTightening: Bool = false
 
     var selectedTypoStyle: Font {
-        return Font(String.TypoStyle.allCases[typoStyleSelectedIndex].font)
+        return String.SwiftUITypoStyle.allCases[typoStyleSelectedIndex].font
     }
     var selectedColor: Color {
         return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color
@@ -52,7 +52,7 @@ import YDS_SwiftUI
                 text: $text),
             Option.enum(
                 description: "style",
-                cases: String.TypoStyle.allCases,
+                cases: String.SwiftUITypoStyle.allCases,
                 selectedIndex: $typoStyleSelectedIndex),
             Option.optionalInt(
                 description: "lineLimit",
