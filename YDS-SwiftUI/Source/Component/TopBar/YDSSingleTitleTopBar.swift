@@ -57,14 +57,8 @@ struct SingleTitleBar: View {
 
 extension View {
     public func ydsSingleTitleTopBar(_ title: Binding<String?>, isShowing: Binding<Bool>) -> some View {
-      modifier(
-        YDSSingleTitleTopBarModifier( topBar: .init(get: {
-            YDSSingleTitleTopBar(
-                title: title.wrappedValue ?? "")
-        }, set: { ydsTopBar in
-            title.wrappedValue = ydsTopBar.title
-        }), isShowing: isShowing
-        )
-      )
-  }
+            let topBar = YDSSingleTitleTopBar(title: title.wrappedValue ?? "")
+            let modifier = YDSSingleTitleTopBarModifier(topBar: .constant(topBar), isShowing: isShowing)
+            return self.modifier(modifier)
+    }
 }

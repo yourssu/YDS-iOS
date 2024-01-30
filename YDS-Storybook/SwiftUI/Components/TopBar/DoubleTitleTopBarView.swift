@@ -13,16 +13,13 @@ struct DoubleTitleTopBarView: View {
     @State private var title: String? = "시간표(2안)"
     @State private var subtitle: String? = "2021년 2학기"
     @State private var isPresenting = false
-    @State private var modalPresentationStyleSelectedIndex = 0
 
     public var body: some View {
         StorybookPageView(sample: {
             EmptyView()
         }, options: [
             Option.optionalString(description: "title", text: $title),
-            Option.optionalString(description: "subtitle", text: $subtitle),
-            // swiftlint:disable:next line_length
-            Option.enum(description: "modalpresentationStyle", cases: [ModalPresentationStyle.fullScreen, ModalPresentationStyle.automatic], selectedIndex: $modalPresentationStyleSelectedIndex)
+            Option.optionalString(description: "subtitle", text: $subtitle)
         ])
         .navigationTitle(navigationTitle)
         .overlay(alignment: .bottom) {
