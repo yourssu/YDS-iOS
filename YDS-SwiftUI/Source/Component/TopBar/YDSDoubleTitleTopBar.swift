@@ -66,21 +66,11 @@ struct DoubleTitleBar: View {
 }
 
 extension View {
-    public func ydsDoubleTitleTopBar(
-        title: Binding<String?>,
-        subtitle: Binding<String?>,
-        isShowing: Binding<Bool>) -> some View {
-            modifier(
-                YDSDoubleTitleTopBarModifier(
-                    topBar: .init(get: {
-                        YDSDoubleTitleTopBar(
-                            title: title.wrappedValue ?? "",
-                            subtitle: subtitle.wrappedValue ?? "")
-                    }, set: { ydsTopBar in
-                        title.wrappedValue = ydsTopBar.title
-                        subtitle.wrappedValue = ydsTopBar.subtitle
-                    }), isShowing: isShowing
-                )
-            )
-        }
+    // swiftlint:disable line_length
+    public func ydsDoubleTitleTopBar(title: Binding<String?>, subtitle: Binding<String?>, isShowing: Binding<Bool>) -> some View {
+        let topBar = YDSDoubleTitleTopBar(title: title.wrappedValue ?? "", subtitle: subtitle.wrappedValue ?? "")
+        let modifier = YDSDoubleTitleTopBarModifier(topBar: .constant(topBar), isShowing: isShowing)
+        return self.modifier(modifier)
+    }
+    // swiftlint:enable line_length
 }

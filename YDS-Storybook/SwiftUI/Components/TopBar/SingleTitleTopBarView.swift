@@ -13,15 +13,12 @@ struct SingleTitleTopBarView: View {
 
     @State private var title: String? = "커뮤니티"
     @State private var isPresenting = false
-    @State private var modalPresentationStyleSelectedIndex = 0
 
     public var body: some View {
         StorybookPageView(sample: {
             EmptyView()
         }, options: [
-            Option.optionalString(description: "title", text: $title),
-            // swiftlint:disable:next line_length
-            Option.enum(description: "modalpresentationStyle", cases: [ModalPresentationStyle.fullScreen, ModalPresentationStyle.automatic], selectedIndex: $modalPresentationStyleSelectedIndex)
+            Option.optionalString(description: "title", text: $title)
         ])
         .navigationTitle(navigationTitle)
         .overlay(alignment: .bottom) {
