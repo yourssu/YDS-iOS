@@ -43,15 +43,13 @@ public struct YDSTopBar: Equatable {
 extension View {
     // swiftlint:disable line_length
     public func ydsTopBar(_ title: Binding<String?>, isLeftButtonSelected: Binding<Bool>, isRightButtonSelected: Binding<Bool>) -> some View {
-        self.modifier(
-            YDSTopBarModifier(
-                isLeftButtonSelected: isLeftButtonSelected, isRightButtonSelected: isRightButtonSelected, topBar: .init(get: {
-                    YDSTopBar(title: title.wrappedValue ?? "")
-                }, set: { ydsTopBar in
-                    title.wrappedValue = ydsTopBar.title
-                })
-            )
+        let topBar = YDSTopBar(title: title.wrappedValue ?? "")
+        let modifier = YDSTopBarModifier(
+            isLeftButtonSelected: isLeftButtonSelected,
+            isRightButtonSelected: isRightButtonSelected,
+            topBar: .constant(topBar)
         )
+        return self.modifier(modifier)
     }
     // swiftlint:enable line_length
 }
