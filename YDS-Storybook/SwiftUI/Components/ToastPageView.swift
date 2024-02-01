@@ -13,7 +13,7 @@ struct ToastPageView: View {
 
     @State var text: String? = "Toast"
     @State var durationIndex: Int = 0
-    @State var isShowing: Bool = false
+    @State var hapticIndex: Int = 0
 
     var body: some View {
         StorybookPageView(
@@ -26,21 +26,26 @@ struct ToastPageView: View {
                 ),
                 Option.enum(
                     description: "duration",
-                    cases: YDSToast.ToastDuration.allCases,
+                    cases: YDSToastModel.ToastDuration.allCases,
                     selectedIndex: $durationIndex
+                ),
+                Option.enum(
+                    description: "haptic",
+                    cases: YDSToastModel.HapticType.allCases,
+                    selectedIndex: $hapticIndex
                 )
             ]
         )
         .navigationTitle(title)
         .overlay(alignment: .bottom) {
             Button(action: { // 버튼은 추후 YDSButton 추가 이후에 수정 예정
-                isShowing = true
+                YDSToast(text ?? "", duration: .allCases[durationIndex], haptic: .allCases[hapticIndex])
             }, label: {
                 Text("토스트 생성!")
             })
             .padding()
         }
-        .ydsToast($text, isShowing: $isShowing)
+        .registerYDSToast()
     }
 }
 

@@ -24,10 +24,6 @@ struct EmojiButtonPageView: View {
                                    text: text,
                                    isSelected: $isSelected)
                     .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
-                    .background(
-                        Rectangle()
-                            .fill(.white)
-                    )
                 }
             }
 

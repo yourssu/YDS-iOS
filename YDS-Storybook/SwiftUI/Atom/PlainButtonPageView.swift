@@ -11,6 +11,8 @@ import YDS_SwiftUI
 struct PlainButtonPageView: View {
     let title: String = "PlainButtonView"
 
+    @State private var isPressed = false
+
     @State var text: String? = "재생"
     @State var int: Int = 0
     @State var leftIcon: SwiftUIIcon? = YDSSwiftUIIcon.icons[56]
@@ -29,11 +31,10 @@ struct PlainButtonPageView: View {
                 size: YDSPlainButton.PlainButtonSize.allCases[sizeSelectedIndex],
                 isDisabled: isDisabled,
                 isWarned: isWarned,
-                isPointed: isPointed
-            )
-            .frame(height: YDSScreenSize.width * 3/4 - 32)
-            .padding(16)
-            .clipped()
+                isPointed: isPointed,
+                action: {
+                    print("This is YDSPlainButton.")
+                })
         }, options: [
             Option.optionalString(
                 description: "text",
@@ -41,11 +42,11 @@ struct PlainButtonPageView: View {
             Option.optionalIcon(
                 description: "leftIcon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $leftIcon),
+                selectedIcon: $leftIcon, placeholderIndex: 56),
             Option.optionalIcon(
                 description: "rightIcon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $rightIcon),
+                selectedIcon: $rightIcon, placeholderIndex: 56),
             Option.enum(
                 description: "size",
                 cases: YDSPlainButton.PlainButtonSize.allCases,

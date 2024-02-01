@@ -33,7 +33,7 @@ struct BadgePageView: View {
                     .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
                     .background(
                         Rectangle()
-                            .fill(.white) //뱃지의 색과 배경색이 같아 임의로 하얀색으로 조정했습니다.
+                            .fill(YDSColor.bgNormal)
                     )
                 }
             }
@@ -44,7 +44,7 @@ struct BadgePageView: View {
             Option.optionalIcon(
                 description: "icon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $icons),
+                selectedIcon: $icons, placeholderIndex: 0),
             Option.enum(
                 description: "color",
                 cases: YDSItemColor.allCases,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension String {
-    enum TypoStyle {
+    public enum SwiftUITypoStyle {
         case display1
         case display2
 
@@ -103,5 +103,12 @@ extension String {
                 return 1.3
             }
         }
+
+        public static var allCases: [SwiftUITypoStyle] = [.display1, .display2,
+                                                          .title1, .title2, .title3,
+                                                          .subtitle1, .subtitle2, .subtitle3,
+                                                          .body1, .body2,
+                                                          .button0, .button1, .button2, .button3, .button4,
+                                                          .caption0, .caption1, .caption2]
     }
 }

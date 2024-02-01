@@ -12,35 +12,39 @@ import YDS_SwiftUI
     let title: String = "Label"
 
     @State var text: String? = "Label"
-    @State var int: Int = 0
     @State var typoStyleSelectedIndex = 0
+    @State var lineLimit: Int?
     @State var textColorSelectedIndex: Int = 0
-    @State var lineBreakModeSelectedIndex: Int = 0
     @State var alignmentSelectedIndex: Int = 1
-    @State var lineBreakStrategySelectedIndex: Int = 2
+    @State var truncationModeSelectedIndex: Int = 2
+    @State var isAllowsTightening: Bool = false
 
-    var selectedColor: Color { return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color
-        ?? .black }
-    var selectedTypoStyle: Font { return Font(String.TypoStyle.allCases[typoStyleSelectedIndex].font) }
+    var selectedTypoStyle: Font {
+        return String.SwiftUITypoStyle.allCases[typoStyleSelectedIndex].font
+    }
+    var selectedColor: Color {
+        return YDSSwiftUIColorWrapper.textColors.items[textColorSelectedIndex].color
+        ?? .black
+    }
+    var selectedAlignment: TextAlignment {
+        return TextAlignment.allCases[alignmentSelectedIndex]
+    }
+    var selectedTruncationMode: Text.TruncationMode {
+        return Text.TruncationMode.allCases[truncationModeSelectedIndex]
+    }
 
     public var body: some View {
         StorybookPageView(sample: {
             VStack {
-                GeometryReader { geometry in
-                    YDSLabel(
-                        text: text ?? "",
-                        typoStyle: YDSLabel.TypoStyle.allCases[typoStyleSelectedIndex],
-                        textColor: selectedColor,
-                        maxWidth: geometry.size.width - 32,
-                        numberOfLines: int,
-                        lineBreakMode: NSLineBreakMode.allCases[lineBreakModeSelectedIndex],
-                        alignment: NSTextAlignment.allCases[alignmentSelectedIndex],
-                        lineBreakStrategy: NSParagraphStyle.LineBreakStrategy.allCases[lineBreakStrategySelectedIndex]
-                    )
-                    .frame(height: YDSScreenSize.width * 3/4 - 32)
-                    .padding(16)
-                    .clipped()
-                }
+                YDSLabel(
+                    text: text,
+                    font: selectedTypoStyle,
+                    lineLimit: lineLimit,
+                    textColor: selectedColor,
+                    alignment: selectedAlignment,
+                    truncationMode: selectedTruncationMode,
+                    allowsTightening: isAllowsTightening
+                )
             }
         }, options: [
             Option.optionalString(
@@ -48,32 +52,31 @@ import YDS_SwiftUI
                 text: $text),
             Option.enum(
                 description: "style",
-                cases: String.TypoStyle.allCases,
+                cases: String.SwiftUITypoStyle.allCases,
                 selectedIndex: $typoStyleSelectedIndex),
-            Option.int(description: "numberOfLines", value: $int),
+            Option.optionalInt(
+                description: "lineLimit",
+                value: $lineLimit),
             Option.enum(
                 description: "textColor",
                 cases: YDSSwiftUIColorWrapper.textColors.items,
                 selectedIndex: $textColorSelectedIndex),
             Option.enum(
-                description: "lineBreakMode",
-                cases: NSLineBreakMode.allCases,
-                selectedIndex: $lineBreakModeSelectedIndex),
-            Option.enum(
                 description: "alignment",
-                cases: NSTextAlignment.allCases,
+                cases: TextAlignment.allCases,
                 selectedIndex: $alignmentSelectedIndex),
             Option.enum(
-                description: "lineBreakStrategy",
-                cases: NSParagraphStyle.LineBreakStrategy.allCases,
-                selectedIndex: $lineBreakStrategySelectedIndex)
+                description: "truncationMode",
+                cases: Text.TruncationMode.allCases,
+                selectedIndex: $truncationModeSelectedIndex),
+            Option.bool(
+                description: "allowsTightening",
+                isOn: $isAllowsTightening)
         ])
         .navigationTitle(title)
     }
 }
 
-struct LabelPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        LabelPageView()
-    }
+#Preview {
+    LabelPageView()
 }
