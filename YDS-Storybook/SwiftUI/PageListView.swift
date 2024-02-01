@@ -53,7 +53,7 @@ struct PageListView: View {
         PageView(title: "ProfileImageView") {
             ProfileImagePageView()
         }
-        PageView(title: "ChipPageView") {
+        PageView(title: "Chip") {
             ChipPageView()
         }
     }
