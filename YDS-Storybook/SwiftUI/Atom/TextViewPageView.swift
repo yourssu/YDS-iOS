@@ -49,7 +49,7 @@ struct TextViewPageView: View {
                     .clipped()
                     Spacer()
                     YDSPlainButton(rightIcon: YDSIcon.penFilled,
-                                   size: .medium)
+                                   size: .medium){}
                 }
                 .padding(.horizontal, 15)
                 .padding(.bottom, 15)
