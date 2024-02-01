@@ -1,14 +1,14 @@
 //
-//  IntOptionView.swift
+//  OptionalIntOptionView.swift
 //  YDS-Storybook
 //
-//  Created by 정지혁 on 2023/08/19.
+//  Created by 박지윤 on 1/16/24.
 //
 
 import SwiftUI
 import YDS_SwiftUI
 
-struct IntOptionView: View {
+struct OptionalIntOptionView: View {
     private enum Dimension {
         enum Spacing {
             static let vstack: CGFloat = 8
@@ -23,12 +23,12 @@ struct IntOptionView: View {
             static let cornerRadius: CGFloat = 8
         }
     }
-
-    @Binding private var value: Int
-
+    
+    @Binding private var value: Int?
+    
     private let description: String?
-
-    init(description: String?, value: Binding<Int>) {
+    
+    init(description: String?, value: Binding<Int?>) {
         self.description = description
         self._value = value
     }
@@ -40,7 +40,7 @@ struct IntOptionView: View {
                     Text(description)
                         .font(YDSFont.subtitle2)
                 }
-                Text("Int")
+                Text("Optional<Int>")
                     .font(YDSFont.body2)
             }
             
@@ -56,8 +56,8 @@ struct IntOptionView: View {
     }
 }
 
-struct IntOptionView_Previews: PreviewProvider {
+struct OptionalIntOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        IntOptionView(description: "numberOfLines", value: .constant(1))
+        OptionalIntOptionView(description: "lineLimit", value: .constant(1))
     }
 }

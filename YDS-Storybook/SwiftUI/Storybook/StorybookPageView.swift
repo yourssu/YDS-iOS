@@ -9,23 +9,23 @@ import SwiftUI
 
 import YDS_SwiftUI
 
-struct OptionListItem: View {
-    private enum Dimension {
-        enum Spacing {
-            static let vstack: CGFloat = 16
-        }
-        
-        enum Padding {
-            static let vstack: CGFloat = 16
-        }
+private enum Dimension {
+    enum Spacing {
+        static let vstack: CGFloat = 16
     }
-    
+
+    enum Padding {
+        static let vstack: CGFloat = 16
+    }
+}
+
+struct OptionListItem: View {
     private let option: Option
-    
+
     init(option: Option) {
         self.option = option
     }
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: Dimension.Spacing.vstack) {
             option.body
@@ -37,14 +37,14 @@ struct OptionListItem: View {
 
 struct StorybookPageView<ViewType: View>: View {
     @ViewBuilder private var sample: () -> ViewType
-    
+
     private let options: [Option]
-    
+
     init(sample: @escaping () -> ViewType, options: [Option]) {
         self.sample = sample
         self.options = options
     }
-    
+
     var body: some View {
         VStack(spacing: 0) {
             sampleExpaned
@@ -61,10 +61,10 @@ private extension StorybookPageView {
             .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
             .background(
                 Rectangle()
-                    .fill(Color.white)
+                    .fill(YDSColor.monoItemBG)
             )
     }
-    
+
     var scrollableOptions: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
@@ -86,29 +86,33 @@ struct StorybookPageView_Previews: PreviewProvider {
 
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
-        @State var numberOfLines = 1
+        @State var lineLimit: Int? = 1
         @State var selectedBoxButtonType = 0
         @State var icon: SwiftUIIcon?
 
         return StorybookPageView(
             sample: {
-                Button(action: {}) {
+                Button {} label: {
                     HStack {
                         if let icon = icon?.icon {
                             icon
                         }
                         Text(text ?? "")
-                            .lineLimit(numberOfLines)
+                            .lineLimit(lineLimit)
                     }
                 }
                 .disabled(isDisabled)
             },
             options: [
                 Option.bool(description: "isDisabled", isOn: $isDisabled),
-                Option.int(description: "numberOfLines", value: $numberOfLines),
-                Option.enum(description: "buttonType", cases: BoxButtonType.allCases, selectedIndex: $selectedBoxButtonType),
+                Option.optionalInt(description: "lineLimit", value: $lineLimit),
+                Option.enum(
+                    description: "buttonType",
+                    cases: BoxButtonType.allCases,
+                    selectedIndex: $selectedBoxButtonType
+                ),
                 Option.optionalString(description: "text", text: $text),
-                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon)
+                Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon, placeholderIndex: 0)
             ]
         )
     }

@@ -146,6 +146,8 @@ public struct YDSBoxButton: View {
         case r4 = 4
     }
 
+    let action: () -> Void
+
     public init(text: String? = nil,
                 leftIcon: Image? = nil,
                 rightIcon: Image? = nil,
@@ -153,7 +155,8 @@ public struct YDSBoxButton: View {
                 size: BoxButtonSize = .small,
                 rounding: BoxButtonRounding = .r4,
                 isDisabled: Bool = false,
-                isWarned: Bool = false
+                isWarned: Bool = false,
+                action: @escaping () -> Void
     ) {
         self.text = text
         self.leftIcon = leftIcon
@@ -163,12 +166,11 @@ public struct YDSBoxButton: View {
         self.rounding = rounding
         self.isDisabled = isDisabled
         self.isWarned = isWarned
+        self.action = action
     }
 
     public var body: some View {
-        Button {
-
-        } label: {
+        Button(action: action) {
             HStack(spacing: 4) {
                 if let leftIcon {
                     leftIcon
@@ -207,6 +209,8 @@ public struct YDSBoxButton: View {
 
 struct YDSBoxButton_Previews: PreviewProvider {
     static var previews: some View {
-        YDSBoxButton()
+        YDSBoxButton(action: {
+            print("YDSBoxButton tapped!")
+        })
     }
 }

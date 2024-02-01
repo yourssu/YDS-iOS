@@ -53,8 +53,37 @@ struct PageListView: View {
         PageView(title: "ProfileImageView") {
             ProfileImagePageView()
         }
+        PageView(title: "EmojiButton") {
+            EmojiButtonPageView()
+        }
+        PageView(title: "BoxButton") {
+            BoxButtonPageView()
         PageView(title: "Chip") {
             ChipPageView()
+        }
+        PageView(title: "PlainButton") {
+            PlainButtonPageView()
+        }
+        PageView(title: "SimpleTextField") {
+            SimpleTextFieldPageView()
+        }
+        PageView(title: "SuffixTextFieldPageView") {
+            SuffixTextFieldPageView()
+        }
+        PageView(title: "SearchTextFieldPageView") {
+            SearchTextFieldPageView()
+        }
+        PageView(title: "PasswordTextFieldPageView") {
+            PasswordTextFieldPageView()
+		}
+        PageView(title: "BottomSheet") {
+            BottomSheetPageView()
+        }
+        PageView(title: "Badge") {
+            BadgePageView()
+        }
+        PageView(title: "TextView") {
+            TextViewPageView()
         }
     }
 
@@ -62,6 +91,12 @@ struct PageListView: View {
     var componentPages: some View {
         PageView(title: "Toast") {
             ToastPageView()
+        }
+        PageView(title: "BottomBarController") {
+            BottomBarControllerPageView()
+        }
+        PageView(title: "List") {
+            ListPageView()
         }
     }
 

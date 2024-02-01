@@ -93,7 +93,7 @@ struct YDSTextFieldBase<Leading: View, Trailing: View>: View {
                 YDSLabel(
                     text: fieldText,
                     textColor: fieldTextColor,
-                    alignment: NSTextAlignment.left
+                    alignment: .leading
                 )
             }
 
@@ -132,7 +132,7 @@ struct YDSTextFieldBase<Leading: View, Trailing: View>: View {
                 YDSLabel(
                     text: helperText,
                     textColor: helperTextColor,
-                    alignment: NSTextAlignment.left
+                    alignment: .leading
                 )
                 .padding(.horizontal, 8)
             }

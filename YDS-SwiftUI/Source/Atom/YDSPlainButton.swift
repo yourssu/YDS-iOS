@@ -17,7 +17,7 @@ public struct YDSPlainButton: View {
     let isDisabled: Bool
     let isWarned: Bool
     let isPointed: Bool
-
+    
     fileprivate func pointColor() -> Color? {
         if isDisabled {
             return YDSColor.buttonDisabled
@@ -29,12 +29,12 @@ public struct YDSPlainButton: View {
             return YDSColor.buttonNormal
         }
     }
-
+    
     public enum PlainButtonSize {
         case large
         case medium
         case small
-
+        
         fileprivate var height: CGFloat {
             switch self {
             case .large:
@@ -45,7 +45,7 @@ public struct YDSPlainButton: View {
                 return 32
             }
         }
-
+        
         fileprivate var padding: CGFloat {
             switch self {
             case .large:
@@ -56,42 +56,45 @@ public struct YDSPlainButton: View {
                 return 12
             }
         }
-
+        
         fileprivate var font: Font {
             switch self {
             case .large:
                 return YDSFont.button2
             case .medium:
-                return YDSFont.button2
+                return YDSFont.button3
             case .small:
                 return YDSFont.button4
             }
         }
-
+        
         fileprivate var iconSize: CGFloat {
             switch self {
             case .large:
                 return 24
             case .medium:
-                return 24
+                return 20
             case .small:
                 return 16
             }
         }
     }
-
+    
     public enum BoxButtonRounding: CGFloat {
         case r8 = 8
         case r4 = 4
     }
-
+    
+    let action: () -> Void
+    
     public init(text: String? = nil,
                 leftIcon: Image? = nil,
                 rightIcon: Image? = nil,
                 size: PlainButtonSize = .small,
                 isDisabled: Bool = false,
                 isWarned: Bool = false,
-                isPointed: Bool = false
+                isPointed: Bool = false,
+                action: @escaping () -> Void
     ) {
         self.text = text
         self.leftIcon = leftIcon
@@ -100,12 +103,11 @@ public struct YDSPlainButton: View {
         self.isDisabled = isDisabled
         self.isWarned = isWarned
         self.isPointed = isPointed
+        self.action = action
     }
-
+    
     public var body: some View {
-        Button {
-
-        } label: {
+        Button(action: action){
             HStack(spacing: 4) {
                 if let leftIcon {
                     leftIcon
@@ -138,6 +140,8 @@ public struct YDSPlainButton: View {
 
 struct YDSPlainButton_Previews: PreviewProvider {
     static var previews: some View {
-        YDSPlainButton()
+        YDSPlainButton(action: {
+            print("YDSPlainButton tapped!")
+        })
     }
 }

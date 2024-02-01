@@ -31,11 +31,10 @@ public struct BoxButtonPageView: View {
                 size: YDSBoxButton.BoxButtonSize.allCases[sizeSelectedIndex],
                 rounding: YDSBoxButton.BoxButtonRounding.allCases[roundingSelectedIndex],
                 isDisabled: isDisabled,
-                isWarned: isWarned
-            )
-            .frame(height: YDSScreenSize.width * 3/4 - 32)
-            .padding(16)
-            .clipped()
+                isWarned: isWarned,
+                action: {
+                    print("This is YDSBoxButton.")
+                })
         }, options: [
             Option.optionalString(
                 description: "text",
@@ -43,11 +42,11 @@ public struct BoxButtonPageView: View {
             Option.optionalIcon(
                 description: "leftIcon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $leftIcon),
+                selectedIcon: $leftIcon, placeholderIndex: 56),
             Option.optionalIcon(
                 description: "rightIcon",
                 icons: YDSSwiftUIIcon.icons,
-                selectedIcon: $rightIcon),
+                selectedIcon: $rightIcon, placeholderIndex: 56),
             Option.enum(
                 description: "type",
                 cases: YDSBoxButton.BoxButtonType.allCases,

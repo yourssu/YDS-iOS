@@ -32,11 +32,11 @@ struct OptionalIconOptionView: View {
     @State private var placeholderIndex: Int
     @State private var isPresentPicker = false
 
-    init(description: String?, icons: [SwiftUIIcon], selectedIcon: Binding<SwiftUIIcon?>) {
+    init(description: String?, icons: [SwiftUIIcon], selectedIcon: Binding<SwiftUIIcon?>, placeholderIndex: Int) {
         self.description = description
         self.icons = icons
         self._selectedIcon = selectedIcon
-        self.placeholderIndex = 0
+        self.placeholderIndex = placeholderIndex
     }
     
     var body: some View {
@@ -76,7 +76,7 @@ struct OptionalIconOptionView_Previews: PreviewProvider {
         OptionalIconOptionView(
             description: "icon",
             icons: YDSSwiftUIIcon.icons,
-            selectedIcon: .constant(YDSSwiftUIIcon.icons[0])
+            selectedIcon: .constant(YDSSwiftUIIcon.icons[0]), placeholderIndex: 0
         )
     }
 }
