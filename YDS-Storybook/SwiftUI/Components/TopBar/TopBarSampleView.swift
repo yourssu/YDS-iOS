@@ -55,7 +55,7 @@ public struct TopBarSingleTitleSampleView: View {
                 Text("닫기")
             }
         }
-        .ydsToast($buttonTitle, isShowing: $isShowing)
+        .registerYDSToast()
     }
 }
 
@@ -80,7 +80,7 @@ public struct TopBarDoubleTitleSampleView: View {
                 Text("닫기")
             }
         }
-        .ydsToast($buttonTitle, isShowing: $isShowing)
+        .registerYDSToast()
     }
 }
 // swiftlint:enable multiple_closures_with_trailing_closure
