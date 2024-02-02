@@ -166,7 +166,6 @@
 		C35F27302883F35B0061C1A0 /* SetNeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35F272F2883F35B0061C1A0 /* SetNeeds.swift */; };
 		C37563DC2AF09ADB00857405 /* YDSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DB2AF09ADB00857405 /* YDSChip.swift */; };
 		C37563DE2AF0A54100857405 /* ChipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563DD2AF0A54100857405 /* ChipPageViewController.swift */; };
-		C37563DA2AEFD9E400857405 /* YDSTopBarEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37563D92AEFD9E400857405 /* YDSTopBarEx.swift */; };
 		C37AC5A92AE67C57005E3593 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37AC5A82AE67C57005E3593 /* TopBarView.swift */; };
 		C37AC5AD2AE7A710005E3593 /* TopBarSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */; };
 		C37F356D27DE3475007DF859 /* YDSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37F356C27DE3475007DF859 /* YDSTextView.swift */; };
@@ -412,7 +411,6 @@
 		C35F272F2883F35B0061C1A0 /* SetNeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNeeds.swift; sourceTree = "<group>"; };
 		C37563DB2AF09ADB00857405 /* YDSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSChip.swift; sourceTree = "<group>"; };
 		C37563DD2AF0A54100857405 /* ChipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipPageViewController.swift; sourceTree = "<group>"; };
-		C37563D92AEFD9E400857405 /* YDSTopBarEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTopBarEx.swift; sourceTree = "<group>"; };
 		C37AC5A82AE67C57005E3593 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		C37AC5AC2AE7A710005E3593 /* TopBarSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarSampleView.swift; sourceTree = "<group>"; };
 		C37F356C27DE3475007DF859 /* YDSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSTextView.swift; sourceTree = "<group>"; };
@@ -758,7 +756,6 @@
 				AF7528202AA5F05B001174E7 /* Atom */,
 				6FA276362AF0E8DC00197C3C /* Components */,
 				954C482B2AFF6B0A002F9FAC /* Component */,
-				C37AC5A72AE67C26005E3593 /* Component */,
 				B9E4E8C62A90BC3C0076473C /* Storybook */,
 			);
 			path = SwiftUI;
@@ -904,8 +901,6 @@
 				954C482E2AFF6B92002F9FAC /* YDSBottomBarController.swift */,
 				80CC69212B0FB08700CDAFA7 /* YDSList.swift */,
 				80CC69232B0FB16F00CDAFA7 /* YDSListItem.swift */,
-				C37AC5AA2AE6E473005E3593 /* YDSTopBar.swift */,
-				C37563D92AEFD9E400857405 /* YDSTopBarEx.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
