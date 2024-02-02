@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct YDSDoubleTitleTopBar: ViewModifier {
-    @Binding public var topBar: DoubleTitleTopBar
+struct YDSDoubleTitleTopBarModifier: ViewModifier {
+    @Binding var isShowing: Bool
+    @Binding public var topBar: YDSDoubleTitleTopBar
     
     public func body(content: Content) -> some View {
         return content
@@ -16,24 +17,37 @@ struct YDSDoubleTitleTopBar: ViewModifier {
                 ToolbarItem(placement:
                         .topBarLeading) {
                             DoubleTitleBar(title: topBar.title, subtitle: topBar.subtitle)
-                }
+                        }
                 ToolbarItem(placement:
                         .topBarTrailing) {
-                            IconBarView(icon: YDSIcon.plusLine)
-                }
+                            Button(action: {
+                                isShowing = true
+                            }, label: {
+                                YDSIcon.plusLine
+                            })
+                        }
+                
                 ToolbarItem(placement:
                         .topBarTrailing) {
-                            IconBarView(icon: YDSIcon.listLine)
-                }
+                            Button(action: {
+                                isShowing = true
+                            }, label: {
+                                YDSIcon.listLine
+                            })
+                        }
                 ToolbarItem(placement:
                         .topBarTrailing) {
-                            IconBarView(icon: YDSIcon.dotsHorizontalLine)
-                }
+                            Button(action: {
+                                isShowing = true
+                            }, label: {
+                                YDSIcon.dotsVerticalLine
+                            })
+                        }
             }
     }
 }
 
-public struct DoubleTitleTopBar: Equatable {
+public struct YDSDoubleTitleTopBar: Equatable {
     let title: String
     let subtitle: String
 }
@@ -52,24 +66,13 @@ struct DoubleTitleBar: View {
     }
 }
 
-struct DoubleTitleIconBar: View {
-    let icon: Image?
-    
-    public init(icon: Image?) {
-        self.icon = icon
-    }
-    
-    public var body : some View {
-        YDSTopBarIconButton(icon: icon, isSelected: false)
-    }
-}
-
 extension View {
-    public func ydsDoubleTitleTopBar(title: Binding<String?>, subtitle: Binding<String?>) -> some View {
+    public func ydsDoubleTitleTopBar(title: Binding<String?>, subtitle: Binding<String?>, isShowing: Binding<Bool>) -> some View {
       modifier(
-        YDSDoubleTitleTopBar(
+        YDSDoubleTitleTopBarModifier( 
+            isShowing: isShowing,
             topBar: .init(get: {
-                DoubleTitleTopBar(
+            YDSDoubleTitleTopBar(
                     title: title.wrappedValue ?? "",
                     subtitle: subtitle.wrappedValue ?? "")
             }, set: { ydsTopBar in
