@@ -56,6 +56,9 @@ struct PageListView: View {
         PageView(title: "EmojiButton") {
             EmojiButtonPageView()
         }
+        PageView(title: "Chip") {
+            ChipPageView()
+        }
         PageView(title: "BoxButton") {
             BoxButtonPageView()
         }
