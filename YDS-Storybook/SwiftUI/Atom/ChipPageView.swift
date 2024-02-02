@@ -9,26 +9,21 @@ import SwiftUI
 import YDS_SwiftUI
 
 struct ChipPageView: View {
-    let title: String = "EmojiButton"
+    let title: String = "Chip"
 
     @State var text: String? = "IT대학"
     @State var isSelected: Bool = false
-    
+
     public var body: some View {
         StorybookPageView(sample: {
-            VStack {
-                GeometryReader { geometry in
-                    YDSChip(
-                        text: text,
-                        isSelected: isSelected)
-                    .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
-                    .background(
-                        Rectangle()
-                            .fill(.white)
-                    )
-                }
-            }
-
+            YDSChip(
+                text: text,
+                isSelected: isSelected)
+            .frame(maxWidth: .infinity, maxHeight: YDSScreenSize.width * 3/4)
+            .background(
+                Rectangle()
+                    .fill(.white)
+            )
         }, options: [
             Option.optionalString(
                 description: "text",

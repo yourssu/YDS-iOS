@@ -11,7 +11,7 @@ import YDS_Essential
 public struct YDSChip: View {
     let text: String?
     var isSelected: Bool
-    
+
     public init(
         text: String?,
         isSelected: Bool) {
@@ -22,7 +22,7 @@ public struct YDSChip: View {
     public var body: some View {
         Button {
         } label: {
-            if let text = text{
+            if let text = text {
                 Text(text)
                     .font(YDSFont.caption1)
                     .foregroundColor(isSelected ? YDSColor.textBright : YDSColor.textTertiary)
