@@ -10,38 +10,38 @@ import YDS
 import SnapKit
 
 class ChipPageViewController: StoryBookViewController {
-    
+
     let sampleButton: YDSChip = {
         let button = YDSChip()
         return button
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         addOptions()
     }
-    
+
     private func setupView() {
         setViewProperty()
         setViewHierarchy()
         setAutolayout()
     }
-    
+
     private func setViewProperty() {
         self.title = "Chip"
     }
-    
+
     private func setViewHierarchy() {
         sampleView.addSubview(sampleButton)
     }
-    
+
     private func setAutolayout() {
         sampleButton.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
         }
     }
-    
+
     private func addOptions() {
         addOption(description: "text",
                   defaultValue: "3") { [weak self] value in
@@ -53,5 +53,4 @@ class ChipPageViewController: StoryBookViewController {
             self?.sampleButton.isSelected = value
         }
     }
-    
 }
