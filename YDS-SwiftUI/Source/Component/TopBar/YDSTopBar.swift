@@ -7,57 +7,49 @@
 
 import SwiftUI
 
-struct YDSTopBar: ViewModifier {
-    @Binding public var topBar: TopBar
-    @State public var isSelected: Bool
+struct YDSTopBarModifier: ViewModifier {
+    @Binding var isLeftButtonSelected: Bool
+    @Binding var isRightButtonSelected: Bool
+    @Binding public var topBar: YDSTopBar
     
     public func body(content: Content) -> some View {
         content
             .toolbar {
                 ToolbarItem(placement:
-                        .topBarLeading) {
-                            YDSTopBarIconButton(icon: isSelected ? YDSIcon.starFilled : YDSIcon.starLine, isSelected: isSelected)
+                        .topBarLeading){
+                            Button(action: {isLeftButtonSelected.toggle()}, label: {
+                                isLeftButtonSelected ? YDSIcon.starFilled : YDSIcon.starLine
+                            })
+                }
+                ToolbarItem(placement: .principal){
+                    Text(topBar.title)
+                        .font(YDSFont.subtitle2)
                 }
                 ToolbarItem(placement:
-                        .principal) {
-                            TitleBarView(topBar.title)
-                }
-                ToolbarItem(placement:
-                        .topBarTrailing) {
-                            YDSTopBarIconButton(icon: isSelected ? YDSIcon.starFilled : YDSIcon.starLine, isSelected: isSelected)
-                }
+                        .topBarTrailing){
+                            Text(isRightButtonSelected ? "완료" : "편집")
+                                .onTapGesture {
+                                    isRightButtonSelected.toggle()
+                                }
+                        }
             }
+        
     }
 }
 
-public struct TopBar: Equatable {
+public struct YDSTopBar: Equatable {
     let title: String
-}
-
-struct TitleBarView: View {
-    let title: String
-    
-    public init(_ title: String) {
-        self.title = title
-    }
-    
-    public var body : some View {
-        HStack{
-            Text(title)
-                .font(YDSFont.subtitle2)
-        }
-    }
 }
 
 extension View {
-    public func ydsTopBar(_ title: Binding<String?>) -> some View {
-        modifier(
-            YDSTopBar(
-                topBar: .init(get: {
-                    TopBar(title: title.wrappedValue ?? "")
+    public func ydsTopBar(_ title: Binding<String?>, isLeftButtonSelected: Binding<Bool>, isRightButtonSelected: Binding<Bool>) -> some View {
+        self.modifier(
+            YDSTopBarModifier(
+                isLeftButtonSelected: isLeftButtonSelected, isRightButtonSelected: isRightButtonSelected,topBar: .init(get: {
+                    YDSTopBar(title: title.wrappedValue ?? "")
                 }, set: { ydsTopBar in
                     title.wrappedValue = ydsTopBar.title
-                }), isSelected: false
+                })
             )
         )
     }

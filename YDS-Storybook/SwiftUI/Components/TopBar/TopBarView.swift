@@ -32,23 +32,21 @@ public struct TopBarView: View {
         )
         .navigationTitle(navigationTitle)
         .overlay(alignment: .bottom) {
-            YDSBoxButton(text: "샘플 페이지 보기")
+            Button(action: {
+                self.isPresenting.toggle()
+            }, label: {
+                Text("샘플페이지 보기")
+            })
+            .padding()
             .fullScreenCover(isPresented: $isPresenting) {
-                TopBarSampleView(title: title)
-                    .onTapGesture {
-                        isPresenting.toggle()
-                    }
+                TopBarSampleView(isPresenting: $isPresenting, title: title)
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity,
                            maxHeight: .infinity)
                     .background(Color.white)
                     .ignoresSafeArea(edges: .all)
             }
-            
         }
-    }
-    func didDismiss() {
-        // dissmising action
     }
 }
 

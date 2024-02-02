@@ -8,33 +8,50 @@
 import SwiftUI
 import YDS_Essential
 
+enum ButtonName: String {
+    case Searchbutton
+    case Writebutton
+}
+
 struct YDSSingleTitleTopBar: ViewModifier {
-    @Binding public var topBar: YDSTopBar
+    @Binding public var isShowing: Bool
+    @State private var selectedButton: ButtonName?
+    @Binding public var topBar: SingleTitleTopBar
     
     public func body(content: Content) -> some View {
         content
             .toolbar {
                 ToolbarItem(placement: 
                         .topBarLeading) {
-                            TitleBarView(topBar.title)
+                            SingleTitleBar(topBar.title)
                 }
                 ToolbarItem(placement: 
                         .topBarTrailing) {
-                            IconBarView(icon: YDSIcon.searchLine)
+                            Button(action: {
+                                selectedButton = .Searchbutton
+                                isShowing.toggle()
+                            }, label: {
+                                YDSIcon.searchLine
+                            })
                 }
                 ToolbarItem(placement: 
                         .topBarTrailing) {
-                            IconBarView(icon: YDSIcon.penLine)
+                            Button(action: {
+                                selectedButton = .Writebutton
+                                isShowing.toggle()
+                            }, label: {
+                                YDSIcon.penLine
+                            })
                 }
             }
     }
 }
 
-public struct YDSTopBar: Equatable {
+public struct SingleTitleTopBar: Equatable {
     let title: String
 }
 
-struct TitleBarView: View {
+struct SingleTitleBar: View {
     let title: String
     
     public init(_ title: String) {
@@ -42,31 +59,17 @@ struct TitleBarView: View {
     }
     
     public var body : some View {
-        HStack{
-            Text(title)
-                .font(YDSFont.title2)
-        }
-    }
-}
-
-struct IconBarView: View {
-    let icon: Image?
-    
-    public init(icon: Image?) {
-        self.icon = icon
-    }
-    
-    public var body : some View {
-        YDSTopBarIconButton(icon: icon, isSelected: false)
+        Text(title)
+            .font(YDSFont.title2)
     }
 }
 
 extension View {
-    public func ydsSingleTitleTopBar(_ title: Binding<String?>) -> some View {
+    public func ydsSingleTitleTopBar(_ title: Binding<String?>, isShowing: Binding<Bool>) -> some View {
         modifier(
             YDSSingleTitleTopBar(
-                topBar: .init(get: {
-                    YDSTopBar(title: title.wrappedValue ?? "")
+                isShowing: isShowing, topBar: .init(get: {
+                    SingleTitleTopBar(title: title.wrappedValue ?? "")
                 }, set: { ydsTopBar in
                     title.wrappedValue = ydsTopBar.title
                 })
