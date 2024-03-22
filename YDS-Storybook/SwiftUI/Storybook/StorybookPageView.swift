@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-
 import YDS_SwiftUI
+import UniformTypeIdentifiers
 
 private enum Dimension {
     enum Spacing {
@@ -37,20 +37,54 @@ struct OptionListItem: View {
 
 struct StorybookPageView<ViewType: View>: View {
     @ViewBuilder private var sample: () -> ViewType
+    @Binding private var code: String
+    @State var isShowCodeBlock: Bool = false
 
     private let options: [Option]
 
-    init(sample: @escaping () -> ViewType, options: [Option]) {
+    init(sample: @escaping () -> ViewType, options: [Option], code: Binding<String> = .constant("")) {
         self.sample = sample
         self.options = options
+        _code = code
     }
 
     var body: some View {
         VStack(spacing: 0) {
             sampleExpaned
             Divider()
-            scrollableOptions
+            if isShowCodeBlock {
+                ScrollView {
+                    HStack(spacing: 0) {
+                        Spacer()
+                        YDSBoxButton(
+                            text: "복사하기",
+                            action: {
+                                UIPasteboard.general.string = code
+                                YDSToast("복사 되었습니다!", duration: .short, haptic: .success)
+                            }
+                        )
+                    }
+                    HStack(spacing: 0) {
+                        Text(code)
+                        Spacer()
+                    }
+                }
+                .padding(30)
+            } else {
+                scrollableOptions
+            }
+            
         }
+        .toolbar {
+            if !code.isEmpty {
+                Button {
+                    isShowCodeBlock.toggle()
+                } label: {
+                    Label("Code", systemImage: "curlybraces.square.fill")
+                }
+            }
+        }
+        .registerYDSToast()
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -83,12 +117,13 @@ struct StorybookPageView_Previews: PreviewProvider {
         }
 
         let icons = YDSSwiftUIIcon.icons
-
+        
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
         @State var lineLimit: Int? = 1
         @State var selectedBoxButtonType = 0
         @State var icon: SwiftUIIcon?
+        @State var code: String = "Hello world"
 
         return StorybookPageView(
             sample: {
@@ -113,7 +148,8 @@ struct StorybookPageView_Previews: PreviewProvider {
                 ),
                 Option.optionalString(description: "text", text: $text),
                 Option.optionalIcon(description: "icon", icons: icons, selectedIcon: $icon, placeholderIndex: 0)
-            ]
+            ],
+            code: $code
         )
     }
 }
