@@ -1,7 +1,7 @@
 ![Thumbnail](https://user-images.githubusercontent.com/54972653/133129992-d7ab694c-73b5-4522-90c0-7e06f980ede4.png)
 
 <div align="center">
-  <a href="https://www.apple.com/kr/ios/" target="_blank"><img src="https://img.shields.io/badge/13+-000000?style=flat-square&logo=iOS&logoColor=white"/></a>
+  <a href="https://www.apple.com/kr/ios/" target="_blank"><img src="https://img.shields.io/badge/16+-000000?style=flat-square&logo=iOS&logoColor=white"/></a>
   <a href="https://swift.org/package-manager/" target="_blank"><img src="https://img.shields.io/badge/Swift Package Manager-FA7343?style=flat-square&logo=Swift&logoColor=white"/></a>
   <a href="https://testflight.apple.com/join/00LW9q4d" target="_blank"><img src="https://img.shields.io/badge/TestFlight-0D96F6?style=flat-square&logo=Appstore&logoColor=white"/></a>
     <a href="https://apps.apple.com/kr/app/yds-storybook/id1584167620" target="_blank"><img src="https://img.shields.io/badge/App_Store-0D96F6?style=flat-square&logo=app-store&logoColor=white"/></a>  
