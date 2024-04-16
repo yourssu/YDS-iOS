@@ -5,6 +5,7 @@
 //  Created by 정지혁 on 2023/08/19.
 //
 
+import WebKit
 import SwiftUI
 import YDS_SwiftUI
 import UniformTypeIdentifiers
@@ -54,8 +55,11 @@ struct StorybookPageView<ViewType: View>: View {
             Divider()
             if isShowCodeBlock {
                 ScrollView {
-                    HStack(spacing: 0) {
-                        Spacer()
+                    HStack(alignment: .top, spacing: 0) {
+                        WebView(code: code)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
+                            .ignoresSafeArea(edges: .all)
+                            .padding(.trailing, 20)
                         YDSBoxButton(
                             text: "복사하기",
                             action: {
@@ -64,16 +68,11 @@ struct StorybookPageView<ViewType: View>: View {
                             }
                         )
                     }
-                    HStack(spacing: 0) {
-                        Text(code)
-                        Spacer()
-                    }
                 }
-                .padding(30)
+                .padding(20)
             } else {
                 scrollableOptions
             }
-            
         }
         .toolbar {
             if !code.isEmpty {
@@ -110,6 +109,46 @@ private extension StorybookPageView {
     }
 }
 
+struct WebView: UIViewRepresentable {
+    var code: String
+
+    class Coordinator: NSObject, WKNavigationDelegate {
+        var parent: WebView
+
+        init(_ parent: WebView) {
+            self.parent = parent
+        }
+
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            let escapedCode = self.parent.code
+                .replacingOccurrences(of: "\\", with: "\\\\")
+                .replacingOccurrences(of: "`", with: "\\`")
+                .replacingOccurrences(of: "\"", with: "\\\"")
+                .replacingOccurrences(of: "\'", with: "\\'")
+            let jsString = "displayMessage(`\(escapedCode)`);"
+            webView.evaluateJavaScript(jsString, completionHandler: nil)
+        }
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        webView.navigationDelegate = context.coordinator
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        if let filePath = Bundle.main.path(forResource: "CodeViewer", ofType: "html") {
+            let url = URL(fileURLWithPath: filePath)
+            let request = URLRequest(url: url)
+            uiView.load(request)
+        }
+    }
+}
+
 struct StorybookPageView_Previews: PreviewProvider {
     static var previews: some View {
         enum BoxButtonType: CaseIterable {
@@ -117,7 +156,7 @@ struct StorybookPageView_Previews: PreviewProvider {
         }
 
         let icons = YDSSwiftUIIcon.icons
-        
+
         @State var text: String? = "BoxButton"
         @State var isDisabled = false
         @State var lineLimit: Int? = 1

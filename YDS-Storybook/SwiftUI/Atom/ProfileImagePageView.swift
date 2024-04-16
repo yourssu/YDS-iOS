@@ -55,7 +55,7 @@ struct ProfileImagePageView: View {
                 .onChange(of: image, perform: { _ in updateCodeText() })
         }
     }
-    
+
     func updateCodeText() {
         let imageName = image?.name ?? ""
         let sizeName = YDSProfileImageView.ProfileImageViewSize.allCases[sizeSelectedIndex]

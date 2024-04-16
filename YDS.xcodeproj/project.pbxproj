@@ -131,6 +131,7 @@
 		956C40192A949BAE0098BB8F /* TypoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C40182A949BAE0098BB8F /* TypoPageView.swift */; };
 		95CC861E2B55A81F0088E44E /* OptionalIntOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC861D2B55A81F0088E44E /* OptionalIntOptionView.swift */; };
 		95E535C72AB482E200FA2492 /* LabelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E535C62AB482E200FA2492 /* LabelPageView.swift */; };
+		AF0FDD112BCE96C300929D65 /* CodeViewer.html in Resources */ = {isa = PBXBuildFile; fileRef = AF0FDD102BCE96C300929D65 /* CodeViewer.html */; };
 		AF1E6F002AB88DEB0071C963 /* YDSToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */; };
 		AF23ED812AEE9BF600F3D5E2 /* YDSSimpleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23ED802AEE9BF600F3D5E2 /* YDSSimpleTextField.swift */; };
 		AF23ED832AEE9C0F00F3D5E2 /* YDSSuffixTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23ED822AEE9C0F00F3D5E2 /* YDSSuffixTextField.swift */; };
@@ -379,6 +380,7 @@
 		956C40182A949BAE0098BB8F /* TypoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypoPageView.swift; sourceTree = "<group>"; };
 		95CC861D2B55A81F0088E44E /* OptionalIntOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalIntOptionView.swift; sourceTree = "<group>"; };
 		95E535C62AB482E200FA2492 /* LabelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPageView.swift; sourceTree = "<group>"; };
+		AF0FDD102BCE96C300929D65 /* CodeViewer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = CodeViewer.html; sourceTree = "<group>"; };
 		AF1E6EFF2AB88DEB0071C963 /* YDSToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSToast.swift; sourceTree = "<group>"; };
 		AF23ED802AEE9BF600F3D5E2 /* YDSSimpleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSimpleTextField.swift; sourceTree = "<group>"; };
 		AF23ED822AEE9C0F00F3D5E2 /* YDSSuffixTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDSSuffixTextField.swift; sourceTree = "<group>"; };
@@ -956,6 +958,7 @@
 			children = (
 				B9E4E8C92A90BE430076473C /* OptionView */,
 				B9E4E8C72A90BDB90076473C /* StorybookPageView.swift */,
+				AF0FDD102BCE96C300929D65 /* CodeViewer.html */,
 			);
 			path = Storybook;
 			sourceTree = "<group>";
@@ -1352,6 +1355,7 @@
 				DDFBD00B26739A6B00C5F409 /* LaunchScreen.storyboard in Resources */,
 				DDFBD00826739A6B00C5F409 /* Assets.xcassets in Resources */,
 				DDFBD00626739A6900C5F409 /* Main.storyboard in Resources */,
+				AF0FDD112BCE96C300929D65 /* CodeViewer.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
