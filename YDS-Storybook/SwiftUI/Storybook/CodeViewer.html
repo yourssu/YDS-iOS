@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Example Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <style>
+            code {
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <pre><code class="language-swift"></code></pre>
+        <script>
+            function displayMessage(message) {
+                document.querySelector('code').textContent = message;
+                hljs.highlightElement(document.querySelector('code'));
+            }
+        </script>
+    </body>
+</html>
